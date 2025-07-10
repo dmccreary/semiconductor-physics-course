@@ -12,12 +12,15 @@ nav:
   - Course Description: course-description.md
   - Prompts:
     - Intro: prompts/index.md
+    - Course Description: prompts/course-description.md
     - Suggested Simulations: prompts/suggested-simulations.md
   - MicroSims:
     - Intro: sims/index.md
+    - PN Junction: sims/pn-junction/index.md
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
   - References: references.md
+  - License: license.md
   - Contact: contact.md
  
 # CoderDojo Microsite Standards from here down
