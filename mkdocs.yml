@@ -10,6 +10,9 @@ nav:
   - Home: index.md
   - About: about.md
   - Course Description: course-description.md
+  - Prompts:
+    - Intro: prompts/index.md
+    - Suggested Simulations: prompts/suggested-simulations.md
   - MicroSims:
     - Intro: sims/index.md
   - Glossary: glossary.md
