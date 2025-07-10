@@ -1,5 +1,5 @@
-site_name: Mkdocs Template Site
-site_description: 'DESCRIPTION All content licensed Creative Commons ShareAlike Attribution Noncommercial'
+site_name: Semiconductor Physics Course
+site_description: 'Resources for teaching a college-level course on semiconductor physics with a focus on creating interactive simulations.'
 site_author: 'Dan McCreary'
 repo_name: 'GitHub Repo'
 site_url: 'https://dmccreary.github.io/semiconductor-physics-course/'
