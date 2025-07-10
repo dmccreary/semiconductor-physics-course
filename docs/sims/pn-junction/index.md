@@ -1,13 +1,18 @@
 # PN Junction
 
+[Edit the MicroSim](https://editor.p5js.org/dmccreary/sketches/J4l53Sue4)
+
 MicroSim Name: P-N Junction Voltage Controller 
 
 Description:
+
 Using the p5.js JavaScript library, create a real-time visualization of carrier movement, depletion region width, and electric field distribution in a p-n junction. Shows electron and hole trajectories as bias voltage changes from reverse to forward conditions.  Show a cross
 section of the semiconductor with one wire on the top and the other wire on the bottom.
 Create a slider to allow the user to change the voltage.
 
-Draw the P and N regions in different colors.  Draw animations of elections with a small red circle with a negative sign.
+MicroSim title: P-N Junction Voltage Controller 
+
+Draw the P and N regions in different colors.  Draw animations of elections with a small red circles with a negative sign on them.
 
 User Input Slider:
 
