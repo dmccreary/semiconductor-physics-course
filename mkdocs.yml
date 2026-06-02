@@ -10,6 +10,30 @@ nav:
   - Home: index.md
   - About: about.md
   - Course Description: course-description.md
+  - Chapters:
+    - List of Chapters: chapters/index.md
+    - 1. Introduction to Semiconductors: chapters/01-intro-semiconductors/index.md
+    - 2. Crystal Lattice Structure: chapters/02-crystal-lattice-structure/index.md
+    - 3. Crystal Bonding and Defects: chapters/03-crystal-bonding-defects/index.md
+    - 4. Quantum Mechanics: chapters/04-quantum-mechanics/index.md
+    - 5. Bloch Theorem and Band Theory: chapters/05-bloch-theorem-band-theory/index.md
+    - 6. Fermi-Dirac Statistics: chapters/06-fermi-dirac-statistics/index.md
+    - 7. Doping and Extrinsic Carriers: chapters/07-doping-extrinsic-carriers/index.md
+    - 8. Carrier Drift and Mobility: chapters/08-carrier-drift-mobility/index.md
+    - 9. Carrier Diffusion and Transport: chapters/09-carrier-diffusion-transport/index.md
+    - 10. Generation and Recombination: chapters/10-generation-recombination/index.md
+    - 11. P-N Junction Equilibrium: chapters/11-pn-junction-equilibrium/index.md
+    - 12. P-N Junction Dynamics: chapters/12-pn-junction-dynamics/index.md
+    - 13. Metal-Semiconductor and MOS: chapters/13-metal-semiconductor-mos/index.md
+    - 14. Bipolar Transistors: chapters/14-bipolar-transistors/index.md
+    - 15. JFET, MESFET, and MOSFET: chapters/15-jfet-mesfet-mosfet/index.md
+    - 16. Short-Channel and CMOS: chapters/16-short-channel-cmos/index.md
+    - 17. LEDs and Laser Diodes: chapters/17-leds-laser-diodes/index.md
+    - 18. Photodetectors and Solar Cells: chapters/18-photodetectors-solar-cells/index.md
+    - 19. Compound Semiconductors and Quantum: chapters/19-compound-semiconductors-quantum/index.md
+    - 20. Strained Si, 2D Materials, Power: chapters/20-strained-si-2d-power/index.md
+    - 21. Fabrication Technology: chapters/21-fabrication-technology/index.md
+    - 22. Characterization and Modeling: chapters/22-characterization-modeling/index.md
   - Prompts:
     - Intro: prompts/index.md
     - Course Description: prompts/course-description.md
@@ -21,6 +45,7 @@ nav:
     - Graph Quality Analysis: learning-graph/quality-metrics.md
     - Concept Taxonomy: learning-graph/concept-taxonomy.md
     - Taxonomy Distribution Report: learning-graph/taxonomy-distribution.md
+    - Mascot Style Guide: learning-graph/mascot-test.md
   - MicroSims:
     - Intro: sims/index.md
     - Learning Graph Viewer: sims/graph-viewer/index.md
@@ -67,6 +92,7 @@ markdown_extensions:
       linenums: true
 extra_css:
    - css/extra.css
+   - css/mascot.css
 #extra:
 #  analytics:
 #    provider: google
