@@ -23,6 +23,7 @@ nav:
     - Taxonomy Distribution Report: learning-graph/taxonomy-distribution.md
   - MicroSims:
     - Intro: sims/index.md
+    - Learning Graph Viewer: sims/graph-viewer/index.md
     - PN Junction: sims/pn-junction/index.md
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
