@@ -1,0 +1,601 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Semiconductor Definition,,FOUND
+2,Conductor vs Insulator vs Semiconductor,1|11,FOUND
+3,Elemental Semiconductors,1,FOUND
+4,Compound Semiconductors,1,FOUND
+5,Silicon Material Properties,3|11,FOUND
+6,Germanium Material Properties,3|11,FOUND
+7,Gallium Arsenide Properties,4|11,FOUND
+8,Indium Phosphide Properties,4|11,FOUND
+9,Gallium Nitride Properties,4|11,FOUND
+10,Silicon Carbide Properties,3|11,FOUND
+11,Bandgap Energy,,FOUND
+12,Direct Bandgap,11|14,BAND
+13,Indirect Bandgap,11|14,BAND
+14,Energy Band Diagram,11,BAND
+15,Conduction Band,14,BAND
+16,Valence Band,14,BAND
+17,Forbidden Energy Gap,11|15|16,BAND
+18,Crystal Lattice,,CRYST
+19,Unit Cell,18,CRYST
+20,Primitive Cell,18|19,CRYST
+21,Basis Vectors,18|19,CRYST
+22,Simple Cubic Structure,18|19,CRYST
+23,Face-Centered Cubic Structure,18|19|22,CRYST
+24,Body-Centered Cubic Structure,18|19|22,CRYST
+25,Diamond Cubic Structure,23|39,CRYST
+26,Zincblende Structure,25,CRYST
+27,Wurtzite Structure,26,CRYST
+28,Miller Indices,18|21,CRYST
+29,Crystal Planes,18|28,CRYST
+30,Crystal Directions,18|28,CRYST
+31,Reciprocal Lattice,18|21|28,CRYST
+32,First Brillouin Zone,31,CRYST
+33,Wigner-Seitz Cell,18|19,CRYST
+34,Lattice Constant,18|19,CRYST
+35,Lattice Mismatch,34,CRYST
+36,Bragg Diffraction Law,29|34,CRYST
+37,X-Ray Diffraction,36,CRYST
+38,Electron Diffraction,36,CRYST
+39,Covalent Bonding in Semiconductors,,CRYST
+40,Ionic Bonding,,CRYST
+41,Metallic Bonding,,CRYST
+42,Van der Waals Forces,,CRYST
+43,Hybridization SP3,39,CRYST
+44,Point Defects,18|19,CRYST
+45,Vacancies,44,CRYST
+46,Interstitials,44,CRYST
+47,Substitutional Impurities,44,CRYST
+48,Frenkel Defects,44|45|46,CRYST
+49,Schottky Defects,44|45,CRYST
+50,Dislocations,18,CRYST
+51,Edge Dislocations,50,CRYST
+52,Screw Dislocations,50,CRYST
+53,Stacking Faults,23|50,CRYST
+54,Grain Boundaries,18|50,CRYST
+55,Surface States,18,CRYST
+56,Interface States,55,CRYST
+57,Dangling Bonds,39|55,CRYST
+58,Wave-Particle Duality,,QM
+59,de Broglie Wavelength,58,QM
+60,Heisenberg Uncertainty Principle,58,QM
+61,Schrodinger Equation,58|59|60,QM
+62,Time-Dependent Schrodinger Equation,61,QM
+63,Time-Independent Schrodinger Equation,61,QM
+64,Wave Function,61,QM
+65,Probability Density,64,QM
+66,Quantum Normalization,64|65,QM
+67,Particle in a Box,63|64,QM
+68,Infinite Potential Well,67,QM
+69,Finite Potential Well,68,QM
+70,Quantum Tunneling,63|69,QM
+71,Tunnel Probability,70,QM
+72,WKB Approximation,70|71,QM
+73,Hydrogen Atom Model,63,QM
+74,Atomic Orbitals,73,QM
+75,Quantum Numbers,73|74,QM
+76,Principal Quantum Number,75,QM
+77,Angular Momentum Quantum Number,75,QM
+78,Magnetic Quantum Number,75,QM
+79,Spin Quantum Number,,QM
+80,Pauli Exclusion Principle,79,QM
+81,Electron Spin,79,QM
+82,Spin-Orbit Coupling,80|81,QM
+83,Perturbation Theory,63,QM
+84,Variational Method,63,QM
+85,Kronig-Penney Model,63|89,QM
+86,Bloch Theorem,85,QM
+87,Bloch Wave Functions,86,QM
+88,Crystal Momentum,87,BAND
+89,Periodic Potential,63|18,QM
+90,Band Gap Origin,85|86,BAND
+91,Free Electron Model,,BAND
+92,Nearly-Free Electron Model,91|89|90,BAND
+93,Tight-Binding Model,91|74|86,BAND
+94,Linear Combination of Atomic Orbitals,93|74,BAND
+95,E-k Dispersion Relation,86|92|93,BAND
+96,Effective Mass Approximation,95,BAND
+97,Longitudinal Effective Mass,96,BAND
+98,Transverse Effective Mass,96,BAND
+99,Density-of-States Effective Mass,96|112,BAND
+100,Conductivity Effective Mass,96,BAND
+101,Hole Concept,15|16|95,BAND
+102,Hole Effective Mass,101|96,BAND
+103,Heavy Holes,102|82,BAND
+104,Light Holes,102|82,BAND
+105,Split-Off Band,82|103|104,BAND
+106,Spin-Orbit Splitting,82|105,BAND
+107,Fermi Energy,,STAT
+108,Fermi Level,107,STAT
+109,Fermi-Dirac Distribution,107|108,STAT
+110,Maxwell-Boltzmann Distribution,,STAT
+111,Bose-Einstein Distribution,110,STAT
+112,Density of States 3D,95|96,BAND
+113,Density of States 2D,112,BAND
+114,Density of States 1D,112,BAND
+115,Density of States 0D,112,BAND
+116,Effective Density of States,112|99,STAT
+117,Conduction Band Effective DOS,116|15,STAT
+118,Valence Band Effective DOS,116|16,STAT
+119,Intrinsic Carrier Concentration,109|117|118,STAT
+120,Intrinsic Fermi Level,108|119,STAT
+121,Temperature Dependence ni,119,STAT
+122,Law of Mass Action,119,STAT
+123,Electron Concentration Formula,109|117|108,STAT
+124,Hole Concentration Formula,109|118|108,STAT
+125,Charge Neutrality Condition,123|124,STAT
+126,N-Type Doping,44|47|3,STAT
+127,P-Type Doping,44|47|3,STAT
+128,Donor Atoms,126|46,STAT
+129,Acceptor Atoms,127|46,STAT
+130,Group V Dopants in Silicon,128|5,STAT
+131,Group III Dopants in Silicon,129|5,STAT
+132,Phosphorus as Donor,130,STAT
+133,Arsenic as Donor,130,STAT
+134,Antimony as Donor,130,STAT
+135,Boron as Acceptor,131,STAT
+136,Gallium as Acceptor,131,STAT
+137,Aluminum as Acceptor,131,STAT
+138,Indium as Acceptor,131,STAT
+139,Ionization Energy,128|129,STAT
+140,Complete Ionization,139|109,STAT
+141,Freeze-Out Regime,139|109,STAT
+142,Extrinsic Regime,140|123|124,STAT
+143,Intrinsic Regime Temperature,121|142,STAT
+144,Majority Carriers,123|124|126|127,STAT
+145,Minority Carriers,122|144,STAT
+146,Extrinsic Carrier Concentration,123|124|126|127,STAT
+147,Degenerate Semiconductor,109|119,STAT
+148,Non-Degenerate Semiconductor,109|119|110,STAT
+149,Compensation Doping,126|127|125,STAT
+150,Net Doping Concentration,149,STAT
+151,Fermi Level in N-Type,108|123|126,STAT
+152,Fermi Level in P-Type,108|124|127,STAT
+153,Temperature Dependence of Fermi Level,151|152|121,STAT
+154,Drift Current,144|145,TRANS
+155,Drift Velocity,154,TRANS
+156,Carrier Mobility,155,TRANS
+157,Electron Mobility,156|5,TRANS
+158,Hole Mobility,156|5,TRANS
+159,Low-Field Mobility,156,TRANS
+160,High-Field Mobility,159,TRANS
+161,Velocity Saturation,160,TRANS
+162,Saturation Velocity,161,TRANS
+163,Hot Carriers,161|162,TRANS
+164,Lattice Scattering,156,TRANS
+165,Phonon Scattering,164|111,TRANS
+166,Acoustic Phonon Scattering,165,TRANS
+167,Optical Phonon Scattering,165,TRANS
+168,Intervalley Scattering,165|95,TRANS
+169,Ionized Impurity Scattering,156|128|129,TRANS
+170,Neutral Impurity Scattering,156|128,TRANS
+171,Surface Roughness Scattering,156|55,TRANS
+172,Alloy Scattering,156|4,TRANS
+173,Matthiessen Rule,164|169|170,TRANS
+174,Mobility Temperature Dependence,166|167|173,TRANS
+175,Mobility Doping Dependence,169|173,TRANS
+176,Diffusion Current,144|145,TRANS
+177,Diffusion Coefficient,176|156,TRANS
+178,Einstein Relation,177|108,TRANS
+179,Total Current Density,154|176,TRANS
+180,Drift-Diffusion Model,179|178,TRANS
+181,Resistivity,156|146,TRANS
+182,Conductivity,181,TRANS
+183,Sheet Resistance,181|182,TRANS
+184,Hall Effect,154|156,TRANS
+185,Hall Coefficient,184,TRANS
+186,Hall Voltage,184|185,TRANS
+187,Hall Mobility,184|156,TRANS
+188,Van der Pauw Method,183|184,TRANS
+189,Magnetoresistance,184,TRANS
+190,Piezoelectric Effect,18,TRANS
+191,Piezoresistance Effect,181,TRANS
+192,Continuity Equation,154|176|197|198,TRANS
+193,Ambipolar Transport,192|179,TRANS
+194,Ambipolar Diffusion Coefficient,193|177,TRANS
+195,Minority Carrier Lifetime,145|203,GREC
+196,Minority Carrier Diffusion Length,195|177,GREC
+197,Recombination Rate,144|145,GREC
+198,Generation Rate,144|145,GREC
+199,Direct Recombination,12|197,GREC
+200,Band-to-Band Recombination,199|15|16,GREC
+201,Radiative Recombination,199|12,GREC
+202,Radiative Recombination Coefficient,201,GREC
+203,Shockley-Read-Hall Recombination,197|205|206,GREC
+204,Trap-Assisted Recombination,203,GREC
+205,Trap Density,44|55,GREC
+206,Trap Energy Level,205|14,GREC
+207,Capture Cross Section,205|203,GREC
+208,Auger Recombination,197|147,GREC
+209,Auger Coefficient,208,GREC
+210,Surface Recombination,55|197,GREC
+211,Surface Recombination Velocity,210,GREC
+212,Optical Absorption,11|12,GREC
+213,Absorption Coefficient,212|15,GREC
+214,Optical Generation Rate,212|213,GREC
+215,Photoconductivity,144|145|214,GREC
+216,Quasi-Fermi Levels,108|221,GREC
+217,Quasi-Fermi Level Splitting,216,GREC
+218,Low-Level Injection,219|221,GREC
+219,High-Level Injection,144|221,GREC
+220,Injection Level,144|221,GREC
+221,Excess Carriers,144|145,GREC
+222,P-N Junction,126|127,PNJ
+223,Junction Formation,222|125,PNJ
+224,Depletion Region,222|225,PNJ
+225,Depletion Approximation,222,PNJ
+226,Built-In Potential,108|126|127|222,PNJ
+227,Contact Potential,226,PNJ
+228,Electric Field in Depletion Region,224|225,PNJ
+229,Potential Distribution in Junction,228|226,PNJ
+230,Charge Distribution in Junction,224|125,PNJ
+231,Depletion Width,224|225|226,PNJ
+232,One-Sided Abrupt Junction,231|222,PNJ
+233,Linearly Graded Junction,231|222,PNJ
+234,Forward Bias,222|226,PNJ
+235,Reverse Bias,222|226,PNJ
+236,Zero Bias Equilibrium,226|108,PNJ
+237,Band Diagram Forward Bias,234|14,PNJ
+238,Band Diagram Reverse Bias,235|14,PNJ
+239,Minority Carrier Injection,234|144|145,PNJ
+240,Ideal Diode Equation,239|195|196,PNJ
+241,Shockley Equation,240,PNJ
+242,Diode Saturation Current,241|119,PNJ
+243,Diode Ideality Factor,241,PNJ
+244,Generation-Recombination Current,203|224|243,PNJ
+245,Diffusion Current in Diode,176|239|241,PNJ
+246,Tunneling Current in Diode,70|235,PNJ
+247,Ohmic Region Diode,234|241,PNJ
+248,Forward Voltage Drop,234|241,PNJ
+249,Reverse Saturation Current,235|242,PNJ
+250,Reverse Breakdown,235,PNJ
+251,Avalanche Breakdown,250|252,PNJ
+252,Impact Ionization,160,PNJ
+253,Ionization Coefficients,252,PNJ
+254,Multiplication Factor,251|253,PNJ
+255,Zener Breakdown,70|235,PNJ
+256,Zener Effect,255|70,PNJ
+257,Zener Voltage,255|256,PNJ
+258,Junction Capacitance,224|231,PNJ
+259,Depletion Capacitance,258|231,PNJ
+260,Diffusion Capacitance,258|239,PNJ
+261,Small-Signal Diode Model,259|260,PNJ
+262,Diode Conductance,261|241,PNJ
+263,Transient Response Diode,239|264,PNJ
+264,Charge Storage in Diode,239|260,PNJ
+265,Reverse Recovery Time,264|195,PNJ
+266,Minority Carrier Storage,264|195,PNJ
+267,Diode Switching Speed,265|266,PNJ
+268,Heterojunction,222,PNJ
+269,Band Alignment Types,268|14,PNJ
+270,Type I Heterojunction,269,PNJ
+271,Type II Heterojunction,269,PNJ
+272,Type III Heterojunction,269,PNJ
+273,Anderson Rule,268|278|279,MIS
+274,Band Discontinuity,273,MIS
+275,Conduction Band Offset,274|15,MIS
+276,Valence Band Offset,274|16,MIS
+277,Graded Heterojunction,268|274,PNJ
+278,Work Function,107|108,MIS
+279,Electron Affinity,278|11,MIS
+280,Schottky-Mott Rule,278|279,MIS
+281,Metal-Semiconductor Junction,278|279|280,MIS
+282,Schottky Barrier,281|280,MIS
+283,Schottky Barrier Height,282|280,MIS
+284,Thermionic Emission,283,MIS
+285,Thermionic Emission Current,284,MIS
+286,Image Force Lowering,283|285,MIS
+287,Barrier Lowering,286,MIS
+288,Ohmic Contact,282,MIS
+289,Tunneling Ohmic Contact,70|288,MIS
+290,Specific Contact Resistance,288|289,MIS
+291,Transfer Length Method,290,MIS
+292,Fermi Level Pinning,108|56|293,MIS
+293,Metal-Induced Gap States,55|281,MIS
+294,Interface Trap Density,55|293,MIS
+295,MOS Capacitor,281|298,MIS
+296,MOS Structure,281,MIS
+297,Metal-Oxide-Semiconductor,296|39|40,MIS
+298,Gate Oxide,296|299,MIS
+299,Silicon Dioxide Properties,37|5,MIS
+300,High-K Dielectrics,299|298,MIS
+301,Accumulation Region MOS,295|234,MIS
+302,Depletion Region MOS,295|224,MIS
+303,Inversion Region MOS,295|302,MIS
+304,Strong Inversion,303,MIS
+305,Weak Inversion,303|304,MIS
+306,Flat-Band Condition,295|278,MIS
+307,Flat-Band Voltage,306|294,MIS
+308,Threshold Voltage,303|307,MIS
+309,Body Effect,308,MIS
+310,Oxide Charge,298|294,MIS
+311,Fixed Oxide Charge,310,MIS
+312,Interface Trapped Charge,310|294,MIS
+313,Mobile Ionic Charge,310,MIS
+314,Oxide Trapped Charge,310,MIS
+315,C-V Characteristic MOS,295|259,MIS
+316,High-Frequency C-V,315,MIS
+317,Low-Frequency C-V,315,MIS
+318,Deep Depletion,302|316,MIS
+319,Gate Oxide Breakdown,298,MIS
+320,Oxide Reliability,319,MIS
+321,Time-Dependent Dielectric Breakdown,320,MIS
+322,Hot Carrier Oxide Degradation,163|321,MIS
+323,Bipolar Junction Transistor,222|126|127,BJT
+324,NPN Transistor,323,BJT
+325,PNP Transistor,323,BJT
+326,BJT Regions of Operation,323,BJT
+327,Active Region BJT,326,BJT
+328,Saturation Region BJT,326,BJT
+329,Cutoff Region BJT,326,BJT
+330,Common-Emitter Configuration,323|327,BJT
+331,Common-Base Configuration,323|327,BJT
+332,Common-Collector Configuration,323|327,BJT
+333,Emitter Injection Efficiency,239|323,BJT
+334,Base Transport Factor,333|195|196,BJT
+335,Current Gain Beta,333|334,BJT
+336,Current Gain Alpha,333|334,BJT
+337,Collector Current,335|336,BJT
+338,Base Current,335|336,BJT
+339,Emitter Current,335|336,BJT
+340,Ebers-Moll Model,339|337|338,BJT
+341,Gummel-Poon Model,340,BJT
+342,Early Effect,324|231,BJT
+343,Base-Width Modulation,342|231,BJT
+344,Early Voltage,342,BJT
+345,Kirk Effect,163|323,BJT
+346,High-Current Effects BJT,345|163,BJT
+347,Base Resistance,323,BJT
+348,Collector Resistance,323,BJT
+349,Emitter Resistance,323,BJT
+350,Transition Frequency ft,335|347|348,BJT
+351,Maximum Oscillation Frequency fmax,350|348,BJT
+352,Heterojunction Bipolar Transistor,323|268,BJT
+353,HBT Band Diagram,352|14,BJT
+354,Emitter-Base Heterojunction,352|268,BJT
+355,JFET Structure,222,FET
+356,JFET Operation,355|234|235,FET
+357,JFET Pinch-Off,356|231,FET
+358,JFET I-V Characteristics,356|357,FET
+359,MESFET Structure,282|355,FET
+360,MESFET Operation,359|357,FET
+361,MOSFET Structure,295|303|304,FET
+362,MOSFET Gate,361|308,FET
+363,MOSFET Source,361,FET
+364,MOSFET Drain,361,FET
+365,MOSFET Substrate,361,FET
+366,N-Channel MOSFET,361|126,FET
+367,P-Channel MOSFET,361|127,FET
+368,Enhancement Mode MOSFET,361|303,FET
+369,Depletion Mode MOSFET,361|302,FET
+370,Triode Region MOSFET,361|374,FET
+371,Linear Region MOSFET,370,FET
+372,Saturation Region MOSFET,361|370|231,FET
+373,Cutoff Region MOSFET,361|308,FET
+374,MOSFET Threshold Voltage,308|362,FET
+375,MOSFET I-V Long Channel,361|374|180,FET
+376,MOSFET Transconductance,375,FET
+377,MOSFET Output Conductance,375,FET
+378,Subthreshold Conduction,303|305,FET
+379,Subthreshold Slope,378,FET
+380,Subthreshold Swing,379,FET
+381,Channel Charge,303|224,FET
+382,Inversion Charge Density,303|381,FET
+383,Gradual Channel Approximation,375|177,FET
+384,Channel-Length Modulation,372|377,FET
+385,Pinch-Off Point,372|231,FET
+386,Short-Channel Effects,231|161|385,FET
+387,DIBL Effect,231|235,FET
+388,Drain-Induced Barrier Lowering,387|231|235,FET
+389,Punch-Through,231|235|250,FET
+390,Velocity Saturation MOSFET,161|375,FET
+391,Carrier Heating MOSFET,163|390,FET
+392,Hot Carrier Injection,163|55|322,FET
+393,Oxide Interface Degradation,392|322,FET
+394,CMOS Technology,366|367,FET
+395,CMOS Inverter,394|375,FET
+396,NMOS Pull-Down,366|375,FET
+397,PMOS Pull-Up,367|375,FET
+398,Complementary Operation,396|397,FET
+399,Static Power CMOS,394|398,FET
+400,Dynamic Power CMOS,394|258|398,FET
+401,FinFET Structure,361,FET
+402,FinFET Operation,401|387|388,FET
+403,Gate-All-Around Transistor,401|402,FET
+404,SOI MOSFET,361,FET
+405,Fully Depleted SOI,404,FET
+406,Partially Depleted SOI,404,FET
+407,Multi-Gate Transistor,401|403,FET
+408,Nanowire Transistor,407,FET
+409,Scaling Laws MOSFET,387|400,FET
+410,Dennard Scaling,409,FET
+411,International Roadmap Devices,410|386,FET
+412,Light-Emitting Diode,12|201|222,OPT
+413,LED Operation Principle,412|416,OPT
+414,LED Materials,412|7|9,OPT
+415,Direct Bandgap LED Requirement,12|412,OPT
+416,LED Efficiency,417|418|419,OPT
+417,Internal Quantum Efficiency,201|202,OPT
+418,External Quantum Efficiency,417,OPT
+419,Light Extraction Efficiency,418,OPT
+420,LED Wavelength Selection,11|12|414,OPT
+421,White LED Technology,412|420,OPT
+422,Phosphor Conversion LED,421|420,OPT
+423,Laser Diode,412|425|434,OPT
+424,Laser Operation Principle,423|425|426,OPT
+425,Population Inversion,217|216,OPT
+426,Optical Gain,425|201,OPT
+427,Threshold Current Density,426|423,OPT
+428,Laser Cavity,423,OPT
+429,Fabry-Perot Cavity,428,OPT
+430,Distributed Bragg Reflector,36|429,OPT
+431,Distributed Feedback Laser,430|423,OPT
+432,Vertical Cavity Surface Emitting Laser,430|423,OPT
+433,VCSEL Structure,432,OPT
+434,Double Heterostructure Laser,268|412,OPT
+435,Quantum Well Laser,479|423,OPT
+436,Semiconductor Optical Amplifier,426|423,OPT
+437,Photodiode Structure,222|224,OPT
+438,PIN Photodiode,437|224,OPT
+439,Photodiode Responsivity,437|440,OPT
+440,Quantum Efficiency Photodiode,437|213,OPT
+441,Photodiode Dark Current,437|203|249,OPT
+442,Photodiode Bandwidth,437|195,OPT
+443,Avalanche Photodiode,251|437|438,OPT
+444,APD Gain,443|254,OPT
+445,APD Noise,444,OPT
+446,Solar Cell Operation,222,OPT
+447,Photovoltaic Effect,446|214,OPT
+448,Solar Cell I-V Curve,446|241,OPT
+449,Short-Circuit Current,448|214,OPT
+450,Open-Circuit Voltage,448|226,OPT
+451,Fill Factor Solar Cell,448|449|450,OPT
+452,Power Conversion Efficiency,451|416,OPT
+453,Shockley-Queisser Limit,12|452,OPT
+454,Single-Junction Solar Cell,446,OPT
+455,Multi-Junction Solar Cell,268|453,OPT
+456,Tandem Solar Cell,455,OPT
+457,Solar Cell Losses,452|458|459,OPT
+458,Recombination Losses Solar Cell,452|197,OPT
+459,Thermalization Losses,452|11,OPT
+460,Charge-Coupled Device,222,OPT
+461,CCD Operation,460|234|239,OPT
+462,CMOS Image Sensor,394|460,OPT
+463,Pixel Architecture,462|438,OPT
+464,Read Noise,463|590,OPT
+465,III-V Semiconductor Compounds,4|26,ADV
+466,GaAs Properties,7|465,ADV
+467,InP Properties,8|465,ADV
+468,InGaAs Properties,465|466|467,ADV
+469,AlGaAs Properties,465|466,ADV
+470,InGaAsP Properties,465|467|468,ADV
+471,II-VI Semiconductor Compounds,4,ADV
+472,Wide-Bandgap Semiconductors,11|9|10,ADV
+473,GaN Material Properties,9|27,ADV
+474,GaN Crystal Growth,473|531,ADV
+475,AlGaN Alloy,473|469,ADV
+476,AlGaN/GaN Heterostructure,475|488|489,ADV
+477,SiC Polytypes,10,ADV
+478,SiC Properties,477,ADV
+479,Quantum Well Structure,268,ADV
+480,Quantum Well Energy Levels,479|67|68,ADV
+481,Quantum Well Wave Functions,479|64|480,ADV
+482,Subband Structure,480|113,ADV
+483,Quantum Wire,479|114,ADV
+484,Quantum Dot,483|115,ADV
+485,Quantum Dot Energy Levels,484|67,ADV
+486,Size Quantization,484|67,ADV
+487,Confinement Energy,486|67,ADV
+488,2D Electron Gas,479,ADV
+489,2DEG Formation,488|303|268,ADV
+490,High Electron Mobility Transistor,489|360,ADV
+491,HEMT Structure,490,ADV
+492,HEMT Operation,491|360|489,ADV
+493,Pseudomorphic HEMT,492|35,ADV
+494,Metamorphic HEMT,493,ADV
+495,Strained Silicon,35,ADV
+496,Strain Effects on Band Structure,495|95,ADV
+497,Biaxial Strain,495|496,ADV
+498,Uniaxial Strain,495|496,ADV
+499,Critical Thickness,35|495,ADV
+500,Pseudomorphic Layers,499|495,ADV
+501,Graphene Properties,1|18,ADV
+502,Graphene Band Structure,501|95,ADV
+503,Graphene Dirac Points,502,ADV
+504,Graphene Mobility,503|156,ADV
+505,Transition Metal Dichalcogenides,42,ADV
+506,Molybdenum Disulfide MoS2,505,ADV
+507,TMD Band Structure,506|95,ADV
+508,2D Materials Overview,18|501|505,ADV
+509,Van der Waals Heterostructures,42|508,ADV
+510,Carbon Nanotube Properties,501,ADV
+511,Carbon Nanotube Band Structure,510|95,ADV
+512,Power Diode Structure,222|250,PWR
+513,Power Diode Ratings,512|250,PWR
+514,Thyristor Structure,323|222,PWR
+515,Thyristor Operation,514|234|235,PWR
+516,Silicon-Controlled Rectifier,515,PWR
+517,IGBT Structure,323|366,PWR
+518,IGBT Operation,517,PWR
+519,Power MOSFET,361|513,PWR
+520,Superjunction MOSFET,519|231,PWR
+521,High-Voltage Device Design,250|519,PWR
+522,Breakdown Engineering,250|521|252,PWR
+523,Punch-Through Voltage,389|231,PWR
+524,Gunn Diode,95,PWR
+525,Gunn Effect,524|162,PWR
+526,Transferred Electron Effect,525|168,PWR
+527,IMPATT Diode,251|252,PWR
+528,Negative Resistance Devices,527|524,PWR
+529,Microwave Device Parasitics,350|351,PWR
+530,Cutoff Frequency High-Frequency,350|376,PWR
+531,Czochralski Crystal Growth,18|19,FAB
+532,Float-Zone Crystal Growth,531,FAB
+533,Crystal Ingot Processing,531|532,FAB
+534,Wafer Preparation,533|29,FAB
+535,Epitaxial Growth,534|18,FAB
+536,Molecular Beam Epitaxy,535,FAB
+537,Metal-Organic CVD,535,FAB
+538,Chemical Vapor Deposition,535,FAB
+539,Thermal Oxidation of Silicon,5,FAB
+540,Deal-Grove Model,539,FAB
+541,Dry Oxidation,539,FAB
+542,Wet Oxidation,539,FAB
+543,Diffusion in Solids,44|45,FAB
+544,Fick First Law,543,FAB
+545,Fick Second Law,543|544,FAB
+546,Diffusion Coefficient Thermal,543|545,FAB
+547,Ion Implantation,46|44,FAB
+548,Ion Range Distribution,547,FAB
+549,Channeling Effect,548|18,FAB
+550,Annealing Post-Implant,547|44,FAB
+551,Photolithography Process,534,FAB
+552,Photoresist,551,FAB
+553,Exposure and Development,551|552,FAB
+554,Mask Alignment,551|553,FAB
+555,Etching Processes,534,FAB
+556,Wet Chemical Etching,555,FAB
+557,Dry Etching RIE,555,FAB
+558,Plasma Etching,557,FAB
+559,Thin Film Deposition,534,FAB
+560,Physical Vapor Deposition,559,FAB
+561,Sputtering,560,FAB
+562,Metallization,281|559|41,FAB
+563,Aluminum Interconnects,562,FAB
+564,Copper Interconnects,562,FAB
+565,Silicide Formation,281|5|562,FAB
+566,Contact Resistance Fabrication,290|562,FAB
+567,Process-Induced Defects,44|544|547,FAB
+568,Contamination Control,534,FAB
+569,Yield Engineering Overview,567|568,FAB
+570,Device Characterization Methods,5,CHAR
+571,I-V Measurement,570,CHAR
+572,C-V Measurement,315|571,CHAR
+573,Hall Measurement,184|571,CHAR
+574,Four-Point Probe,183|571,CHAR
+575,DLTS Technique,203|205|315,CHAR
+576,Optical Characterization,212|213,CHAR
+577,Photoluminescence Spectroscopy,201|576,CHAR
+578,Electroluminescence,412|577,CHAR
+579,Raman Spectroscopy,576,CHAR
+580,Transmission Electron Microscopy,34|50,CHAR
+581,Scanning Electron Microscopy,580,CHAR
+582,Secondary Ion Mass Spectrometry,128|547,CHAR
+583,Auger Electron Spectroscopy,74|208,CHAR
+584,SPICE Compact Models,340|375,CHAR
+585,Level-1 MOSFET Model,375|374,CHAR
+586,BSIM Model,585|387,CHAR
+587,Small-Signal Equivalent Circuit,261|330,CHAR
+588,Large-Signal Device Model,340|584,CHAR
+589,Noise in Semiconductor Devices,590|591|592,CHAR
+590,Thermal Noise,181,CHAR
+591,Shot Noise,197|590,CHAR
+592,Flicker Noise,55|590,CHAR
+593,Noise Figure,589,CHAR
+594,Band-to-Band Tunneling,70|200,CHAR
+595,Esaki Tunnel Diode,594|70,CHAR
+596,Resonant Tunneling Diode,595,CHAR
+597,Double Barrier Structure,596|69,CHAR
+598,Negative Differential Resistance,596|528,CHAR
+599,Ballistic Transport,156|60,CHAR
+600,Quantum Confinement Effects,486|113|114,ADV

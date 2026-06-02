@@ -1,0 +1,7442 @@
+{
+  "metadata": {
+    "title": "Semiconductor Physics: Fundamentals to Advanced Applications",
+    "description": "A comprehensive learning graph for semiconductor physics covering quantum mechanical foundations, crystal structure, band theory, carrier statistics, transport, generation-recombination, p-n junctions, MOS structures, bipolar and field-effect transistors, optoelectronic devices, advanced materials (III-V, quantum structures, 2D materials), power devices, fabrication concepts, and characterization methods.",
+    "creator": "Dan Mccreary",
+    "date": "2026-06-02",
+    "version": "1.0",
+    "format": "Learning Graph JSON v1.0",
+    "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+    "license": "CC BY-NC-SA 4.0 DEED"
+  },
+  "groups": {
+    "FOUND": {
+      "classifierName": "Foundation Concepts",
+      "color": "SteelBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "CRYST": {
+      "classifierName": "Crystal Structure and Defects",
+      "color": "DarkGreen",
+      "font": {
+        "color": "white"
+      }
+    },
+    "QM": {
+      "classifierName": "Quantum Mechanics",
+      "color": "DarkSlateBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "BAND": {
+      "classifierName": "Band Theory",
+      "color": "Indigo",
+      "font": {
+        "color": "white"
+      }
+    },
+    "STAT": {
+      "classifierName": "Carrier Statistics and Equilibrium",
+      "color": "Teal",
+      "font": {
+        "color": "white"
+      }
+    },
+    "TRANS": {
+      "classifierName": "Carrier Transport",
+      "color": "DodgerBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "GREC": {
+      "classifierName": "Generation and Recombination",
+      "color": "DarkGoldenrod",
+      "font": {
+        "color": "white"
+      }
+    },
+    "PNJ": {
+      "classifierName": "P-N Junction and Diodes",
+      "color": "Gold",
+      "font": {
+        "color": "black"
+      }
+    },
+    "MIS": {
+      "classifierName": "Metal-Semiconductor and MOS",
+      "color": "MediumPurple",
+      "font": {
+        "color": "white"
+      }
+    },
+    "BJT": {
+      "classifierName": "Bipolar Junction Transistors",
+      "color": "Crimson",
+      "font": {
+        "color": "white"
+      }
+    },
+    "FET": {
+      "classifierName": "Field-Effect Transistors",
+      "color": "DarkRed",
+      "font": {
+        "color": "white"
+      }
+    },
+    "OPT": {
+      "classifierName": "Optoelectronic Devices",
+      "color": "LimeGreen",
+      "font": {
+        "color": "black"
+      }
+    },
+    "ADV": {
+      "classifierName": "Advanced Materials and Structures",
+      "color": "DarkOrchid",
+      "font": {
+        "color": "white"
+      }
+    },
+    "PWR": {
+      "classifierName": "Power and Microwave Devices",
+      "color": "Tomato",
+      "font": {
+        "color": "white"
+      }
+    },
+    "FAB": {
+      "classifierName": "Fabrication Concepts",
+      "color": "OliveDrab",
+      "font": {
+        "color": "white"
+      }
+    },
+    "CHAR": {
+      "classifierName": "Characterization and Modeling",
+      "color": "DimGray",
+      "font": {
+        "color": "white"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "label": "Semiconductor Definition",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 2,
+      "label": "Conductor vs Insulator vs Semiconductor",
+      "group": "FOUND"
+    },
+    {
+      "id": 3,
+      "label": "Elemental Semiconductors",
+      "group": "FOUND"
+    },
+    {
+      "id": 4,
+      "label": "Compound Semiconductors",
+      "group": "FOUND"
+    },
+    {
+      "id": 5,
+      "label": "Silicon Material Properties",
+      "group": "FOUND"
+    },
+    {
+      "id": 6,
+      "label": "Germanium Material Properties",
+      "group": "FOUND"
+    },
+    {
+      "id": 7,
+      "label": "Gallium Arsenide Properties",
+      "group": "FOUND"
+    },
+    {
+      "id": 8,
+      "label": "Indium Phosphide Properties",
+      "group": "FOUND"
+    },
+    {
+      "id": 9,
+      "label": "Gallium Nitride Properties",
+      "group": "FOUND"
+    },
+    {
+      "id": 10,
+      "label": "Silicon Carbide Properties",
+      "group": "FOUND"
+    },
+    {
+      "id": 11,
+      "label": "Bandgap Energy",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 12,
+      "label": "Direct Bandgap",
+      "group": "BAND"
+    },
+    {
+      "id": 13,
+      "label": "Indirect Bandgap",
+      "group": "BAND"
+    },
+    {
+      "id": 14,
+      "label": "Energy Band Diagram",
+      "group": "BAND"
+    },
+    {
+      "id": 15,
+      "label": "Conduction Band",
+      "group": "BAND"
+    },
+    {
+      "id": 16,
+      "label": "Valence Band",
+      "group": "BAND"
+    },
+    {
+      "id": 17,
+      "label": "Forbidden Energy Gap",
+      "group": "BAND"
+    },
+    {
+      "id": 18,
+      "label": "Crystal Lattice",
+      "group": "CRYST",
+      "shape": "box"
+    },
+    {
+      "id": 19,
+      "label": "Unit Cell",
+      "group": "CRYST"
+    },
+    {
+      "id": 20,
+      "label": "Primitive Cell",
+      "group": "CRYST"
+    },
+    {
+      "id": 21,
+      "label": "Basis Vectors",
+      "group": "CRYST"
+    },
+    {
+      "id": 22,
+      "label": "Simple Cubic Structure",
+      "group": "CRYST"
+    },
+    {
+      "id": 23,
+      "label": "Face-Centered Cubic Structure",
+      "group": "CRYST"
+    },
+    {
+      "id": 24,
+      "label": "Body-Centered Cubic Structure",
+      "group": "CRYST"
+    },
+    {
+      "id": 25,
+      "label": "Diamond Cubic Structure",
+      "group": "CRYST"
+    },
+    {
+      "id": 26,
+      "label": "Zincblende Structure",
+      "group": "CRYST"
+    },
+    {
+      "id": 27,
+      "label": "Wurtzite Structure",
+      "group": "CRYST"
+    },
+    {
+      "id": 28,
+      "label": "Miller Indices",
+      "group": "CRYST"
+    },
+    {
+      "id": 29,
+      "label": "Crystal Planes",
+      "group": "CRYST"
+    },
+    {
+      "id": 30,
+      "label": "Crystal Directions",
+      "group": "CRYST"
+    },
+    {
+      "id": 31,
+      "label": "Reciprocal Lattice",
+      "group": "CRYST"
+    },
+    {
+      "id": 32,
+      "label": "First Brillouin Zone",
+      "group": "CRYST"
+    },
+    {
+      "id": 33,
+      "label": "Wigner-Seitz Cell",
+      "group": "CRYST"
+    },
+    {
+      "id": 34,
+      "label": "Lattice Constant",
+      "group": "CRYST"
+    },
+    {
+      "id": 35,
+      "label": "Lattice Mismatch",
+      "group": "CRYST"
+    },
+    {
+      "id": 36,
+      "label": "Bragg Diffraction Law",
+      "group": "CRYST"
+    },
+    {
+      "id": 37,
+      "label": "X-Ray Diffraction",
+      "group": "CRYST"
+    },
+    {
+      "id": 38,
+      "label": "Electron Diffraction",
+      "group": "CRYST"
+    },
+    {
+      "id": 39,
+      "label": "Covalent Bonding in Semiconductors",
+      "group": "CRYST",
+      "shape": "box"
+    },
+    {
+      "id": 40,
+      "label": "Ionic Bonding",
+      "group": "CRYST",
+      "shape": "box"
+    },
+    {
+      "id": 41,
+      "label": "Metallic Bonding",
+      "group": "CRYST",
+      "shape": "box"
+    },
+    {
+      "id": 42,
+      "label": "Van der Waals Forces",
+      "group": "CRYST",
+      "shape": "box"
+    },
+    {
+      "id": 43,
+      "label": "Hybridization SP3",
+      "group": "CRYST"
+    },
+    {
+      "id": 44,
+      "label": "Point Defects",
+      "group": "CRYST"
+    },
+    {
+      "id": 45,
+      "label": "Vacancies",
+      "group": "CRYST"
+    },
+    {
+      "id": 46,
+      "label": "Interstitials",
+      "group": "CRYST"
+    },
+    {
+      "id": 47,
+      "label": "Substitutional Impurities",
+      "group": "CRYST"
+    },
+    {
+      "id": 48,
+      "label": "Frenkel Defects",
+      "group": "CRYST"
+    },
+    {
+      "id": 49,
+      "label": "Schottky Defects",
+      "group": "CRYST"
+    },
+    {
+      "id": 50,
+      "label": "Dislocations",
+      "group": "CRYST"
+    },
+    {
+      "id": 51,
+      "label": "Edge Dislocations",
+      "group": "CRYST"
+    },
+    {
+      "id": 52,
+      "label": "Screw Dislocations",
+      "group": "CRYST"
+    },
+    {
+      "id": 53,
+      "label": "Stacking Faults",
+      "group": "CRYST"
+    },
+    {
+      "id": 54,
+      "label": "Grain Boundaries",
+      "group": "CRYST"
+    },
+    {
+      "id": 55,
+      "label": "Surface States",
+      "group": "CRYST"
+    },
+    {
+      "id": 56,
+      "label": "Interface States",
+      "group": "CRYST"
+    },
+    {
+      "id": 57,
+      "label": "Dangling Bonds",
+      "group": "CRYST"
+    },
+    {
+      "id": 58,
+      "label": "Wave-Particle Duality",
+      "group": "QM",
+      "shape": "box"
+    },
+    {
+      "id": 59,
+      "label": "de Broglie Wavelength",
+      "group": "QM"
+    },
+    {
+      "id": 60,
+      "label": "Heisenberg Uncertainty Principle",
+      "group": "QM"
+    },
+    {
+      "id": 61,
+      "label": "Schrodinger Equation",
+      "group": "QM"
+    },
+    {
+      "id": 62,
+      "label": "Time-Dependent Schrodinger Equation",
+      "group": "QM"
+    },
+    {
+      "id": 63,
+      "label": "Time-Independent Schrodinger Equation",
+      "group": "QM"
+    },
+    {
+      "id": 64,
+      "label": "Wave Function",
+      "group": "QM"
+    },
+    {
+      "id": 65,
+      "label": "Probability Density",
+      "group": "QM"
+    },
+    {
+      "id": 66,
+      "label": "Quantum Normalization",
+      "group": "QM"
+    },
+    {
+      "id": 67,
+      "label": "Particle in a Box",
+      "group": "QM"
+    },
+    {
+      "id": 68,
+      "label": "Infinite Potential Well",
+      "group": "QM"
+    },
+    {
+      "id": 69,
+      "label": "Finite Potential Well",
+      "group": "QM"
+    },
+    {
+      "id": 70,
+      "label": "Quantum Tunneling",
+      "group": "QM"
+    },
+    {
+      "id": 71,
+      "label": "Tunnel Probability",
+      "group": "QM"
+    },
+    {
+      "id": 72,
+      "label": "WKB Approximation",
+      "group": "QM"
+    },
+    {
+      "id": 73,
+      "label": "Hydrogen Atom Model",
+      "group": "QM"
+    },
+    {
+      "id": 74,
+      "label": "Atomic Orbitals",
+      "group": "QM"
+    },
+    {
+      "id": 75,
+      "label": "Quantum Numbers",
+      "group": "QM"
+    },
+    {
+      "id": 76,
+      "label": "Principal Quantum Number",
+      "group": "QM"
+    },
+    {
+      "id": 77,
+      "label": "Angular Momentum Quantum Number",
+      "group": "QM"
+    },
+    {
+      "id": 78,
+      "label": "Magnetic Quantum Number",
+      "group": "QM"
+    },
+    {
+      "id": 79,
+      "label": "Spin Quantum Number",
+      "group": "QM",
+      "shape": "box"
+    },
+    {
+      "id": 80,
+      "label": "Pauli Exclusion Principle",
+      "group": "QM"
+    },
+    {
+      "id": 81,
+      "label": "Electron Spin",
+      "group": "QM"
+    },
+    {
+      "id": 82,
+      "label": "Spin-Orbit Coupling",
+      "group": "QM"
+    },
+    {
+      "id": 83,
+      "label": "Perturbation Theory",
+      "group": "QM"
+    },
+    {
+      "id": 84,
+      "label": "Variational Method",
+      "group": "QM"
+    },
+    {
+      "id": 85,
+      "label": "Kronig-Penney Model",
+      "group": "QM"
+    },
+    {
+      "id": 86,
+      "label": "Bloch Theorem",
+      "group": "QM"
+    },
+    {
+      "id": 87,
+      "label": "Bloch Wave Functions",
+      "group": "QM"
+    },
+    {
+      "id": 88,
+      "label": "Crystal Momentum",
+      "group": "BAND"
+    },
+    {
+      "id": 89,
+      "label": "Periodic Potential",
+      "group": "QM"
+    },
+    {
+      "id": 90,
+      "label": "Band Gap Origin",
+      "group": "BAND"
+    },
+    {
+      "id": 91,
+      "label": "Free Electron Model",
+      "group": "BAND",
+      "shape": "box"
+    },
+    {
+      "id": 92,
+      "label": "Nearly-Free Electron Model",
+      "group": "BAND"
+    },
+    {
+      "id": 93,
+      "label": "Tight-Binding Model",
+      "group": "BAND"
+    },
+    {
+      "id": 94,
+      "label": "Linear Combination of Atomic Orbitals",
+      "group": "BAND"
+    },
+    {
+      "id": 95,
+      "label": "E-k Dispersion Relation",
+      "group": "BAND"
+    },
+    {
+      "id": 96,
+      "label": "Effective Mass Approximation",
+      "group": "BAND"
+    },
+    {
+      "id": 97,
+      "label": "Longitudinal Effective Mass",
+      "group": "BAND"
+    },
+    {
+      "id": 98,
+      "label": "Transverse Effective Mass",
+      "group": "BAND"
+    },
+    {
+      "id": 99,
+      "label": "Density-of-States Effective Mass",
+      "group": "BAND"
+    },
+    {
+      "id": 100,
+      "label": "Conductivity Effective Mass",
+      "group": "BAND"
+    },
+    {
+      "id": 101,
+      "label": "Hole Concept",
+      "group": "BAND"
+    },
+    {
+      "id": 102,
+      "label": "Hole Effective Mass",
+      "group": "BAND"
+    },
+    {
+      "id": 103,
+      "label": "Heavy Holes",
+      "group": "BAND"
+    },
+    {
+      "id": 104,
+      "label": "Light Holes",
+      "group": "BAND"
+    },
+    {
+      "id": 105,
+      "label": "Split-Off Band",
+      "group": "BAND"
+    },
+    {
+      "id": 106,
+      "label": "Spin-Orbit Splitting",
+      "group": "BAND"
+    },
+    {
+      "id": 107,
+      "label": "Fermi Energy",
+      "group": "STAT",
+      "shape": "box"
+    },
+    {
+      "id": 108,
+      "label": "Fermi Level",
+      "group": "STAT"
+    },
+    {
+      "id": 109,
+      "label": "Fermi-Dirac Distribution",
+      "group": "STAT"
+    },
+    {
+      "id": 110,
+      "label": "Maxwell-Boltzmann Distribution",
+      "group": "STAT",
+      "shape": "box"
+    },
+    {
+      "id": 111,
+      "label": "Bose-Einstein Distribution",
+      "group": "STAT"
+    },
+    {
+      "id": 112,
+      "label": "Density of States 3D",
+      "group": "BAND"
+    },
+    {
+      "id": 113,
+      "label": "Density of States 2D",
+      "group": "BAND"
+    },
+    {
+      "id": 114,
+      "label": "Density of States 1D",
+      "group": "BAND"
+    },
+    {
+      "id": 115,
+      "label": "Density of States 0D",
+      "group": "BAND"
+    },
+    {
+      "id": 116,
+      "label": "Effective Density of States",
+      "group": "STAT"
+    },
+    {
+      "id": 117,
+      "label": "Conduction Band Effective DOS",
+      "group": "STAT"
+    },
+    {
+      "id": 118,
+      "label": "Valence Band Effective DOS",
+      "group": "STAT"
+    },
+    {
+      "id": 119,
+      "label": "Intrinsic Carrier Concentration",
+      "group": "STAT"
+    },
+    {
+      "id": 120,
+      "label": "Intrinsic Fermi Level",
+      "group": "STAT"
+    },
+    {
+      "id": 121,
+      "label": "Temperature Dependence ni",
+      "group": "STAT"
+    },
+    {
+      "id": 122,
+      "label": "Law of Mass Action",
+      "group": "STAT"
+    },
+    {
+      "id": 123,
+      "label": "Electron Concentration Formula",
+      "group": "STAT"
+    },
+    {
+      "id": 124,
+      "label": "Hole Concentration Formula",
+      "group": "STAT"
+    },
+    {
+      "id": 125,
+      "label": "Charge Neutrality Condition",
+      "group": "STAT"
+    },
+    {
+      "id": 126,
+      "label": "N-Type Doping",
+      "group": "STAT"
+    },
+    {
+      "id": 127,
+      "label": "P-Type Doping",
+      "group": "STAT"
+    },
+    {
+      "id": 128,
+      "label": "Donor Atoms",
+      "group": "STAT"
+    },
+    {
+      "id": 129,
+      "label": "Acceptor Atoms",
+      "group": "STAT"
+    },
+    {
+      "id": 130,
+      "label": "Group V Dopants in Silicon",
+      "group": "STAT"
+    },
+    {
+      "id": 131,
+      "label": "Group III Dopants in Silicon",
+      "group": "STAT"
+    },
+    {
+      "id": 132,
+      "label": "Phosphorus as Donor",
+      "group": "STAT"
+    },
+    {
+      "id": 133,
+      "label": "Arsenic as Donor",
+      "group": "STAT"
+    },
+    {
+      "id": 134,
+      "label": "Antimony as Donor",
+      "group": "STAT"
+    },
+    {
+      "id": 135,
+      "label": "Boron as Acceptor",
+      "group": "STAT"
+    },
+    {
+      "id": 136,
+      "label": "Gallium as Acceptor",
+      "group": "STAT"
+    },
+    {
+      "id": 137,
+      "label": "Aluminum as Acceptor",
+      "group": "STAT"
+    },
+    {
+      "id": 138,
+      "label": "Indium as Acceptor",
+      "group": "STAT"
+    },
+    {
+      "id": 139,
+      "label": "Ionization Energy",
+      "group": "STAT"
+    },
+    {
+      "id": 140,
+      "label": "Complete Ionization",
+      "group": "STAT"
+    },
+    {
+      "id": 141,
+      "label": "Freeze-Out Regime",
+      "group": "STAT"
+    },
+    {
+      "id": 142,
+      "label": "Extrinsic Regime",
+      "group": "STAT"
+    },
+    {
+      "id": 143,
+      "label": "Intrinsic Regime Temperature",
+      "group": "STAT"
+    },
+    {
+      "id": 144,
+      "label": "Majority Carriers",
+      "group": "STAT"
+    },
+    {
+      "id": 145,
+      "label": "Minority Carriers",
+      "group": "STAT"
+    },
+    {
+      "id": 146,
+      "label": "Extrinsic Carrier Concentration",
+      "group": "STAT"
+    },
+    {
+      "id": 147,
+      "label": "Degenerate Semiconductor",
+      "group": "STAT"
+    },
+    {
+      "id": 148,
+      "label": "Non-Degenerate Semiconductor",
+      "group": "STAT"
+    },
+    {
+      "id": 149,
+      "label": "Compensation Doping",
+      "group": "STAT"
+    },
+    {
+      "id": 150,
+      "label": "Net Doping Concentration",
+      "group": "STAT"
+    },
+    {
+      "id": 151,
+      "label": "Fermi Level in N-Type",
+      "group": "STAT"
+    },
+    {
+      "id": 152,
+      "label": "Fermi Level in P-Type",
+      "group": "STAT"
+    },
+    {
+      "id": 153,
+      "label": "Temperature Dependence of Fermi Level",
+      "group": "STAT"
+    },
+    {
+      "id": 154,
+      "label": "Drift Current",
+      "group": "TRANS"
+    },
+    {
+      "id": 155,
+      "label": "Drift Velocity",
+      "group": "TRANS"
+    },
+    {
+      "id": 156,
+      "label": "Carrier Mobility",
+      "group": "TRANS"
+    },
+    {
+      "id": 157,
+      "label": "Electron Mobility",
+      "group": "TRANS"
+    },
+    {
+      "id": 158,
+      "label": "Hole Mobility",
+      "group": "TRANS"
+    },
+    {
+      "id": 159,
+      "label": "Low-Field Mobility",
+      "group": "TRANS"
+    },
+    {
+      "id": 160,
+      "label": "High-Field Mobility",
+      "group": "TRANS"
+    },
+    {
+      "id": 161,
+      "label": "Velocity Saturation",
+      "group": "TRANS"
+    },
+    {
+      "id": 162,
+      "label": "Saturation Velocity",
+      "group": "TRANS"
+    },
+    {
+      "id": 163,
+      "label": "Hot Carriers",
+      "group": "TRANS"
+    },
+    {
+      "id": 164,
+      "label": "Lattice Scattering",
+      "group": "TRANS"
+    },
+    {
+      "id": 165,
+      "label": "Phonon Scattering",
+      "group": "TRANS"
+    },
+    {
+      "id": 166,
+      "label": "Acoustic Phonon Scattering",
+      "group": "TRANS"
+    },
+    {
+      "id": 167,
+      "label": "Optical Phonon Scattering",
+      "group": "TRANS"
+    },
+    {
+      "id": 168,
+      "label": "Intervalley Scattering",
+      "group": "TRANS"
+    },
+    {
+      "id": 169,
+      "label": "Ionized Impurity Scattering",
+      "group": "TRANS"
+    },
+    {
+      "id": 170,
+      "label": "Neutral Impurity Scattering",
+      "group": "TRANS"
+    },
+    {
+      "id": 171,
+      "label": "Surface Roughness Scattering",
+      "group": "TRANS"
+    },
+    {
+      "id": 172,
+      "label": "Alloy Scattering",
+      "group": "TRANS"
+    },
+    {
+      "id": 173,
+      "label": "Matthiessen Rule",
+      "group": "TRANS"
+    },
+    {
+      "id": 174,
+      "label": "Mobility Temperature Dependence",
+      "group": "TRANS"
+    },
+    {
+      "id": 175,
+      "label": "Mobility Doping Dependence",
+      "group": "TRANS"
+    },
+    {
+      "id": 176,
+      "label": "Diffusion Current",
+      "group": "TRANS"
+    },
+    {
+      "id": 177,
+      "label": "Diffusion Coefficient",
+      "group": "TRANS"
+    },
+    {
+      "id": 178,
+      "label": "Einstein Relation",
+      "group": "TRANS"
+    },
+    {
+      "id": 179,
+      "label": "Total Current Density",
+      "group": "TRANS"
+    },
+    {
+      "id": 180,
+      "label": "Drift-Diffusion Model",
+      "group": "TRANS"
+    },
+    {
+      "id": 181,
+      "label": "Resistivity",
+      "group": "TRANS"
+    },
+    {
+      "id": 182,
+      "label": "Conductivity",
+      "group": "TRANS"
+    },
+    {
+      "id": 183,
+      "label": "Sheet Resistance",
+      "group": "TRANS"
+    },
+    {
+      "id": 184,
+      "label": "Hall Effect",
+      "group": "TRANS"
+    },
+    {
+      "id": 185,
+      "label": "Hall Coefficient",
+      "group": "TRANS"
+    },
+    {
+      "id": 186,
+      "label": "Hall Voltage",
+      "group": "TRANS"
+    },
+    {
+      "id": 187,
+      "label": "Hall Mobility",
+      "group": "TRANS"
+    },
+    {
+      "id": 188,
+      "label": "Van der Pauw Method",
+      "group": "TRANS"
+    },
+    {
+      "id": 189,
+      "label": "Magnetoresistance",
+      "group": "TRANS"
+    },
+    {
+      "id": 190,
+      "label": "Piezoelectric Effect",
+      "group": "TRANS"
+    },
+    {
+      "id": 191,
+      "label": "Piezoresistance Effect",
+      "group": "TRANS"
+    },
+    {
+      "id": 192,
+      "label": "Continuity Equation",
+      "group": "TRANS"
+    },
+    {
+      "id": 193,
+      "label": "Ambipolar Transport",
+      "group": "TRANS"
+    },
+    {
+      "id": 194,
+      "label": "Ambipolar Diffusion Coefficient",
+      "group": "TRANS"
+    },
+    {
+      "id": 195,
+      "label": "Minority Carrier Lifetime",
+      "group": "GREC"
+    },
+    {
+      "id": 196,
+      "label": "Minority Carrier Diffusion Length",
+      "group": "GREC"
+    },
+    {
+      "id": 197,
+      "label": "Recombination Rate",
+      "group": "GREC"
+    },
+    {
+      "id": 198,
+      "label": "Generation Rate",
+      "group": "GREC"
+    },
+    {
+      "id": 199,
+      "label": "Direct Recombination",
+      "group": "GREC"
+    },
+    {
+      "id": 200,
+      "label": "Band-to-Band Recombination",
+      "group": "GREC"
+    },
+    {
+      "id": 201,
+      "label": "Radiative Recombination",
+      "group": "GREC"
+    },
+    {
+      "id": 202,
+      "label": "Radiative Recombination Coefficient",
+      "group": "GREC"
+    },
+    {
+      "id": 203,
+      "label": "Shockley-Read-Hall Recombination",
+      "group": "GREC"
+    },
+    {
+      "id": 204,
+      "label": "Trap-Assisted Recombination",
+      "group": "GREC"
+    },
+    {
+      "id": 205,
+      "label": "Trap Density",
+      "group": "GREC"
+    },
+    {
+      "id": 206,
+      "label": "Trap Energy Level",
+      "group": "GREC"
+    },
+    {
+      "id": 207,
+      "label": "Capture Cross Section",
+      "group": "GREC"
+    },
+    {
+      "id": 208,
+      "label": "Auger Recombination",
+      "group": "GREC"
+    },
+    {
+      "id": 209,
+      "label": "Auger Coefficient",
+      "group": "GREC"
+    },
+    {
+      "id": 210,
+      "label": "Surface Recombination",
+      "group": "GREC"
+    },
+    {
+      "id": 211,
+      "label": "Surface Recombination Velocity",
+      "group": "GREC"
+    },
+    {
+      "id": 212,
+      "label": "Optical Absorption",
+      "group": "GREC"
+    },
+    {
+      "id": 213,
+      "label": "Absorption Coefficient",
+      "group": "GREC"
+    },
+    {
+      "id": 214,
+      "label": "Optical Generation Rate",
+      "group": "GREC"
+    },
+    {
+      "id": 215,
+      "label": "Photoconductivity",
+      "group": "GREC"
+    },
+    {
+      "id": 216,
+      "label": "Quasi-Fermi Levels",
+      "group": "GREC"
+    },
+    {
+      "id": 217,
+      "label": "Quasi-Fermi Level Splitting",
+      "group": "GREC"
+    },
+    {
+      "id": 218,
+      "label": "Low-Level Injection",
+      "group": "GREC"
+    },
+    {
+      "id": 219,
+      "label": "High-Level Injection",
+      "group": "GREC"
+    },
+    {
+      "id": 220,
+      "label": "Injection Level",
+      "group": "GREC"
+    },
+    {
+      "id": 221,
+      "label": "Excess Carriers",
+      "group": "GREC"
+    },
+    {
+      "id": 222,
+      "label": "P-N Junction",
+      "group": "PNJ"
+    },
+    {
+      "id": 223,
+      "label": "Junction Formation",
+      "group": "PNJ"
+    },
+    {
+      "id": 224,
+      "label": "Depletion Region",
+      "group": "PNJ"
+    },
+    {
+      "id": 225,
+      "label": "Depletion Approximation",
+      "group": "PNJ"
+    },
+    {
+      "id": 226,
+      "label": "Built-In Potential",
+      "group": "PNJ"
+    },
+    {
+      "id": 227,
+      "label": "Contact Potential",
+      "group": "PNJ"
+    },
+    {
+      "id": 228,
+      "label": "Electric Field in Depletion Region",
+      "group": "PNJ"
+    },
+    {
+      "id": 229,
+      "label": "Potential Distribution in Junction",
+      "group": "PNJ"
+    },
+    {
+      "id": 230,
+      "label": "Charge Distribution in Junction",
+      "group": "PNJ"
+    },
+    {
+      "id": 231,
+      "label": "Depletion Width",
+      "group": "PNJ"
+    },
+    {
+      "id": 232,
+      "label": "One-Sided Abrupt Junction",
+      "group": "PNJ"
+    },
+    {
+      "id": 233,
+      "label": "Linearly Graded Junction",
+      "group": "PNJ"
+    },
+    {
+      "id": 234,
+      "label": "Forward Bias",
+      "group": "PNJ"
+    },
+    {
+      "id": 235,
+      "label": "Reverse Bias",
+      "group": "PNJ"
+    },
+    {
+      "id": 236,
+      "label": "Zero Bias Equilibrium",
+      "group": "PNJ"
+    },
+    {
+      "id": 237,
+      "label": "Band Diagram Forward Bias",
+      "group": "PNJ"
+    },
+    {
+      "id": 238,
+      "label": "Band Diagram Reverse Bias",
+      "group": "PNJ"
+    },
+    {
+      "id": 239,
+      "label": "Minority Carrier Injection",
+      "group": "PNJ"
+    },
+    {
+      "id": 240,
+      "label": "Ideal Diode Equation",
+      "group": "PNJ"
+    },
+    {
+      "id": 241,
+      "label": "Shockley Equation",
+      "group": "PNJ"
+    },
+    {
+      "id": 242,
+      "label": "Diode Saturation Current",
+      "group": "PNJ"
+    },
+    {
+      "id": 243,
+      "label": "Diode Ideality Factor",
+      "group": "PNJ"
+    },
+    {
+      "id": 244,
+      "label": "Generation-Recombination Current",
+      "group": "PNJ"
+    },
+    {
+      "id": 245,
+      "label": "Diffusion Current in Diode",
+      "group": "PNJ"
+    },
+    {
+      "id": 246,
+      "label": "Tunneling Current in Diode",
+      "group": "PNJ"
+    },
+    {
+      "id": 247,
+      "label": "Ohmic Region Diode",
+      "group": "PNJ"
+    },
+    {
+      "id": 248,
+      "label": "Forward Voltage Drop",
+      "group": "PNJ"
+    },
+    {
+      "id": 249,
+      "label": "Reverse Saturation Current",
+      "group": "PNJ"
+    },
+    {
+      "id": 250,
+      "label": "Reverse Breakdown",
+      "group": "PNJ"
+    },
+    {
+      "id": 251,
+      "label": "Avalanche Breakdown",
+      "group": "PNJ"
+    },
+    {
+      "id": 252,
+      "label": "Impact Ionization",
+      "group": "PNJ"
+    },
+    {
+      "id": 253,
+      "label": "Ionization Coefficients",
+      "group": "PNJ"
+    },
+    {
+      "id": 254,
+      "label": "Multiplication Factor",
+      "group": "PNJ"
+    },
+    {
+      "id": 255,
+      "label": "Zener Breakdown",
+      "group": "PNJ"
+    },
+    {
+      "id": 256,
+      "label": "Zener Effect",
+      "group": "PNJ"
+    },
+    {
+      "id": 257,
+      "label": "Zener Voltage",
+      "group": "PNJ"
+    },
+    {
+      "id": 258,
+      "label": "Junction Capacitance",
+      "group": "PNJ"
+    },
+    {
+      "id": 259,
+      "label": "Depletion Capacitance",
+      "group": "PNJ"
+    },
+    {
+      "id": 260,
+      "label": "Diffusion Capacitance",
+      "group": "PNJ"
+    },
+    {
+      "id": 261,
+      "label": "Small-Signal Diode Model",
+      "group": "PNJ"
+    },
+    {
+      "id": 262,
+      "label": "Diode Conductance",
+      "group": "PNJ"
+    },
+    {
+      "id": 263,
+      "label": "Transient Response Diode",
+      "group": "PNJ"
+    },
+    {
+      "id": 264,
+      "label": "Charge Storage in Diode",
+      "group": "PNJ"
+    },
+    {
+      "id": 265,
+      "label": "Reverse Recovery Time",
+      "group": "PNJ"
+    },
+    {
+      "id": 266,
+      "label": "Minority Carrier Storage",
+      "group": "PNJ"
+    },
+    {
+      "id": 267,
+      "label": "Diode Switching Speed",
+      "group": "PNJ"
+    },
+    {
+      "id": 268,
+      "label": "Heterojunction",
+      "group": "PNJ"
+    },
+    {
+      "id": 269,
+      "label": "Band Alignment Types",
+      "group": "PNJ"
+    },
+    {
+      "id": 270,
+      "label": "Type I Heterojunction",
+      "group": "PNJ"
+    },
+    {
+      "id": 271,
+      "label": "Type II Heterojunction",
+      "group": "PNJ"
+    },
+    {
+      "id": 272,
+      "label": "Type III Heterojunction",
+      "group": "PNJ"
+    },
+    {
+      "id": 273,
+      "label": "Anderson Rule",
+      "group": "MIS"
+    },
+    {
+      "id": 274,
+      "label": "Band Discontinuity",
+      "group": "MIS"
+    },
+    {
+      "id": 275,
+      "label": "Conduction Band Offset",
+      "group": "MIS"
+    },
+    {
+      "id": 276,
+      "label": "Valence Band Offset",
+      "group": "MIS"
+    },
+    {
+      "id": 277,
+      "label": "Graded Heterojunction",
+      "group": "PNJ"
+    },
+    {
+      "id": 278,
+      "label": "Work Function",
+      "group": "MIS"
+    },
+    {
+      "id": 279,
+      "label": "Electron Affinity",
+      "group": "MIS"
+    },
+    {
+      "id": 280,
+      "label": "Schottky-Mott Rule",
+      "group": "MIS"
+    },
+    {
+      "id": 281,
+      "label": "Metal-Semiconductor Junction",
+      "group": "MIS"
+    },
+    {
+      "id": 282,
+      "label": "Schottky Barrier",
+      "group": "MIS"
+    },
+    {
+      "id": 283,
+      "label": "Schottky Barrier Height",
+      "group": "MIS"
+    },
+    {
+      "id": 284,
+      "label": "Thermionic Emission",
+      "group": "MIS"
+    },
+    {
+      "id": 285,
+      "label": "Thermionic Emission Current",
+      "group": "MIS"
+    },
+    {
+      "id": 286,
+      "label": "Image Force Lowering",
+      "group": "MIS"
+    },
+    {
+      "id": 287,
+      "label": "Barrier Lowering",
+      "group": "MIS"
+    },
+    {
+      "id": 288,
+      "label": "Ohmic Contact",
+      "group": "MIS"
+    },
+    {
+      "id": 289,
+      "label": "Tunneling Ohmic Contact",
+      "group": "MIS"
+    },
+    {
+      "id": 290,
+      "label": "Specific Contact Resistance",
+      "group": "MIS"
+    },
+    {
+      "id": 291,
+      "label": "Transfer Length Method",
+      "group": "MIS"
+    },
+    {
+      "id": 292,
+      "label": "Fermi Level Pinning",
+      "group": "MIS"
+    },
+    {
+      "id": 293,
+      "label": "Metal-Induced Gap States",
+      "group": "MIS"
+    },
+    {
+      "id": 294,
+      "label": "Interface Trap Density",
+      "group": "MIS"
+    },
+    {
+      "id": 295,
+      "label": "MOS Capacitor",
+      "group": "MIS"
+    },
+    {
+      "id": 296,
+      "label": "MOS Structure",
+      "group": "MIS"
+    },
+    {
+      "id": 297,
+      "label": "Metal-Oxide-Semiconductor",
+      "group": "MIS"
+    },
+    {
+      "id": 298,
+      "label": "Gate Oxide",
+      "group": "MIS"
+    },
+    {
+      "id": 299,
+      "label": "Silicon Dioxide Properties",
+      "group": "MIS"
+    },
+    {
+      "id": 300,
+      "label": "High-K Dielectrics",
+      "group": "MIS"
+    },
+    {
+      "id": 301,
+      "label": "Accumulation Region MOS",
+      "group": "MIS"
+    },
+    {
+      "id": 302,
+      "label": "Depletion Region MOS",
+      "group": "MIS"
+    },
+    {
+      "id": 303,
+      "label": "Inversion Region MOS",
+      "group": "MIS"
+    },
+    {
+      "id": 304,
+      "label": "Strong Inversion",
+      "group": "MIS"
+    },
+    {
+      "id": 305,
+      "label": "Weak Inversion",
+      "group": "MIS"
+    },
+    {
+      "id": 306,
+      "label": "Flat-Band Condition",
+      "group": "MIS"
+    },
+    {
+      "id": 307,
+      "label": "Flat-Band Voltage",
+      "group": "MIS"
+    },
+    {
+      "id": 308,
+      "label": "Threshold Voltage",
+      "group": "MIS"
+    },
+    {
+      "id": 309,
+      "label": "Body Effect",
+      "group": "MIS"
+    },
+    {
+      "id": 310,
+      "label": "Oxide Charge",
+      "group": "MIS"
+    },
+    {
+      "id": 311,
+      "label": "Fixed Oxide Charge",
+      "group": "MIS"
+    },
+    {
+      "id": 312,
+      "label": "Interface Trapped Charge",
+      "group": "MIS"
+    },
+    {
+      "id": 313,
+      "label": "Mobile Ionic Charge",
+      "group": "MIS"
+    },
+    {
+      "id": 314,
+      "label": "Oxide Trapped Charge",
+      "group": "MIS"
+    },
+    {
+      "id": 315,
+      "label": "C-V Characteristic MOS",
+      "group": "MIS"
+    },
+    {
+      "id": 316,
+      "label": "High-Frequency C-V",
+      "group": "MIS"
+    },
+    {
+      "id": 317,
+      "label": "Low-Frequency C-V",
+      "group": "MIS"
+    },
+    {
+      "id": 318,
+      "label": "Deep Depletion",
+      "group": "MIS"
+    },
+    {
+      "id": 319,
+      "label": "Gate Oxide Breakdown",
+      "group": "MIS"
+    },
+    {
+      "id": 320,
+      "label": "Oxide Reliability",
+      "group": "MIS"
+    },
+    {
+      "id": 321,
+      "label": "Time-Dependent Dielectric Breakdown",
+      "group": "MIS"
+    },
+    {
+      "id": 322,
+      "label": "Hot Carrier Oxide Degradation",
+      "group": "MIS"
+    },
+    {
+      "id": 323,
+      "label": "Bipolar Junction Transistor",
+      "group": "BJT"
+    },
+    {
+      "id": 324,
+      "label": "NPN Transistor",
+      "group": "BJT"
+    },
+    {
+      "id": 325,
+      "label": "PNP Transistor",
+      "group": "BJT"
+    },
+    {
+      "id": 326,
+      "label": "BJT Regions of Operation",
+      "group": "BJT"
+    },
+    {
+      "id": 327,
+      "label": "Active Region BJT",
+      "group": "BJT"
+    },
+    {
+      "id": 328,
+      "label": "Saturation Region BJT",
+      "group": "BJT"
+    },
+    {
+      "id": 329,
+      "label": "Cutoff Region BJT",
+      "group": "BJT"
+    },
+    {
+      "id": 330,
+      "label": "Common-Emitter Configuration",
+      "group": "BJT"
+    },
+    {
+      "id": 331,
+      "label": "Common-Base Configuration",
+      "group": "BJT"
+    },
+    {
+      "id": 332,
+      "label": "Common-Collector Configuration",
+      "group": "BJT"
+    },
+    {
+      "id": 333,
+      "label": "Emitter Injection Efficiency",
+      "group": "BJT"
+    },
+    {
+      "id": 334,
+      "label": "Base Transport Factor",
+      "group": "BJT"
+    },
+    {
+      "id": 335,
+      "label": "Current Gain Beta",
+      "group": "BJT"
+    },
+    {
+      "id": 336,
+      "label": "Current Gain Alpha",
+      "group": "BJT"
+    },
+    {
+      "id": 337,
+      "label": "Collector Current",
+      "group": "BJT"
+    },
+    {
+      "id": 338,
+      "label": "Base Current",
+      "group": "BJT"
+    },
+    {
+      "id": 339,
+      "label": "Emitter Current",
+      "group": "BJT"
+    },
+    {
+      "id": 340,
+      "label": "Ebers-Moll Model",
+      "group": "BJT"
+    },
+    {
+      "id": 341,
+      "label": "Gummel-Poon Model",
+      "group": "BJT"
+    },
+    {
+      "id": 342,
+      "label": "Early Effect",
+      "group": "BJT"
+    },
+    {
+      "id": 343,
+      "label": "Base-Width Modulation",
+      "group": "BJT"
+    },
+    {
+      "id": 344,
+      "label": "Early Voltage",
+      "group": "BJT"
+    },
+    {
+      "id": 345,
+      "label": "Kirk Effect",
+      "group": "BJT"
+    },
+    {
+      "id": 346,
+      "label": "High-Current Effects BJT",
+      "group": "BJT"
+    },
+    {
+      "id": 347,
+      "label": "Base Resistance",
+      "group": "BJT"
+    },
+    {
+      "id": 348,
+      "label": "Collector Resistance",
+      "group": "BJT"
+    },
+    {
+      "id": 349,
+      "label": "Emitter Resistance",
+      "group": "BJT"
+    },
+    {
+      "id": 350,
+      "label": "Transition Frequency ft",
+      "group": "BJT"
+    },
+    {
+      "id": 351,
+      "label": "Maximum Oscillation Frequency fmax",
+      "group": "BJT"
+    },
+    {
+      "id": 352,
+      "label": "Heterojunction Bipolar Transistor",
+      "group": "BJT"
+    },
+    {
+      "id": 353,
+      "label": "HBT Band Diagram",
+      "group": "BJT"
+    },
+    {
+      "id": 354,
+      "label": "Emitter-Base Heterojunction",
+      "group": "BJT"
+    },
+    {
+      "id": 355,
+      "label": "JFET Structure",
+      "group": "FET"
+    },
+    {
+      "id": 356,
+      "label": "JFET Operation",
+      "group": "FET"
+    },
+    {
+      "id": 357,
+      "label": "JFET Pinch-Off",
+      "group": "FET"
+    },
+    {
+      "id": 358,
+      "label": "JFET I-V Characteristics",
+      "group": "FET"
+    },
+    {
+      "id": 359,
+      "label": "MESFET Structure",
+      "group": "FET"
+    },
+    {
+      "id": 360,
+      "label": "MESFET Operation",
+      "group": "FET"
+    },
+    {
+      "id": 361,
+      "label": "MOSFET Structure",
+      "group": "FET"
+    },
+    {
+      "id": 362,
+      "label": "MOSFET Gate",
+      "group": "FET"
+    },
+    {
+      "id": 363,
+      "label": "MOSFET Source",
+      "group": "FET"
+    },
+    {
+      "id": 364,
+      "label": "MOSFET Drain",
+      "group": "FET"
+    },
+    {
+      "id": 365,
+      "label": "MOSFET Substrate",
+      "group": "FET"
+    },
+    {
+      "id": 366,
+      "label": "N-Channel MOSFET",
+      "group": "FET"
+    },
+    {
+      "id": 367,
+      "label": "P-Channel MOSFET",
+      "group": "FET"
+    },
+    {
+      "id": 368,
+      "label": "Enhancement Mode MOSFET",
+      "group": "FET"
+    },
+    {
+      "id": 369,
+      "label": "Depletion Mode MOSFET",
+      "group": "FET"
+    },
+    {
+      "id": 370,
+      "label": "Triode Region MOSFET",
+      "group": "FET"
+    },
+    {
+      "id": 371,
+      "label": "Linear Region MOSFET",
+      "group": "FET"
+    },
+    {
+      "id": 372,
+      "label": "Saturation Region MOSFET",
+      "group": "FET"
+    },
+    {
+      "id": 373,
+      "label": "Cutoff Region MOSFET",
+      "group": "FET"
+    },
+    {
+      "id": 374,
+      "label": "MOSFET Threshold Voltage",
+      "group": "FET"
+    },
+    {
+      "id": 375,
+      "label": "MOSFET I-V Long Channel",
+      "group": "FET"
+    },
+    {
+      "id": 376,
+      "label": "MOSFET Transconductance",
+      "group": "FET"
+    },
+    {
+      "id": 377,
+      "label": "MOSFET Output Conductance",
+      "group": "FET"
+    },
+    {
+      "id": 378,
+      "label": "Subthreshold Conduction",
+      "group": "FET"
+    },
+    {
+      "id": 379,
+      "label": "Subthreshold Slope",
+      "group": "FET"
+    },
+    {
+      "id": 380,
+      "label": "Subthreshold Swing",
+      "group": "FET"
+    },
+    {
+      "id": 381,
+      "label": "Channel Charge",
+      "group": "FET"
+    },
+    {
+      "id": 382,
+      "label": "Inversion Charge Density",
+      "group": "FET"
+    },
+    {
+      "id": 383,
+      "label": "Gradual Channel Approximation",
+      "group": "FET"
+    },
+    {
+      "id": 384,
+      "label": "Channel-Length Modulation",
+      "group": "FET"
+    },
+    {
+      "id": 385,
+      "label": "Pinch-Off Point",
+      "group": "FET"
+    },
+    {
+      "id": 386,
+      "label": "Short-Channel Effects",
+      "group": "FET"
+    },
+    {
+      "id": 387,
+      "label": "DIBL Effect",
+      "group": "FET"
+    },
+    {
+      "id": 388,
+      "label": "Drain-Induced Barrier Lowering",
+      "group": "FET"
+    },
+    {
+      "id": 389,
+      "label": "Punch-Through",
+      "group": "FET"
+    },
+    {
+      "id": 390,
+      "label": "Velocity Saturation MOSFET",
+      "group": "FET"
+    },
+    {
+      "id": 391,
+      "label": "Carrier Heating MOSFET",
+      "group": "FET"
+    },
+    {
+      "id": 392,
+      "label": "Hot Carrier Injection",
+      "group": "FET"
+    },
+    {
+      "id": 393,
+      "label": "Oxide Interface Degradation",
+      "group": "FET"
+    },
+    {
+      "id": 394,
+      "label": "CMOS Technology",
+      "group": "FET"
+    },
+    {
+      "id": 395,
+      "label": "CMOS Inverter",
+      "group": "FET"
+    },
+    {
+      "id": 396,
+      "label": "NMOS Pull-Down",
+      "group": "FET"
+    },
+    {
+      "id": 397,
+      "label": "PMOS Pull-Up",
+      "group": "FET"
+    },
+    {
+      "id": 398,
+      "label": "Complementary Operation",
+      "group": "FET"
+    },
+    {
+      "id": 399,
+      "label": "Static Power CMOS",
+      "group": "FET"
+    },
+    {
+      "id": 400,
+      "label": "Dynamic Power CMOS",
+      "group": "FET"
+    },
+    {
+      "id": 401,
+      "label": "FinFET Structure",
+      "group": "FET"
+    },
+    {
+      "id": 402,
+      "label": "FinFET Operation",
+      "group": "FET"
+    },
+    {
+      "id": 403,
+      "label": "Gate-All-Around Transistor",
+      "group": "FET"
+    },
+    {
+      "id": 404,
+      "label": "SOI MOSFET",
+      "group": "FET"
+    },
+    {
+      "id": 405,
+      "label": "Fully Depleted SOI",
+      "group": "FET"
+    },
+    {
+      "id": 406,
+      "label": "Partially Depleted SOI",
+      "group": "FET"
+    },
+    {
+      "id": 407,
+      "label": "Multi-Gate Transistor",
+      "group": "FET"
+    },
+    {
+      "id": 408,
+      "label": "Nanowire Transistor",
+      "group": "FET"
+    },
+    {
+      "id": 409,
+      "label": "Scaling Laws MOSFET",
+      "group": "FET"
+    },
+    {
+      "id": 410,
+      "label": "Dennard Scaling",
+      "group": "FET"
+    },
+    {
+      "id": 411,
+      "label": "International Roadmap Devices",
+      "group": "FET"
+    },
+    {
+      "id": 412,
+      "label": "Light-Emitting Diode",
+      "group": "OPT"
+    },
+    {
+      "id": 413,
+      "label": "LED Operation Principle",
+      "group": "OPT"
+    },
+    {
+      "id": 414,
+      "label": "LED Materials",
+      "group": "OPT"
+    },
+    {
+      "id": 415,
+      "label": "Direct Bandgap LED Requirement",
+      "group": "OPT"
+    },
+    {
+      "id": 416,
+      "label": "LED Efficiency",
+      "group": "OPT"
+    },
+    {
+      "id": 417,
+      "label": "Internal Quantum Efficiency",
+      "group": "OPT"
+    },
+    {
+      "id": 418,
+      "label": "External Quantum Efficiency",
+      "group": "OPT"
+    },
+    {
+      "id": 419,
+      "label": "Light Extraction Efficiency",
+      "group": "OPT"
+    },
+    {
+      "id": 420,
+      "label": "LED Wavelength Selection",
+      "group": "OPT"
+    },
+    {
+      "id": 421,
+      "label": "White LED Technology",
+      "group": "OPT"
+    },
+    {
+      "id": 422,
+      "label": "Phosphor Conversion LED",
+      "group": "OPT"
+    },
+    {
+      "id": 423,
+      "label": "Laser Diode",
+      "group": "OPT"
+    },
+    {
+      "id": 424,
+      "label": "Laser Operation Principle",
+      "group": "OPT"
+    },
+    {
+      "id": 425,
+      "label": "Population Inversion",
+      "group": "OPT"
+    },
+    {
+      "id": 426,
+      "label": "Optical Gain",
+      "group": "OPT"
+    },
+    {
+      "id": 427,
+      "label": "Threshold Current Density",
+      "group": "OPT"
+    },
+    {
+      "id": 428,
+      "label": "Laser Cavity",
+      "group": "OPT"
+    },
+    {
+      "id": 429,
+      "label": "Fabry-Perot Cavity",
+      "group": "OPT"
+    },
+    {
+      "id": 430,
+      "label": "Distributed Bragg Reflector",
+      "group": "OPT"
+    },
+    {
+      "id": 431,
+      "label": "Distributed Feedback Laser",
+      "group": "OPT"
+    },
+    {
+      "id": 432,
+      "label": "Vertical Cavity Surface Emitting Laser",
+      "group": "OPT"
+    },
+    {
+      "id": 433,
+      "label": "VCSEL Structure",
+      "group": "OPT"
+    },
+    {
+      "id": 434,
+      "label": "Double Heterostructure Laser",
+      "group": "OPT"
+    },
+    {
+      "id": 435,
+      "label": "Quantum Well Laser",
+      "group": "OPT"
+    },
+    {
+      "id": 436,
+      "label": "Semiconductor Optical Amplifier",
+      "group": "OPT"
+    },
+    {
+      "id": 437,
+      "label": "Photodiode Structure",
+      "group": "OPT"
+    },
+    {
+      "id": 438,
+      "label": "PIN Photodiode",
+      "group": "OPT"
+    },
+    {
+      "id": 439,
+      "label": "Photodiode Responsivity",
+      "group": "OPT"
+    },
+    {
+      "id": 440,
+      "label": "Quantum Efficiency Photodiode",
+      "group": "OPT"
+    },
+    {
+      "id": 441,
+      "label": "Photodiode Dark Current",
+      "group": "OPT"
+    },
+    {
+      "id": 442,
+      "label": "Photodiode Bandwidth",
+      "group": "OPT"
+    },
+    {
+      "id": 443,
+      "label": "Avalanche Photodiode",
+      "group": "OPT"
+    },
+    {
+      "id": 444,
+      "label": "APD Gain",
+      "group": "OPT"
+    },
+    {
+      "id": 445,
+      "label": "APD Noise",
+      "group": "OPT"
+    },
+    {
+      "id": 446,
+      "label": "Solar Cell Operation",
+      "group": "OPT"
+    },
+    {
+      "id": 447,
+      "label": "Photovoltaic Effect",
+      "group": "OPT"
+    },
+    {
+      "id": 448,
+      "label": "Solar Cell I-V Curve",
+      "group": "OPT"
+    },
+    {
+      "id": 449,
+      "label": "Short-Circuit Current",
+      "group": "OPT"
+    },
+    {
+      "id": 450,
+      "label": "Open-Circuit Voltage",
+      "group": "OPT"
+    },
+    {
+      "id": 451,
+      "label": "Fill Factor Solar Cell",
+      "group": "OPT"
+    },
+    {
+      "id": 452,
+      "label": "Power Conversion Efficiency",
+      "group": "OPT"
+    },
+    {
+      "id": 453,
+      "label": "Shockley-Queisser Limit",
+      "group": "OPT"
+    },
+    {
+      "id": 454,
+      "label": "Single-Junction Solar Cell",
+      "group": "OPT"
+    },
+    {
+      "id": 455,
+      "label": "Multi-Junction Solar Cell",
+      "group": "OPT"
+    },
+    {
+      "id": 456,
+      "label": "Tandem Solar Cell",
+      "group": "OPT"
+    },
+    {
+      "id": 457,
+      "label": "Solar Cell Losses",
+      "group": "OPT"
+    },
+    {
+      "id": 458,
+      "label": "Recombination Losses Solar Cell",
+      "group": "OPT"
+    },
+    {
+      "id": 459,
+      "label": "Thermalization Losses",
+      "group": "OPT"
+    },
+    {
+      "id": 460,
+      "label": "Charge-Coupled Device",
+      "group": "OPT"
+    },
+    {
+      "id": 461,
+      "label": "CCD Operation",
+      "group": "OPT"
+    },
+    {
+      "id": 462,
+      "label": "CMOS Image Sensor",
+      "group": "OPT"
+    },
+    {
+      "id": 463,
+      "label": "Pixel Architecture",
+      "group": "OPT"
+    },
+    {
+      "id": 464,
+      "label": "Read Noise",
+      "group": "OPT"
+    },
+    {
+      "id": 465,
+      "label": "III-V Semiconductor Compounds",
+      "group": "ADV"
+    },
+    {
+      "id": 466,
+      "label": "GaAs Properties",
+      "group": "ADV"
+    },
+    {
+      "id": 467,
+      "label": "InP Properties",
+      "group": "ADV"
+    },
+    {
+      "id": 468,
+      "label": "InGaAs Properties",
+      "group": "ADV"
+    },
+    {
+      "id": 469,
+      "label": "AlGaAs Properties",
+      "group": "ADV"
+    },
+    {
+      "id": 470,
+      "label": "InGaAsP Properties",
+      "group": "ADV"
+    },
+    {
+      "id": 471,
+      "label": "II-VI Semiconductor Compounds",
+      "group": "ADV"
+    },
+    {
+      "id": 472,
+      "label": "Wide-Bandgap Semiconductors",
+      "group": "ADV"
+    },
+    {
+      "id": 473,
+      "label": "GaN Material Properties",
+      "group": "ADV"
+    },
+    {
+      "id": 474,
+      "label": "GaN Crystal Growth",
+      "group": "ADV"
+    },
+    {
+      "id": 475,
+      "label": "AlGaN Alloy",
+      "group": "ADV"
+    },
+    {
+      "id": 476,
+      "label": "AlGaN/GaN Heterostructure",
+      "group": "ADV"
+    },
+    {
+      "id": 477,
+      "label": "SiC Polytypes",
+      "group": "ADV"
+    },
+    {
+      "id": 478,
+      "label": "SiC Properties",
+      "group": "ADV"
+    },
+    {
+      "id": 479,
+      "label": "Quantum Well Structure",
+      "group": "ADV"
+    },
+    {
+      "id": 480,
+      "label": "Quantum Well Energy Levels",
+      "group": "ADV"
+    },
+    {
+      "id": 481,
+      "label": "Quantum Well Wave Functions",
+      "group": "ADV"
+    },
+    {
+      "id": 482,
+      "label": "Subband Structure",
+      "group": "ADV"
+    },
+    {
+      "id": 483,
+      "label": "Quantum Wire",
+      "group": "ADV"
+    },
+    {
+      "id": 484,
+      "label": "Quantum Dot",
+      "group": "ADV"
+    },
+    {
+      "id": 485,
+      "label": "Quantum Dot Energy Levels",
+      "group": "ADV"
+    },
+    {
+      "id": 486,
+      "label": "Size Quantization",
+      "group": "ADV"
+    },
+    {
+      "id": 487,
+      "label": "Confinement Energy",
+      "group": "ADV"
+    },
+    {
+      "id": 488,
+      "label": "2D Electron Gas",
+      "group": "ADV"
+    },
+    {
+      "id": 489,
+      "label": "2DEG Formation",
+      "group": "ADV"
+    },
+    {
+      "id": 490,
+      "label": "High Electron Mobility Transistor",
+      "group": "ADV"
+    },
+    {
+      "id": 491,
+      "label": "HEMT Structure",
+      "group": "ADV"
+    },
+    {
+      "id": 492,
+      "label": "HEMT Operation",
+      "group": "ADV"
+    },
+    {
+      "id": 493,
+      "label": "Pseudomorphic HEMT",
+      "group": "ADV"
+    },
+    {
+      "id": 494,
+      "label": "Metamorphic HEMT",
+      "group": "ADV"
+    },
+    {
+      "id": 495,
+      "label": "Strained Silicon",
+      "group": "ADV"
+    },
+    {
+      "id": 496,
+      "label": "Strain Effects on Band Structure",
+      "group": "ADV"
+    },
+    {
+      "id": 497,
+      "label": "Biaxial Strain",
+      "group": "ADV"
+    },
+    {
+      "id": 498,
+      "label": "Uniaxial Strain",
+      "group": "ADV"
+    },
+    {
+      "id": 499,
+      "label": "Critical Thickness",
+      "group": "ADV"
+    },
+    {
+      "id": 500,
+      "label": "Pseudomorphic Layers",
+      "group": "ADV"
+    },
+    {
+      "id": 501,
+      "label": "Graphene Properties",
+      "group": "ADV"
+    },
+    {
+      "id": 502,
+      "label": "Graphene Band Structure",
+      "group": "ADV"
+    },
+    {
+      "id": 503,
+      "label": "Graphene Dirac Points",
+      "group": "ADV"
+    },
+    {
+      "id": 504,
+      "label": "Graphene Mobility",
+      "group": "ADV"
+    },
+    {
+      "id": 505,
+      "label": "Transition Metal Dichalcogenides",
+      "group": "ADV"
+    },
+    {
+      "id": 506,
+      "label": "Molybdenum Disulfide MoS2",
+      "group": "ADV"
+    },
+    {
+      "id": 507,
+      "label": "TMD Band Structure",
+      "group": "ADV"
+    },
+    {
+      "id": 508,
+      "label": "2D Materials Overview",
+      "group": "ADV"
+    },
+    {
+      "id": 509,
+      "label": "Van der Waals Heterostructures",
+      "group": "ADV"
+    },
+    {
+      "id": 510,
+      "label": "Carbon Nanotube Properties",
+      "group": "ADV"
+    },
+    {
+      "id": 511,
+      "label": "Carbon Nanotube Band Structure",
+      "group": "ADV"
+    },
+    {
+      "id": 512,
+      "label": "Power Diode Structure",
+      "group": "PWR"
+    },
+    {
+      "id": 513,
+      "label": "Power Diode Ratings",
+      "group": "PWR"
+    },
+    {
+      "id": 514,
+      "label": "Thyristor Structure",
+      "group": "PWR"
+    },
+    {
+      "id": 515,
+      "label": "Thyristor Operation",
+      "group": "PWR"
+    },
+    {
+      "id": 516,
+      "label": "Silicon-Controlled Rectifier",
+      "group": "PWR"
+    },
+    {
+      "id": 517,
+      "label": "IGBT Structure",
+      "group": "PWR"
+    },
+    {
+      "id": 518,
+      "label": "IGBT Operation",
+      "group": "PWR"
+    },
+    {
+      "id": 519,
+      "label": "Power MOSFET",
+      "group": "PWR"
+    },
+    {
+      "id": 520,
+      "label": "Superjunction MOSFET",
+      "group": "PWR"
+    },
+    {
+      "id": 521,
+      "label": "High-Voltage Device Design",
+      "group": "PWR"
+    },
+    {
+      "id": 522,
+      "label": "Breakdown Engineering",
+      "group": "PWR"
+    },
+    {
+      "id": 523,
+      "label": "Punch-Through Voltage",
+      "group": "PWR"
+    },
+    {
+      "id": 524,
+      "label": "Gunn Diode",
+      "group": "PWR"
+    },
+    {
+      "id": 525,
+      "label": "Gunn Effect",
+      "group": "PWR"
+    },
+    {
+      "id": 526,
+      "label": "Transferred Electron Effect",
+      "group": "PWR"
+    },
+    {
+      "id": 527,
+      "label": "IMPATT Diode",
+      "group": "PWR"
+    },
+    {
+      "id": 528,
+      "label": "Negative Resistance Devices",
+      "group": "PWR"
+    },
+    {
+      "id": 529,
+      "label": "Microwave Device Parasitics",
+      "group": "PWR"
+    },
+    {
+      "id": 530,
+      "label": "Cutoff Frequency High-Frequency",
+      "group": "PWR"
+    },
+    {
+      "id": 531,
+      "label": "Czochralski Crystal Growth",
+      "group": "FAB"
+    },
+    {
+      "id": 532,
+      "label": "Float-Zone Crystal Growth",
+      "group": "FAB"
+    },
+    {
+      "id": 533,
+      "label": "Crystal Ingot Processing",
+      "group": "FAB"
+    },
+    {
+      "id": 534,
+      "label": "Wafer Preparation",
+      "group": "FAB"
+    },
+    {
+      "id": 535,
+      "label": "Epitaxial Growth",
+      "group": "FAB"
+    },
+    {
+      "id": 536,
+      "label": "Molecular Beam Epitaxy",
+      "group": "FAB"
+    },
+    {
+      "id": 537,
+      "label": "Metal-Organic CVD",
+      "group": "FAB"
+    },
+    {
+      "id": 538,
+      "label": "Chemical Vapor Deposition",
+      "group": "FAB"
+    },
+    {
+      "id": 539,
+      "label": "Thermal Oxidation of Silicon",
+      "group": "FAB"
+    },
+    {
+      "id": 540,
+      "label": "Deal-Grove Model",
+      "group": "FAB"
+    },
+    {
+      "id": 541,
+      "label": "Dry Oxidation",
+      "group": "FAB"
+    },
+    {
+      "id": 542,
+      "label": "Wet Oxidation",
+      "group": "FAB"
+    },
+    {
+      "id": 543,
+      "label": "Diffusion in Solids",
+      "group": "FAB"
+    },
+    {
+      "id": 544,
+      "label": "Fick First Law",
+      "group": "FAB"
+    },
+    {
+      "id": 545,
+      "label": "Fick Second Law",
+      "group": "FAB"
+    },
+    {
+      "id": 546,
+      "label": "Diffusion Coefficient Thermal",
+      "group": "FAB"
+    },
+    {
+      "id": 547,
+      "label": "Ion Implantation",
+      "group": "FAB"
+    },
+    {
+      "id": 548,
+      "label": "Ion Range Distribution",
+      "group": "FAB"
+    },
+    {
+      "id": 549,
+      "label": "Channeling Effect",
+      "group": "FAB"
+    },
+    {
+      "id": 550,
+      "label": "Annealing Post-Implant",
+      "group": "FAB"
+    },
+    {
+      "id": 551,
+      "label": "Photolithography Process",
+      "group": "FAB"
+    },
+    {
+      "id": 552,
+      "label": "Photoresist",
+      "group": "FAB"
+    },
+    {
+      "id": 553,
+      "label": "Exposure and Development",
+      "group": "FAB"
+    },
+    {
+      "id": 554,
+      "label": "Mask Alignment",
+      "group": "FAB"
+    },
+    {
+      "id": 555,
+      "label": "Etching Processes",
+      "group": "FAB"
+    },
+    {
+      "id": 556,
+      "label": "Wet Chemical Etching",
+      "group": "FAB"
+    },
+    {
+      "id": 557,
+      "label": "Dry Etching RIE",
+      "group": "FAB"
+    },
+    {
+      "id": 558,
+      "label": "Plasma Etching",
+      "group": "FAB"
+    },
+    {
+      "id": 559,
+      "label": "Thin Film Deposition",
+      "group": "FAB"
+    },
+    {
+      "id": 560,
+      "label": "Physical Vapor Deposition",
+      "group": "FAB"
+    },
+    {
+      "id": 561,
+      "label": "Sputtering",
+      "group": "FAB"
+    },
+    {
+      "id": 562,
+      "label": "Metallization",
+      "group": "FAB"
+    },
+    {
+      "id": 563,
+      "label": "Aluminum Interconnects",
+      "group": "FAB"
+    },
+    {
+      "id": 564,
+      "label": "Copper Interconnects",
+      "group": "FAB"
+    },
+    {
+      "id": 565,
+      "label": "Silicide Formation",
+      "group": "FAB"
+    },
+    {
+      "id": 566,
+      "label": "Contact Resistance Fabrication",
+      "group": "FAB"
+    },
+    {
+      "id": 567,
+      "label": "Process-Induced Defects",
+      "group": "FAB"
+    },
+    {
+      "id": 568,
+      "label": "Contamination Control",
+      "group": "FAB"
+    },
+    {
+      "id": 569,
+      "label": "Yield Engineering Overview",
+      "group": "FAB"
+    },
+    {
+      "id": 570,
+      "label": "Device Characterization Methods",
+      "group": "CHAR"
+    },
+    {
+      "id": 571,
+      "label": "I-V Measurement",
+      "group": "CHAR"
+    },
+    {
+      "id": 572,
+      "label": "C-V Measurement",
+      "group": "CHAR"
+    },
+    {
+      "id": 573,
+      "label": "Hall Measurement",
+      "group": "CHAR"
+    },
+    {
+      "id": 574,
+      "label": "Four-Point Probe",
+      "group": "CHAR"
+    },
+    {
+      "id": 575,
+      "label": "DLTS Technique",
+      "group": "CHAR"
+    },
+    {
+      "id": 576,
+      "label": "Optical Characterization",
+      "group": "CHAR"
+    },
+    {
+      "id": 577,
+      "label": "Photoluminescence Spectroscopy",
+      "group": "CHAR"
+    },
+    {
+      "id": 578,
+      "label": "Electroluminescence",
+      "group": "CHAR"
+    },
+    {
+      "id": 579,
+      "label": "Raman Spectroscopy",
+      "group": "CHAR"
+    },
+    {
+      "id": 580,
+      "label": "Transmission Electron Microscopy",
+      "group": "CHAR"
+    },
+    {
+      "id": 581,
+      "label": "Scanning Electron Microscopy",
+      "group": "CHAR"
+    },
+    {
+      "id": 582,
+      "label": "Secondary Ion Mass Spectrometry",
+      "group": "CHAR"
+    },
+    {
+      "id": 583,
+      "label": "Auger Electron Spectroscopy",
+      "group": "CHAR"
+    },
+    {
+      "id": 584,
+      "label": "SPICE Compact Models",
+      "group": "CHAR"
+    },
+    {
+      "id": 585,
+      "label": "Level-1 MOSFET Model",
+      "group": "CHAR"
+    },
+    {
+      "id": 586,
+      "label": "BSIM Model",
+      "group": "CHAR"
+    },
+    {
+      "id": 587,
+      "label": "Small-Signal Equivalent Circuit",
+      "group": "CHAR"
+    },
+    {
+      "id": 588,
+      "label": "Large-Signal Device Model",
+      "group": "CHAR"
+    },
+    {
+      "id": 589,
+      "label": "Noise in Semiconductor Devices",
+      "group": "CHAR"
+    },
+    {
+      "id": 590,
+      "label": "Thermal Noise",
+      "group": "CHAR"
+    },
+    {
+      "id": 591,
+      "label": "Shot Noise",
+      "group": "CHAR"
+    },
+    {
+      "id": 592,
+      "label": "Flicker Noise",
+      "group": "CHAR"
+    },
+    {
+      "id": 593,
+      "label": "Noise Figure",
+      "group": "CHAR"
+    },
+    {
+      "id": 594,
+      "label": "Band-to-Band Tunneling",
+      "group": "CHAR"
+    },
+    {
+      "id": 595,
+      "label": "Esaki Tunnel Diode",
+      "group": "CHAR"
+    },
+    {
+      "id": 596,
+      "label": "Resonant Tunneling Diode",
+      "group": "CHAR"
+    },
+    {
+      "id": 597,
+      "label": "Double Barrier Structure",
+      "group": "CHAR"
+    },
+    {
+      "id": 598,
+      "label": "Negative Differential Resistance",
+      "group": "CHAR"
+    },
+    {
+      "id": 599,
+      "label": "Ballistic Transport",
+      "group": "CHAR"
+    },
+    {
+      "id": 600,
+      "label": "Quantum Confinement Effects",
+      "group": "ADV"
+    }
+  ],
+  "edges": [
+    {
+      "from": 2,
+      "to": 1
+    },
+    {
+      "from": 2,
+      "to": 11
+    },
+    {
+      "from": 3,
+      "to": 1
+    },
+    {
+      "from": 4,
+      "to": 1
+    },
+    {
+      "from": 5,
+      "to": 3
+    },
+    {
+      "from": 5,
+      "to": 11
+    },
+    {
+      "from": 6,
+      "to": 3
+    },
+    {
+      "from": 6,
+      "to": 11
+    },
+    {
+      "from": 7,
+      "to": 4
+    },
+    {
+      "from": 7,
+      "to": 11
+    },
+    {
+      "from": 8,
+      "to": 4
+    },
+    {
+      "from": 8,
+      "to": 11
+    },
+    {
+      "from": 9,
+      "to": 4
+    },
+    {
+      "from": 9,
+      "to": 11
+    },
+    {
+      "from": 10,
+      "to": 3
+    },
+    {
+      "from": 10,
+      "to": 11
+    },
+    {
+      "from": 12,
+      "to": 11
+    },
+    {
+      "from": 12,
+      "to": 14
+    },
+    {
+      "from": 13,
+      "to": 11
+    },
+    {
+      "from": 13,
+      "to": 14
+    },
+    {
+      "from": 14,
+      "to": 11
+    },
+    {
+      "from": 15,
+      "to": 14
+    },
+    {
+      "from": 16,
+      "to": 14
+    },
+    {
+      "from": 17,
+      "to": 11
+    },
+    {
+      "from": 17,
+      "to": 15
+    },
+    {
+      "from": 17,
+      "to": 16
+    },
+    {
+      "from": 19,
+      "to": 18
+    },
+    {
+      "from": 20,
+      "to": 18
+    },
+    {
+      "from": 20,
+      "to": 19
+    },
+    {
+      "from": 21,
+      "to": 18
+    },
+    {
+      "from": 21,
+      "to": 19
+    },
+    {
+      "from": 22,
+      "to": 18
+    },
+    {
+      "from": 22,
+      "to": 19
+    },
+    {
+      "from": 23,
+      "to": 18
+    },
+    {
+      "from": 23,
+      "to": 19
+    },
+    {
+      "from": 23,
+      "to": 22
+    },
+    {
+      "from": 24,
+      "to": 18
+    },
+    {
+      "from": 24,
+      "to": 19
+    },
+    {
+      "from": 24,
+      "to": 22
+    },
+    {
+      "from": 25,
+      "to": 23
+    },
+    {
+      "from": 25,
+      "to": 39
+    },
+    {
+      "from": 26,
+      "to": 25
+    },
+    {
+      "from": 27,
+      "to": 26
+    },
+    {
+      "from": 28,
+      "to": 18
+    },
+    {
+      "from": 28,
+      "to": 21
+    },
+    {
+      "from": 29,
+      "to": 18
+    },
+    {
+      "from": 29,
+      "to": 28
+    },
+    {
+      "from": 30,
+      "to": 18
+    },
+    {
+      "from": 30,
+      "to": 28
+    },
+    {
+      "from": 31,
+      "to": 18
+    },
+    {
+      "from": 31,
+      "to": 21
+    },
+    {
+      "from": 31,
+      "to": 28
+    },
+    {
+      "from": 32,
+      "to": 31
+    },
+    {
+      "from": 33,
+      "to": 18
+    },
+    {
+      "from": 33,
+      "to": 19
+    },
+    {
+      "from": 34,
+      "to": 18
+    },
+    {
+      "from": 34,
+      "to": 19
+    },
+    {
+      "from": 35,
+      "to": 34
+    },
+    {
+      "from": 36,
+      "to": 29
+    },
+    {
+      "from": 36,
+      "to": 34
+    },
+    {
+      "from": 37,
+      "to": 36
+    },
+    {
+      "from": 38,
+      "to": 36
+    },
+    {
+      "from": 43,
+      "to": 39
+    },
+    {
+      "from": 44,
+      "to": 18
+    },
+    {
+      "from": 44,
+      "to": 19
+    },
+    {
+      "from": 45,
+      "to": 44
+    },
+    {
+      "from": 46,
+      "to": 44
+    },
+    {
+      "from": 47,
+      "to": 44
+    },
+    {
+      "from": 48,
+      "to": 44
+    },
+    {
+      "from": 48,
+      "to": 45
+    },
+    {
+      "from": 48,
+      "to": 46
+    },
+    {
+      "from": 49,
+      "to": 44
+    },
+    {
+      "from": 49,
+      "to": 45
+    },
+    {
+      "from": 50,
+      "to": 18
+    },
+    {
+      "from": 51,
+      "to": 50
+    },
+    {
+      "from": 52,
+      "to": 50
+    },
+    {
+      "from": 53,
+      "to": 23
+    },
+    {
+      "from": 53,
+      "to": 50
+    },
+    {
+      "from": 54,
+      "to": 18
+    },
+    {
+      "from": 54,
+      "to": 50
+    },
+    {
+      "from": 55,
+      "to": 18
+    },
+    {
+      "from": 56,
+      "to": 55
+    },
+    {
+      "from": 57,
+      "to": 39
+    },
+    {
+      "from": 57,
+      "to": 55
+    },
+    {
+      "from": 59,
+      "to": 58
+    },
+    {
+      "from": 60,
+      "to": 58
+    },
+    {
+      "from": 61,
+      "to": 58
+    },
+    {
+      "from": 61,
+      "to": 59
+    },
+    {
+      "from": 61,
+      "to": 60
+    },
+    {
+      "from": 62,
+      "to": 61
+    },
+    {
+      "from": 63,
+      "to": 61
+    },
+    {
+      "from": 64,
+      "to": 61
+    },
+    {
+      "from": 65,
+      "to": 64
+    },
+    {
+      "from": 66,
+      "to": 64
+    },
+    {
+      "from": 66,
+      "to": 65
+    },
+    {
+      "from": 67,
+      "to": 63
+    },
+    {
+      "from": 67,
+      "to": 64
+    },
+    {
+      "from": 68,
+      "to": 67
+    },
+    {
+      "from": 69,
+      "to": 68
+    },
+    {
+      "from": 70,
+      "to": 63
+    },
+    {
+      "from": 70,
+      "to": 69
+    },
+    {
+      "from": 71,
+      "to": 70
+    },
+    {
+      "from": 72,
+      "to": 70
+    },
+    {
+      "from": 72,
+      "to": 71
+    },
+    {
+      "from": 73,
+      "to": 63
+    },
+    {
+      "from": 74,
+      "to": 73
+    },
+    {
+      "from": 75,
+      "to": 73
+    },
+    {
+      "from": 75,
+      "to": 74
+    },
+    {
+      "from": 76,
+      "to": 75
+    },
+    {
+      "from": 77,
+      "to": 75
+    },
+    {
+      "from": 78,
+      "to": 75
+    },
+    {
+      "from": 80,
+      "to": 79
+    },
+    {
+      "from": 81,
+      "to": 79
+    },
+    {
+      "from": 82,
+      "to": 80
+    },
+    {
+      "from": 82,
+      "to": 81
+    },
+    {
+      "from": 83,
+      "to": 63
+    },
+    {
+      "from": 84,
+      "to": 63
+    },
+    {
+      "from": 85,
+      "to": 63
+    },
+    {
+      "from": 85,
+      "to": 89
+    },
+    {
+      "from": 86,
+      "to": 85
+    },
+    {
+      "from": 87,
+      "to": 86
+    },
+    {
+      "from": 88,
+      "to": 87
+    },
+    {
+      "from": 89,
+      "to": 63
+    },
+    {
+      "from": 89,
+      "to": 18
+    },
+    {
+      "from": 90,
+      "to": 85
+    },
+    {
+      "from": 90,
+      "to": 86
+    },
+    {
+      "from": 92,
+      "to": 91
+    },
+    {
+      "from": 92,
+      "to": 89
+    },
+    {
+      "from": 92,
+      "to": 90
+    },
+    {
+      "from": 93,
+      "to": 91
+    },
+    {
+      "from": 93,
+      "to": 74
+    },
+    {
+      "from": 93,
+      "to": 86
+    },
+    {
+      "from": 94,
+      "to": 93
+    },
+    {
+      "from": 94,
+      "to": 74
+    },
+    {
+      "from": 95,
+      "to": 86
+    },
+    {
+      "from": 95,
+      "to": 92
+    },
+    {
+      "from": 95,
+      "to": 93
+    },
+    {
+      "from": 96,
+      "to": 95
+    },
+    {
+      "from": 97,
+      "to": 96
+    },
+    {
+      "from": 98,
+      "to": 96
+    },
+    {
+      "from": 99,
+      "to": 96
+    },
+    {
+      "from": 99,
+      "to": 112
+    },
+    {
+      "from": 100,
+      "to": 96
+    },
+    {
+      "from": 101,
+      "to": 15
+    },
+    {
+      "from": 101,
+      "to": 16
+    },
+    {
+      "from": 101,
+      "to": 95
+    },
+    {
+      "from": 102,
+      "to": 101
+    },
+    {
+      "from": 102,
+      "to": 96
+    },
+    {
+      "from": 103,
+      "to": 102
+    },
+    {
+      "from": 103,
+      "to": 82
+    },
+    {
+      "from": 104,
+      "to": 102
+    },
+    {
+      "from": 104,
+      "to": 82
+    },
+    {
+      "from": 105,
+      "to": 82
+    },
+    {
+      "from": 105,
+      "to": 103
+    },
+    {
+      "from": 105,
+      "to": 104
+    },
+    {
+      "from": 106,
+      "to": 82
+    },
+    {
+      "from": 106,
+      "to": 105
+    },
+    {
+      "from": 108,
+      "to": 107
+    },
+    {
+      "from": 109,
+      "to": 107
+    },
+    {
+      "from": 109,
+      "to": 108
+    },
+    {
+      "from": 111,
+      "to": 110
+    },
+    {
+      "from": 112,
+      "to": 95
+    },
+    {
+      "from": 112,
+      "to": 96
+    },
+    {
+      "from": 113,
+      "to": 112
+    },
+    {
+      "from": 114,
+      "to": 112
+    },
+    {
+      "from": 115,
+      "to": 112
+    },
+    {
+      "from": 116,
+      "to": 112
+    },
+    {
+      "from": 116,
+      "to": 99
+    },
+    {
+      "from": 117,
+      "to": 116
+    },
+    {
+      "from": 117,
+      "to": 15
+    },
+    {
+      "from": 118,
+      "to": 116
+    },
+    {
+      "from": 118,
+      "to": 16
+    },
+    {
+      "from": 119,
+      "to": 109
+    },
+    {
+      "from": 119,
+      "to": 117
+    },
+    {
+      "from": 119,
+      "to": 118
+    },
+    {
+      "from": 120,
+      "to": 108
+    },
+    {
+      "from": 120,
+      "to": 119
+    },
+    {
+      "from": 121,
+      "to": 119
+    },
+    {
+      "from": 122,
+      "to": 119
+    },
+    {
+      "from": 123,
+      "to": 109
+    },
+    {
+      "from": 123,
+      "to": 117
+    },
+    {
+      "from": 123,
+      "to": 108
+    },
+    {
+      "from": 124,
+      "to": 109
+    },
+    {
+      "from": 124,
+      "to": 118
+    },
+    {
+      "from": 124,
+      "to": 108
+    },
+    {
+      "from": 125,
+      "to": 123
+    },
+    {
+      "from": 125,
+      "to": 124
+    },
+    {
+      "from": 126,
+      "to": 44
+    },
+    {
+      "from": 126,
+      "to": 47
+    },
+    {
+      "from": 126,
+      "to": 3
+    },
+    {
+      "from": 127,
+      "to": 44
+    },
+    {
+      "from": 127,
+      "to": 47
+    },
+    {
+      "from": 127,
+      "to": 3
+    },
+    {
+      "from": 128,
+      "to": 126
+    },
+    {
+      "from": 128,
+      "to": 46
+    },
+    {
+      "from": 129,
+      "to": 127
+    },
+    {
+      "from": 129,
+      "to": 46
+    },
+    {
+      "from": 130,
+      "to": 128
+    },
+    {
+      "from": 130,
+      "to": 5
+    },
+    {
+      "from": 131,
+      "to": 129
+    },
+    {
+      "from": 131,
+      "to": 5
+    },
+    {
+      "from": 132,
+      "to": 130
+    },
+    {
+      "from": 133,
+      "to": 130
+    },
+    {
+      "from": 134,
+      "to": 130
+    },
+    {
+      "from": 135,
+      "to": 131
+    },
+    {
+      "from": 136,
+      "to": 131
+    },
+    {
+      "from": 137,
+      "to": 131
+    },
+    {
+      "from": 138,
+      "to": 131
+    },
+    {
+      "from": 139,
+      "to": 128
+    },
+    {
+      "from": 139,
+      "to": 129
+    },
+    {
+      "from": 140,
+      "to": 139
+    },
+    {
+      "from": 140,
+      "to": 109
+    },
+    {
+      "from": 141,
+      "to": 139
+    },
+    {
+      "from": 141,
+      "to": 109
+    },
+    {
+      "from": 142,
+      "to": 140
+    },
+    {
+      "from": 142,
+      "to": 123
+    },
+    {
+      "from": 142,
+      "to": 124
+    },
+    {
+      "from": 143,
+      "to": 121
+    },
+    {
+      "from": 143,
+      "to": 142
+    },
+    {
+      "from": 144,
+      "to": 123
+    },
+    {
+      "from": 144,
+      "to": 124
+    },
+    {
+      "from": 144,
+      "to": 126
+    },
+    {
+      "from": 144,
+      "to": 127
+    },
+    {
+      "from": 145,
+      "to": 122
+    },
+    {
+      "from": 145,
+      "to": 144
+    },
+    {
+      "from": 146,
+      "to": 123
+    },
+    {
+      "from": 146,
+      "to": 124
+    },
+    {
+      "from": 146,
+      "to": 126
+    },
+    {
+      "from": 146,
+      "to": 127
+    },
+    {
+      "from": 147,
+      "to": 109
+    },
+    {
+      "from": 147,
+      "to": 119
+    },
+    {
+      "from": 148,
+      "to": 109
+    },
+    {
+      "from": 148,
+      "to": 119
+    },
+    {
+      "from": 148,
+      "to": 110
+    },
+    {
+      "from": 149,
+      "to": 126
+    },
+    {
+      "from": 149,
+      "to": 127
+    },
+    {
+      "from": 149,
+      "to": 125
+    },
+    {
+      "from": 150,
+      "to": 149
+    },
+    {
+      "from": 151,
+      "to": 108
+    },
+    {
+      "from": 151,
+      "to": 123
+    },
+    {
+      "from": 151,
+      "to": 126
+    },
+    {
+      "from": 152,
+      "to": 108
+    },
+    {
+      "from": 152,
+      "to": 124
+    },
+    {
+      "from": 152,
+      "to": 127
+    },
+    {
+      "from": 153,
+      "to": 151
+    },
+    {
+      "from": 153,
+      "to": 152
+    },
+    {
+      "from": 153,
+      "to": 121
+    },
+    {
+      "from": 154,
+      "to": 144
+    },
+    {
+      "from": 154,
+      "to": 145
+    },
+    {
+      "from": 155,
+      "to": 154
+    },
+    {
+      "from": 156,
+      "to": 155
+    },
+    {
+      "from": 157,
+      "to": 156
+    },
+    {
+      "from": 157,
+      "to": 5
+    },
+    {
+      "from": 158,
+      "to": 156
+    },
+    {
+      "from": 158,
+      "to": 5
+    },
+    {
+      "from": 159,
+      "to": 156
+    },
+    {
+      "from": 160,
+      "to": 159
+    },
+    {
+      "from": 161,
+      "to": 160
+    },
+    {
+      "from": 162,
+      "to": 161
+    },
+    {
+      "from": 163,
+      "to": 161
+    },
+    {
+      "from": 163,
+      "to": 162
+    },
+    {
+      "from": 164,
+      "to": 156
+    },
+    {
+      "from": 165,
+      "to": 164
+    },
+    {
+      "from": 165,
+      "to": 111
+    },
+    {
+      "from": 166,
+      "to": 165
+    },
+    {
+      "from": 167,
+      "to": 165
+    },
+    {
+      "from": 168,
+      "to": 165
+    },
+    {
+      "from": 168,
+      "to": 95
+    },
+    {
+      "from": 169,
+      "to": 156
+    },
+    {
+      "from": 169,
+      "to": 128
+    },
+    {
+      "from": 169,
+      "to": 129
+    },
+    {
+      "from": 170,
+      "to": 156
+    },
+    {
+      "from": 170,
+      "to": 128
+    },
+    {
+      "from": 171,
+      "to": 156
+    },
+    {
+      "from": 171,
+      "to": 55
+    },
+    {
+      "from": 172,
+      "to": 156
+    },
+    {
+      "from": 172,
+      "to": 4
+    },
+    {
+      "from": 173,
+      "to": 164
+    },
+    {
+      "from": 173,
+      "to": 169
+    },
+    {
+      "from": 173,
+      "to": 170
+    },
+    {
+      "from": 174,
+      "to": 166
+    },
+    {
+      "from": 174,
+      "to": 167
+    },
+    {
+      "from": 174,
+      "to": 173
+    },
+    {
+      "from": 175,
+      "to": 169
+    },
+    {
+      "from": 175,
+      "to": 173
+    },
+    {
+      "from": 176,
+      "to": 144
+    },
+    {
+      "from": 176,
+      "to": 145
+    },
+    {
+      "from": 177,
+      "to": 176
+    },
+    {
+      "from": 177,
+      "to": 156
+    },
+    {
+      "from": 178,
+      "to": 177
+    },
+    {
+      "from": 178,
+      "to": 108
+    },
+    {
+      "from": 179,
+      "to": 154
+    },
+    {
+      "from": 179,
+      "to": 176
+    },
+    {
+      "from": 180,
+      "to": 179
+    },
+    {
+      "from": 180,
+      "to": 178
+    },
+    {
+      "from": 181,
+      "to": 156
+    },
+    {
+      "from": 181,
+      "to": 146
+    },
+    {
+      "from": 182,
+      "to": 181
+    },
+    {
+      "from": 183,
+      "to": 181
+    },
+    {
+      "from": 183,
+      "to": 182
+    },
+    {
+      "from": 184,
+      "to": 154
+    },
+    {
+      "from": 184,
+      "to": 156
+    },
+    {
+      "from": 185,
+      "to": 184
+    },
+    {
+      "from": 186,
+      "to": 184
+    },
+    {
+      "from": 186,
+      "to": 185
+    },
+    {
+      "from": 187,
+      "to": 184
+    },
+    {
+      "from": 187,
+      "to": 156
+    },
+    {
+      "from": 188,
+      "to": 183
+    },
+    {
+      "from": 188,
+      "to": 184
+    },
+    {
+      "from": 189,
+      "to": 184
+    },
+    {
+      "from": 190,
+      "to": 18
+    },
+    {
+      "from": 191,
+      "to": 181
+    },
+    {
+      "from": 192,
+      "to": 154
+    },
+    {
+      "from": 192,
+      "to": 176
+    },
+    {
+      "from": 192,
+      "to": 197
+    },
+    {
+      "from": 192,
+      "to": 198
+    },
+    {
+      "from": 193,
+      "to": 192
+    },
+    {
+      "from": 193,
+      "to": 179
+    },
+    {
+      "from": 194,
+      "to": 193
+    },
+    {
+      "from": 194,
+      "to": 177
+    },
+    {
+      "from": 195,
+      "to": 145
+    },
+    {
+      "from": 195,
+      "to": 203
+    },
+    {
+      "from": 196,
+      "to": 195
+    },
+    {
+      "from": 196,
+      "to": 177
+    },
+    {
+      "from": 197,
+      "to": 144
+    },
+    {
+      "from": 197,
+      "to": 145
+    },
+    {
+      "from": 198,
+      "to": 144
+    },
+    {
+      "from": 198,
+      "to": 145
+    },
+    {
+      "from": 199,
+      "to": 12
+    },
+    {
+      "from": 199,
+      "to": 197
+    },
+    {
+      "from": 200,
+      "to": 199
+    },
+    {
+      "from": 200,
+      "to": 15
+    },
+    {
+      "from": 200,
+      "to": 16
+    },
+    {
+      "from": 201,
+      "to": 199
+    },
+    {
+      "from": 201,
+      "to": 12
+    },
+    {
+      "from": 202,
+      "to": 201
+    },
+    {
+      "from": 203,
+      "to": 197
+    },
+    {
+      "from": 203,
+      "to": 205
+    },
+    {
+      "from": 203,
+      "to": 206
+    },
+    {
+      "from": 204,
+      "to": 203
+    },
+    {
+      "from": 205,
+      "to": 44
+    },
+    {
+      "from": 205,
+      "to": 55
+    },
+    {
+      "from": 206,
+      "to": 205
+    },
+    {
+      "from": 206,
+      "to": 14
+    },
+    {
+      "from": 207,
+      "to": 205
+    },
+    {
+      "from": 207,
+      "to": 203
+    },
+    {
+      "from": 208,
+      "to": 197
+    },
+    {
+      "from": 208,
+      "to": 147
+    },
+    {
+      "from": 209,
+      "to": 208
+    },
+    {
+      "from": 210,
+      "to": 55
+    },
+    {
+      "from": 210,
+      "to": 197
+    },
+    {
+      "from": 211,
+      "to": 210
+    },
+    {
+      "from": 212,
+      "to": 11
+    },
+    {
+      "from": 212,
+      "to": 12
+    },
+    {
+      "from": 213,
+      "to": 212
+    },
+    {
+      "from": 213,
+      "to": 15
+    },
+    {
+      "from": 214,
+      "to": 212
+    },
+    {
+      "from": 214,
+      "to": 213
+    },
+    {
+      "from": 215,
+      "to": 144
+    },
+    {
+      "from": 215,
+      "to": 145
+    },
+    {
+      "from": 215,
+      "to": 214
+    },
+    {
+      "from": 216,
+      "to": 108
+    },
+    {
+      "from": 216,
+      "to": 221
+    },
+    {
+      "from": 217,
+      "to": 216
+    },
+    {
+      "from": 218,
+      "to": 219
+    },
+    {
+      "from": 218,
+      "to": 221
+    },
+    {
+      "from": 219,
+      "to": 144
+    },
+    {
+      "from": 219,
+      "to": 221
+    },
+    {
+      "from": 220,
+      "to": 144
+    },
+    {
+      "from": 220,
+      "to": 221
+    },
+    {
+      "from": 221,
+      "to": 144
+    },
+    {
+      "from": 221,
+      "to": 145
+    },
+    {
+      "from": 222,
+      "to": 126
+    },
+    {
+      "from": 222,
+      "to": 127
+    },
+    {
+      "from": 223,
+      "to": 222
+    },
+    {
+      "from": 223,
+      "to": 125
+    },
+    {
+      "from": 224,
+      "to": 222
+    },
+    {
+      "from": 224,
+      "to": 225
+    },
+    {
+      "from": 225,
+      "to": 222
+    },
+    {
+      "from": 226,
+      "to": 108
+    },
+    {
+      "from": 226,
+      "to": 126
+    },
+    {
+      "from": 226,
+      "to": 127
+    },
+    {
+      "from": 226,
+      "to": 222
+    },
+    {
+      "from": 227,
+      "to": 226
+    },
+    {
+      "from": 228,
+      "to": 224
+    },
+    {
+      "from": 228,
+      "to": 225
+    },
+    {
+      "from": 229,
+      "to": 228
+    },
+    {
+      "from": 229,
+      "to": 226
+    },
+    {
+      "from": 230,
+      "to": 224
+    },
+    {
+      "from": 230,
+      "to": 125
+    },
+    {
+      "from": 231,
+      "to": 224
+    },
+    {
+      "from": 231,
+      "to": 225
+    },
+    {
+      "from": 231,
+      "to": 226
+    },
+    {
+      "from": 232,
+      "to": 231
+    },
+    {
+      "from": 232,
+      "to": 222
+    },
+    {
+      "from": 233,
+      "to": 231
+    },
+    {
+      "from": 233,
+      "to": 222
+    },
+    {
+      "from": 234,
+      "to": 222
+    },
+    {
+      "from": 234,
+      "to": 226
+    },
+    {
+      "from": 235,
+      "to": 222
+    },
+    {
+      "from": 235,
+      "to": 226
+    },
+    {
+      "from": 236,
+      "to": 226
+    },
+    {
+      "from": 236,
+      "to": 108
+    },
+    {
+      "from": 237,
+      "to": 234
+    },
+    {
+      "from": 237,
+      "to": 14
+    },
+    {
+      "from": 238,
+      "to": 235
+    },
+    {
+      "from": 238,
+      "to": 14
+    },
+    {
+      "from": 239,
+      "to": 234
+    },
+    {
+      "from": 239,
+      "to": 144
+    },
+    {
+      "from": 239,
+      "to": 145
+    },
+    {
+      "from": 240,
+      "to": 239
+    },
+    {
+      "from": 240,
+      "to": 195
+    },
+    {
+      "from": 240,
+      "to": 196
+    },
+    {
+      "from": 241,
+      "to": 240
+    },
+    {
+      "from": 242,
+      "to": 241
+    },
+    {
+      "from": 242,
+      "to": 119
+    },
+    {
+      "from": 243,
+      "to": 241
+    },
+    {
+      "from": 244,
+      "to": 203
+    },
+    {
+      "from": 244,
+      "to": 224
+    },
+    {
+      "from": 244,
+      "to": 243
+    },
+    {
+      "from": 245,
+      "to": 176
+    },
+    {
+      "from": 245,
+      "to": 239
+    },
+    {
+      "from": 245,
+      "to": 241
+    },
+    {
+      "from": 246,
+      "to": 70
+    },
+    {
+      "from": 246,
+      "to": 235
+    },
+    {
+      "from": 247,
+      "to": 234
+    },
+    {
+      "from": 247,
+      "to": 241
+    },
+    {
+      "from": 248,
+      "to": 234
+    },
+    {
+      "from": 248,
+      "to": 241
+    },
+    {
+      "from": 249,
+      "to": 235
+    },
+    {
+      "from": 249,
+      "to": 242
+    },
+    {
+      "from": 250,
+      "to": 235
+    },
+    {
+      "from": 251,
+      "to": 250
+    },
+    {
+      "from": 251,
+      "to": 252
+    },
+    {
+      "from": 252,
+      "to": 160
+    },
+    {
+      "from": 253,
+      "to": 252
+    },
+    {
+      "from": 254,
+      "to": 251
+    },
+    {
+      "from": 254,
+      "to": 253
+    },
+    {
+      "from": 255,
+      "to": 70
+    },
+    {
+      "from": 255,
+      "to": 235
+    },
+    {
+      "from": 256,
+      "to": 255
+    },
+    {
+      "from": 256,
+      "to": 70
+    },
+    {
+      "from": 257,
+      "to": 255
+    },
+    {
+      "from": 257,
+      "to": 256
+    },
+    {
+      "from": 258,
+      "to": 224
+    },
+    {
+      "from": 258,
+      "to": 231
+    },
+    {
+      "from": 259,
+      "to": 258
+    },
+    {
+      "from": 259,
+      "to": 231
+    },
+    {
+      "from": 260,
+      "to": 258
+    },
+    {
+      "from": 260,
+      "to": 239
+    },
+    {
+      "from": 261,
+      "to": 259
+    },
+    {
+      "from": 261,
+      "to": 260
+    },
+    {
+      "from": 262,
+      "to": 261
+    },
+    {
+      "from": 262,
+      "to": 241
+    },
+    {
+      "from": 263,
+      "to": 239
+    },
+    {
+      "from": 263,
+      "to": 264
+    },
+    {
+      "from": 264,
+      "to": 239
+    },
+    {
+      "from": 264,
+      "to": 260
+    },
+    {
+      "from": 265,
+      "to": 264
+    },
+    {
+      "from": 265,
+      "to": 195
+    },
+    {
+      "from": 266,
+      "to": 264
+    },
+    {
+      "from": 266,
+      "to": 195
+    },
+    {
+      "from": 267,
+      "to": 265
+    },
+    {
+      "from": 267,
+      "to": 266
+    },
+    {
+      "from": 268,
+      "to": 222
+    },
+    {
+      "from": 269,
+      "to": 268
+    },
+    {
+      "from": 269,
+      "to": 14
+    },
+    {
+      "from": 270,
+      "to": 269
+    },
+    {
+      "from": 271,
+      "to": 269
+    },
+    {
+      "from": 272,
+      "to": 269
+    },
+    {
+      "from": 273,
+      "to": 268
+    },
+    {
+      "from": 273,
+      "to": 278
+    },
+    {
+      "from": 273,
+      "to": 279
+    },
+    {
+      "from": 274,
+      "to": 273
+    },
+    {
+      "from": 275,
+      "to": 274
+    },
+    {
+      "from": 275,
+      "to": 15
+    },
+    {
+      "from": 276,
+      "to": 274
+    },
+    {
+      "from": 276,
+      "to": 16
+    },
+    {
+      "from": 277,
+      "to": 268
+    },
+    {
+      "from": 277,
+      "to": 274
+    },
+    {
+      "from": 278,
+      "to": 107
+    },
+    {
+      "from": 278,
+      "to": 108
+    },
+    {
+      "from": 279,
+      "to": 278
+    },
+    {
+      "from": 279,
+      "to": 11
+    },
+    {
+      "from": 280,
+      "to": 278
+    },
+    {
+      "from": 280,
+      "to": 279
+    },
+    {
+      "from": 281,
+      "to": 278
+    },
+    {
+      "from": 281,
+      "to": 279
+    },
+    {
+      "from": 281,
+      "to": 280
+    },
+    {
+      "from": 282,
+      "to": 281
+    },
+    {
+      "from": 282,
+      "to": 280
+    },
+    {
+      "from": 283,
+      "to": 282
+    },
+    {
+      "from": 283,
+      "to": 280
+    },
+    {
+      "from": 284,
+      "to": 283
+    },
+    {
+      "from": 285,
+      "to": 284
+    },
+    {
+      "from": 286,
+      "to": 283
+    },
+    {
+      "from": 286,
+      "to": 285
+    },
+    {
+      "from": 287,
+      "to": 286
+    },
+    {
+      "from": 288,
+      "to": 282
+    },
+    {
+      "from": 289,
+      "to": 70
+    },
+    {
+      "from": 289,
+      "to": 288
+    },
+    {
+      "from": 290,
+      "to": 288
+    },
+    {
+      "from": 290,
+      "to": 289
+    },
+    {
+      "from": 291,
+      "to": 290
+    },
+    {
+      "from": 292,
+      "to": 108
+    },
+    {
+      "from": 292,
+      "to": 56
+    },
+    {
+      "from": 292,
+      "to": 293
+    },
+    {
+      "from": 293,
+      "to": 55
+    },
+    {
+      "from": 293,
+      "to": 281
+    },
+    {
+      "from": 294,
+      "to": 55
+    },
+    {
+      "from": 294,
+      "to": 293
+    },
+    {
+      "from": 295,
+      "to": 281
+    },
+    {
+      "from": 295,
+      "to": 298
+    },
+    {
+      "from": 296,
+      "to": 281
+    },
+    {
+      "from": 297,
+      "to": 296
+    },
+    {
+      "from": 297,
+      "to": 39
+    },
+    {
+      "from": 297,
+      "to": 40
+    },
+    {
+      "from": 298,
+      "to": 296
+    },
+    {
+      "from": 298,
+      "to": 299
+    },
+    {
+      "from": 299,
+      "to": 37
+    },
+    {
+      "from": 299,
+      "to": 5
+    },
+    {
+      "from": 300,
+      "to": 299
+    },
+    {
+      "from": 300,
+      "to": 298
+    },
+    {
+      "from": 301,
+      "to": 295
+    },
+    {
+      "from": 301,
+      "to": 234
+    },
+    {
+      "from": 302,
+      "to": 295
+    },
+    {
+      "from": 302,
+      "to": 224
+    },
+    {
+      "from": 303,
+      "to": 295
+    },
+    {
+      "from": 303,
+      "to": 302
+    },
+    {
+      "from": 304,
+      "to": 303
+    },
+    {
+      "from": 305,
+      "to": 303
+    },
+    {
+      "from": 305,
+      "to": 304
+    },
+    {
+      "from": 306,
+      "to": 295
+    },
+    {
+      "from": 306,
+      "to": 278
+    },
+    {
+      "from": 307,
+      "to": 306
+    },
+    {
+      "from": 307,
+      "to": 294
+    },
+    {
+      "from": 308,
+      "to": 303
+    },
+    {
+      "from": 308,
+      "to": 307
+    },
+    {
+      "from": 309,
+      "to": 308
+    },
+    {
+      "from": 310,
+      "to": 298
+    },
+    {
+      "from": 310,
+      "to": 294
+    },
+    {
+      "from": 311,
+      "to": 310
+    },
+    {
+      "from": 312,
+      "to": 310
+    },
+    {
+      "from": 312,
+      "to": 294
+    },
+    {
+      "from": 313,
+      "to": 310
+    },
+    {
+      "from": 314,
+      "to": 310
+    },
+    {
+      "from": 315,
+      "to": 295
+    },
+    {
+      "from": 315,
+      "to": 259
+    },
+    {
+      "from": 316,
+      "to": 315
+    },
+    {
+      "from": 317,
+      "to": 315
+    },
+    {
+      "from": 318,
+      "to": 302
+    },
+    {
+      "from": 318,
+      "to": 316
+    },
+    {
+      "from": 319,
+      "to": 298
+    },
+    {
+      "from": 320,
+      "to": 319
+    },
+    {
+      "from": 321,
+      "to": 320
+    },
+    {
+      "from": 322,
+      "to": 163
+    },
+    {
+      "from": 322,
+      "to": 321
+    },
+    {
+      "from": 323,
+      "to": 222
+    },
+    {
+      "from": 323,
+      "to": 126
+    },
+    {
+      "from": 323,
+      "to": 127
+    },
+    {
+      "from": 324,
+      "to": 323
+    },
+    {
+      "from": 325,
+      "to": 323
+    },
+    {
+      "from": 326,
+      "to": 323
+    },
+    {
+      "from": 327,
+      "to": 326
+    },
+    {
+      "from": 328,
+      "to": 326
+    },
+    {
+      "from": 329,
+      "to": 326
+    },
+    {
+      "from": 330,
+      "to": 323
+    },
+    {
+      "from": 330,
+      "to": 327
+    },
+    {
+      "from": 331,
+      "to": 323
+    },
+    {
+      "from": 331,
+      "to": 327
+    },
+    {
+      "from": 332,
+      "to": 323
+    },
+    {
+      "from": 332,
+      "to": 327
+    },
+    {
+      "from": 333,
+      "to": 239
+    },
+    {
+      "from": 333,
+      "to": 323
+    },
+    {
+      "from": 334,
+      "to": 333
+    },
+    {
+      "from": 334,
+      "to": 195
+    },
+    {
+      "from": 334,
+      "to": 196
+    },
+    {
+      "from": 335,
+      "to": 333
+    },
+    {
+      "from": 335,
+      "to": 334
+    },
+    {
+      "from": 336,
+      "to": 333
+    },
+    {
+      "from": 336,
+      "to": 334
+    },
+    {
+      "from": 337,
+      "to": 335
+    },
+    {
+      "from": 337,
+      "to": 336
+    },
+    {
+      "from": 338,
+      "to": 335
+    },
+    {
+      "from": 338,
+      "to": 336
+    },
+    {
+      "from": 339,
+      "to": 335
+    },
+    {
+      "from": 339,
+      "to": 336
+    },
+    {
+      "from": 340,
+      "to": 339
+    },
+    {
+      "from": 340,
+      "to": 337
+    },
+    {
+      "from": 340,
+      "to": 338
+    },
+    {
+      "from": 341,
+      "to": 340
+    },
+    {
+      "from": 342,
+      "to": 324
+    },
+    {
+      "from": 342,
+      "to": 231
+    },
+    {
+      "from": 343,
+      "to": 342
+    },
+    {
+      "from": 343,
+      "to": 231
+    },
+    {
+      "from": 344,
+      "to": 342
+    },
+    {
+      "from": 345,
+      "to": 163
+    },
+    {
+      "from": 345,
+      "to": 323
+    },
+    {
+      "from": 346,
+      "to": 345
+    },
+    {
+      "from": 346,
+      "to": 163
+    },
+    {
+      "from": 347,
+      "to": 323
+    },
+    {
+      "from": 348,
+      "to": 323
+    },
+    {
+      "from": 349,
+      "to": 323
+    },
+    {
+      "from": 350,
+      "to": 335
+    },
+    {
+      "from": 350,
+      "to": 347
+    },
+    {
+      "from": 350,
+      "to": 348
+    },
+    {
+      "from": 351,
+      "to": 350
+    },
+    {
+      "from": 351,
+      "to": 348
+    },
+    {
+      "from": 352,
+      "to": 323
+    },
+    {
+      "from": 352,
+      "to": 268
+    },
+    {
+      "from": 353,
+      "to": 352
+    },
+    {
+      "from": 353,
+      "to": 14
+    },
+    {
+      "from": 354,
+      "to": 352
+    },
+    {
+      "from": 354,
+      "to": 268
+    },
+    {
+      "from": 355,
+      "to": 222
+    },
+    {
+      "from": 356,
+      "to": 355
+    },
+    {
+      "from": 356,
+      "to": 234
+    },
+    {
+      "from": 356,
+      "to": 235
+    },
+    {
+      "from": 357,
+      "to": 356
+    },
+    {
+      "from": 357,
+      "to": 231
+    },
+    {
+      "from": 358,
+      "to": 356
+    },
+    {
+      "from": 358,
+      "to": 357
+    },
+    {
+      "from": 359,
+      "to": 282
+    },
+    {
+      "from": 359,
+      "to": 355
+    },
+    {
+      "from": 360,
+      "to": 359
+    },
+    {
+      "from": 360,
+      "to": 357
+    },
+    {
+      "from": 361,
+      "to": 295
+    },
+    {
+      "from": 361,
+      "to": 303
+    },
+    {
+      "from": 361,
+      "to": 304
+    },
+    {
+      "from": 362,
+      "to": 361
+    },
+    {
+      "from": 362,
+      "to": 308
+    },
+    {
+      "from": 363,
+      "to": 361
+    },
+    {
+      "from": 364,
+      "to": 361
+    },
+    {
+      "from": 365,
+      "to": 361
+    },
+    {
+      "from": 366,
+      "to": 361
+    },
+    {
+      "from": 366,
+      "to": 126
+    },
+    {
+      "from": 367,
+      "to": 361
+    },
+    {
+      "from": 367,
+      "to": 127
+    },
+    {
+      "from": 368,
+      "to": 361
+    },
+    {
+      "from": 368,
+      "to": 303
+    },
+    {
+      "from": 369,
+      "to": 361
+    },
+    {
+      "from": 369,
+      "to": 302
+    },
+    {
+      "from": 370,
+      "to": 361
+    },
+    {
+      "from": 370,
+      "to": 374
+    },
+    {
+      "from": 371,
+      "to": 370
+    },
+    {
+      "from": 372,
+      "to": 361
+    },
+    {
+      "from": 372,
+      "to": 370
+    },
+    {
+      "from": 372,
+      "to": 231
+    },
+    {
+      "from": 373,
+      "to": 361
+    },
+    {
+      "from": 373,
+      "to": 308
+    },
+    {
+      "from": 374,
+      "to": 308
+    },
+    {
+      "from": 374,
+      "to": 362
+    },
+    {
+      "from": 375,
+      "to": 361
+    },
+    {
+      "from": 375,
+      "to": 374
+    },
+    {
+      "from": 375,
+      "to": 180
+    },
+    {
+      "from": 376,
+      "to": 375
+    },
+    {
+      "from": 377,
+      "to": 375
+    },
+    {
+      "from": 378,
+      "to": 303
+    },
+    {
+      "from": 378,
+      "to": 305
+    },
+    {
+      "from": 379,
+      "to": 378
+    },
+    {
+      "from": 380,
+      "to": 379
+    },
+    {
+      "from": 381,
+      "to": 303
+    },
+    {
+      "from": 381,
+      "to": 224
+    },
+    {
+      "from": 382,
+      "to": 303
+    },
+    {
+      "from": 382,
+      "to": 381
+    },
+    {
+      "from": 383,
+      "to": 375
+    },
+    {
+      "from": 383,
+      "to": 177
+    },
+    {
+      "from": 384,
+      "to": 372
+    },
+    {
+      "from": 384,
+      "to": 377
+    },
+    {
+      "from": 385,
+      "to": 372
+    },
+    {
+      "from": 385,
+      "to": 231
+    },
+    {
+      "from": 386,
+      "to": 231
+    },
+    {
+      "from": 386,
+      "to": 161
+    },
+    {
+      "from": 386,
+      "to": 385
+    },
+    {
+      "from": 387,
+      "to": 231
+    },
+    {
+      "from": 387,
+      "to": 235
+    },
+    {
+      "from": 388,
+      "to": 387
+    },
+    {
+      "from": 388,
+      "to": 231
+    },
+    {
+      "from": 388,
+      "to": 235
+    },
+    {
+      "from": 389,
+      "to": 231
+    },
+    {
+      "from": 389,
+      "to": 235
+    },
+    {
+      "from": 389,
+      "to": 250
+    },
+    {
+      "from": 390,
+      "to": 161
+    },
+    {
+      "from": 390,
+      "to": 375
+    },
+    {
+      "from": 391,
+      "to": 163
+    },
+    {
+      "from": 391,
+      "to": 390
+    },
+    {
+      "from": 392,
+      "to": 163
+    },
+    {
+      "from": 392,
+      "to": 55
+    },
+    {
+      "from": 392,
+      "to": 322
+    },
+    {
+      "from": 393,
+      "to": 392
+    },
+    {
+      "from": 393,
+      "to": 322
+    },
+    {
+      "from": 394,
+      "to": 366
+    },
+    {
+      "from": 394,
+      "to": 367
+    },
+    {
+      "from": 395,
+      "to": 394
+    },
+    {
+      "from": 395,
+      "to": 375
+    },
+    {
+      "from": 396,
+      "to": 366
+    },
+    {
+      "from": 396,
+      "to": 375
+    },
+    {
+      "from": 397,
+      "to": 367
+    },
+    {
+      "from": 397,
+      "to": 375
+    },
+    {
+      "from": 398,
+      "to": 396
+    },
+    {
+      "from": 398,
+      "to": 397
+    },
+    {
+      "from": 399,
+      "to": 394
+    },
+    {
+      "from": 399,
+      "to": 398
+    },
+    {
+      "from": 400,
+      "to": 394
+    },
+    {
+      "from": 400,
+      "to": 258
+    },
+    {
+      "from": 400,
+      "to": 398
+    },
+    {
+      "from": 401,
+      "to": 361
+    },
+    {
+      "from": 402,
+      "to": 401
+    },
+    {
+      "from": 402,
+      "to": 387
+    },
+    {
+      "from": 402,
+      "to": 388
+    },
+    {
+      "from": 403,
+      "to": 401
+    },
+    {
+      "from": 403,
+      "to": 402
+    },
+    {
+      "from": 404,
+      "to": 361
+    },
+    {
+      "from": 405,
+      "to": 404
+    },
+    {
+      "from": 406,
+      "to": 404
+    },
+    {
+      "from": 407,
+      "to": 401
+    },
+    {
+      "from": 407,
+      "to": 403
+    },
+    {
+      "from": 408,
+      "to": 407
+    },
+    {
+      "from": 409,
+      "to": 387
+    },
+    {
+      "from": 409,
+      "to": 400
+    },
+    {
+      "from": 410,
+      "to": 409
+    },
+    {
+      "from": 411,
+      "to": 410
+    },
+    {
+      "from": 411,
+      "to": 386
+    },
+    {
+      "from": 412,
+      "to": 12
+    },
+    {
+      "from": 412,
+      "to": 201
+    },
+    {
+      "from": 412,
+      "to": 222
+    },
+    {
+      "from": 413,
+      "to": 412
+    },
+    {
+      "from": 413,
+      "to": 416
+    },
+    {
+      "from": 414,
+      "to": 412
+    },
+    {
+      "from": 414,
+      "to": 7
+    },
+    {
+      "from": 414,
+      "to": 9
+    },
+    {
+      "from": 415,
+      "to": 12
+    },
+    {
+      "from": 415,
+      "to": 412
+    },
+    {
+      "from": 416,
+      "to": 417
+    },
+    {
+      "from": 416,
+      "to": 418
+    },
+    {
+      "from": 416,
+      "to": 419
+    },
+    {
+      "from": 417,
+      "to": 201
+    },
+    {
+      "from": 417,
+      "to": 202
+    },
+    {
+      "from": 418,
+      "to": 417
+    },
+    {
+      "from": 419,
+      "to": 418
+    },
+    {
+      "from": 420,
+      "to": 11
+    },
+    {
+      "from": 420,
+      "to": 12
+    },
+    {
+      "from": 420,
+      "to": 414
+    },
+    {
+      "from": 421,
+      "to": 412
+    },
+    {
+      "from": 421,
+      "to": 420
+    },
+    {
+      "from": 422,
+      "to": 421
+    },
+    {
+      "from": 422,
+      "to": 420
+    },
+    {
+      "from": 423,
+      "to": 412
+    },
+    {
+      "from": 423,
+      "to": 425
+    },
+    {
+      "from": 423,
+      "to": 434
+    },
+    {
+      "from": 424,
+      "to": 423
+    },
+    {
+      "from": 424,
+      "to": 425
+    },
+    {
+      "from": 424,
+      "to": 426
+    },
+    {
+      "from": 425,
+      "to": 217
+    },
+    {
+      "from": 425,
+      "to": 216
+    },
+    {
+      "from": 426,
+      "to": 425
+    },
+    {
+      "from": 426,
+      "to": 201
+    },
+    {
+      "from": 427,
+      "to": 426
+    },
+    {
+      "from": 427,
+      "to": 423
+    },
+    {
+      "from": 428,
+      "to": 423
+    },
+    {
+      "from": 429,
+      "to": 428
+    },
+    {
+      "from": 430,
+      "to": 36
+    },
+    {
+      "from": 430,
+      "to": 429
+    },
+    {
+      "from": 431,
+      "to": 430
+    },
+    {
+      "from": 431,
+      "to": 423
+    },
+    {
+      "from": 432,
+      "to": 430
+    },
+    {
+      "from": 432,
+      "to": 423
+    },
+    {
+      "from": 433,
+      "to": 432
+    },
+    {
+      "from": 434,
+      "to": 268
+    },
+    {
+      "from": 434,
+      "to": 412
+    },
+    {
+      "from": 435,
+      "to": 479
+    },
+    {
+      "from": 435,
+      "to": 423
+    },
+    {
+      "from": 436,
+      "to": 426
+    },
+    {
+      "from": 436,
+      "to": 423
+    },
+    {
+      "from": 437,
+      "to": 222
+    },
+    {
+      "from": 437,
+      "to": 224
+    },
+    {
+      "from": 438,
+      "to": 437
+    },
+    {
+      "from": 438,
+      "to": 224
+    },
+    {
+      "from": 439,
+      "to": 437
+    },
+    {
+      "from": 439,
+      "to": 440
+    },
+    {
+      "from": 440,
+      "to": 437
+    },
+    {
+      "from": 440,
+      "to": 213
+    },
+    {
+      "from": 441,
+      "to": 437
+    },
+    {
+      "from": 441,
+      "to": 203
+    },
+    {
+      "from": 441,
+      "to": 249
+    },
+    {
+      "from": 442,
+      "to": 437
+    },
+    {
+      "from": 442,
+      "to": 195
+    },
+    {
+      "from": 443,
+      "to": 251
+    },
+    {
+      "from": 443,
+      "to": 437
+    },
+    {
+      "from": 443,
+      "to": 438
+    },
+    {
+      "from": 444,
+      "to": 443
+    },
+    {
+      "from": 444,
+      "to": 254
+    },
+    {
+      "from": 445,
+      "to": 444
+    },
+    {
+      "from": 446,
+      "to": 222
+    },
+    {
+      "from": 447,
+      "to": 446
+    },
+    {
+      "from": 447,
+      "to": 214
+    },
+    {
+      "from": 448,
+      "to": 446
+    },
+    {
+      "from": 448,
+      "to": 241
+    },
+    {
+      "from": 449,
+      "to": 448
+    },
+    {
+      "from": 449,
+      "to": 214
+    },
+    {
+      "from": 450,
+      "to": 448
+    },
+    {
+      "from": 450,
+      "to": 226
+    },
+    {
+      "from": 451,
+      "to": 448
+    },
+    {
+      "from": 451,
+      "to": 449
+    },
+    {
+      "from": 451,
+      "to": 450
+    },
+    {
+      "from": 452,
+      "to": 451
+    },
+    {
+      "from": 452,
+      "to": 416
+    },
+    {
+      "from": 453,
+      "to": 12
+    },
+    {
+      "from": 453,
+      "to": 452
+    },
+    {
+      "from": 454,
+      "to": 446
+    },
+    {
+      "from": 455,
+      "to": 268
+    },
+    {
+      "from": 455,
+      "to": 453
+    },
+    {
+      "from": 456,
+      "to": 455
+    },
+    {
+      "from": 457,
+      "to": 452
+    },
+    {
+      "from": 457,
+      "to": 458
+    },
+    {
+      "from": 457,
+      "to": 459
+    },
+    {
+      "from": 458,
+      "to": 452
+    },
+    {
+      "from": 458,
+      "to": 197
+    },
+    {
+      "from": 459,
+      "to": 452
+    },
+    {
+      "from": 459,
+      "to": 11
+    },
+    {
+      "from": 460,
+      "to": 222
+    },
+    {
+      "from": 461,
+      "to": 460
+    },
+    {
+      "from": 461,
+      "to": 234
+    },
+    {
+      "from": 461,
+      "to": 239
+    },
+    {
+      "from": 462,
+      "to": 394
+    },
+    {
+      "from": 462,
+      "to": 460
+    },
+    {
+      "from": 463,
+      "to": 462
+    },
+    {
+      "from": 463,
+      "to": 438
+    },
+    {
+      "from": 464,
+      "to": 463
+    },
+    {
+      "from": 464,
+      "to": 590
+    },
+    {
+      "from": 465,
+      "to": 4
+    },
+    {
+      "from": 465,
+      "to": 26
+    },
+    {
+      "from": 466,
+      "to": 7
+    },
+    {
+      "from": 466,
+      "to": 465
+    },
+    {
+      "from": 467,
+      "to": 8
+    },
+    {
+      "from": 467,
+      "to": 465
+    },
+    {
+      "from": 468,
+      "to": 465
+    },
+    {
+      "from": 468,
+      "to": 466
+    },
+    {
+      "from": 468,
+      "to": 467
+    },
+    {
+      "from": 469,
+      "to": 465
+    },
+    {
+      "from": 469,
+      "to": 466
+    },
+    {
+      "from": 470,
+      "to": 465
+    },
+    {
+      "from": 470,
+      "to": 467
+    },
+    {
+      "from": 470,
+      "to": 468
+    },
+    {
+      "from": 471,
+      "to": 4
+    },
+    {
+      "from": 472,
+      "to": 11
+    },
+    {
+      "from": 472,
+      "to": 9
+    },
+    {
+      "from": 472,
+      "to": 10
+    },
+    {
+      "from": 473,
+      "to": 9
+    },
+    {
+      "from": 473,
+      "to": 27
+    },
+    {
+      "from": 474,
+      "to": 473
+    },
+    {
+      "from": 474,
+      "to": 531
+    },
+    {
+      "from": 475,
+      "to": 473
+    },
+    {
+      "from": 475,
+      "to": 469
+    },
+    {
+      "from": 476,
+      "to": 475
+    },
+    {
+      "from": 476,
+      "to": 488
+    },
+    {
+      "from": 476,
+      "to": 489
+    },
+    {
+      "from": 477,
+      "to": 10
+    },
+    {
+      "from": 478,
+      "to": 477
+    },
+    {
+      "from": 479,
+      "to": 268
+    },
+    {
+      "from": 480,
+      "to": 479
+    },
+    {
+      "from": 480,
+      "to": 67
+    },
+    {
+      "from": 480,
+      "to": 68
+    },
+    {
+      "from": 481,
+      "to": 479
+    },
+    {
+      "from": 481,
+      "to": 64
+    },
+    {
+      "from": 481,
+      "to": 480
+    },
+    {
+      "from": 482,
+      "to": 480
+    },
+    {
+      "from": 482,
+      "to": 113
+    },
+    {
+      "from": 483,
+      "to": 479
+    },
+    {
+      "from": 483,
+      "to": 114
+    },
+    {
+      "from": 484,
+      "to": 483
+    },
+    {
+      "from": 484,
+      "to": 115
+    },
+    {
+      "from": 485,
+      "to": 484
+    },
+    {
+      "from": 485,
+      "to": 67
+    },
+    {
+      "from": 486,
+      "to": 484
+    },
+    {
+      "from": 486,
+      "to": 67
+    },
+    {
+      "from": 487,
+      "to": 486
+    },
+    {
+      "from": 487,
+      "to": 67
+    },
+    {
+      "from": 488,
+      "to": 479
+    },
+    {
+      "from": 489,
+      "to": 488
+    },
+    {
+      "from": 489,
+      "to": 303
+    },
+    {
+      "from": 489,
+      "to": 268
+    },
+    {
+      "from": 490,
+      "to": 489
+    },
+    {
+      "from": 490,
+      "to": 360
+    },
+    {
+      "from": 491,
+      "to": 490
+    },
+    {
+      "from": 492,
+      "to": 491
+    },
+    {
+      "from": 492,
+      "to": 360
+    },
+    {
+      "from": 492,
+      "to": 489
+    },
+    {
+      "from": 493,
+      "to": 492
+    },
+    {
+      "from": 493,
+      "to": 35
+    },
+    {
+      "from": 494,
+      "to": 493
+    },
+    {
+      "from": 495,
+      "to": 35
+    },
+    {
+      "from": 496,
+      "to": 495
+    },
+    {
+      "from": 496,
+      "to": 95
+    },
+    {
+      "from": 497,
+      "to": 495
+    },
+    {
+      "from": 497,
+      "to": 496
+    },
+    {
+      "from": 498,
+      "to": 495
+    },
+    {
+      "from": 498,
+      "to": 496
+    },
+    {
+      "from": 499,
+      "to": 35
+    },
+    {
+      "from": 499,
+      "to": 495
+    },
+    {
+      "from": 500,
+      "to": 499
+    },
+    {
+      "from": 500,
+      "to": 495
+    },
+    {
+      "from": 501,
+      "to": 1
+    },
+    {
+      "from": 501,
+      "to": 18
+    },
+    {
+      "from": 502,
+      "to": 501
+    },
+    {
+      "from": 502,
+      "to": 95
+    },
+    {
+      "from": 503,
+      "to": 502
+    },
+    {
+      "from": 504,
+      "to": 503
+    },
+    {
+      "from": 504,
+      "to": 156
+    },
+    {
+      "from": 505,
+      "to": 42
+    },
+    {
+      "from": 506,
+      "to": 505
+    },
+    {
+      "from": 507,
+      "to": 506
+    },
+    {
+      "from": 507,
+      "to": 95
+    },
+    {
+      "from": 508,
+      "to": 18
+    },
+    {
+      "from": 508,
+      "to": 501
+    },
+    {
+      "from": 508,
+      "to": 505
+    },
+    {
+      "from": 509,
+      "to": 42
+    },
+    {
+      "from": 509,
+      "to": 508
+    },
+    {
+      "from": 510,
+      "to": 501
+    },
+    {
+      "from": 511,
+      "to": 510
+    },
+    {
+      "from": 511,
+      "to": 95
+    },
+    {
+      "from": 512,
+      "to": 222
+    },
+    {
+      "from": 512,
+      "to": 250
+    },
+    {
+      "from": 513,
+      "to": 512
+    },
+    {
+      "from": 513,
+      "to": 250
+    },
+    {
+      "from": 514,
+      "to": 323
+    },
+    {
+      "from": 514,
+      "to": 222
+    },
+    {
+      "from": 515,
+      "to": 514
+    },
+    {
+      "from": 515,
+      "to": 234
+    },
+    {
+      "from": 515,
+      "to": 235
+    },
+    {
+      "from": 516,
+      "to": 515
+    },
+    {
+      "from": 517,
+      "to": 323
+    },
+    {
+      "from": 517,
+      "to": 366
+    },
+    {
+      "from": 518,
+      "to": 517
+    },
+    {
+      "from": 519,
+      "to": 361
+    },
+    {
+      "from": 519,
+      "to": 513
+    },
+    {
+      "from": 520,
+      "to": 519
+    },
+    {
+      "from": 520,
+      "to": 231
+    },
+    {
+      "from": 521,
+      "to": 250
+    },
+    {
+      "from": 521,
+      "to": 519
+    },
+    {
+      "from": 522,
+      "to": 250
+    },
+    {
+      "from": 522,
+      "to": 521
+    },
+    {
+      "from": 522,
+      "to": 252
+    },
+    {
+      "from": 523,
+      "to": 389
+    },
+    {
+      "from": 523,
+      "to": 231
+    },
+    {
+      "from": 524,
+      "to": 95
+    },
+    {
+      "from": 525,
+      "to": 524
+    },
+    {
+      "from": 525,
+      "to": 162
+    },
+    {
+      "from": 526,
+      "to": 525
+    },
+    {
+      "from": 526,
+      "to": 168
+    },
+    {
+      "from": 527,
+      "to": 251
+    },
+    {
+      "from": 527,
+      "to": 252
+    },
+    {
+      "from": 528,
+      "to": 527
+    },
+    {
+      "from": 528,
+      "to": 524
+    },
+    {
+      "from": 529,
+      "to": 350
+    },
+    {
+      "from": 529,
+      "to": 351
+    },
+    {
+      "from": 530,
+      "to": 350
+    },
+    {
+      "from": 530,
+      "to": 376
+    },
+    {
+      "from": 531,
+      "to": 18
+    },
+    {
+      "from": 531,
+      "to": 19
+    },
+    {
+      "from": 532,
+      "to": 531
+    },
+    {
+      "from": 533,
+      "to": 531
+    },
+    {
+      "from": 533,
+      "to": 532
+    },
+    {
+      "from": 534,
+      "to": 533
+    },
+    {
+      "from": 534,
+      "to": 29
+    },
+    {
+      "from": 535,
+      "to": 534
+    },
+    {
+      "from": 535,
+      "to": 18
+    },
+    {
+      "from": 536,
+      "to": 535
+    },
+    {
+      "from": 537,
+      "to": 535
+    },
+    {
+      "from": 538,
+      "to": 535
+    },
+    {
+      "from": 539,
+      "to": 5
+    },
+    {
+      "from": 540,
+      "to": 539
+    },
+    {
+      "from": 541,
+      "to": 539
+    },
+    {
+      "from": 542,
+      "to": 539
+    },
+    {
+      "from": 543,
+      "to": 44
+    },
+    {
+      "from": 543,
+      "to": 45
+    },
+    {
+      "from": 544,
+      "to": 543
+    },
+    {
+      "from": 545,
+      "to": 543
+    },
+    {
+      "from": 545,
+      "to": 544
+    },
+    {
+      "from": 546,
+      "to": 543
+    },
+    {
+      "from": 546,
+      "to": 545
+    },
+    {
+      "from": 547,
+      "to": 46
+    },
+    {
+      "from": 547,
+      "to": 44
+    },
+    {
+      "from": 548,
+      "to": 547
+    },
+    {
+      "from": 549,
+      "to": 548
+    },
+    {
+      "from": 549,
+      "to": 18
+    },
+    {
+      "from": 550,
+      "to": 547
+    },
+    {
+      "from": 550,
+      "to": 44
+    },
+    {
+      "from": 551,
+      "to": 534
+    },
+    {
+      "from": 552,
+      "to": 551
+    },
+    {
+      "from": 553,
+      "to": 551
+    },
+    {
+      "from": 553,
+      "to": 552
+    },
+    {
+      "from": 554,
+      "to": 551
+    },
+    {
+      "from": 554,
+      "to": 553
+    },
+    {
+      "from": 555,
+      "to": 534
+    },
+    {
+      "from": 556,
+      "to": 555
+    },
+    {
+      "from": 557,
+      "to": 555
+    },
+    {
+      "from": 558,
+      "to": 557
+    },
+    {
+      "from": 559,
+      "to": 534
+    },
+    {
+      "from": 560,
+      "to": 559
+    },
+    {
+      "from": 561,
+      "to": 560
+    },
+    {
+      "from": 562,
+      "to": 281
+    },
+    {
+      "from": 562,
+      "to": 559
+    },
+    {
+      "from": 562,
+      "to": 41
+    },
+    {
+      "from": 563,
+      "to": 562
+    },
+    {
+      "from": 564,
+      "to": 562
+    },
+    {
+      "from": 565,
+      "to": 281
+    },
+    {
+      "from": 565,
+      "to": 5
+    },
+    {
+      "from": 565,
+      "to": 562
+    },
+    {
+      "from": 566,
+      "to": 290
+    },
+    {
+      "from": 566,
+      "to": 562
+    },
+    {
+      "from": 567,
+      "to": 44
+    },
+    {
+      "from": 567,
+      "to": 544
+    },
+    {
+      "from": 567,
+      "to": 547
+    },
+    {
+      "from": 568,
+      "to": 534
+    },
+    {
+      "from": 569,
+      "to": 567
+    },
+    {
+      "from": 569,
+      "to": 568
+    },
+    {
+      "from": 570,
+      "to": 5
+    },
+    {
+      "from": 571,
+      "to": 570
+    },
+    {
+      "from": 572,
+      "to": 315
+    },
+    {
+      "from": 572,
+      "to": 571
+    },
+    {
+      "from": 573,
+      "to": 184
+    },
+    {
+      "from": 573,
+      "to": 571
+    },
+    {
+      "from": 574,
+      "to": 183
+    },
+    {
+      "from": 574,
+      "to": 571
+    },
+    {
+      "from": 575,
+      "to": 203
+    },
+    {
+      "from": 575,
+      "to": 205
+    },
+    {
+      "from": 575,
+      "to": 315
+    },
+    {
+      "from": 576,
+      "to": 212
+    },
+    {
+      "from": 576,
+      "to": 213
+    },
+    {
+      "from": 577,
+      "to": 201
+    },
+    {
+      "from": 577,
+      "to": 576
+    },
+    {
+      "from": 578,
+      "to": 412
+    },
+    {
+      "from": 578,
+      "to": 577
+    },
+    {
+      "from": 579,
+      "to": 576
+    },
+    {
+      "from": 580,
+      "to": 34
+    },
+    {
+      "from": 580,
+      "to": 50
+    },
+    {
+      "from": 581,
+      "to": 580
+    },
+    {
+      "from": 582,
+      "to": 128
+    },
+    {
+      "from": 582,
+      "to": 547
+    },
+    {
+      "from": 583,
+      "to": 74
+    },
+    {
+      "from": 583,
+      "to": 208
+    },
+    {
+      "from": 584,
+      "to": 340
+    },
+    {
+      "from": 584,
+      "to": 375
+    },
+    {
+      "from": 585,
+      "to": 375
+    },
+    {
+      "from": 585,
+      "to": 374
+    },
+    {
+      "from": 586,
+      "to": 585
+    },
+    {
+      "from": 586,
+      "to": 387
+    },
+    {
+      "from": 587,
+      "to": 261
+    },
+    {
+      "from": 587,
+      "to": 330
+    },
+    {
+      "from": 588,
+      "to": 340
+    },
+    {
+      "from": 588,
+      "to": 584
+    },
+    {
+      "from": 589,
+      "to": 590
+    },
+    {
+      "from": 589,
+      "to": 591
+    },
+    {
+      "from": 589,
+      "to": 592
+    },
+    {
+      "from": 590,
+      "to": 181
+    },
+    {
+      "from": 591,
+      "to": 197
+    },
+    {
+      "from": 591,
+      "to": 590
+    },
+    {
+      "from": 592,
+      "to": 55
+    },
+    {
+      "from": 592,
+      "to": 590
+    },
+    {
+      "from": 593,
+      "to": 589
+    },
+    {
+      "from": 594,
+      "to": 70
+    },
+    {
+      "from": 594,
+      "to": 200
+    },
+    {
+      "from": 595,
+      "to": 594
+    },
+    {
+      "from": 595,
+      "to": 70
+    },
+    {
+      "from": 596,
+      "to": 595
+    },
+    {
+      "from": 597,
+      "to": 596
+    },
+    {
+      "from": 597,
+      "to": 69
+    },
+    {
+      "from": 598,
+      "to": 596
+    },
+    {
+      "from": 598,
+      "to": 528
+    },
+    {
+      "from": 599,
+      "to": 156
+    },
+    {
+      "from": 599,
+      "to": 60
+    },
+    {
+      "from": 600,
+      "to": 486
+    },
+    {
+      "from": 600,
+      "to": 113
+    },
+    {
+      "from": 600,
+      "to": 114
+    }
+  ]
+}

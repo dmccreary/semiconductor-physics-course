@@ -1,0 +1,18 @@
+{
+  "FOUND": "SteelBlue",
+  "CRYST": "DarkGreen",
+  "QM": "DarkSlateBlue",
+  "BAND": "Indigo",
+  "STAT": "Teal",
+  "TRANS": "DodgerBlue",
+  "GREC": "DarkGoldenrod",
+  "PNJ": "Gold",
+  "MIS": "MediumPurple",
+  "BJT": "Crimson",
+  "FET": "DarkRed",
+  "OPT": "LimeGreen",
+  "ADV": "DarkOrchid",
+  "PWR": "Tomato",
+  "FAB": "OliveDrab",
+  "CHAR": "DimGray"
+}

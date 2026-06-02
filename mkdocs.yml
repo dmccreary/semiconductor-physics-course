@@ -14,6 +14,13 @@ nav:
     - Intro: prompts/index.md
     - Course Description: prompts/course-description.md
     - Suggested Simulations: prompts/suggested-simulations.md
+  - Learning Graph:
+    - Introduction: learning-graph/index.md
+    - Course Description Assessment: learning-graph/course-description-assessment.md
+    - Concept List: learning-graph/concept-list.md
+    - Graph Quality Analysis: learning-graph/quality-metrics.md
+    - Concept Taxonomy: learning-graph/concept-taxonomy.md
+    - Taxonomy Distribution Report: learning-graph/taxonomy-distribution.md
   - MicroSims:
     - Intro: sims/index.md
     - PN Junction: sims/pn-junction/index.md

@@ -1,0 +1,10 @@
+{
+  "title": "Semiconductor Physics: Fundamentals to Advanced Applications",
+  "description": "A comprehensive learning graph for semiconductor physics covering quantum mechanical foundations, crystal structure, band theory, carrier statistics, transport, generation-recombination, p-n junctions, MOS structures, bipolar and field-effect transistors, optoelectronic devices, advanced materials (III-V, quantum structures, 2D materials), power devices, fabrication concepts, and characterization methods.",
+  "creator": "Dan Mccreary",
+  "date": "2026-06-02",
+  "version": "1.0",
+  "format": "Learning Graph JSON v1.0",
+  "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+  "license": "CC BY-NC-SA 4.0 DEED"
+}
