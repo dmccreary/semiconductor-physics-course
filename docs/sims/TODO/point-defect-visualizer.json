@@ -1,0 +1,14 @@
+{
+  "sim_id": "point-defect-visualizer",
+  "diagram_name": "Point Defect Visualizer",
+  "chapter_number": 3,
+  "chapter_title": "Crystal Bonding, Defects, and Surfaces",
+  "chapter_dir": "03-crystal-bonding-defects",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": "Students will identify the five point defect types in a crystal lattice cross-section and explain (Understand, L2) their effect on carrier behavior by clicking defect sites to reveal detailed descriptions.",
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: MicroSim\n**sim-id:** point-defect-visualizer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\n**Learning objective:** Students will identify the five point defect types in a crystal lattice cross-section and explain (Understand, L2) their effect on carrier behavior by clicking defect sites to reveal detailed descriptions.\n\n**Canvas size:** 820 × 500 px, responsive — call updateCanvasSize() in setup().\n\n**Controls (p5.js built-in):**\n- Select dropdown: \"Highlight defect type\" — \"All defects\", \"Vacancies only\", \"Interstitials only\", \"Substitutional impurities\", \"Frenkel pairs\", \"Schottky defects\". Default: \"All defects\".\n- Button: \"Randomize positions\" — redistributes defect locations randomly, keeping counts fixed.\n\n**Visual layout:**\n\nLeft panel (65%): Top-down 2D view of a 10×10 section of a simple square lattice representing a crystal cross-section. Draw host atoms as filled light-blue circles (radius 14 px). Lattice spacing ~50 px.\n\nPlace approximately 2–3 of each defect type at random lattice or interstitial positions:\n- Vacancy: empty dashed-circle outline in dark red; label \"V\".\n- Self-interstitial: small orange circle at midpoint between lattice sites; label \"I\".\n- Substitutional donor (P): green circle at lattice site; label \"P⁺\".\n- Substitutional deep trap (Au): purple circle at lattice site; label \"Au\".\n- Frenkel pair: a vacancy + nearby interstitial connected by a curved dashed arc.\n\nHover over any defect: highlight with yellow glow; display tooltip showing defect name, mechanism, and electrical effect.\nClick any defect: open detail card in right panel.\n\nRight panel (35%): Detail card for the clicked defect:\n- Name and dimensionality (0D point defect).\n- Formation mechanism.\n- Charge states possible.\n- Electrical impact (carrier concentration, lifetime, mobility).\n- Real-world consequence (one sentence).\n\n**Behavior:** Dropdown grays out non-selected defect types. \"Randomize\" regenerates positions. On resize: updateCanvasSize() reflows proportionally.\n\n**Implementation:** p5.js, single HTML file. Use createSelect(), createButton(). Parent canvas to document.querySelector('main')."
+}

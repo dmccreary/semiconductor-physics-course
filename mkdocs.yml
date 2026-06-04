@@ -47,9 +47,24 @@ nav:
     - Taxonomy Distribution Report: learning-graph/taxonomy-distribution.md
     - Mascot Style Guide: learning-graph/mascot-test.md
   - MicroSims:
-    - Intro: sims/index.md
+    - List of MicroSims: sims/index.md
+    - Crystal Defect Hierarchy Network: sims/defect-hierarchy-network/index.md
+    - Cubic Crystal Structure Explorer: sims/cubic-crystal-structure-explorer/index.md
+    - Dimensionality and Density of States Explorer: sims/density-of-states-explorer/index.md
+    - Direct vs. Indirect Bandgap — E-k Diagram Explorer: sims/direct-indirect-bandgap-explorer/index.md
+    - Fermi-Dirac Distribution and Carrier Concentration Explorer: sims/fermi-dirac-explorer/index.md
+    - Interactive E-k Band Structure Explorer: sims/ek-band-structure-explorer/index.md
+    - Interactive Energy Band Diagram Explorer: sims/energy-band-diagram-explorer/index.md
     - Learning Graph Viewer: sims/graph-viewer/index.md
+    - Miller Indices Crystal Plane Explorer: sims/miller-indices-explorer/index.md
+    - Particle in a Box — Energy Level Explorer: sims/particle-in-a-box-explorer/index.md
     - PN Junction: sims/pn-junction/index.md
+    - Point Defect Visualizer: sims/point-defect-visualizer/index.md
+    - Quantum Tunneling Probability Explorer: sims/quantum-tunneling-explorer/index.md
+    - Semiconductor Lattice Constant and Bandgap Map: sims/lattice-bandgap-map/index.md
+    - Temperature Dependence of ni Explorer: sims/intrinsic-concentration-temperature/index.md
+
+
   - Glossary: glossary.md
   - How We Built This Site: how-we-built-this-site.md
   - References: references.md

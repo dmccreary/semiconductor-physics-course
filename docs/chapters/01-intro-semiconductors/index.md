@@ -120,6 +120,14 @@ With the vocabulary established, the following MicroSim lets you explore how the
 
 #### Diagram: Interactive Energy Band Diagram Explorer
 
+
+<iframe src="../../sims/energy-band-diagram-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Interactive Energy Band Diagram Explorer Fullscreen](../../sims/energy-band-diagram-explorer<br/>/main.html)
+
+
+<iframe src="../../sims/energy-band-diagram-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Interactive Energy Band Diagram Explorer Fullscreen](../../sims/energy-band-diagram-explorer<br/>/main.html)
+
 <details markdown="1">
 <summary>Interactive Energy Band Diagram Explorer</summary>
 Type: MicroSim
@@ -199,6 +207,14 @@ Two features of the band structure determine a material's gap type. The **valenc
 The following MicroSim renders simplified E-k diagrams for both direct and indirect gap materials, making the distinction between gap types visual and interactive.
 
 #### Diagram: Direct vs. Indirect Bandgap — E-k Diagram Explorer
+
+
+<iframe src="../../sims/direct-indirect-bandgap-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Direct vs. Indirect Bandgap — E-k Diagram Explorer Fullscreen](../../sims/direct-indirect-bandgap-explorer<br/>/main.html)
+
+
+<iframe src="../../sims/direct-indirect-bandgap-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Direct vs. Indirect Bandgap — E-k Diagram Explorer Fullscreen](../../sims/direct-indirect-bandgap-explorer<br/>/main.html)
 
 <details markdown="1">
 <summary>Direct vs. Indirect Bandgap — E-k Diagram Explorer</summary>

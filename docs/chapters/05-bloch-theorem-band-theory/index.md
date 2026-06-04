@@ -114,6 +114,14 @@ This cosine band has width \(4t\). Larger \(t\) (stronger overlap) → broader b
 
 #### Diagram: Interactive E-k Band Structure Explorer
 
+
+<iframe src="../../sims/ek-band-structure-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Interactive E-k Band Structure Explorer Fullscreen](../../sims/ek-band-structure-explorer<br/>/main.html)
+
+
+<iframe src="../../sims/ek-band-structure-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Interactive E-k Band Structure Explorer Fullscreen](../../sims/ek-band-structure-explorer<br/>/main.html)
+
 <details markdown="1">
 <summary>Interactive E-k Band Structure Explorer</summary>
 Type: MicroSim
@@ -213,6 +221,14 @@ The square-root energy dependence is the signature of 3D confinement. In lower-d
 The delta-function DOS of quantum dots produces extremely narrow optical gain spectra and ultra-low threshold currents — the reason quantum dot lasers are commercially attractive. Quantum well lasers (step-function DOS) already outperform bulk lasers by 10–50× in threshold current; quantum dot lasers push this further.
 
 #### Diagram: Dimensionality and Density of States Explorer
+
+
+<iframe src="../../sims/density-of-states-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Dimensionality and Density of States Explorer Fullscreen](../../sims/density-of-states-explorer<br/>/main.html)
+
+
+<iframe src="../../sims/density-of-states-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Dimensionality and Density of States Explorer Fullscreen](../../sims/density-of-states-explorer<br/>/main.html)
 
 <details markdown="1">
 <summary>Dimensionality and Density of States Explorer</summary>

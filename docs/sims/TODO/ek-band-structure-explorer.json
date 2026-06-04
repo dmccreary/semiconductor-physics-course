@@ -1,0 +1,14 @@
+{
+  "sim_id": "ek-band-structure-explorer",
+  "diagram_name": "Interactive E-k Band Structure Explorer",
+  "chapter_number": 5,
+  "chapter_title": "\"Bloch's Theorem, Band Formation, and E-k Diagrams\"",
+  "chapter_dir": "05-bloch-theorem-band-theory",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": "Students will read and interpret E-k diagrams for real semiconductors and identify (Analyze, L4) conduction band minima, valence band maxima, and bandgap values at high-symmetry k-points.",
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: MicroSim\n**sim-id:** ek-band-structure-explorer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\n**Learning objective:** Students will read and interpret E-k diagrams for real semiconductors and identify (Analyze, L4) conduction band minima, valence band maxima, and bandgap values at high-symmetry k-points.\n\n**Canvas size:** 950 × 560 px, responsive.\n\n**Controls:**\n- Select dropdown: Material — \"Si (indirect, 1.12 eV)\", \"Ge (indirect, 0.66 eV)\", \"GaAs (direct, 1.42 eV)\", \"GaN (direct, 3.40 eV)\", \"Free Electron\". Default: \"Si\".\n- Checkbox: \"Show effective mass parabolas\" (default checked) — overlays fitted parabolas near CBM and VBM.\n- Select: \"Brillouin zone path\" — \"L–Γ–X\" (default, for cubic), \"K–Γ–M\" (hexagonal, for GaN).\n\n**Visual layout:**\n\nMain panel (70%): Schematic E-k diagram drawn along the selected path. Horizontal axis labeled with high-symmetry k-points. Vertical axis: Energy (eV), origin at VBM.\n\nDraw 4–6 bands (valence and conduction) as smooth schematic curves for each material:\n- Si: CBM near X at ~0.85 of Γ→X distance, 6-fold degenerate; VBM at Γ, split into HH, LH, SO.\n- GaAs: CBM and VBM both at Γ; gap 1.42 eV; show L and X valleys as higher CB minima.\n- Ge: CBM at L; VBM at Γ; gap 0.66 eV.\n- GaN: CBM and VBM at Γ; gap 3.40 eV; hexagonal path.\n- Free Electron: single parabola crossing zone boundary (Bragg reflection visible as slight gap).\n\nMark VBM and CBM with labeled dots. Shade the bandgap in yellow. Label E_g.\n\nIf \"Show effective mass parabolas\" checked: overlay red dashed parabola at CBM (width ∝ 1/m_n*), blue dashed parabolas at VBM for HH and LH.\n\nRight panel (30%): material name, E_g, gap type, CBM location, effective masses m_n*, m_HH, m_LH.\n\n**Behavior:** Dropdown updates immediately. Hover on band shows (k, E) coordinates and band label.\n\n**Implementation:** p5.js, single HTML file. Bands as Bezier curve approximations. Parent canvas to document.querySelector('main')."
+}

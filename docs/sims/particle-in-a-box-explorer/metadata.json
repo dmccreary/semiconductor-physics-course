@@ -1,0 +1,21 @@
+{
+  "title": "Particle in a Box — Energy Level Explorer",
+  "description": "Students will calculate the quantized energy levels of a particle confined in a 1D box and explain (Apply, L3) how confinement energy scales with box width and quantum number, using an interactive visualization.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "particle-in-a-box-explorer",
+  "library": "p5.js",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 4,
+  "chapter_title": "\"Quantum Mechanics: Wave Equations and Atomic Structure\"",
+  "chapter_dir": "04-quantum-mechanics"
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "lattice-bandgap-map",
+  "diagram_name": "Semiconductor Lattice Constant and Bandgap Map",
+  "chapter_number": 2,
+  "chapter_title": "Crystal Lattice Structure and Symmetry",
+  "chapter_dir": "02-crystal-lattice-structure",
+  "library": "Chart.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": "Students will compare lattice constants and bandgaps of common semiconductors and evaluate (Evaluate, L5) lattice mismatch implications for heterostructure design.",
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: MicroSim\n**sim-id:** lattice-bandgap-map<br/>\n**Library:** Chart.js<br/>\n**Status:** Specified\n\n**Learning objective:** Students will compare lattice constants and bandgaps of common semiconductors and evaluate (Evaluate, L5) lattice mismatch implications for heterostructure design.\n\n**Canvas size:** 780 × 500 px, responsive.\n\n**Chart type:** Scatter plot (Chart.js Scatter). Each semiconductor is a labeled data point.\n\n**Dataset:** Plot the following (lattice constant in Å on x-axis, bandgap in eV on y-axis):\n- Si: (5.431, 1.12), Ge: (5.658, 0.66), GaAs: (5.653, 1.42), AlAs: (5.661, 2.16), InP: (5.869, 1.35), InAs: (6.058, 0.36), GaP: (5.451, 2.26), AlP: (5.467, 2.45), InSb: (6.479, 0.17), GaSb: (6.096, 0.72).\n- Color direct-gap materials green (#4caf50), indirect-gap red (#f44336).\n- Draw curved interpolation lines between ternary alloy endpoints (e.g., GaAs-AlAs in gray, InAs-GaAs in orange) labeled with the alloy name.\n\n**Interaction:**\n- Clicking or hovering a data point displays an infobox: material name, lattice constant, bandgap, gap type (direct/indirect), and key applications.\n- A vertical reference line at x = 5.431 Å (Si) is toggleable via a \"Show Si reference\" checkbox.\n- A vertical reference line at x = 5.869 Å (InP) is toggleable via \"Show InP reference\" checkbox.\n\n**Implementation:** Chart.js v4, single HTML file. Custom tooltip callbacks for rich infoboxes. Parent canvas to document.querySelector('main')."
+}

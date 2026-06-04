@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Semiconductor Lattice Constant and Bandgap Map</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background: #fff; }
+        #wrap { max-width: 900px; margin: 0 auto; padding: 10px; }
+        h2 { text-align: center; margin: 8px 0 12px; font-size: 18px; color: #1a3a6c; }
+        .controls { display: flex; gap: 20px; padding: 6px 10px; flex-wrap: wrap; font-size: 14px; }
+        .controls label { cursor: pointer; }
+        #info {
+            margin-top: 8px;
+            padding: 10px 14px;
+            background: #f4f6fa;
+            border: 1px solid #c8d3e1;
+            border-radius: 6px;
+            min-height: 50px;
+            font-size: 13px;
+        }
+        #info b { color: #1a3a6c; }
+        #chartwrap { position: relative; height: 420px; }
+    </style>
+    <script src="lattice-bandgap-map.js"></script>
+</head>
+<body>
+    <main>
+        <div id="wrap">
+            <h2>Semiconductor Lattice Constant vs. Bandgap</h2>
+            <div class="controls">
+                <label><input type="checkbox" id="cb-si" checked> Show Si reference</label>
+                <label><input type="checkbox" id="cb-inp"> Show InP reference</label>
+            </div>
+            <div id="chartwrap"><canvas id="chart"></canvas></div>
+            <div id="info">Click a point to see material details.</div>
+        </div>
+    </main>
+</body>
+</html>

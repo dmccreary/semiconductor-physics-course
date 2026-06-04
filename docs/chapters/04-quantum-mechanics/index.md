@@ -158,6 +158,14 @@ The following MicroSim lets you adjust the box width and visualize the quantized
 
 #### Diagram: Particle in a Box — Energy Level Explorer
 
+
+<iframe src="../../sims/particle-in-a-box-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Particle in a Box — Energy Level Explorer Fullscreen](../../sims/particle-in-a-box-explorer<br/>/main.html)
+
+
+<iframe src="../../sims/particle-in-a-box-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Particle in a Box — Energy Level Explorer Fullscreen](../../sims/particle-in-a-box-explorer<br/>/main.html)
+
 <details markdown="1">
 <summary>Particle in a Box — Energy Level Explorer</summary>
 Type: MicroSim
@@ -240,6 +248,14 @@ Tunneling has numerous technological consequences in semiconductor devices:
 - **Scanning tunneling microscopy (STM)**: atomic-resolution imaging via the exponential sensitivity of tunnel current to tip-sample separation.
 
 #### Diagram: Quantum Tunneling Probability Explorer
+
+
+<iframe src="../../sims/quantum-tunneling-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Quantum Tunneling Probability Explorer Fullscreen](../../sims/quantum-tunneling-explorer<br/>/main.html)
+
+
+<iframe src="../../sims/quantum-tunneling-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Quantum Tunneling Probability Explorer Fullscreen](../../sims/quantum-tunneling-explorer<br/>/main.html)
 
 <details markdown="1">
 <summary>Quantum Tunneling Probability Explorer</summary>

@@ -1,0 +1,14 @@
+{
+  "sim_id": "defect-hierarchy-network",
+  "diagram_name": "Crystal Defect Hierarchy Network",
+  "chapter_number": 3,
+  "chapter_title": "Crystal Bonding, Defects, and Surfaces",
+  "chapter_dir": "03-crystal-bonding-defects",
+  "library": "vis-network",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": "Students will classify crystal defects by dimensionality and identify (Analyze, L4) which device parameters each defect type degrades, via a clickable hierarchical network diagram.",
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: MicroSim\n**sim-id:** defect-hierarchy-network<br/>\n**Library:** vis-network<br/>\n**Status:** Specified\n\n**Learning objective:** Students will classify crystal defects by dimensionality and identify (Analyze, L4) which device parameters each defect type degrades, via a clickable hierarchical network diagram.\n\n**Canvas size:** 800 × 500 px, responsive.\n\n**Graph structure (vis-network):**\nRoot node: \"Crystal Defects\" — large, gray rectangle.\nLevel-1 nodes (dimensionality categories): \"0D: Point Defects\" (blue), \"1D: Line Defects\" (orange), \"2D: Planar Defects\" (green), \"3D: Volume Defects\" (red).\nLevel-2 nodes (specific types):\n- Under 0D: \"Vacancy\", \"Self-Interstitial\", \"Substitutional Impurity\", \"Frenkel Pair\", \"Schottky Defect\"\n- Under 1D: \"Edge Dislocation\", \"Screw Dislocation\"\n- Under 2D: \"Stacking Fault\", \"Grain Boundary\", \"Surface State\", \"Interface State\"\n- Under 3D: \"Precipitate\", \"Void\"\n\nAll level-2 nodes are clickable. Clicking opens an infobox overlay with: name, dimensionality, formation mechanism, degraded device parameters (mobility, lifetime, \\(V_T\\), etc.), and a real example.\n\nLayout: hierarchical top-to-bottom. Edge arrows from root → level-1 → level-2. Edge labels: \"includes\".\n\n**Implementation:** vis-network, single HTML file. Node click event → infobox rendered in right panel. Canvas parents to document.querySelector('main')."
+}

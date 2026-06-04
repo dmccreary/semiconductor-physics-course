@@ -110,6 +110,14 @@ The following table summarizes the five point defect types, their formation ener
 
 #### Diagram: Point Defect Visualizer
 
+
+<iframe src="../../sims/point-defect-visualizer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Point Defect Visualizer Fullscreen](../../sims/point-defect-visualizer<br/>/main.html)
+
+
+<iframe src="../../sims/point-defect-visualizer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Point Defect Visualizer Fullscreen](../../sims/point-defect-visualizer<br/>/main.html)
+
 <details markdown="1">
 <summary>Point Defect Visualizer</summary>
 Type: MicroSim
@@ -182,6 +190,14 @@ In semiconductor heterostructures, lattice mismatch generates **misfit dislocati
 **Grain boundaries** separate crystal grains with different orientations in polycrystalline material. They contain high densities of dangling bonds, strained bonds, and segregated impurities. Grain boundaries scatter both electrons and holes efficiently — mobility in polycrystalline silicon (poly-Si) is 10–100× lower than in single-crystal silicon — and they act as efficient recombination centers, reducing minority carrier lifetime dramatically. Thin-film transistors (TFTs) in LCD backplane circuits use poly-Si, and the grain size (typically 50–500 nm after excimer laser annealing) directly limits the achievable field-effect mobility.
 
 #### Diagram: Crystal Defect Hierarchy Network
+
+
+<iframe src="../../sims/defect-hierarchy-network<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Crystal Defect Hierarchy Network Fullscreen](../../sims/defect-hierarchy-network<br/>/main.html)
+
+
+<iframe src="../../sims/defect-hierarchy-network<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Crystal Defect Hierarchy Network Fullscreen](../../sims/defect-hierarchy-network<br/>/main.html)
 
 <details markdown="1">
 <summary>Crystal Defect Hierarchy Network</summary>
