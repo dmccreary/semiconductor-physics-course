@@ -1,5 +1,7 @@
 # PN Junction
 
+<iframe src="./main.html" width="100%" height="600" scrolling="no"></iframe>
+[Run the PN Junction MicroSim Full Screen](main.html)
 [Edit the MicroSim](https://editor.p5js.org/dmccreary/sketches/J4l53Sue4)
 
 MicroSim Name: P-N Junction Voltage Controller 
