@@ -112,12 +112,12 @@ The following MicroSim lets you rotate and compare all three cubic structures pl
 #### Diagram: Cubic Crystal Structure Explorer
 
 
-<iframe src="../../sims/cubic-crystal-structure-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Cubic Crystal Structure Explorer Fullscreen](../../sims/cubic-crystal-structure-explorer<br/>/main.html)
+<iframe src="../../sims/cubic-crystal-structure-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Cubic Crystal Structure Explorer Fullscreen](../../sims/cubic-crystal-structure-explorer/main.html)
 
 
-<iframe src="../../sims/cubic-crystal-structure-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Cubic Crystal Structure Explorer Fullscreen](../../sims/cubic-crystal-structure-explorer<br/>/main.html)
+<iframe src="../../sims/cubic-crystal-structure-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Cubic Crystal Structure Explorer Fullscreen](../../sims/cubic-crystal-structure-explorer/main.html)
 
 <details markdown="1">
 <summary>Cubic Crystal Structure Explorer</summary>
@@ -215,12 +215,12 @@ Several planes matter enormously in device processing:
 #### Diagram: Miller Indices Crystal Plane Explorer
 
 
-<iframe src="../../sims/miller-indices-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Miller Indices Crystal Plane Explorer Fullscreen](../../sims/miller-indices-explorer<br/>/main.html)
+<iframe src="../../sims/miller-indices-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Miller Indices Crystal Plane Explorer Fullscreen](../../sims/miller-indices-explorer/main.html)
 
 
-<iframe src="../../sims/miller-indices-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Miller Indices Crystal Plane Explorer Fullscreen](../../sims/miller-indices-explorer<br/>/main.html)
+<iframe src="../../sims/miller-indices-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Miller Indices Crystal Plane Explorer Fullscreen](../../sims/miller-indices-explorer/main.html)
 
 <details markdown="1">
 <summary>Miller Indices Crystal Plane Explorer</summary>
@@ -314,12 +314,12 @@ Measuring diffraction peak positions allows reconstruction of \(a\) to sub-0.001
 #### Diagram: Semiconductor Lattice Constant and Bandgap Map
 
 
-<iframe src="../../sims/lattice-bandgap-map<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Semiconductor Lattice Constant and Bandgap Map Fullscreen](../../sims/lattice-bandgap-map<br/>/main.html)
+<iframe src="../../sims/lattice-bandgap-map/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Semiconductor Lattice Constant and Bandgap Map Fullscreen](../../sims/lattice-bandgap-map/main.html)
 
 
-<iframe src="../../sims/lattice-bandgap-map<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Semiconductor Lattice Constant and Bandgap Map Fullscreen](../../sims/lattice-bandgap-map<br/>/main.html)
+<iframe src="../../sims/lattice-bandgap-map/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Semiconductor Lattice Constant and Bandgap Map Fullscreen](../../sims/lattice-bandgap-map/main.html)
 
 <details markdown="1">
 <summary>Semiconductor Lattice Constant and Bandgap Map</summary>

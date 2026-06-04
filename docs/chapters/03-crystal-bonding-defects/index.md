@@ -111,12 +111,12 @@ The following table summarizes the five point defect types, their formation ener
 #### Diagram: Point Defect Visualizer
 
 
-<iframe src="../../sims/point-defect-visualizer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Point Defect Visualizer Fullscreen](../../sims/point-defect-visualizer<br/>/main.html)
+<iframe src="../../sims/point-defect-visualizer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Point Defect Visualizer Fullscreen](../../sims/point-defect-visualizer/main.html)
 
 
-<iframe src="../../sims/point-defect-visualizer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Point Defect Visualizer Fullscreen](../../sims/point-defect-visualizer<br/>/main.html)
+<iframe src="../../sims/point-defect-visualizer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Point Defect Visualizer Fullscreen](../../sims/point-defect-visualizer/main.html)
 
 <details markdown="1">
 <summary>Point Defect Visualizer</summary>
@@ -192,12 +192,12 @@ In semiconductor heterostructures, lattice mismatch generates **misfit dislocati
 #### Diagram: Crystal Defect Hierarchy Network
 
 
-<iframe src="../../sims/defect-hierarchy-network<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Crystal Defect Hierarchy Network Fullscreen](../../sims/defect-hierarchy-network<br/>/main.html)
+<iframe src="../../sims/defect-hierarchy-network/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Crystal Defect Hierarchy Network Fullscreen](../../sims/defect-hierarchy-network/main.html)
 
 
-<iframe src="../../sims/defect-hierarchy-network<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Crystal Defect Hierarchy Network Fullscreen](../../sims/defect-hierarchy-network<br/>/main.html)
+<iframe src="../../sims/defect-hierarchy-network/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Crystal Defect Hierarchy Network Fullscreen](../../sims/defect-hierarchy-network/main.html)
 
 <details markdown="1">
 <summary>Crystal Defect Hierarchy Network</summary>

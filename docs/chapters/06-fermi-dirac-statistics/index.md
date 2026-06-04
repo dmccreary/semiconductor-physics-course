@@ -134,12 +134,12 @@ where \(N_V = 2(2\pi m_{dos,p}^* k_BT/h^2)^{3/2}\) is the **effective density of
 #### Diagram: Fermi-Dirac Distribution and Carrier Concentration Explorer
 
 
-<iframe src="../../sims/fermi-dirac-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Fermi-Dirac Distribution and Carrier Concentration Explorer Fullscreen](../../sims/fermi-dirac-explorer<br/>/main.html)
+<iframe src="../../sims/fermi-dirac-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Fermi-Dirac Distribution and Carrier Concentration Explorer Fullscreen](../../sims/fermi-dirac-explorer/main.html)
 
 
-<iframe src="../../sims/fermi-dirac-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Fermi-Dirac Distribution and Carrier Concentration Explorer Fullscreen](../../sims/fermi-dirac-explorer<br/>/main.html)
+<iframe src="../../sims/fermi-dirac-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Fermi-Dirac Distribution and Carrier Concentration Explorer Fullscreen](../../sims/fermi-dirac-explorer/main.html)
 
 <details markdown="1">
 <summary>Fermi-Dirac Distribution and Carrier Concentration Explorer</summary>
@@ -247,12 +247,12 @@ Combined with the law of mass action \(np = n_i^2\), these two equations determi
 #### Diagram: Temperature Dependence of ni Explorer
 
 
-<iframe src="../../sims/intrinsic-concentration-temperature<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Temperature Dependence of ni Explorer Fullscreen](../../sims/intrinsic-concentration-temperature<br/>/main.html)
+<iframe src="../../sims/intrinsic-concentration-temperature/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Temperature Dependence of ni Explorer Fullscreen](../../sims/intrinsic-concentration-temperature/main.html)
 
 
-<iframe src="../../sims/intrinsic-concentration-temperature<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Temperature Dependence of ni Explorer Fullscreen](../../sims/intrinsic-concentration-temperature<br/>/main.html)
+<iframe src="../../sims/intrinsic-concentration-temperature/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Temperature Dependence of ni Explorer Fullscreen](../../sims/intrinsic-concentration-temperature/main.html)
 
 <details markdown="1">
 <summary>Temperature Dependence of n_i Explorer</summary>

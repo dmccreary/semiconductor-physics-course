@@ -121,12 +121,12 @@ With the vocabulary established, the following MicroSim lets you explore how the
 #### Diagram: Interactive Energy Band Diagram Explorer
 
 
-<iframe src="../../sims/energy-band-diagram-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Interactive Energy Band Diagram Explorer Fullscreen](../../sims/energy-band-diagram-explorer<br/>/main.html)
+<iframe src="../../sims/energy-band-diagram-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Interactive Energy Band Diagram Explorer Fullscreen](../../sims/energy-band-diagram-explorer/main.html)
 
 
-<iframe src="../../sims/energy-band-diagram-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Interactive Energy Band Diagram Explorer Fullscreen](../../sims/energy-band-diagram-explorer<br/>/main.html)
+<iframe src="../../sims/energy-band-diagram-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Interactive Energy Band Diagram Explorer Fullscreen](../../sims/energy-band-diagram-explorer/main.html)
 
 <details markdown="1">
 <summary>Interactive Energy Band Diagram Explorer</summary>
@@ -209,12 +209,12 @@ The following MicroSim renders simplified E-k diagrams for both direct and indir
 #### Diagram: Direct vs. Indirect Bandgap — E-k Diagram Explorer
 
 
-<iframe src="../../sims/direct-indirect-bandgap-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Direct vs. Indirect Bandgap — E-k Diagram Explorer Fullscreen](../../sims/direct-indirect-bandgap-explorer<br/>/main.html)
+<iframe src="../../sims/direct-indirect-bandgap-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Direct vs. Indirect Bandgap — E-k Diagram Explorer Fullscreen](../../sims/direct-indirect-bandgap-explorer/main.html)
 
 
-<iframe src="../../sims/direct-indirect-bandgap-explorer<br/>/main.html" width="100%" height="450px" scrolling="no"></iframe>
-[Run Direct vs. Indirect Bandgap — E-k Diagram Explorer Fullscreen](../../sims/direct-indirect-bandgap-explorer<br/>/main.html)
+<iframe src="../../sims/direct-indirect-bandgap-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+[Run Direct vs. Indirect Bandgap — E-k Diagram Explorer Fullscreen](../../sims/direct-indirect-bandgap-explorer/main.html)
 
 <details markdown="1">
 <summary>Direct vs. Indirect Bandgap — E-k Diagram Explorer</summary>
