@@ -6,6 +6,12 @@ site_url: 'https://dmccreary.github.io/semiconductor-physics-course/'
 repo_url: 'https://github.com/dmccreary/semiconductor-physics-course'
 edit_uri: 'blob/master/docs'
 
+exclude_docs: |
+  img/cover-image-prompt.md
+  img/mascot/character-sheet.md
+  img/mascot/image-prompts.md
+  sims/pn-junction/TODO.md
+
 nav:
   - Home: index.md
   - About: about.md
@@ -85,8 +91,8 @@ theme:
   name: material
   extra_css:
     - styles/custom.css
-  logo: img/logo.png
-  # favicon: img/my-icon.png
+  logo: img/mascot/welcome.png
+  favicon: img/favicon.ico
   palette:
     primary: 'blue'
     accent: 'orange'
@@ -113,6 +119,12 @@ markdown_extensions:
   - attr_list
   - pymdownx.highlight:
       linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - js/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 extra_css:
    - css/extra.css
    - css/mascot.css
