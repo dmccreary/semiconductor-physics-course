@@ -1,0 +1,2302 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Diffusion currents, the Einstein relation, drift-diffusion model, Hall effect, and van der Pauw measurements for semiconductor characterization">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/09-carrier-diffusion-transport/">
+      
+      
+        <link rel="prev" href="../08-carrier-drift-mobility/">
+      
+      
+        <link rel="next" href="../10-generation-recombination/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Carrier Diffusion, Transport Theory, and Electrical Measurements - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#carrier-diffusion-transport-theory-and-electrical-measurements" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Carrier Diffusion, Transport Theory, and Electrical Measurements
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#91-diffusion-current-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Diffusion Current Density
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-the-einstein-relation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 The Einstein Relation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-total-current-density-and-the-drift-diffusion-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Total Current Density and the Drift-Diffusion Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94-resistivity-conductivity-and-sheet-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Resistivity, Conductivity, and Sheet Resistance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95-the-hall-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 The Hall Effect
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#96-the-van-der-pauw-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.6 The Van der Pauw Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#97-magnetoresistance-and-piezoresistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.7 Magnetoresistance and Piezoresistance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.7 Magnetoresistance and Piezoresistance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#magnetoresistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Magnetoresistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#piezoelectric-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Piezoelectric Effect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#piezoresistance-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Piezoresistance Effect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#91-diffusion-current-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Diffusion Current Density
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-the-einstein-relation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 The Einstein Relation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-total-current-density-and-the-drift-diffusion-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Total Current Density and the Drift-Diffusion Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94-resistivity-conductivity-and-sheet-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Resistivity, Conductivity, and Sheet Resistance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95-the-hall-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 The Hall Effect
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#96-the-van-der-pauw-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.6 The Van der Pauw Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#97-magnetoresistance-and-piezoresistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.7 Magnetoresistance and Piezoresistance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.7 Magnetoresistance and Piezoresistance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#magnetoresistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Magnetoresistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#piezoelectric-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Piezoelectric Effect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#piezoresistance-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Piezoresistance Effect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/09-carrier-diffusion-transport/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="carrier-diffusion-transport-theory-and-electrical-measurements">Carrier Diffusion, Transport Theory, and Electrical Measurements</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter completes the carrier transport picture by adding diffusion to drift. Fick's first law applied to carriers yields the diffusion current; the Einstein relation connects diffusion coefficient to mobility through the thermal voltage. The total drift-diffusion current density and the full drift-diffusion model provide the equations used in virtually all semiconductor device simulators. Resistivity, conductivity, and sheet resistance are derived for practical measurement contexts. The Hall effect — with its associated Hall coefficient, Hall voltage, and Hall mobility — is developed as the standard technique for extracting carrier type, concentration, and mobility from experimental samples; the Van der Pauw method enables measurements on arbitrarily shaped specimens. Magnetoresistance, piezoelectric effect, and piezoresistance complete the coverage of transport phenomena.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 16 concepts from the learning graph:</p>
+<ol>
+<li>Diffusion Current</li>
+<li>Diffusion Coefficient</li>
+<li>Einstein Relation</li>
+<li>Total Current Density</li>
+<li>Drift-Diffusion Model</li>
+<li>Resistivity</li>
+<li>Conductivity</li>
+<li>Sheet Resistance</li>
+<li>Hall Effect</li>
+<li>Hall Coefficient</li>
+<li>Hall Voltage</li>
+<li>Hall Mobility</li>
+<li>Van der Pauw Method</li>
+<li>Magnetoresistance</li>
+<li>Piezoelectric Effect</li>
+<li>Piezoresistance Effect</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../07-doping-extrinsic-carriers/">Chapter 7: Doping, Extrinsic Carriers, and the Fermi Level</a></li>
+<li><a href="../08-carrier-drift-mobility/">Chapter 8: Carrier Drift, Mobility, and Scattering Mechanisms</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Nova on Diffusion: When Carriers Wander Without a Map</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+In Chapter 8 we gave electrons and holes a GPS (the electric field) and watched them drift purposefully toward their destination. Today we study what happens when there's no field but there <em>is</em> a concentration gradient — carriers wander randomly until they spread out evenly, like perfume diffusing across a room, or like physicists spreading toward the free coffee at a conference. Welcome to diffusion: random motion with a direction.</p>
+</div>
+<h2 id="91-diffusion-current-density">9.1 Diffusion Current Density</h2>
+<p>Drift is only half of the carrier transport story. Even with zero electric field, carriers in non-uniform distributions will flow from regions of high concentration to low concentration — not because of any force, but because random thermal motion statistically moves more carriers "outward" than "inward" when there are more to start with. This is <strong>diffusion</strong>, and it produces a net current.</p>
+<p>Fick's first law, applied to charge carriers, gives the <strong>diffusion current density</strong>:</p>
+<div class="arithmatex">\[
+J_n^{\text{diff}} = q D_n \frac{dn}{dx}
+\]</div>
+<div class="arithmatex">\[
+J_p^{\text{diff}} = -q D_p \frac{dp}{dx}
+\]</div>
+<p>where <span class="arithmatex">\(D_n\)</span> and <span class="arithmatex">\(D_p\)</span> are the diffusion coefficients (units: cm²/s) for electrons and holes, and <span class="arithmatex">\(dn/dx\)</span>, <span class="arithmatex">\(dp/dx\)</span> are the carrier concentration gradients. The sign difference between electrons and holes reflects the charge sign: both carrier types diffuse from high to low concentration, but electrons flowing in the <span class="arithmatex">\(-x\)</span> direction carry current in the <span class="arithmatex">\(+x\)</span> direction (conventional current opposite to electron flow).</p>
+<p>The diffusion coefficients for silicon at 300 K are approximately:</p>
+<div class="arithmatex">\[
+D_n \approx 36 \text{ cm}^2/\text{s}, \quad D_p \approx 12 \text{ cm}^2/\text{s}
+\]</div>
+<p>Notice that these are roughly proportional to the corresponding mobilities — which is not a coincidence.</p>
+<hr />
+<h2 id="92-the-einstein-relation">9.2 The Einstein Relation</h2>
+<p>The connection between the diffusion coefficient and mobility is one of the most elegant results in transport theory. Before stating it, we need a physical argument.</p>
+<p>Consider a semiconductor in thermal equilibrium with no applied electric field but with a doping gradient (hence a carrier concentration gradient). Even in equilibrium, there is simultaneously a diffusion current (driven by the concentration gradient) and a built-in electric field (arising from the charge separation due to the doping gradient). In thermal equilibrium, these two currents must exactly cancel — the total current must be zero.</p>
+<p>Setting <span class="arithmatex">\(J_n = J_n^{\text{drift}} + J_n^{\text{diff}} = 0\)</span>:</p>
+<div class="arithmatex">\[
+q n \mu_n \mathcal{E} + q D_n \frac{dn}{dx} = 0
+\]</div>
+<p>In equilibrium, <span class="arithmatex">\(n = N_C \exp(-(E_C - E_F)/k_BT)\)</span>, and the built-in field relates to the band-edge gradient as <span class="arithmatex">\(q\mathcal{E} = -dE_C/dx\)</span>. Working through the algebra (which is encouraged as a problem set exercise):</p>
+<div class="arithmatex">\[
+\boxed{\frac{D_n}{\mu_n} = \frac{k_BT}{q} \equiv V_T}
+\]</div>
+<p>This is the <strong>Einstein relation</strong>, where <span class="arithmatex">\(V_T = k_BT/q\)</span> is the <strong>thermal voltage</strong>. At room temperature (300 K):</p>
+<div class="arithmatex">\[
+V_T = \frac{0.0259 \text{ eV}}{e} = 25.9 \text{ mV}
+\]</div>
+<p>The same relation holds for holes: <span class="arithmatex">\(D_p/\mu_p = V_T\)</span>. Given the standard silicon mobilities:</p>
+<p>[
+D_n = \mu_n V_T = 1400 \times 0.0259 \approx 36.3 \text{ cm}^2/\text{s}
+]
+[
+D_p = \mu_p V_T = 450 \times 0.0259 \approx 11.6 \text{ cm}^2/\text{s}
+]</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Nova Thinks: The Thermal Voltage Is Everywhere</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova in thinking pose">
+<span class="arithmatex">\(V_T = 26\)</span> mV at 300 K is one of the most ubiquitous constants in all of semiconductor device physics. It appears in the diode equation (<span class="arithmatex">\(I = I_0(e^{V/V_T} - 1)\)</span>), the MOSFET subthreshold slope (60 mV/decade = <span class="arithmatex">\(V_T \ln 10\)</span>), the Einstein relation, and dozens of other places. When in doubt about whether a voltage is "large" or "small" in a semiconductor context, compare it to <span class="arithmatex">\(V_T\)</span>. If <span class="arithmatex">\(V \gg V_T\)</span>, the exponentials dominate. If <span class="arithmatex">\(V \ll V_T\)</span>, you can linearize. This comparison is the semiconductor equivalent of Reynolds number reasoning in fluid mechanics — it tells you which physics dominates.</p>
+</div>
+<hr />
+<h2 id="93-total-current-density-and-the-drift-diffusion-model">9.3 Total Current Density and the Drift-Diffusion Model</h2>
+<p>The complete carrier current densities are the sums of drift and diffusion contributions:</p>
+<div class="arithmatex">\[
+J_n = q n \mu_n \mathcal{E} + q D_n \frac{dn}{dx}
+\]</div>
+<div class="arithmatex">\[
+J_p = q p \mu_p \mathcal{E} - q D_p \frac{dp}{dx}
+\]</div>
+<div class="arithmatex">\[
+J_{\text{total}} = J_n + J_p
+\]</div>
+<p>These two equations, combined with Poisson's equation (<span class="arithmatex">\(d\mathcal{E}/dx = \rho/\varepsilon_s\)</span>) and the continuity equations (Chapter 10), form the <strong>drift-diffusion model</strong> — the coupled PDE system solved by virtually every semiconductor device simulator from SPICE to TCAD tools like Sentaurus and Silvaco.</p>
+<p>The drift-diffusion model makes several assumptions worth noting:</p>
+<ol>
+<li><strong>Quasi-equilibrium:</strong> Carriers have a well-defined local quasi-Fermi level (they're not far from equilibrium)</li>
+<li><strong>Non-degenerate statistics:</strong> Boltzmann approximation applies (corrections needed for degenerate material)</li>
+<li><strong>Low field or moderate field:</strong> No velocity overshoot or ballistic transport (corrections needed for sub-10 nm devices)</li>
+<li><strong>Instantaneous scattering response:</strong> No memory effects or non-local transport</li>
+</ol>
+<p>Despite these limitations, the drift-diffusion model gives engineering-accurate results for devices larger than ~20 nm and is the workhorse of the semiconductor industry.</p>
+<p>Using the Einstein relation, the electron current can be rewritten in a compact form using the <strong>quasi-Fermi level</strong> <span class="arithmatex">\(F_n\)</span>:</p>
+<div class="arithmatex">\[
+J_n = q \mu_n n \frac{dF_n}{dx}, \quad \text{where } F_n \equiv E_C + k_BT \ln\!\left(\frac{n}{N_C}\right)
+\]</div>
+<p>In equilibrium, <span class="arithmatex">\(F_n = E_F\)</span> and <span class="arithmatex">\(J_n = 0\)</span>. In non-equilibrium, gradients in <span class="arithmatex">\(F_n\)</span> drive current. This form is powerful because it naturally handles both drift and diffusion through a single potential gradient.</p>
+<hr />
+<h2 id="94-resistivity-conductivity-and-sheet-resistance">9.4 Resistivity, Conductivity, and Sheet Resistance</h2>
+<p>Before discussing measurement techniques, we need precise definitions of the macroscopic transport parameters engineers actually measure.</p>
+<p><strong>Conductivity</strong> <span class="arithmatex">\(\sigma\)</span> and <strong>resistivity</strong> <span class="arithmatex">\(\rho\)</span> are related by <span class="arithmatex">\(\rho = 1/\sigma\)</span>, where:</p>
+<div class="arithmatex">\[
+\sigma = q(n\mu_n + p\mu_p) \quad [\text{S/cm or (Ω·cm)}^{-1}]
+\]</div>
+<div class="arithmatex">\[
+\rho = \frac{1}{q(n\mu_n + p\mu_p)} \quad [\text{Ω·cm}]
+\]</div>
+<p>For n-type material where <span class="arithmatex">\(n \gg p\)</span>:</p>
+<div class="arithmatex">\[
+\rho \approx \frac{1}{q n \mu_n} \approx \frac{1}{q N_D \mu_n}
+\]</div>
+<p>Resistivity spans roughly 13 orders of magnitude in silicon: from <span class="arithmatex">\(\sim 10^3\)</span> Ω·cm for ultra-pure intrinsic silicon down to <span class="arithmatex">\(\sim 10^{-4}\)</span> Ω·cm for degenerate doping.</p>
+<p><strong>Sheet resistance</strong> <span class="arithmatex">\(R_\square\)</span> is used for thin layers where the full three-dimensional resistivity is less useful. For a layer of thickness <span class="arithmatex">\(t\)</span>, length <span class="arithmatex">\(L\)</span>, and width <span class="arithmatex">\(W\)</span>:</p>
+<div class="arithmatex">\[
+R = \rho \frac{L}{W \cdot t} = \frac{\rho}{t} \cdot \frac{L}{W} \equiv R_\square \cdot \frac{L}{W}
+\]</div>
+<p>where <span class="arithmatex">\(R_\square = \rho/t\)</span> is the sheet resistance in units of Ω/□ (ohms per square). The "per square" notation reflects that <span class="arithmatex">\(R = R_\square\)</span> for any square of material (regardless of size) because <span class="arithmatex">\(L/W = 1\)</span>. Sheet resistance is measured by four-point probe or van der Pauw methods and is the standard specification for doped silicon layers, polysilicon interconnects, and metal films.</p>
+<table>
+<thead>
+<tr>
+<th>Silicon Doping Level</th>
+<th>Typical Sheet Resistance</th>
+<th>Typical Resistivity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intrinsic (<span class="arithmatex">\(n_i\)</span>)</td>
+<td>N/A (too high)</td>
+<td>~2300 Ω·cm</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(N_D = 10^{14}\)</span> cm<span class="arithmatex">\(^{-3}\)</span></td>
+<td>~40 kΩ/□ (100 nm film)</td>
+<td>44 Ω·cm</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(N_D = 10^{16}\)</span> cm<span class="arithmatex">\(^{-3}\)</span></td>
+<td>~440 Ω/□ (100 nm film)</td>
+<td>0.44 Ω·cm</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(N_D = 10^{18}\)</span> cm<span class="arithmatex">\(^{-3}\)</span></td>
+<td>~25 Ω/□ (100 nm film)</td>
+<td>0.0025 Ω·cm</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="95-the-hall-effect">9.5 The Hall Effect</h2>
+<p>The <strong>Hall effect</strong>, discovered by Edwin Hall in 1879, is the cornerstone of semiconductor characterization. It simultaneously determines carrier type (n or p), carrier concentration, and mobility from a single measurement — essentially a simultaneous read-out of three key semiconductor parameters. Hall effect remains the gold standard for characterizing new semiconductor materials.</p>
+<p>Here's the physics. Apply a current <span class="arithmatex">\(I\)</span> in the x-direction through a rectangular semiconductor bar, and a magnetic field <span class="arithmatex">\(B\)</span> in the z-direction (perpendicular to the current). The magnetic force on the moving carriers is:</p>
+<div class="arithmatex">\[
+\mathbf{F} = q(\mathbf{v} \times \mathbf{B})
+\]</div>
+<p>For electrons moving in the <span class="arithmatex">\(-x\)</span> direction (producing current in <span class="arithmatex">\(+x\)</span>), the force is in the <span class="arithmatex">\(-y\)</span> direction:</p>
+<div class="arithmatex">\[
+F_y = -qv_x B_z \quad \text{(for electrons)}
+\]</div>
+<p>Electrons accumulate on the <span class="arithmatex">\(-y\)</span> face, holes accumulate on the <span class="arithmatex">\(+y\)</span> face. This charge accumulation creates a transverse electric field <span class="arithmatex">\(\mathcal{E}_H\)</span> (the <strong>Hall field</strong>) that opposes further carrier deflection. In steady state:</p>
+<div class="arithmatex">\[
+q\mathcal{E}_H = qv_{d} B
+\]</div>
+<p>The transverse voltage across the sample (the <strong>Hall voltage</strong>) is:</p>
+<div class="arithmatex">\[
+V_H = \mathcal{E}_H \cdot W = v_d B W = \frac{IB}{q n t}
+\]</div>
+<p>where <span class="arithmatex">\(W\)</span> is the sample width, <span class="arithmatex">\(t\)</span> is the thickness, and we used <span class="arithmatex">\(I = qnv_d W t\)</span>.</p>
+<p>The <strong>Hall coefficient</strong> is defined as:</p>
+<div class="arithmatex">\[
+R_H \equiv \frac{\mathcal{E}_H}{J B} = \frac{V_H \cdot t}{I \cdot B}
+\]</div>
+<p>For a simple single-carrier semiconductor:</p>
+<p>[
+R_H = -\frac{1}{qn} \quad \text{(n-type, negative)}
+]
+[
+R_H = +\frac{1}{qp} \quad \text{(p-type, positive)}
+]</p>
+<p>The sign of <span class="arithmatex">\(R_H\)</span> immediately tells you the carrier type. The magnitude gives the carrier concentration:</p>
+<div class="arithmatex">\[
+n \text{ or } p = \frac{1}{|R_H| q}
+\]</div>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Nova Tips: Hall Effect Is the Carrier Concentration Calculator</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Nova with tip pose">
+The Hall effect is how researchers first confirmed that holes are <em>real</em> — positive charge carriers with positive Hall coefficient, not just absent electrons. When germanium was first doped p-type and showed a positive <span class="arithmatex">\(R_H\)</span>, it was experimental proof that the Dirac-style "hole" concept was physically meaningful. Today, any time you have a new material (a new 2D material, a new oxide semiconductor, a novel perovskite) and want to know "is it n-type or p-type, and how many carriers does it have?" — you do a Hall measurement. It's been the answer for 145 years.</p>
+</div>
+<p>The <strong>Hall mobility</strong> is defined from the measured quantities:</p>
+<div class="arithmatex">\[
+\mu_H = |R_H| \cdot \sigma = \frac{|R_H|}{\rho}
+\]</div>
+<p>Hall mobility differs slightly from the drift mobility (<span class="arithmatex">\(\mu_H = r_H \mu_{\text{drift}}\)</span> where <span class="arithmatex">\(r_H\)</span> is the Hall factor, typically 1.15 for acoustic phonon scattering and 1.93 for ionized impurity scattering), but for most practical purposes <span class="arithmatex">\(\mu_H \approx \mu_{\text{drift}}\)</span>.</p>
+<hr />
+<h2 id="96-the-van-der-pauw-method">9.6 The Van der Pauw Method</h2>
+<p>The classic Hall measurement requires a long rectangular bar with well-defined geometry. What if your sample is an irregularly shaped wafer piece, or a thin film deposited on a substrate? The <strong>Van der Pauw method</strong> (1958) enables Hall and resistivity measurements on samples of arbitrary shape — a crucial capability for real-world characterization.</p>
+<p>The method requires:
+1. A thin, flat sample of uniform thickness
+2. Four small ohmic contacts placed on the perimeter (not interior)
+3. The contacts must be small (ideally point contacts) relative to the sample size</p>
+<p>The Van der Pauw resistivity formula uses two four-probe resistance measurements:</p>
+<div class="arithmatex">\[
+R_{12,34} = \frac{V_{34}}{I_{12}}, \quad R_{23,41} = \frac{V_{41}}{I_{23}}
+\]</div>
+<p>These satisfy the transcendental Van der Pauw equation:</p>
+<div class="arithmatex">\[
+e^{-\pi R_{12,34} t/\rho} + e^{-\pi R_{23,41} t/\rho} = 1
+\]</div>
+<p>which is solved numerically for <span class="arithmatex">\(\rho\)</span>. For a symmetric sample (square or circular with symmetric contact placement), a simple average formula applies:</p>
+<div class="arithmatex">\[
+\rho = \frac{\pi t}{\ln 2} \cdot \frac{R_{12,34} + R_{23,41}}{2} \quad \text{(symmetric samples only)}
+\]</div>
+<p>The Hall coefficient is obtained by applying a magnetic field and measuring:</p>
+<div class="arithmatex">\[
+R_H = \frac{t \cdot \Delta R_{13,24}}{B}
+\]</div>
+<p>where <span class="arithmatex">\(\Delta R_{13,24} = R_{13,24}(+B) - R_{13,24}(-B)\)</span> is the field-reversed Hall resistance.</p>
+<p>The Van der Pauw method is now standard in all semiconductor characterization labs. A "Van der Pauw cloverleaf" — a four-lobed sample geometry that minimizes contact-placement errors — is a common test structure on silicon wafers.</p>
+<hr />
+<h2 id="97-magnetoresistance-and-piezoresistance">9.7 Magnetoresistance and Piezoresistance</h2>
+<h3 id="magnetoresistance">Magnetoresistance</h3>
+<p>In the Hall effect setup, the magnetic field also increases the effective resistance of the sample — <strong>magnetoresistance</strong>. Physical magnetoresistance arises because not all carriers travel at the average velocity; the spread of velocities means that Lorentz force deflection is not perfectly cancelled by the Hall field for all carriers simultaneously. The fractional resistance change is:</p>
+<div class="arithmatex">\[
+\frac{\Delta\rho}{\rho_0} = (\mu_H B)^2 \cdot f(\text{geometry})
+\]</div>
+<p>For small fields, <span class="arithmatex">\(\Delta\rho/\rho_0 \propto (\mu B)^2\)</span>. Magnetoresistance is significant only when <span class="arithmatex">\(\mu B \geq 1\)</span>, i.e., for high-mobility materials (GaAs, InSb) in strong magnetic fields. For silicon at typical fields, it is a small correction.</p>
+<p><strong>Geometric magnetoresistance</strong> occurs when the Hall voltage is short-circuited by contact geometry. In a wide, short sample, or in materials with a large carrier pileup inhibited by contacts, effective magnetoresistance can be much larger than the physical value.</p>
+<h3 id="piezoelectric-effect">Piezoelectric Effect</h3>
+<p>In crystals without a center of inversion symmetry (like GaAs, AlN, ZnO), mechanical strain creates an electric polarization through the ionic displacement — the <strong>piezoelectric effect</strong>. The piezoelectric constitutive equations couple the strain tensor <span class="arithmatex">\(S_{ij}\)</span> to the polarization <span class="arithmatex">\(P_k\)</span>:</p>
+<div class="arithmatex">\[
+P_k = e_{kij} S_{ij}
+\]</div>
+<p>where <span class="arithmatex">\(e_{kij}\)</span> is the third-rank piezoelectric tensor. Silicon (cubic, centrosymmetric) is NOT piezoelectric. GaN, AlN, and ZnO are strongly piezoelectric — a critical consideration in nitride-based HEMTs where piezoelectric charges at heterointerfaces contribute to the 2D electron gas density.</p>
+<h3 id="piezoresistance-effect">Piezoresistance Effect</h3>
+<p>Even in silicon (which lacks piezoelectricity), mechanical stress changes the resistivity through the <strong>piezoresistance effect</strong>. Strain modifies the band structure: band minima shift in energy, effective masses change, and intervalley scattering rates are altered. The fractional resistivity change is:</p>
+<div class="arithmatex">\[
+\frac{\Delta\rho}{\rho} = \pi_l \sigma_l + \pi_t \sigma_t
+\]</div>
+<p>where <span class="arithmatex">\(\pi_l\)</span> and <span class="arithmatex">\(\pi_t\)</span> are the longitudinal and transverse piezoresistance coefficients (units: Pa<span class="arithmatex">\(^{-1}\)</span>), and <span class="arithmatex">\(\sigma_l\)</span>, <span class="arithmatex">\(\sigma_t\)</span> are the applied stresses parallel and perpendicular to the current.</p>
+<p>Piezoresistance coefficients in silicon are large and anisotropic:
+- p-type silicon: <span class="arithmatex">\(\pi_{44} \approx +138 \times 10^{-11}\)</span> Pa<span class="arithmatex">\(^{-1}\)</span> (dominant)
+- n-type silicon: <span class="arithmatex">\(\pi_{11} \approx -102 \times 10^{-11}\)</span> Pa<span class="arithmatex">\(^{-1}\)</span> (dominant)</p>
+<p>Piezoresistance is the operating principle of <strong>silicon pressure sensors and accelerometers</strong> — some of the first commercial MEMS (microelectromechanical systems) devices. Strained silicon technology (Chapter 20) deliberately applies piezoresistive effects to boost MOSFET mobility by 30–50%.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Nova Celebrates: Transport Physics, Complete!</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
+Look how far we've come in three chapters! Chapter 7 gave us the carrier concentrations. Chapter 8 gave us drift and scattering. Chapter 9 gives us diffusion, the complete current equations, and the measurement tools to verify all of it. The drift-diffusion model is now in your hands — and it's the same set of equations that runs inside every semiconductor process simulator in the world. From here, we move to generation and recombination, then to the p-n junction, where this transport machinery produces transistors, LEDs, and solar cells. Time to jump bands!</p>
+</div>
+<details>
+<summary>#### MicroSim: Hall Effect Measurement Simulator</summary>
+<p><strong>sim-id:</strong> <code>hall-effect-simulator</code><br />
+<strong>Library:</strong> p5.js<br />
+<strong>Status:</strong> specification  </p>
+<p><strong>Description:</strong> Interactive visualization of the Hall effect experiment. Shows a rectangular semiconductor bar with current flow, magnetic field (adjustable direction and magnitude), carrier drift trajectories, charge accumulation on transverse faces, and the resulting Hall voltage. Displays calculated <span class="arithmatex">\(R_H\)</span>, carrier concentration, and Hall mobility. User can switch between n-type and p-type and observe sign flip.</p>
+<p><strong>Controls:</strong>
+- Radio buttons: N-type / P-type
+- Slider: Carrier concentration (<span class="arithmatex">\(10^{14}\)</span> to <span class="arithmatex">\(10^{17}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>)
+- Slider: Magnetic field B (0 to 1 T)
+- Slider: Applied current (1 to 10 mA)
+- Button: Flip B-field direction (observe Hall voltage sign flip)</p>
+<p><strong>Key Learning Objectives:</strong>
+- L2 (Understand): Explain why Hall voltage sign depends on carrier type
+- L3 (Apply): Calculate carrier concentration from Hall measurement data
+- L4 (Analyze): Distinguish n-type from p-type from sign of Hall coefficient</p>
+</details>
+<hr />
+<h2 id="summary_1">Summary</h2>
+<p>This chapter completed the carrier transport framework:</p>
+<ul>
+<li><strong>Diffusion current</strong> arises from concentration gradients: <span class="arithmatex">\(J_n^{\text{diff}} = qD_n (dn/dx)\)</span></li>
+<li><strong>Einstein relation</strong> connects diffusion and drift: <span class="arithmatex">\(D/\mu = k_BT/q = V_T\)</span></li>
+<li><strong>Drift-diffusion model</strong> combines drift and diffusion into a coupled PDE system — the basis of all device simulators</li>
+<li><strong>Resistivity</strong> <span class="arithmatex">\(\rho = 1/q(n\mu_n + p\mu_p)\)</span> and <strong>sheet resistance</strong> <span class="arithmatex">\(R_\square = \rho/t\)</span> are measurable bulk/thin-film transport parameters</li>
+<li><strong>Hall effect</strong> gives carrier type (from sign of <span class="arithmatex">\(R_H\)</span>), concentration (from magnitude of <span class="arithmatex">\(R_H\)</span>), and mobility (from <span class="arithmatex">\(\mu_H = |R_H|\sigma\)</span>)</li>
+<li><strong>Van der Pauw method</strong> extends Hall measurement to arbitrary sample geometries using four perimeter contacts</li>
+<li><strong>Magnetoresistance</strong> and <strong>piezoresistance</strong> are secondary transport phenomena with important MEMS and strained-silicon applications</li>
+</ul>
+<h2 id="key-equations">Key Equations</h2>
+<div class="arithmatex">\[
+J_n = qn\mu_n\mathcal{E} + qD_n\frac{dn}{dx}, \quad J_p = qp\mu_p\mathcal{E} - qD_p\frac{dp}{dx}
+\]</div>
+<div class="arithmatex">\[
+\frac{D_n}{\mu_n} = \frac{D_p}{\mu_p} = V_T = \frac{k_BT}{q} = 25.9 \text{ mV at 300 K}
+\]</div>
+<div class="arithmatex">\[
+\rho = \frac{1}{q(n\mu_n + p\mu_p)}, \quad R_\square = \frac{\rho}{t}
+\]</div>
+<div class="arithmatex">\[
+R_H = \frac{-1}{qn} \text{ (n-type)}, \quad R_H = \frac{+1}{qp} \text{ (p-type)}, \quad \mu_H = |R_H|\sigma
+\]</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../08-carrier-drift-mobility/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 8. Carrier Drift and Mobility">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                8. Carrier Drift and Mobility
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../10-generation-recombination/" class="md-footer__link md-footer__link--next" aria-label="Next: 10. Generation and Recombination">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                10. Generation and Recombination
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "sim_id": "intrinsic-concentration-temperature",
+  "diagram_name": "Temperature Dependence of ni Explorer",
+  "chapter_number": 6,
+  "chapter_title": "Fermi-Dirac Statistics and Intrinsic Carrier Concentrations",
+  "chapter_dir": "06-fermi-dirac-statistics",
+  "library": "Chart.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": "Students will calculate intrinsic carrier concentration as a function of temperature for multiple materials and evaluate (Evaluate, L5) which materials are suitable for high-temperature operation.",
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: MicroSim\n**sim-id:** intrinsic-concentration-temperature<br/>\n**Library:** Chart.js<br/>\n**Status:** Specified\n\n**Learning objective:** Students will calculate intrinsic carrier concentration as a function of temperature for multiple materials and evaluate (Evaluate, L5) which materials are suitable for high-temperature operation.\n\n**Canvas size:** 780 × 480 px, responsive.\n\n**Chart type:** Line chart (Chart.js) with a logarithmic y-axis.\n\n**Dataset:** For each material, compute \\(n_i(T) = \\sqrt{N_C(T)N_V(T)}\\exp(-E_g/2k_BT)\\) from T = 200 K to T = 700 K in 10 K steps. Include Si (E_g=1.12 eV), Ge (E_g=0.66 eV), GaAs (E_g=1.42 eV), GaN (E_g=3.4 eV). Use appropriate effective masses for N_C and N_V scaling (~T^{3/2}).\n\n**Visual:**\n- X-axis: Temperature T (K), 200–700 K.\n- Y-axis: n_i (cm⁻³), log scale, 10⁻¹⁰ to 10²⁰.\n- Four colored lines (Si=blue, Ge=green, GaAs=orange, GaN=red).\n- Horizontal dashed reference lines at n_i = 10^15 (typical light doping level) and n_i = 10^10 (Si at 300 K).\n- Draw a vertical dashed line at T = 300 K.\n\n**Interaction:**\n- Hovering over any point shows: material, temperature, n_i value, and whether the device would be in the intrinsic regime at that T for a given doping level (configurable via dropdown: \"Doping N_D = 10^15, 10^16, 10^17 cm⁻³\").\n- Clicking a material line highlights it and shows the approximate maximum safe operating temperature (where n_i ~ N_D/10).\n\n**Implementation:** Chart.js v4, single HTML file. Computed n_i values precomputed and stored as arrays. Parent canvas to document.querySelector('main')."
+}

@@ -1,0 +1,2266 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Avalanche and Zener breakdown, junction capacitances, switching transients, and heterojunction band alignment for advanced device structures">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/12-pn-junction-dynamics/">
+      
+      
+        <link rel="prev" href="../11-pn-junction-equilibrium/">
+      
+      
+        <link rel="next" href="../13-metal-semiconductor-mos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>P-N Junction: Dynamics, Breakdown, and Heterojunctions - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#p-n-junction-dynamics-breakdown-and-heterojunctions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              P-N Junction: Dynamics, Breakdown, and Heterojunctions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#121-avalanche-breakdown-and-impact-ionization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 Avalanche Breakdown and Impact Ionization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#122-zener-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 Zener Breakdown
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#123-junction-capacitance-depletion-capacitance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3 Junction Capacitance: Depletion Capacitance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#124-diffusion-capacitance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.4 Diffusion Capacitance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#125-switching-transients-charge-storage-and-reverse-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.5 Switching Transients: Charge Storage and Reverse Recovery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#126-heterojunctions-joining-different-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.6 Heterojunctions: Joining Different Semiconductors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.6 Heterojunctions: Joining Different Semiconductors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1261-electron-affinity-work-function-and-andersons-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.6.1 Electron Affinity, Work Function, and Anderson's Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1262-three-types-of-band-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.6.2 Three Types of Band Alignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1263-graded-heterojunctions-and-band-edge-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.6.3 Graded Heterojunctions and Band-Edge Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#121-avalanche-breakdown-and-impact-ionization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 Avalanche Breakdown and Impact Ionization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#122-zener-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 Zener Breakdown
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#123-junction-capacitance-depletion-capacitance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3 Junction Capacitance: Depletion Capacitance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#124-diffusion-capacitance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.4 Diffusion Capacitance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#125-switching-transients-charge-storage-and-reverse-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.5 Switching Transients: Charge Storage and Reverse Recovery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#126-heterojunctions-joining-different-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.6 Heterojunctions: Joining Different Semiconductors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.6 Heterojunctions: Joining Different Semiconductors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1261-electron-affinity-work-function-and-andersons-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.6.1 Electron Affinity, Work Function, and Anderson's Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1262-three-types-of-band-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.6.2 Three Types of Band Alignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1263-graded-heterojunctions-and-band-edge-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.6.3 Graded Heterojunctions and Band-Edge Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/12-pn-junction-dynamics/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="p-n-junction-dynamics-breakdown-and-heterojunctions">P-N Junction: Dynamics, Breakdown, and Heterojunctions</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter extends p-n junction analysis to dynamic operation and extreme bias conditions. Avalanche breakdown through impact ionization and Zener breakdown through band-to-band tunneling set the reverse-bias limits of diodes and form the basis for voltage-reference and protection devices. Junction capacitance has two components — the depletion capacitance (voltage-tunable) and diffusion capacitance — both essential for high-frequency and switching analysis. The small-signal diode model, reverse recovery time, and charge-storage transient behavior determine switching speed. The chapter closes with heterojunctions: band alignment rules (Anderson's rule), the three heterojunction types, and their band discontinuities — concepts critical to HBTs, HEMTs, quantum-well lasers, and solar cells in later chapters.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 29 concepts from the learning graph:</p>
+<ol>
+<li>Avalanche Breakdown</li>
+<li>Impact Ionization</li>
+<li>Ionization Coefficients</li>
+<li>Multiplication Factor</li>
+<li>Zener Breakdown</li>
+<li>Zener Effect</li>
+<li>Zener Voltage</li>
+<li>Junction Capacitance</li>
+<li>Depletion Capacitance</li>
+<li>Diffusion Capacitance</li>
+<li>Small-Signal Diode Model</li>
+<li>Diode Conductance</li>
+<li>Transient Response Diode</li>
+<li>Charge Storage in Diode</li>
+<li>Reverse Recovery Time</li>
+<li>Minority Carrier Storage</li>
+<li>Diode Switching Speed</li>
+<li>Heterojunction</li>
+<li>Band Alignment Types</li>
+<li>Type I Heterojunction</li>
+<li>Type II Heterojunction</li>
+<li>Type III Heterojunction</li>
+<li>Anderson Rule</li>
+<li>Band Discontinuity</li>
+<li>Conduction Band Offset</li>
+<li>Valence Band Offset</li>
+<li>Graded Heterojunction</li>
+<li>Work Function</li>
+<li>Electron Affinity</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../04-quantum-mechanics/">Chapter 4: Quantum Mechanics: Wave Equations and Atomic Structure</a></li>
+<li><a href="../08-carrier-drift-mobility/">Chapter 8: Carrier Drift, Mobility, and Scattering Mechanisms</a></li>
+<li><a href="../10-generation-recombination/">Chapter 10: Generation, Recombination, Continuity, and Optical Processes</a></li>
+<li><a href="../11-pn-junction-equilibrium/">Chapter 11: P-N Junction: Equilibrium, Bias, and the Ideal Diode</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Nova on Breakdown: Sometimes Electrons Just Snap</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+We ended Chapter 11 with a polite, well-behaved diode that gently saturates under reverse bias. Today we push it until it breaks — and then we learn that "breaking" can be very, very useful. Avalanche multiplication, Zener tunneling, charge-storage transients, and the elegant physics of heterojunction band alignment all await. Nova's professional advice: controlled breakdown is a feature, not a bug.</p>
+</div>
+<h2 id="121-avalanche-breakdown-and-impact-ionization">12.1 Avalanche Breakdown and Impact Ionization</h2>
+<p>When a reverse-biased p-n junction has a sufficiently large electric field across the depletion region, carriers can gain enough kinetic energy between collisions to ionize lattice atoms upon collision. This creates new electron-hole pairs — which are themselves accelerated by the field, creating more pairs — a self-sustaining chain reaction called <strong>avalanche multiplication</strong>.</p>
+<p>The quantitative description uses the <strong>ionization coefficients</strong> <span class="arithmatex">\(\alpha_n\)</span> and <span class="arithmatex">\(\alpha_p\)</span> (units: cm<span class="arithmatex">\(^{-1}\)</span>), defined such that <span class="arithmatex">\(\alpha_n\)</span> is the number of electron-hole pairs created per unit length by an electron drifting through the field, and similarly for holes. These coefficients are highly field-dependent:</p>
+<div class="arithmatex">\[
+\alpha_n, \alpha_p \propto \exp\!\left(-\frac{b}{\mathcal{E}}\right)
+\]</div>
+<p>where <span class="arithmatex">\(b\)</span> is a material-dependent constant (~1.8 × 10<span class="arithmatex">\(^6\)</span> V/cm for silicon electrons). Because of this exponential field dependence, avalanche multiplication turns on extremely abruptly as the field increases.</p>
+<p>The <strong>multiplication factor</strong> <span class="arithmatex">\(M\)</span> quantifies current amplification. For a one-sided abrupt junction (p<span class="arithmatex">\(^+\)</span>n), where only electrons traverse the full depletion width <span class="arithmatex">\(W\)</span>:</p>
+<div class="arithmatex">\[
+M = \frac{1}{1 - \int_0^W \alpha_n\, dx}
+\]</div>
+<p><strong>Avalanche breakdown</strong> occurs when <span class="arithmatex">\(M \to \infty\)</span>, i.e., when:</p>
+<div class="arithmatex">\[
+\int_0^W \alpha_n\, dx = 1
+\]</div>
+<p>The empirical approximation for the breakdown voltage of a one-sided abrupt junction in silicon:</p>
+<div class="arithmatex">\[
+V_{\text{BD}} \approx 60 \left(\frac{E_g}{1.1}\right)^{3/2} \left(\frac{N_B}{10^{16}}\right)^{-3/4} \text{ V}
+\]</div>
+<p>where <span class="arithmatex">\(N_B\)</span> is the background doping (lightly doped side) in cm<span class="arithmatex">\(^{-3}\)</span>. For <span class="arithmatex">\(N_B = 10^{16}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>: <span class="arithmatex">\(V_{\text{BD}} \approx 60\)</span> V. For <span class="arithmatex">\(N_B = 10^{15}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>: <span class="arithmatex">\(V_{\text{BD}} \approx 190\)</span> V.</p>
+<p>The temperature coefficient of avalanche breakdown is <strong>positive</strong> (+0.1%/°C approximately): higher temperature → more phonon scattering → carriers lose energy more quickly → need higher field to achieve impact ionization threshold.</p>
+<hr />
+<h2 id="122-zener-breakdown">12.2 Zener Breakdown</h2>
+<p>In heavily doped junctions, a different breakdown mechanism operates at lower voltages: <strong>band-to-band tunneling</strong> (the <strong>Zener effect</strong>). When the conduction band on the n-side and the valence band on the p-side are brought into proximity by a thin depletion region (due to heavy doping), electrons can quantum-mechanically tunnel through the bandgap barrier.</p>
+<p>The tunneling probability scales as:</p>
+<div class="arithmatex">\[
+T \propto \exp\!\left(-\frac{4\sqrt{2m^* E_g^3}}{3q\hbar \mathcal{E}}\right)
+\]</div>
+<p>Zener tunneling becomes significant when the depletion width <span class="arithmatex">\(W \lesssim 10\)</span> nm, which requires doping <span class="arithmatex">\(N \gtrsim 10^{18}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>. The resulting <strong>Zener voltage</strong> is typically 1–5 V.</p>
+<p>The temperature coefficient of Zener breakdown is <strong>negative</strong>: higher temperature → narrower effective bandgap → higher tunneling probability → breakdown at lower voltage. This sign is opposite to avalanche breakdown, which provides a practical diagnostic:</p>
+<table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>Voltage Range</th>
+<th>Temperature Coefficient</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zener tunneling</td>
+<td><span class="arithmatex">\(V_Z &lt; 5\)</span> V</td>
+<td>Negative (~−2 mV/°C)</td>
+</tr>
+<tr>
+<td>Avalanche</td>
+<td><span class="arithmatex">\(V_Z &gt; 7\)</span> V</td>
+<td>Positive (~+2 mV/°C)</td>
+</tr>
+<tr>
+<td>Mixed</td>
+<td>5–7 V</td>
+<td>Near zero</td>
+</tr>
+</tbody>
+</table>
+<p>Diodes with <span class="arithmatex">\(V_Z \approx 5.6\)</span> V have nearly zero temperature coefficient — useful for voltage references.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Nova Thinks: Zener Diodes Are Named for the Wrong Mechanism</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova in thinking pose">
+Here's a delightful industry irony: "Zener diodes" in circuit applications are mainly rated above 6 V, which means they primarily operate by <strong>avalanche breakdown</strong>, not Zener tunneling. The Zener effect (tunneling) dominates below ~5 V. So the diodes named after Zener mostly work by a mechanism Zener didn't discover. This is not unique in physics — Zener got the credit because the practical device came from his theoretical framework, even if avalanche multiplication (explained by McKay and McAfee a few years later) handles the heavy lifting in most commercial parts. History is complicated.</p>
+</div>
+<hr />
+<h2 id="123-junction-capacitance-depletion-capacitance">12.3 Junction Capacitance: Depletion Capacitance</h2>
+<p>The p-n junction has two distinct capacitance components that are critical for high-frequency and switching circuit analysis. We examine each in turn.</p>
+<p><strong>Depletion capacitance</strong> (also called junction capacitance or space-charge capacitance) arises from the charge stored in the depletion region. When voltage changes by <span class="arithmatex">\(dV\)</span>, the depletion width changes by <span class="arithmatex">\(dW\)</span>, changing the stored charge by <span class="arithmatex">\(dQ = qN_D dW \cdot A\)</span>. The resulting capacitance per unit area is:</p>
+<div class="arithmatex">\[
+C_j = \frac{dQ}{dV} = \varepsilon_s \frac{A}{W(V)} = A\sqrt{\frac{q\varepsilon_s}{2(V_{bi} - V)} \cdot \frac{N_A N_D}{N_A + N_D}}
+\]</div>
+<p>This can be written as:</p>
+<div class="arithmatex">\[
+C_j(V) = \frac{C_{j0}}{\left(1 - V/V_{bi}\right)^m}
+\]</div>
+<p>where <span class="arithmatex">\(C_{j0}\)</span> is the zero-bias capacitance, <span class="arithmatex">\(V\)</span> is the applied voltage (positive for forward), and the grading coefficient <span class="arithmatex">\(m = 1/2\)</span> for an abrupt junction or <span class="arithmatex">\(m = 1/3\)</span> for a linearly graded junction.</p>
+<p>The <strong>voltage-tunable</strong> capacitance makes p-n junctions useful as <strong>varactor diodes</strong> (voltage-variable capacitors) for frequency synthesis, tunable filters, and RF oscillators. A reverse-biased varactor spans a capacitance ratio of ~4–10× over its usable voltage range.</p>
+<p>For a one-sided abrupt junction (<span class="arithmatex">\(N_A \gg N_D\)</span>):</p>
+<div class="arithmatex">\[
+\frac{1}{C_j^2} = \frac{2(V_{bi} - V)}{q\varepsilon_s N_D A^2}
+\]</div>
+<p>Plotting <span class="arithmatex">\(1/C_j^2\)</span> vs. reverse voltage <span class="arithmatex">\(V_R\)</span> gives a straight line — the classic <strong>C-V measurement</strong> technique for extracting doping profile from the slope and <span class="arithmatex">\(V_{bi}\)</span> from the x-intercept.</p>
+<hr />
+<h2 id="124-diffusion-capacitance">12.4 Diffusion Capacitance</h2>
+<p>Under forward bias, minority carriers are stored in the neutral regions near the depletion edges. This stored minority charge <span class="arithmatex">\(Q_{\text{stored}}\)</span> changes with forward voltage, contributing a <strong>diffusion capacitance</strong>:</p>
+<div class="arithmatex">\[
+C_d = \frac{dQ_{\text{stored}}}{dV}
+\]</div>
+<p>The minority charge stored in the n-side (holes) is:</p>
+<div class="arithmatex">\[
+Q_p = q A \int_{x_n}^{\infty} \delta p(x)\, dx = q A \cdot \delta p(x_n) \cdot L_p = q A \cdot p_{n0}(e^{qV/k_BT} - 1) L_p
+\]</div>
+<p>Taking the derivative with respect to <span class="arithmatex">\(V\)</span>:</p>
+<div class="arithmatex">\[
+C_d = \frac{q^2}{k_BT} \cdot A \cdot p_{n0} L_p \cdot e^{qV/k_BT} = \frac{\tau_p}{V_T} \cdot \frac{I}{2} \propto I
+\]</div>
+<p>The diffusion capacitance is <strong>proportional to forward current</strong> and can be enormous at high forward bias. For a diode carrying 1 mA with <span class="arithmatex">\(\tau_p = 1\)</span> μs, <span class="arithmatex">\(C_d \approx 40\)</span> nF — roughly 1000× larger than a typical depletion capacitance.</p>
+<p>The <strong>small-signal diode model</strong> combines both capacitances:</p>
+<div class="arithmatex">\[
+r_d = \frac{dV}{dI} = \frac{n k_BT}{qI} = \frac{n V_T}{I}
+\]</div>
+<div class="arithmatex">\[
+C_{\text{total}} = C_j + C_d
+\]</div>
+<p>At low frequencies or DC, diffusion capacitance dominates in forward bias. At reverse bias and high frequencies, only depletion capacitance matters. The transition frequency <span class="arithmatex">\(f_T\)</span> where the reactive impedance equals <span class="arithmatex">\(r_d\)</span> sets the bandwidth of a diode in a circuit.</p>
+<hr />
+<h2 id="125-switching-transients-charge-storage-and-reverse-recovery">12.5 Switching Transients: Charge Storage and Reverse Recovery</h2>
+<p>When a forward-biased diode is switched off by applying reverse voltage, the stored minority charge doesn't disappear instantaneously. The stored charge must be removed by:
+1. <strong>Extraction</strong>: Reverse current flows to sweep out minority carriers
+2. <strong>Recombination</strong>: Stored carriers recombine within lifetime <span class="arithmatex">\(\tau\)</span></p>
+<p>This process is described by the <strong>reverse recovery time</strong> <span class="arithmatex">\(t_{rr}\)</span> — the time required for the diode current to fall to 10% of its reverse current value after turn-off. Reverse recovery has two phases:</p>
+<ul>
+<li><strong>Storage phase</strong> (<span class="arithmatex">\(t_s\)</span>): Current is still flowing in reverse, sweeping out stored charge</li>
+<li><strong>Recovery phase</strong> (<span class="arithmatex">\(t_r\)</span>): Current decays as remaining charge recombines</li>
+</ul>
+<p>The total reverse recovery time is:</p>
+<div class="arithmatex">\[
+t_{rr} = t_s + t_r \approx \tau_p \ln\!\left(\frac{I_F + I_R}{I_R}\right) + \sqrt{\frac{2\tau_p}{\pi} \cdot \frac{I_R}{I_F + I_R}} \cdot \tau_p
+\]</div>
+<p>For a power diode with <span class="arithmatex">\(\tau_p = 1\)</span> μs and switching between <span class="arithmatex">\(I_F = 1\)</span> A and <span class="arithmatex">\(I_R = 10\)</span> A: <span class="arithmatex">\(t_{rr} \sim 0.5\)</span>–<span class="arithmatex">\(1\)</span> μs. This sets the maximum switching frequency for a rectifier.</p>
+<p><strong>Fast recovery diodes</strong> intentionally use gold or platinum doping to reduce <span class="arithmatex">\(\tau_p\)</span> to nanoseconds, enabling operation at MHz frequencies. The tradeoff: lower lifetime means higher leakage current (larger <span class="arithmatex">\(I_s\)</span>), since <span class="arithmatex">\(\tau_p\)</span> appears in both places.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Nova Warns: Reverse Recovery Kills High-Frequency Power Converters</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Nova with warning pose">
+In switching power supplies operating at 100 kHz–1 MHz, diode reverse recovery is the dominant source of switching loss. During recovery, the diode simultaneously conducts reverse current and supports voltage — the overlap is power loss. SiC Schottky diodes (which have essentially zero minority carrier storage — they're majority-carrier devices) have revolutionized power electronics precisely because their recovery loss is nearly zero. Understanding why bipolar diodes have reverse recovery — and why Schottky diodes don't — explains one of the biggest materials transitions in 21st century power electronics.</p>
+</div>
+<hr />
+<h2 id="126-heterojunctions-joining-different-semiconductors">12.6 Heterojunctions: Joining Different Semiconductors</h2>
+<p>So far we've analyzed junctions between p-type and n-type regions of the <em>same</em> semiconductor. <strong>Heterojunctions</strong> are interfaces between two different semiconductor materials — for example, GaAs/AlGaAs, Si/SiGe, or GaN/AlGaN. They are the basis for high-performance transistors (HBTs, HEMTs), quantum-well lasers, and multijunction solar cells.</p>
+<p>The key challenge with heterojunctions is that the two materials have different bandgaps, electron affinities, and work functions, so the band alignment at the interface is non-trivial and has enormous consequences for device behavior.</p>
+<h3 id="1261-electron-affinity-work-function-and-andersons-rule">12.6.1 Electron Affinity, Work Function, and Anderson's Rule</h3>
+<p>Two quantities characterize the energy scale of a semiconductor:</p>
+<ul>
+<li><strong>Electron affinity</strong> <span class="arithmatex">\(\chi\)</span>: Energy gained by adding an electron to the conduction band minimum from the vacuum level. Measured at the surface.</li>
+<li><strong>Work function</strong> <span class="arithmatex">\(\phi_s\)</span>: Energy required to remove an electron from the Fermi level to vacuum. For a semiconductor: <span class="arithmatex">\(\phi_s = \chi + (E_C - E_F)/q\)</span>.</li>
+</ul>
+<p><strong>Anderson's rule</strong> (1960) predicts the band alignment at a heterojunction by assuming the vacuum level is continuous across the interface:</p>
+<div class="arithmatex">\[
+\Delta E_C = \chi_1 - \chi_2 \quad \text{(conduction band offset)}
+\]</div>
+<div class="arithmatex">\[
+\Delta E_V = (E_{g,2} - E_{g,1}) - \Delta E_C \quad \text{(valence band offset)}
+\]</div>
+<p>For the GaAs/AlGaAs system with <span class="arithmatex">\(x = 0.3\)</span>:
+- <span class="arithmatex">\(\Delta E_C \approx 0.67 \times \Delta E_g \approx 0.67 \times 0.37 \approx 0.25\)</span> eV
+- <span class="arithmatex">\(\Delta E_V \approx 0.33 \times \Delta E_g \approx 0.12\)</span> eV</p>
+<p>Anderson's rule is a useful first estimate but not highly accurate — interface dipoles, strain, and polar surface orientation all modify the true offsets. Experimental measurements (XPS, C-V, internal photoemission) are needed for precise values.</p>
+<h3 id="1262-three-types-of-band-alignment">12.6.2 Three Types of Band Alignment</h3>
+<p>Based on the relative positions of the conduction and valence bands, heterojunctions fall into three types:</p>
+<p><strong>Type I (straddling gap):</strong> The wider-gap semiconductor's conduction band is above the narrow-gap's <span class="arithmatex">\(E_C\)</span>, and the valence band is below the narrow-gap's <span class="arithmatex">\(E_V\)</span>. The narrow-gap material is "inside" — its band gap is straddled. Both electrons and holes are confined in the narrow-gap layer.</p>
+<p><em>Example:</em> GaAs/AlGaAs, InGaAs/InP, GaN/AlGaN. Used in quantum-well lasers (both carriers confined → high optical gain), quantum well infrared photodetectors, and HEMTs.</p>
+<p><strong>Type II (staggered gap):</strong> Both the conduction band and valence band offset in the same direction. Electrons and holes are confined in <em>different</em> spatial layers, creating spatially indirect transitions. Radiative recombination is slowed (carriers must tunnel or overcome the spatial separation).</p>
+<p><em>Example:</em> InAs/GaSb, Si/SiGe (in some configurations). Used in hot-carrier solar cells, cascade lasers (QCL), and novel tunnel FETs.</p>
+<p><strong>Type III (broken gap or misaligned gap):</strong> The conduction band of one material overlaps with the valence band of the other. The semiconductor with the higher conduction band has its conduction band edge <em>below</em> the valence band edge of the other. Carriers can transfer from one material to another without crossing any barrier.</p>
+<p><em>Example:</em> InAs/GaSb (extreme case). Creates semi-metallic interfaces with very high carrier densities. Basis for some III-V tunnel diodes.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Common Name</th>
+<th>Band Offset Geometry</th>
+<th>Typical Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type I</td>
+<td>Straddling</td>
+<td>Both offsets contain narrow-gap</td>
+<td>Lasers, QWIPs, HEMTs</td>
+</tr>
+<tr>
+<td>Type II</td>
+<td>Staggered</td>
+<td>Same-direction offsets, electrons and holes separated</td>
+<td>QCLs, interband tunneling</td>
+</tr>
+<tr>
+<td>Type III</td>
+<td>Broken gap</td>
+<td>Conduction band overlaps valence band</td>
+<td>Tunnel transistors, semimetals</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1263-graded-heterojunctions-and-band-edge-engineering">12.6.3 Graded Heterojunctions and Band-Edge Engineering</h3>
+<p>A sharp heterojunction has a discontinuous conduction band step that can impede electron transport — a "speed bump" in the conduction band. <strong>Graded heterojunctions</strong> smooth this transition by compositionally grading the alloy over a distance of 10–100 nm, converting the abrupt step into a quasi-electric field that actually <em>aids</em> transport:</p>
+<div class="arithmatex">\[
+\mathcal{E}_{\text{quasi}} = -\frac{1}{q}\frac{dE_C}{dx}
+\]</div>
+<p>In a compositionally graded AlGaAs/GaAs heterojunction, the grading creates a built-in quasi-field pointing toward the GaAs base — which is exactly the direction of minority electron flow in an HBT. The result: a "ballistic launching ramp" that accelerates minority carriers across the base, dramatically increasing transistor speed.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Nova Celebrates: Heterojunctions Unlock the Zoo of Compound Devices</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
+With heterojunctions in your toolkit, you can now think about confining specific carrier types in specific layers, bending bands with composition gradients, and engineering optical transitions at designed energies. Everything you've learned — band structure, effective mass, quasi-Fermi levels, minority carrier transport, generation-recombination — applies to these structures, but now with spatial composition as an additional design variable. The result: HBTs that operate at hundreds of GHz, quantum-cascade lasers that emit at terahertz frequencies, and solar cells that capture the entire solar spectrum. Heterojunctions are where semiconductor physics meets materials science, and the view is spectacular.</p>
+</div>
+<details>
+<summary>#### MicroSim: Heterojunction Band Alignment Visualizer</summary>
+<p><strong>sim-id:</strong> <code>heterojunction-band-alignment</code><br />
+<strong>Library:</strong> p5.js<br />
+<strong>Status:</strong> specification  </p>
+<p><strong>Description:</strong> Interactive band alignment tool. User selects two semiconductor materials from a dropdown (Si, Ge, GaAs, AlAs, InAs, InP, GaN, AlN, ZnO, CdTe) and the tool calculates and displays the band diagram at their interface using tabulated electron affinities and bandgaps. Shows Anderson's rule calculation, labels <span class="arithmatex">\(\Delta E_C\)</span> and <span class="arithmatex">\(\Delta E_V\)</span>, and identifies the heterojunction type (I, II, or III). An alloy composition slider allows exploring the AlGaAs system continuously.</p>
+<p><strong>Controls:</strong>
+- Dropdown: Semiconductor 1 (material A)
+- Dropdown: Semiconductor 2 (material B)
+- Slider: Alloy composition (for AlGaAs: 0 to 1 Al fraction)
+- Dropdown: Doping type (n/p) for each side
+- Checkbox: Show vacuum level reference</p>
+<p><strong>Key Learning Objectives:</strong>
+- L2 (Understand): Identify Type I, II, III alignment from the band diagram
+- L3 (Apply): Calculate band offsets using Anderson's rule
+- L4 (Analyze): Predict where electrons and holes are confined in a Type I system</p>
+</details>
+<hr />
+<h2 id="summary_1">Summary</h2>
+<p>This chapter extended p-n junction physics into dynamic and exotic regimes:</p>
+<ul>
+<li><strong>Avalanche breakdown</strong> occurs when the impact ionization integral equals unity; breakdown voltage scales as <span class="arithmatex">\(N_D^{-3/4}\)</span>; positive temperature coefficient</li>
+<li><strong>Zener breakdown</strong> (band-to-band tunneling) operates at <span class="arithmatex">\(V &lt; 5\)</span> V in heavily doped junctions; negative temperature coefficient</li>
+<li><strong>Depletion capacitance</strong> <span class="arithmatex">\(C_j \propto (V_{bi} - V)^{-1/2}\)</span> enables voltage-tunable varactors; C-V profiling extracts doping</li>
+<li><strong>Diffusion capacitance</strong> <span class="arithmatex">\(C_d \propto I\)</span> dominates at high forward bias and determines switching bandwidth</li>
+<li><strong>Reverse recovery time</strong> limits diode switching speed; set by minority carrier lifetime <span class="arithmatex">\(\tau\)</span></li>
+<li><strong>Anderson's rule</strong> predicts band offsets from electron affinity differences; heterojunction type (I/II/III) determines carrier confinement geometry</li>
+<li><strong>Graded heterojunctions</strong> convert band steps into quasi-electric fields that aid carrier transport</li>
+</ul>
+<h2 id="key-equations">Key Equations</h2>
+<div class="arithmatex">\[
+C_j = \frac{C_{j0}}{(1-V/V_{bi})^m}, \quad m = 1/2 \text{ (abrupt)}, \quad m = 1/3 \text{ (graded)}
+\]</div>
+<div class="arithmatex">\[
+C_d = \frac{\tau_p}{V_T} \cdot \frac{I_F}{2} \quad \text{(diffusion capacitance ∝ current)}
+\]</div>
+<div class="arithmatex">\[
+\Delta E_C = \chi_1 - \chi_2 \quad \text{(Anderson's rule, conduction band offset)}
+\]</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../11-pn-junction-equilibrium/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 11. P-N Junction Equilibrium">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                11. P-N Junction Equilibrium
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../13-metal-semiconductor-mos/" class="md-footer__link md-footer__link--next" aria-label="Next: 13. Metal-Semiconductor and MOS">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                13. Metal-Semiconductor and MOS
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

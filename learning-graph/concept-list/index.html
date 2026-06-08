@@ -1,0 +1,1883 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Resources for teaching a college-level course on semiconductor physics with a focus on creating interactive simulations.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/learning-graph/concept-list/">
+      
+      
+        <link rel="prev" href="../course-description-assessment/">
+      
+      
+        <link rel="next" href="../quality-metrics/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Concept List - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#semiconductor-physics-concept-list" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Concept List
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learning Graph
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course-description-assessment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description Assessment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quality-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graph Quality Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concept-taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../taxonomy-distribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy Distribution Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mascot-test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mascot Style Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../book-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Book Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph for TEXTBOOK_NAME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logs/learning-graph-generator-0.05-2026-06-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph Generator Session Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/learning-graph/concept-list.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="semiconductor-physics-concept-list">Semiconductor Physics: Concept List</h1>
+<p>600 concepts for the Semiconductor Physics: Fundamentals to Advanced Applications course.</p>
+<ol>
+<li>Semiconductor Definition</li>
+<li>Conductor vs Insulator vs Semiconductor</li>
+<li>Elemental Semiconductors</li>
+<li>Compound Semiconductors</li>
+<li>Silicon Material Properties</li>
+<li>Germanium Material Properties</li>
+<li>Gallium Arsenide Properties</li>
+<li>Indium Phosphide Properties</li>
+<li>Gallium Nitride Properties</li>
+<li>Silicon Carbide Properties</li>
+<li>Bandgap Energy</li>
+<li>Direct Bandgap</li>
+<li>Indirect Bandgap</li>
+<li>Energy Band Diagram</li>
+<li>Conduction Band</li>
+<li>Valence Band</li>
+<li>Forbidden Energy Gap</li>
+<li>Crystal Lattice</li>
+<li>Unit Cell</li>
+<li>Primitive Cell</li>
+<li>Basis Vectors</li>
+<li>Simple Cubic Structure</li>
+<li>Face-Centered Cubic Structure</li>
+<li>Body-Centered Cubic Structure</li>
+<li>Diamond Cubic Structure</li>
+<li>Zincblende Structure</li>
+<li>Wurtzite Structure</li>
+<li>Miller Indices</li>
+<li>Crystal Planes</li>
+<li>Crystal Directions</li>
+<li>Reciprocal Lattice</li>
+<li>First Brillouin Zone</li>
+<li>Wigner-Seitz Cell</li>
+<li>Lattice Constant</li>
+<li>Lattice Mismatch</li>
+<li>Bragg Diffraction Law</li>
+<li>X-Ray Diffraction</li>
+<li>Electron Diffraction</li>
+<li>Covalent Bonding in Semiconductors</li>
+<li>Ionic Bonding</li>
+<li>Metallic Bonding</li>
+<li>Van der Waals Forces</li>
+<li>Hybridization SP3</li>
+<li>Point Defects</li>
+<li>Vacancies</li>
+<li>Interstitials</li>
+<li>Substitutional Impurities</li>
+<li>Frenkel Defects</li>
+<li>Schottky Defects</li>
+<li>Dislocations</li>
+<li>Edge Dislocations</li>
+<li>Screw Dislocations</li>
+<li>Stacking Faults</li>
+<li>Grain Boundaries</li>
+<li>Surface States</li>
+<li>Interface States</li>
+<li>Dangling Bonds</li>
+<li>Wave-Particle Duality</li>
+<li>de Broglie Wavelength</li>
+<li>Heisenberg Uncertainty Principle</li>
+<li>Schrodinger Equation</li>
+<li>Time-Dependent Schrodinger Equation</li>
+<li>Time-Independent Schrodinger Equation</li>
+<li>Wave Function</li>
+<li>Probability Density</li>
+<li>Quantum Normalization</li>
+<li>Particle in a Box</li>
+<li>Infinite Potential Well</li>
+<li>Finite Potential Well</li>
+<li>Quantum Tunneling</li>
+<li>Tunnel Probability</li>
+<li>WKB Approximation</li>
+<li>Hydrogen Atom Model</li>
+<li>Atomic Orbitals</li>
+<li>Quantum Numbers</li>
+<li>Principal Quantum Number</li>
+<li>Angular Momentum Quantum Number</li>
+<li>Magnetic Quantum Number</li>
+<li>Spin Quantum Number</li>
+<li>Pauli Exclusion Principle</li>
+<li>Electron Spin</li>
+<li>Spin-Orbit Coupling</li>
+<li>Perturbation Theory</li>
+<li>Variational Method</li>
+<li>Kronig-Penney Model</li>
+<li>Bloch Theorem</li>
+<li>Bloch Wave Functions</li>
+<li>Crystal Momentum</li>
+<li>Periodic Potential</li>
+<li>Band Gap Origin</li>
+<li>Free Electron Model</li>
+<li>Nearly-Free Electron Model</li>
+<li>Tight-Binding Model</li>
+<li>Linear Combination of Atomic Orbitals</li>
+<li>E-k Dispersion Relation</li>
+<li>Effective Mass Approximation</li>
+<li>Longitudinal Effective Mass</li>
+<li>Transverse Effective Mass</li>
+<li>Density-of-States Effective Mass</li>
+<li>Conductivity Effective Mass</li>
+<li>Hole Concept</li>
+<li>Hole Effective Mass</li>
+<li>Heavy Holes</li>
+<li>Light Holes</li>
+<li>Split-Off Band</li>
+<li>Spin-Orbit Splitting</li>
+<li>Fermi Energy</li>
+<li>Fermi Level</li>
+<li>Fermi-Dirac Distribution</li>
+<li>Maxwell-Boltzmann Distribution</li>
+<li>Bose-Einstein Distribution</li>
+<li>Density of States 3D</li>
+<li>Density of States 2D</li>
+<li>Density of States 1D</li>
+<li>Density of States 0D</li>
+<li>Effective Density of States</li>
+<li>Conduction Band Effective DOS</li>
+<li>Valence Band Effective DOS</li>
+<li>Intrinsic Carrier Concentration</li>
+<li>Intrinsic Fermi Level</li>
+<li>Temperature Dependence ni</li>
+<li>Law of Mass Action</li>
+<li>Electron Concentration Formula</li>
+<li>Hole Concentration Formula</li>
+<li>Charge Neutrality Condition</li>
+<li>N-Type Doping</li>
+<li>P-Type Doping</li>
+<li>Donor Atoms</li>
+<li>Acceptor Atoms</li>
+<li>Group V Dopants in Silicon</li>
+<li>Group III Dopants in Silicon</li>
+<li>Phosphorus as Donor</li>
+<li>Arsenic as Donor</li>
+<li>Antimony as Donor</li>
+<li>Boron as Acceptor</li>
+<li>Gallium as Acceptor</li>
+<li>Aluminum as Acceptor</li>
+<li>Indium as Acceptor</li>
+<li>Ionization Energy</li>
+<li>Complete Ionization</li>
+<li>Freeze-Out Regime</li>
+<li>Extrinsic Regime</li>
+<li>Intrinsic Regime Temperature</li>
+<li>Majority Carriers</li>
+<li>Minority Carriers</li>
+<li>Extrinsic Carrier Concentration</li>
+<li>Degenerate Semiconductor</li>
+<li>Non-Degenerate Semiconductor</li>
+<li>Compensation Doping</li>
+<li>Net Doping Concentration</li>
+<li>Fermi Level in N-Type</li>
+<li>Fermi Level in P-Type</li>
+<li>Temperature Dependence of Fermi Level</li>
+<li>Drift Current</li>
+<li>Drift Velocity</li>
+<li>Carrier Mobility</li>
+<li>Electron Mobility</li>
+<li>Hole Mobility</li>
+<li>Low-Field Mobility</li>
+<li>High-Field Mobility</li>
+<li>Velocity Saturation</li>
+<li>Saturation Velocity</li>
+<li>Hot Carriers</li>
+<li>Lattice Scattering</li>
+<li>Phonon Scattering</li>
+<li>Acoustic Phonon Scattering</li>
+<li>Optical Phonon Scattering</li>
+<li>Intervalley Scattering</li>
+<li>Ionized Impurity Scattering</li>
+<li>Neutral Impurity Scattering</li>
+<li>Surface Roughness Scattering</li>
+<li>Alloy Scattering</li>
+<li>Matthiessen Rule</li>
+<li>Mobility Temperature Dependence</li>
+<li>Mobility Doping Dependence</li>
+<li>Diffusion Current</li>
+<li>Diffusion Coefficient</li>
+<li>Einstein Relation</li>
+<li>Total Current Density</li>
+<li>Drift-Diffusion Model</li>
+<li>Resistivity</li>
+<li>Conductivity</li>
+<li>Sheet Resistance</li>
+<li>Hall Effect</li>
+<li>Hall Coefficient</li>
+<li>Hall Voltage</li>
+<li>Hall Mobility</li>
+<li>Van der Pauw Method</li>
+<li>Magnetoresistance</li>
+<li>Piezoelectric Effect</li>
+<li>Piezoresistance Effect</li>
+<li>Continuity Equation</li>
+<li>Ambipolar Transport</li>
+<li>Ambipolar Diffusion Coefficient</li>
+<li>Minority Carrier Lifetime</li>
+<li>Minority Carrier Diffusion Length</li>
+<li>Recombination Rate</li>
+<li>Generation Rate</li>
+<li>Direct Recombination</li>
+<li>Band-to-Band Recombination</li>
+<li>Radiative Recombination</li>
+<li>Radiative Recombination Coefficient</li>
+<li>Shockley-Read-Hall Recombination</li>
+<li>Trap-Assisted Recombination</li>
+<li>Trap Density</li>
+<li>Trap Energy Level</li>
+<li>Capture Cross Section</li>
+<li>Auger Recombination</li>
+<li>Auger Coefficient</li>
+<li>Surface Recombination</li>
+<li>Surface Recombination Velocity</li>
+<li>Optical Absorption</li>
+<li>Absorption Coefficient</li>
+<li>Optical Generation Rate</li>
+<li>Photoconductivity</li>
+<li>Quasi-Fermi Levels</li>
+<li>Quasi-Fermi Level Splitting</li>
+<li>Low-Level Injection</li>
+<li>High-Level Injection</li>
+<li>Injection Level</li>
+<li>Excess Carriers</li>
+<li>P-N Junction</li>
+<li>Junction Formation</li>
+<li>Depletion Region</li>
+<li>Depletion Approximation</li>
+<li>Built-In Potential</li>
+<li>Contact Potential</li>
+<li>Electric Field in Depletion Region</li>
+<li>Potential Distribution in Junction</li>
+<li>Charge Distribution in Junction</li>
+<li>Depletion Width</li>
+<li>One-Sided Abrupt Junction</li>
+<li>Linearly Graded Junction</li>
+<li>Forward Bias</li>
+<li>Reverse Bias</li>
+<li>Zero Bias Equilibrium</li>
+<li>Band Diagram Forward Bias</li>
+<li>Band Diagram Reverse Bias</li>
+<li>Minority Carrier Injection</li>
+<li>Ideal Diode Equation</li>
+<li>Shockley Equation</li>
+<li>Diode Saturation Current</li>
+<li>Diode Ideality Factor</li>
+<li>Generation-Recombination Current</li>
+<li>Diffusion Current in Diode</li>
+<li>Tunneling Current in Diode</li>
+<li>Ohmic Region Diode</li>
+<li>Forward Voltage Drop</li>
+<li>Reverse Saturation Current</li>
+<li>Reverse Breakdown</li>
+<li>Avalanche Breakdown</li>
+<li>Impact Ionization</li>
+<li>Ionization Coefficients</li>
+<li>Multiplication Factor</li>
+<li>Zener Breakdown</li>
+<li>Zener Effect</li>
+<li>Zener Voltage</li>
+<li>Junction Capacitance</li>
+<li>Depletion Capacitance</li>
+<li>Diffusion Capacitance</li>
+<li>Small-Signal Diode Model</li>
+<li>Diode Conductance</li>
+<li>Transient Response Diode</li>
+<li>Charge Storage in Diode</li>
+<li>Reverse Recovery Time</li>
+<li>Minority Carrier Storage</li>
+<li>Diode Switching Speed</li>
+<li>Heterojunction</li>
+<li>Band Alignment Types</li>
+<li>Type I Heterojunction</li>
+<li>Type II Heterojunction</li>
+<li>Type III Heterojunction</li>
+<li>Anderson Rule</li>
+<li>Band Discontinuity</li>
+<li>Conduction Band Offset</li>
+<li>Valence Band Offset</li>
+<li>Graded Heterojunction</li>
+<li>Work Function</li>
+<li>Electron Affinity</li>
+<li>Schottky-Mott Rule</li>
+<li>Metal-Semiconductor Junction</li>
+<li>Schottky Barrier</li>
+<li>Schottky Barrier Height</li>
+<li>Thermionic Emission</li>
+<li>Thermionic Emission Current</li>
+<li>Image Force Lowering</li>
+<li>Barrier Lowering</li>
+<li>Ohmic Contact</li>
+<li>Tunneling Ohmic Contact</li>
+<li>Specific Contact Resistance</li>
+<li>Transfer Length Method</li>
+<li>Fermi Level Pinning</li>
+<li>Metal-Induced Gap States</li>
+<li>Interface Trap Density</li>
+<li>MOS Capacitor</li>
+<li>MOS Structure</li>
+<li>Metal-Oxide-Semiconductor</li>
+<li>Gate Oxide</li>
+<li>Silicon Dioxide Properties</li>
+<li>High-K Dielectrics</li>
+<li>Accumulation Region MOS</li>
+<li>Depletion Region MOS</li>
+<li>Inversion Region MOS</li>
+<li>Strong Inversion</li>
+<li>Weak Inversion</li>
+<li>Flat-Band Condition</li>
+<li>Flat-Band Voltage</li>
+<li>Threshold Voltage</li>
+<li>Body Effect</li>
+<li>Oxide Charge</li>
+<li>Fixed Oxide Charge</li>
+<li>Interface Trapped Charge</li>
+<li>Mobile Ionic Charge</li>
+<li>Oxide Trapped Charge</li>
+<li>C-V Characteristic MOS</li>
+<li>High-Frequency C-V</li>
+<li>Low-Frequency C-V</li>
+<li>Deep Depletion</li>
+<li>Gate Oxide Breakdown</li>
+<li>Oxide Reliability</li>
+<li>Time-Dependent Dielectric Breakdown</li>
+<li>Hot Carrier Oxide Degradation</li>
+<li>Bipolar Junction Transistor</li>
+<li>NPN Transistor</li>
+<li>PNP Transistor</li>
+<li>BJT Regions of Operation</li>
+<li>Active Region BJT</li>
+<li>Saturation Region BJT</li>
+<li>Cutoff Region BJT</li>
+<li>Common-Emitter Configuration</li>
+<li>Common-Base Configuration</li>
+<li>Common-Collector Configuration</li>
+<li>Emitter Injection Efficiency</li>
+<li>Base Transport Factor</li>
+<li>Current Gain Beta</li>
+<li>Current Gain Alpha</li>
+<li>Collector Current</li>
+<li>Base Current</li>
+<li>Emitter Current</li>
+<li>Ebers-Moll Model</li>
+<li>Gummel-Poon Model</li>
+<li>Early Effect</li>
+<li>Base-Width Modulation</li>
+<li>Early Voltage</li>
+<li>Kirk Effect</li>
+<li>High-Current Effects BJT</li>
+<li>Base Resistance</li>
+<li>Collector Resistance</li>
+<li>Emitter Resistance</li>
+<li>Transition Frequency ft</li>
+<li>Maximum Oscillation Frequency fmax</li>
+<li>Heterojunction Bipolar Transistor</li>
+<li>HBT Band Diagram</li>
+<li>Emitter-Base Heterojunction</li>
+<li>JFET Structure</li>
+<li>JFET Operation</li>
+<li>JFET Pinch-Off</li>
+<li>JFET I-V Characteristics</li>
+<li>MESFET Structure</li>
+<li>MESFET Operation</li>
+<li>MOSFET Structure</li>
+<li>MOSFET Gate</li>
+<li>MOSFET Source</li>
+<li>MOSFET Drain</li>
+<li>MOSFET Substrate</li>
+<li>N-Channel MOSFET</li>
+<li>P-Channel MOSFET</li>
+<li>Enhancement Mode MOSFET</li>
+<li>Depletion Mode MOSFET</li>
+<li>Triode Region MOSFET</li>
+<li>Linear Region MOSFET</li>
+<li>Saturation Region MOSFET</li>
+<li>Cutoff Region MOSFET</li>
+<li>MOSFET Threshold Voltage</li>
+<li>MOSFET I-V Long Channel</li>
+<li>MOSFET Transconductance</li>
+<li>MOSFET Output Conductance</li>
+<li>Subthreshold Conduction</li>
+<li>Subthreshold Slope</li>
+<li>Subthreshold Swing</li>
+<li>Channel Charge</li>
+<li>Inversion Charge Density</li>
+<li>Gradual Channel Approximation</li>
+<li>Channel-Length Modulation</li>
+<li>Pinch-Off Point</li>
+<li>Short-Channel Effects</li>
+<li>DIBL Effect</li>
+<li>Drain-Induced Barrier Lowering</li>
+<li>Punch-Through</li>
+<li>Velocity Saturation MOSFET</li>
+<li>Carrier Heating MOSFET</li>
+<li>Hot Carrier Injection</li>
+<li>Oxide Interface Degradation</li>
+<li>CMOS Technology</li>
+<li>CMOS Inverter</li>
+<li>NMOS Pull-Down</li>
+<li>PMOS Pull-Up</li>
+<li>Complementary Operation</li>
+<li>Static Power CMOS</li>
+<li>Dynamic Power CMOS</li>
+<li>FinFET Structure</li>
+<li>FinFET Operation</li>
+<li>Gate-All-Around Transistor</li>
+<li>SOI MOSFET</li>
+<li>Fully Depleted SOI</li>
+<li>Partially Depleted SOI</li>
+<li>Multi-Gate Transistor</li>
+<li>Nanowire Transistor</li>
+<li>Scaling Laws MOSFET</li>
+<li>Dennard Scaling</li>
+<li>International Roadmap Devices</li>
+<li>Light-Emitting Diode</li>
+<li>LED Operation Principle</li>
+<li>LED Materials</li>
+<li>Direct Bandgap LED Requirement</li>
+<li>LED Efficiency</li>
+<li>Internal Quantum Efficiency</li>
+<li>External Quantum Efficiency</li>
+<li>Light Extraction Efficiency</li>
+<li>LED Wavelength Selection</li>
+<li>White LED Technology</li>
+<li>Phosphor Conversion LED</li>
+<li>Laser Diode</li>
+<li>Laser Operation Principle</li>
+<li>Population Inversion</li>
+<li>Optical Gain</li>
+<li>Threshold Current Density</li>
+<li>Laser Cavity</li>
+<li>Fabry-Perot Cavity</li>
+<li>Distributed Bragg Reflector</li>
+<li>Distributed Feedback Laser</li>
+<li>Vertical Cavity Surface Emitting Laser</li>
+<li>VCSEL Structure</li>
+<li>Double Heterostructure Laser</li>
+<li>Quantum Well Laser</li>
+<li>Semiconductor Optical Amplifier</li>
+<li>Photodiode Structure</li>
+<li>PIN Photodiode</li>
+<li>Photodiode Responsively</li>
+<li>Quantum Efficiency Photodiode</li>
+<li>Photodiode Dark Current</li>
+<li>Photodiode Bandwidth</li>
+<li>Avalanche Photodiode</li>
+<li>APD Gain</li>
+<li>APD Noise</li>
+<li>Solar Cell Operation</li>
+<li>Photovoltaic Effect</li>
+<li>Solar Cell I-V Curve</li>
+<li>Short-Circuit Current</li>
+<li>Open-Circuit Voltage</li>
+<li>Fill Factor Solar Cell</li>
+<li>Power Conversion Efficiency</li>
+<li>Shockley-Queisser Limit</li>
+<li>Single-Junction Solar Cell</li>
+<li>Multi-Junction Solar Cell</li>
+<li>Tandem Solar Cell</li>
+<li>Solar Cell Losses</li>
+<li>Recombination Losses Solar Cell</li>
+<li>Thermalization Losses</li>
+<li>Charge-Coupled Device</li>
+<li>CCD Operation</li>
+<li>CMOS Image Sensor</li>
+<li>Pixel Architecture</li>
+<li>Read Noise</li>
+<li>III-V Semiconductor Compounds</li>
+<li>GaAs Properties</li>
+<li>InP Properties</li>
+<li>InGaAs Properties</li>
+<li>AlGaAs Properties</li>
+<li>InGaAsP Properties</li>
+<li>II-VI Semiconductor Compounds</li>
+<li>Wide-Bandgap Semiconductors</li>
+<li>GaN Material Properties</li>
+<li>GaN Crystal Growth</li>
+<li>AlGaN Alloy</li>
+<li>AlGaN/GaN Heterostructure</li>
+<li>SiC Polytypes</li>
+<li>SiC Properties</li>
+<li>Quantum Well Structure</li>
+<li>Quantum Well Energy Levels</li>
+<li>Quantum Well Wave Functions</li>
+<li>Subband Structure</li>
+<li>Quantum Wire</li>
+<li>Quantum Dot</li>
+<li>Quantum Dot Energy Levels</li>
+<li>Size Quantization</li>
+<li>Confinement Energy</li>
+<li>2D Electron Gas</li>
+<li>2DEG Formation</li>
+<li>High Electron Mobility Transistor</li>
+<li>HEMT Structure</li>
+<li>HEMT Operation</li>
+<li>Pseudomorphic HEMT</li>
+<li>Metamorphic HEMT</li>
+<li>Strained Silicon</li>
+<li>Strain Effects on Band Structure</li>
+<li>Biaxial Strain</li>
+<li>Uniaxial Strain</li>
+<li>Critical Thickness</li>
+<li>Pseudomorphic Layers</li>
+<li>Graphene Properties</li>
+<li>Graphene Band Structure</li>
+<li>Graphene Dirac Points</li>
+<li>Graphene Mobility</li>
+<li>Transition Metal Dichalcogenides</li>
+<li>Molybdenum Disulfide MoS2</li>
+<li>TMD Band Structure</li>
+<li>2D Materials Overview</li>
+<li>Van der Waals Heterostructures</li>
+<li>Carbon Nanotube Properties</li>
+<li>Carbon Nanotube Band Structure</li>
+<li>Power Diode Structure</li>
+<li>Power Diode Ratings</li>
+<li>Thyristor Structure</li>
+<li>Thyristor Operation</li>
+<li>Silicon-Controlled Rectifier</li>
+<li>IGBT Structure</li>
+<li>IGBT Operation</li>
+<li>Power MOSFET</li>
+<li>Superjunction MOSFET</li>
+<li>High-Voltage Device Design</li>
+<li>Breakdown Engineering</li>
+<li>Punch-Through Voltage</li>
+<li>Gunn Diode</li>
+<li>Gunn Effect</li>
+<li>Transferred Electron Effect</li>
+<li>IMPATT Diode</li>
+<li>Negative Resistance Devices</li>
+<li>Microwave Device Parasitics</li>
+<li>Cutoff Frequency High-Frequency</li>
+<li>Czochralski Crystal Growth</li>
+<li>Float-Zone Crystal Growth</li>
+<li>Crystal Ingot Processing</li>
+<li>Wafer Preparation</li>
+<li>Epitaxial Growth</li>
+<li>Molecular Beam Epitaxy</li>
+<li>Metal-Organic CVD</li>
+<li>Chemical Vapor Deposition</li>
+<li>Thermal Oxidation of Silicon</li>
+<li>Deal-Grove Model</li>
+<li>Dry Oxidation</li>
+<li>Wet Oxidation</li>
+<li>Diffusion in Solids</li>
+<li>Fick First Law</li>
+<li>Fick Second Law</li>
+<li>Diffusion Coefficient Thermal</li>
+<li>Ion Implantation</li>
+<li>Ion Range Distribution</li>
+<li>Channeling Effect</li>
+<li>Annealing Post-Implant</li>
+<li>Photolithography Process</li>
+<li>Photoresist</li>
+<li>Exposure and Development</li>
+<li>Mask Alignment</li>
+<li>Etching Processes</li>
+<li>Wet Chemical Etching</li>
+<li>Dry Etching RIE</li>
+<li>Plasma Etching</li>
+<li>Thin Film Deposition</li>
+<li>Physical Vapor Deposition</li>
+<li>Sputtering</li>
+<li>Metallization</li>
+<li>Aluminum Interconnects</li>
+<li>Copper Interconnects</li>
+<li>Silicide Formation</li>
+<li>Contact Resistance Fabrication</li>
+<li>Process-Induced Defects</li>
+<li>Contamination Control</li>
+<li>Yield Engineering Overview</li>
+<li>Device Characterization Methods</li>
+<li>I-V Measurement</li>
+<li>C-V Measurement</li>
+<li>Hall Measurement</li>
+<li>Four-Point Probe</li>
+<li>DLTS Technique</li>
+<li>Optical Characterization</li>
+<li>Photoluminescence Spectroscopy</li>
+<li>Electroluminescence</li>
+<li>Raman Spectroscopy</li>
+<li>Transmission Electron Microscopy</li>
+<li>Scanning Electron Microscopy</li>
+<li>Secondary Ion Mass Spectrometry</li>
+<li>Auger Electron Spectroscopy</li>
+<li>SPICE Compact Models</li>
+<li>Level-1 MOSFET Model</li>
+<li>BSIM Model</li>
+<li>Small-Signal Equivalent Circuit</li>
+<li>Large-Signal Device Model</li>
+<li>Noise in Semiconductor Devices</li>
+<li>Thermal Noise</li>
+<li>Shot Noise</li>
+<li>Flicker Noise</li>
+<li>Noise Figure</li>
+<li>Band-to-Band Tunneling</li>
+<li>Esaki Tunnel Diode</li>
+<li>Resonant Tunneling Diode</li>
+<li>Double Barrier Structure</li>
+<li>Negative Differential Resistance</li>
+<li>Ballistic Transport</li>
+<li>Quantum Confinement Effects</li>
+</ol>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../course-description-assessment/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Course Description Assessment">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Course Description Assessment
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../quality-metrics/" class="md-footer__link md-footer__link--next" aria-label="Next: Graph Quality Analysis">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Graph Quality Analysis
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

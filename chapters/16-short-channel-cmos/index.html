@@ -1,0 +1,2305 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="DIBL, punch-through, velocity saturation, CMOS inverter power, FinFET, GAA nanowires, SOI MOSFETs, Dennard scaling, and the IRDS roadmap">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/16-short-channel-cmos/">
+      
+      
+        <link rel="prev" href="../15-jfet-mesfet-mosfet/">
+      
+      
+        <link rel="next" href="../17-leds-laser-diodes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Short-Channel Effects, CMOS, and Advanced FET Structures - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#short-channel-effects-cmos-and-advanced-fet-structures" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Short-Channel Effects, CMOS, and Advanced FET Structures
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#161-short-channel-effects-an-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1 Short-Channel Effects: An Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#162-drain-induced-barrier-lowering-dibl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2 Drain-Induced Barrier Lowering (DIBL)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#163-punch-through" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3 Punch-Through
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#164-velocity-saturation-in-short-channel-mosfets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.4 Velocity Saturation in Short-Channel MOSFETs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#165-cmos-technology-complementary-n-and-p-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.5 CMOS Technology: Complementary N and P Channel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#166-dennard-scaling-and-its-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.6 Dennard Scaling and Its Breakdown
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#167-advanced-fet-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.7 Advanced FET Architectures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16.7 Advanced FET Architectures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1671-finfet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.7.1 FinFET
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1672-gate-all-around-gaa-nanowire-transistors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.7.2 Gate-All-Around (GAA) Nanowire Transistors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1673-soi-mosfets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.7.3 SOI MOSFETs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#168-the-international-roadmap-for-devices-and-systems-irds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.8 The International Roadmap for Devices and Systems (IRDS)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#161-short-channel-effects-an-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1 Short-Channel Effects: An Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#162-drain-induced-barrier-lowering-dibl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2 Drain-Induced Barrier Lowering (DIBL)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#163-punch-through" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3 Punch-Through
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#164-velocity-saturation-in-short-channel-mosfets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.4 Velocity Saturation in Short-Channel MOSFETs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#165-cmos-technology-complementary-n-and-p-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.5 CMOS Technology: Complementary N and P Channel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#166-dennard-scaling-and-its-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.6 Dennard Scaling and Its Breakdown
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#167-advanced-fet-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.7 Advanced FET Architectures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16.7 Advanced FET Architectures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1671-finfet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.7.1 FinFET
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1672-gate-all-around-gaa-nanowire-transistors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.7.2 Gate-All-Around (GAA) Nanowire Transistors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1673-soi-mosfets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.7.3 SOI MOSFETs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#168-the-international-roadmap-for-devices-and-systems-irds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.8 The International Roadmap for Devices and Systems (IRDS)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/16-short-channel-cmos/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="short-channel-effects-cmos-and-advanced-fet-structures">Short-Channel Effects, CMOS, and Advanced FET Structures</h1>
+<h2 id="summary">Summary</h2>
+<p>As MOSFET channel lengths have shrunk below 100 nm, short-channel effects degrade the clean long-channel behavior derived in Chapter 15. This chapter analyzes the principal degradation mechanisms: drain-induced barrier lowering (DIBL), punch-through, velocity saturation, carrier heating, hot-carrier injection into the gate oxide, and oxide interface degradation. CMOS technology pairs N- and P-channel MOSFETs for logic; the CMOS inverter, static and dynamic power dissipation, and complementary operation are covered. Modern FET architectures that restore electrostatic control at short gate lengths are then surveyed: FinFET, gate-all-around (GAA) nanowire transistors, SOI MOSFETs (fully and partially depleted), and multi-gate devices. The chapter closes with MOSFET scaling laws, Dennard scaling and its breakdown, and the International Roadmap for Devices and Systems (IRDS).</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 26 concepts from the learning graph:</p>
+<ol>
+<li>Short-Channel Effects</li>
+<li>DIBL Effect</li>
+<li>Drain-Induced Barrier Lowering</li>
+<li>Punch-Through</li>
+<li>Velocity Saturation MOSFET</li>
+<li>Carrier Heating MOSFET</li>
+<li>Hot Carrier Injection</li>
+<li>Oxide Interface Degradation</li>
+<li>CMOS Technology</li>
+<li>CMOS Inverter</li>
+<li>NMOS Pull-Down</li>
+<li>PMOS Pull-Up</li>
+<li>Complementary Operation</li>
+<li>Static Power CMOS</li>
+<li>Dynamic Power CMOS</li>
+<li>FinFET Structure</li>
+<li>FinFET Operation</li>
+<li>Gate-All-Around Transistor</li>
+<li>SOI MOSFET</li>
+<li>Fully Depleted SOI</li>
+<li>Partially Depleted SOI</li>
+<li>Multi-Gate Transistor</li>
+<li>Nanowire Transistor</li>
+<li>Scaling Laws MOSFET</li>
+<li>Dennard Scaling</li>
+<li>International Roadmap Devices</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../11-pn-junction-equilibrium/">Chapter 11: P-N Junction: Equilibrium, Bias, and the Ideal Diode</a></li>
+<li><a href="../13-metal-semiconductor-mos/">Chapter 13: Metal-Semiconductor Contacts and MOS Physics</a></li>
+<li><a href="../15-jfet-mesfet-mosfet/">Chapter 15: JFET, MESFET, and Long-Channel MOSFET Fundamentals</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Nova on Short-Channel Effects: What Happens When You Shrink Too Far</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+The long-channel MOSFET model from Chapter 15 is elegant, predictive, and accurate for gate lengths above ~500 nm. Below that, reality sends strongly worded correction memos. Drain-induced barrier lowering, punch-through, velocity saturation, hot-carrier damage — these are not academic curiosities but the physical walls that the semiconductor industry has been crash-testing since the 1990s. Today we understand the walls, and then we meet the architecture innovations (FinFET, GAA, SOI) that let engineers keep scaling despite the walls. Warning: the walls are fascinating.</p>
+</div>
+<h2 id="161-short-channel-effects-an-overview">16.1 Short-Channel Effects: An Overview</h2>
+<p>As channel length <span class="arithmatex">\(L\)</span> decreases, the source and drain depletion regions become comparable in size to the channel length itself. The gate electrode loses exclusive control of the channel potential — the drain bias can "reach around" and lower the source-channel barrier. This general phenomenon — degraded electrostatic control at short channel lengths — encompasses several related effects.</p>
+<p><strong>The natural length scale</strong> that determines when short-channel effects become important is approximately:</p>
+<div class="arithmatex">\[
+\lambda_{\text{nat}} = \sqrt{\frac{\varepsilon_s t_{\text{ox}} t_{\text{dep}}}{\varepsilon_{\text{ox}}}} \approx \sqrt{\frac{t_{\text{ox}} t_{\text{dep}}}{3}}
+\]</div>
+<p>where <span class="arithmatex">\(t_{\text{dep}} = \sqrt{2\varepsilon_s\phi_F/qN_A}\)</span> is the depletion depth. Short-channel effects become severe when <span class="arithmatex">\(L \lesssim 5\lambda_{\text{nat}}\)</span>.</p>
+<p>To suppress short-channel effects, industry roadmaps require reducing both <span class="arithmatex">\(t_{\text{ox}}\)</span> (thinner gate dielectric) and <span class="arithmatex">\(t_{\text{dep}}\)</span> (higher channel doping or geometrically confined channels) in proportion to <span class="arithmatex">\(L\)</span>.</p>
+<hr />
+<h2 id="162-drain-induced-barrier-lowering-dibl">16.2 Drain-Induced Barrier Lowering (DIBL)</h2>
+<p><strong>DIBL</strong> is the reduction of the source-channel potential barrier caused by the drain electric field. In a long-channel device, the source-channel barrier is controlled entirely by <span class="arithmatex">\(V_{GS}\)</span>. In a short-channel device, the drain field lines penetrate the channel and lower the barrier even when <span class="arithmatex">\(V_{GS}\)</span> is below threshold.</p>
+<p>The consequence: <strong>threshold voltage decreases with increasing <span class="arithmatex">\(V_{DS}\)</span>.</strong></p>
+<div class="arithmatex">\[
+\Delta V_T^{\text{DIBL}} = -\text{DIBL} \times V_{DS}
+\]</div>
+<p>where the DIBL coefficient (in mV/V) characterizes how strongly the drain modulates the threshold. For a well-designed device: DIBL &lt; 50 mV/V. For a poorly-controlled short-channel device: DIBL can exceed 200 mV/V.</p>
+<p>DIBL causes:
+1. Lower threshold voltage at high drain bias → higher off-state leakage (<span class="arithmatex">\(I_{\text{OFF}}\)</span>)
+2. Effective subthreshold slope degradation (looks steeper in <span class="arithmatex">\(V_{DS}\)</span>-adjusted plot)
+3. Coupling between input (<span class="arithmatex">\(V_{GS}\)</span>) and output (<span class="arithmatex">\(V_{DS}\)</span>) — the drain is no longer an independent variable</p>
+<p>The practical impact: if DIBL shifts <span class="arithmatex">\(V_T\)</span> by 100 mV at <span class="arithmatex">\(V_{DS} = 0.8\)</span> V, a transistor designed for 100× current ratio (ON/OFF) might achieve only 10× — leakage power increases 10-fold.</p>
+<hr />
+<h2 id="163-punch-through">16.3 Punch-Through</h2>
+<p><strong>Punch-through</strong> occurs when the source and drain depletion regions merge across the channel, creating a direct conductive path between source and drain that bypasses gate control entirely. The channel "punches through" with a leakage current that cannot be turned off by the gate.</p>
+<p>The punch-through voltage for a uniformly doped channel is approximately:</p>
+<div class="arithmatex">\[
+V_{\text{PT}} \approx \frac{qN_A}{2\varepsilon_s}\!\left(L - \frac{W_n + W_p}{2}\right)^2
+\]</div>
+<p>where <span class="arithmatex">\(W_n\)</span> and <span class="arithmatex">\(W_p\)</span> are the zero-bias depletion widths from drain and source. Punch-through is suppressed by:
+- Increasing channel doping (reduces depletion widths)
+- Using halo/pocket implants (locally higher doping near source and drain edges under the gate)
+- Physically short source/drain junctions (shallow junctions)</p>
+<p>Modern CMOS uses <strong>retrograde doping</strong> (lower doping at the surface to maximize mobility, higher doping deeper to suppress punch-through) and <strong>halo implants</strong> (high-dose angled implants under the gate edges) to control both phenomena.</p>
+<hr />
+<h2 id="164-velocity-saturation-in-short-channel-mosfets">16.4 Velocity Saturation in Short-Channel MOSFETs</h2>
+<p>In Chapter 15, saturation occurred when <span class="arithmatex">\(V_{DS} = V_{GS} - V_T\)</span> (pinch-off). In short-channel devices, the average channel field <span class="arithmatex">\(\mathcal{E} = V_{DS}/L\)</span> can easily exceed the critical field <span class="arithmatex">\(\mathcal{E}_c \approx 7\)</span> kV/cm (Chapter 8), causing <strong>velocity saturation</strong> before pinch-off.</p>
+<p>When velocity saturates at <span class="arithmatex">\(v_{\text{sat}}\)</span>, the saturation current becomes:</p>
+<div class="arithmatex">\[
+I_{D,\text{sat}} \approx W C_{\text{ox}}(V_{GS} - V_T) v_{\text{sat}} \quad \text{(velocity-saturated limit)}
+\]</div>
+<p>This changes the I-V characteristic from <strong>quadratic</strong> (<span class="arithmatex">\(\propto V_{OD}^2\)</span>) to <strong>linear</strong> in overdrive (<span class="arithmatex">\(\propto V_{OD}\)</span>) — a fundamental change in device behavior. The transconductance in the velocity-saturated regime:</p>
+<div class="arithmatex">\[
+g_m^{\text{vsat}} = W C_{\text{ox}} v_{\text{sat}} \quad \text{(independent of } V_{OD}\text{)}
+\]</div>
+<p>No longer proportional to <span class="arithmatex">\(\sqrt{I_D}\)</span> — it becomes independent of bias in the fully velocity-saturated regime. This means that making the transistor conduct more current (by increasing <span class="arithmatex">\(V_{OD}\)</span>) doesn't proportionally increase <span class="arithmatex">\(g_m\)</span> — a major change from long-channel behavior.</p>
+<p>The <strong>effective drive current</strong> for a modern NMOS at the 5 nm node:</p>
+<div class="arithmatex">\[
+I_D \approx Q_{\text{inv}} \cdot v_{\text{inj}}
+\]</div>
+<p>where <span class="arithmatex">\(v_{\text{inj}}\)</span> is the carrier injection velocity at the virtual source (top of the barrier) — often comparable to or exceeding the thermal velocity. At the nanoscale, transistors operate in a quasi-ballistic regime, and the classical velocity saturation picture becomes an approximation.</p>
+<hr />
+<h2 id="165-cmos-technology-complementary-n-and-p-channel">16.5 CMOS Technology: Complementary N and P Channel</h2>
+<p><strong>CMOS</strong> (Complementary MOS) pairs NMOS and PMOS transistors on the same substrate. The complementary operation enables the CMOS inverter — the fundamental logic gate — to achieve near-zero static power dissipation.</p>
+<p><strong>CMOS inverter operation:</strong></p>
+<ul>
+<li>Input HIGH (<span class="arithmatex">\(V_{in} \approx V_{DD}\)</span>): NMOS on (low <span class="arithmatex">\(V_{GS,n}\)</span> relative to threshold), PMOS off (insufficient gate-to-source magnitude) → Output = LOW</li>
+<li>Input LOW (<span class="arithmatex">\(V_{in} \approx 0\)</span>): NMOS off, PMOS on → Output = HIGH</li>
+</ul>
+<p>In both stable states, one transistor is off — no DC path from <span class="arithmatex">\(V_{DD}\)</span> to ground. <strong>Static power dissipation</strong> is essentially zero, limited only by subthreshold leakage. This property enabled scaling to billions of transistors while keeping power manageable.</p>
+<p><strong>Dynamic power dissipation:</strong> Occurs during switching, when the output capacitance <span class="arithmatex">\(C_L\)</span> is charged/discharged:</p>
+<div class="arithmatex">\[
+P_{\text{dyn}} = \alpha C_L V_{DD}^2 f
+\]</div>
+<p>where <span class="arithmatex">\(\alpha\)</span> is the activity factor (fraction of transitions that occur per clock cycle, typically 0.1–0.3), and <span class="arithmatex">\(f\)</span> is the clock frequency. This equation explains the power crisis in modern processors:</p>
+<ul>
+<li>Increasing <span class="arithmatex">\(f\)</span> linearly increases dynamic power</li>
+<li>Reducing <span class="arithmatex">\(V_{DD}\)</span> quadratically reduces dynamic power — the primary lever for power reduction</li>
+<li><span class="arithmatex">\(C_L\)</span> decreases with scaling — the historical benefit that kept energy per operation declining</li>
+</ul>
+<p><strong>Static (leakage) power</strong> has grown with device scaling:</p>
+<div class="arithmatex">\[
+P_{\text{static}} = I_{\text{OFF}} V_{DD} N_{\text{transistors}}
+\]</div>
+<p>As <span class="arithmatex">\(L\)</span> decreases, <span class="arithmatex">\(I_{\text{OFF}}\)</span> grows (DIBL, reduced <span class="arithmatex">\(V_T\)</span>), and <span class="arithmatex">\(N_{\text{transistors}}\)</span> grows with Moore's Law. At 3 nm nodes, leakage power in idle mode rivals dynamic power in activity — a fundamental challenge that power gating, multi-threshold CMOS, and clock gating address.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Nova Tips: V_DD Reduction Is the Power Engineer's Best Weapon</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Nova with tip pose">
+Every factor-of-2 reduction in supply voltage (<span class="arithmatex">\(V_{DD}\)</span>) reduces dynamic power by 4× (quadratic dependence). This is why the industry has relentlessly pushed <span class="arithmatex">\(V_{DD}\)</span> from 5 V (0.8 μm era) to 3.3 V to 1.8 V to 1.0 V to 0.7–0.8 V at 5 nm. The constraint: if you reduce <span class="arithmatex">\(V_{DD}\)</span>, you must also reduce <span class="arithmatex">\(V_T\)</span>, or the ON/OFF ratio degrades. But lower <span class="arithmatex">\(V_T\)</span> means higher subthreshold leakage. This <span class="arithmatex">\(V_{DD}\)</span>-<span class="arithmatex">\(V_T\)</span> dance — bounded below by the 60 mV/decade subthreshold slope limit — is the reason Dennard scaling eventually broke down.</p>
+</div>
+<hr />
+<h2 id="166-dennard-scaling-and-its-breakdown">16.6 Dennard Scaling and Its Breakdown</h2>
+<p><strong>Dennard scaling</strong> (1974) defined the ideal MOSFET scaling rules: if all dimensions (L, W, <span class="arithmatex">\(t_{\text{ox}}\)</span>) and voltages (<span class="arithmatex">\(V_{DD}\)</span>, <span class="arithmatex">\(V_T\)</span>) are scaled by 1/k, transistor density increases by <span class="arithmatex">\(k^2\)</span> while power density stays constant and performance improves by <span class="arithmatex">\(k\)</span>. For 25 years (roughly 1975–2005), the industry tracked Dennard scaling with remarkable fidelity.</p>
+<p>Dennard scaling assumed:
+1. Electric field <span class="arithmatex">\(\mathcal{E} = V_{DD}/L\)</span> stays constant → no increase in field-dependent reliability issues
+2. Power density <span class="arithmatex">\(P/A \propto \mathcal{E}^2\sigma\)</span> stays constant → chip power stays manageable
+3. Threshold voltage scales with <span class="arithmatex">\(V_{DD}\)</span></p>
+<p><strong>Breakdown of Dennard scaling (~2005):</strong> The minimum practical threshold voltage (set by leakage constraints) stopped scaling around 0.2–0.3 V. Subthreshold slope (60 mV/decade fundamental limit) prevented further <span class="arithmatex">\(V_T\)</span> reduction without unacceptable leakage. With <span class="arithmatex">\(V_T\)</span> fixed and <span class="arithmatex">\(L\)</span> continuing to decrease, <span class="arithmatex">\(V_{DD}\)</span> couldn't scale proportionally. Power density started increasing. By 2005, clock frequencies stopped increasing (processors hit "the power wall") and the industry pivoted to multi-core architectures.</p>
+<table>
+<thead>
+<tr>
+<th>Era</th>
+<th>Gate Length</th>
+<th><span class="arithmatex">\(V_{DD}\)</span></th>
+<th>Scaling Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Classic</td>
+<td>&gt;1 μm</td>
+<td>5 V</td>
+<td>Full Dennard scaling</td>
+</tr>
+<tr>
+<td>Transitional</td>
+<td>500–100 nm</td>
+<td>3.3–1.2 V</td>
+<td>Partial voltage scaling</td>
+</tr>
+<tr>
+<td>Modern</td>
+<td>&lt;100 nm</td>
+<td>1.0–0.7 V</td>
+<td>Constant field, scaling limited</td>
+</tr>
+<tr>
+<td>Current</td>
+<td>&lt;10 nm</td>
+<td>0.7–0.6 V</td>
+<td>Performance limited by SCE, leakage</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="167-advanced-fet-architectures">16.7 Advanced FET Architectures</h2>
+<p>The breakdown of planar MOSFET electrostatics at short channel lengths drove the development of three-dimensional gate geometries that restore electrostatic control.</p>
+<h3 id="1671-finfet">16.7.1 FinFET</h3>
+<p>A <strong>FinFET</strong> (fin field-effect transistor) uses a thin silicon fin (width ~5–8 nm) as the channel, with the gate wrapping around three sides of the fin. The fin is narrow enough that the gate controls the entire fin cross-section — dramatically reducing the natural length scale <span class="arithmatex">\(\lambda_{\text{nat}}\)</span>:</p>
+<div class="arithmatex">\[
+\lambda_{\text{nat}}^{\text{FinFET}} \approx \sqrt{\frac{\varepsilon_{\text{fin}} t_{\text{fin}} t_{\text{ox}}}{2\varepsilon_{\text{ox}}}}
+\]</div>
+<p>With <span class="arithmatex">\(t_{\text{fin}} = 6\)</span> nm and <span class="arithmatex">\(t_{\text{ox}} = 1\)</span> nm (EOT): <span class="arithmatex">\(\lambda_{\text{nat}} \approx 2\)</span> nm. This allows gate lengths of 10–30 nm while maintaining good electrostatic control.</p>
+<p>Intel introduced the first commercial FinFET at 22 nm node in 2011. By 2023, all leading-edge processors (Apple M-series, Intel Core Gen 13, AMD Zen 4) use FinFET or GAA at 3–5 nm nodes. The fin geometry increases drive current per footprint area but introduces quantization of the device width (width = integer number of fins × fin pitch), complicating analog circuit design.</p>
+<h3 id="1672-gate-all-around-gaa-nanowire-transistors">16.7.2 Gate-All-Around (GAA) Nanowire Transistors</h3>
+<p><strong>GAA transistors</strong> wrap the gate around all four sides of a nanowire channel, providing maximum electrostatic control. The natural length scale is:</p>
+<div class="arithmatex">\[
+\lambda_{\text{nat}}^{\text{GAA}} \approx \frac{R_{\text{wire}}}{2}\sqrt{\frac{\varepsilon_s}{\varepsilon_{\text{ox}}}}
+\]</div>
+<p>For a 5 nm diameter silicon nanowire: <span class="arithmatex">\(\lambda_{\text{nat}} \approx 1.5\)</span> nm — even better than FinFET.</p>
+<p>Samsung and TSMC introduced <strong>nanosheet GAA</strong> transistors at the 3 nm node (2023). Multiple stacked nanosheets (horizontally oriented, also called "nanoribbons") replace a single wire, recovering current drive capability while maintaining superior electrostatic control. This architecture is expected to enable scaling to 1–2 nm equivalent nodes through the late 2020s.</p>
+<h3 id="1673-soi-mosfets">16.7.3 SOI MOSFETs</h3>
+<p><strong>Silicon-on-insulator (SOI)</strong> places a thin silicon layer on a buried oxide (BOX), isolating it from the substrate. The isolation eliminates bulk punch-through and reduces junction capacitances.</p>
+<p><strong>Fully depleted SOI (FDSOI):</strong> The silicon body is thin enough (~5–15 nm) that it is completely depleted even with no gate bias. Benefits: very low <span class="arithmatex">\(\lambda_{\text{nat}}\)</span> (good short-channel control), no body effect variability, and the buried oxide allows back-gate biasing for dynamic <span class="arithmatex">\(V_T\)</span> adjustment. ST Microelectronics' 28 nm and 22 nm FDSOI processes power IoT and automotive chips with excellent power efficiency.</p>
+<p><strong>Partially depleted SOI (PDSOI):</strong> Thicker silicon body (~100 nm), partially depleted. The floating body creates anomalous effects (kink effect, floating-body charging) but also enables specific circuit tricks (DRAM-like memory using floating body).</p>
+<hr />
+<h2 id="168-the-international-roadmap-for-devices-and-systems-irds">16.8 The International Roadmap for Devices and Systems (IRDS)</h2>
+<p>The <strong>IRDS</strong> (formerly ITRS) is the semiconductor industry's collective technology roadmap, updated annually by experts from TSMC, Intel, Samsung, IBM, and academia. It projects required device performance, process parameters, and emerging research directions for the next 15 years.</p>
+<p>Key IRDS projections for near-term nodes (as of 2024):</p>
+<table>
+<thead>
+<tr>
+<th>Node Name</th>
+<th>Physical Gate Length</th>
+<th><span class="arithmatex">\(V_{DD}\)</span></th>
+<th>Architecture</th>
+<th>Target Year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3 nm</td>
+<td>12–15 nm</td>
+<td>0.75 V</td>
+<td>FinFET / GAA</td>
+<td>2023–2024</td>
+</tr>
+<tr>
+<td>2 nm</td>
+<td>9–12 nm</td>
+<td>0.70 V</td>
+<td>GAA nanosheet</td>
+<td>2025</td>
+</tr>
+<tr>
+<td>1.4 nm</td>
+<td>6–9 nm</td>
+<td>0.65 V</td>
+<td>GAA / CFET</td>
+<td>2027</td>
+</tr>
+<tr>
+<td>1 nm</td>
+<td>5–7 nm</td>
+<td>0.60 V</td>
+<td>CFET / 3D ICs</td>
+<td>2029+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>CFET</strong> (complementary FET) stacks NMOS and PMOS vertically in the same footprint — doubling logic density by 3D stacking within a single cell. <strong>3D ICs</strong> (chiplets bonded face-to-face) further increase density while relaxing lithography requirements.</p>
+<p>The IRDS increasingly acknowledges that performance scaling is slowing but density scaling continues through architecture innovation (3D, heterogeneous integration) rather than pure lithographic shrink.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Nova Celebrates: You Now Understand the World's Most Complex Manufacturing</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
+From Fermi-Dirac statistics to FinFET short-channel effects to the IRDS roadmap — you've now traversed the full span of modern semiconductor device physics. The same equations for electron transport in a crystal that Bloch wrote in 1928 govern the behavior of 2 nm GAA transistors being manufactured in 2025. The physics is timeless; the engineering is breathtaking. Chapters 17–22 cover optoelectronics, compound semiconductors, fabrication, and characterization — the broader world that the MOSFET enabled. Time to jump bands (one last time)!</p>
+</div>
+<details>
+<summary>#### MicroSim: MOSFET Scaling Simulator</summary>
+<p><strong>sim-id:</strong> <code>mosfet-scaling-simulator</code><br />
+<strong>Library:</strong> p5.js<br />
+<strong>Status:</strong> specification  </p>
+<p><strong>Description:</strong> Interactive visualization of MOSFET scaling showing how key parameters change with gate length from 1 μm to 5 nm. Three linked panels: (1) Cross-section of the transistor updating from planar to FinFET to GAA geometry; (2) Key parameters vs. L (DIBL coefficient, subthreshold slope degradation, <span class="arithmatex">\(V_T\)</span> roll-off); (3) Power-performance tradeoff (dynamic power, leakage power, clock frequency) vs. technology node. Dennard scaling region and post-Dennard region shaded differently.</p>
+<p><strong>Controls:</strong>
+- Slider: Gate length (5 nm to 1 μm)
+- Dropdown: Architecture (Planar / FinFET / FDSOI / GAA)
+- Slider: Supply voltage <span class="arithmatex">\(V_{DD}\)</span> (0.5–1.5 V)
+- Checkbox: Show Dennard scaling reference line</p>
+<p><strong>Key Learning Objectives:</strong>
+- L2 (Understand): Identify which short-channel effects dominate at each technology node
+- L3 (Apply): Calculate power dissipation for a given frequency and activity factor
+- L4 (Analyze): Explain why FinFET provides better electrostatic control than planar MOSFET
+- L5 (Evaluate): Compare trade-offs between different advanced FET architectures</p>
+</details>
+<hr />
+<h2 id="summary_1">Summary</h2>
+<p>This chapter covered the physics and architecture challenges of scaled MOSFETs:</p>
+<ul>
+<li><strong>DIBL:</strong> Drain field lowers threshold voltage; DIBL coefficient &lt; 50 mV/V for good devices</li>
+<li><strong>Punch-through:</strong> Source-drain depletion regions merge; suppressed by halo implants and retrograde doping</li>
+<li><strong>Velocity saturation:</strong> At short channels, <span class="arithmatex">\(I_D^{\text{sat}} \propto V_{OD}\)</span> (linear) not <span class="arithmatex">\(V_{OD}^2\)</span>; <span class="arithmatex">\(g_m \approx W C_{\text{ox}} v_{\text{sat}}\)</span></li>
+<li><strong>CMOS inverter:</strong> Near-zero static power (one transistor always off); dynamic power <span class="arithmatex">\(= \alpha C_L V_{DD}^2 f\)</span></li>
+<li><strong>Dennard scaling:</strong> Constant power density for 1975–2005; broken by <span class="arithmatex">\(V_T\)</span> scaling limits and leakage growth</li>
+<li><strong>FinFET/GAA/SOI:</strong> 3D geometries restore electrostatic control by reducing <span class="arithmatex">\(\lambda_{\text{nat}}\)</span>; industry standard at ≤22 nm nodes</li>
+<li><strong>IRDS</strong> projects further scaling via stacked GAA, CFET, and 3D heterogeneous integration</li>
+</ul>
+<h2 id="key-equations">Key Equations</h2>
+<div class="arithmatex">\[
+\Delta V_T = -\text{DIBL} \times V_{DS}, \quad \lambda_{\text{nat}} \approx \sqrt{\varepsilon_s t_{\text{ox}} t_{\text{dep}}/\varepsilon_{\text{ox}}}
+\]</div>
+<div class="arithmatex">\[
+I_{D,\text{vsat}} = W C_{\text{ox}}(V_{GS}-V_T) v_{\text{sat}}, \quad P_{\text{dyn}} = \alpha C_L V_{DD}^2 f
+\]</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../15-jfet-mesfet-mosfet/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 15. JFET, MESFET, and MOSFET">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                15. JFET, MESFET, and MOSFET
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../17-leds-laser-diodes/" class="md-footer__link md-footer__link--next" aria-label="Next: 17. LEDs and Laser Diodes">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                17. LEDs and Laser Diodes
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

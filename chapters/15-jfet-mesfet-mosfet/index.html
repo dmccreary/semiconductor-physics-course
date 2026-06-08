@@ -1,0 +1,2199 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Field-effect transistor family from JFET and MESFET through long-channel MOSFET I-V model, transconductance, subthreshold behavior, and channel-length modulation">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/15-jfet-mesfet-mosfet/">
+      
+      
+        <link rel="prev" href="../14-bipolar-transistors/">
+      
+      
+        <link rel="next" href="../16-short-channel-cmos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>JFET, MESFET, and Long-Channel MOSFET Fundamentals - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#jfet-mesfet-and-long-channel-mosfet-fundamentals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              JFET, MESFET, and Long-Channel MOSFET Fundamentals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#151-the-jfet-earliest-field-effect-transistor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 The JFET: Earliest Field-Effect Transistor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#152-the-mesfet-schottky-gate-for-compound-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 The MESFET: Schottky Gate for Compound Semiconductors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#153-mosfet-structure-and-terminal-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3 MOSFET Structure and Terminal Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#154-mosfet-threshold-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.4 MOSFET Threshold Voltage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#155-long-channel-mosfet-i-v-the-gradual-channel-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.5 Long-Channel MOSFET I-V: The Gradual Channel Approximation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#156-transconductance-and-output-conductance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.6 Transconductance and Output Conductance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#157-subthreshold-conduction-and-subthreshold-slope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.7 Subthreshold Conduction and Subthreshold Slope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#151-the-jfet-earliest-field-effect-transistor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 The JFET: Earliest Field-Effect Transistor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#152-the-mesfet-schottky-gate-for-compound-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 The MESFET: Schottky Gate for Compound Semiconductors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#153-mosfet-structure-and-terminal-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3 MOSFET Structure and Terminal Definitions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#154-mosfet-threshold-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.4 MOSFET Threshold Voltage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#155-long-channel-mosfet-i-v-the-gradual-channel-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.5 Long-Channel MOSFET I-V: The Gradual Channel Approximation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#156-transconductance-and-output-conductance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.6 Transconductance and Output Conductance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#157-subthreshold-conduction-and-subthreshold-slope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.7 Subthreshold Conduction and Subthreshold Slope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/15-jfet-mesfet-mosfet/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="jfet-mesfet-and-long-channel-mosfet-fundamentals">JFET, MESFET, and Long-Channel MOSFET Fundamentals</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter introduces the field-effect transistor family, beginning with the junction FET (JFET) — where a reverse-biased p-n junction controls channel conductance — and the MESFET, which replaces the p-n junction with a Schottky barrier and dominates GaAs microwave circuits. The chapter then develops the MOSFET in full detail: device structure and terminal definitions, N- and P-channel variants, enhancement and depletion modes, and the threshold voltage derived from MOS capacitor physics. The gradual channel approximation yields the long-channel I-V model across the triode, saturation, and cutoff regions. Transconductance, output conductance, channel-charge and inversion-charge-density expressions, subthreshold conduction and its slope, and channel-length modulation complete the long-channel MOSFET analysis that serves as the baseline for short-channel corrections in Chapter 16.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 31 concepts from the learning graph:</p>
+<ol>
+<li>JFET Structure</li>
+<li>JFET Operation</li>
+<li>JFET Pinch-Off</li>
+<li>JFET I-V Characteristics</li>
+<li>MESFET Structure</li>
+<li>MESFET Operation</li>
+<li>MOSFET Structure</li>
+<li>MOSFET Gate</li>
+<li>MOSFET Source</li>
+<li>MOSFET Drain</li>
+<li>MOSFET Substrate</li>
+<li>N-Channel MOSFET</li>
+<li>P-Channel MOSFET</li>
+<li>Enhancement Mode MOSFET</li>
+<li>Depletion Mode MOSFET</li>
+<li>Triode Region MOSFET</li>
+<li>Linear Region MOSFET</li>
+<li>Saturation Region MOSFET</li>
+<li>Cutoff Region MOSFET</li>
+<li>MOSFET Threshold Voltage</li>
+<li>MOSFET I-V Long Channel</li>
+<li>MOSFET Transconductance</li>
+<li>MOSFET Output Conductance</li>
+<li>Subthreshold Conduction</li>
+<li>Subthreshold Slope</li>
+<li>Subthreshold Swing</li>
+<li>Channel Charge</li>
+<li>Inversion Charge Density</li>
+<li>Gradual Channel Approximation</li>
+<li>Channel-Length Modulation</li>
+<li>Pinch-Off Point</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../11-pn-junction-equilibrium/">Chapter 11: P-N Junction: Equilibrium, Bias, and the Ideal Diode</a></li>
+<li><a href="../12-pn-junction-dynamics/">Chapter 12: P-N Junction: Dynamics, Breakdown, and Heterojunctions</a></li>
+<li><a href="../13-metal-semiconductor-mos/">Chapter 13: Metal-Semiconductor Contacts and MOS Physics</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Nova on MOSFETs: Three Billion on a Chip, and We're Going to Understand All of Them</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+Every smartphone contains roughly 10–15 billion transistors. Every modern CPU has tens of billions. Almost all of them are MOSFETs. This chapter derives the MOSFET I-V equations from first principles — the gradual channel approximation, threshold voltage from MOS capacitor physics, transconductance, and subthreshold slope. We also meet the JFET and MESFET, the field-effect transistor's older cousins who still rule in compound semiconductor microwave circuits. Fasten your seatbelts — this is the chapter where semiconductor physics becomes computing history.</p>
+</div>
+<h2 id="151-the-jfet-earliest-field-effect-transistor">15.1 The JFET: Earliest Field-Effect Transistor</h2>
+<p>The <strong>junction field-effect transistor (JFET)</strong> uses a reverse-biased p-n junction to control the width of a conducting channel. It is the conceptually simplest FET and helps build intuition before the more complex MOSFET.</p>
+<p><strong>JFET structure:</strong> An n-type channel (current flows from drain to source) is sandwiched between p-type gate regions on top and bottom. The device is normally ON — applying a reverse bias to the gate pinches the channel closed.</p>
+<p><strong>JFET operation:</strong> With no gate bias (<span class="arithmatex">\(V_{GS} = 0\)</span>), the channel is wide and conducts a large current. As reverse gate bias <span class="arithmatex">\(|V_{GS}|\)</span> increases, the depletion regions from the gate-channel junctions extend into the channel, narrowing it and increasing resistance.</p>
+<p>The channel width at position <span class="arithmatex">\(x\)</span> along the channel (for a simple symmetric structure):</p>
+<div class="arithmatex">\[
+a_{\text{eff}}(x) = a - 2\sqrt{\frac{2\varepsilon_s(V_{bi} - V_{GS} + V(x))}{qN_D}}
+\]</div>
+<p>where <span class="arithmatex">\(a\)</span> is the total channel half-width and <span class="arithmatex">\(V(x)\)</span> is the local channel voltage.</p>
+<p><strong>Pinch-off</strong> occurs when <span class="arithmatex">\(a_{\text{eff}} = 0\)</span> at the drain end — the channel is just "closed." The pinch-off voltage:</p>
+<div class="arithmatex">\[
+V_P = \frac{qN_D a^2}{2\varepsilon_s} - V_{bi} \quad \text{(for depletion mode, N-channel JFET)}
+\]</div>
+<p>At pinch-off, the drain current saturates — further increase in <span class="arithmatex">\(V_{DS}\)</span> doesn't increase <span class="arithmatex">\(I_D\)</span> significantly, because the pinch-off point moves toward the source while the current remains approximately constant.</p>
+<p><strong>JFET I-V characteristics:</strong></p>
+<ul>
+<li><strong>Triode region</strong> (<span class="arithmatex">\(V_{DS} &lt; V_{GS} - V_P\)</span>):</li>
+</ul>
+<div class="arithmatex">\[
+I_D = I_{DSS}\!\left[2\!\left(\frac{V_{GS}}{V_P}\right)\!\left(\frac{V_{DS}}{V_P}\right) - \left(\frac{V_{DS}}{V_P}\right)^2\right]
+\]</div>
+<ul>
+<li><strong>Saturation region</strong> (<span class="arithmatex">\(V_{DS} \geq V_{GS} - V_P\)</span>):</li>
+</ul>
+<div class="arithmatex">\[
+I_D = I_{DSS}\!\left(1 - \frac{V_{GS}}{V_P}\right)^2
+\]</div>
+<p>where <span class="arithmatex">\(I_{DSS}\)</span> is the saturation current at <span class="arithmatex">\(V_{GS} = 0\)</span>.</p>
+<p>JFETs are used in low-noise amplifiers (their gate current is essentially zero — only the reverse leakage of the gate junction), audio input stages, and analog switches. They're quiet, but they can't be scaled to modern CMOS dimensions.</p>
+<hr />
+<h2 id="152-the-mesfet-schottky-gate-for-compound-semiconductors">15.2 The MESFET: Schottky Gate for Compound Semiconductors</h2>
+<p>The <strong>metal-semiconductor FET (MESFET)</strong> replaces the p-n junction gate with a Schottky barrier contact. It operates on the same depletion principle as the JFET: reverse-biasing the Schottky gate depletes the channel and pinches it off.</p>
+<p>The MESFET became the transistor of choice for GaAs microwave and high-frequency applications because:</p>
+<ol>
+<li>GaAs has <span class="arithmatex">\(\mu_n \approx 8500\)</span> cm²/V·s (vs. 1400 for silicon) — inherently faster electrons</li>
+<li>GaAs is a semi-insulating substrate (undoped GaAs has resistivity <span class="arithmatex">\(&gt; 10^7\)</span> Ω·cm) — no junction isolation needed, lower parasitic capacitance</li>
+<li>GaAs MOS is impractical (no stable native oxide) — but Schottky gates work beautifully</li>
+</ol>
+<p><strong>MESFET structure:</strong> A thin n-type channel (100–300 nm) on a semi-insulating GaAs substrate, with source and drain ohmic contacts and a Schottky gate metal.</p>
+<p>MESFET I-V expressions are analogous to JFET but use the Schottky barrier height <span class="arithmatex">\(\phi_B\)</span> instead of <span class="arithmatex">\(V_{bi}\)</span>. The device operates identically in triode and saturation.</p>
+<p>The MESFET dominated microwave ICs (MICs) and MMICs from the 1970s through the 1990s. It has largely been displaced by HEMTs (Chapter 19) in ultra-high-frequency applications, but remains in use for medium-complexity compound semiconductor circuits.</p>
+<hr />
+<h2 id="153-mosfet-structure-and-terminal-definitions">15.3 MOSFET Structure and Terminal Definitions</h2>
+<p>The <strong>metal-oxide-semiconductor field-effect transistor (MOSFET)</strong> is the dominant transistor in all digital and most analog ICs. It uses an insulated gate (oxide between metal and semiconductor) to modulate the inversion layer (channel) conductance.</p>
+<p><strong>N-channel MOSFET (NMOS) structure:</strong>
+- p-type silicon substrate (body/bulk)
+- n<span class="arithmatex">\(^+\)</span> source and drain regions (heavily doped, ohmic contacts)
+- Gate oxide (SiO<span class="arithmatex">\(_2\)</span> or high-k dielectric, 1–5 nm in modern devices)
+- Gate metal or doped polysilicon</p>
+<p><strong>Terminal convention:</strong>
+- <strong>Gate (G):</strong> Controls channel through electric field; nominally no DC current
+- <strong>Source (S):</strong> Reference terminal; typically lowest potential for NMOS
+- <strong>Drain (D):</strong> Output terminal; collects current from channel
+- <strong>Body (B) / Substrate:</strong> Bulk silicon; connected to most negative supply in NMOS</p>
+<p><strong>PMOS</strong> uses n-type substrate, p<span class="arithmatex">\(^+\)</span> source/drain, and operates with negative gate voltages. CMOS (complementary MOS) uses both NMOS and PMOS on the same chip.</p>
+<p><strong>Enhancement vs. depletion mode:</strong></p>
+<ul>
+<li><strong>Enhancement mode (normally off):</strong> No channel at <span class="arithmatex">\(V_{GS} = 0\)</span>; requires gate voltage above threshold to form inversion layer. Standard for digital CMOS.</li>
+<li><strong>Depletion mode (normally on):</strong> A built-in channel exists at <span class="arithmatex">\(V_{GS} = 0\)</span>; requires negative gate voltage to pinch off. Used in JFETs and some specialty MOS.</li>
+</ul>
+<hr />
+<h2 id="154-mosfet-threshold-voltage">15.4 MOSFET Threshold Voltage</h2>
+<p>From Chapter 13, the threshold voltage for NMOS (p-substrate) is:</p>
+<div class="arithmatex">\[
+V_T = V_{FB} + 2\phi_F + \frac{Q_{dep,\max}}{C_{\text{ox}}} = V_{FB} + 2\phi_F + \frac{\sqrt{4q\varepsilon_s N_A \phi_F}}{C_{\text{ox}}}
+\]</div>
+<p>Three levers control <span class="arithmatex">\(V_T\)</span>:</p>
+<ol>
+<li><strong>Oxide thickness <span class="arithmatex">\(t_{\text{ox}}\)</span></strong>: Thinner oxide → larger <span class="arithmatex">\(C_{\text{ox}}\)</span> → smaller <span class="arithmatex">\(Q_{dep}/C_{\text{ox}}\)</span> term → lower <span class="arithmatex">\(V_T\)</span></li>
+<li><strong>Substrate doping <span class="arithmatex">\(N_A\)</span></strong>: Higher <span class="arithmatex">\(N_A\)</span> → larger <span class="arithmatex">\(\phi_F\)</span> and larger depletion charge → higher <span class="arithmatex">\(V_T\)</span></li>
+<li><strong>Flat-band voltage <span class="arithmatex">\(V_{FB}\)</span></strong>: Controlled by gate work function, oxide charges</li>
+</ol>
+<p>Ion implantation of a "threshold adjust" implant under the gate is used routinely in CMOS fabrication to set <span class="arithmatex">\(V_T\)</span> precisely — typically 0.2–0.5 V for digital CMOS.</p>
+<p>Body bias effect (from Chapter 13): <span class="arithmatex">\(V_T(V_{SB}) = V_{T0} + \gamma(\sqrt{2\phi_F + V_{SB}} - \sqrt{2\phi_F})\)</span></p>
+<hr />
+<h2 id="155-long-channel-mosfet-i-v-the-gradual-channel-approximation">15.5 Long-Channel MOSFET I-V: The Gradual Channel Approximation</h2>
+<p>The long-channel MOSFET I-V model assumes:
+1. <strong>Gradual channel approximation (GCA):</strong> The lateral electric field <span class="arithmatex">\(\mathcal{E}_y\)</span> (source to drain) is much smaller than the vertical gate field <span class="arithmatex">\(\mathcal{E}_x\)</span>. The gate-controlled charge density at each lateral position is determined locally by the local voltage <span class="arithmatex">\(V(y)\)</span> as if it were in a MOS capacitor at that voltage.
+2. <strong>No velocity saturation</strong> (valid for <span class="arithmatex">\(L &gt; 1\)</span> μm; Chapter 16 corrects this)
+3. <strong>Complete ionization and low-level injection</strong></p>
+<p>The inversion charge density at position <span class="arithmatex">\(y\)</span> along the channel:</p>
+<div class="arithmatex">\[
+Q_{\text{inv}}(y) = -C_{\text{ox}}\!\left[V_{GS} - V_T - V(y)\right]
+\]</div>
+<p>(This is zero when <span class="arithmatex">\(V_{GS} - V_T = V(y)\)</span> — the local pinch-off condition.)</p>
+<p>The drain current (charge per unit time per unit width):</p>
+<div class="arithmatex">\[
+I_D = W \mu_n Q_{\text{inv}}(y) \cdot \mathcal{E}_y = W \mu_n Q_{\text{inv}}(y) \frac{dV}{dy}
+\]</div>
+<p>Integrating from source (<span class="arithmatex">\(y = 0\)</span>, <span class="arithmatex">\(V = 0\)</span>) to drain (<span class="arithmatex">\(y = L\)</span>, <span class="arithmatex">\(V = V_{DS}\)</span>):</p>
+<div class="arithmatex">\[
+\int_0^L I_D\, dy = W \mu_n C_{\text{ox}} \int_0^{V_{DS}} (V_{GS} - V_T - V)\, dV
+\]</div>
+<div class="arithmatex">\[
+\boxed{I_D = \frac{W\mu_n C_{\text{ox}}}{2L}\!\left[2(V_{GS} - V_T)V_{DS} - V_{DS}^2\right]} \quad \text{(triode region)}
+\]</div>
+<p><strong>Saturation</strong> occurs when the inversion charge at the drain end goes to zero: <span class="arithmatex">\(V_{DS} = V_{GS} - V_T \equiv V_{DSAT}\)</span> (pinch-off). For <span class="arithmatex">\(V_{DS} &gt; V_{DSAT}\)</span>:</p>
+<div class="arithmatex">\[
+\boxed{I_D = \frac{W\mu_n C_{\text{ox}}}{2L}(V_{GS} - V_T)^2} \quad \text{(saturation region)}
+\]</div>
+<p>The saturation current is quadratic in overdrive voltage <span class="arithmatex">\(V_{OD} = V_{GS} - V_T\)</span> — the defining "square-law" relationship of the long-channel MOSFET.</p>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Condition</th>
+<th>I-V Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cutoff</td>
+<td><span class="arithmatex">\(V_{GS} &lt; V_T\)</span></td>
+<td><span class="arithmatex">\(I_D \approx 0\)</span> (subthreshold leakage)</td>
+</tr>
+<tr>
+<td>Triode</td>
+<td><span class="arithmatex">\(0 &lt; V_{DS} &lt; V_{GS}-V_T\)</span></td>
+<td><span class="arithmatex">\(I_D \propto (2V_{OD}V_{DS} - V_{DS}^2)\)</span></td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td><span class="arithmatex">\(V_{DS} \geq V_{GS}-V_T\)</span></td>
+<td><span class="arithmatex">\(I_D \propto V_{OD}^2\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Nova Thinks: The Square-Law Is Beautiful and Almost Always Wrong Now</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova in thinking pose">
+The <span class="arithmatex">\(I_D \propto (V_{GS}-V_T)^2\)</span> square-law is one of the most celebrated results in semiconductor device physics. It's also approximately accurate only for devices with gate lengths above about 500 nm. For the 5 nm, 3 nm, and 2 nm transistors in current production, velocity saturation makes the I-V more linear in <span class="arithmatex">\(V_{GS}\)</span>. But here's the dirty secret: every analog circuit designer still uses the square-law as a first-order model and then corrects with simulation. Understanding where the model comes from makes you wise enough to know when to trust it — and when to open your SPICE deck.</p>
+</div>
+<hr />
+<h2 id="156-transconductance-and-output-conductance">15.6 Transconductance and Output Conductance</h2>
+<p>The two key small-signal parameters of the MOSFET are:</p>
+<p><strong>Transconductance</strong> <span class="arithmatex">\(g_m\)</span>: rate of change of <span class="arithmatex">\(I_D\)</span> with <span class="arithmatex">\(V_{GS}\)</span> at constant <span class="arithmatex">\(V_{DS}\)</span>:</p>
+<div class="arithmatex">\[
+g_m = \frac{\partial I_D}{\partial V_{GS}}\bigg|_{V_{DS}} = \frac{W\mu_n C_{\text{ox}}}{L}(V_{GS} - V_T) = \sqrt{2\mu_n C_{\text{ox}} \frac{W}{L} I_D}
+\]</div>
+<p>Transconductance scales with <span class="arithmatex">\(\sqrt{I_D}\)</span> for a long-channel device. Higher W/L ratio → more current capability → higher <span class="arithmatex">\(g_m\)</span> → more voltage gain in an amplifier.</p>
+<p><strong>Output conductance</strong> <span class="arithmatex">\(g_{ds}\)</span>: rate of change of <span class="arithmatex">\(I_D\)</span> with <span class="arithmatex">\(V_{DS}\)</span> at constant <span class="arithmatex">\(V_{GS}\)</span>:</p>
+<div class="arithmatex">\[
+g_{ds} = \frac{\partial I_D}{\partial V_{DS}}\bigg|_{V_{GS}} = \lambda I_D \quad \text{(in saturation with channel-length modulation)}
+\]</div>
+<p>Ideally <span class="arithmatex">\(g_{ds} = 0\)</span> in saturation (horizontal <span class="arithmatex">\(I_D\)</span> lines). In practice, the pinch-off point moves toward the source as <span class="arithmatex">\(V_{DS}\)</span> increases, modulating the effective channel length — <strong>channel-length modulation</strong> — giving a finite output resistance:</p>
+<div class="arithmatex">\[
+r_o = \frac{1}{g_{ds}} = \frac{1}{\lambda I_D} = \frac{V_A}{I_D}
+\]</div>
+<p>where <span class="arithmatex">\(\lambda\)</span> is the channel-length modulation coefficient (units: V<span class="arithmatex">\(^{-1}\)</span>) and <span class="arithmatex">\(V_A = 1/\lambda\)</span> is the Early voltage analog for MOSFETs. Short channel → larger <span class="arithmatex">\(\lambda\)</span> → lower <span class="arithmatex">\(r_o\)</span> → less ideal current source behavior.</p>
+<p>The intrinsic voltage gain of a MOSFET amplifier stage:</p>
+<div class="arithmatex">\[
+A_v = -g_m r_o = -g_m V_A / I_D = -\frac{2V_A}{V_{GS} - V_T}
+\]</div>
+<p>For a 0.5 μm MOSFET with <span class="arithmatex">\(V_A = 5\)</span> V and <span class="arithmatex">\(V_{OD} = 0.3\)</span> V: <span class="arithmatex">\(A_v \approx 33\)</span> — modest, but achievable without any resistors, using only the transistor's intrinsic output resistance.</p>
+<hr />
+<h2 id="157-subthreshold-conduction-and-subthreshold-slope">15.7 Subthreshold Conduction and Subthreshold Slope</h2>
+<p>Below threshold (<span class="arithmatex">\(V_{GS} &lt; V_T\)</span>), the inversion charge is not zero — it's exponentially small. The subthreshold current follows:</p>
+<div class="arithmatex">\[
+I_D^{\text{sub}} = I_0 \exp\!\left(\frac{V_{GS} - V_T}{n_{\text{sub}} V_T}\right)\!\left(1 - e^{-V_{DS}/V_T}\right)
+\]</div>
+<p>where <span class="arithmatex">\(n_{\text{sub}} = 1 + C_{dep}/C_{\text{ox}} \geq 1\)</span> is the subthreshold slope factor (also called the body factor or n-factor).</p>
+<p>The <strong>subthreshold slope</strong> (also called subthreshold swing) <span class="arithmatex">\(S\)</span> is defined as the gate voltage change required to change the current by one decade:</p>
+<div class="arithmatex">\[
+S = \frac{\partial V_{GS}}{\partial(\log_{10} I_D)} = n_{\text{sub}} \cdot V_T \cdot \ln(10) = n_{\text{sub}} \times 60 \text{ mV/decade at 300 K}
+\]</div>
+<p>In the ideal limit <span class="arithmatex">\(C_{dep} \to 0\)</span> (very thin gate oxide, full gate control): <span class="arithmatex">\(n_{\text{sub}} \to 1\)</span> and <span class="arithmatex">\(S \to 60\)</span> mV/decade.</p>
+<p>This <strong>60 mV/decade limit</strong> is fundamental — set by Boltzmann statistics — and cannot be beaten by a conventional MOSFET at room temperature. It is the key constraint on how low the supply voltage can go in digital logic:</p>
+<ul>
+<li>To switch from OFF to ON while maintaining <span class="arithmatex">\(10^4\)</span>–<span class="arithmatex">\(10^6\)</span> ON/OFF current ratio requires <span class="arithmatex">\(4\)</span>–<span class="arithmatex">\(6 \times S \approx 0.24\)</span>–0.36 V of gate swing</li>
+<li>Any supply reduction below ~0.4 V makes switching impractically slow (the transistor never fully turns off — leakage power explodes)</li>
+</ul>
+<p>Real MOSFETs have <span class="arithmatex">\(S = 65\)</span>–80 mV/decade due to interface traps (<span class="arithmatex">\(D_{it}\)</span>) and body effect (<span class="arithmatex">\(n_{\text{sub}} &gt; 1\)</span>). Tunnel FETs and negative-capacitance FETs (using ferroelectric gates) are being researched as ways to beat the 60 mV/decade limit.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Nova Warns: Subthreshold Slope Governs Battery Life</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Nova with warning pose">
+Every MOSFET in your phone — all 15 billion of them — draws some subthreshold leakage current even when "off." For a chip with billions of transistors, this adds up to tens of milliamps of static current just from leakage. Managing subthreshold slope, <span class="arithmatex">\(V_T\)</span>, and leakage is the central challenge of low-power design. High-threshold-voltage devices leak less but switch slower; low-threshold devices switch faster but leak more. Modern SoCs use multi-<span class="arithmatex">\(V_T\)</span> design: high-<span class="arithmatex">\(V_T\)</span> cells in non-critical paths for leakage reduction, low-<span class="arithmatex">\(V_T\)</span> cells in the critical path for speed. This is the subthreshold slope limit, manifesting in every $500 smartphone.</p>
+</div>
+<details>
+<summary>#### MicroSim: Long-Channel MOSFET I-V Explorer</summary>
+<p><strong>sim-id:</strong> <code>mosfet-iv-long-channel</code><br />
+<strong>Library:</strong> p5.js<br />
+<strong>Status:</strong> specification  </p>
+<p><strong>Description:</strong> Complete MOSFET I-V characteristic simulator. Left panel: I-D vs. V-DS family of curves (multiple V-GS values), with triode, saturation, and cutoff regions shaded. Right panel: log I-D vs. V-GS curve showing subthreshold, threshold, and above-threshold regions, with S (subthreshold slope) and V-T labeled. Channel cross-section diagram shows charge density evolution.</p>
+<p><strong>Controls:</strong>
+- Slider: Threshold voltage <span class="arithmatex">\(V_T\)</span> (0.2–1.0 V)
+- Slider: W/L ratio (1–100)
+- Slider: <span class="arithmatex">\(\mu_n C_{\text{ox}}\)</span> product (100–500 μA/V²)
+- Slider: Channel-length modulation <span class="arithmatex">\(\lambda\)</span> (0 to 0.1 V<span class="arithmatex">\(^{-1}\)</span>)
+- Slider: Subthreshold slope factor <span class="arithmatex">\(n_{\text{sub}}\)</span> (1 to 2)
+- Dropdown: NMOS / PMOS</p>
+<p><strong>Key Learning Objectives:</strong>
+- L2 (Understand): Identify triode, saturation, and cutoff regions from I-V curves
+- L3 (Apply): Calculate transconductance and output conductance from I-V data
+- L4 (Analyze): Explain the physical meaning of subthreshold slope and why 60 mV/decade is a fundamental limit
+- L5 (Evaluate): Compare long-channel model predictions to realistic short-channel behavior</p>
+</details>
+<hr />
+<h2 id="summary_1">Summary</h2>
+<p>This chapter covered the field-effect transistor family:</p>
+<ul>
+<li><strong>JFET:</strong> Depletion-mode device; gate p-n junction controls channel width; pinch-off at <span class="arithmatex">\(V_{DS} = V_{GS} - V_P\)</span>; used for low-noise applications</li>
+<li><strong>MESFET:</strong> Schottky gate FET; dominant in GaAs microwave ICs; same pinch-off physics as JFET</li>
+<li><strong>MOSFET structure:</strong> Gate-oxide-semiconductor stack; source, drain (n<span class="arithmatex">\(^+\)</span>), body terminals; threshold voltage from MOS capacitor analysis</li>
+<li><strong>Enhancement mode:</strong> Normally off, requires positive overdrive; depletion mode has built-in channel</li>
+<li><strong>Long-channel I-V</strong> from gradual channel approximation: triode <span class="arithmatex">\(\propto (2V_{OD}V_{DS} - V_{DS}^2)\)</span>; saturation <span class="arithmatex">\(\propto V_{OD}^2\)</span></li>
+<li><strong>Transconductance</strong> <span class="arithmatex">\(g_m = \sqrt{2\mu_n C_{\text{ox}} (W/L) I_D}\)</span>; output conductance <span class="arithmatex">\(g_{ds} = \lambda I_D\)</span></li>
+<li><strong>Subthreshold slope</strong> <span class="arithmatex">\(S = n_{\text{sub}} \times 60\)</span> mV/decade at 300 K; ideal limit 60 mV/dec sets minimum supply voltage for logic</li>
+</ul>
+<h2 id="key-equations">Key Equations</h2>
+<div class="arithmatex">\[
+I_D^{\text{triode}} = \mu_n C_{\text{ox}} \frac{W}{L}\!\left[(V_{GS}-V_T)V_{DS} - \frac{V_{DS}^2}{2}\right]
+\]</div>
+<div class="arithmatex">\[
+I_D^{\text{sat}} = \frac{\mu_n C_{\text{ox}}}{2}\frac{W}{L}(V_{GS}-V_T)^2(1 + \lambda V_{DS})
+\]</div>
+<div class="arithmatex">\[
+g_m = \frac{\partial I_D}{\partial V_{GS}} = \mu_n C_{\text{ox}} \frac{W}{L}(V_{GS}-V_T), \quad r_o = \frac{1}{\lambda I_D}
+\]</div>
+<div class="arithmatex">\[
+S = n_{\text{sub}} V_T \ln(10) \geq 60 \text{ mV/dec at 300 K}
+\]</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../14-bipolar-transistors/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 14. Bipolar Transistors">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                14. Bipolar Transistors
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../16-short-channel-cmos/" class="md-footer__link md-footer__link--next" aria-label="Next: 16. Short-Channel and CMOS">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                16. Short-Channel and CMOS
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

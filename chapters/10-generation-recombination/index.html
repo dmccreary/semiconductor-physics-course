@@ -1,0 +1,2320 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="How carriers are created and destroyed through direct, SRH, and Auger recombination, optical absorption, quasi-Fermi levels, and the continuity equation">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/10-generation-recombination/">
+      
+      
+        <link rel="prev" href="../09-carrier-diffusion-transport/">
+      
+      
+        <link rel="next" href="../11-pn-junction-equilibrium/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Generation, Recombination, Continuity, and Optical Processes - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#generation-recombination-continuity-and-optical-processes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Generation, Recombination, Continuity, and Optical Processes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#101-equilibrium-non-equilibrium-and-excess-carriers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Equilibrium, Non-Equilibrium, and Excess Carriers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102-recombination-mechanisms-the-three-paths-back-to-boring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Recombination Mechanisms: The Three Paths Back to Boring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.2 Recombination Mechanisms: The Three Paths Back to Boring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1021-direct-band-to-band-recombination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.1 Direct (Band-to-Band) Recombination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1022-shockley-read-hall-trap-assisted-recombination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.2 Shockley-Read-Hall (Trap-Assisted) Recombination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1023-auger-recombination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.3 Auger Recombination
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103-surface-recombination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Surface Recombination
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#104-optical-absorption-and-optical-generation-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Optical Absorption and Optical Generation Rate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#105-quasi-fermi-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 Quasi-Fermi Levels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#106-the-continuity-equation-and-ambipolar-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6 The Continuity Equation and Ambipolar Transport
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.6 The Continuity Equation and Ambipolar Transport">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minority-carrier-diffusion-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minority Carrier Diffusion Length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambipolar-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ambipolar Transport
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#101-equilibrium-non-equilibrium-and-excess-carriers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Equilibrium, Non-Equilibrium, and Excess Carriers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102-recombination-mechanisms-the-three-paths-back-to-boring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Recombination Mechanisms: The Three Paths Back to Boring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.2 Recombination Mechanisms: The Three Paths Back to Boring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1021-direct-band-to-band-recombination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.1 Direct (Band-to-Band) Recombination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1022-shockley-read-hall-trap-assisted-recombination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.2 Shockley-Read-Hall (Trap-Assisted) Recombination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1023-auger-recombination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.3 Auger Recombination
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103-surface-recombination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Surface Recombination
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#104-optical-absorption-and-optical-generation-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Optical Absorption and Optical Generation Rate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#105-quasi-fermi-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 Quasi-Fermi Levels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#106-the-continuity-equation-and-ambipolar-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6 The Continuity Equation and Ambipolar Transport
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.6 The Continuity Equation and Ambipolar Transport">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minority-carrier-diffusion-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minority Carrier Diffusion Length
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambipolar-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ambipolar Transport
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/10-generation-recombination/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="generation-recombination-continuity-and-optical-processes">Generation, Recombination, Continuity, and Optical Processes</h1>
+<h2 id="summary">Summary</h2>
+<p>Whenever the carrier concentrations depart from equilibrium, generation and recombination processes drive the system back. This chapter systematically covers all major recombination mechanisms: direct band-to-band (radiative) recombination dominant in direct-gap materials, Shockley-Read-Hall trap-assisted recombination that governs minority-carrier lifetime in indirect-gap silicon, and Auger recombination important at high carrier densities. Surface and interface recombination through dangling bonds is quantified by the surface recombination velocity. Optical absorption and the optical generation rate connect the chapter to photonic device analysis. Quasi-Fermi levels describe the non-equilibrium carrier populations under illumination or injection. The chapter closes with the continuity equation and ambipolar transport — the carrier balance laws that underpin all minority-carrier device analysis.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 30 concepts from the learning graph:</p>
+<ol>
+<li>Continuity Equation</li>
+<li>Ambipolar Transport</li>
+<li>Ambipolar Diffusion Coefficient</li>
+<li>Minority Carrier Lifetime</li>
+<li>Minority Carrier Diffusion Length</li>
+<li>Recombination Rate</li>
+<li>Generation Rate</li>
+<li>Direct Recombination</li>
+<li>Band-to-Band Recombination</li>
+<li>Radiative Recombination</li>
+<li>Radiative Recombination Coefficient</li>
+<li>Shockley-Read-Hall Recombination</li>
+<li>Trap-Assisted Recombination</li>
+<li>Trap Density</li>
+<li>Trap Energy Level</li>
+<li>Capture Cross Section</li>
+<li>Auger Recombination</li>
+<li>Auger Coefficient</li>
+<li>Surface Recombination</li>
+<li>Surface Recombination Velocity</li>
+<li>Optical Absorption</li>
+<li>Absorption Coefficient</li>
+<li>Optical Generation Rate</li>
+<li>Photoconductivity</li>
+<li>Quasi-Fermi Levels</li>
+<li>Quasi-Fermi Level Splitting</li>
+<li>Low-Level Injection</li>
+<li>High-Level Injection</li>
+<li>Injection Level</li>
+<li>Excess Carriers</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-intro-semiconductors/">Chapter 1: Introduction to Semiconductors and Bandgap Fundamentals</a></li>
+<li><a href="../07-doping-extrinsic-carriers/">Chapter 7: Doping, Extrinsic Carriers, and the Fermi Level</a></li>
+<li><a href="../09-carrier-diffusion-transport/">Chapter 9: Carrier Diffusion, Transport Theory, and Electrical Measurements</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Nova on Recombination: The Universe's Most Stubborn Trend Toward Boredom</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+Equilibrium is the semiconductor's natural state — and nature is <em>aggressively</em> determined to return there. Inject excess carriers, shine a light, apply a forward bias — and within microseconds to nanoseconds, the semiconductor shoves those extra carriers right back where they came from. Today we meet the three mechanisms that enforce this cosmic rule of semiconductor mediocrity, and the equations that let us predict exactly how fast they work. The good news: controlling these rates is literally what makes solar cells efficient and LEDs bright.</p>
+</div>
+<h2 id="101-equilibrium-non-equilibrium-and-excess-carriers">10.1 Equilibrium, Non-Equilibrium, and Excess Carriers</h2>
+<p>In thermal equilibrium, carrier concentrations are fixed at <span class="arithmatex">\(n_0\)</span> and <span class="arithmatex">\(p_0\)</span>, with <span class="arithmatex">\(n_0 p_0 = n_i^2\)</span>. The generation rate of electron-hole pairs exactly equals the recombination rate:</p>
+<div class="arithmatex">\[
+G_0 = R_0 \quad \text{(equilibrium)}
+\]</div>
+<p>Any departure from equilibrium creates <strong>excess carriers</strong>: <span class="arithmatex">\(\delta n = n - n_0\)</span> (excess electrons) and <span class="arithmatex">\(\delta p = p - p_0\)</span> (excess holes). Since each generation/recombination event creates or destroys pairs, we always have <span class="arithmatex">\(\delta n = \delta p\)</span> when no other carrier sources are present.</p>
+<p>The <strong>injection level</strong> describes how large the excess is relative to the equilibrium majority carrier:</p>
+<ul>
+<li><strong>Low-level injection:</strong> <span class="arithmatex">\(\delta n \ll n_0\)</span> (n-type) or <span class="arithmatex">\(\delta p \ll p_0\)</span> (p-type) — excess carriers are small compared to the equilibrium majority population</li>
+<li><strong>High-level injection:</strong> <span class="arithmatex">\(\delta n \gg n_0\)</span> or <span class="arithmatex">\(\delta p \gg p_0\)</span> — excess carriers dominate</li>
+</ul>
+<p>This distinction matters because the recombination rate expressions simplify differently in the two limits, and device behavior changes qualitatively between them.</p>
+<hr />
+<h2 id="102-recombination-mechanisms-the-three-paths-back-to-boring">10.2 Recombination Mechanisms: The Three Paths Back to Boring</h2>
+<p>Three physically distinct mechanisms return excess carriers to equilibrium. They operate in parallel, and the fastest one controls device behavior. Before examining each, let's frame the key question: what determines the <strong>minority carrier lifetime</strong> <span class="arithmatex">\(\tau\)</span>? The minority carrier lifetime is defined by:</p>
+<div class="arithmatex">\[
+\frac{d(\delta p)}{dt} = -\frac{\delta p}{\tau_p} \quad \text{(n-type, excess holes)}
+\]</div>
+<p>So <span class="arithmatex">\(\tau_p\)</span> sets how quickly injected minority holes disappear. Smaller <span class="arithmatex">\(\tau\)</span> → faster recombination → shorter-lived excess carriers.</p>
+<h3 id="1021-direct-band-to-band-recombination">10.2.1 Direct (Band-to-Band) Recombination</h3>
+<p>In <strong>direct recombination</strong>, an electron in the conduction band falls directly to the valence band and recombines with a hole. Energy and momentum are conserved simultaneously — which requires that the conduction band minimum and valence band maximum occur at the same <span class="arithmatex">\(k\)</span>-vector (zero momentum phonon needed). This is the condition for a <strong>direct-gap semiconductor</strong>.</p>
+<p>In GaAs, InP, GaN — direct-gap materials — band-to-band recombination is the dominant mechanism and it is <strong>radiative</strong>: the energy difference <span class="arithmatex">\(E_C - E_V = E_g\)</span> is released as a photon. This is why GaAs makes good LEDs and lasers, while silicon does not.</p>
+<p>The recombination rate is:</p>
+<div class="arithmatex">\[
+R_{\text{direct}} = B \cdot n \cdot p
+\]</div>
+<p>where <span class="arithmatex">\(B\)</span> is the <strong>radiative recombination coefficient</strong> (units: cm<span class="arithmatex">\(^3\)</span>/s). In equilibrium, <span class="arithmatex">\(G_0 = B n_0 p_0 = B n_i^2\)</span>. In non-equilibrium with excess carriers:</p>
+<div class="arithmatex">\[
+U_{\text{direct}} = R - G = B(np - n_i^2) = B(n_0 + p_0 + \delta n)\,\delta n
+\]</div>
+<p>At low-level injection in n-type (<span class="arithmatex">\(\delta n \ll n_0\)</span>):</p>
+<div class="arithmatex">\[
+U_{\text{direct}} \approx B n_0 \, \delta p, \implies \tau_p = \frac{1}{B n_0}
+\]</div>
+<p>Representative values: for GaAs, <span class="arithmatex">\(B \approx 10^{-10}\)</span> cm<span class="arithmatex">\(^3\)</span>/s; for silicon, <span class="arithmatex">\(B \approx 10^{-15}\)</span> cm<span class="arithmatex">\(^3\)</span>/s (14,000× smaller, because the momentum mismatch suppresses direct recombination).</p>
+<h3 id="1022-shockley-read-hall-trap-assisted-recombination">10.2.2 Shockley-Read-Hall (Trap-Assisted) Recombination</h3>
+<p>In indirect-gap silicon, band-to-band recombination is negligibly slow because momentum cannot be conserved without a phonon. Instead, recombination proceeds through <strong>traps</strong> — energy levels in the bandgap introduced by defects, impurities, or dangling bonds. The process was analyzed independently by Shockley, Read, and Hall in 1952 and bears their names.</p>
+<p>The trap-assisted recombination process has four steps:
+1. <strong>Electron capture:</strong> A conduction-band electron falls into the trap (rate ∝ capture cross section <span class="arithmatex">\(\sigma_n\)</span> and electron velocity)
+2. <strong>Electron emission:</strong> The trapped electron returns to the conduction band (thermal excitation)
+3. <strong>Hole capture:</strong> The trapped electron falls into the valence band (equivalently, a valence hole is captured by the trap)
+4. <strong>Hole emission:</strong> The captured hole returns to the valence band</p>
+<p>The <strong>SRH recombination rate</strong> is:</p>
+<div class="arithmatex">\[
+U_{\text{SRH}} = \frac{np - n_i^2}{\tau_p(n + n_1) + \tau_n(p + p_1)}
+\]</div>
+<p>where:
+- <span class="arithmatex">\(\tau_n = 1/(v_{\text{th},n} \sigma_n N_t)\)</span>, <span class="arithmatex">\(\tau_p = 1/(v_{\text{th},p} \sigma_p N_t)\)</span> are the fundamental electron and hole lifetimes
+- <span class="arithmatex">\(N_t\)</span> is the trap density (cm<span class="arithmatex">\(^{-3}\)</span>)
+- <span class="arithmatex">\(n_1 = N_C e^{-(E_C - E_t)/k_BT}\)</span>, <span class="arithmatex">\(p_1 = N_V e^{-(E_t - E_V)/k_BT}\)</span> are emission terms related to the trap energy <span class="arithmatex">\(E_t\)</span></p>
+<p>SRH recombination is most effective when the trap level sits near midgap (<span class="arithmatex">\(E_t \approx E_i\)</span>), because both carrier types have comparable capture rates. Gold in silicon (trap near midgap) is intentionally added in fast diodes to deliberately reduce minority carrier lifetime and speed up switching.</p>
+<p>At low-level injection in n-type, SRH simplifies to:</p>
+<div class="arithmatex">\[
+U_{\text{SRH}} \approx \frac{\delta p}{\tau_p}, \quad \tau_p \approx \frac{1}{v_{\text{th}} \sigma_p N_t}
+\]</div>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Nova Thinks: SRH Lifetime Is Trap Control</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova in thinking pose">
+The SRH lifetime equation <span class="arithmatex">\(\tau = 1/(v_{\text{th}} \sigma N_t)\)</span> has a beautiful message: lifetime is inversely proportional to trap density. This means you can <em>engineer</em> the lifetime by controlling defects. Solar cell manufacturers obsessively minimize <span class="arithmatex">\(N_t\)</span> (using float-zone silicon, careful anneals, and passivation layers) to maximize <span class="arithmatex">\(\tau\)</span> to milliseconds. Fast-switching diode engineers do the opposite — they diffuse gold into silicon to add midgap traps and drive <span class="arithmatex">\(\tau\)</span> down to nanoseconds. Same material, opposite defect strategies, for opposite lifetime targets.</p>
+</div>
+<h3 id="1023-auger-recombination">10.2.3 Auger Recombination</h3>
+<p>In <strong>Auger recombination</strong>, an electron and hole recombine, but instead of emitting a photon, the released energy is transferred to a third carrier (either another electron or another hole) that then thermalizes through phonon emission. A three-particle process, Auger recombination scales as <span class="arithmatex">\(n^2 p\)</span> or <span class="arithmatex">\(np^2\)</span>:</p>
+<div class="arithmatex">\[
+U_{\text{Auger}} = (C_n n + C_p p)(np - n_i^2)
+\]</div>
+<p>where <span class="arithmatex">\(C_n\)</span> and <span class="arithmatex">\(C_p\)</span> are the Auger coefficients (~<span class="arithmatex">\(10^{-30}\)</span>–<span class="arithmatex">\(10^{-31}\)</span> cm<span class="arithmatex">\(^6\)</span>/s for silicon).</p>
+<p>Auger recombination is negligible at normal carrier densities but dominates at:
+1. <strong>Very high injection</strong> (solar concentrators, pulsed lasers)
+2. <strong>Very heavy doping</strong> (<span class="arithmatex">\(N_D &gt; 10^{18}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>)</p>
+<p>In degenerate emitter regions of silicon BJTs and at the front surface of concentrator solar cells, Auger recombination is the primary performance limiter. The <strong>Auger limit</strong> for solar cell efficiency (at 1-sun illumination in silicon) contributes a fundamental loss floor of ~0.2% absolute efficiency.</p>
+<hr />
+<h2 id="103-surface-recombination">10.3 Surface Recombination</h2>
+<p>At semiconductor surfaces and interfaces, the crystal periodicity terminates — creating <strong>dangling bonds</strong> with energy states distributed across the bandgap. These surface states act as a dense continuum of SRH traps, and carriers near the surface recombine much faster than in the bulk.</p>
+<p>Surface recombination is characterized by the <strong>surface recombination velocity</strong> <span class="arithmatex">\(S\)</span> (units: cm/s), defined such that the excess minority carrier flux to the surface equals:</p>
+<div class="arithmatex">\[
+J_p\big|_{\text{surface}} = q S \cdot \delta p\big|_{\text{surface}}
+\]</div>
+<p>For silicon/SiO<span class="arithmatex">\(_2\)</span> interfaces with good thermal oxidation, <span class="arithmatex">\(S \approx 10\)</span>–<span class="arithmatex">\(100\)</span> cm/s. For unpassivated silicon surfaces (bare silicon in air), <span class="arithmatex">\(S \approx 10^4\)</span>–<span class="arithmatex">\(10^5\)</span> cm/s. Surface passivation — using SiO<span class="arithmatex">\(_2\)</span>, Si<span class="arithmatex">\(_3\)</span>N<span class="arithmatex">\(_4\)</span>, or atomic-layer deposited Al<span class="arithmatex">\(_2\)</span>O<span class="arithmatex">\(_3\)</span> — is critical for solar cells and is the reason cell manufacturers spend enormous effort on surface treatment.</p>
+<p>The surface acts as a boundary condition on the minority carrier diffusion equation (Section 10.6):</p>
+<div class="arithmatex">\[
+D_p \frac{d(\delta p)}{dx}\bigg|_{\text{surface}} = S \cdot \delta p\big|_{\text{surface}} \quad \text{(excess holes at surface)}
+\]</div>
+<hr />
+<h2 id="104-optical-absorption-and-optical-generation-rate">10.4 Optical Absorption and Optical Generation Rate</h2>
+<p>When photons with energy <span class="arithmatex">\(h\nu \geq E_g\)</span> illuminate a semiconductor, they are absorbed and create electron-hole pairs. This is <strong>optical generation</strong> — the inverse of radiative recombination.</p>
+<p>The optical intensity <span class="arithmatex">\(I(x)\)</span> (power per unit area) decays exponentially with depth:</p>
+<div class="arithmatex">\[
+I(x) = I_0 e^{-\alpha x}
+\]</div>
+<p>where <span class="arithmatex">\(\alpha\)</span> (cm<span class="arithmatex">\(^{-1}\)</span>) is the <strong>absorption coefficient</strong>. The absorption coefficient depends strongly on photon energy and on whether the material has a direct or indirect bandgap:</p>
+<ul>
+<li>
+<p><strong>Direct-gap materials</strong> (GaAs): <span class="arithmatex">\(\alpha\)</span> rises sharply above <span class="arithmatex">\(E_g\)</span> as <span class="arithmatex">\(\alpha \propto (h\nu - E_g)^{1/2}\)</span>. Values reach <span class="arithmatex">\(10^4\)</span>–<span class="arithmatex">\(10^5\)</span> cm<span class="arithmatex">\(^{-1}\)</span> within 0.1 eV above the bandgap. Absorption depths of 0.1–1 μm.</p>
+</li>
+<li>
+<p><strong>Indirect-gap silicon</strong>: Absorption requires a phonon for momentum conservation. <span class="arithmatex">\(\alpha\)</span> rises much more gradually above <span class="arithmatex">\(E_g = 1.12\)</span> eV: only <span class="arithmatex">\(\sim 10^2\)</span> cm<span class="arithmatex">\(^{-1}\)</span> at 1.2 eV, reaching <span class="arithmatex">\(10^4\)</span> cm<span class="arithmatex">\(^{-1}\)</span> at 1.7 eV. Absorption depth for AM1.5 solar spectrum ranges from 300 μm (near-bandgap photons) to &lt;0.01 μm (UV photons). This is why silicon solar cells must be 100–200 μm thick.</p>
+</li>
+</ul>
+<p>The <strong>optical generation rate</strong> <span class="arithmatex">\(G_{\text{opt}}\)</span> (pairs/cm<span class="arithmatex">\(^3\)</span>/s) relates to the absorbed intensity:</p>
+<div class="arithmatex">\[
+G_{\text{opt}}(x) = \frac{\alpha I(x)}{h\nu} = \frac{\alpha I_0 e^{-\alpha x}}{h\nu}
+\]</div>
+<p><strong>Photoconductivity</strong> is the increase in conductivity due to optically generated excess carriers:</p>
+<div class="arithmatex">\[
+\Delta\sigma = q(\Delta n \mu_n + \Delta p \mu_p) = q \Delta n (\mu_n + \mu_p) \quad \text{(equal excess pairs)}
+\]</div>
+<p>Time-resolved photoconductivity decay after a light pulse is a standard technique (TRMC, microwave photoconductance) for measuring minority carrier lifetime in silicon wafers.</p>
+<details>
+<summary>#### MicroSim: Recombination Lifetime Explorer</summary>
+<p><strong>sim-id:</strong> <code>recombination-lifetime-explorer</code><br />
+<strong>Library:</strong> p5.js<br />
+<strong>Status:</strong> specification  </p>
+<p><strong>Description:</strong> Three-panel visualization showing all recombination mechanisms. Left panel: band diagram with animated carrier transitions showing direct, SRH, and Auger paths. Middle panel: excess carrier decay <span class="arithmatex">\(\delta p(t)\)</span> for different recombination dominances. Right panel: minority carrier lifetime vs. doping concentration showing where each mechanism dominates.</p>
+<p><strong>Controls:</strong>
+- Sliders: Trap density <span class="arithmatex">\(N_t\)</span> (<span class="arithmatex">\(10^{10}\)</span> to <span class="arithmatex">\(10^{14}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>)
+- Slider: Trap energy level <span class="arithmatex">\(E_t\)</span> (within bandgap)
+- Dropdown: Material (Si, GaAs, GaN)
+- Slider: Injection level <span class="arithmatex">\(\delta n/n_0\)</span></p>
+<p><strong>Key Learning Objectives:</strong>
+- L2 (Understand): Identify which recombination mechanism dominates at a given doping and injection level
+- L3 (Apply): Calculate minority carrier lifetime from trap density and capture cross section
+- L4 (Analyze): Explain why trap energy position affects SRH efficiency</p>
+</details>
+<hr />
+<h2 id="105-quasi-fermi-levels">10.5 Quasi-Fermi Levels</h2>
+<p>In equilibrium, the single Fermi level <span class="arithmatex">\(E_F\)</span> describes both electron and hole populations: <span class="arithmatex">\(n_0 = N_C e^{-(E_C - E_F)/k_BT}\)</span> and <span class="arithmatex">\(p_0 = N_V e^{-(E_F - E_V)/k_BT}\)</span>.</p>
+<p>Under non-equilibrium conditions (illumination, injection), there is no single Fermi level that describes both carriers simultaneously. Instead, we define separate <strong>quasi-Fermi levels</strong> (or imref levels):</p>
+<div class="arithmatex">\[
+n = N_C \exp\!\left(-\frac{E_C - F_n}{k_BT}\right), \quad p = N_V \exp\!\left(-\frac{F_p - E_V}{k_BT}\right)
+\]</div>
+<p>where <span class="arithmatex">\(F_n\)</span> is the quasi-Fermi level for electrons and <span class="arithmatex">\(F_p\)</span> is the quasi-Fermi level for holes. In equilibrium, <span class="arithmatex">\(F_n = F_p = E_F\)</span>. Under non-equilibrium:</p>
+<ul>
+<li>Illumination or forward bias → <span class="arithmatex">\(F_n &gt; F_p\)</span> (quasi-Fermi levels split)</li>
+<li>Reverse bias → <span class="arithmatex">\(F_n &lt; F_p\)</span> (quasi-Fermi levels come closer together, even crossing each other in depletion)</li>
+</ul>
+<p>The <strong>quasi-Fermi level splitting</strong> <span class="arithmatex">\(\Delta F = F_n - F_p\)</span> is directly related to the excess carrier product:</p>
+<div class="arithmatex">\[
+np = n_i^2 \exp\!\left(\frac{F_n - F_p}{k_BT}\right)
+\]</div>
+<p>In a forward-biased p-n junction at voltage <span class="arithmatex">\(V\)</span>: <span class="arithmatex">\(F_n - F_p = qV\)</span>, giving <span class="arithmatex">\(np = n_i^2 e^{qV/k_BT}\)</span> — the fundamental relationship that drives the diode equation.</p>
+<p>Quasi-Fermi levels are also the physically meaningful quantity for electrochemical potential in solar cells. The <strong>open-circuit voltage</strong> of a solar cell is:</p>
+<div class="arithmatex">\[
+V_{\text{oc}} = \frac{F_n - F_p}{q}\bigg|_{\text{illuminated, open circuit}}
+\]</div>
+<p>The maximum achievable <span class="arithmatex">\(V_{\text{oc}}\)</span> is limited by recombination processes — which is why minimizing all three recombination mechanisms directly increases solar cell voltage.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Nova Warns: np &gt; n_i^2 Means Injection; np &lt; n_i^2 Means Depletion</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Nova with warning pose">
+The product <span class="arithmatex">\(np\)</span> relative to <span class="arithmatex">\(n_i^2\)</span> is the universal non-equilibrium indicator. Forward bias: <span class="arithmatex">\(np &gt; n_i^2\)</span> — quasi-Fermi levels split outward, system has excess energy. Reverse bias in depletion: <span class="arithmatex">\(np &lt; n_i^2\)</span> — quasi-Fermi levels squeeze together, system is carrier-depleted. Equilibrium: <span class="arithmatex">\(np = n_i^2\)</span>. Every semiconductor equation you'll ever write for a biased device secretly involves this comparison. When <span class="arithmatex">\(np &gt; n_i^2\)</span>, net recombination is occurring (<span class="arithmatex">\(U &gt; 0\)</span>); when <span class="arithmatex">\(np &lt; n_i^2\)</span>, net generation is occurring (<span class="arithmatex">\(U &lt; 0\)</span>). The sign of <span class="arithmatex">\(U\)</span> tells you which way the system is pushing.</p>
+</div>
+<hr />
+<h2 id="106-the-continuity-equation-and-ambipolar-transport">10.6 The Continuity Equation and Ambipolar Transport</h2>
+<p>The <strong>continuity equation</strong> is the master balance law for carrier populations. It states that the rate of carrier change in a volume equals: (drift-diffusion current divergence) + (net generation rate):</p>
+<div class="arithmatex">\[
+\frac{\partial n}{\partial t} = \frac{1}{q}\frac{\partial J_n}{\partial x} + G - R = D_n\frac{\partial^2 n}{\partial x^2} + \mu_n\frac{\partial(n\mathcal{E})}{\partial x} + G - R
+\]</div>
+<div class="arithmatex">\[
+\frac{\partial p}{\partial t} = -\frac{1}{q}\frac{\partial J_p}{\partial x} + G - R = D_p\frac{\partial^2 p}{\partial x^2} - \mu_p\frac{\partial(p\mathcal{E})}{\partial x} + G - R
+\]</div>
+<p>These are the full, coupled nonlinear equations that govern all carrier dynamics in a semiconductor device.</p>
+<h3 id="minority-carrier-diffusion-length">Minority Carrier Diffusion Length</h3>
+<p>In the steady state with low-level injection, no electric field, and uniform illumination <span class="arithmatex">\(G_{\text{opt}}\)</span>, the minority carrier equation in n-type reduces to:</p>
+<div class="arithmatex">\[
+D_p \frac{d^2(\delta p)}{dx^2} - \frac{\delta p}{\tau_p} + G_{\text{opt}} = 0
+\]</div>
+<p>This has solutions of the form <span class="arithmatex">\(\delta p(x) \propto e^{\pm x/L_p}\)</span>, where the <strong>minority carrier diffusion length</strong> is:</p>
+<div class="arithmatex">\[
+\boxed{L_p = \sqrt{D_p \tau_p}}
+\]</div>
+<p>The diffusion length is the average distance a minority carrier travels before recombining. It is the single most important parameter for minority-carrier devices:</p>
+<ul>
+<li>p-n junction diode current <span class="arithmatex">\(\propto 1/L_p\)</span> (shorter diffusion length → more recombination → less current)</li>
+<li>Solar cell efficiency <span class="arithmatex">\(\propto L_p\)</span> (longer <span class="arithmatex">\(L_p\)</span> → more carriers collected)</li>
+<li>BJT base transit time <span class="arithmatex">\(\propto L_p^2\)</span> (longer <span class="arithmatex">\(L_p\)</span> relative to base width → higher gain)</li>
+</ul>
+<p>For high-quality silicon at low doping: <span class="arithmatex">\(\tau_p \approx 100\)</span> μs, <span class="arithmatex">\(D_p \approx 12\)</span> cm²/s, giving <span class="arithmatex">\(L_p = \sqrt{12 \times 100\times10^{-6}} \approx 1.1\)</span> mm. Minority carriers in silicon can survive for a millimeter of travel before recombining — which is why silicon solar cells work at all despite the slow optical absorption.</p>
+<h3 id="ambipolar-transport">Ambipolar Transport</h3>
+<p>When excess carriers are created uniformly (e.g., by uniform illumination), electrons and holes must move together to maintain local charge neutrality. The system behaves as a single combined carrier with an <strong>ambipolar diffusion coefficient</strong>:</p>
+<div class="arithmatex">\[
+D_a = \frac{D_n D_p (n + p)}{D_n n + D_p p}
+\]</div>
+<p>and an <strong>ambipolar mobility</strong>:</p>
+<div class="arithmatex">\[
+\mu_a = \frac{\mu_n \mu_p (p - n)}{\mu_n n + \mu_p p}
+\]</div>
+<p>In n-type material at low-level injection (<span class="arithmatex">\(n \gg p, \delta n\)</span>):</p>
+<div class="arithmatex">\[
+D_a \approx D_p, \quad \mu_a \approx 0
+\]</div>
+<p>The minority carrier (holes) controls the ambipolar motion — electrons are so abundant that the minority hole population is the bottleneck. This is why "minority carrier physics" is the dominant framework for p-n junction and BJT analysis: the minority carriers are doing the heavy lifting, even though they're outnumbered by millions to one.</p>
+<details>
+<summary>#### MicroSim: Minority Carrier Diffusion Length Visualizer</summary>
+<p><strong>sim-id:</strong> <code>minority-carrier-diffusion</code><br />
+<strong>Library:</strong> p5.js<br />
+<strong>Status:</strong> specification  </p>
+<p><strong>Description:</strong> Animated visualization of minority carriers injected at x = 0 diffusing into a doped semiconductor bulk. Shows the spatial decay profile <span class="arithmatex">\(\delta p(x) = \delta p_0 e^{-x/L_p}\)</span> and animates individual carriers performing random walk. User can adjust <span class="arithmatex">\(D_p\)</span> and <span class="arithmatex">\(\tau_p\)</span> independently to see how <span class="arithmatex">\(L_p = \sqrt{D_p \tau_p}\)</span> changes. An illuminated region can be activated to show bulk generation and steady-state profile.</p>
+<p><strong>Controls:</strong>
+- Slider: Minority carrier lifetime <span class="arithmatex">\(\tau_p\)</span> (1 ns to 1 ms)
+- Slider: Diffusion coefficient <span class="arithmatex">\(D_p\)</span> (1–25 cm²/s)
+- Checkbox: Show analytical solution overlay
+- Button: Pulse injection (see time decay animation)</p>
+<p><strong>Key Learning Objectives:</strong>
+- L2 (Understand): Explain how minority carrier lifetime and diffusivity determine diffusion length
+- L3 (Apply): Calculate diffusion length for given material parameters
+- L4 (Analyze): Predict how surface recombination affects minority carrier profile</p>
+</details>
+<hr />
+<h2 id="summary_1">Summary</h2>
+<p>This chapter covered the processes that govern carrier dynamics beyond equilibrium:</p>
+<ul>
+<li><strong>Three recombination mechanisms:</strong> Direct (radiative, dominant in direct-gap materials), SRH (trap-assisted, dominant in indirect-gap silicon), and Auger (dominant at high carrier density)</li>
+<li><strong>Surface recombination velocity</strong> <span class="arithmatex">\(S\)</span> quantifies recombination at interfaces; passivation reduces <span class="arithmatex">\(S\)</span> from <span class="arithmatex">\(10^5\)</span> to <span class="arithmatex">\(&lt;100\)</span> cm/s</li>
+<li><strong>Optical absorption</strong> follows Beer-Lambert law <span class="arithmatex">\(I = I_0 e^{-\alpha x}\)</span>; absorption coefficient <span class="arithmatex">\(\alpha\)</span> distinguishes direct from indirect-gap materials</li>
+<li><strong>Quasi-Fermi levels</strong> <span class="arithmatex">\(F_n\)</span>, <span class="arithmatex">\(F_p\)</span> describe non-equilibrium carrier populations; their splitting equals <span class="arithmatex">\(qV\)</span> under forward bias</li>
+<li><strong>Continuity equation</strong> is the carrier balance law combining drift, diffusion, generation, and recombination</li>
+<li><strong>Minority carrier diffusion length</strong> <span class="arithmatex">\(L = \sqrt{D\tau}\)</span> determines how far minority carriers travel before recombining — the key metric for diodes, BJTs, and solar cells</li>
+<li><strong>Ambipolar transport</strong> shows that minority carriers control coupled electron-hole motion in doped material</li>
+</ul>
+<h2 id="key-equations">Key Equations</h2>
+<div class="arithmatex">\[
+U_{\text{SRH}} = \frac{np - n_i^2}{\tau_p(n+n_1) + \tau_n(p+p_1)}, \quad \tau = \frac{1}{v_{\text{th}} \sigma N_t}
+\]</div>
+<div class="arithmatex">\[
+G_{\text{opt}}(x) = \frac{\alpha I_0 e^{-\alpha x}}{h\nu}
+\]</div>
+<div class="arithmatex">\[
+n = N_C e^{-(E_C-F_n)/k_BT}, \quad p = N_V e^{-(F_p-E_V)/k_BT}, \quad np = n_i^2 e^{(F_n-F_p)/k_BT}
+\]</div>
+<div class="arithmatex">\[
+L_p = \sqrt{D_p \tau_p}, \quad D_p\frac{d^2(\delta p)}{dx^2} - \frac{\delta p}{\tau_p} + G = 0
+\]</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../09-carrier-diffusion-transport/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 9. Carrier Diffusion and Transport">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                9. Carrier Diffusion and Transport
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../11-pn-junction-equilibrium/" class="md-footer__link md-footer__link--next" aria-label="Next: 11. P-N Junction Equilibrium">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                11. P-N Junction Equilibrium
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

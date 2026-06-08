@@ -1,0 +1,2168 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Built-in potential, depletion approximation, forward/reverse bias band diagrams, minority carrier injection, and the Shockley diode equation">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/11-pn-junction-equilibrium/">
+      
+      
+        <link rel="prev" href="../10-generation-recombination/">
+      
+      
+        <link rel="next" href="../12-pn-junction-dynamics/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>P-N Junction: Equilibrium, Bias, and the Ideal Diode - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#p-n-junction-equilibrium-bias-and-the-ideal-diode" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              P-N Junction: Equilibrium, Bias, and the Ideal Diode
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#111-junction-formation-what-happens-when-p-meets-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Junction Formation: What Happens When P Meets N
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#112-built-in-potential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Built-In Potential
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#113-the-depletion-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 The Depletion Approximation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#114-forward-and-reverse-bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 Forward and Reverse Bias
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#115-minority-carrier-injection-and-the-ideal-diode-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 Minority Carrier Injection and the Ideal Diode Equation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#116-beyond-ideal-real-diode-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6 Beyond Ideal: Real Diode Behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#111-junction-formation-what-happens-when-p-meets-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Junction Formation: What Happens When P Meets N
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#112-built-in-potential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Built-In Potential
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#113-the-depletion-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 The Depletion Approximation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#114-forward-and-reverse-bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 Forward and Reverse Bias
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#115-minority-carrier-injection-and-the-ideal-diode-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 Minority Carrier Injection and the Ideal Diode Equation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#116-beyond-ideal-real-diode-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6 Beyond Ideal: Real Diode Behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/11-pn-junction-equilibrium/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="p-n-junction-equilibrium-bias-and-the-ideal-diode">P-N Junction: Equilibrium, Bias, and the Ideal Diode</h1>
+<h2 id="summary">Summary</h2>
+<p>The p-n junction is the fundamental building block of nearly every semiconductor device. This chapter derives the junction physics from first principles using the depletion approximation: the built-in electric field and potential that form when p- and n-type regions are joined, the charge distribution and its dependence on doping, and the depletion width. Forward and reverse bias band diagrams illustrate how applied voltage modulates the barrier. Under forward bias, minority carrier injection leads to excess carrier profiles; solving the diffusion equation yields the Shockley diode equation, quantifying the exponential I-V characteristic. Generation-recombination current, tunneling current, and ohmic-region behavior complete the picture of real diode I-V curves.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 29 concepts from the learning graph:</p>
+<ol>
+<li>P-N Junction</li>
+<li>Junction Formation</li>
+<li>Depletion Region</li>
+<li>Depletion Approximation</li>
+<li>Built-In Potential</li>
+<li>Contact Potential</li>
+<li>Electric Field in Depletion Region</li>
+<li>Potential Distribution in Junction</li>
+<li>Charge Distribution in Junction</li>
+<li>Depletion Width</li>
+<li>One-Sided Abrupt Junction</li>
+<li>Linearly Graded Junction</li>
+<li>Forward Bias</li>
+<li>Reverse Bias</li>
+<li>Zero Bias Equilibrium</li>
+<li>Band Diagram Forward Bias</li>
+<li>Band Diagram Reverse Bias</li>
+<li>Minority Carrier Injection</li>
+<li>Ideal Diode Equation</li>
+<li>Shockley Equation</li>
+<li>Diode Saturation Current</li>
+<li>Diode Ideality Factor</li>
+<li>Generation-Recombination Current</li>
+<li>Diffusion Current in Diode</li>
+<li>Tunneling Current in Diode</li>
+<li>Ohmic Region Diode</li>
+<li>Forward Voltage Drop</li>
+<li>Reverse Saturation Current</li>
+<li>Reverse Breakdown</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../07-doping-extrinsic-carriers/">Chapter 7: Doping, Extrinsic Carriers, and the Fermi Level</a></li>
+<li><a href="../09-carrier-diffusion-transport/">Chapter 9: Carrier Diffusion, Transport Theory, and Electrical Measurements</a></li>
+<li><a href="../10-generation-recombination/">Chapter 10: Generation, Recombination, Continuity, and Optical Processes</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Nova on the P-N Junction: Where the Magic Begins (Finally)</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+Twelve chapters of foundation physics, and now we build something. The p-n junction is where a semiconductor stops being a material and starts being a <em>device</em>. Two doped regions, one interface, and an astonishing amount of physics spontaneously organizing itself into a built-in electric field, a depletion layer, and an exponential current-voltage relationship that has defined electronics for 75 years. Let's get excited — this is the chapter where everything from Chapter 1 through 10 clicks together.</p>
+</div>
+<h2 id="111-junction-formation-what-happens-when-p-meets-n">11.1 Junction Formation: What Happens When P Meets N</h2>
+<p>Consider two separate semiconductor regions: one n-type (high electron concentration <span class="arithmatex">\(n_0 \approx N_D\)</span>, low hole concentration) and one p-type (high hole concentration <span class="arithmatex">\(p_0 \approx N_A\)</span>, low electron concentration). When these regions are brought into electrical contact, three things happen simultaneously:</p>
+<ol>
+<li>
+<p><strong>Carrier diffusion begins:</strong> Electrons from the n-side diffuse toward the p-side (high <span class="arithmatex">\(n\)</span> → low <span class="arithmatex">\(n\)</span>). Holes from the p-side diffuse toward the n-side. This is simple diffusion driven by concentration gradients — the same physics as Chapter 9.</p>
+</li>
+<li>
+<p><strong>Charge separation creates an electric field:</strong> As electrons leave the n-side near the interface, they expose the positively charged donor ions (<span class="arithmatex">\(N_D^+\)</span>). As holes leave the p-side, they expose the negatively charged acceptor ions (<span class="arithmatex">\(N_A^-\)</span>). A dipole charge layer forms at the junction — positive on the n-side, negative on the p-side. This creates a built-in electric field <span class="arithmatex">\(\mathcal{E}_{\text{bi}}\)</span> pointing from n to p.</p>
+</li>
+<li>
+<p><strong>Equilibrium establishes itself:</strong> The built-in field opposes further diffusion. At equilibrium, the drift current (due to <span class="arithmatex">\(\mathcal{E}_{\text{bi}}\)</span>) exactly cancels the diffusion current for both carrier types. No net current flows. The Fermi level is uniform throughout.</p>
+</li>
+</ol>
+<p>The region near the junction that is depleted of free carriers (the exposed ion layers) is the <strong>depletion region</strong> (also called the space-charge region). It has:
+- No free electrons or free holes (approximately)
+- Net positive charge on the n-side (<span class="arithmatex">\(+qN_D\)</span>)
+- Net negative charge on the p-side (<span class="arithmatex">\(-qN_A\)</span>)</p>
+<p>This is the equilibrium starting point from which all biased-junction physics flows.</p>
+<hr />
+<h2 id="112-built-in-potential">11.2 Built-In Potential</h2>
+<p>The energy difference between the n-side and p-side Fermi levels in the disconnected state is the source of the <strong>built-in potential</strong> (also called the <strong>contact potential</strong> or <strong>diffusion potential</strong>) <span class="arithmatex">\(V_{bi}\)</span>. When joined, this energy difference is "paid for" by the band bending across the depletion region.</p>
+<p>Setting the Fermi level equal on both sides at equilibrium (mandatory condition — no current flows if <span class="arithmatex">\(E_F\)</span> is uniform):</p>
+<div class="arithmatex">\[
+V_{bi} = \frac{k_BT}{q} \ln\!\left(\frac{N_A N_D}{n_i^2}\right)
+\]</div>
+<p>This is derived from requiring <span class="arithmatex">\(E_F\)</span> alignment, using the expressions for <span class="arithmatex">\(n_0\)</span> and <span class="arithmatex">\(p_0\)</span> from Chapter 7. For silicon with <span class="arithmatex">\(N_A = 10^{17}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> and <span class="arithmatex">\(N_D = 10^{16}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>:</p>
+<div class="arithmatex">\[
+V_{bi} = 0.0259 \times \ln\!\left(\frac{10^{17} \times 10^{16}}{(9.65\times10^9)^2}\right) = 0.0259 \times \ln(1.07 \times 10^{17}) \approx 0.76 \text{ V}
+\]</div>
+<p>Built-in potentials in silicon typically range from 0.5–0.95 V depending on doping levels.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Nova Thinks: Why Can't We Harvest Built-In Potential?</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova in thinking pose">
+Every thermodynamics student eventually asks: "If there's a built-in voltage across the junction, why can't I connect wires and get free power?" The answer is subtle and important. When you connect metal wires to the n and p sides, <em>additional</em> contact potentials form at each metal-semiconductor interface. The built-in potential of the p-n junction is exactly cancelled by the sum of the two contact potentials at the metal-semiconductor interfaces. The loop of voltages always sums to zero in equilibrium — which is just the first law of thermodynamics in disguise. There is no free lunch, even in a junction. You can only extract energy if you do work to move the Fermi levels apart (i.e., apply a forward bias or shine light on it).</p>
+</div>
+<hr />
+<h2 id="113-the-depletion-approximation">11.3 The Depletion Approximation</h2>
+<p>To find the electric field and potential distributions analytically, we use the <strong>depletion approximation</strong>: the depletion region is entirely free of mobile carriers (<span class="arithmatex">\(n \approx 0\)</span>, <span class="arithmatex">\(p \approx 0\)</span>), and outside the depletion region carriers are at their equilibrium concentrations. This step-function simplification makes Poisson's equation tractable.</p>
+<p>Let the junction be at <span class="arithmatex">\(x = 0\)</span>, with the depletion region extending from <span class="arithmatex">\(-x_p\)</span> (into the p-side) to <span class="arithmatex">\(+x_n\)</span> (into the n-side). The charge density within the depletion region is:</p>
+<div class="arithmatex">\[
+\rho(x) = \begin{cases} -qN_A &amp; -x_p &lt; x &lt; 0 \\ +qN_D &amp; 0 &lt; x &lt; x_n \end{cases}
+\]</div>
+<p>Poisson's equation (<span class="arithmatex">\(d\mathcal{E}/dx = \rho/\varepsilon_s\)</span>) integrates to give the electric field:</p>
+<div class="arithmatex">\[
+\mathcal{E}(x) = \begin{cases} -\frac{qN_A}{\varepsilon_s}(x + x_p) &amp; -x_p &lt; x &lt; 0 \\ \frac{qN_D}{\varepsilon_s}(x - x_n) &amp; 0 &lt; x &lt; x_n \end{cases}
+\]</div>
+<p>The field is linear in each region and peaks at <span class="arithmatex">\(x = 0\)</span>:</p>
+<div class="arithmatex">\[
+\mathcal{E}_{\max} = -\frac{qN_D x_n}{\varepsilon_s} = -\frac{qN_A x_p}{\varepsilon_s}
+\]</div>
+<p><strong>Charge neutrality</strong> requires that the total positive charge equals total negative charge:</p>
+<div class="arithmatex">\[
+N_D x_n = N_A x_p
+\]</div>
+<p>This is crucial: the more heavily doped side has a narrower depletion extension. In a one-sided junction (<span class="arithmatex">\(N_A \gg N_D\)</span>, i.e., a p<span class="arithmatex">\(^+\)</span>n junction), almost all the depletion extends into the lightly doped n-side.</p>
+<p>Integrating the field gives the potential, and requiring the total potential drop across the depletion region to equal <span class="arithmatex">\(V_{bi}\)</span> gives the <strong>depletion widths</strong>:</p>
+<div class="arithmatex">\[
+x_n = \sqrt{\frac{2\varepsilon_s V_{bi}}{q} \cdot \frac{N_A}{N_D(N_A + N_D)}}, \quad x_p = \sqrt{\frac{2\varepsilon_s V_{bi}}{q} \cdot \frac{N_D}{N_A(N_A + N_D)}}
+\]</div>
+<p>The <strong>total depletion width</strong> is:</p>
+<div class="arithmatex">\[
+W = x_n + x_p = \sqrt{\frac{2\varepsilon_s V_{bi}}{q} \cdot \frac{N_A + N_D}{N_A N_D}}
+\]</div>
+<p>For a one-sided abrupt junction (<span class="arithmatex">\(N_A \gg N_D\)</span>):</p>
+<div class="arithmatex">\[
+W \approx x_n \approx \sqrt{\frac{2\varepsilon_s V_{bi}}{q N_D}}
+\]</div>
+<p>For silicon with <span class="arithmatex">\(N_D = 10^{16}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> and <span class="arithmatex">\(V_{bi} = 0.7\)</span> V: <span class="arithmatex">\(W \approx 0.3\)</span> μm. The junction depletion region is submicron — compact and intense.</p>
+<hr />
+<h2 id="114-forward-and-reverse-bias">11.4 Forward and Reverse Bias</h2>
+<p>Applying an external voltage modifies the junction potential barrier and hence the depletion width and carrier injection.</p>
+<p><strong>Zero bias (equilibrium):</strong> Barrier = <span class="arithmatex">\(V_{bi}\)</span>. No net current. Drift and diffusion exactly cancel.</p>
+<p><strong>Forward bias</strong> (<span class="arithmatex">\(V &gt; 0\)</span> applied to p-side): The external voltage reduces the barrier to <span class="arithmatex">\(V_{bi} - V\)</span>. The depletion region narrows:</p>
+<div class="arithmatex">\[
+W(V) = \sqrt{\frac{2\varepsilon_s (V_{bi} - V)}{q} \cdot \frac{N_A + N_D}{N_A N_D}}
+\]</div>
+<p>With a lower barrier, many more carriers have sufficient thermal energy to cross. The minority carrier concentration at the depletion edge increases exponentially — <strong>minority carrier injection</strong>.</p>
+<p><strong>Reverse bias</strong> (<span class="arithmatex">\(V &lt; 0\)</span>, i.e., <span class="arithmatex">\(|V_R|\)</span> applied to n-side): The barrier increases to <span class="arithmatex">\(V_{bi} + |V_R|\)</span>. The depletion region widens. Very few carriers cross. Only the small thermal generation current within the depletion region flows.</p>
+<p>The band diagram tells the story visually. At forward bias, the quasi-Fermi levels split: <span class="arithmatex">\(F_n\)</span> and <span class="arithmatex">\(F_p\)</span> are separated by <span class="arithmatex">\(qV\)</span>. At reverse bias, the quasi-Fermi levels are pressed closer together in the depletion region, making <span class="arithmatex">\(np &lt; n_i^2\)</span> there — which drives net carrier generation rather than recombination.</p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Barrier Height</th>
+<th>Depletion Width</th>
+<th>Majority Current</th>
+<th>Minority Injection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equilibrium</td>
+<td><span class="arithmatex">\(V_{bi}\)</span></td>
+<td><span class="arithmatex">\(W_0\)</span></td>
+<td>Balanced</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Forward bias <span class="arithmatex">\(V &gt; 0\)</span></td>
+<td><span class="arithmatex">\(V_{bi} - V\)</span></td>
+<td>Narrower</td>
+<td>Exponential surge</td>
+<td>Heavy</td>
+</tr>
+<tr>
+<td>Reverse bias <span class="arithmatex">\(V &lt; 0\)</span></td>
+<td>(V_{bi} +</td>
+<td>V</td>
+<td>)</td>
+<td>Wider</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="115-minority-carrier-injection-and-the-ideal-diode-equation">11.5 Minority Carrier Injection and the Ideal Diode Equation</h2>
+<p>Under forward bias <span class="arithmatex">\(V\)</span>, the minority carrier concentration at the depletion edge increases by the <strong>law of the junction</strong>:</p>
+<div class="arithmatex">\[
+p_n(x_n) = p_{n0} \exp\!\left(\frac{qV}{k_BT}\right), \quad n_p(-x_p) = n_{p0} \exp\!\left(\frac{qV}{k_BT}\right)
+\]</div>
+<p>where <span class="arithmatex">\(p_{n0} = n_i^2/N_D\)</span> and <span class="arithmatex">\(n_{p0} = n_i^2/N_A\)</span> are the equilibrium minority carrier concentrations on the n- and p-sides, respectively.</p>
+<p>This boundary condition drives excess minority carriers into the neutral regions, where they diffuse away and recombine. Solving the minority carrier diffusion equation in each neutral region (with ohmic contacts as boundaries where <span class="arithmatex">\(\delta p = 0\)</span>):</p>
+<div class="arithmatex">\[
+\delta p(x) = p_{n0}\!\left(e^{qV/k_BT} - 1\right) e^{-(x - x_n)/L_p}, \quad x \geq x_n
+\]</div>
+<div class="arithmatex">\[
+\delta n(x) = n_{p0}\!\left(e^{qV/k_BT} - 1\right) e^{(x + x_p)/L_n}, \quad x \leq -x_p
+\]</div>
+<p>The diffusion current at each edge of the depletion region is <span class="arithmatex">\(J = -qD\, d(\delta)/dx\)</span> evaluated at the edge. Summing both contributions:</p>
+<div class="arithmatex">\[
+\boxed{J = J_s \left(\exp\!\left(\frac{qV}{k_BT}\right) - 1\right)}
+\]</div>
+<p>This is the <strong>Shockley diode equation</strong> (or ideal diode equation), where the <strong>saturation current density</strong> is:</p>
+<div class="arithmatex">\[
+J_s = q n_i^2 \left(\frac{D_p}{L_p N_D} + \frac{D_n}{L_n N_A}\right)
+\]</div>
+<p>The total current is <span class="arithmatex">\(I = J \cdot A\)</span>, where <span class="arithmatex">\(A\)</span> is the junction area. For <span class="arithmatex">\(V \gg k_BT/q\)</span> (forward bias), the exponential dominates and <span class="arithmatex">\(I \propto e^{qV/k_BT}\)</span>. For <span class="arithmatex">\(V &lt; 0\)</span> (reverse bias), <span class="arithmatex">\(I \approx -I_s\)</span> — a small, negative saturation current.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Nova Tips: The Saturation Current Temperature Trap</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Nova with tip pose">
+<span class="arithmatex">\(J_s \propto n_i^2 \propto e^{-E_g/k_BT}\)</span>, so diode saturation current doubles approximately every 10°C in silicon. This means a diode that leaks 1 nA at 25°C will leak ~1 μA at 85°C and ~100 μA at 125°C. For a circuit designed to work over the automotive temperature range (−40°C to +125°C), this 5-order-of-magnitude change in leakage current is <em>not</em> a small perturbation — it's the dominant design constraint for analog circuits and for battery-backed CMOS retention. Always check <span class="arithmatex">\(I_s(T)\)</span> before declaring your analog design "done."</p>
+</div>
+<p>The <strong>diode ideality factor</strong> <span class="arithmatex">\(n\)</span> (not to be confused with carrier density) appears in real devices:</p>
+<div class="arithmatex">\[
+I = I_s \left(\exp\!\left(\frac{qV}{n k_BT}\right) - 1\right)
+\]</div>
+<p>The ideal Shockley equation predicts <span class="arithmatex">\(n = 1\)</span> (diffusion-limited). Real diodes show:</p>
+<ul>
+<li><span class="arithmatex">\(n \approx 1\)</span>: Diffusion current dominates (high forward bias, good-quality junction)</li>
+<li><span class="arithmatex">\(n \approx 2\)</span>: Generation-recombination current dominates (low forward bias, depletion region recombination via traps)</li>
+<li><span class="arithmatex">\(n &gt; 2\)</span>: Tunneling or unusual recombination mechanisms</li>
+</ul>
+<p>The crossover from <span class="arithmatex">\(n = 2\)</span> to <span class="arithmatex">\(n = 1\)</span> typically occurs around 0.3–0.5 V in silicon — visible as a change in slope on a semi-log current-voltage plot.</p>
+<hr />
+<h2 id="116-beyond-ideal-real-diode-behavior">11.6 Beyond Ideal: Real Diode Behavior</h2>
+<p>The Shockley equation predicts four distinct current components actually present in a real silicon diode:</p>
+<p><strong>1. Diffusion current (ideal):</strong> <span class="arithmatex">\(I_{\text{diff}} = I_{s,\text{diff}}\,(e^{qV/k_BT} - 1)\)</span> — dominates at moderate to high forward bias. Ideality factor <span class="arithmatex">\(n = 1\)</span>.</p>
+<p><strong>2. Generation-recombination (G-R) current:</strong> In reverse bias, the depleted region has <span class="arithmatex">\(np &lt; n_i^2\)</span>, driving carrier generation via SRH traps. This additional reverse current is:</p>
+<div class="arithmatex">\[
+J_{\text{gen}} = \frac{q n_i W}{2\tau_0} \quad \text{(reverse bias G-R current)}
+\]</div>
+<p>where <span class="arithmatex">\(\tau_0\)</span> is the generation lifetime. In forward bias, the same traps cause excess recombination with ideality factor <span class="arithmatex">\(n = 2\)</span>:</p>
+<div class="arithmatex">\[
+J_{\text{rec}} \propto n_i \exp\!\left(\frac{qV}{2k_BT}\right)
+\]</div>
+<p>G-R current dominates at low forward voltages (below ~0.4 V in silicon) and in the reverse bias regime.</p>
+<p><strong>3. Tunneling current:</strong> At high doping or in narrow junctions, carriers can quantum-mechanically tunnel through the thin depletion barrier. Band-to-band tunneling becomes important in heavily doped junctions (<span class="arithmatex">\(N \gtrsim 10^{18}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>) and is the mechanism behind Zener breakdown and tunnel diodes.</p>
+<p><strong>4. Reverse breakdown:</strong> At sufficiently large reverse bias, the electric field causes:
+- <strong>Avalanche breakdown</strong> (impact ionization): Carriers gain enough energy to create additional electron-hole pairs, producing exponential current multiplication
+- <strong>Zener breakdown</strong> (tunneling): In highly doped junctions, direct band-to-band tunneling dominates; Zener voltage <span class="arithmatex">\(V_Z \lesssim 5\)</span> V</p>
+<p>The combined I-V characteristic of a real silicon diode spans roughly 20 decades of current — from femtoamperes to amperes — making it one of the most nonlinear and wide-dynamic-range components in all of electronics.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Nova Warns: 0.7 V Is a Silicon Myth (Sort Of)</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Nova with warning pose">
+The ubiquitous "0.7 V diode drop" is a useful circuit approximation but physically misleading. The actual forward voltage depends on current level — a silicon diode at 1 μA drops ~0.45 V; at 1 mA it's ~0.6 V; at 10 A it's ~0.85 V. The 0.7 V comes from historical convention for small-signal operation at milliamp currents. For power electronics, LED drivers, or low-power IoT devices, always calculate the actual operating point from the diode equation. Using 0.7 V blindly in a solar cell or a nanowatt sensor circuit will cost you the design.</p>
+</div>
+<details>
+<summary>#### MicroSim: P-N Junction Explorer</summary>
+<p><strong>sim-id:</strong> <code>pn-junction-explorer</code><br />
+<strong>Library:</strong> p5.js<br />
+<strong>Status:</strong> specification  </p>
+<p><strong>Description:</strong> Comprehensive p-n junction visualization with three linked panels: (1) Band diagram showing <span class="arithmatex">\(E_C\)</span>, <span class="arithmatex">\(E_V\)</span>, <span class="arithmatex">\(E_F\)</span> (or quasi-Fermi levels under bias), depletion region shading; (2) Charge density and electric field distributions; (3) I-V characteristic with ideality factor regions marked. User adjusts bias voltage with a slider and watches all three panels update simultaneously.</p>
+<p><strong>Controls:</strong>
+- Slider: Applied voltage V (−5 V to +0.9 V)
+- Sliders: N-side doping <span class="arithmatex">\(N_D\)</span> and P-side doping <span class="arithmatex">\(N_A\)</span> (independently, <span class="arithmatex">\(10^{14}\)</span>–<span class="arithmatex">\(10^{18}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>)
+- Dropdown: Temperature (200–400 K)
+- Checkbox: Show minority carrier injection profiles
+- Checkbox: Show quasi-Fermi levels vs. equilibrium Fermi level</p>
+<p><strong>Key Learning Objectives:</strong>
+- L2 (Understand): Explain how forward/reverse bias modifies the depletion width
+- L3 (Apply): Calculate built-in potential and depletion width for given doping values
+- L4 (Analyze): Identify which current component dominates at a given forward voltage
+- L5 (Evaluate): Predict I-V curve shape changes with doping and temperature</p>
+</details>
+<hr />
+<h2 id="summary_1">Summary</h2>
+<p>This chapter derived the p-n junction from first principles:</p>
+<ul>
+<li><strong>Junction formation</strong> creates a built-in field and depletion region by diffusion-induced charge separation</li>
+<li><strong>Built-in potential</strong> <span class="arithmatex">\(V_{bi} = (k_BT/q)\ln(N_A N_D/n_i^2)\)</span> balances drift and diffusion at equilibrium</li>
+<li><strong>Depletion approximation</strong> gives linear <span class="arithmatex">\(\mathcal{E}(x)\)</span>, quadratic <span class="arithmatex">\(\phi(x)\)</span>, and depletion widths scaling as <span class="arithmatex">\(\sqrt{V_{bi}/N}\)</span></li>
+<li><strong>Forward bias</strong> reduces the barrier, narrows the depletion region, and exponentially increases minority carrier injection</li>
+<li><strong>Shockley diode equation</strong> <span class="arithmatex">\(I = I_s(e^{qV/k_BT} - 1)\)</span> follows from solving the minority carrier diffusion equation in each neutral region</li>
+<li><strong>Real diodes</strong> show G-R current (<span class="arithmatex">\(n=2\)</span> at low bias), diffusion current (<span class="arithmatex">\(n=1\)</span> at moderate bias), and breakdown at high reverse bias</li>
+</ul>
+<h2 id="key-equations">Key Equations</h2>
+<div class="arithmatex">\[
+V_{bi} = \frac{k_BT}{q}\ln\!\left(\frac{N_A N_D}{n_i^2}\right)
+\]</div>
+<div class="arithmatex">\[
+W = \sqrt{\frac{2\varepsilon_s (V_{bi} - V)}{q} \cdot \frac{N_A + N_D}{N_A N_D}}, \quad N_D x_n = N_A x_p
+\]</div>
+<div class="arithmatex">\[
+I = I_s\!\left(e^{qV/nk_BT} - 1\right), \quad I_s = qAn_i^2\!\left(\frac{D_p}{L_p N_D} + \frac{D_n}{L_n N_A}\right)
+\]</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../10-generation-recombination/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 10. Generation and Recombination">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                10. Generation and Recombination
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../12-pn-junction-dynamics/" class="md-footer__link md-footer__link--next" aria-label="Next: 12. P-N Junction Dynamics">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                12. P-N Junction Dynamics
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

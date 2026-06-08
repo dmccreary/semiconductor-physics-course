@@ -1,0 +1,21 @@
+{
+  "title": "Fermi-Dirac Distribution and Carrier Concentration Explorer",
+  "description": "Students will apply the Fermi-Dirac distribution to calculate electron and hole concentrations in a semiconductor and explain (Apply, L3) how temperature and Fermi level position determine n and p.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "fermi-dirac-explorer",
+  "library": "p5.js",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 6,
+  "chapter_title": "Fermi-Dirac Statistics and Intrinsic Carrier Concentrations",
+  "chapter_dir": "06-fermi-dirac-statistics"
+}

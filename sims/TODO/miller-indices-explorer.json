@@ -1,0 +1,14 @@
+{
+  "sim_id": "miller-indices-explorer",
+  "diagram_name": "Miller Indices Crystal Plane Explorer",
+  "chapter_number": 2,
+  "chapter_title": "Crystal Lattice Structure and Symmetry",
+  "chapter_dir": "02-crystal-lattice-structure",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": "Students will calculate Miller indices from axis intercepts and identify the corresponding crystal plane orientation in a 3D cubic cell (Apply, L3).",
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: MicroSim\n**sim-id:** miller-indices-explorer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\n**Learning objective:** Students will calculate Miller indices from axis intercepts and identify the corresponding crystal plane orientation in a 3D cubic cell (Apply, L3).\n\n**Canvas size:** 850 × 520 px, responsive.\n\n**Controls (p5.js built-in):**\n- Three sliders: h (−3 to 3, default 1), k (−3 to 3, default 0), l (−3 to 3, default 0). Labels: \"h:\", \"k:\", \"l:\".\n- Button: \"Render Plane\".\n- Select dropdown: Preset planes — \"Custom\", \"(100)\", \"(110)\", \"(111)\", \"(200)\", \"(210)\", \"(211)\", \"(010)\", \"(001)\". Selecting preset snaps sliders.\n\n**Visual layout:**\n\nLeft panel (60%): Isometric 3D view of a 2×2×2 simple cubic supercell. Draw atoms as small gray circles at integer coordinate positions. Draw the selected (hkl) plane as a translucent blue polygon (alpha ≈ 0.4) clipping through the supercell. Highlight atoms on or near the plane in orange. Draw crystallographic axes (x, y, z) in red, green, blue with labels. Mark axis intercepts with filled triangle markers.\n\nRight panel (40%): Step-by-step calculation display:\n- \"Intercepts on a, b, c axes: X, Y, Z\"\n- \"Reciprocals: 1/X, 1/Y, 1/Z\"\n- \"Miller indices: (h k l)\"\n- \"Plane family {hkl} has N equivalent planes in cubic symmetry.\"\n- \"Interplanar spacing: d = a / √(h²+k²+l²) = X.XX Å (Si)\"\n\n**Behavior:**\n- Any slider change immediately re-renders the plane.\n- If h=k=l=0, display error: \"Invalid: (000) is not a Miller index.\"\n- Hover over an atom shows its (fractional) coordinates.\n\n**Implementation:** p5.js, single HTML file. Compute plane polygon from intercepts analytically. Parent canvas to document.querySelector('main')."
+}

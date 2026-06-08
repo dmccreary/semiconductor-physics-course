@@ -1,0 +1,2270 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Develops carrier statistics for semiconductors — Fermi-Dirac and Maxwell-Boltzmann distributions, effective density of states, intrinsic carrier concentration, intrinsic Fermi level, and the law of mass action.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/06-fermi-dirac-statistics/">
+      
+      
+        <link rel="prev" href="../05-bloch-theorem-band-theory/">
+      
+      
+        <link rel="next" href="../07-doping-extrinsic-carriers/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Fermi-Dirac Statistics and Intrinsic Carrier Concentrations - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fermi-dirac-statistics-and-intrinsic-carrier-concentrations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fermi-Dirac Statistics and Intrinsic Carrier Concentrations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistical-distributions-in-quantum-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistical Distributions in Quantum Systems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fermi-dirac-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fermi-Dirac Distribution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fermi-level-physical-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fermi Level: Physical Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#effective-density-of-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effective Density of States
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Effective Density of States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-fermi-dirac-distribution-and-carrier-concentration-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Fermi-Dirac Distribution and Carrier Concentration Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intrinsic-carrier-concentration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intrinsic Carrier Concentration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-intrinsic-fermi-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Intrinsic Fermi Level
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-law-of-mass-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Law of Mass Action
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-charge-neutrality-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Charge Neutrality Condition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Charge Neutrality Condition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-temperature-dependence-of-ni-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Temperature Dependence of ni Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistical-distributions-in-quantum-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistical Distributions in Quantum Systems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fermi-dirac-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fermi-Dirac Distribution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fermi-level-physical-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fermi Level: Physical Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#effective-density-of-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effective Density of States
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Effective Density of States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-fermi-dirac-distribution-and-carrier-concentration-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Fermi-Dirac Distribution and Carrier Concentration Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intrinsic-carrier-concentration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intrinsic Carrier Concentration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-intrinsic-fermi-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Intrinsic Fermi Level
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-law-of-mass-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Law of Mass Action
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-charge-neutrality-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Charge Neutrality Condition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Charge Neutrality Condition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-temperature-dependence-of-ni-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Temperature Dependence of ni Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/06-fermi-dirac-statistics/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="fermi-dirac-statistics-and-intrinsic-carrier-concentrations">Fermi-Dirac Statistics and Intrinsic Carrier Concentrations</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter develops the statistical mechanics framework that determines how electrons and holes populate the energy bands in thermal equilibrium. Fermi-Dirac statistics is derived and contrasted with the Maxwell-Boltzmann approximation valid for non-degenerate semiconductors. Using the effective densities of states in the conduction and valence bands, students calculate the intrinsic carrier concentration and its strong exponential temperature dependence. The intrinsic Fermi level and the law of mass action (np = ni²) are derived — results that underpin every equilibrium carrier calculation in subsequent chapters.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 15 concepts from the learning graph:</p>
+<ol>
+<li>Fermi Energy</li>
+<li>Fermi Level</li>
+<li>Fermi-Dirac Distribution</li>
+<li>Maxwell-Boltzmann Distribution</li>
+<li>Bose-Einstein Distribution</li>
+<li>Effective Density of States</li>
+<li>Conduction Band Effective DOS</li>
+<li>Valence Band Effective DOS</li>
+<li>Intrinsic Carrier Concentration</li>
+<li>Intrinsic Fermi Level</li>
+<li>Temperature Dependence ni</li>
+<li>Law of Mass Action</li>
+<li>Electron Concentration Formula</li>
+<li>Hole Concentration Formula</li>
+<li>Charge Neutrality Condition</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-intro-semiconductors/">Chapter 1: Introduction to Semiconductors and Bandgap Fundamentals</a></li>
+<li><a href="../05-bloch-theorem-band-theory/">Chapter 5: Bloch's Theorem, Band Formation, and E-k Diagrams</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Electrons: famously unwilling to share. Bosons could learn something from them.</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+Chapter 6! Here's where we ask: given a semiconductor with energy bands (Chapter 5), how many electrons actually end up in the conduction band at room temperature? The answer comes from Fermi-Dirac statistics — the probability distribution for quantum particles that obey the Pauli exclusion principle, which is to say, particles that refuse to share a quantum state with anyone. Electrons are fermions. They are deeply territorial. Knowing their statistical behavior gives us the intrinsic carrier concentration <span class="arithmatex">\(n_i\)</span>, one of the most important material parameters in semiconductor physics. Let's count electrons — statistically!</p>
+</div>
+<h2 id="statistical-distributions-in-quantum-systems">Statistical Distributions in Quantum Systems</h2>
+<p>Before deriving carrier concentrations, we need to understand the three fundamental quantum statistical distributions, because semiconductors intersect all three depending on the temperature regime and carrier type.</p>
+<p>Three types of quantum particles exist, distinguished by their spin:</p>
+<ul>
+<li><strong>Fermions</strong> (half-integer spin: electrons, holes, protons): obey the <strong>Pauli exclusion principle</strong> — no two fermions can occupy the same quantum state. Distribution: Fermi-Dirac.</li>
+<li><strong>Bosons</strong> (integer spin: photons, phonons, Cooper pairs): no restriction on state occupancy. Distribution: Bose-Einstein.</li>
+<li><strong>Classical particles</strong> (distinguishable, distinguishable states): obey Maxwell-Boltzmann statistics in the limit of low occupancy.</li>
+</ul>
+<p>For our purposes, electrons and holes are fermions. Phonons (lattice vibrations, critical for carrier scattering in Chapter 8) are bosons. At room temperature and for non-degenerate doping levels, the Fermi-Dirac distribution reduces to the Maxwell-Boltzmann approximation — a simplification we will use throughout most of this course.</p>
+<h2 id="the-fermi-dirac-distribution">The Fermi-Dirac Distribution</h2>
+<p>The <strong>Fermi-Dirac distribution</strong> <span class="arithmatex">\(f(E)\)</span> gives the probability that a quantum state at energy <span class="arithmatex">\(E\)</span> is occupied by an electron at thermal equilibrium at temperature <span class="arithmatex">\(T\)</span>:</p>
+<div class="arithmatex">\[
+f(E) = \frac{1}{1 + \exp\!\left(\dfrac{E - E_F}{k_BT}\right)}
+\]</div>
+<p>where <span class="arithmatex">\(E_F\)</span> is the <strong>Fermi energy</strong> (also called the <strong>Fermi level</strong>), <span class="arithmatex">\(k_B = 8.617 \times 10^{-5}\)</span> eV/K is Boltzmann's constant, and <span class="arithmatex">\(T\)</span> is temperature in kelvin.</p>
+<p>Three limits of the Fermi-Dirac distribution are essential:</p>
+<ul>
+<li>At <span class="arithmatex">\(E = E_F\)</span>: <span class="arithmatex">\(f(E_F) = 1/2\)</span> exactly, at any temperature. The Fermi level is always defined as the energy at which the occupation probability is exactly one-half.</li>
+<li>For <span class="arithmatex">\(E \gg E_F\)</span> (by several <span class="arithmatex">\(k_BT\)</span>): <span class="arithmatex">\(f(E) \approx \exp[-(E-E_F)/k_BT]\)</span> — the <strong>Maxwell-Boltzmann</strong> tail. For non-degenerate semiconductors, the conduction band minimum <span class="arithmatex">\(E_C\)</span> lies several <span class="arithmatex">\(k_BT\)</span> above <span class="arithmatex">\(E_F\)</span>, so this approximation applies.</li>
+<li>At <span class="arithmatex">\(T = 0\)</span>: <span class="arithmatex">\(f(E) = 1\)</span> for <span class="arithmatex">\(E &lt; E_F\)</span> and <span class="arithmatex">\(f(E) = 0\)</span> for <span class="arithmatex">\(E &gt; E_F\)</span> — a sharp step function. All states below <span class="arithmatex">\(E_F\)</span> are filled; all above are empty.</li>
+</ul>
+<p>The <strong>Bose-Einstein distribution</strong> <span class="arithmatex">\(n_{BE}(E) = 1/[\exp(E/k_BT) - 1]\)</span> governs phonons and photons; it appears in Chapter 8 (phonon scattering) and Chapter 17 (laser photon statistics).</p>
+<p>The <strong>Maxwell-Boltzmann distribution</strong> <span class="arithmatex">\(f_{MB}(E) = A\exp(-E/k_BT)\)</span> is the classical limit, valid when occupation probabilities are small — which requires <span class="arithmatex">\(E - E_F \gg k_BT\)</span>. For silicon at room temperature with doping below <span class="arithmatex">\(\sim 10^{18}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>, this approximation is excellent and greatly simplifies algebra.</p>
+<p>The following table contrasts all three distributions:</p>
+<table>
+<thead>
+<tr>
+<th>Distribution</th>
+<th>Particles</th>
+<th>Occupancy Constraint</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fermi-Dirac</td>
+<td>Fermions (e⁻, holes)</td>
+<td>Max 1 per state</td>
+<td><span class="arithmatex">\(1/[1+e^{(E-E_F)/k_BT}]\)</span></td>
+</tr>
+<tr>
+<td>Bose-Einstein</td>
+<td>Bosons (photons, phonons)</td>
+<td>Unlimited</td>
+<td><span class="arithmatex">\(1/[e^{E/k_BT}-1]\)</span></td>
+</tr>
+<tr>
+<td>Maxwell-Boltzmann</td>
+<td>Classical</td>
+<td>Unlimited, low density</td>
+<td><span class="arithmatex">\(A\,e^{-E/k_BT}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-fermi-level-physical-interpretation">The Fermi Level: Physical Interpretation</h2>
+<p>The <strong>Fermi level</strong> <span class="arithmatex">\(E_F\)</span> is the chemical potential of the electron gas — the energy at which a marginal electron would be in equilibrium with the system. Several key properties:</p>
+<ul>
+<li><span class="arithmatex">\(E_F\)</span> is a thermodynamic quantity characterizing the equilibrium state of the electron system; it does not correspond to a specific allowed energy state (it often falls inside the forbidden gap).</li>
+<li>In a <strong>metal</strong>, <span class="arithmatex">\(E_F\)</span> falls inside a partially filled band at all temperatures.</li>
+<li>In an <strong>intrinsic (undoped) semiconductor</strong>, <span class="arithmatex">\(E_F\)</span> lies within the forbidden gap, approximately midway between <span class="arithmatex">\(E_C\)</span> and <span class="arithmatex">\(E_V\)</span> (the precise position is derived below).</li>
+<li><span class="arithmatex">\(E_F\)</span> shifts with doping: upward toward <span class="arithmatex">\(E_C\)</span> for n-type material, downward toward <span class="arithmatex">\(E_V\)</span> for p-type material (Chapter 7).</li>
+<li>When two materials are in thermal equilibrium in contact (a junction), their Fermi levels are equal. This condition governs the built-in potential of p-n junctions and the Schottky barrier height at metal-semiconductor contacts.</li>
+</ul>
+<h2 id="effective-density-of-states">Effective Density of States</h2>
+<p>To compute the number of electrons in the conduction band, we multiply the density of available states <span class="arithmatex">\(g_{CB}(E)\)</span> by the probability of occupancy <span class="arithmatex">\(f(E)\)</span> and integrate over the conduction band:</p>
+<div class="arithmatex">\[
+n = \int_{E_C}^{\infty} g_{CB}(E)\,f(E)\,dE
+\]</div>
+<p>Using the 3D parabolic-band density of states from Chapter 5, <span class="arithmatex">\(g_{CB}(E) = \frac{\sqrt{2}\,m_{dos,n}^{*3/2}}{\pi^2\hbar^3}\sqrt{E - E_C}\)</span>, and applying the Maxwell-Boltzmann approximation <span class="arithmatex">\(f(E) \approx e^{-(E-E_F)/k_BT}\)</span>:</p>
+<div class="arithmatex">\[
+n = N_C \exp\!\left(-\frac{E_C - E_F}{k_BT}\right)
+\]</div>
+<p>where <span class="arithmatex">\(N_C\)</span> is the <strong>effective density of states in the conduction band</strong>:</p>
+<div class="arithmatex">\[
+N_C = 2\left(\frac{2\pi m_{dos,n}^* k_BT}{h^2}\right)^{3/2}
+\]</div>
+<p>At <span class="arithmatex">\(T = 300\)</span> K: <span class="arithmatex">\(N_C = 2.86 \times 10^{19}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> for silicon (<span class="arithmatex">\(m_{dos,n}^* = 1.08\,m_0\)</span>).</p>
+<p>Analogously, the hole concentration is:</p>
+<div class="arithmatex">\[
+p = N_V \exp\!\left(-\frac{E_F - E_V}{k_BT}\right)
+\]</div>
+<p>where <span class="arithmatex">\(N_V = 2(2\pi m_{dos,p}^* k_BT/h^2)^{3/2}\)</span> is the <strong>effective density of states in the valence band</strong>. At 300 K: <span class="arithmatex">\(N_V = 3.10 \times 10^{19}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> for silicon (<span class="arithmatex">\(m_{dos,p}^* = 0.81\,m_0\)</span>).</p>
+<p><span class="arithmatex">\(N_C\)</span> and <span class="arithmatex">\(N_V\)</span> can be thought of as the number of available quantum states per unit volume "condensed" to the band edges — the virtual reservoir from which electrons and holes are drawn.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">N_C and N_V are not actual counts — they're effective targets for Fermi-Dirac statistics.</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova thinking">
+Here's the intuition behind <span class="arithmatex">\(N_C\)</span>: imagine taking all the states in the conduction band and collapsing them to a single energy level at <span class="arithmatex">\(E_C\)</span>, with a degeneracy <span class="arithmatex">\(N_C\)</span>. The Boltzmann occupation of this imaginary level <span class="arithmatex">\(N_C \times e^{-(E_C - E_F)/k_BT}\)</span> gives the exact same electron count as integrating the real parabolic density of states with the real Fermi-Dirac distribution (in the non-degenerate limit). It's a brilliantly compact fiction. Note that <span class="arithmatex">\(N_C\)</span> and <span class="arithmatex">\(N_V\)</span> are temperature-dependent (<span class="arithmatex">\(\propto T^{3/2}\)</span>) — a fact that matters when computing carrier concentrations at temperatures other than 300 K.</p>
+</div>
+<h4 id="diagram-fermi-dirac-distribution-and-carrier-concentration-explorer">Diagram: Fermi-Dirac Distribution and Carrier Concentration Explorer</h4>
+<iframe src="../../sims/fermi-dirac-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/fermi-dirac-explorer/main.html">Run Fermi-Dirac Distribution and Carrier Concentration Explorer Fullscreen</a></p>
+<iframe src="../../sims/fermi-dirac-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/fermi-dirac-explorer/main.html">Run Fermi-Dirac Distribution and Carrier Concentration Explorer Fullscreen</a></p>
+<details>
+<summary>Fermi-Dirac Distribution and Carrier Concentration Explorer</summary>
+<p>Type: MicroSim
+<strong>sim-id:</strong> fermi-dirac-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning objective:</strong> Students will apply the Fermi-Dirac distribution to calculate electron and hole concentrations in a semiconductor and explain (Apply, L3) how temperature and Fermi level position determine n and p.</p>
+<p><strong>Canvas size:</strong> 900 × 540 px, responsive.</p>
+<p><strong>Controls:</strong>
+- Slider: Temperature T, 100–700 K, default 300 K. Label: "Temperature (K):"
+- Slider: Fermi level position <span class="arithmatex">\(E_F - E_i\)</span>, −0.6 to +0.6 eV, default 0 eV (intrinsic). Label: "E_F − E_i (eV):"
+- Select: Material — "Silicon (E_g=1.12 eV)", "GaAs (E_g=1.42 eV)", "Ge (E_g=0.66 eV)". Default: Si.</p>
+<p><strong>Visual layout:</strong></p>
+<p>Left panel (55%): Energy-axis diagram (vertical energy axis). Draw:
+- Horizontal bands for CB (top, blue) and VB (bottom, green), with the gap in between.
+- Horizontal dashed lines for E_C, E_V, E_F (moveable), E_i (midgap reference).
+- Beside the bands, draw the Fermi-Dirac function f(E) as a curve (sigmoid), with the 50% point exactly at E_F.
+- Shade the CB region with intensity proportional to n (computed from N_C formula) — darker shade = more electrons.
+- Shade the VB region with intensity proportional to p.</p>
+<p>Right panel (45%): Computed values:
+- <span class="arithmatex">\(f(E_C)\)</span> = probability of occupying the CB edge.
+- n = electron concentration (cm⁻³).
+- p = hole concentration (cm⁻³).
+- n·p product (should equal <span class="arithmatex">\(n_i^2\)</span>).
+- <span class="arithmatex">\(n_i\)</span> (intrinsic concentration at current T).
+- Display: "Material class: n-type / p-type / intrinsic" based on whether n &gt; p, n &lt; p, or n ≈ p.</p>
+<p><strong>Behavior:</strong> All sliders update computed values and visualization in real time. On resize: updateCanvasSize() reflows.</p>
+<p><strong>Implementation:</strong> p5.js, single HTML file. Use built-in createSlider(), createSelect(). Parent canvas to document.querySelector('main').</p>
+</details>
+<h2 id="intrinsic-carrier-concentration">Intrinsic Carrier Concentration</h2>
+<p>For an <strong>intrinsic (undoped) semiconductor</strong> in thermal equilibrium, charge neutrality requires <span class="arithmatex">\(n = p = n_i\)</span>, where <span class="arithmatex">\(n_i\)</span> is the <strong>intrinsic carrier concentration</strong>. Multiplying the <span class="arithmatex">\(n\)</span> and <span class="arithmatex">\(p\)</span> expressions:</p>
+<div class="arithmatex">\[
+n_i^2 = n \cdot p = N_C N_V \exp\!\left(-\frac{E_g}{k_BT}\right)
+\]</div>
+<div class="arithmatex">\[
+\boxed{n_i = \sqrt{N_C N_V}\,\exp\!\left(-\frac{E_g}{2k_BT}\right)}
+\]</div>
+<p>This is one of the most important equations in semiconductor physics. The intrinsic carrier concentration is an exponentially sensitive function of the bandgap and temperature. Some key values at 300 K:</p>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th><span class="arithmatex">\(E_g\)</span> (eV)</th>
+<th><span class="arithmatex">\(n_i\)</span> at 300 K (cm⁻³)</th>
+<th><span class="arithmatex">\(n_i\)</span> at 400 K (cm⁻³)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Si</td>
+<td>1.12</td>
+<td><span class="arithmatex">\(9.65 \times 10^9\)</span></td>
+<td>~<span class="arithmatex">\(10^{13}\)</span></td>
+</tr>
+<tr>
+<td>Ge</td>
+<td>0.66</td>
+<td><span class="arithmatex">\(2.4 \times 10^{13}\)</span></td>
+<td>~<span class="arithmatex">\(10^{16}\)</span></td>
+</tr>
+<tr>
+<td>GaAs</td>
+<td>1.42</td>
+<td><span class="arithmatex">\(\sim 2 \times 10^6\)</span></td>
+<td>~<span class="arithmatex">\(10^{10}\)</span></td>
+</tr>
+<tr>
+<td>GaN</td>
+<td>3.40</td>
+<td><span class="arithmatex">\(\sim 10^{-10}\)</span></td>
+<td>~<span class="arithmatex">\(10^{-4}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The exponential temperature dependence is striking: silicon's <span class="arithmatex">\(n_i\)</span> increases by more than three orders of magnitude between 300 K and 400 K. This is why silicon CMOS devices fail at elevated temperatures — when <span class="arithmatex">\(n_i\)</span> approaches the doping concentration, the device enters the <strong>intrinsic regime</strong> and transistors can no longer be turned off. Wide-gap semiconductors like GaN and SiC, with <span class="arithmatex">\(n_i\)</span> near zero at room temperature, can operate at temperatures exceeding 400°C without this problem.</p>
+<h2 id="the-intrinsic-fermi-level">The Intrinsic Fermi Level</h2>
+<p>To find the position of the Fermi level in an intrinsic semiconductor, we set <span class="arithmatex">\(n = p\)</span> and solve for <span class="arithmatex">\(E_F\)</span>:</p>
+<div class="arithmatex">\[
+N_C \exp\!\left(-\frac{E_C - E_F}{k_BT}\right) = N_V \exp\!\left(-\frac{E_F - E_V}{k_BT}\right)
+\]</div>
+<p>Solving:</p>
+<div class="arithmatex">\[
+E_i \equiv E_F\Big|_{\text{intrinsic}} = \frac{E_C + E_V}{2} + \frac{k_BT}{2}\ln\frac{N_V}{N_C} = E_{\text{midgap}} + \frac{3k_BT}{4}\ln\frac{m_{dos,p}^*}{m_{dos,n}^*}
+\]</div>
+<p>The second term corrects for the asymmetry between <span class="arithmatex">\(N_C\)</span> and <span class="arithmatex">\(N_V\)</span>. For silicon (<span class="arithmatex">\(m_{dos,p}^* &gt; m_{dos,n}^*\)</span>), <span class="arithmatex">\(E_i\)</span> lies slightly below the midgap — about 7 meV below <span class="arithmatex">\(E_{\text{midgap}}\)</span> at 300 K, a negligible correction in most calculations. The label <span class="arithmatex">\(E_i\)</span> denotes the <strong>intrinsic Fermi level</strong> and serves as a convenient reference energy throughout the course: <span class="arithmatex">\(n = n_i\exp[(E_F-E_i)/k_BT]\)</span> and <span class="arithmatex">\(p = n_i\exp[(E_i-E_F)/k_BT]\)</span>.</p>
+<h2 id="the-law-of-mass-action">The Law of Mass Action</h2>
+<p>The product <span class="arithmatex">\(n \cdot p\)</span> is independent of Fermi level position:</p>
+<div class="arithmatex">\[
+\boxed{n \cdot p = n_i^2 = N_C N_V \exp\!\left(-\frac{E_g}{k_BT}\right)}
+\]</div>
+<p>This is the <strong>law of mass action</strong> — a direct analog of the chemical equilibrium constant for the reaction <span class="arithmatex">\(\emptyset \rightleftharpoons e^- + h^+\)</span>. It holds in thermal equilibrium regardless of doping: if doping increases <span class="arithmatex">\(n\)</span>, then <span class="arithmatex">\(p\)</span> decreases such that their product remains <span class="arithmatex">\(n_i^2\)</span>. This constraint links carrier concentrations across all equilibrium semiconductor physics.</p>
+<h2 id="the-charge-neutrality-condition">The Charge Neutrality Condition</h2>
+<p>In a semiconductor with donor density <span class="arithmatex">\(N_D\)</span> and acceptor density <span class="arithmatex">\(N_A\)</span>, equilibrium requires that the total charge is zero:</p>
+<div class="arithmatex">\[
+n + N_A^- = p + N_D^+
+\]</div>
+<p>where <span class="arithmatex">\(N_D^+\)</span> is the density of ionized donors (positive charge) and <span class="arithmatex">\(N_A^-\)</span> is the density of ionized acceptors. For complete ionization (the common room-temperature approximation):</p>
+<div class="arithmatex">\[
+n + N_A = p + N_D
+\]</div>
+<p>Combined with the law of mass action <span class="arithmatex">\(np = n_i^2\)</span>, these two equations determine <span class="arithmatex">\(n\)</span> and <span class="arithmatex">\(p\)</span> for any doping condition. This is the foundation of all extrinsic carrier calculations in Chapter 7.</p>
+<h4 id="diagram-temperature-dependence-of-ni-explorer">Diagram: Temperature Dependence of ni Explorer</h4>
+<iframe src="../../sims/intrinsic-concentration-temperature/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/intrinsic-concentration-temperature/main.html">Run Temperature Dependence of ni Explorer Fullscreen</a></p>
+<iframe src="../../sims/intrinsic-concentration-temperature/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/intrinsic-concentration-temperature/main.html">Run Temperature Dependence of ni Explorer Fullscreen</a></p>
+<details>
+<summary>Temperature Dependence of n_i Explorer</summary>
+<p>Type: MicroSim
+<strong>sim-id:</strong> intrinsic-concentration-temperature<br/>
+<strong>Library:</strong> Chart.js<br/>
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning objective:</strong> Students will calculate intrinsic carrier concentration as a function of temperature for multiple materials and evaluate (Evaluate, L5) which materials are suitable for high-temperature operation.</p>
+<p><strong>Canvas size:</strong> 780 × 480 px, responsive.</p>
+<p><strong>Chart type:</strong> Line chart (Chart.js) with a logarithmic y-axis.</p>
+<p><strong>Dataset:</strong> For each material, compute <span class="arithmatex">\(n_i(T) = \sqrt{N_C(T)N_V(T)}\exp(-E_g/2k_BT)\)</span> from T = 200 K to T = 700 K in 10 K steps. Include Si (E_g=1.12 eV), Ge (E_g=0.66 eV), GaAs (E_g=1.42 eV), GaN (E_g=3.4 eV). Use appropriate effective masses for N_C and N_V scaling (~T^{3/2}).</p>
+<p><strong>Visual:</strong>
+- X-axis: Temperature T (K), 200–700 K.
+- Y-axis: n_i (cm⁻³), log scale, 10⁻¹⁰ to 10²⁰.
+- Four colored lines (Si=blue, Ge=green, GaAs=orange, GaN=red).
+- Horizontal dashed reference lines at n_i = 10^15 (typical light doping level) and n_i = 10^10 (Si at 300 K).
+- Draw a vertical dashed line at T = 300 K.</p>
+<p><strong>Interaction:</strong>
+- Hovering over any point shows: material, temperature, n_i value, and whether the device would be in the intrinsic regime at that T for a given doping level (configurable via dropdown: "Doping N_D = 10^15, 10^16, 10^17 cm⁻³").
+- Clicking a material line highlights it and shows the approximate maximum safe operating temperature (where n_i ~ N_D/10).</p>
+<p><strong>Implementation:</strong> Chart.js v4, single HTML file. Computed n_i values precomputed and stored as arrays. Parent canvas to document.querySelector('main').</p>
+</details>
+<div class="admonition mascot-warning">
+<p class="admonition-title">n_i for Si at 300 K = 9.65×10⁹ cm⁻³. Memorize this number. It will follow you for the rest of your career.</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Nova cautioning">
+Silicon's intrinsic carrier concentration of ~10¹⁰ cm⁻³ at room temperature seems small against a total silicon atom density of 5×10²² cm⁻³ — one intrinsic carrier per 5 trillion atoms. But <span class="arithmatex">\(n_i\)</span> sets the baseline below which you cannot make effective transistors: if your doping level <span class="arithmatex">\(N_D\)</span> gets anywhere near <span class="arithmatex">\(n_i\)</span>, your semiconductor is effectively intrinsic and your transistor won't turn off. The rule of thumb: for a functional device, you need <span class="arithmatex">\(N_D \gg n_i\)</span> — in practice <span class="arithmatex">\(N_D &gt; 10^{14}\)</span> cm⁻³ minimum. Also note: the commonly cited <span class="arithmatex">\(n_i = 1.45 \times 10^{10}\)</span> cm⁻³ for silicon is a historical value based on older effective mass data; the current best value is <span class="arithmatex">\(9.65 \times 10^9\)</span> cm⁻³. Textbook to textbook discrepancies in this value are common. Don't be alarmed — they're all within a factor of two of each other, which is within the exponential sensitivity of the formula.</p>
+</div>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li><strong>Fermi-Dirac distribution</strong>: <span class="arithmatex">\(f(E) = 1/[1+\exp((E-E_F)/k_BT)]\)</span>. At <span class="arithmatex">\(E = E_F\)</span>, <span class="arithmatex">\(f = 0.5\)</span>. The Fermi level is the energy at which the occupation probability is exactly one-half.</li>
+<li><strong>Maxwell-Boltzmann approximation</strong> applies when <span class="arithmatex">\(E_C - E_F \gg k_BT\)</span> (non-degenerate semiconductors), giving <span class="arithmatex">\(f(E) \approx e^{-(E-E_F)/k_BT}\)</span>.</li>
+<li><strong>Effective density of states</strong>: <span class="arithmatex">\(N_C = 2(2\pi m_{dos,n}^* k_BT/h^2)^{3/2}\)</span> and <span class="arithmatex">\(N_V = 2(2\pi m_{dos,p}^* k_BT/h^2)^{3/2}\)</span>. These represent the effective number of available states condensed to the band edges.</li>
+<li><strong>Carrier concentrations</strong>: <span class="arithmatex">\(n = N_C\exp(-(E_C-E_F)/k_BT)\)</span>, <span class="arithmatex">\(p = N_V\exp(-(E_F-E_V)/k_BT)\)</span>.</li>
+<li><strong>Intrinsic carrier concentration</strong>: <span class="arithmatex">\(n_i = \sqrt{N_CN_V}\exp(-E_g/2k_BT)\)</span>. For Si: <span class="arithmatex">\(n_i = 9.65 \times 10^9\)</span> cm⁻³ at 300 K. Exponentially sensitive to <span class="arithmatex">\(E_g\)</span> and <span class="arithmatex">\(T\)</span>.</li>
+<li><strong>Intrinsic Fermi level</strong> <span class="arithmatex">\(E_i\)</span> lies within the bandgap, near (but not exactly at) midgap: <span class="arithmatex">\(E_i = E_{\text{midgap}} + (3k_BT/4)\ln(m_{dos,p}^*/m_{dos,n}^*)\)</span>.</li>
+<li><strong>Law of mass action</strong>: <span class="arithmatex">\(np = n_i^2\)</span> in thermal equilibrium, regardless of doping.</li>
+<li><strong>Charge neutrality</strong>: <span class="arithmatex">\(n + N_A = p + N_D\)</span> determines equilibrium carrier concentrations when doping is present.</li>
+</ul>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You can now count electrons at the quantum level. That's a superpower.</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
+You just derived where electrons actually <em>are</em> in a semiconductor at thermal equilibrium. Fermi-Dirac statistics, effective density of states, intrinsic carrier concentration, the law of mass action — these are the four pillars of equilibrium semiconductor carrier physics. Everything you compute from here — doping effects, junction built-in potentials, recombination rates — rests on <span class="arithmatex">\(n = N_C\exp(-(E_C-E_F)/k_BT)\)</span> and <span class="arithmatex">\(np = n_i^2\)</span>. Chapter 7: we deliberately disturb this equilibrium by introducing dopant atoms. Things get interesting.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../05-bloch-theorem-band-theory/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5. Bloch Theorem and Band Theory">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                5. Bloch Theorem and Band Theory
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../07-doping-extrinsic-carriers/" class="md-footer__link md-footer__link--next" aria-label="Next: 7. Doping and Extrinsic Carriers">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                7. Doping and Extrinsic Carriers
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2207 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Covers bonding mechanisms in semiconductors and the full hierarchy of crystal defects — point defects, dislocations, stacking faults, grain boundaries, and surface/interface states — and their electrical consequences.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/03-crystal-bonding-defects/">
+      
+      
+        <link rel="prev" href="../02-crystal-lattice-structure/">
+      
+      
+        <link rel="next" href="../04-quantum-mechanics/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Crystal Bonding, Defects, and Surfaces - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#crystal-bonding-defects-and-surfaces" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Crystal Bonding, Defects, and Surfaces
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonding-in-semiconductors-a-brief-survey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bonding in Semiconductors: A Brief Survey
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bonding in Semiconductors: A Brief Survey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sp3-hybridization-in-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sp³ Hybridization in Detail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-defects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Point Defects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Point Defects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-point-defect-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Point Defect Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dislocations-line-defects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dislocations: Line Defects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#planar-defects-stacking-faults-and-grain-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planar Defects: Stacking Faults and Grain Boundaries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Planar Defects: Stacking Faults and Grain Boundaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-crystal-defect-hierarchy-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Crystal Defect Hierarchy Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#surface-and-interface-defects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Surface and Interface Defects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonding-in-semiconductors-a-brief-survey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bonding in Semiconductors: A Brief Survey
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bonding in Semiconductors: A Brief Survey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sp3-hybridization-in-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sp³ Hybridization in Detail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-defects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Point Defects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Point Defects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-point-defect-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Point Defect Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dislocations-line-defects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dislocations: Line Defects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#planar-defects-stacking-faults-and-grain-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planar Defects: Stacking Faults and Grain Boundaries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Planar Defects: Stacking Faults and Grain Boundaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-crystal-defect-hierarchy-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Crystal Defect Hierarchy Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#surface-and-interface-defects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Surface and Interface Defects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/03-crystal-bonding-defects/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="crystal-bonding-defects-and-surfaces">Crystal Bonding, Defects, and Surfaces</h1>
+<h2 id="summary">Summary</h2>
+<p>Building on the crystal structure framework, this chapter examines the bonding mechanisms that hold semiconductor crystals together and the defects that inevitably arise within them. Ionic, metallic, and van der Waals bonding are contrasted with the covalent sp³ hybridization already introduced in Chapter 2. The chapter then systematically covers the full defect hierarchy — point defects (vacancies, interstitials, substitutional impurities, Frenkel, and Schottky defects), line defects (edge and screw dislocations), planar defects (stacking faults and grain boundaries), and surface/interface defects (surface states, interface states, dangling bonds) — establishing how each type affects electrical properties.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 18 concepts from the learning graph:</p>
+<ol>
+<li>Ionic Bonding</li>
+<li>Metallic Bonding</li>
+<li>Van der Waals Forces</li>
+<li>Hybridization SP3</li>
+<li>Point Defects</li>
+<li>Vacancies</li>
+<li>Interstitials</li>
+<li>Substitutional Impurities</li>
+<li>Frenkel Defects</li>
+<li>Schottky Defects</li>
+<li>Dislocations</li>
+<li>Edge Dislocations</li>
+<li>Screw Dislocations</li>
+<li>Stacking Faults</li>
+<li>Grain Boundaries</li>
+<li>Surface States</li>
+<li>Interface States</li>
+<li>Dangling Bonds</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-intro-semiconductors/">Chapter 1: Introduction to Semiconductors and Bandgap Fundamentals</a></li>
+<li><a href="../02-crystal-lattice-structure/">Chapter 2: Crystal Lattice Structure and Symmetry</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Imperfection? Never heard of it. (Until now.)</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+Welcome to the chapter where we shatter the illusion of the perfect crystal. Chapters 1 and 2 treated semiconductor lattices as flawless geometric ideals. The truth? Every real crystal is peppered with vacancies, strained by dislocations, and haunted by dangling bonds at its surfaces. But here's the twist: <em>controlled</em> imperfection is the entire point of semiconductor engineering. Without substitutional impurities, there is no doping. Without surface states, there is no Si/SiO₂ interface — and no MOSFET. Learning to manage defects is learning to manage everything. Let's get excited about imperfection!</p>
+</div>
+<h2 id="bonding-in-semiconductors-a-brief-survey">Bonding in Semiconductors: A Brief Survey</h2>
+<p>Before turning to defects, it is useful to contrast the four principal bonding types found in solids: ionic, metallic, van der Waals, and covalent. Understanding the nature of covalent bonding — and its sp³ manifestation in semiconductors — explains both the crystal structures of Chapter 2 and the specific defects that matter in this chapter.</p>
+<p><strong>Ionic bonding</strong> arises from the electrostatic attraction between positively and negatively charged ions formed by electron transfer. Sodium chloride (NaCl) is the canonical example: each Na⁺ is surrounded by 6 Cl⁻ ions and vice versa. Ionic bonds are non-directional (the Coulomb force acts equally in all directions), strong, and produce materials that are hard, brittle, and electrically insulating. Compound semiconductors such as GaN and AlN have significant ionic character due to electronegativity differences between their constituent atoms, contributing to their spontaneous polarization.</p>
+<p><strong>Metallic bonding</strong> occurs when valence electrons delocalize completely, forming an electron "gas" that permeates a lattice of positive ion cores. Because valence electrons are free, metals are excellent electrical conductors. Metallic bonding is non-directional and produces close-packed structures (FCC, HCP) with coordination numbers of 12. No elemental semiconductors have metallic bonding under ambient conditions, though silicon undergoes a metallic transition above ~12 GPa.</p>
+<p><strong>Van der Waals forces</strong> are weak, short-range interactions between electrically neutral atoms or molecules arising from instantaneous dipole fluctuations (London dispersion forces). They dominate bonding in noble-gas solids, molecular crystals, and — crucially — layered two-dimensional materials such as graphene, MoS₂, and h-BN. These materials are held within each layer by strong covalent bonds, but adjacent layers interact only via van der Waals forces, enabling mechanical exfoliation. Van der Waals heterostructures are a growing frontier in semiconductor research.</p>
+<p><strong>Covalent bonding</strong> in semiconductors, as introduced in Chapter 2, places each Group IV atom in four directed bonds to its nearest neighbors via sp³ hybridization. The geometry of these bonds directly determines which defects are energetically possible and how they interact with electrical carriers.</p>
+<h3 id="sp3-hybridization-in-detail">sp³ Hybridization in Detail</h3>
+<p>In an isolated silicon atom, the ground-state configuration is [Ne] 3s² 3p², offering only two unpaired 3p electrons for bonding. To form four equivalent tetrahedral bonds, silicon promotes one 3s electron to the empty 3p orbital and hybridizes all four resulting orbitals into four equivalent <strong>sp³ hybrid orbitals</strong> through linear combinations:</p>
+<div class="arithmatex">\[
+|\psi_1\rangle = \tfrac{1}{2}(|s\rangle + |p_x\rangle + |p_y\rangle + |p_z\rangle)
+\]</div>
+<p>with three analogous expressions using sign combinations that place the four lobes toward tetrahedral corners. The energy cost of promotion (~1 eV) is more than recovered by forming four strong covalent bonds rather than two weaker ones. The Si-Si bond energy is approximately 3.4 eV.</p>
+<p>Two consequences dominate defect physics: first, the 109.47° tetrahedral bond angle is energetically enforced — any deviation introduces <strong>bond-angle strain</strong>. Second, each bonding orbital holds exactly two electrons; breaking a bond leaves a <strong>dangling bond</strong> — a half-filled sp³ orbital that acts as a localized electronic state deep in the bandgap.</p>
+<h2 id="point-defects">Point Defects</h2>
+<p>A <strong>point defect</strong> is a lattice disruption confined to a single atomic site (or a few neighboring sites). Point defects are thermodynamically unavoidable at any nonzero temperature, because the configurational entropy gained by distributing defects randomly through the crystal lowers the Gibbs free energy even when each defect costs energy to form. The equilibrium defect concentration is:</p>
+<div class="arithmatex">\[
+n_d = N \exp\!\left(-\frac{E_f}{k_B T}\right)
+\]</div>
+<p>where <span class="arithmatex">\(N\)</span> is the site density (~<span class="arithmatex">\(5 \times 10^{22}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> for silicon) and <span class="arithmatex">\(E_f\)</span> is the formation energy. At room temperature (<span class="arithmatex">\(k_BT \approx 0.026\)</span> eV), a defect with <span class="arithmatex">\(E_f = 2\)</span> eV has concentration ~<span class="arithmatex">\(10^{-11}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> — effectively zero. At typical silicon processing temperatures (900–1150°C, <span class="arithmatex">\(k_BT \approx 0.10\)</span>–0.12 eV), the same defect reaches concentrations of <span class="arithmatex">\(10^{12}\)</span>–<span class="arithmatex">\(10^{14}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>: detectable and important.</p>
+<p>Four point defect types are fundamental to semiconductors:</p>
+<p><strong>Vacancies</strong> are unoccupied lattice sites — a silicon atom missing from its position, leaving four dangling bonds pointing inward. The singly-negative vacancy (V⁻) in silicon has formation energy ~3.6 eV. Vacancies are mobile at elevated temperatures (migration energy ~0.45 eV in Si) and mediate dopant diffusion via the vacancy mechanism — every phosphorus or boron atom that diffuses through silicon owes its mobility partly to nearby vacancies providing a hopping mechanism.</p>
+<p><strong>Interstitials</strong> are extra atoms in off-lattice positions between regular sites. Self-interstitials in silicon have formation energies ~3.3–4.5 eV. Ion implantation — the standard technique for introducing dopants — creates interstitials in large numbers by collisional displacement of lattice atoms. The resulting <strong>transient enhanced diffusion (TED)</strong> of boron caused by interstitial supersaturation was a critical challenge in sub-0.25 μm transistor scaling in the 1990s.</p>
+<p><strong>Substitutional impurities</strong> are foreign atoms occupying regular lattice sites. This is the controlled version of point defects: when the foreign atom is a dopant (phosphorus in silicon for n-type, boron for p-type), the substitutional impurity is the entire engineering objective. Unintentional substitutional impurities — iron, copper, gold in silicon — introduce deep-level trap states in the midgap that act as efficient Shockley-Read-Hall recombination centers, reducing minority carrier lifetime from milliseconds to microseconds.</p>
+<p><strong>Frenkel defects</strong> are vacancy-interstitial pairs created when a lattice atom displaces itself into an interstitial position while leaving the original site vacant. The defect count within a region is preserved. Frenkel defects dominate in materials with large interstitial sites — notably silver halides (AgBr in photographic film) and in compound semiconductors where one sublattice more easily accommodates interstitials than the other.</p>
+<p><strong>Schottky defects</strong> are balanced pairs of vacancies (on both sublattices of a compound crystal) created when atoms migrate to the crystal surface. In a binary compound AB, a Schottky pair is one A-vacancy plus one B-vacancy, preserving stoichiometry. Schottky defects are the dominant intrinsic defect in many ionic crystals and in compound semiconductors grown under non-stoichiometric conditions.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">A vacancy is a feature, not a bug — when you put it there on purpose.</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova thinking">
+Here's a beautiful inversion: the same physics that makes unwanted vacancies and interstitials a headache is what makes <em>intentional</em> substitutional doping work. When you add phosphorus to silicon, you are deliberately introducing a foreign substitutional impurity that donates an electron to the conduction band. The entire transistor industry runs on controlled point defects. So when someone says "defects are bad," the complete answer is: "It depends entirely on whether you chose to put them there, and precisely where they sit in the bandgap." Semiconductor engineering is applied imperfection management. Welcome to the club.</p>
+</div>
+<p>The following table summarizes the five point defect types, their formation energies, and their electrical effects:</p>
+<table>
+<thead>
+<tr>
+<th>Defect Type</th>
+<th>Description</th>
+<th><span class="arithmatex">\(E_f\)</span> in Si</th>
+<th>Effect on Device</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vacancy (V)</td>
+<td>Missing lattice atom; 4 dangling bonds</td>
+<td>~3.6 eV (V⁻)</td>
+<td>Deep-level traps; mediates dopant diffusion</td>
+</tr>
+<tr>
+<td>Self-interstitial (I)</td>
+<td>Extra Si at off-lattice site</td>
+<td>~3.3–4.5 eV</td>
+<td>Causes transient enhanced diffusion (TED)</td>
+</tr>
+<tr>
+<td>Substitutional dopant</td>
+<td>Foreign atom on lattice site</td>
+<td>~0 eV (P, B in Si)</td>
+<td>Shallow donor or acceptor</td>
+</tr>
+<tr>
+<td>Frenkel pair</td>
+<td>V + nearby I, preserved stoichiometry</td>
+<td>Moderate</td>
+<td>Trapping in compound semiconductors</td>
+</tr>
+<tr>
+<td>Schottky defect</td>
+<td>Balanced vacancy pairs in compound</td>
+<td>Moderate</td>
+<td>Stoichiometry deviation; recombination</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-point-defect-visualizer">Diagram: Point Defect Visualizer</h4>
+<iframe src="../../sims/point-defect-visualizer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/point-defect-visualizer/main.html">Run Point Defect Visualizer Fullscreen</a></p>
+<iframe src="../../sims/point-defect-visualizer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/point-defect-visualizer/main.html">Run Point Defect Visualizer Fullscreen</a></p>
+<details>
+<summary>Point Defect Visualizer</summary>
+<p>Type: MicroSim
+<strong>sim-id:</strong> point-defect-visualizer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning objective:</strong> Students will identify the five point defect types in a crystal lattice cross-section and explain (Understand, L2) their effect on carrier behavior by clicking defect sites to reveal detailed descriptions.</p>
+<p><strong>Canvas size:</strong> 820 × 500 px, responsive — call updateCanvasSize() in setup().</p>
+<p><strong>Controls (p5.js built-in):</strong>
+- Select dropdown: "Highlight defect type" — "All defects", "Vacancies only", "Interstitials only", "Substitutional impurities", "Frenkel pairs", "Schottky defects". Default: "All defects".
+- Button: "Randomize positions" — redistributes defect locations randomly, keeping counts fixed.</p>
+<p><strong>Visual layout:</strong></p>
+<p>Left panel (65%): Top-down 2D view of a 10×10 section of a simple square lattice representing a crystal cross-section. Draw host atoms as filled light-blue circles (radius 14 px). Lattice spacing ~50 px.</p>
+<p>Place approximately 2–3 of each defect type at random lattice or interstitial positions:
+- Vacancy: empty dashed-circle outline in dark red; label "V".
+- Self-interstitial: small orange circle at midpoint between lattice sites; label "I".
+- Substitutional donor (P): green circle at lattice site; label "P⁺".
+- Substitutional deep trap (Au): purple circle at lattice site; label "Au".
+- Frenkel pair: a vacancy + nearby interstitial connected by a curved dashed arc.</p>
+<p>Hover over any defect: highlight with yellow glow; display tooltip showing defect name, mechanism, and electrical effect.
+Click any defect: open detail card in right panel.</p>
+<p>Right panel (35%): Detail card for the clicked defect:
+- Name and dimensionality (0D point defect).
+- Formation mechanism.
+- Charge states possible.
+- Electrical impact (carrier concentration, lifetime, mobility).
+- Real-world consequence (one sentence).</p>
+<p><strong>Behavior:</strong> Dropdown grays out non-selected defect types. "Randomize" regenerates positions. On resize: updateCanvasSize() reflows proportionally.</p>
+<p><strong>Implementation:</strong> p5.js, single HTML file. Use createSelect(), createButton(). Parent canvas to document.querySelector('main').</p>
+</details>
+<h2 id="dislocations-line-defects">Dislocations: Line Defects</h2>
+<p>A <strong>dislocation</strong> is a one-dimensional (line) defect — a disruption extending along a line through the crystal rather than confined to a single point. Dislocations were hypothesized in 1934 independently by Taylor, Orowan, and Polanyi to explain the enormous gap between the theoretical and observed yield strengths of metals (a ~1000× discrepancy), and were first imaged directly by transmission electron microscopy in the 1950s.</p>
+<p>The fundamental parameter characterizing a dislocation is the <strong>Burgers vector</strong> <span class="arithmatex">\(\mathbf{b}\)</span>, which quantifies the magnitude and direction of the lattice distortion. It is determined by the Burgers circuit: draw a closed path around the dislocation core in a perfect reference crystal, then trace the same path around the dislocation — the vector needed to close the loop is <span class="arithmatex">\(\mathbf{b}\)</span>.</p>
+<p><strong>Edge dislocations</strong> consist of an extra half-plane of atoms inserted into the crystal. The dislocation line runs along the edge of this half-plane, and the Burgers vector is <strong>perpendicular</strong> to the dislocation line. Atoms above the half-plane are under compressive stress; atoms below are under tensile stress. This stress field extends several nanometers from the dislocation core and scatters conduction electrons and holes, reducing carrier mobility.</p>
+<p><strong>Screw dislocations</strong> arise when one part of the crystal is sheared by one lattice vector relative to the other. The resulting structure is helical: traversing a closed path around the dislocation line advances you by one lattice spacing along the line — like the thread of a screw (hence the name). The Burgers vector is <strong>parallel</strong> to the dislocation line. Screw dislocations are critical in crystal growth: the step at a screw dislocation provides a perpetual attachment site for incoming atoms, enabling spiral growth (Burton-Cabrera-Frank mechanism) without requiring the nucleation of new crystalline layers.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Edge Dislocation</th>
+<th>Screw Dislocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\mathbf{b}\)</span> direction</td>
+<td>⊥ to dislocation line</td>
+<td>∥ to dislocation line</td>
+</tr>
+<tr>
+<td>Physical picture</td>
+<td>Extra half-plane of atoms</td>
+<td>Helical lattice shear</td>
+</tr>
+<tr>
+<td>Stress field</td>
+<td>Mixed tensile/compressive</td>
+<td>Shear only</td>
+</tr>
+<tr>
+<td>Role in growth</td>
+<td>Minor</td>
+<td>Spiral growth (BCF mechanism)</td>
+</tr>
+<tr>
+<td>Primary semiconductor concern</td>
+<td>Misfit/threading dislocations</td>
+<td>Screw components in misfit dislocations</td>
+</tr>
+</tbody>
+</table>
+<p>In semiconductor heterostructures, lattice mismatch generates <strong>misfit dislocations</strong> at the epitaxial interface. If the epilayer exceeds the <strong>critical thickness</strong> (derived by Matthews and Blakeslee from an energy balance between elastic strain and dislocation formation), misfit dislocations nucleate and generate <strong>threading dislocations</strong> — line defects propagating from the interface through the active device layers to the surface. Threading dislocation densities in GaN-on-sapphire are typically <span class="arithmatex">\(10^8\)</span>–<span class="arithmatex">\(10^{10}\)</span> cm<span class="arithmatex">\(^{-2}\)</span>, creating recombination centers that limit LED efficiency and reduce HEMT carrier mobility.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Push a dislocation too hard and it reproduces. Alarming but true.</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Nova cautioning">
+Dislocations multiply when mechanically stressed via the <strong>Frank-Read mechanism</strong>: a pinned dislocation segment bows outward under applied stress, wraps around its pinning points, and generates new dislocation loops. This is why exceeding the critical thickness in a strained heterostructure is not a gentle degradation — it is a cascade. A 1% exceedance above the critical thickness can lead to a 1000× increase in threading dislocation density. This is not linear. Check the critical thickness formula <em>before</em> growing your heterostructure, not after measuring your device's carrier lifetime and wondering why it's terrible.</p>
+</div>
+<h2 id="planar-defects-stacking-faults-and-grain-boundaries">Planar Defects: Stacking Faults and Grain Boundaries</h2>
+<p><strong>Stacking faults</strong> are two-dimensional disruptions in the normal stacking sequence of crystal planes. In an FCC crystal, close-packed <span class="arithmatex">\(\{111\}\)</span> planes follow the pattern ABCABCABC…. A stacking fault is a local deviation: ABCABABC (intrinsic fault, one layer missing) or ABCABACBC (extrinsic fault, one layer inserted). Stacking faults in silicon can form during high-temperature oxidation — <strong>oxidation-induced stacking faults (OSF)</strong> — and were a historical yield concern in early bipolar and CMOS processing. They do not typically limit modern CMOS devices but remain a process monitoring metric.</p>
+<p><strong>Grain boundaries</strong> separate crystal grains with different orientations in polycrystalline material. They contain high densities of dangling bonds, strained bonds, and segregated impurities. Grain boundaries scatter both electrons and holes efficiently — mobility in polycrystalline silicon (poly-Si) is 10–100× lower than in single-crystal silicon — and they act as efficient recombination centers, reducing minority carrier lifetime dramatically. Thin-film transistors (TFTs) in LCD backplane circuits use poly-Si, and the grain size (typically 50–500 nm after excimer laser annealing) directly limits the achievable field-effect mobility.</p>
+<h4 id="diagram-crystal-defect-hierarchy-network">Diagram: Crystal Defect Hierarchy Network</h4>
+<iframe src="../../sims/defect-hierarchy-network/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/defect-hierarchy-network/main.html">Run Crystal Defect Hierarchy Network Fullscreen</a></p>
+<iframe src="../../sims/defect-hierarchy-network/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/defect-hierarchy-network/main.html">Run Crystal Defect Hierarchy Network Fullscreen</a></p>
+<details>
+<summary>Crystal Defect Hierarchy Network</summary>
+<p>Type: MicroSim
+<strong>sim-id:</strong> defect-hierarchy-network<br/>
+<strong>Library:</strong> vis-network<br/>
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning objective:</strong> Students will classify crystal defects by dimensionality and identify (Analyze, L4) which device parameters each defect type degrades, via a clickable hierarchical network diagram.</p>
+<p><strong>Canvas size:</strong> 800 × 500 px, responsive.</p>
+<p><strong>Graph structure (vis-network):</strong>
+Root node: "Crystal Defects" — large, gray rectangle.
+Level-1 nodes (dimensionality categories): "0D: Point Defects" (blue), "1D: Line Defects" (orange), "2D: Planar Defects" (green), "3D: Volume Defects" (red).
+Level-2 nodes (specific types):
+- Under 0D: "Vacancy", "Self-Interstitial", "Substitutional Impurity", "Frenkel Pair", "Schottky Defect"
+- Under 1D: "Edge Dislocation", "Screw Dislocation"
+- Under 2D: "Stacking Fault", "Grain Boundary", "Surface State", "Interface State"
+- Under 3D: "Precipitate", "Void"</p>
+<p>All level-2 nodes are clickable. Clicking opens an infobox overlay with: name, dimensionality, formation mechanism, degraded device parameters (mobility, lifetime, <span class="arithmatex">\(V_T\)</span>, etc.), and a real example.</p>
+<p>Layout: hierarchical top-to-bottom. Edge arrows from root → level-1 → level-2. Edge labels: "includes".</p>
+<p><strong>Implementation:</strong> vis-network, single HTML file. Node click event → infobox rendered in right panel. Canvas parents to document.querySelector('main').</p>
+</details>
+<h2 id="surface-and-interface-defects">Surface and Interface Defects</h2>
+<p>The surface of a crystal is the ultimate planar defect: the crystal simply stops. The periodic boundary conditions that produce the beautiful bulk band structure no longer apply at the surface, and every atom on the outermost plane has fewer than four bonding partners — it has unsatisfied bonds pointing outward into the vacuum. These are <strong>dangling bonds</strong>.</p>
+<p>A dangling bond is a half-filled sp³ orbital. On an unreconstructed Si(100) surface, each surface atom would have two dangling bonds. In reality, adjacent surface atoms pair up and form dimers in the <strong>Si(100)-(2×1) reconstruction</strong>, reducing the dangling bond density by ~50% and lowering the surface energy. Residual dangling bonds at step edges and kink sites remain and act as adsorption sites for impurity atoms and as electronic traps.</p>
+<p><strong>Surface states</strong> are allowed energy levels within the semiconductor bandgap that exist at the surface due to dangling bonds and reconstructions. Their occupancy (charged or neutral) depends on their energy relative to the Fermi level. A high density of surface states <strong>pins the Fermi level</strong> at the surface: applied gate voltage is absorbed by charging or discharging surface states rather than modulating the band bending. Fermi level pinning at metal-semiconductor contacts determines the Schottky barrier height and explains why measured barrier heights often differ from the Schottky-Mott prediction based on work function differences alone.</p>
+<p><strong>Interface states</strong> (<span class="arithmatex">\(D_{it}\)</span>, units: cm<span class="arithmatex">\(^{-2}\)</span>·eV<span class="arithmatex">\(^{-1}\)</span>) are the analog at the semiconductor-dielectric boundary. The thermally oxidized Si/SiO₂ interface achieves <span class="arithmatex">\(D_{it} &lt; 10^{10}\)</span> cm<span class="arithmatex">\(^{-2}\)</span>·eV<span class="arithmatex">\(^{-1}\)</span> — fewer than 1 interface trap per <span class="arithmatex">\(10^5\)</span> surface atoms — through the formation of a nearly perfect SiO₂ glass that satisfies nearly all surface bonds. This extraordinary quality is silicon's decisive competitive advantage and the reason CMOS scaling continued for six decades. GaN/dielectric interface state densities remain <span class="arithmatex">\(10^{11}\)</span>–<span class="arithmatex">\(10^{12}\)</span> cm<span class="arithmatex">\(^{-2}\)</span>·eV<span class="arithmatex">\(^{-1}\)</span> — 100–1000× worse — limiting GaN MOSFET threshold voltage stability and is one of the defining challenges in wide-bandgap power device research.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Surface physics is genuinely hard. You're in excellent company being confused.</p>
+<p><img src="../../img/mascot/encouraging.png" class="mascot-admonition-img" alt="Nova encouraging">
+Surface states involve broken symmetry, quantum confinement, localized gap states, and self-consistent electrostatics all at once. If it doesn't click immediately, that's appropriate — the field took decades to untangle these concepts. The key insight to hold onto: <strong>a dangling bond is just an atom that wanted four bonds and only got three</strong>. That unsatisfied orbital sticks into the gap as a localized state. Everything else — Fermi level pinning, interface traps, <span class="arithmatex">\(D_{it}\)</span> — follows from that one simple picture. You will revisit all of this quantitatively in Chapter 13 (MOS capacitor physics), where interface state density becomes a measured device parameter with real consequences for threshold voltage and subthreshold slope.</p>
+</div>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<p>This chapter surveyed the imperfections that distinguish real crystals from the idealized structures of Chapters 1 and 2:</p>
+<ul>
+<li>The four bonding types — <strong>ionic</strong>, <strong>metallic</strong>, <strong>van der Waals</strong>, and <strong>covalent</strong> — explain crystal structure preferences. The <strong>sp³ hybridization</strong> of Group IV and III-V semiconductors enforces tetrahedral coordination and produces dangling bonds when any bond is broken.</li>
+<li><strong>Point defects</strong> (vacancies, interstitials, substitutional impurities, Frenkel pairs, Schottky defects) have equilibrium concentrations <span class="arithmatex">\(n_d = N\exp(-E_f/k_BT)\)</span>. Intentional substitutional dopants are beneficial; unintentional deep-level impurities are traps.</li>
+<li><strong>Edge and screw dislocations</strong> are line defects characterized by the Burgers vector <span class="arithmatex">\(\mathbf{b}\)</span>. They scatter carriers, reduce mobility, and multiply under stress (Frank-Read mechanism). Misfit and threading dislocations from lattice-mismatched growth degrade device performance.</li>
+<li><strong>Stacking faults</strong> disrupt close-packed plane sequences. <strong>Grain boundaries</strong> in polycrystalline semiconductors scatter carriers and reduce minority carrier lifetime, limiting thin-film transistor performance.</li>
+<li><strong>Dangling bonds</strong> at crystal surfaces produce <strong>surface states</strong> in the bandgap; at semiconductor-dielectric interfaces they are <strong>interface states</strong> (<span class="arithmatex">\(D_{it}\)</span>). The Si/SiO₂ interface's record-low <span class="arithmatex">\(D_{it} &lt; 10^{10}\)</span> cm<span class="arithmatex">\(^{-2}\)</span>·eV<span class="arithmatex">\(^{-1}\)</span> is a primary reason silicon dominates CMOS.</li>
+</ul>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Perfect understanding of imperfection — well earned!</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
+You now command the full defect hierarchy of semiconductor crystals — from the lonely single-atom vacancy to the sprawling grain boundary. More importantly, you can distinguish the <em>disastrous</em> from the <em>deliberate</em>: threading dislocations from uncontrolled mismatch vs. substitutional dopants placed precisely where needed. The Si/SiO₂ interface's exceptional <span class="arithmatex">\(D_{it}\)</span> is not an accident; it is decades of materials engineering. You now know what's being engineered and why. Chapter 4 awaits: we finally build the quantum mechanics required to <em>derive</em> the band structures we have been confidently sketching.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../02-crystal-lattice-structure/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2. Crystal Lattice Structure">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                2. Crystal Lattice Structure
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../04-quantum-mechanics/" class="md-footer__link md-footer__link--next" aria-label="Next: 4. Quantum Mechanics">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                4. Quantum Mechanics
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

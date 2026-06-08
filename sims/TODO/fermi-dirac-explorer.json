@@ -1,0 +1,14 @@
+{
+  "sim_id": "fermi-dirac-explorer",
+  "diagram_name": "Fermi-Dirac Distribution and Carrier Concentration Explorer",
+  "chapter_number": 6,
+  "chapter_title": "Fermi-Dirac Statistics and Intrinsic Carrier Concentrations",
+  "chapter_dir": "06-fermi-dirac-statistics",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": "Students will apply the Fermi-Dirac distribution to calculate electron and hole concentrations in a semiconductor and explain (Apply, L3) how temperature and Fermi level position determine n and p.",
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: MicroSim\n**sim-id:** fermi-dirac-explorer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\n**Learning objective:** Students will apply the Fermi-Dirac distribution to calculate electron and hole concentrations in a semiconductor and explain (Apply, L3) how temperature and Fermi level position determine n and p.\n\n**Canvas size:** 900 × 540 px, responsive.\n\n**Controls:**\n- Slider: Temperature T, 100–700 K, default 300 K. Label: \"Temperature (K):\"\n- Slider: Fermi level position \\(E_F - E_i\\), −0.6 to +0.6 eV, default 0 eV (intrinsic). Label: \"E_F − E_i (eV):\"\n- Select: Material — \"Silicon (E_g=1.12 eV)\", \"GaAs (E_g=1.42 eV)\", \"Ge (E_g=0.66 eV)\". Default: Si.\n\n**Visual layout:**\n\nLeft panel (55%): Energy-axis diagram (vertical energy axis). Draw:\n- Horizontal bands for CB (top, blue) and VB (bottom, green), with the gap in between.\n- Horizontal dashed lines for E_C, E_V, E_F (moveable), E_i (midgap reference).\n- Beside the bands, draw the Fermi-Dirac function f(E) as a curve (sigmoid), with the 50% point exactly at E_F.\n- Shade the CB region with intensity proportional to n (computed from N_C formula) — darker shade = more electrons.\n- Shade the VB region with intensity proportional to p.\n\nRight panel (45%): Computed values:\n- \\(f(E_C)\\) = probability of occupying the CB edge.\n- n = electron concentration (cm⁻³).\n- p = hole concentration (cm⁻³).\n- n·p product (should equal \\(n_i^2\\)).\n- \\(n_i\\) (intrinsic concentration at current T).\n- Display: \"Material class: n-type / p-type / intrinsic\" based on whether n > p, n < p, or n ≈ p.\n\n**Behavior:** All sliders update computed values and visualization in real time. On resize: updateCanvasSize() reflows.\n\n**Implementation:** p5.js, single HTML file. Use built-in createSlider(), createSelect(). Parent canvas to document.querySelector('main')."
+}

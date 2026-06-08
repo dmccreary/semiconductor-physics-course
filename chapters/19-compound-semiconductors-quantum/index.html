@@ -1,0 +1,2366 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="GaAs, InP, GaN, SiC material properties, quantum well/wire/dot energy levels, 2DEG formation, and HEMT structure and operation">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/19-compound-semiconductors-quantum/">
+      
+      
+        <link rel="prev" href="../18-photodetectors-solar-cells/">
+      
+      
+        <link rel="next" href="../20-strained-si-2d-power/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>III-V/II-VI Semiconductors, Quantum Nanostructures, and HEMTs - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#iii-vii-vi-semiconductors-quantum-nanostructures-and-hemts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              III-V/II-VI Semiconductors, Quantum Nanostructures, and HEMTs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#191-the-iii-v-compound-semiconductor-family" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.1 The III-V Compound Semiconductor Family
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19.1 The III-V Compound Semiconductor Family">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1911-gaas-gallium-arsenide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.1.1 GaAs (Gallium Arsenide)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1912-inp-indium-phosphide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.1.2 InP (Indium Phosphide)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1913-ingaas-and-algaas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.1.3 InGaAs and AlGaAs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1914-ingaasp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.1.4 InGaAsP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#192-ii-vi-and-wide-bandgap-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.2 II-VI and Wide-Bandgap Semiconductors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19.2 II-VI and Wide-Bandgap Semiconductors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1921-gan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.2.1 GaN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1922-sic-silicon-carbide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.2.2 SiC (Silicon Carbide)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#193-quantum-well-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.3 Quantum Well Structures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19.3 Quantum Well Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1931-quantum-well-energy-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.3.1 Quantum Well Energy Levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1932-subband-structure-and-density-of-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.3.2 Subband Structure and Density of States
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#194-quantum-wires-and-quantum-dots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.4 Quantum Wires and Quantum Dots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#195-the-2d-electron-gas-and-hemt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.5 The 2D Electron Gas and HEMT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19.5 The 2D Electron Gas and HEMT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1951-2deg-formation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.5.1 2DEG Formation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1952-hemt-structure-and-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.5.2 HEMT Structure and Operation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#191-the-iii-v-compound-semiconductor-family" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.1 The III-V Compound Semiconductor Family
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19.1 The III-V Compound Semiconductor Family">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1911-gaas-gallium-arsenide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.1.1 GaAs (Gallium Arsenide)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1912-inp-indium-phosphide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.1.2 InP (Indium Phosphide)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1913-ingaas-and-algaas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.1.3 InGaAs and AlGaAs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1914-ingaasp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.1.4 InGaAsP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#192-ii-vi-and-wide-bandgap-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.2 II-VI and Wide-Bandgap Semiconductors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19.2 II-VI and Wide-Bandgap Semiconductors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1921-gan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.2.1 GaN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1922-sic-silicon-carbide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.2.2 SiC (Silicon Carbide)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#193-quantum-well-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.3 Quantum Well Structures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19.3 Quantum Well Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1931-quantum-well-energy-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.3.1 Quantum Well Energy Levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1932-subband-structure-and-density-of-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.3.2 Subband Structure and Density of States
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#194-quantum-wires-and-quantum-dots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.4 Quantum Wires and Quantum Dots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#195-the-2d-electron-gas-and-hemt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.5 The 2D Electron Gas and HEMT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19.5 The 2D Electron Gas and HEMT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1951-2deg-formation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.5.1 2DEG Formation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1952-hemt-structure-and-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.5.2 HEMT Structure and Operation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/19-compound-semiconductors-quantum/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="iii-vii-vi-semiconductors-quantum-nanostructures-and-hemts">III-V/II-VI Semiconductors, Quantum Nanostructures, and HEMTs</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter moves beyond silicon to the compound semiconductors and quantum-confined structures that enable high-speed electronics and advanced photonics. III-V and II-VI compound semiconductors — GaAs, InP, InGaAs, AlGaAs, InGaAsP, GaN, AlGaN, and SiC — are surveyed for their bandgaps, carrier mobilities, and structural properties. Quantum wells, wires, and dots are analyzed as systems where carrier motion is confined to fewer than three dimensions, quantizing energy into subbands and producing the step-like density-of-states functions introduced in Chapter 5. The two-dimensional electron gas (2DEG) that forms at an AlGaAs/GaAs or AlGaN/GaN heterointerface provides the high-mobility channel for high electron mobility transistors (HEMTs), including pseudomorphic and metamorphic variants. Quantum well lasers are introduced as devices that exploit the modified density of states for lower threshold currents.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 30 concepts from the learning graph:</p>
+<ol>
+<li>Quantum Well Laser</li>
+<li>III-V Semiconductor Compounds</li>
+<li>GaAs Properties</li>
+<li>InP Properties</li>
+<li>InGaAs Properties</li>
+<li>AlGaAs Properties</li>
+<li>InGaAsP Properties</li>
+<li>II-VI Semiconductor Compounds</li>
+<li>Wide-Bandgap Semiconductors</li>
+<li>GaN Material Properties</li>
+<li>AlGaN Alloy</li>
+<li>AlGaN/GaN Heterostructure</li>
+<li>SiC Polytypes</li>
+<li>SiC Properties</li>
+<li>Quantum Well Structure</li>
+<li>Quantum Well Energy Levels</li>
+<li>Quantum Well Wave Functions</li>
+<li>Subband Structure</li>
+<li>Quantum Wire</li>
+<li>Quantum Dot</li>
+<li>Quantum Dot Energy Levels</li>
+<li>Size Quantization</li>
+<li>Confinement Energy</li>
+<li>2D Electron Gas</li>
+<li>2DEG Formation</li>
+<li>High Electron Mobility Transistor</li>
+<li>HEMT Structure</li>
+<li>HEMT Operation</li>
+<li>Pseudomorphic HEMT</li>
+<li>Metamorphic HEMT</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-intro-semiconductors/">Chapter 1: Introduction to Semiconductors and Bandgap Fundamentals</a></li>
+<li><a href="../04-quantum-mechanics/">Chapter 4: Quantum Mechanics: Wave Equations and Atomic Structure</a></li>
+<li><a href="../05-bloch-theorem-band-theory/">Chapter 5: Bloch's Theorem, Band Formation, and E-k Diagrams</a></li>
+<li><a href="../12-pn-junction-dynamics/">Chapter 12: P-N Junction: Dynamics, Breakdown, and Heterojunctions</a></li>
+<li><a href="../13-metal-semiconductor-mos/">Chapter 13: Metal-Semiconductor Contacts and MOS Physics</a></li>
+<li><a href="../15-jfet-mesfet-mosfet/">Chapter 15: JFET, MESFET, and Long-Channel MOSFET Fundamentals</a></li>
+<li><a href="../17-leds-laser-diodes/">Chapter 17: Optoelectronic Sources: LEDs and Laser Diodes</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Nova on Compound Semiconductors: When Silicon Just Isn't Enough</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+Silicon is a marvel. But silicon is slow (relatively), absorbs light poorly, can't glow efficiently, and breaks down at high voltages faster than competing materials. For the cases where silicon falls short — high-frequency amplifiers, blue LEDs, power electronics, quantum computing — we turn to compound semiconductors. Welcome to the periodic table's broader neighborhood: GaAs, InP, GaN, SiC, and their quantum-confined cousins. The physics you know still applies — but now with tuneable bandgaps, 2D electron gases, and quantum boxes the size of a few atoms.</p>
+</div>
+<h2 id="191-the-iii-v-compound-semiconductor-family">19.1 The III-V Compound Semiconductor Family</h2>
+<p><strong>III-V semiconductors</strong> are binary, ternary, and quaternary compounds formed from elements in groups III and V of the periodic table. They offer tunable bandgaps across the visible and near-infrared spectrum, often with direct bandgaps (unlike silicon's indirect gap), and frequently with superior electron mobility.</p>
+<h3 id="1911-gaas-gallium-arsenide">19.1.1 GaAs (Gallium Arsenide)</h3>
+<ul>
+<li><strong>Bandgap:</strong> 1.42 eV direct (300 K)</li>
+<li><strong>Electron mobility:</strong> 8500 cm²/V·s (6× silicon)</li>
+<li><strong>Hole mobility:</strong> 400 cm²/V·s</li>
+<li><strong>Substrate:</strong> 6-inch semi-insulating GaAs ($150–300/wafer)</li>
+</ul>
+<p>GaAs was the first compound semiconductor to achieve practical devices. Its combination of high electron mobility and direct gap makes it ideal for microwave amplifiers (MESFET, HEMT, HBT), laser diodes (800–1000 nm), and solar cells (space applications, concentrators). The semi-insulating substrate provides natural isolation — no need for well implants or SOI.</p>
+<p>Limitation: GaAs lacks a stable native oxide (unlike Si/SiO₂), making it incompatible with conventional MOS processing. GaAs MOSFETs were elusive for decades; modern approaches use ALD-deposited Al₂O₃ as the gate dielectric.</p>
+<h3 id="1912-inp-indium-phosphide">19.1.2 InP (Indium Phosphide)</h3>
+<ul>
+<li><strong>Bandgap:</strong> 1.35 eV direct (300 K)</li>
+<li><strong>Electron mobility:</strong> 5400 cm²/V·s</li>
+<li><strong>Key property:</strong> Lattice-matched to InGaAs (0.53 In fraction) at <span class="arithmatex">\(\lambda\)</span> = 1310/1550 nm</li>
+</ul>
+<p>InP is the substrate for telecommunication laser diodes and photodetectors at the fiber-optic wavelengths. The InGaAs/InP material system lattice-match enables high-efficiency detectors and low-threshold lasers. InP-based HEMTs (using In-rich InGaAs channels) achieve the highest electron mobilities and transistor speeds of any commercial semiconductor — 633 GHz <span class="arithmatex">\(f_T\)</span> has been demonstrated.</p>
+<h3 id="1913-ingaas-and-algaas">19.1.3 InGaAs and AlGaAs</h3>
+<p><strong>In<span class="arithmatex">\(_x\)</span>Ga<span class="arithmatex">\(_{1-x}\)</span>As:</strong> Ternary alloy with continuously tunable bandgap from 1.42 eV (GaAs, x=0) to 0.36 eV (InAs, x=1). At x=0.53, lattice-matched to InP with <span class="arithmatex">\(E_g = 0.74\)</span> eV — absorbs 1.55 μm and all shorter wavelengths.</p>
+<p><strong>Al<span class="arithmatex">\(_x\)</span>Ga<span class="arithmatex">\(_{1-x}\)</span>As:</strong> Ternary alloy with bandgap from 1.42 eV (GaAs, x=0) to 2.16 eV (AlAs, x=1). Lattice-matched to GaAs for all compositions (rare and valuable property — strain-free heterostructures). The GaAs/AlGaAs heterojunction is the workhorse of HEMT and quantum well laser physics.</p>
+<h3 id="1914-ingaasp">19.1.4 InGaAsP</h3>
+<p>The quaternary In<span class="arithmatex">\(_{1-x}\)</span>Ga<span class="arithmatex">\(_x\)</span>As<span class="arithmatex">\(_y\)</span>P<span class="arithmatex">\(_{1-y}\)</span> system provides two degrees of freedom (x and y) to simultaneously control bandgap and lattice constant. This enables lattice-matched growth on InP substrates at any wavelength from 0.92–1.65 μm — covering both telecom windows (1310 and 1550 nm). DFB lasers for DWDM are fabricated in this material system.</p>
+<hr />
+<h2 id="192-ii-vi-and-wide-bandgap-semiconductors">19.2 II-VI and Wide-Bandgap Semiconductors</h2>
+<p><strong>II-VI semiconductors</strong> (group II cation + group VI anion) include ZnS, ZnSe, ZnTe, CdTe, CdS, and HgCdTe. Key applications:</p>
+<ul>
+<li><strong>HgCdTe (MCT):</strong> The dominant mid-wave and long-wave infrared detector material for thermal imaging and spectroscopy</li>
+<li><strong>CdTe:</strong> Thin-film solar cells (13–15% module efficiency, low cost)</li>
+<li><strong>ZnSe, ZnO:</strong> Wide-gap materials for UV emitters and transparent conducting oxides</li>
+</ul>
+<h3 id="1921-gan">19.2.1 GaN</h3>
+<ul>
+<li><strong>Bandgap:</strong> 3.4 eV direct (300 K)</li>
+<li><strong>Breakdown field:</strong> ~3 MV/cm (10× silicon)</li>
+<li><strong>Electron mobility:</strong> 900–2000 cm²/V·s (bulk), 1500–2000 cm²/V·s (2DEG in HEMT)</li>
+<li><strong>Substrate:</strong> Sapphire (6-inch), SiC (4-inch), GaN-on-Si (6-8 inch)</li>
+</ul>
+<p>GaN's wide bandgap gives a large breakdown voltage, making it dominant for power electronics (HV switching at 650 V–1200 V) and microwave power amplifiers (5G base stations, radar). The nitride system (GaN/AlGaN) also enabled the blue LED revolution (Nakamura's discovery of p-type GaN, 1994).</p>
+<p>Peculiar to GaN: it is piezoelectric (due to the wurtzite crystal structure), and piezoelectric polarization charges create a spontaneous 2DEG at AlGaN/GaN interfaces even without intentional doping — a unique property exploited in GaN HEMTs.</p>
+<h3 id="1922-sic-silicon-carbide">19.2.2 SiC (Silicon Carbide)</h3>
+<ul>
+<li><strong>Bandgap:</strong> 3.26 eV (4H polytype) or 3.02 eV (6H polytype) — indirect gap</li>
+<li><strong>Breakdown field:</strong> 2.5 MV/cm</li>
+<li><strong>Thermal conductivity:</strong> 4.9 W/cm·K (3× silicon, enables high-temperature operation)</li>
+<li><strong>Polytypes:</strong> Over 200 known; 4H-SiC and 6H-SiC are commercially available</li>
+</ul>
+<p>The <strong>SiC polytypes</strong> (4H, 6H, 3C) differ in the stacking sequence of Si-C bilayers. 4H-SiC has superior electron mobility and is the standard for power device substrates. SiC MOSFETs and Schottky diodes operate at 1200–10,000 V — powering electric vehicles (Tesla, BMW, Mercedes use SiC inverters), grid-level power converters, and industrial motor drives.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Nova Thinks: GaN and SiC Are the Silicon of Power Electronics</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova in thinking pose">
+The power electronics revolution — electric vehicles, solar inverters, wind turbines, data center power supplies — is being enabled by GaN and SiC replacing silicon in switching applications. The key metric is the Baliga figure of merit: <span class="arithmatex">\(\text{BFM} = \varepsilon \mu E_g^3\)</span>. For silicon: 1. For GaN: 1400. For 4H-SiC: 330. This 1000× material advantage translates directly into smaller, lighter, and more efficient power converters. A GaN charger for your laptop is smaller than a deck of cards; the equivalent silicon charger would be the size of a brick. Wide-bandgap power semiconductors represent arguably the most significant materials transition in electronics since silicon replaced germanium in 1960.</p>
+</div>
+<hr />
+<h2 id="193-quantum-well-structures">19.3 Quantum Well Structures</h2>
+<p>A <strong>quantum well</strong> is a thin layer (2–20 nm) of lower-bandgap semiconductor sandwiched between wider-bandgap barrier layers. Electrons (and holes) confined in the thin layer have quantized motion perpendicular to the layer (the quantum direction) but free motion in the plane.</p>
+<p>Before examining energy levels, let's define the relevant length scales. The de Broglie wavelength of a thermal electron:</p>
+<div class="arithmatex">\[
+\lambda_{\text{dB}} = \frac{h}{\sqrt{2m^* k_BT}} \approx \frac{1240 \text{ nm}}{\sqrt{2 \times 0.067 m_0 \times 0.026 \text{ eV}}} \approx 21 \text{ nm (GaAs, 300 K)}
+\]</div>
+<p>When the quantum well width <span class="arithmatex">\(L_z \lesssim \lambda_{\text{dB}}\)</span>, quantum effects dominate. For GaAs, this means wells narrower than ~20 nm show pronounced quantization.</p>
+<h3 id="1931-quantum-well-energy-levels">19.3.1 Quantum Well Energy Levels</h3>
+<p>The confined energy levels in a finite-depth square quantum well (width <span class="arithmatex">\(L_z\)</span>, depth <span class="arithmatex">\(\Delta E_C\)</span>) are solutions to:</p>
+<div class="arithmatex">\[
+k_n \tan\!\left(\frac{k_n L_z}{2}\right) = \kappa_n \quad \text{(even solutions)}
+\]</div>
+<p>where <span class="arithmatex">\(k_n = \sqrt{2m_w^* E_n}/\hbar\)</span> (wave vector in well) and <span class="arithmatex">\(\kappa_n = \sqrt{2m_b^*(V_0-E_n)}/\hbar\)</span> (decay constant in barrier). The energy levels <span class="arithmatex">\(E_n\)</span> must be found numerically.</p>
+<p>For an infinite-depth well (exact):</p>
+<div class="arithmatex">\[
+E_n = \frac{\hbar^2}{2m^*}\!\left(\frac{n\pi}{L_z}\right)^2, \quad n = 1, 2, 3, \ldots
+\]</div>
+<p>This particle-in-a-box formula (from Chapter 4) applies directly. For a 10 nm GaAs well (<span class="arithmatex">\(m^* = 0.067 m_0\)</span>):</p>
+<div class="arithmatex">\[
+E_1 = \frac{(1.055\times10^{-34})^2}{2 \times 0.067 \times 9.11\times10^{-31}}\!\left(\frac{\pi}{10\times10^{-9}}\right)^2 = 56 \text{ meV}
+\]</div>
+<p>The second level <span class="arithmatex">\(E_2 = 4 E_1 = 224\)</span> meV. Only <span class="arithmatex">\(E_1\)</span> and <span class="arithmatex">\(E_2\)</span> fit inside the GaAs/Al₀.₃Ga₀.₇As conduction band offset of ~250 meV.</p>
+<h3 id="1932-subband-structure-and-density-of-states">19.3.2 Subband Structure and Density of States</h3>
+<p>In a quantum well, motion is quantized in the z-direction but free in the x-y plane. For each quantized level <span class="arithmatex">\(E_n\)</span>, there is a 2D subband with dispersion:</p>
+<div class="arithmatex">\[
+E(k_x, k_y) = E_n + \frac{\hbar^2(k_x^2 + k_y^2)}{2m^*}
+\]</div>
+<p>The 2D density of states for each subband is <strong>constant</strong> (independent of energy):</p>
+<div class="arithmatex">\[
+g_{2D}(E) = \frac{m^*}{\pi\hbar^2 L_z} \quad \text{per subband}
+\]</div>
+<p>The total 3D-equivalent density of states for a quantum well is a <strong>staircase function</strong>: each step appears at a subband energy <span class="arithmatex">\(E_n\)</span>. This contrasts with the smooth <span class="arithmatex">\(\sqrt{E}\)</span> dependence of bulk (3D) materials.</p>
+<p>The step-like DOS has profound consequences for laser threshold: all carriers at a given subband minimum contribute to gain at the same energy (sharp transition), unlike bulk where carriers spread over a continuous distribution. Quantum well lasers have 5–10× lower threshold current density than bulk lasers and narrower emission linewidth.</p>
+<hr />
+<h2 id="194-quantum-wires-and-quantum-dots">19.4 Quantum Wires and Quantum Dots</h2>
+<p>Extending quantum confinement to more dimensions:</p>
+<p><strong>Quantum wire</strong> (1D): Electrons confined in y and z, free in x. Two sets of quantum numbers <span class="arithmatex">\((n_y, n_z)\)</span> → subbands. Density of states is <strong>1D</strong> (van Hove singularities at each subband edge: <span class="arithmatex">\(g_{1D} \propto 1/\sqrt{E-E_{n_y,n_z}}\)</span>).</p>
+<p><strong>Quantum dot</strong> (0D): Electrons confined in all three dimensions. No free motion → completely discrete energy levels (<span class="arithmatex">\(\delta\)</span>-function DOS). Like an artificial atom.</p>
+<p><strong>Quantum dot energy levels</strong> (spherical dot, radius <span class="arithmatex">\(R\)</span>, simple approximation):</p>
+<div class="arithmatex">\[
+E_{nl} \approx \frac{\hbar^2 \chi_{nl}^2}{2m^* R^2}
+\]</div>
+<p>where <span class="arithmatex">\(\chi_{nl}\)</span> are the zeros of spherical Bessel functions. For the ground state: <span class="arithmatex">\(E_{10} = \hbar^2 \pi^2/(2m^* R^2)\)</span> — the same <span class="arithmatex">\(1/R^2\)</span> dependence as a 1D particle-in-a-box, but now in all directions. A 3 nm radius CdSe quantum dot has <span class="arithmatex">\(E_{10} \approx 0.8\)</span> eV above the bulk bandgap — making it emit at ~530 nm (green) instead of bulk CdSe's ~720 nm (near-IR). <strong>Quantum dot LEDs</strong> exploit this size-tunable emission to produce saturated colors in displays (Samsung, Amazon Fire TV use QD-enhanced LCD and QD-OLED displays).</p>
+<p>The <strong>size quantization</strong> energy <span class="arithmatex">\(E_{\text{conf}} \propto 1/R^2\)</span>: smaller dot → larger confinement → bluer emission. This is the celebrated <strong>quantum confinement effect</strong> — the reason quantum dot color is a direct indicator of dot size, and the reason quantum dot synthesis requires atomic-precision size control.</p>
+<hr />
+<h2 id="195-the-2d-electron-gas-and-hemt">19.5 The 2D Electron Gas and HEMT</h2>
+<h3 id="1951-2deg-formation">19.5.1 2DEG Formation</h3>
+<p>The <strong>two-dimensional electron gas (2DEG)</strong> is a sheet of electrons confined at a heterojunction interface but free to move in the plane. It forms spontaneously at AlGaAs/GaAs or AlGaN/GaN interfaces through a mechanism that makes it more remarkable than a simple quantum well:</p>
+<p><strong>In AlGaAs/GaAs (modulation doping):</strong>
+Donors are placed in the wider-gap AlGaAs layer (spacer + doped region), not in the GaAs channel. At the interface, the conduction band of GaAs dips below <span class="arithmatex">\(E_F\)</span> due to the band offset — forming a triangular quantum well. Electrons from AlGaAs donors transfer to this well. Now the electrons are spatially separated from their parent donors — the <strong>ionized impurity scattering</strong> that would normally limit mobility is eliminated. The 2DEG electrons in GaAs see a nearly impurity-free environment and achieve mobilities of 10,000–10,000,000 cm²/V·s at low temperature. At 300 K: ~8000–15,000 cm²/V·s.</p>
+<p><strong>In AlGaN/GaN:</strong>
+The 2DEG forms spontaneously without intentional doping, driven by the spontaneous and piezoelectric polarization discontinuity at the AlGaN/GaN interface. Polarization-induced positive charge at the AlGaN surface attracts electrons from surface donors, which then accumulate at the interface. This "polarization doping" gives 2DEG densities of <span class="arithmatex">\(10^{13}\)</span> cm<span class="arithmatex">\(^{-2}\)</span> — 10× larger than AlGaAs/GaAs.</p>
+<h3 id="1952-hemt-structure-and-operation">19.5.2 HEMT Structure and Operation</h3>
+<p>The <strong>High Electron Mobility Transistor (HEMT)</strong> (also called MODFET or TEGFET) uses the 2DEG as the transistor channel. The structure:</p>
+<ul>
+<li><strong>Cap layer:</strong> n<span class="arithmatex">\(^+\)</span> GaAs or n<span class="arithmatex">\(^+\)</span> InGaAs for ohmic contact formation</li>
+<li><strong>Barrier layer:</strong> n-doped AlGaAs (or AlGaN) — provides donor electrons to 2DEG</li>
+<li><strong>Spacer:</strong> Undoped AlGaAs (3–10 nm) — separates ionized donors from channel for high mobility</li>
+<li><strong>Channel:</strong> Undoped GaAs (or GaN) containing the 2DEG</li>
+<li><strong>Buffer/substrate:</strong> Semi-insulating GaAs (or SiC for GaN HEMT)</li>
+</ul>
+<p>Gate voltage modulates the 2DEG density (similar to a MOSFET modulating an inversion layer), controlling drain current. The HEMT I-V characteristics are similar to MOSFET (triode and saturation regions) but with much higher transconductance per gate width:</p>
+<div class="arithmatex">\[
+g_m = \frac{qv_{\text{sat}} \varepsilon_b}{d_b + \Delta d} \quad \text{(saturated HEMT)}
+\]</div>
+<p>where <span class="arithmatex">\(d_b\)</span> is the barrier thickness and <span class="arithmatex">\(\Delta d\)</span> is the centroid distance of the 2DEG (~3–5 nm).</p>
+<p><strong>Pseudomorphic HEMT (pHEMT):</strong> Uses a strained InGaAs channel (higher In fraction than lattice-matched) for even higher electron mobility. The strain is accommodated elastically (no dislocations) if the channel is thin enough (pseudomorphic). InGaAs pHEMTs on GaAs substrates reach <span class="arithmatex">\(f_T &gt; 150\)</span> GHz and power GHz-range satellite communications.</p>
+<p><strong>Metamorphic HEMT (mHEMT):</strong> Grows a compositionally graded buffer layer to gradually change the lattice constant from GaAs substrate to a lattice constant matching high-In InGaAs. Allows very high In-fraction channels (&gt;70% In) on GaAs substrates without a premium InP substrate. mHEMTs achieve <span class="arithmatex">\(f_T &gt; 500\)</span> GHz.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Nova Warns: Depletion Mode vs. Enhancement Mode HEMT Matters for Circuits</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Nova with warning pose">
+Most HEMTs are <strong>depletion-mode</strong> (normally on) — the 2DEG exists at zero gate bias and must be depleted by negative gate voltage to turn off. This complicates digital circuits (need negative power supplies or special logic). Enhancement-mode (normally off) HEMTs require careful control of AlGaAs barrier thickness and doping — the 2DEG must be depleted at <span class="arithmatex">\(V_{GS} = 0\)</span> and appear only at positive bias. GaN e-mode HEMTs are actively commercialized for power switching (can operate with standard 0–3.3 V logic, no negative supply needed). The battle between d-mode and e-mode GaN is one of the major applications debates in power electronics today.</p>
+</div>
+<details>
+<summary>#### MicroSim: Quantum Well Energy Level Explorer</summary>
+<p><strong>sim-id:</strong> <code>quantum-well-explorer</code><br />
+<strong>Library:</strong> p5.js<br />
+<strong>Status:</strong> specification  </p>
+<p><strong>Description:</strong> Interactive quantum well band structure visualizer. Shows a finite square well potential with adjustable width and depth. Calculates and displays the first 3–4 bound state wavefunctions and energy levels. Also shows the step-like 2D density of states for each subband. A comparison panel shows bulk 3D density of states vs. quantum well staircase.</p>
+<p><strong>Controls:</strong>
+- Slider: Well width <span class="arithmatex">\(L_z\)</span> (1–20 nm)
+- Slider: Conduction band offset <span class="arithmatex">\(\Delta E_C\)</span> (0.1–0.5 eV)
+- Dropdown: Material system (GaAs/AlGaAs, InGaAs/InP, GaN/AlGaN)
+- Checkbox: Show wavefunctions / probability densities</p>
+<p><strong>Key Learning Objectives:</strong>
+- L2 (Understand): Explain why confinement raises energy above bulk band edges
+- L3 (Apply): Calculate ground-state energy for a given well width and material
+- L4 (Analyze): Compare quantum well DOS to bulk DOS and explain threshold current improvement in QW lasers</p>
+</details>
+<hr />
+<h2 id="summary_1">Summary</h2>
+<p>This chapter covered compound semiconductors and quantum structures:</p>
+<ul>
+<li><strong>III-V materials:</strong> GaAs (high mobility, direct gap), InP (telecom wavelengths), AlGaAs (lattice-matched to GaAs), InGaAsP (tunable telecom), all enabling high-speed photonics and electronics</li>
+<li><strong>Wide-bandgap:</strong> GaN (blue LEDs, power HEMTs, 5G), SiC (power MOSFETs for EVs); breakdown fields 10× silicon</li>
+<li><strong>Quantum wells:</strong> Confined motion in z, free in x-y; energy levels <span class="arithmatex">\(E_n \propto n^2/L_z^2\)</span>; step-like 2D DOS → lower laser threshold</li>
+<li><strong>Quantum wires/dots:</strong> Additional confinement → 1D/0D DOS; quantum dot size controls emission wavelength (quantum confinement)</li>
+<li><strong>2DEG</strong> forms at modulation-doped AlGaAs/GaAs or polarization-induced AlGaN/GaN interfaces; spatial separation from donors gives very high mobility</li>
+<li><strong>HEMT</strong> uses 2DEG as channel; pseudomorphic (strained InGaAs) and metamorphic (graded buffer) variants reach 300–600 GHz <span class="arithmatex">\(f_T\)</span></li>
+</ul>
+<h2 id="key-equations">Key Equations</h2>
+<div class="arithmatex">\[
+E_n = \frac{\hbar^2 n^2 \pi^2}{2m^* L_z^2} \quad \text{(infinite quantum well)}, \quad g_{2D} = \frac{m^*}{\pi\hbar^2 L_z} \text{ per subband (constant)}
+\]</div>
+<div class="arithmatex">\[
+E_{QD} \propto \frac{\hbar^2 \pi^2}{2m^* R^2} \quad \text{(quantum dot confinement energy} \propto R^{-2}\text{)}
+\]</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../18-photodetectors-solar-cells/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 18. Photodetectors and Solar Cells">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                18. Photodetectors and Solar Cells
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../20-strained-si-2d-power/" class="md-footer__link md-footer__link--next" aria-label="Next: 20. Strained Si, 2D Materials, Power">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                20. Strained Si, 2D Materials, Power
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

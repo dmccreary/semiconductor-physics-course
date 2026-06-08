@@ -1,0 +1,2375 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Microscopic scattering physics that underlies macroscopic mobility, velocity saturation, and hot-carrier phenomena in semiconductor transport">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/08-carrier-drift-mobility/">
+      
+      
+        <link rel="prev" href="../07-doping-extrinsic-carriers/">
+      
+      
+        <link rel="next" href="../09-carrier-diffusion-transport/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Carrier Drift, Mobility, and Scattering Mechanisms - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#carrier-drift-mobility-and-scattering-mechanisms" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Carrier Drift, Mobility, and Scattering Mechanisms
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#81-drift-current-and-the-electric-field-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Drift Current and the Electric Field Response
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-carrier-mobility-definition-and-physical-origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Carrier Mobility: Definition and Physical Origin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-scattering-mechanisms-the-cast-of-culprits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Scattering Mechanisms: The Cast of Culprits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3 Scattering Mechanisms: The Cast of Culprits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#831-lattice-phonon-scattering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.1 Lattice (Phonon) Scattering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#832-intervalley-scattering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.2 Intervalley Scattering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#833-ionized-impurity-scattering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.3 Ionized Impurity Scattering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#834-neutral-impurity-scattering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.4 Neutral Impurity Scattering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#835-surface-roughness-scattering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.5 Surface Roughness Scattering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#836-alloy-scattering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.6 Alloy Scattering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84-mobility-temperature-and-doping-dependence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Mobility Temperature and Doping Dependence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85-high-field-transport-velocity-saturation-and-hot-carriers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 High-Field Transport: Velocity Saturation and Hot Carriers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.5 High-Field Transport: Velocity Saturation and Hot Carriers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hot-carriers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hot Carriers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#81-drift-current-and-the-electric-field-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Drift Current and the Electric Field Response
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-carrier-mobility-definition-and-physical-origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Carrier Mobility: Definition and Physical Origin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-scattering-mechanisms-the-cast-of-culprits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Scattering Mechanisms: The Cast of Culprits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3 Scattering Mechanisms: The Cast of Culprits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#831-lattice-phonon-scattering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.1 Lattice (Phonon) Scattering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#832-intervalley-scattering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.2 Intervalley Scattering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#833-ionized-impurity-scattering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.3 Ionized Impurity Scattering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#834-neutral-impurity-scattering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.4 Neutral Impurity Scattering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#835-surface-roughness-scattering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.5 Surface Roughness Scattering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#836-alloy-scattering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3.6 Alloy Scattering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84-mobility-temperature-and-doping-dependence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Mobility Temperature and Doping Dependence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85-high-field-transport-velocity-saturation-and-hot-carriers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 High-Field Transport: Velocity Saturation and Hot Carriers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.5 High-Field Transport: Velocity Saturation and Hot Carriers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hot-carriers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hot Carriers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/08-carrier-drift-mobility/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="carrier-drift-mobility-and-scattering-mechanisms">Carrier Drift, Mobility, and Scattering Mechanisms</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter develops the drift component of carrier transport. The macroscopic mobility parameter is shown to arise from microscopic scattering events that randomize carrier momentum. Students analyze each major scattering mechanism — acoustic and optical phonon scattering, intervalley scattering, ionized impurity scattering, neutral impurity scattering, surface roughness scattering, and alloy scattering — understanding the temperature and doping dependences of each. Matthiessen's rule combines these mechanisms into a net mobility. At high electric fields, velocity saturation and hot-carrier phenomena deviate from the simple linear drift-velocity relationship, with important consequences for short-channel devices.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 22 concepts from the learning graph:</p>
+<ol>
+<li>Drift Current</li>
+<li>Drift Velocity</li>
+<li>Carrier Mobility</li>
+<li>Electron Mobility</li>
+<li>Hole Mobility</li>
+<li>Low-Field Mobility</li>
+<li>High-Field Mobility</li>
+<li>Velocity Saturation</li>
+<li>Saturation Velocity</li>
+<li>Hot Carriers</li>
+<li>Lattice Scattering</li>
+<li>Phonon Scattering</li>
+<li>Acoustic Phonon Scattering</li>
+<li>Optical Phonon Scattering</li>
+<li>Intervalley Scattering</li>
+<li>Ionized Impurity Scattering</li>
+<li>Neutral Impurity Scattering</li>
+<li>Surface Roughness Scattering</li>
+<li>Alloy Scattering</li>
+<li>Matthiessen Rule</li>
+<li>Mobility Temperature Dependence</li>
+<li>Mobility Doping Dependence</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../05-bloch-theorem-band-theory/">Chapter 5: Bloch's Theorem, Band Formation, and E-k Diagrams</a></li>
+<li><a href="../07-doping-extrinsic-carriers/">Chapter 7: Doping, Extrinsic Carriers, and the Fermi Level</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Nova Reports for Drift Duty</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+Good news: electrons in silicon move! Bad news: they can't go two nanometers without getting knocked off course by a vibrating atom, an ionized impurity, or a rough interface. Today we're going to understand <em>why</em> electrons and holes stumble around like they're at a physics department holiday party — and more importantly, how to calculate exactly how slowly they stumble. Welcome to mobility: the quantity that makes a MOSFET fast or slow.</p>
+</div>
+<h2 id="81-drift-current-and-the-electric-field-response">8.1 Drift Current and the Electric Field Response</h2>
+<p>When an electric field <span class="arithmatex">\(\mathcal{E}\)</span> is applied to a semiconductor, free carriers experience a force and begin to accelerate. But unlike electrons in vacuum, carriers in a crystal can't accelerate indefinitely — they continuously scatter off imperfections, losing momentum and reaching a terminal drift velocity. This steady-state drift is what produces current in resistors, diodes, and transistors.</p>
+<p>The <strong>drift current density</strong> is the product of carrier charge, concentration, and drift velocity:</p>
+<div class="arithmatex">\[
+J_n^{\text{drift}} = q \, n \, v_{d,n}
+\]</div>
+<div class="arithmatex">\[
+J_p^{\text{drift}} = q \, p \, v_{d,p}
+\]</div>
+<p>where <span class="arithmatex">\(v_{d,n}\)</span> and <span class="arithmatex">\(v_{d,p}\)</span> are the drift velocities of electrons and holes, respectively. Note the sign convention: electrons drift <em>opposite</em> to <span class="arithmatex">\(\mathcal{E}\)</span> (negative charge), but their current contribution is in the same direction as <span class="arithmatex">\(\mathcal{E}\)</span> because current is defined as positive charge flow.</p>
+<p>At low electric fields, drift velocity is proportional to the field — a linear regime where the proportionality constant is called <strong>mobility</strong> <span class="arithmatex">\(\mu\)</span>:</p>
+<div class="arithmatex">\[
+v_{d,n} = -\mu_n \mathcal{E}, \quad v_{d,p} = +\mu_p \mathcal{E}
+\]</div>
+<p>(Electron drift is opposite to <span class="arithmatex">\(\mathcal{E}\)</span>; hole drift is along <span class="arithmatex">\(\mathcal{E}\)</span>.)</p>
+<p>Combining, the total drift current density is:</p>
+<div class="arithmatex">\[
+J^{\text{drift}} = (q n \mu_n + q p \mu_p) \mathcal{E} = \sigma \mathcal{E}
+\]</div>
+<p>where <span class="arithmatex">\(\sigma = q(n\mu_n + p\mu_p)\)</span> is the <strong>conductivity</strong> (units: S/cm or (Ω·cm)<span class="arithmatex">\(^{-1}\)</span>). The resistivity is <span class="arithmatex">\(\rho = 1/\sigma\)</span>.</p>
+<hr />
+<h2 id="82-carrier-mobility-definition-and-physical-origin">8.2 Carrier Mobility: Definition and Physical Origin</h2>
+<p><strong>Mobility</strong> <span class="arithmatex">\(\mu\)</span> (units: cm<span class="arithmatex">\(^2\)</span>/V·s) is defined as the drift velocity per unit electric field in the low-field limit. It is the single most important transport parameter in semiconductor devices.</p>
+<p>Before we state the formal definition, we need to understand the microscopic picture. Carriers in thermal equilibrium move at high thermal velocities — roughly <span class="arithmatex">\(v_{\text{th}} \approx \sqrt{3k_BT/m^*} \approx 10^7\)</span> cm/s at room temperature. This random thermal motion averages to zero net drift. When a field is applied, it adds a small systematic drift on top of this chaotic thermal background.</p>
+<p>The systematic drift is interrupted by <strong>scattering events</strong> — random momentum-randomizing collisions that reset the carrier's direction. After each collision, the carrier starts fresh, being accelerated by the field again. The average time between collisions is the <strong>mean free time</strong> (or momentum relaxation time) <span class="arithmatex">\(\tau_m\)</span>.</p>
+<p>Between collisions, a carrier accelerates freely:</p>
+<div class="arithmatex">\[
+m^* \frac{dv}{dt} = q\mathcal{E} \implies v = \frac{q\mathcal{E}}{m^*} t
+\]</div>
+<p>Averaging over time up to the next collision gives:</p>
+<div class="arithmatex">\[
+\langle v_d \rangle = \frac{q\mathcal{E}}{m^*} \cdot \frac{\tau_m}{2} \quad \text{(uniform $\tau_m$ distribution)}
+\]</div>
+<p>But the proper quantum-mechanical average (using exponentially distributed scattering times) gives:</p>
+<div class="arithmatex">\[
+\langle v_d \rangle = \frac{q \tau_m}{m^*} \mathcal{E}
+\]</div>
+<p>Therefore:</p>
+<div class="arithmatex">\[
+\boxed{\mu = \frac{q \tau_m}{m^*}}
+\]</div>
+<p>This is the central result: <strong>mobility increases with longer mean free time and decreases with larger effective mass.</strong> The two engineering levers for improving mobility are (1) reducing scattering to increase <span class="arithmatex">\(\tau_m\)</span>, and (2) using materials with smaller <span class="arithmatex">\(m^*\)</span>.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Nova Thinks: Effective Mass Is Not Just Mass</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova in thinking pose">
+Electrons in GaAs have an effective mass of only <span class="arithmatex">\(0.067\, m_0\)</span> — about 15× lighter than silicon's <span class="arithmatex">\(0.26\, m_0\)</span> for conduction electrons. This is why GaAs electron mobility (~8500 cm²/V·s) absolutely trounces silicon's (~1400 cm²/V·s). The electron isn't actually lighter — it's moving through a lattice whose periodic potential curves the E-k band into a very tight parabola at the minimum. Light curvature = large effective mass; tight curvature = small effective mass. Band structure engineering is mass engineering.</p>
+</div>
+<p><strong>Reference values for silicon at 300 K:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Electrons</th>
+<th>Holes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mobility <span class="arithmatex">\(\mu\)</span> (cm²/V·s)</td>
+<td>1400</td>
+<td>450</td>
+</tr>
+<tr>
+<td>Effective mass <span class="arithmatex">\(m^*\)</span></td>
+<td><span class="arithmatex">\(0.26\, m_0\)</span></td>
+<td><span class="arithmatex">\(0.37\, m_0\)</span> (avg)</td>
+</tr>
+<tr>
+<td>Mean free time <span class="arithmatex">\(\tau_m\)</span> (ps)</td>
+<td>~0.27</td>
+<td>~0.19</td>
+</tr>
+</tbody>
+</table>
+<p>Electrons are roughly 3× more mobile than holes in silicon, primarily because of effective mass differences and valley degeneracy in the E-k band structure.</p>
+<hr />
+<h2 id="83-scattering-mechanisms-the-cast-of-culprits">8.3 Scattering Mechanisms: The Cast of Culprits</h2>
+<p>Mobility is limited by scattering, and there are many ways to scatter a carrier in a real crystal. Before examining each, we state <strong>Matthiessen's rule</strong>: when multiple independent scattering mechanisms act simultaneously, the total scattering rate is the sum of individual rates:</p>
+<div class="arithmatex">\[
+\frac{1}{\tau_m} = \frac{1}{\tau_1} + \frac{1}{\tau_2} + \frac{1}{\tau_3} + \cdots
+\]</div>
+<p>Since <span class="arithmatex">\(\mu \propto \tau_m\)</span>, Matthiessen's rule for mobilities reads:</p>
+<div class="arithmatex">\[
+\frac{1}{\mu} = \frac{1}{\mu_1} + \frac{1}{\mu_2} + \frac{1}{\mu_3} + \cdots
+\]</div>
+<p>The <strong>lowest</strong> individual mobility dominates the total. This is a profound (and somewhat depressing) result: even if you reduce phonon scattering to near zero by cooling, a single bad impurity scattering mechanism can cap your mobility. Improving mobility means improving the <em>worst</em> bottleneck.</p>
+<h3 id="831-lattice-phonon-scattering">8.3.1 Lattice (Phonon) Scattering</h3>
+<p>The crystal lattice vibrates at all temperatures above 0 K. These quantized lattice vibrations — <strong>phonons</strong> — scatter carriers by modulating the local crystal potential. Lattice scattering is the dominant mechanism in pure silicon at room temperature.</p>
+<p>Two phonon types scatter differently:</p>
+<p><strong>Acoustic phonon scattering</strong> involves carriers interacting with long-wavelength, low-energy lattice vibrations (sound waves). The deformation potential couples carrier energy to the local strain field. The scattering rate increases with temperature (more phonons at higher T), giving:</p>
+<div class="arithmatex">\[
+\mu_{\text{ac}} \propto T^{-3/2}
+\]</div>
+<p>This <span class="arithmatex">\(T^{-3/2}\)</span> dependence is a signature: if you measure mobility vs. temperature in a pure semiconductor and see a <span class="arithmatex">\(-3/2\)</span> slope on a log-log plot, acoustic phonon scattering is ruling.</p>
+<p><strong>Optical phonon scattering</strong> involves higher-energy phonons (energy <span class="arithmatex">\(\hbar\omega_{\text{op}} \approx 63\)</span> meV in silicon) that can be absorbed or emitted only when the carrier has enough energy. Below the optical phonon energy threshold, optical phonon emission is suppressed. Above threshold — for hot carriers — optical phonon emission is extremely effective at removing energy. The threshold behavior is nonlinear and becomes important at high fields.</p>
+<h3 id="832-intervalley-scattering">8.3.2 Intervalley Scattering</h3>
+<p>Silicon has six equivalent conduction band minima (valleys) in the <span class="arithmatex">\(\langle 100 \rangle\)</span> directions. An electron can scatter from one valley to another via high-energy phonon processes (f-type and g-type intervalley scattering). Intervalley scattering has a phonon energy threshold and increases sharply with temperature. It effectively couples all six valleys together, making silicon behave as if the valleys share a common scattering pool.</p>
+<h3 id="833-ionized-impurity-scattering">8.3.3 Ionized Impurity Scattering</h3>
+<p>Ionized donors (<span class="arithmatex">\(N_D^+\)</span>) and acceptors (<span class="arithmatex">\(N_A^-\)</span>) create long-range Coulomb potentials that deflect passing carriers. Unlike phonon scattering, ionized impurity scattering is most effective at <strong>low temperatures</strong> — a slow carrier (low thermal velocity) spends more time near the Coulomb center and gets deflected more strongly.</p>
+<p>The mobility limited by ionized impurity scattering follows the Brooks-Herring model:</p>
+<div class="arithmatex">\[
+\mu_{\text{ii}} \propto \frac{T^{3/2}}{N_I}
+\]</div>
+<p>where <span class="arithmatex">\(N_I = N_D^+ + N_A^-\)</span> is the total ionized impurity concentration. This temperature dependence is the <em>opposite</em> of phonon scattering, making it easy to distinguish the two mechanisms experimentally: if mobility <em>increases</em> with increasing temperature, ionized impurity scattering is dominant (typical at low T or very high doping).</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Nova Warns: Mobility vs. Doping Is a Two-Mechanism Story</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Nova with warning pose">
+When you look up "mobility vs. doping" curves for silicon (Sze Fig. 1.17 is the classic), you see mobility dropping monotonically as doping increases — from ~1400 cm²/V·s at low doping to ~100 cm²/V·s at <span class="arithmatex">\(10^{19}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>. This drop is caused by ionized impurity scattering, not by some mysterious property of heavily doped silicon. The Matthiessen rule sum of phonon + ionized impurity gives the observed curve. Understanding the <em>mechanism</em> tells you how to fight it: high-temperature annealing can "activate" dopants without adding excess ionized impurities beyond what you intend.</p>
+</div>
+<h3 id="834-neutral-impurity-scattering">8.3.4 Neutral Impurity Scattering</h3>
+<p>Unionized (neutral) dopant atoms and other neutral defects also scatter carriers, via short-range quantum-mechanical perturbation of the local potential. Neutral impurity scattering is temperature-independent (unlike phonon and ionized impurity scattering) and matters primarily at very low temperatures where phonons are frozen out and most impurities are neutral (freeze-out regime).</p>
+<div class="arithmatex">\[
+\mu_{\text{ni}} \propto \frac{1}{N_{\text{neutral}}} \quad \text{(temperature-independent)}
+\]</div>
+<h3 id="835-surface-roughness-scattering">8.3.5 Surface Roughness Scattering</h3>
+<p>At a Si/SiO<span class="arithmatex">\(_2\)</span> interface in a MOSFET, the interface is atomically rough on the scale of 0.1–0.5 nm. Carriers in the inversion layer (the conducting channel) are confined within ~1–2 nm of the interface and scatter strongly off this roughness. Surface roughness scattering increases at high gate fields (which push carriers harder against the interface) and limits the channel mobility in advanced MOSFETs.</p>
+<div class="arithmatex">\[
+\mu_{\text{sr}} \propto \frac{1}{\mathcal{E}_{\perp}^2} \quad \text{(at high perpendicular field)}
+\]</div>
+<p>This field dependence is why MOSFET channel mobility decreases at high gate voltage — counterintuitive but unavoidable.</p>
+<h3 id="836-alloy-scattering">8.3.6 Alloy Scattering</h3>
+<p>In compound semiconductors like AlGaAs or SiGe, the random arrangement of different atoms (e.g., Al and Ga sharing the cation sites) creates random potential fluctuations even in a defect-free crystal. This <strong>alloy scattering</strong> is fundamental to alloy materials and cannot be eliminated by purification.</p>
+<div class="arithmatex">\[
+\mu_{\text{alloy}} \propto \frac{1}{x(1-x)} \quad \text{(x = alloy fraction)}
+\]</div>
+<p>Alloy scattering is maximized at <span class="arithmatex">\(x = 0.5\)</span> (50% composition) and vanishes at <span class="arithmatex">\(x = 0\)</span> or <span class="arithmatex">\(x = 1\)</span> (pure materials).</p>
+<hr />
+<h2 id="84-mobility-temperature-and-doping-dependence">8.4 Mobility Temperature and Doping Dependence</h2>
+<p>Combining all the scattering mechanisms via Matthiessen's rule gives characteristic dependences on temperature and doping that are well-established empirically for silicon:</p>
+<p><strong>Temperature dependence of low-field mobility (lightly doped Si):</strong></p>
+<div class="arithmatex">\[
+\mu_n(T) \approx \mu_{n,300} \left(\frac{T}{300}\right)^{-2.42}, \quad \mu_p(T) \approx \mu_{p,300} \left(\frac{T}{300}\right)^{-2.20}
+\]</div>
+<p>The exponent near <span class="arithmatex">\(-2.4\)</span> is close to but not exactly <span class="arithmatex">\(-3/2\)</span> because multiple phonon mechanisms contribute with different power laws.</p>
+<p><strong>Doping dependence (Caughey-Thomas empirical model at 300 K):</strong></p>
+<div class="arithmatex">\[
+\mu_n(N_I) = \mu_{n,\min} + \frac{\mu_{n,0} - \mu_{n,\min}}{1 + (N_I/N_{\text{ref},n})^{\alpha_n}}
+\]</div>
+<p>For silicon electrons: <span class="arithmatex">\(\mu_{n,\min} = 65\)</span> cm<span class="arithmatex">\(^2\)</span>/V·s, <span class="arithmatex">\(\mu_{n,0} = 1330\)</span> cm<span class="arithmatex">\(^2\)</span>/V·s, <span class="arithmatex">\(N_{\text{ref},n} = 1.26 \times 10^{17}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>, <span class="arithmatex">\(\alpha_n = 0.85\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(N_I\)</span> (cm<span class="arithmatex">\(^{-3}\)</span>)</th>
+<th><span class="arithmatex">\(\mu_n\)</span> (cm<span class="arithmatex">\(^2\)</span>/V·s)</th>
+<th><span class="arithmatex">\(\mu_p\)</span> (cm<span class="arithmatex">\(^2\)</span>/V·s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(10^{13}\)</span></td>
+<td>1350</td>
+<td>480</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(10^{15}\)</span></td>
+<td>1280</td>
+<td>460</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(10^{16}\)</span></td>
+<td>1200</td>
+<td>420</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(10^{17}\)</span></td>
+<td>900</td>
+<td>290</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(10^{18}\)</span></td>
+<td>400</td>
+<td>150</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(10^{19}\)</span></td>
+<td>130</td>
+<td>70</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>#### MicroSim: Carrier Mobility Explorer</summary>
+<p><strong>sim-id:</strong> <code>carrier-mobility-explorer</code><br />
+<strong>Library:</strong> p5.js<br />
+<strong>Status:</strong> specification  </p>
+<p><strong>Description:</strong> Two-panel interactive visualization. Left panel: log-log plot of mobility vs. temperature (50–600 K) showing total mobility and contributions from each scattering mechanism (acoustic phonon, optical phonon, intervalley, ionized impurity). Right panel: log-log plot of mobility vs. doping at 300 K. User can toggle individual mechanisms on/off to see Matthiessen's rule in action.</p>
+<p><strong>Controls:</strong>
+- Dropdown: Carrier type (electrons / holes)
+- Slider: Doping concentration (logarithmic, <span class="arithmatex">\(10^{14}\)</span> to <span class="arithmatex">\(10^{19}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>)
+- Checkboxes: Toggle each scattering mechanism on/off
+- Button: Reset to defaults</p>
+<p><strong>Key Learning Objectives:</strong>
+- L2 (Understand): Identify which scattering mechanism dominates at a given T and doping
+- L3 (Apply): Use Matthiessen's rule to combine partial mobilities
+- L4 (Analyze): Predict how a design change (e.g., increasing temperature or doping) affects net mobility</p>
+</details>
+<hr />
+<h2 id="85-high-field-transport-velocity-saturation-and-hot-carriers">8.5 High-Field Transport: Velocity Saturation and Hot Carriers</h2>
+<p>At low electric fields, <span class="arithmatex">\(v_d = \mu \mathcal{E}\)</span> — drift velocity scales linearly with field. This is the regime we've been working in. But as the field increases beyond roughly <span class="arithmatex">\(10^3\)</span>–<span class="arithmatex">\(10^4\)</span> V/cm in silicon, something breaks the linearity: velocity saturation.</p>
+<p>The <strong>low-field mobility</strong> <span class="arithmatex">\(\mu_0\)</span> describes the linear regime. The <strong>high-field mobility</strong> is field-dependent and is defined as the differential ratio:</p>
+<div class="arithmatex">\[
+\mu_{\text{HF}}(\mathcal{E}) = \frac{dv_d}{d\mathcal{E}}
+\]</div>
+<p>As the field increases, <span class="arithmatex">\(\mu_{\text{HF}}\)</span> decreases, and <span class="arithmatex">\(v_d\)</span> approaches a constant maximum called the <strong>saturation velocity</strong> <span class="arithmatex">\(v_{\text{sat}}\)</span>. In silicon:</p>
+<div class="arithmatex">\[
+v_{\text{sat},n} \approx 1.07 \times 10^7 \text{ cm/s}, \quad v_{\text{sat},p} \approx 8.4 \times 10^6 \text{ cm/s at 300 K}
+\]</div>
+<p>A widely used empirical model for the velocity-field relationship is:</p>
+<div class="arithmatex">\[
+v_d(\mathcal{E}) = \frac{\mu_0 \mathcal{E}}{\left[1 + \left(\frac{\mathcal{E}}{\mathcal{E}_c}\right)^n\right]^{1/n}}
+\]</div>
+<p>where <span class="arithmatex">\(\mathcal{E}_c = v_{\text{sat}}/\mu_0\)</span> is the critical field and <span class="arithmatex">\(n = 1\)</span> (electrons in GaAs-type) or <span class="arithmatex">\(n = 2\)</span> (electrons in silicon, giving a smoother transition).</p>
+<p>For silicon electrons: <span class="arithmatex">\(\mathcal{E}_c = v_{\text{sat}}/\mu_n = 10^7/1400 \approx 7100\)</span> V/cm. Modern MOSFETs with 10 nm gate lengths and <span class="arithmatex">\(V_{DS} = 0.8\)</span> V have average channel fields of ~80,000 V/cm — well above <span class="arithmatex">\(\mathcal{E}_c\)</span>. Velocity saturation is not a curious high-field phenomenon for these devices; it is the normal operating condition.</p>
+<h3 id="hot-carriers">Hot Carriers</h3>
+<p>When carriers travel at high fields, they absorb energy from the field faster than they can dissipate it through phonon scattering. Their energy distribution is no longer in equilibrium with the lattice; carriers have an effective temperature <span class="arithmatex">\(T_e &gt; T_L\)</span> (lattice temperature). These are <strong>hot carriers</strong>.</p>
+<p>Hot carriers cause several important effects:</p>
+<ol>
+<li>
+<p><strong>Impact ionization:</strong> A carrier with energy exceeding <span class="arithmatex">\(E_g\)</span> (the bandgap) can knock a valence electron into the conduction band, creating an electron-hole pair. This is the mechanism behind avalanche breakdown in reverse-biased junctions.</p>
+</li>
+<li>
+<p><strong>Hot-carrier injection into gate oxide:</strong> In MOSFETs, hot electrons can gain enough energy to surmount the Si/SiO<span class="arithmatex">\(_2\)</span> barrier (~3.1 eV) and become trapped in the gate oxide. Trapped charge shifts the threshold voltage over time — this is <strong>hot-carrier degradation (HCI)</strong>, a reliability failure mode that limits device lifetime.</p>
+</li>
+<li>
+<p><strong>Carrier heating and velocity overshoot:</strong> In ultrashort transistors (sub-20 nm), carriers can briefly exceed <span class="arithmatex">\(v_{\text{sat}}\)</span> before the optical phonon scattering mechanisms catch up — <strong>velocity overshoot</strong> — giving a transient current boost. This is one reason ultrashort MOSFETs can outperform predictions based on bulk mobility.</p>
+</li>
+</ol>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Nova Tips: The Modern MOSFET Lives in Velocity Saturation</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Nova with tip pose">
+When you're analyzing a 5 nm node MOSFET and you see <span class="arithmatex">\(V_{DS} = 0.6\)</span> V across an 8 nm channel, the average field is ~7.5 MV/m = 75 kV/cm. Compare that to silicon's critical field of ~7 kV/cm: you're 10× into saturation. The drive current in these devices is essentially <span class="arithmatex">\(I_D \approx q \cdot n_{\text{inv}} \cdot v_{\text{sat}} \cdot W\)</span>, not <span class="arithmatex">\(\mu_0 \cdot C_{\text{ox}} \cdot (V_{GS} - V_T)^2/2L\)</span>. The long-channel MOSFET equations you'll learn in Chapter 15 are a historical curiosity for modern devices — but they are the foundation you need before understanding why they fail.</p>
+</div>
+<details>
+<summary>#### MicroSim: Velocity-Field Relationship Explorer</summary>
+<p><strong>sim-id:</strong> <code>velocity-field-explorer</code><br />
+<strong>Library:</strong> p5.js<br />
+<strong>Status:</strong> specification  </p>
+<p><strong>Description:</strong> Interactive plot of drift velocity vs. electric field for electrons and holes in silicon (and optionally GaAs for comparison). Shows low-field linear regime, transition region, and saturation plateau. User can adjust temperature and see how <span class="arithmatex">\(v_{\text{sat}}\)</span> changes. An inset diagram shows the energy distribution of carriers (Maxwellian at low field, heated distribution at high field).</p>
+<p><strong>Controls:</strong>
+- Dropdown: Material (Si, GaAs, Ge)
+- Dropdown: Carrier type (electrons, holes)
+- Slider: Temperature (200–400 K)
+- Checkbox: Show critical field marker
+- Checkbox: Show low-field tangent line</p>
+<p><strong>Key Learning Objectives:</strong>
+- L2 (Understand): Identify the transition from linear to saturated velocity-field regimes
+- L3 (Apply): Calculate drift velocity given a field using the two-piece linear model
+- L4 (Analyze): Explain why short-channel MOSFETs operate in velocity saturation</p>
+</details>
+<hr />
+<h2 id="summary_1">Summary</h2>
+<p>This chapter developed the physics of carrier drift from first principles:</p>
+<ul>
+<li><strong>Drift current</strong> arises from the systematic momentum imparted by the electric field, superimposed on random thermal motion</li>
+<li><strong>Mobility</strong> <span class="arithmatex">\(\mu = q\tau_m/m^*\)</span> is determined by the mean free time between scattering events and the effective mass</li>
+<li><strong>Scattering mechanisms</strong> include acoustic phonons (<span class="arithmatex">\(\mu \propto T^{-3/2}\)</span>), ionized impurities (<span class="arithmatex">\(\mu \propto T^{3/2}/N_I\)</span>), optical phonons, intervalley scattering, neutral impurities, surface roughness, and alloy scattering</li>
+<li><strong>Matthiessen's rule</strong> combines all mechanisms: <span class="arithmatex">\(1/\mu = \sum_i 1/\mu_i\)</span>; the worst mechanism wins</li>
+<li><strong>High-field transport</strong> departs from linearity as velocity saturates at <span class="arithmatex">\(v_{\text{sat}} \approx 10^7\)</span> cm/s; modern short-channel MOSFETs operate in this regime</li>
+<li><strong>Hot carriers</strong> with excess energy cause impact ionization (avalanche breakdown) and oxide damage (HCI reliability degradation)</li>
+</ul>
+<h2 id="key-equations">Key Equations</h2>
+<div class="arithmatex">\[
+J^{\text{drift}} = q(n\mu_n + p\mu_p)\mathcal{E} = \sigma\mathcal{E}
+\]</div>
+<div class="arithmatex">\[
+\mu = \frac{q\tau_m}{m^*}, \quad \frac{1}{\mu_{\text{total}}} = \sum_i \frac{1}{\mu_i} \quad \text{(Matthiessen's rule)}
+\]</div>
+<div class="arithmatex">\[
+\mu_{\text{ac}} \propto T^{-3/2}, \quad \mu_{\text{ii}} \propto \frac{T^{3/2}}{N_I}
+\]</div>
+<div class="arithmatex">\[
+v_d(\mathcal{E}) = \frac{\mu_0 \mathcal{E}}{\left[1 + (\mathcal{E}/\mathcal{E}_c)^2\right]^{1/2}}, \quad v_{\text{sat}} \approx 10^7 \text{ cm/s (Si electrons)}
+\]</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../07-doping-extrinsic-carriers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 7. Doping and Extrinsic Carriers">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                7. Doping and Extrinsic Carriers
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../09-carrier-diffusion-transport/" class="md-footer__link md-footer__link--next" aria-label="Next: 9. Carrier Diffusion and Transport">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                9. Carrier Diffusion and Transport
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

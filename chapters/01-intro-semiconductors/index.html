@@ -1,0 +1,2513 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Establishes the materials landscape of semiconductor physics, covering what makes semiconductors unique, elemental and compound materials, the energy band diagram, and direct vs. indirect bandgaps.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/01-intro-semiconductors/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../02-crystal-lattice-structure/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Introduction to Semiconductors and Bandgap Fundamentals - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-semiconductors-and-bandgap-fundamentals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction to Semiconductors and Bandgap Fundamentals
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-semiconductor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is a Semiconductor?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-semiconductor-families" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Semiconductor Families
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Semiconductor Families">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elemental-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elemental Semiconductors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compound-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compound Semiconductors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#energy-band-diagrams-the-physicists-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Energy Band Diagrams: The Physicist's Map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Energy Band Diagrams: The Physicist&#39;s Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interactive-energy-band-diagram-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Interactive Energy Band Diagram Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bandgap-energy-as-a-material-fingerprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bandgap Energy as a Material Fingerprint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direct-and-indirect-bandgaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct and Indirect Bandgaps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direct and Indirect Bandgaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-direct-vs-indirect-bandgap-e-k-diagram-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Direct vs. Indirect Bandgap — E-k Diagram Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semiconductor-materials-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semiconductor Materials in Practice
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Semiconductor Materials in Practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#silicon-si" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Silicon (Si)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#germanium-ge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Germanium (Ge)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gallium-arsenide-gaas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gallium Arsenide (GaAs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indium-phosphide-inp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indium Phosphide (InP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gallium-nitride-gan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gallium Nitride (GaN)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#silicon-carbide-4h-sic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Silicon Carbide (4H-SiC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-semiconductor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is a Semiconductor?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-semiconductor-families" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Semiconductor Families
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Semiconductor Families">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elemental-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elemental Semiconductors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compound-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compound Semiconductors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#energy-band-diagrams-the-physicists-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Energy Band Diagrams: The Physicist's Map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Energy Band Diagrams: The Physicist&#39;s Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interactive-energy-band-diagram-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Interactive Energy Band Diagram Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bandgap-energy-as-a-material-fingerprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bandgap Energy as a Material Fingerprint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direct-and-indirect-bandgaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct and Indirect Bandgaps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direct and Indirect Bandgaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-direct-vs-indirect-bandgap-e-k-diagram-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Direct vs. Indirect Bandgap — E-k Diagram Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semiconductor-materials-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semiconductor Materials in Practice
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Semiconductor Materials in Practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#silicon-si" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Silicon (Si)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#germanium-ge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Germanium (Ge)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gallium-arsenide-gaas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gallium Arsenide (GaAs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indium-phosphide-inp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indium Phosphide (InP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gallium-nitride-gan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gallium Nitride (GaN)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#silicon-carbide-4h-sic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Silicon Carbide (4H-SiC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/01-intro-semiconductors/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="introduction-to-semiconductors-and-bandgap-fundamentals">Introduction to Semiconductors and Bandgap Fundamentals</h1>
+<h2 id="summary">Summary</h2>
+<p>This opening chapter establishes the materials landscape of semiconductor physics. Students learn why semiconductors occupy a unique middle ground between conductors and insulators, survey the elemental and compound materials used in modern devices, and are introduced to the energy band diagram — the central analytical tool used throughout this course. The chapter connects macroscopic electrical behavior to the quantum mechanical concept of the bandgap, distinguishing direct from indirect gap materials and setting up the band-structure framework developed in later chapters.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 17 concepts from the learning graph:</p>
+<ol>
+<li>Semiconductor Definition</li>
+<li>Conductor vs Insulator vs Semiconductor</li>
+<li>Elemental Semiconductors</li>
+<li>Compound Semiconductors</li>
+<li>Silicon Material Properties</li>
+<li>Germanium Material Properties</li>
+<li>Gallium Arsenide Properties</li>
+<li>Indium Phosphide Properties</li>
+<li>Gallium Nitride Properties</li>
+<li>Silicon Carbide Properties</li>
+<li>Bandgap Energy</li>
+<li>Direct Bandgap</li>
+<li>Indirect Bandgap</li>
+<li>Energy Band Diagram</li>
+<li>Conduction Band</li>
+<li>Valence Band</li>
+<li>Forbidden Energy Gap</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>: calculus, introductory quantum mechanics (wave-particle duality, Schrödinger equation), and introductory solid-state physics.</p>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Hi! I'm Nova.</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waves hello">
+Welcome to <em>Semiconductor Physics: Fundamentals to Advanced Applications</em>! I'm <strong>Nova</strong>, an electron sprite — a playful, energetic particle who gets genuinely excited about quantum mechanics (occupational hazard). I'll be popping into the margins all the way through this textbook, but I don't show up randomly. I have exactly <strong>six jobs</strong>, and you'll learn to recognize me by which one I'm doing:</p>
+<ol>
+<li><strong>Welcome you</strong> at the opening of every chapter — that's what I'm doing right now.</li>
+<li><strong>Help you think through</strong> the concepts that look simple at first but hide a subtle idea worth pausing on.</li>
+<li><strong>Give you tips</strong> — the moves and mental shortcuts a working semiconductor engineer would make that rarely appear in formal derivations.</li>
+<li><strong>Warn you gently</strong> about the places where bright students routinely make the same mistake — often because the intuition from one context breaks in another.</li>
+<li><strong>Encourage you</strong> when a concept is genuinely difficult and it's okay to feel that friction; it means you're at the edge of your understanding, which is exactly where learning happens.</li>
+<li><strong>Celebrate with you</strong> at the end of each chapter when you've earned it.</li>
+</ol>
+<p>That's it. If I'm not doing one of those six things, I'm not in the chapter. Let's get excited!</p>
+</div>
+<h2 id="what-is-a-semiconductor">What Is a Semiconductor?</h2>
+<p>Modern electronics rests almost entirely on a single class of material: the semiconductor. Yet the word itself is deceptively simple. A <strong>semiconductor</strong> is not merely something "in between" a conductor and an insulator — it is a material whose electrical conductivity can be tuned over many orders of magnitude through the controlled addition of impurities, temperature variation, or applied electric and optical fields. This tunability, more than any intrinsic property, is what makes semiconductors the foundation of transistors, solar cells, LEDs, and integrated circuits.</p>
+<p>The most direct way to place semiconductors in the landscape of materials is through <strong>electrical resistivity</strong> (<span class="arithmatex">\(\rho\)</span>), the material property that quantifies a material's opposition to current flow. Resistivity spans an enormous range across solid materials — more than twenty-five orders of magnitude from the best metallic conductors to the best insulating ceramics. Three distinct regimes emerge from this continuum, summarized in the table below.</p>
+<p>Before examining the table, note the two quantities that appear in the rightmost column: <strong>electrons</strong> and <strong>holes</strong>. A hole is the absence of an electron in an otherwise full valence band; it behaves as a positively charged mobile carrier. The distinction between electron conduction (dominant in metals) and both-carrier conduction (characteristic of semiconductors) is rooted in band structure and is developed fully in the sections that follow.</p>
+<table>
+<thead>
+<tr>
+<th>Material Class</th>
+<th>Resistivity Range (Ω·cm)</th>
+<th>Example Materials</th>
+<th>Primary Charge Carriers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metal (conductor)</td>
+<td><span class="arithmatex">\(10^{-8}\)</span> – <span class="arithmatex">\(10^{-6}\)</span></td>
+<td>Cu, Al, Au, W</td>
+<td>Free electrons (delocalized)</td>
+</tr>
+<tr>
+<td>Semimetal</td>
+<td><span class="arithmatex">\(10^{-6}\)</span> – <span class="arithmatex">\(10^{-3}\)</span></td>
+<td>Bismuth, graphite</td>
+<td>Electrons and holes; zero gap</td>
+</tr>
+<tr>
+<td>Semiconductor</td>
+<td><span class="arithmatex">\(10^{-4}\)</span> – <span class="arithmatex">\(10^{4}\)</span></td>
+<td>Si, Ge, GaAs, GaN</td>
+<td>Electrons and holes (controllable)</td>
+</tr>
+<tr>
+<td>Insulator</td>
+<td><span class="arithmatex">\(10^{8}\)</span> – <span class="arithmatex">\(10^{18}\)</span></td>
+<td>SiO₂, Si₃N₄, diamond</td>
+<td>Negligible at room temperature</td>
+</tr>
+</tbody>
+</table>
+<p>Two features of the semiconductor row deserve immediate attention. First, the intrinsic resistivity range spans eight orders of magnitude, reflecting the strong temperature dependence of carrier concentration in a material whose bandgap is comparable to thermal energy. Second, the word "controllable" under charge carriers is the defining attribute: by introducing dopant atoms at concentrations of parts per million, an engineer can shift silicon's resistivity by six additional orders of magnitude — from near-insulating to near-metallic — within the same crystal structure. No other material class offers this degree of electronic programmability.</p>
+<h2 id="the-semiconductor-families">The Semiconductor Families</h2>
+<p>Semiconductor materials fall into two broad families based on their chemical composition: <strong>elemental semiconductors</strong>, composed of a single element, and <strong>compound semiconductors</strong>, formed from two or more elements combined in specific stoichiometric ratios.</p>
+<h3 id="elemental-semiconductors">Elemental Semiconductors</h3>
+<p>The elemental semiconductors are drawn from Group IV of the periodic table, where each atom contributes four valence electrons available for covalent bonding to its four nearest neighbors. The most technologically important members are <strong>silicon (Si)</strong> and <strong>germanium (Ge)</strong>, though carbon in its diamond allotrope (bandgap 5.5 eV) and tin in its gray phase (below 13.2°C) are also semiconducting Group IV elements.</p>
+<p>Silicon is the dominant elemental semiconductor, accounting for more than 95% of all semiconductor devices manufactured worldwide. Its moderate bandgap (1.12 eV at room temperature), compatibility with thermal oxidation to produce high-quality SiO₂ gate dielectrics, and the existence of large, low-defect-density single-crystal ingots (up to 450 mm diameter) make it the substrate of choice for CMOS integrated circuits. The Czochralski crystal-growth process routinely delivers silicon with fewer than <span class="arithmatex">\(10^{10}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> unwanted impurities — a purity that enables precise control of electrical behavior through intentional doping.</p>
+<p>Germanium, with a smaller bandgap (0.66 eV), was the first semiconductor used in practical transistors (Bardeen and Brattain's 1947 point-contact transistor at Bell Laboratories). Its higher carrier mobilities — roughly 2.8× for electrons and 4.2× for holes compared to silicon — make it attractive for high-speed and infrared applications. Germanium's transparency extending beyond 15 μm makes it a standard lens material for thermal infrared cameras.</p>
+<h3 id="compound-semiconductors">Compound Semiconductors</h3>
+<p>Compound semiconductors are crystalline materials formed from two or more elements chosen so that the average number of valence electrons per atom equals four — mirroring the Group IV configuration and enabling the same four-coordinate covalent bonding geometry. Three commercially important compound families are:</p>
+<p><strong>III-V semiconductors</strong> combine one element from Group III of the periodic table (aluminum, gallium, or indium) with one from Group V (nitrogen, phosphorus, arsenic, or antimony). This family includes gallium arsenide (GaAs), indium phosphide (InP), gallium nitride (GaN), and indium arsenide (InAs). III-V compounds typically have direct bandgaps (a distinction explained in the next major section) and can be deposited as epitaxial heterostructures — atomically precise stacks of layers with different compositions — enabling the design of quantum wells, heterostructure lasers, and high-electron-mobility transistors (HEMTs).</p>
+<p><strong>II-VI semiconductors</strong> pair Group II elements (zinc, cadmium, mercury) with Group VI elements (sulfur, selenium, tellurium). CdTe is widely used in thin-film photovoltaic modules; the HgCdTe alloy is a narrow-gap material whose bandgap is continuously tunable by composition, making it the dominant infrared focal-plane array material for scientific and military imaging from 1 to 25 μm.</p>
+<p><strong>IV-IV semiconductors</strong> form from two Group IV elements. The most important is <strong>silicon carbide (SiC)</strong>, which combines silicon's established processing knowledge with a wide bandgap — 3.26 eV in the 4H polytype — and thermal conductivity exceeding that of copper, making it the leading substrate for high-voltage, high-temperature power devices.</p>
+<h2 id="energy-band-diagrams-the-physicists-map">Energy Band Diagrams: The Physicist's Map</h2>
+<p>To understand why silicon's resistivity is fourteen orders of magnitude higher than copper's — and why adding one phosphorus atom per million silicon atoms narrows that gap by six orders — we need a quantum mechanical picture of how electrons populate energy states in a crystalline solid.</p>
+<p>In an isolated atom, electrons occupy discrete energy levels (1s, 2p, 3d, and so on) determined by the Schrödinger equation for a Coulomb potential. When <span class="arithmatex">\(N\)</span> identical atoms assemble into a crystal lattice, the Pauli exclusion principle prevents any two electrons from sharing the same quantum state. Each atomic level therefore splits into a <strong>band</strong> of <span class="arithmatex">\(N\)</span> closely spaced levels. For a macroscopic crystal (<span class="arithmatex">\(N \approx 10^{23}\)</span>), the levels within each band are so dense that they form a nearly continuous distribution of allowed energies. Between adjacent bands lie energy ranges with no allowed states — the <strong>forbidden energy gaps</strong>, or <strong>bandgaps</strong>.</p>
+<p>The <strong>energy band diagram</strong> is the standard representation of this structure. In its simplest real-space form, the diagram plots electron energy on the vertical axis against spatial position through the device on the horizontal axis. Two bands appear explicitly and are sufficient to understand the electrical and optical behavior of most semiconductor devices:</p>
+<ul>
+<li>The <strong>valence band (VB)</strong>: the highest-energy band that is completely filled with electrons at absolute zero temperature (0 K). Valence-band electrons are bound to their parent atoms and do not contribute to electrical conduction unless they receive enough energy to be promoted across the forbidden gap.</li>
+<li>The <strong>conduction band (CB)</strong>: the lowest-energy band that is completely empty at 0 K. An electron promoted to the conduction band is free to move through the crystal lattice and carry an electrical current.</li>
+<li>The <strong>forbidden energy gap</strong>: the energy range between the top of the valence band and the bottom of the conduction band in which no allowed electronic states exist. Electrons cannot occupy this range — hence "forbidden."</li>
+</ul>
+<p>Three reference energies appear on every energy band diagram. The top of the valence band is labeled <span class="arithmatex">\(E_V\)</span>, the bottom of the conduction band is labeled <span class="arithmatex">\(E_C\)</span>, and the <strong>bandgap energy</strong> is their difference:</p>
+<div class="arithmatex">\[
+E_g = E_C - E_V
+\]</div>
+<p>Both <span class="arithmatex">\(E_C\)</span> and <span class="arithmatex">\(E_V\)</span> are measured in <strong>electronvolts (eV)</strong>, where <span class="arithmatex">\(1\text{ eV} = 1.602 \times 10^{-19}\)</span> J — the kinetic energy acquired by one electron accelerated through a one-volt electrostatic potential difference. Room-temperature semiconductor bandgaps range from about 0.17 eV (InSb) to 6.2 eV (AlN), with the six materials in this chapter spanning 0.66 eV (Ge) to 3.4 eV (GaN).</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Two bands, one gap — but what does that actually mean?</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova in a thinking pose">
+Think of the valence band as the ground floor of a building, packed full of electrons sitting in their seats. The conduction band is the empty floor above. The forbidden gap is the sealed wall between them — no staircase, no elevator, no door. To conduct electricity, an electron has to somehow leap that wall. The size of that wall, measured in eV, is the bandgap. A conductor has no wall (the bands overlap). An insulator's wall is so thick (&gt; 5 eV) that almost no electrons can cross at room temperature. A semiconductor's wall is just the right height: thermal energy occasionally boosts electrons across, and we can engineer that crossing precisely using light, voltage, or chemical doping. <strong>That's the game.</strong></p>
+</div>
+<p>With the vocabulary established, the following MicroSim lets you explore how the energy band diagram changes as you vary the bandgap energy, connecting the abstract diagram to the three material classes.</p>
+<h4 id="diagram-interactive-energy-band-diagram-explorer">Diagram: Interactive Energy Band Diagram Explorer</h4>
+<iframe src="../../sims/energy-band-diagram-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/energy-band-diagram-explorer/main.html">Run Interactive Energy Band Diagram Explorer Fullscreen</a></p>
+<iframe src="../../sims/energy-band-diagram-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/energy-band-diagram-explorer/main.html">Run Interactive Energy Band Diagram Explorer Fullscreen</a></p>
+<details>
+<summary>Interactive Energy Band Diagram Explorer</summary>
+<p>Type: MicroSim
+<strong>sim-id:</strong> energy-band-diagram-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning objective:</strong> Students will identify E_C, E_V, and E_g on an energy band diagram and explain (Understand, L2) how varying the bandgap energy determines whether a material behaves as a conductor, semiconductor, or insulator.</p>
+<p><strong>Canvas size:</strong> 800 × 520 px, responsive — recalculate all layout positions on window resize.</p>
+<p><strong>Controls (p5.js built-in):</strong></p>
+<ul>
+<li>Slider: Bandgap energy E_g from 0.0 to 7.0 eV, step 0.01, default 1.12 eV. Label displayed: "Bandgap E_g (eV): X.XX"</li>
+<li>Slider: Temperature T from 0 to 600 K, step 1, default 300 K. Label displayed: "Temperature (K): XXX"</li>
+<li>Select dropdown: Material preset with options "Custom", "Ge (0.66 eV)", "Si (1.12 eV)", "GaAs (1.42 eV)", "GaN (3.40 eV)", "Diamond (5.50 eV – insulator)", "SiO₂ (9.0 eV – insulator)". Selecting a preset snaps the E_g slider to the preset value and displays the material name below the diagram.</li>
+</ul>
+<p><strong>Visual layout (left 60% of canvas — band diagram panel):</strong></p>
+<ul>
+<li>Draw a horizontal filled rectangle near the top of the panel (height 90 px), labeled "Conduction Band (CB)" in bold, filled with light blue (#b3e5fc). This represents the conduction band.</li>
+<li>Draw a horizontal filled rectangle near the bottom of the panel (height 90 px), labeled "Valence Band (VB)" in bold, filled with light green (#c8e6c9). This represents the valence band.</li>
+<li>The vertical gap between the two rectangles represents E_g. Scale the gap height linearly from 0 px (E_g = 0) to 200 px (E_g = 7 eV), so 1 eV ≈ 28.6 px.</li>
+<li>Draw a red dashed horizontal line at the bottom edge of the CB rectangle; label it "E_C" on the left margin.</li>
+<li>Draw a blue dashed horizontal line at the top edge of the VB rectangle; label it "E_V" on the left margin.</li>
+<li>Center a label in the forbidden gap region: "Forbidden Gap" on line 1 and "E_g = X.XX eV" on line 2, in dark gray text.</li>
+<li>Color the gap region with a background tint:</li>
+<li>E_g &lt; 0.3 eV: light red (#ffcdd2) — conductor / semimetal</li>
+<li>0.3 – 4.5 eV: light yellow (#fff9c4) — semiconductor</li>
+<li>
+<blockquote>
+<p>4.5 eV: light gray (#f5f5f5) — insulator</p>
+</blockquote>
+</li>
+<li>Animate small filled circles (electrons, radius 6 px, color #1565c0) using a simplified thermal distribution:</li>
+<li>Populate the VB with 20 filled blue circles arranged randomly within the VB rectangle (always present).</li>
+<li>In the CB, display N_CB conduction electrons computed qualitatively as: N_CB = round(8 × exp(−E_g / (2 × 0.026 × T / 300))), clamped to 0–8. These circles appear as brighter blue (#42a5f5) and drift slowly left-right within the CB rectangle.</li>
+<li>When an electron is in the CB, draw a corresponding open circle (hole) in the VB at the same horizontal x-position.</li>
+<li>At T = 0, N_CB = 0 regardless of E_g.</li>
+<li>Below the diagram, display a label for material class: "Conductor" (red), "Semiconductor" (amber), or "Insulator" (gray) based on the E_g tint thresholds above.</li>
+</ul>
+<p><strong>Right panel (40% of canvas — information panel):</strong></p>
+<ul>
+<li>Display: "E_g = X.XX eV" in large text.</li>
+<li>Display: "Temperature = XXX K"</li>
+<li>Display: "Material class: [Conductor / Semiconductor / Insulator]"</li>
+<li>Display: "Conduction electrons ≈ N_CB (symbolic)"</li>
+<li>Compute and display the photon wavelength equivalent: "Photon energy = E_g → λ = 1240 / E_g = XXXX nm"</li>
+<li>Display which spectral region: UV (&lt; 400 nm), Visible-violet (400–450 nm), Visible-blue (450–495 nm), Visible-green (495–570 nm), Visible-yellow (570–590 nm), Visible-orange (590–620 nm), Visible-red (620–750 nm), Near-IR (750–1400 nm), Mid-IR (&gt; 1400 nm).</li>
+<li>If E_g places λ in the visible range (400–700 nm), display a small filled rectangle (30 × 20 px) showing the approximate HSL color of that wavelength.</li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<ul>
+<li>Sliders and dropdown update all displayed values and the diagram immediately on each frame.</li>
+<li>Selecting a preset snaps the E_g slider; "Custom" leaves sliders at their current positions.</li>
+<li>Electron animation: conduction-band electrons drift left and right within the CB rectangle using perlin noise or simple sinusoidal motion; they fade in and out smoothly as N_CB changes.</li>
+<li>On window resize: call updateCanvasSize() first in setup(); recompute all panel widths and element positions proportionally.</li>
+</ul>
+<p><strong>Implementation:</strong> p5.js, single self-contained HTML file. Parent canvas with <code>canvas.parent(document.querySelector('main'))</code>. Use createSlider(), createSelect() for controls. No external data dependencies.</p>
+</details>
+<h2 id="bandgap-energy-as-a-material-fingerprint">Bandgap Energy as a Material Fingerprint</h2>
+<p>The bandgap energy <span class="arithmatex">\(E_g\)</span> is the single most important parameter for characterizing a semiconductor's suitability for a given application. It simultaneously controls the optical absorption edge (the minimum photon energy the material can absorb), the maximum wavelength of light the material can emit, the thermal equilibrium concentration of mobile carriers, and the upper operating temperature before intrinsic conduction degrades device performance. All of these relationships — derived quantitatively in later chapters — flow directly from the magnitude of <span class="arithmatex">\(E_g\)</span>.</p>
+<p>Two practical examples anchor the concept. Silicon's bandgap of 1.12 eV corresponds, via the photon energy relation <span class="arithmatex">\(E = hc/\lambda\)</span>, to a photon wavelength of approximately 1.1 μm, just beyond the near-infrared. Silicon therefore transmits wavelengths longer than 1.1 μm and strongly absorbs shorter wavelengths — a property exploited in silicon photodetectors and solar cells. Gallium nitride's bandgap of 3.4 eV corresponds to 365 nm, in the near-ultraviolet. When an InGaN-based LED emits photons near this energy and the emission is mixed with a yellow phosphor, the combination produces white light — the physical principle underlying the LED lighting revolution that earned Isamu Akasaki, Hiroshi Amano, and Shuji Nakamura the 2014 Nobel Prize in Physics.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Units matter: always work in eV, not joules</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Nova giving a tip">
+Nearly every semiconductor quantity you will encounter — bandgap, Fermi energy, photon energy, ionization energy — is quoted in <strong>electronvolts (eV)</strong>, not joules. Room-temperature thermal energy is <span class="arithmatex">\(k_BT \approx 0.026\)</span> eV (more precisely 0.02585 eV at 300 K). Silicon's bandgap of 1.12 eV is about 43 times the room-temperature thermal energy, and that ratio <span class="arithmatex">\(E_g / k_BT\)</span> determines how readily electrons are thermally excited across the gap — it appears in every carrier concentration formula in this course. A handy conversion for photons: <span class="arithmatex">\(\lambda \text{ (nm)} = 1240 / E_g \text{ (eV)}\)</span>. Memorize it. You will use it weekly.</p>
+</div>
+<h2 id="direct-and-indirect-bandgaps">Direct and Indirect Bandgaps</h2>
+<p>The energy band diagram in real space (energy vs. position in the device) is essential for understanding device behavior, but it hides a piece of physics that is critical for optoelectronic applications: the role of <strong>crystal momentum</strong>. Electrons in a periodic crystal lattice obey Bloch's theorem, which requires that their quantum states be labeled not only by energy but also by a <strong>wavevector</strong> <span class="arithmatex">\(\mathbf{k}\)</span>, proportional to the crystal momentum <span class="arithmatex">\(\hbar\mathbf{k}\)</span>. The full <strong>band structure</strong> — the dispersion relation <span class="arithmatex">\(E(\mathbf{k})\)</span> plotted against <span class="arithmatex">\(\mathbf{k}\)</span> throughout the first Brillouin zone — is the complete quantum mechanical fingerprint of a material's electronic structure.</p>
+<p>Two features of the band structure determine a material's gap type. The <strong>valence band maximum (VBM)</strong> occurs at a specific value of <span class="arithmatex">\(\mathbf{k}\)</span>, and so does the <strong>conduction band minimum (CBM)</strong>. The critical question is whether these two extrema coincide in <span class="arithmatex">\(\mathbf{k}\)</span>-space.</p>
+<p><strong>Direct bandgap materials</strong> have both the VBM and CBM at <span class="arithmatex">\(\mathbf{k} = 0\)</span> — the center of the Brillouin zone, labeled the <span class="arithmatex">\(\Gamma\)</span> point. GaAs, InP, and GaN are prominent examples. When an electron transitions from the VBM to the CBM, it requires only an energy change equal to <span class="arithmatex">\(E_g\)</span>. A photon with energy <span class="arithmatex">\(h\nu \geq E_g\)</span> can supply exactly that energy while transferring negligible momentum (because photons carry momentum <span class="arithmatex">\(h/\lambda\)</span> corresponding to visible wavelengths, which is thousands of times smaller than a typical crystal momentum at the zone boundary). The transition is therefore an efficient two-body process: one photon absorbed, one electron promoted. The reverse — electron falling from CB to VB — emits one photon. This makes direct-gap materials inherently efficient light absorbers and emitters, and the material class of choice for LEDs, laser diodes, and high-efficiency photovoltaic cells.</p>
+<p><strong>Indirect bandgap materials</strong> have the VBM and CBM at different values of <span class="arithmatex">\(\mathbf{k}\)</span>. In silicon, the CBM lies near the X point — approximately 85% of the way from <span class="arithmatex">\(\Gamma\)</span> to the zone boundary along the <span class="arithmatex">\(\langle 100\rangle\)</span> directions — while the VBM sits at <span class="arithmatex">\(\Gamma\)</span>. In germanium, the CBM is at the L point (zone boundary along <span class="arithmatex">\(\langle 111\rangle\)</span>). A band-to-band electronic transition across the gap in these materials requires a simultaneous change in both energy and crystal momentum. A photon alone cannot supply the momentum difference; instead, the transition must involve a <strong>phonon</strong> — a quantized lattice vibration that carries crystal momentum but very little energy. This three-body process (electron + photon + phonon) is far less probable than the two-body direct transition, making indirect-gap semiconductors poor light emitters. Spontaneous emission rates in indirect-gap materials are typically <span class="arithmatex">\(10^3\)</span>–<span class="arithmatex">\(10^6\)</span> times lower than in comparable direct-gap materials.</p>
+<p>The following MicroSim renders simplified E-k diagrams for both direct and indirect gap materials, making the distinction between gap types visual and interactive.</p>
+<h4 id="diagram-direct-vs-indirect-bandgap-e-k-diagram-explorer">Diagram: Direct vs. Indirect Bandgap — E-k Diagram Explorer</h4>
+<iframe src="../../sims/direct-indirect-bandgap-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/direct-indirect-bandgap-explorer/main.html">Run Direct vs. Indirect Bandgap — E-k Diagram Explorer Fullscreen</a></p>
+<iframe src="../../sims/direct-indirect-bandgap-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/direct-indirect-bandgap-explorer/main.html">Run Direct vs. Indirect Bandgap — E-k Diagram Explorer Fullscreen</a></p>
+<details>
+<summary>Direct vs. Indirect Bandgap — E-k Diagram Explorer</summary>
+<p>Type: MicroSim
+<strong>sim-id:</strong> direct-indirect-bandgap-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning objective:</strong> Students will distinguish (Analyze, L4) direct and indirect bandgap materials by identifying whether the conduction band minimum and valence band maximum occur at the same k-value, and will predict the consequence for optical emission efficiency.</p>
+<p><strong>Canvas size:</strong> 900 × 560 px, responsive — recalculate all positions on window resize.</p>
+<p><strong>Controls (p5.js built-in):</strong></p>
+<ul>
+<li>Select dropdown: Material — "GaAs (direct, 1.42 eV)", "InP (direct, 1.35 eV)", "GaN (direct, 3.40 eV)", "Silicon (indirect, 1.12 eV)", "Germanium (indirect, 0.66 eV)". Default: "GaAs (direct, 1.42 eV)".</li>
+<li>Checkbox: "Show phonon arrow" (default unchecked) — when checked and an indirect-gap material is selected, annotates the momentum component of the optical transition with a horizontal arrow labeled "Phonon (Δk)".</li>
+<li>Button: "Animate optical transition" — triggers an animated excitation sequence showing a dot rising from VBM to CBM.</li>
+</ul>
+<p><strong>Visual layout (left 65% of canvas — E-k diagram panel):</strong></p>
+<ul>
+<li>Horizontal axis: crystal momentum k, spanning from L point (−1.0 in normalized units) through Γ (0.0) to X point (+1.0). Draw axis with tick marks and labels: "L", "Γ", "X". Label axis "Crystal momentum k →".</li>
+<li>Vertical axis: Energy (eV), spanning from −0.5 to E_g + 0.8 eV, with origin at E_V = 0 (VBM). Label axis "Energy E (eV) ↑".</li>
+<li>Draw a horizontal dashed line at E = 0 labeled "E_V (VBM)" and at E = E_g labeled "E_C (CBM)".</li>
+<li>Valence band: draw as a downward-opening parabola centered at k = 0 (Γ), with vertex at E = 0 (E_V). Half-width ≈ 0.8 in k-units. Fill region below the parabola with a light green (#c8e6c9) tint. Label "Valence Band".</li>
+<li>Conduction band for DIRECT-gap materials (GaAs, InP, GaN):</li>
+<li>Draw an upward-opening parabola centered at k = 0, vertex at E = E_g. Half-width ≈ 0.6 in k-units.</li>
+<li>Label CBM with a dot and "CBM (Γ)".</li>
+<li>Fill region above the parabola with a light blue (#b3e5fc) tint. Label "Conduction Band".</li>
+<li>Conduction band for INDIRECT-gap Si:</li>
+<li>Draw an upward-opening parabola (narrower, representing larger effective mass transversely) centered at k ≈ +0.85 (near X), vertex at E = E_g.</li>
+<li>Also draw a shallower secondary minimum at k ≈ −0.85 (symmetric).</li>
+<li>Label the minimum "CBM (near X)".</li>
+<li>Conduction band for INDIRECT-gap Ge:</li>
+<li>Draw CBM parabola centered at k = ±1.0 (L point, zone boundary), vertex at E = E_g.</li>
+<li>Label "CBM (L)".</li>
+<li>When "Animate optical transition" is clicked:</li>
+<li>For DIRECT gap: draw a vertical gold arrow from VBM point (k=0, E=0) upward to CBM point (k=0, E=E_g), animated over 1.5 s. Annotate "hν = E_g". No horizontal component.</li>
+<li>For INDIRECT gap: draw a two-part animated arrow. First, draw a vertical component (photon: energy) from VBM to an intermediate energy level at k=0. Then draw a horizontal component (phonon: momentum) from k=0 to the CBM k-position, reaching E = E_g. Annotate the vertical part "Photon (ΔE)" and, if "Show phonon arrow" is checked, annotate the horizontal part "Phonon (Δk)". Use separate colors: gold for photon arrow, orange for phonon arrow.</li>
+</ul>
+<p><strong>Right panel (35% of canvas — information panel):</strong></p>
+<ul>
+<li>Material name in bold, large text.</li>
+<li>"E_g = X.XX eV"</li>
+<li>"Gap type: Direct" (green text) or "Indirect" (orange text).</li>
+<li>"Optical emission efficiency: High" (direct) or "Low — phonon required" (indirect).</li>
+<li>Brief one-sentence statement of primary application (e.g., "GaAs: laser diodes, RF amplifiers" or "Si: CMOS ICs, solar cells").</li>
+<li>A color-coded bar labeled "Emission efficiency" — 100% filled green for direct, 10% filled orange for indirect.</li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<ul>
+<li>Dropdown selection immediately redraws the E-k diagram with correct CBM position, E_g value, and gap type.</li>
+<li>"Animate optical transition" triggers once per button press; subsequent presses replay the animation.</li>
+<li>If a direct-gap material is selected and "Show phonon arrow" is checked, display a small note: "No phonon needed for direct transitions."</li>
+<li>On window resize: call updateCanvasSize() at start of setup(); reflow all layout dimensions proportionally.</li>
+</ul>
+<p><strong>Implementation:</strong> p5.js, single self-contained HTML file. All band curves computed analytically as parabolas. Use createSelect(), createCheckbox(), createButton() for controls. Parent canvas to document.querySelector('main').</p>
+</details>
+<p>The direct/indirect distinction resolves an apparent paradox: silicon, with a 1.12 eV bandgap well matched to the solar spectrum, is the dominant photovoltaic material and yet cannot lase, while GaAs — despite a slightly larger bandgap — has powered semiconductor lasers since 1970. The difference lies entirely in the presence or absence of the phonon bottleneck.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Indirect ≠ transparent — silicon absorbs light just fine</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Nova cautioning">
+A common misconception is that silicon's indirect gap makes it optically useless. It doesn't. Silicon is a poor light <em>emitter</em> — but it absorbs light quite effectively above its band edge. Absorption is also phonon-assisted, but phonons are thermally plentiful at room temperature, so the process is not negligible, merely weaker than in a direct-gap material. The optical absorption length in silicon at 600 nm is only about 3 μm — short enough to capture nearly all incident photons in a reasonably thick solar cell. The lesson: indirect gap kills luminescence efficiency by three to six orders of magnitude, but absorption remains robust over longer path lengths. Don't confuse the two processes.</p>
+</div>
+<h2 id="semiconductor-materials-in-practice">Semiconductor Materials in Practice</h2>
+<p>With the band-structure framework in place, we can now survey the six semiconductor materials central to this chapter. Each occupies a distinct niche in the device ecosystem, shaped by its bandgap, gap type, carrier mobilities, thermal conductivity, and compatibility with existing fabrication infrastructure.</p>
+<p>Before examining each material in detail, two transport quantities appearing in the comparison table require brief definitions. <strong>Electron mobility</strong> (<span class="arithmatex">\(\mu_n\)</span>) and <strong>hole mobility</strong> (<span class="arithmatex">\(\mu_p\)</span>) measure the ease with which carriers move through a material under an applied electric field, defined by the drift velocity per unit field: <span class="arithmatex">\(\mathbf{v}_\text{drift} = \mu \mathcal{E}\)</span>. Higher mobility enables faster devices at lower operating voltages. A full derivation from the Boltzmann transport equation appears in Chapter 5; the values tabulated below are experimentally measured room-temperature constants for lightly doped (intrinsic-like) material.</p>
+<p>The following table summarizes the key room-temperature properties of all six materials discussed in this chapter:</p>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th><span class="arithmatex">\(E_g\)</span> (eV)</th>
+<th>Gap Type</th>
+<th><span class="arithmatex">\(\mu_n\)</span> (cm²/V·s)</th>
+<th><span class="arithmatex">\(\mu_p\)</span> (cm²/V·s)</th>
+<th>Thermal Cond. (W/cm·K)</th>
+<th>Key Applications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Silicon (Si)</td>
+<td>1.12</td>
+<td>Indirect</td>
+<td>1,400</td>
+<td>450</td>
+<td>1.5</td>
+<td>CMOS ICs, solar cells, power MOSFETs</td>
+</tr>
+<tr>
+<td>Germanium (Ge)</td>
+<td>0.66</td>
+<td>Indirect</td>
+<td>3,900</td>
+<td>1,900</td>
+<td>0.6</td>
+<td>SiGe HBTs, IR detectors, Ge-on-Si</td>
+</tr>
+<tr>
+<td>Gallium Arsenide (GaAs)</td>
+<td>1.42</td>
+<td>Direct</td>
+<td>8,500</td>
+<td>400</td>
+<td>0.46</td>
+<td>RF power amplifiers, VCSELs, solar</td>
+</tr>
+<tr>
+<td>Indium Phosphide (InP)</td>
+<td>1.35</td>
+<td>Direct</td>
+<td>5,400</td>
+<td>200</td>
+<td>0.68</td>
+<td>Telecom lasers (1.55 μm), THz HEMTs</td>
+</tr>
+<tr>
+<td>Gallium Nitride (GaN)</td>
+<td>3.40</td>
+<td>Direct</td>
+<td>1,000</td>
+<td>30</td>
+<td>2.3</td>
+<td>Blue/white LEDs, power HEMTs</td>
+</tr>
+<tr>
+<td>4H-Silicon Carbide (SiC)</td>
+<td>3.26</td>
+<td>Indirect</td>
+<td>900</td>
+<td>120</td>
+<td>4.9</td>
+<td>High-voltage power switches, EV drives</td>
+</tr>
+</tbody>
+</table>
+<h3 id="silicon-si">Silicon (Si)</h3>
+<p>Silicon dominates microelectronics for reasons that are as much practical as physical. Its 1.12 eV bandgap is compatible with transistor operation across a wide temperature range (roughly −55°C to +150°C for standard CMOS) and is well matched to the solar spectrum, making single-crystal silicon the dominant photovoltaic material by installed capacity. The native oxide of silicon — silicon dioxide (SiO₂) — forms simply by heating in oxygen and exhibits an exceptionally low interface trap density with the Si/SiO₂ interface, enabling the gate dielectrics that underpin CMOS scaling. The Czochralski-grown 300 mm wafer supply chain, with defect densities below <span class="arithmatex">\(10^3\)</span> cm<span class="arithmatex">\(^{-2}\)</span> and metallic impurity levels below 1 ppb, has no equal in cost or scale. Despite its indirect bandgap and modest electron mobility (1,400 cm²/V·s, compared to 8,500 cm²/V·s for GaAs), silicon remains the substrate of choice for all digital and most analog integrated circuits, and for commercial photovoltaics.</p>
+<h3 id="germanium-ge">Germanium (Ge)</h3>
+<p>Germanium was the first semiconductor used in practical transistors (Bardeen and Brattain, 1947), but its smaller bandgap poses challenges for room-temperature digital devices. At 300 K, the intrinsic carrier concentration in germanium is approximately <span class="arithmatex">\(2.4 \times 10^{13}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> — more than three orders of magnitude higher than silicon's <span class="arithmatex">\(9.65 \times 10^9\)</span> cm<span class="arithmatex">\(^{-3}\)</span> — which elevates junction leakage current and limits high-temperature operation. Modern applications exploit germanium selectively: as the <span class="arithmatex">\(\text{Si}_{1-x}\text{Ge}_x\)</span> compressively-strained alloy deposited on silicon substrates to enhance hole mobility in BiCMOS and p-MOSFET channels, as the bottom junction material in III-V triple-junction concentrator solar cells (lattice-matched to Ge at <span class="arithmatex">\(x = 0\)</span>), and as the substrate for III-V epitaxy. Germanium's transparency window extending to 15 μm also makes it the standard substrate material for thermal infrared optical systems.</p>
+<h3 id="gallium-arsenide-gaas">Gallium Arsenide (GaAs)</h3>
+<p>Gallium arsenide's direct bandgap of 1.42 eV and room-temperature electron mobility of 8,500 cm²/V·s — nearly six times that of silicon — made it the material of choice for microwave and millimeter-wave transistors from the 1970s onward. Its direct gap enables efficient photon emission: the first room-temperature continuous-wave semiconductor laser (1970, Alferov; independently Hayashi and Panish) used GaAs/AlGaAs double heterostructures. Today GaAs and its ternary alloys (InGaAs, AlGaAs, InGaAsP) remain dominant in compound-semiconductor RF power amplifiers for mobile handsets, high-efficiency concentrator photovoltaic cells, vertical-cavity surface-emitting lasers (VCSELs) for optical interconnects, and near-infrared LED arrays for face recognition systems.</p>
+<h3 id="indium-phosphide-inp">Indium Phosphide (InP)</h3>
+<p>Indium phosphide shares GaAs's direct-gap character with a room-temperature bandgap of 1.35 eV. Its primary strategic importance lies in lattice-matched epitaxy of the quaternary alloy In<span class="arithmatex">\(_{1-x}\)</span>Ga<span class="arithmatex">\(_x\)</span>As<span class="arithmatex">\(_y\)</span>P<span class="arithmatex">\(_{1-y}\)</span>, which can be tuned to emit at 1.3 μm or 1.55 μm — the two wavelength windows of minimum loss and minimum chromatic dispersion in silica optical fiber. Essentially all long-haul and metro fiber-optic telecommunication links worldwide rely on InP-based distributed feedback (DFB) laser diodes and photodetectors. InP high-electron-mobility transistors (HEMTs) employing In<span class="arithmatex">\(_{0.53}\)</span>Ga<span class="arithmatex">\(_{0.47}\)</span>As channels lattice-matched to InP hold record cutoff frequencies exceeding 1 THz, enabling millimeter-wave and terahertz imaging systems.</p>
+<h3 id="gallium-nitride-gan">Gallium Nitride (GaN)</h3>
+<p>Gallium nitride's wide direct bandgap of 3.40 eV places its fundamental emission in the near-ultraviolet. By alloying with indium to form In<span class="arithmatex">\(_x\)</span>Ga<span class="arithmatex">\(_{1-x}\)</span>N, the bandgap is tunable from 3.40 eV (x = 0) down to 0.65 eV (x = 1, InN), spanning the entire visible spectrum and enabling the blue and green LEDs central to solid-state white lighting. Nakamura's 1993 demonstration of a high-brightness InGaN blue LED on sapphire substrates — preceded by Akasaki and Amano's p-type GaN activation technique — triggered the global transition from incandescent and fluorescent lighting to LED-based systems, reducing lighting's share of global electricity consumption by several percent within two decades.</p>
+<p>Beyond optoelectronics, GaN's wide bandgap implies a high critical electric field for avalanche breakdown (<span class="arithmatex">\(\sim\)</span>3.3 MV/cm, roughly ten times silicon's 0.3 MV/cm), and its high saturated electron velocity (<span class="arithmatex">\(2.5 \times 10^7\)</span> cm/s) makes GaN-on-SiC HEMTs the dominant technology for high-power RF transistors in 5G base stations, airborne radar, and electronic warfare systems. GaN-on-Si power transistors are increasingly replacing silicon MOSFETs in DC-DC converters operating at switching voltages up to 650 V.</p>
+<h3 id="silicon-carbide-4h-sic">Silicon Carbide (4H-SiC)</h3>
+<p>Silicon carbide crystallizes in more than 250 polytypes distinguished by the stacking sequence of Si-C bilayers; the 4H polytype (alternating hexagonal and cubic bilayers in a four-layer repeat) is commercially dominant for power electronics. The 4H-SiC bandgap of 3.26 eV is an indirect gap — SiC is not used for light emission — but its combination of properties makes it without rival for high-voltage power switching:</p>
+<ul>
+<li>Critical breakdown field: <span class="arithmatex">\(\sim\)</span>2.8 MV/cm (approximately 10× silicon for identical on-resistance)</li>
+<li>Thermal conductivity: 4.9 W/cm·K (three times silicon, exceeding copper's 4.0 W/cm·K)</li>
+<li>Maximum operating temperature: theoretically above 600°C (practical limit set by packaging and contacts)</li>
+<li>Chemical inertness enabling operation in corrosive environments</li>
+</ul>
+<p>Commercial SiC Schottky diodes and planar/trench MOSFETs rated from 650 V to 1.7 kV have displaced silicon devices in high-efficiency power converters for electric vehicle drivetrains, photovoltaic inverters, industrial motor drives, and traction applications where reduced switching losses and higher operating temperatures translate directly to smaller, lighter power modules.</p>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<p>This chapter established the conceptual and material foundations that underpin the entire course. The essential results are:</p>
+<ul>
+<li>A <strong>semiconductor</strong> is distinguished not by a fixed resistivity value but by the tunability of its conductivity through doping, temperature, and applied fields — the defining engineering attribute that no other material class offers.</li>
+<li><strong>Elemental semiconductors</strong> (Si, Ge) are Group IV materials bonded covalently in the diamond cubic structure; <strong>compound semiconductors</strong> (GaAs, InP, GaN, SiC) combine elements from adjacent periodic table groups so the average valence equals four.</li>
+<li>The <strong>energy band diagram</strong> represents allowed electron energies in a crystal. The <strong>valence band</strong> (filled at 0 K) and the <strong>conduction band</strong> (empty at 0 K) are separated by the <strong>forbidden energy gap</strong> of width <span class="arithmatex">\(E_g = E_C - E_V\)</span>, measured in electronvolts.</li>
+<li>The <strong>bandgap energy</strong> is the primary material fingerprint: it sets the optical absorption edge (<span class="arithmatex">\(\lambda_\text{edge} = 1240/E_g\)</span> nm), the intrinsic carrier concentration, and the operating temperature ceiling.</li>
+<li><strong>Direct bandgap</strong> materials (GaAs, InP, GaN) have their conduction band minimum and valence band maximum at the same crystal momentum (<span class="arithmatex">\(\mathbf{k} = 0\)</span>); optical transitions require only a photon, enabling efficient light emission.</li>
+<li><strong>Indirect bandgap</strong> materials (Si, Ge, 4H-SiC) have the conduction band minimum and valence band maximum at different <span class="arithmatex">\(\mathbf{k}\)</span> values; optical transitions require a phonon, which suppresses luminescence efficiency by orders of magnitude but leaves optical absorption viable over longer path lengths.</li>
+<li>The six materials surveyed — spanning 0.66 eV (Ge) to 3.4 eV (GaN), indirect to direct gap, and modest to outstanding carrier mobilities — define the device ecosystem from infrared detectors to blue LEDs to 1.7 kV power switches.</li>
+</ul>
+<p>Subsequent chapters build quantitatively on this foundation. Chapter 2 develops the crystal structures (diamond cubic, zincblende, wurtzite) whose periodic potentials give rise to the band structures sketched here. Chapter 4 derives the E-k diagrams from the Kronig-Penney model and Bloch's theorem. Chapter 5 derives carrier concentrations and Fermi-level positions from Fermi-Dirac statistics applied to the density of states in each band.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You've cracked open the semiconductor world!</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
+Seventeen concepts, two MicroSims, and one big idea: <strong>the bandgap is the lever that engineers pull to make every semiconductor device work</strong>. You now know what makes a semiconductor special, how to read an energy band diagram, why silicon can't lase but GaN can, and which material to reach for when you need 3 million volts per centimeter of breakdown field. That is a genuinely solid foundation. Time to jump bands into Chapter 2!</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: List of Chapters">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                List of Chapters
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../02-crystal-lattice-structure/" class="md-footer__link md-footer__link--next" aria-label="Next: 2. Crystal Lattice Structure">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                2. Crystal Lattice Structure
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

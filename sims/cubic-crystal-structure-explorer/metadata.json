@@ -1,0 +1,21 @@
+{
+  "title": "Cubic Crystal Structure Explorer",
+  "description": "Students will identify atomic positions in SC, BCC, FCC, and diamond cubic structures and calculate atoms per unit cell (Remember/Apply, L1/L3) by manipulating an interactive 3D-perspective model.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "cubic-crystal-structure-explorer",
+  "library": "p5.js",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 2,
+  "chapter_title": "Crystal Lattice Structure and Symmetry",
+  "chapter_dir": "02-crystal-lattice-structure"
+}

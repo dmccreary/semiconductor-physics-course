@@ -1,0 +1,18 @@
+{
+  "FOUND": "Foundation Concepts",
+  "CRYST": "Crystal Structure and Defects",
+  "QM": "Quantum Mechanics",
+  "BAND": "Band Theory",
+  "STAT": "Carrier Statistics and Equilibrium",
+  "TRANS": "Carrier Transport",
+  "GREC": "Generation and Recombination",
+  "PNJ": "P-N Junction and Diodes",
+  "MIS": "Metal-Semiconductor and MOS",
+  "BJT": "Bipolar Junction Transistors",
+  "FET": "Field-Effect Transistors",
+  "OPT": "Optoelectronic Devices",
+  "ADV": "Advanced Materials and Structures",
+  "PWR": "Power and Microwave Devices",
+  "FAB": "Fabrication Concepts",
+  "CHAR": "Characterization and Modeling"
+}

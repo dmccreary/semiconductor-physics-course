@@ -1,0 +1,2348 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Schottky barriers, thermionic emission, ohmic contacts, Fermi-level pinning, MOS capacitor physics, C-V characteristics, and gate oxide reliability">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/13-metal-semiconductor-mos/">
+      
+      
+        <link rel="prev" href="../12-pn-junction-dynamics/">
+      
+      
+        <link rel="next" href="../14-bipolar-transistors/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Metal-Semiconductor Contacts and MOS Physics - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#metal-semiconductor-contacts-and-mos-physics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Metal-Semiconductor Contacts and MOS Physics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#131-metal-semiconductor-contacts-the-schottky-mott-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Metal-Semiconductor Contacts: The Schottky-Mott Rule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#132-thermionic-emission-schottky-diode-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Thermionic Emission: Schottky Diode Current
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.2 Thermionic Emission: Schottky Diode Current">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-force-barrier-lowering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image-Force Barrier Lowering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#133-ohmic-contacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 Ohmic Contacts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#134-fermi-level-pinning-and-metal-induced-gap-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4 Fermi-Level Pinning and Metal-Induced Gap States
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#135-the-mos-capacitor-structure-and-bias-regimes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.5 The MOS Capacitor: Structure and Bias Regimes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.5 The MOS Capacitor: Structure and Bias Regimes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#three-bias-regimes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three Bias Regimes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#136-flat-band-voltage-and-threshold-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.6 Flat-Band Voltage and Threshold Voltage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#137-oxide-charges-the-four-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.7 Oxide Charges: The Four Categories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#138-c-v-characteristics-of-the-mos-capacitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.8 C-V Characteristics of the MOS Capacitor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#139-gate-oxide-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.9 Gate Oxide Reliability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#131-metal-semiconductor-contacts-the-schottky-mott-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Metal-Semiconductor Contacts: The Schottky-Mott Rule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#132-thermionic-emission-schottky-diode-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Thermionic Emission: Schottky Diode Current
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.2 Thermionic Emission: Schottky Diode Current">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-force-barrier-lowering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image-Force Barrier Lowering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#133-ohmic-contacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 Ohmic Contacts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#134-fermi-level-pinning-and-metal-induced-gap-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4 Fermi-Level Pinning and Metal-Induced Gap States
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#135-the-mos-capacitor-structure-and-bias-regimes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.5 The MOS Capacitor: Structure and Bias Regimes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.5 The MOS Capacitor: Structure and Bias Regimes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#three-bias-regimes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three Bias Regimes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#136-flat-band-voltage-and-threshold-voltage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.6 Flat-Band Voltage and Threshold Voltage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#137-oxide-charges-the-four-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.7 Oxide Charges: The Four Categories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#138-c-v-characteristics-of-the-mos-capacitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.8 C-V Characteristics of the MOS Capacitor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#139-gate-oxide-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.9 Gate Oxide Reliability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/13-metal-semiconductor-mos/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="metal-semiconductor-contacts-and-mos-physics">Metal-Semiconductor Contacts and MOS Physics</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter covers two essential semiconductor-metal interfacial structures. Metal-semiconductor contacts begin with the Schottky-Mott rule relating barrier height to work function difference, followed by the thermionic emission model of Schottky diode current, image-force barrier lowering, ohmic contacts formed by tunneling through thin barriers (quantified by specific contact resistance and the transfer-length method), and Fermi-level pinning by metal-induced gap states. The second half develops the MOS capacitor in full: the three bias regimes (accumulation, depletion, strong and weak inversion), flat-band and threshold voltages, the body effect, four categories of oxide charge, high- and low-frequency C-V curves, deep depletion, and oxide reliability (gate oxide breakdown, TDDB, and hot-carrier oxide degradation). These results feed directly into MOSFET analysis in Chapters 15 and 16.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 43 concepts from the learning graph:</p>
+<ol>
+<li>Schottky-Mott Rule</li>
+<li>Metal-Semiconductor Junction</li>
+<li>Schottky Barrier</li>
+<li>Schottky Barrier Height</li>
+<li>Thermionic Emission</li>
+<li>Thermionic Emission Current</li>
+<li>Image Force Lowering</li>
+<li>Barrier Lowering</li>
+<li>Ohmic Contact</li>
+<li>Tunneling Ohmic Contact</li>
+<li>Specific Contact Resistance</li>
+<li>Transfer Length Method</li>
+<li>Fermi Level Pinning</li>
+<li>Metal-Induced Gap States</li>
+<li>Interface Trap Density</li>
+<li>MOS Capacitor</li>
+<li>MOS Structure</li>
+<li>Metal-Oxide-Semiconductor</li>
+<li>Gate Oxide</li>
+<li>Silicon Dioxide Properties</li>
+<li>High-K Dielectrics</li>
+<li>Accumulation Region MOS</li>
+<li>Depletion Region MOS</li>
+<li>Inversion Region MOS</li>
+<li>Strong Inversion</li>
+<li>Weak Inversion</li>
+<li>Flat-Band Condition</li>
+<li>Flat-Band Voltage</li>
+<li>Threshold Voltage</li>
+<li>Body Effect</li>
+<li>Oxide Charge</li>
+<li>Fixed Oxide Charge</li>
+<li>Interface Trapped Charge</li>
+<li>Mobile Ionic Charge</li>
+<li>Oxide Trapped Charge</li>
+<li>C-V Characteristic MOS</li>
+<li>High-Frequency C-V</li>
+<li>Low-Frequency C-V</li>
+<li>Deep Depletion</li>
+<li>Gate Oxide Breakdown</li>
+<li>Oxide Reliability</li>
+<li>Time-Dependent Dielectric Breakdown</li>
+<li>Hot Carrier Oxide Degradation</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../03-crystal-bonding-defects/">Chapter 3: Crystal Bonding, Defects, and Surfaces</a></li>
+<li><a href="../08-carrier-drift-mobility/">Chapter 8: Carrier Drift, Mobility, and Scattering Mechanisms</a></li>
+<li><a href="../11-pn-junction-equilibrium/">Chapter 11: P-N Junction: Equilibrium, Bias, and the Ideal Diode</a></li>
+<li><a href="../12-pn-junction-dynamics/">Chapter 12: P-N Junction: Dynamics, Breakdown, and Heterojunctions</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Nova on Metal-Semiconductor Interfaces: The Boundary Conditions of Real Devices</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+Here's a truth that textbooks sometimes bury: every real transistor is bounded by two metal contacts on one end and a metal-oxide-semiconductor stack on top. The beautiful theory we've built for p-n junctions lives inside the device, but what happens at the <em>edges</em> — where metal meets silicon — determines whether you have an ohmic contact or a rectifying diode, whether your gate controls the channel or accumulates charge at an interface trap. Today: the boundaries matter.</p>
+</div>
+<h2 id="131-metal-semiconductor-contacts-the-schottky-mott-rule">13.1 Metal-Semiconductor Contacts: The Schottky-Mott Rule</h2>
+<p>When a metal is placed in contact with a semiconductor, charge redistributes at the interface until the Fermi levels align — exactly as in a p-n junction, but now involving the metal Fermi level and the semiconductor band structure.</p>
+<p>The <strong>work function</strong> <span class="arithmatex">\(\phi_m\)</span> of the metal is the energy required to remove an electron from the metal Fermi level to vacuum. The semiconductor work function <span class="arithmatex">\(\phi_s = \chi + (E_C - E_F)/q\)</span> similarly depends on the electron affinity <span class="arithmatex">\(\chi\)</span> and the Fermi level position.</p>
+<p>The <strong>Schottky-Mott rule</strong> predicts the Schottky barrier height from these quantities:</p>
+<div class="arithmatex">\[
+\phi_B^n = \phi_m - \chi \quad \text{(barrier for electrons, n-type semiconductor)}
+\]</div>
+<div class="arithmatex">\[
+\phi_B^p = E_g/q - (\phi_m - \chi) \quad \text{(barrier for holes, p-type semiconductor)}
+\]</div>
+<p>For n-type silicon (<span class="arithmatex">\(\chi = 4.05\)</span> eV) in contact with titanium (<span class="arithmatex">\(\phi_m = 4.33\)</span> eV):</p>
+<div class="arithmatex">\[
+\phi_B^n = 4.33 - 4.05 = 0.28 \text{ eV} \quad \text{(relatively low barrier)}
+\]</div>
+<p>For platinum (<span class="arithmatex">\(\phi_m = 5.65\)</span> eV):</p>
+<div class="arithmatex">\[
+\phi_B^n = 5.65 - 4.05 = 1.60 \text{ eV} \quad \text{(very high barrier, excellent Schottky diode)}
+\]</div>
+<p><strong>Rectifying vs. ohmic behavior:</strong></p>
+<ul>
+<li>If <span class="arithmatex">\(\phi_m &gt; \phi_s\)</span> (n-type): electrons must overcome <span class="arithmatex">\(\phi_B^n\)</span> to flow from metal to semiconductor. <strong>Schottky (rectifying) contact.</strong></li>
+<li>If <span class="arithmatex">\(\phi_m &lt; \phi_s\)</span> (n-type): no barrier, easy current flow in both directions. Technically ohmic — but this idealized case rarely occurs cleanly.</li>
+</ul>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Nova Warns: Schottky-Mott Is a Beautiful Theory That Real Interfaces Mostly Ignore</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Nova with warning pose">
+The Schottky-Mott rule predicts that barrier height should vary linearly with metal work function. Experimental data for silicon shows the barrier height varies by only ~0.1–0.2 eV despite metal work functions spanning 1.5 eV — a phenomenon called <strong>Fermi-level pinning</strong> (Section 13.5). The pinning is so strong in silicon that the metal choice barely matters for barrier height. GaAs is even more pinned: nearly all metals give <span class="arithmatex">\(\phi_B \approx 0.8\)</span> eV. The elegant Schottky-Mott theory is the right framework for thinking about contacts — but in practice, interface chemistry and metal-induced gap states control the outcome.</p>
+</div>
+<hr />
+<h2 id="132-thermionic-emission-schottky-diode-current">13.2 Thermionic Emission: Schottky Diode Current</h2>
+<p>Unlike p-n junctions where current flows by minority carrier diffusion, Schottky diode current is dominated by majority carriers with enough thermal energy to surmount the barrier — <strong>thermionic emission</strong>. Carriers that reach the barrier top are swept across by the electric field; the rate is governed by the Maxwell-Boltzmann tail of the carrier energy distribution.</p>
+<p>The <strong>thermionic emission current density</strong> from semiconductor to metal is:</p>
+<div class="arithmatex">\[
+J_{S \to M} = A^* T^2 \exp\!\left(-\frac{q\phi_B}{k_BT}\right) \exp\!\left(\frac{qV}{k_BT}\right)
+\]</div>
+<p>where <span class="arithmatex">\(A^* = 4\pi q m^* k_B^2 / h^3\)</span> is the <strong>Richardson constant</strong> (modified for semiconductor effective mass). For silicon electrons: <span class="arithmatex">\(A^* \approx 110\)</span> A/cm<span class="arithmatex">\(^2\)</span>K<span class="arithmatex">\(^2\)</span>.</p>
+<p>The total Schottky diode current (combining forward and reverse directions):</p>
+<div class="arithmatex">\[
+J = J_s^{\text{Sch}}\!\left(e^{qV/k_BT} - 1\right), \quad J_s^{\text{Sch}} = A^* T^2 e^{-q\phi_B/k_BT}
+\]</div>
+<p>This looks identical in form to the Shockley diode equation — but the saturation current <span class="arithmatex">\(J_s^{\text{Sch}}\)</span> is typically <span class="arithmatex">\(10^5\)</span>–<span class="arithmatex">\(10^8\)</span> times larger than for an equivalent p-n junction. The result: <strong>Schottky diodes turn on at 0.2–0.4 V</strong> compared to 0.6–0.7 V for silicon p-n junctions — lower forward voltage makes them preferred for low-loss rectification.</p>
+<p>Another consequence: since Schottky current is by majority carriers, <strong>there is no minority carrier storage</strong>. Schottky diodes have essentially zero reverse recovery time — they switch off as fast as the RC time constant of the circuit. This is the physics behind Schottky rectifiers in switching power supplies.</p>
+<h3 id="image-force-barrier-lowering">Image-Force Barrier Lowering</h3>
+<p>In an electric field, the Coulomb attraction between an electron and its "image charge" in the metal reduces the effective barrier height by:</p>
+<div class="arithmatex">\[
+\Delta\phi_B = \sqrt{\frac{q\mathcal{E}_{\max}}{4\pi\varepsilon_s}}
+\]</div>
+<p>This <strong>image-force lowering</strong> (Schottky effect) increases with field (hence with reverse voltage), making the Schottky barrier somewhat voltage-dependent and causing a soft "leakage" that rises gradually with reverse voltage rather than the sharp avalanche of a p-n junction.</p>
+<hr />
+<h2 id="133-ohmic-contacts">13.3 Ohmic Contacts</h2>
+<p>An <strong>ohmic contact</strong> is a metal-semiconductor junction with negligible contact resistance — it should not limit current and should not rectify. True ohmic contacts are achieved by one of two mechanisms:</p>
+<ol>
+<li>
+<p><strong>Heavy surface doping (tunneling ohmic contact):</strong> If the semiconductor is doped heavily enough (<span class="arithmatex">\(N \gtrsim 10^{19}\)</span>–<span class="arithmatex">\(10^{20}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>) near the metal interface, the depletion width <span class="arithmatex">\(W \propto 1/\sqrt{N}\)</span> becomes thin enough (<span class="arithmatex">\(&lt;5\)</span> nm) for carriers to tunnel through the barrier quantum-mechanically, even if the barrier height is large. This is the dominant mechanism for ohmic contacts in practical silicon CMOS.</p>
+</li>
+<li>
+<p><strong>Low barrier height:</strong> Choosing a metal with <span class="arithmatex">\(\phi_m &lt; \phi_s\)</span> theoretically gives no barrier. Difficult in practice due to Fermi-level pinning.</p>
+</li>
+</ol>
+<p>The <strong>specific contact resistance</strong> <span class="arithmatex">\(\rho_c\)</span> (units: Ω·cm<span class="arithmatex">\(^2\)</span>) characterizes contact quality:</p>
+<div class="arithmatex">\[
+\rho_c = \left(\frac{\partial J}{\partial V}\right)^{-1}\bigg|_{V=0}
+\]</div>
+<p>For tunneling-dominated ohmic contacts at high doping:</p>
+<div class="arithmatex">\[
+\rho_c \propto \exp\!\left(\frac{2\phi_B}{\hbar}\sqrt{\frac{\varepsilon_s m^*}{N}}\right)
+\]</div>
+<p><span class="arithmatex">\(\rho_c\)</span> decreases exponentially with <span class="arithmatex">\(\sqrt{N}\)</span> — heavier doping gives dramatically lower contact resistance. For <span class="arithmatex">\(N = 10^{20}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>: <span class="arithmatex">\(\rho_c \sim 10^{-7}\)</span>–<span class="arithmatex">\(10^{-8}\)</span> Ω·cm<span class="arithmatex">\(^2\)</span>. For modern gate contacts in advanced nodes, <span class="arithmatex">\(\rho_c \sim 10^{-9}\)</span> Ω·cm<span class="arithmatex">\(^2\)</span> is the target.</p>
+<p>The <strong>transfer length method (TLM)</strong> uses a pattern of rectangular contacts at varying spacings on a semiconductor strip. Four-probe resistance measurements vs. contact spacing allow extraction of both <span class="arithmatex">\(\rho_c\)</span> and the semiconductor sheet resistance, separating the contact resistance from bulk contributions.</p>
+<hr />
+<h2 id="134-fermi-level-pinning-and-metal-induced-gap-states">13.4 Fermi-Level Pinning and Metal-Induced Gap States</h2>
+<p>The observed independence of Schottky barrier height from metal work function in many semiconductor systems — particularly GaAs and InP — is explained by <strong>metal-induced gap states (MIGS)</strong>.</p>
+<p>When a metal is brought into intimate contact with a semiconductor, the metal's electron wavefunctions do not abruptly stop at the interface — they decay exponentially into the semiconductor bandgap (evanescent modes). These states have energies within the semiconductor bandgap and are associated with the metal's Fermi level. They act as an effective charge reservoir that pins the semiconductor's surface Fermi level at a <strong>charge neutrality level</strong> (CNL) that is an intrinsic property of the semiconductor, independent of the metal.</p>
+<p>The barrier height becomes:</p>
+<div class="arithmatex">\[
+\phi_B \approx \phi_{\text{CNL}} + S(\phi_m - \phi_{\text{CNL}})
+\]</div>
+<p>where <span class="arithmatex">\(S\)</span> is the <strong>slope parameter</strong> (Fermi-level pinning parameter, 0 = fully pinned, 1 = unpinned). For silicon: <span class="arithmatex">\(S \approx 0.27\)</span> (moderately pinned). For GaAs: <span class="arithmatex">\(S \approx 0.09\)</span> (strongly pinned). For ionic semiconductors like SiC or GaN: <span class="arithmatex">\(S \approx 0.4\)</span>–0.6 (less pinned, Schottky-Mott more applicable).</p>
+<p><strong>Interface trap density</strong> <span class="arithmatex">\(D_{\text{it}}\)</span> (units: cm<span class="arithmatex">\(^{-2}\)</span>eV<span class="arithmatex">\(^{-1}\)</span>) quantifies the density of interface states, which contribute both to Fermi-level pinning (if large) and to scattering and threshold voltage instability in MOSFETs. For the Si/SiO<span class="arithmatex">\(_2\)</span> interface achieved by thermal oxidation: <span class="arithmatex">\(D_{\text{it}} \approx 10^{10}\)</span>–<span class="arithmatex">\(10^{11}\)</span> cm<span class="arithmatex">\(^{-2}\)</span>eV<span class="arithmatex">\(^{-1}\)</span> — remarkably low, and a key reason silicon became dominant despite not being the highest-mobility or highest-bandgap semiconductor.</p>
+<hr />
+<h2 id="135-the-mos-capacitor-structure-and-bias-regimes">13.5 The MOS Capacitor: Structure and Bias Regimes</h2>
+<p>The <strong>metal-oxide-semiconductor (MOS) capacitor</strong> is the foundational structure of CMOS technology. It consists of a gate metal (or doped polysilicon), a gate oxide (SiO<span class="arithmatex">\(_2\)</span> or high-k dielectric), and a doped semiconductor substrate. Understanding the MOS capacitor is a prerequisite for all MOSFET analysis.</p>
+<p>We will analyze an n-channel configuration: <strong>p-type silicon</strong> substrate with a gate metal on top. Before applying bias, consider the equilibrium band diagram: the metal Fermi level, the oxide gap (no states inside), and the semiconductor bands all must be consistent with no charge flow.</p>
+<p><strong>Gate oxide properties:</strong>
+- <strong>Silicon dioxide (SiO<span class="arithmatex">\(_2\)</span>)</strong>: Bandgap ~9 eV, dielectric constant <span class="arithmatex">\(\varepsilon_{\text{ox}} = 3.9\)</span>, breakdown field ~10 MV/cm. Thermally grown SiO<span class="arithmatex">\(_2\)</span>/Si interface has historically low <span class="arithmatex">\(D_{\text{it}}\)</span>.
+- <strong>High-k dielectrics</strong>: HfO<span class="arithmatex">\(_2\)</span> (<span class="arithmatex">\(k \approx 25\)</span>), Al<span class="arithmatex">\(_2\)</span>O<span class="arithmatex">\(_3\)</span> (<span class="arithmatex">\(k \approx 9\)</span>), ZrO<span class="arithmatex">\(_2\)</span> (<span class="arithmatex">\(k \approx 25\)</span>). Required for sub-45 nm nodes where SiO<span class="arithmatex">\(_2\)</span> became too thin (tunneling leakage). High-k allows physically thicker dielectric for same capacitance.</p>
+<p>The <strong>equivalent oxide thickness (EOT)</strong> normalizes high-k oxides to their equivalent SiO<span class="arithmatex">\(_2\)</span> thickness:</p>
+<div class="arithmatex">\[
+t_{\text{EOT}} = t_{\text{high-k}} \cdot \frac{\varepsilon_{\text{SiO}_2}}{\varepsilon_{\text{high-k}}}
+\]</div>
+<p>A 4 nm HfO<span class="arithmatex">\(_2\)</span> film has <span class="arithmatex">\(t_{\text{EOT}} = 4 \times (3.9/25) = 0.62\)</span> nm — much thinner than any physically stable SiO<span class="arithmatex">\(_2\)</span> film.</p>
+<h3 id="three-bias-regimes">Three Bias Regimes</h3>
+<p>Applying a gate voltage <span class="arithmatex">\(V_G\)</span> creates three distinct regions of semiconductor behavior:</p>
+<p><strong>Accumulation (<span class="arithmatex">\(V_G &lt; V_{FB}\)</span>):</strong> Negative gate voltage (on p-type substrate) attracts majority carriers (holes) toward the oxide interface. The semiconductor surface is in accumulation — more holes than the equilibrium bulk concentration. The semiconductor surface behaves as a good conductor; the system looks like two capacitors in series (oxide capacitance <span class="arithmatex">\(C_{\text{ox}}\)</span> dominates).</p>
+<p><strong>Depletion (<span class="arithmatex">\(V_{FB} &lt; V_G &lt; V_T\)</span>):</strong> A positive gate voltage repels holes from the surface, leaving a depletion region of exposed ionized acceptors (negative charges). The system looks like oxide capacitance in series with the depletion capacitance of the semiconductor — total capacitance decreases.</p>
+<p><strong>Inversion (<span class="arithmatex">\(V_G &gt; V_T\)</span>):</strong> As the gate voltage increases further, the bands bend enough to bring the intrinsic level below the Fermi level at the surface — the surface becomes n-type locally, forming an <strong>inversion layer</strong> of electrons. This is the channel of a MOSFET.</p>
+<p>The transition from depletion to strong inversion is defined by the <strong>threshold condition</strong>: the surface potential equals twice the Fermi potential:</p>
+<div class="arithmatex">\[
+\psi_s = 2\phi_F, \quad \phi_F = \frac{k_BT}{q}\ln\!\left(\frac{N_A}{n_i}\right)
+\]</div>
+<p><strong>Weak inversion</strong> is the regime just below threshold (<span class="arithmatex">\(\psi_s &lt; 2\phi_F\)</span>) where the inversion charge is small and the current is exponentially sensitive to gate voltage — the subthreshold regime of MOSFETs.</p>
+<p><strong>Strong inversion</strong> is the regime above threshold (<span class="arithmatex">\(\psi_s \geq 2\phi_F\)</span>) where the inversion charge density increases linearly with gate voltage.</p>
+<hr />
+<h2 id="136-flat-band-voltage-and-threshold-voltage">13.6 Flat-Band Voltage and Threshold Voltage</h2>
+<p><strong>Flat-band condition</strong> is the gate voltage at which there is no band bending in the semiconductor — the bands are "flat." For an ideal MOS structure with no oxide charges and work-function-matched metal and semiconductor, <span class="arithmatex">\(V_{FB} = 0\)</span>. In practice:</p>
+<div class="arithmatex">\[
+V_{FB} = \phi_{ms} - \frac{Q_{\text{ox}}}{C_{\text{ox}}}
+\]</div>
+<p>where <span class="arithmatex">\(\phi_{ms} = \phi_m - \phi_s\)</span> is the metal-semiconductor work function difference, and <span class="arithmatex">\(Q_{\text{ox}}\)</span> is the total effective oxide charge density (C/cm<span class="arithmatex">\(^2\)</span>).</p>
+<p>The <strong>threshold voltage</strong> for an NMOS (p-substrate):</p>
+<div class="arithmatex">\[
+V_T = V_{FB} + 2\phi_F + \frac{qN_A W_{\text{dep,max}}}{C_{\text{ox}}}
+\]</div>
+<p>where <span class="arithmatex">\(W_{\text{dep,max}} = \sqrt{4\varepsilon_s \phi_F / qN_A}\)</span> is the maximum depletion width at threshold.</p>
+<p>The third term — <span class="arithmatex">\(Q_{\text{dep,max}}/C_{\text{ox}} = qN_A W_{\text{dep,max}}/C_{\text{ox}}\)</span> — is the voltage needed to support the fully depleted depletion charge before inversion can form. This term grows with doping and with oxide thickness (through <span class="arithmatex">\(C_{\text{ox}} = \varepsilon_{\text{ox}}/t_{\text{ox}}\)</span>).</p>
+<p><strong>Body effect:</strong> When a source-to-body voltage <span class="arithmatex">\(V_{SB}\)</span> is applied (bulk terminal biased relative to source), the threshold voltage increases:</p>
+<div class="arithmatex">\[
+V_T(V_{SB}) = V_{T0} + \gamma\!\left(\sqrt{2\phi_F + V_{SB}} - \sqrt{2\phi_F}\right)
+\]</div>
+<p>where the <strong>body effect coefficient</strong> <span class="arithmatex">\(\gamma = \sqrt{2q\varepsilon_s N_A}/C_{\text{ox}}\)</span>. The body effect is why NMOS transistors in a circuit have higher threshold voltages than the device measured at <span class="arithmatex">\(V_{SB} = 0\)</span> — a common source of confusion in analog circuit design.</p>
+<hr />
+<h2 id="137-oxide-charges-the-four-categories">13.7 Oxide Charges: The Four Categories</h2>
+<p>Decades of experimental work identified four distinct types of charge associated with the gate oxide stack:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Symbol</th>
+<th>Location</th>
+<th>Cause</th>
+<th>Temperature Dependent?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fixed oxide charge</td>
+<td><span class="arithmatex">\(Q_f\)</span></td>
+<td>Within 2 nm of Si/SiO<span class="arithmatex">\(_2\)</span></td>
+<td>Excess Si or broken Si-O bonds at interface</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Interface trapped charge</td>
+<td><span class="arithmatex">\(Q_{it}\)</span></td>
+<td>At Si/SiO<span class="arithmatex">\(_2\)</span> interface</td>
+<td>Dangling Si bonds, can be charged/discharged</td>
+<td>Yes (capture/emission)</td>
+</tr>
+<tr>
+<td>Mobile ionic charge</td>
+<td><span class="arithmatex">\(Q_m\)</span></td>
+<td>Within oxide bulk</td>
+<td>Na<span class="arithmatex">\(^+\)</span>, K<span class="arithmatex">\(^+\)</span>, Li<span class="arithmatex">\(^+\)</span> contamination</td>
+<td>Yes (moves at high T)</td>
+</tr>
+<tr>
+<td>Oxide trapped charge</td>
+<td><span class="arithmatex">\(Q_{ot}\)</span></td>
+<td>Within oxide bulk</td>
+<td>Trapped electrons/holes from radiation or hot carriers</td>
+<td>Yes (can be annealed)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fixed oxide charge</strong> <span class="arithmatex">\(Q_f\)</span> is positive and arises from the oxidation process. It is located very close to the Si surface (~1–2 nm) and is essentially immobile under normal electric fields. Its primary effect is to shift <span class="arithmatex">\(V_{FB}\)</span> and <span class="arithmatex">\(V_T\)</span>. Typical values: <span class="arithmatex">\(Q_f/q \sim 10^{10}\)</span>–<span class="arithmatex">\(10^{11}\)</span> cm<span class="arithmatex">\(^{-2}\)</span> for good thermal oxides.</p>
+<p><strong>Interface trapped charge</strong> <span class="arithmatex">\(Q_{it}\)</span> has states distributed through the bandgap that can exchange charge with the semiconductor. Occupancy changes with gate voltage (frequency-dependent!), causing C-V stretch-out and degrading subthreshold slope. Annealing in forming gas (H<span class="arithmatex">\(_2\)</span>/N<span class="arithmatex">\(_2\)</span>) passivates most dangling bonds with hydrogen, reducing <span class="arithmatex">\(D_{it}\)</span> to ~<span class="arithmatex">\(10^{10}\)</span> cm<span class="arithmatex">\(^{-2}\)</span>eV<span class="arithmatex">\(^{-1}\)</span>.</p>
+<p><strong>Mobile ionic charge</strong> <span class="arithmatex">\(Q_m\)</span> was the plague of early MOS transistors. Sodium contamination from handling and chemicals drifts through SiO<span class="arithmatex">\(_2\)</span> at elevated temperatures and electric fields, causing threshold voltage instability. Modern fab cleanliness protocols have reduced this to negligible levels, but it remains a concern for non-silicon CMOS and in reliability testing.</p>
+<p><strong>Oxide trapped charge</strong> <span class="arithmatex">\(Q_{ot}\)</span> is injected during radiation exposure (space electronics, particle physics detectors) or by hot carriers (device aging). It causes <span class="arithmatex">\(V_T\)</span> shift and transconductance degradation over the device lifetime.</p>
+<hr />
+<h2 id="138-c-v-characteristics-of-the-mos-capacitor">13.8 C-V Characteristics of the MOS Capacitor</h2>
+<p>The most powerful characterization tool for the MOS capacitor is the <strong>capacitance-voltage (C-V) measurement</strong>. C-V curves reveal threshold voltage, flat-band voltage, oxide thickness, interface trap density, and oxide charge — all from a single electrical measurement.</p>
+<p>The total MOS capacitance is:</p>
+<div class="arithmatex">\[
+\frac{1}{C_{\text{total}}} = \frac{1}{C_{\text{ox}}} + \frac{1}{C_s(\psi_s)}
+\]</div>
+<p>where <span class="arithmatex">\(C_s\)</span> is the semiconductor capacitance (depletion capacitance plus inversion capacitance).</p>
+<p>Two measurement frequencies give qualitatively different results:</p>
+<p><strong>High-frequency C-V:</strong> At frequencies above ~1 MHz, inversion layer electrons cannot follow the AC signal (they can't be created/annihilated fast enough). Above threshold, <span class="arithmatex">\(C_{\text{total}}\)</span> stays at <span class="arithmatex">\(C_{\text{min}}\)</span> (the oxide capacitance in series with the maximum depletion capacitance). The high-frequency curve shows a minimum in the inversion region.</p>
+<p><strong>Low-frequency (quasi-static) C-V:</strong> At very low frequencies (&lt;10 Hz) or DC sweep, inversion charge can respond. Above threshold, <span class="arithmatex">\(C \to C_{\text{ox}}\)</span> again (inversion charge screens the semiconductor). The low-frequency curve rises back to <span class="arithmatex">\(C_{\text{ox}}\)</span> in inversion — a characteristic S-shape with accumulation → minimum → <span class="arithmatex">\(C_{\text{ox}}\)</span> rise.</p>
+<p><strong>Deep depletion:</strong> If the gate voltage is swept rapidly into inversion (sweep rate faster than minority carrier generation), inversion charge can't form. The depletion region grows beyond <span class="arithmatex">\(W_{\text{dep,max}}\)</span>, and capacitance continues to decrease below <span class="arithmatex">\(C_{\text{min}}\)</span>. Deep depletion only exists transiently — thermally generated minority carriers eventually fill the inversion layer (the "thermal equilibration time" is the generation lifetime, ~microseconds to milliseconds).</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Nova Tips: The C-V Shift Is Your Diagnostic Fingerprint</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Nova with tip pose">
+Each oxide charge type leaves a different fingerprint on the C-V curve. A <strong>parallel shift</strong> of the entire C-V curve along the voltage axis (without shape change) indicates fixed charge <span class="arithmatex">\(Q_f\)</span> or mobile charge <span class="arithmatex">\(Q_m\)</span>. A <strong>stretch-out</strong> (the curve spreads over a wider voltage range without shifting its midpoint) indicates interface trap charge <span class="arithmatex">\(Q_{it}\)</span>. Temperature-dependent shifts during bias-temperature stress (BTS) measurement reveal mobile ionic charges. Knowing these signatures lets you diagnose oxide quality from a single C-V measurement — which is why MOS C-V is one of the most frequently performed measurements in any semiconductor fab.</p>
+</div>
+<details>
+<summary>#### MicroSim: MOS Capacitor C-V Explorer</summary>
+<p><strong>sim-id:</strong> <code>mos-cv-explorer</code><br />
+<strong>Library:</strong> p5.js<br />
+<strong>Status:</strong> specification  </p>
+<p><strong>Description:</strong> Interactive MOS C-V simulator showing accumulation, depletion, and inversion regions. Two curves shown: high-frequency and low-frequency. User can adjust oxide thickness, substrate doping, oxide charge, interface trap density, and metal work function. The band diagram updates simultaneously with the C-V curve position. Labels identify <span class="arithmatex">\(V_{FB}\)</span>, <span class="arithmatex">\(V_T\)</span>, <span class="arithmatex">\(C_{\text{ox}}\)</span>, and <span class="arithmatex">\(C_{\text{min}}\)</span>.</p>
+<p><strong>Controls:</strong>
+- Slider: Gate oxide thickness <span class="arithmatex">\(t_{\text{ox}}\)</span> (1–20 nm)
+- Slider: Substrate doping <span class="arithmatex">\(N_A\)</span> (<span class="arithmatex">\(10^{15}\)</span>–<span class="arithmatex">\(10^{18}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>)
+- Slider: Oxide charge <span class="arithmatex">\(Q_f\)</span> (shift charge: <span class="arithmatex">\(-10^{12}\)</span> to <span class="arithmatex">\(+10^{12}\)</span> cm<span class="arithmatex">\(^{-2}\)</span>)
+- Slider: Interface trap density <span class="arithmatex">\(D_{it}\)</span> (0 to <span class="arithmatex">\(10^{12}\)</span> cm<span class="arithmatex">\(^{-2}\)</span>eV<span class="arithmatex">\(^{-1}\)</span>)
+- Radio: High-freq / Low-freq / Both curves
+- Checkbox: Show deep depletion curve</p>
+<p><strong>Key Learning Objectives:</strong>
+- L2 (Understand): Identify accumulation, depletion, and inversion regions from C-V shape
+- L3 (Apply): Extract <span class="arithmatex">\(V_{FB}\)</span>, <span class="arithmatex">\(V_T\)</span>, <span class="arithmatex">\(t_{\text{ox}}\)</span>, and <span class="arithmatex">\(N_A\)</span> from a C-V curve
+- L4 (Analyze): Diagnose oxide charge type from C-V shifts vs. stretch-out</p>
+</details>
+<hr />
+<h2 id="139-gate-oxide-reliability">13.9 Gate Oxide Reliability</h2>
+<p>The thin gate oxide is under enormous electric stress — up to 5–15 MV/cm in modern transistors. At these fields, several reliability failure mechanisms operate:</p>
+<p><strong>Gate oxide breakdown (hard breakdown):</strong> At sufficiently high field, SiO<span class="arithmatex">\(_2\)</span> experiences catastrophic bond rupture, creating a conductive path through the oxide. Breakdown is typically modeled by the <strong>E-model</strong> or the <strong>1/E model</strong>:</p>
+<div class="arithmatex">\[
+t_{\text{BD}} \propto \exp\!\left(\frac{-E_{\text{ox}}}{E_0}\right) \quad \text{(E-model)} \quad \text{or} \quad \exp\!\left(\frac{A}{E_{\text{ox}}}\right) \quad \text{(1/E model)}
+\]</div>
+<p>where <span class="arithmatex">\(t_{\text{BD}}\)</span> is the time to breakdown, <span class="arithmatex">\(E_{\text{ox}} = V_G/t_{\text{ox}}\)</span> is the oxide field, and <span class="arithmatex">\(E_0\)</span>, <span class="arithmatex">\(A\)</span> are material constants.</p>
+<p><strong>Time-Dependent Dielectric Breakdown (TDDB):</strong> Even at normal operating fields, defects accumulate stochastically over time. Electron trapping, hole-generated interface damage, and percolation of defect clusters eventually create a conductive path. TDDB is characterized by the Weibull distribution and sets the 10-year reliability specification for gate oxides. The Weibull slope <span class="arithmatex">\(\beta &gt; 1\)</span> for TDDB (failure rate increases with age) — meaning old oxides are more likely to fail than young ones, unlike random failures (<span class="arithmatex">\(\beta = 1\)</span>).</p>
+<p><strong>Hot-carrier oxide degradation (HCI):</strong> Hot electrons injected from the silicon channel into the gate oxide (Section 8.5) create interface traps and trapped charge. Over millions of switching cycles, this shifts <span class="arithmatex">\(V_T\)</span> and degrades transconductance. HCI sets the AC operating lifetime limit for short-channel MOSFETs.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Nova Celebrates: You Now Understand the Transistor's Foundation</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
+With metal-semiconductor contacts and MOS physics in hand, you have the complete foundation for MOSFET analysis. The Schottky barrier physics (Chapter 13) governs the ohmic source/drain contacts and the Schottky-barrier FETs used in low-power and carbon nanotube transistors. The MOS capacitor analysis (also Chapter 13) is the direct precursor to long-channel MOSFET operation (Chapter 15) and short-channel effects (Chapter 16). Chapters 11–13 together form the complete interface physics toolkit for the semiconductor industry. Time to jump bands into transistors!</p>
+</div>
+<hr />
+<h2 id="summary_1">Summary</h2>
+<p>This chapter covered the physics of semiconductor interfaces:</p>
+<ul>
+<li><strong>Schottky-Mott rule</strong> predicts barrier height from work function difference; Fermi-level pinning by MIGS reduces sensitivity to metal choice</li>
+<li><strong>Thermionic emission</strong> gives Schottky diode I-V with large <span class="arithmatex">\(I_s\)</span>; no minority carrier storage → zero reverse recovery</li>
+<li><strong>Ohmic contacts</strong> require heavy doping (<span class="arithmatex">\(N &gt; 10^{19}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>) so carriers tunnel through the thin barrier; characterized by specific contact resistance <span class="arithmatex">\(\rho_c\)</span></li>
+<li><strong>TLM</strong> separates contact and sheet resistance from multi-contact resistance measurements</li>
+<li><strong>MOS capacitor</strong> has three bias regimes: accumulation, depletion, inversion; threshold defined by <span class="arithmatex">\(\psi_s = 2\phi_F\)</span></li>
+<li><strong>Threshold voltage</strong> depends on work function difference, oxide charges, and body bias (body effect coefficient <span class="arithmatex">\(\gamma\)</span>)</li>
+<li><strong>Four oxide charge types:</strong> fixed, interface trapped, mobile ionic, oxide trapped — each with distinct C-V signatures</li>
+<li><strong>C-V measurement</strong> reveals <span class="arithmatex">\(V_{FB}\)</span>, <span class="arithmatex">\(V_T\)</span>, <span class="arithmatex">\(C_{\text{ox}}\)</span>, <span class="arithmatex">\(D_{it}\)</span>, and oxide charge from a single sweep</li>
+<li><strong>Reliability mechanisms:</strong> hard breakdown, TDDB (Weibull statistics), and HCI degrade gate oxide with use and time</li>
+</ul>
+<h2 id="key-equations">Key Equations</h2>
+<div class="arithmatex">\[
+\phi_B^n = \phi_m - \chi, \quad J = A^*T^2 e^{-q\phi_B/k_BT}(e^{qV/k_BT} - 1)
+\]</div>
+<div class="arithmatex">\[
+V_{FB} = \phi_{ms} - \frac{Q_{\text{ox}}}{C_{\text{ox}}}
+\]</div>
+<div class="arithmatex">\[
+V_T = V_{FB} + 2\phi_F + \frac{qN_A W_{\text{dep,max}}}{C_{\text{ox}}}, \quad \phi_F = \frac{k_BT}{q}\ln\!\left(\frac{N_A}{n_i}\right)
+\]</div>
+<div class="arithmatex">\[
+V_T(V_{SB}) = V_{T0} + \gamma\!\left(\sqrt{2\phi_F + V_{SB}} - \sqrt{2\phi_F}\right), \quad \gamma = \frac{\sqrt{2q\varepsilon_s N_A}}{C_{\text{ox}}}
+\]</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../12-pn-junction-dynamics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 12. P-N Junction Dynamics">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                12. P-N Junction Dynamics
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../14-bipolar-transistors/" class="md-footer__link md-footer__link--next" aria-label="Next: 14. Bipolar Transistors">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                14. Bipolar Transistors
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

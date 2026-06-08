@@ -1,0 +1,2413 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Develops the crystallographic framework for semiconductor materials, covering lattice types, cubic structures, diamond and zincblende geometries, Miller indices, reciprocal lattice, and diffraction.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/02-crystal-lattice-structure/">
+      
+      
+        <link rel="prev" href="../01-intro-semiconductors/">
+      
+      
+        <link rel="next" href="../03-crystal-bonding-defects/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Crystal Lattice Structure and Symmetry - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#crystal-lattice-structure-and-symmetry" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Crystal Lattice Structure and Symmetry
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-crystal-lattice-geometry-at-the-atomic-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Crystal Lattice: Geometry at the Atomic Scale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-cells-and-primitive-cells" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Cells and Primitive Cells
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#covalent-bonding-why-semiconductors-choose-their-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Covalent Bonding: Why Semiconductors Choose Their Structures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-cubic-crystal-families" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Cubic Crystal Families
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Cubic Crystal Families">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cubic-crystal-structure-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Cubic Crystal Structure Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diamond-cubic-and-zincblende-the-semiconductor-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diamond Cubic and Zincblende: The Semiconductor Structures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miller-indices-labeling-planes-and-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Miller Indices: Labeling Planes and Directions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Miller Indices: Labeling Planes and Directions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-miller-indices-crystal-plane-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Miller Indices Crystal Plane Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-reciprocal-lattice-and-first-brillouin-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Reciprocal Lattice and First Brillouin Zone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#probing-crystal-structure-diffraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Probing Crystal Structure: Diffraction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Probing Crystal Structure: Diffraction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-semiconductor-lattice-constant-and-bandgap-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Semiconductor Lattice Constant and Bandgap Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-crystal-lattice-geometry-at-the-atomic-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Crystal Lattice: Geometry at the Atomic Scale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-cells-and-primitive-cells" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Cells and Primitive Cells
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#covalent-bonding-why-semiconductors-choose-their-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Covalent Bonding: Why Semiconductors Choose Their Structures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-cubic-crystal-families" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Cubic Crystal Families
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Cubic Crystal Families">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cubic-crystal-structure-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Cubic Crystal Structure Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diamond-cubic-and-zincblende-the-semiconductor-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diamond Cubic and Zincblende: The Semiconductor Structures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miller-indices-labeling-planes-and-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Miller Indices: Labeling Planes and Directions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Miller Indices: Labeling Planes and Directions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-miller-indices-crystal-plane-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Miller Indices Crystal Plane Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-reciprocal-lattice-and-first-brillouin-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Reciprocal Lattice and First Brillouin Zone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#probing-crystal-structure-diffraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Probing Crystal Structure: Diffraction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Probing Crystal Structure: Diffraction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-semiconductor-lattice-constant-and-bandgap-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Semiconductor Lattice Constant and Bandgap Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/02-crystal-lattice-structure/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="crystal-lattice-structure-and-symmetry">Crystal Lattice Structure and Symmetry</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter develops the crystallographic framework needed to describe semiconductor materials at the atomic scale. Starting from the concept of a crystal lattice and its associated unit cells, students progress through the cubic crystal families and the diamond and zincblende structures that define silicon, germanium, and most III-V semiconductors. The chapter introduces Miller indices for planes and directions, develops the reciprocal lattice and first Brillouin zone essential for band theory, and covers X-ray and electron diffraction as experimental probes of crystal structure. Covalent bonding in semiconductors is introduced here as the origin of the diamond structure.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 22 concepts from the learning graph:</p>
+<ol>
+<li>Crystal Lattice</li>
+<li>Unit Cell</li>
+<li>Primitive Cell</li>
+<li>Basis Vectors</li>
+<li>Simple Cubic Structure</li>
+<li>Face-Centered Cubic Structure</li>
+<li>Body-Centered Cubic Structure</li>
+<li>Diamond Cubic Structure</li>
+<li>Zincblende Structure</li>
+<li>Wurtzite Structure</li>
+<li>Miller Indices</li>
+<li>Crystal Planes</li>
+<li>Crystal Directions</li>
+<li>Reciprocal Lattice</li>
+<li>First Brillouin Zone</li>
+<li>Wigner-Seitz Cell</li>
+<li>Lattice Constant</li>
+<li>Lattice Mismatch</li>
+<li>Bragg Diffraction Law</li>
+<li>X-Ray Diffraction</li>
+<li>Electron Diffraction</li>
+<li>Covalent Bonding in Semiconductors</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-intro-semiconductors/">Chapter 1: Introduction to Semiconductors and Bandgap Fundamentals</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Let's get <em>crystal</em> clear on this!</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+Chapter 2! Crystallography: the field where every atom knows exactly where it belongs and stays there for geological time scales. Must be nice. By the end of this chapter you will understand the geometric scaffolding of every semiconductor we care about — from the humble silicon atom sitting smugly in its diamond cubic lattice to the exotic wurtzite structure of GaN holding up the LED in your phone. Grab your pencil. Miller indices are coming and they refuse to be intuitive on first contact. Let's get excited anyway!</p>
+</div>
+<h2 id="the-crystal-lattice-geometry-at-the-atomic-scale">The Crystal Lattice: Geometry at the Atomic Scale</h2>
+<p>A <strong>crystal</strong> is a solid in which atoms are arranged in a pattern that repeats periodically in three dimensions — an arrangement so regular that, in principle, knowing the positions of atoms in one small volume tells you the positions of every atom in the entire macroscopic solid. This periodicity is not merely aesthetic; it is the physical foundation of nearly everything computed in Chapter 1. The bandgap, the carrier effective masses, the optical selection rules — all arise from the translational symmetry of the crystal lattice.</p>
+<p>A <strong>crystal lattice</strong> (or Bravais lattice) is the mathematical abstraction underlying this periodicity: an infinite, regular array of points in space, each point having an identical environment. A lattice is not a collection of atoms — it is a geometric skeleton. Atoms (or groups of atoms) are attached to lattice points according to a rule called the <strong>basis</strong>, producing the actual crystal structure. The distinction between lattice and basis is crucial: two crystals can share the same lattice yet have completely different properties because they differ in their bases.</p>
+<p>Every lattice point <span class="arithmatex">\(\mathbf{R}\)</span> can be reached from the origin by an integer combination of three fundamental translation vectors:</p>
+<div class="arithmatex">\[
+\mathbf{R} = n_1 \mathbf{a}_1 + n_2 \mathbf{a}_2 + n_3 \mathbf{a}_3, \quad n_1, n_2, n_3 \in \mathbb{Z}
+\]</div>
+<p>The vectors <span class="arithmatex">\(\mathbf{a}_1\)</span>, <span class="arithmatex">\(\mathbf{a}_2\)</span>, <span class="arithmatex">\(\mathbf{a}_3\)</span> are the <strong>basis vectors</strong> (also called primitive translation vectors). They define the fundamental step sizes and angles of the lattice. The magnitude <span class="arithmatex">\(a = |\mathbf{a}_1|\)</span> for a cubic lattice is the <strong>lattice constant</strong>, typically reported in angstroms (Å) or nanometers: silicon's lattice constant is 5.431 Å = 0.5431 nm at room temperature.</p>
+<h2 id="unit-cells-and-primitive-cells">Unit Cells and Primitive Cells</h2>
+<p>A <strong>unit cell</strong> is any volume of space that, when translated by all lattice vectors, tiles all of space without gaps or overlaps. Unit cells are not unique — infinitely many valid choices exist for any lattice. In practice, two conventions are common.</p>
+<p>The <strong>conventional unit cell</strong> is chosen for visual simplicity and symmetry, often containing more than one lattice point. For cubic lattices, the conventional cell is always a cube — easy to draw and easy to index. The <strong>primitive cell</strong> is the smallest possible unit cell, containing exactly one lattice point (or one formula unit of the basis). The primitive cell has volume <span class="arithmatex">\(V_p = |\mathbf{a}_1 \cdot (\mathbf{a}_2 \times \mathbf{a}_3)|\)</span>.</p>
+<p>A particularly elegant primitive cell construction — used extensively in band theory — is the <strong>Wigner-Seitz cell</strong>: the region of space closer to a given lattice point than to any other. It is constructed by drawing perpendicular bisecting planes between a central point and all its neighbors, then taking the smallest enclosed volume. The Wigner-Seitz cell has the full rotational symmetry of the lattice and is the natural choice for visualizing the neighborhood of each atom. Its reciprocal-space analog — the first Brillouin zone — is discussed later in this chapter.</p>
+<h2 id="covalent-bonding-why-semiconductors-choose-their-structures">Covalent Bonding: Why Semiconductors Choose Their Structures</h2>
+<p>Before surveying the cubic crystal families, we need to understand why silicon and its relatives prefer the structures they do rather than the densest possible packing. The answer is <strong>covalent bonding</strong>.</p>
+<p>In covalent bonding, electrons are shared between atoms in directed, localized bonds. Silicon, germanium, and the Group III-V compounds all have four valence electrons per atom available for bonding. Through <strong>sp³ hybridization</strong> — a quantum mechanical mixing of one s orbital and three p orbitals — each atom forms four equivalent bond orbitals pointing toward the corners of a regular tetrahedron, separated by angles of 109.47°. This tetrahedral coordination is rigid and directional: each silicon atom bonds to exactly four neighbors arranged tetrahedrally, and this geometry propagates throughout the crystal to produce the diamond cubic structure.</p>
+<p>Ionic bonding (NaCl structure) and metallic bonding (FCC or HCP close-packed) optimize for different constraints — electrostatic attraction or electron delocalization — and produce much higher coordination numbers (6–12 nearest neighbors). Covalently bonded semiconductors accept lower packing efficiency in exchange for the directed bond angles demanded by sp³ hybridization. The result is a coordination number of 4 and an atomic packing fraction of only 34% — less than half the theoretical maximum of 74% for close-packed spheres. Semiconductors sacrifice density for direction, and direction is exactly what gives them their extraordinary electrical properties.</p>
+<h2 id="the-cubic-crystal-families">The Cubic Crystal Families</h2>
+<p>Three Bravais lattices have cubic symmetry, meaning all three basis vectors are equal in length and mutually perpendicular: <span class="arithmatex">\(|\mathbf{a}_1| = |\mathbf{a}_2| = |\mathbf{a}_3| = a\)</span>, all angles 90°. Before comparing them, two definitions are useful. The <strong>coordination number</strong> is the number of nearest neighbors touching each atom. The <strong>atomic packing fraction (APF)</strong> is the fraction of the unit cell volume occupied by hard-sphere atomic models:</p>
+<div class="arithmatex">\[
+\text{APF} = \frac{N_{\text{atoms}} \cdot \frac{4}{3}\pi r^3}{a^3}
+\]</div>
+<p>where <span class="arithmatex">\(r\)</span> is the atomic radius (maximized by assuming atoms just touch along the closest-packed direction). The following table summarizes all three cubic structures:</p>
+<table>
+<thead>
+<tr>
+<th>Structure</th>
+<th>Atoms/Cell</th>
+<th>Coordination #</th>
+<th>APF</th>
+<th>Nearest-Neighbor Dist.</th>
+<th>Semiconductor Relevance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple cubic (SC)</td>
+<td>1</td>
+<td>6</td>
+<td>52%</td>
+<td><span class="arithmatex">\(a\)</span></td>
+<td>None — only Po adopts this</td>
+</tr>
+<tr>
+<td>Body-centered cubic (BCC)</td>
+<td>2</td>
+<td>8</td>
+<td>68%</td>
+<td><span class="arithmatex">\(a\sqrt{3}/2\)</span></td>
+<td>Reciprocal lattice of FCC</td>
+</tr>
+<tr>
+<td>Face-centered cubic (FCC)</td>
+<td>4</td>
+<td>12</td>
+<td>74%</td>
+<td><span class="arithmatex">\(a/\sqrt{2}\)</span></td>
+<td>Parent lattice of diamond, zincblende</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Simple cubic:</strong> Atoms at cube corners only. One atom per conventional cell. Only polonium adopts SC at room temperature — the structure is mechanically marginalized because each atom has just 6 neighbors and large voids between them. Silicon has no interest in polonium's lifestyle.</p>
+<p><strong>Body-centered cubic:</strong> Atoms at cube corners plus one at the cube center. Two atoms per cell. Common among transition metals and alkali metals; no common semiconductors adopt BCC in real space, but the BCC lattice reappears as the reciprocal lattice of FCC — an ironic cameo in k-space.</p>
+<p><strong>Face-centered cubic:</strong> Atoms at cube corners plus one at each face center. Four atoms per cell (8 × 1/8 + 6 × 1/2 = 4). FCC achieves the densest sphere packing (74%) and is the parent lattice for virtually every semiconductor crystal structure.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Why do semiconductors use FCC? Because atoms are efficiency maximalists — up to a point.</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova thinking">
+FCC packs spheres as tightly as geometry allows. If atoms were billiard balls with no directional preferences, everything would be FCC or HCP. But silicon atoms have strong tetrahedral bond preferences baked in by sp³ hybridization. So silicon takes the FCC lattice and then <em>adds a second FCC lattice</em> shifted by one-quarter of the body diagonal, creating the diamond structure. The result is a crystal with FCC regularity but silicon's preferred 109.47° bond angle. Elegant quantum-level engineering — or, as Feynman would say, nature finding the one path that makes all the others cancel out.</p>
+</div>
+<p>The following MicroSim lets you rotate and compare all three cubic structures plus diamond cubic and zincblende, visualizing the atomic positions and bonds interactively.</p>
+<h4 id="diagram-cubic-crystal-structure-explorer">Diagram: Cubic Crystal Structure Explorer</h4>
+<iframe src="../../sims/cubic-crystal-structure-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/cubic-crystal-structure-explorer/main.html">Run Cubic Crystal Structure Explorer Fullscreen</a></p>
+<iframe src="../../sims/cubic-crystal-structure-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/cubic-crystal-structure-explorer/main.html">Run Cubic Crystal Structure Explorer Fullscreen</a></p>
+<details>
+<summary>Cubic Crystal Structure Explorer</summary>
+<p>Type: MicroSim
+<strong>sim-id:</strong> cubic-crystal-structure-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning objective:</strong> Students will identify atomic positions in SC, BCC, FCC, and diamond cubic structures and calculate atoms per unit cell (Remember/Apply, L1/L3) by manipulating an interactive 3D-perspective model.</p>
+<p><strong>Canvas size:</strong> 900 × 550 px, responsive — call updateCanvasSize() first in setup().</p>
+<p><strong>Controls (p5.js built-in):</strong>
+- Select dropdown: Structure — "Simple Cubic (SC)", "Body-Centered Cubic (BCC)", "Face-Centered Cubic (FCC)", "Diamond Cubic", "Zincblende (GaAs)". Default: "Face-Centered Cubic (FCC)".
+- Slider: Rotation angle φ 0–360°, default 30°. Label: "Rotate (°):"
+- Slider: Tilt θ 10–80°, default 35°. Label: "Tilt (°):"
+- Checkbox: "Show bonds" (default checked).
+- Checkbox: "Show unit cell outline" (default checked).</p>
+<p><strong>Visual layout:</strong></p>
+<p>Left panel (65%): 3D isometric perspective projection of one conventional unit cell, drawn with p5.js manual 3D→2D projection (no WebGL). Use rotation/tilt sliders to update the viewing angle each frame.</p>
+<p>Atom rendering:
+- Corner atoms: draw as full circles with radius scaled by perspective, color light blue (#90caf9). Eight corners, each contributing 1/8 atom.
+- Face-center atoms (FCC, diamond): light blue, radius × 0.85 (slightly smaller to indicate partial inclusion, though drawn fully).
+- BCC body-center atom: green (#a5d6a7), full size.
+- Diamond second sublattice atoms: orange (#ffb74d) at positions (¼,¼,¼), (¾,¾,¼), (¾,¼,¾), (¼,¾,¾) in fractional coordinates.
+- Zincblende: first sublattice atoms orange (Ga), second sublattice purple (#7b1fa2) (As).</p>
+<p>Draw bond lines between nearest-neighbor pairs if "Show bonds" checked.
+Draw cube outline in dark gray if "Show unit cell outline" checked.</p>
+<p>Right panel (35%): Information card showing:
+- Structure name (bold, large).
+- "Atoms per unit cell: N"
+- "Coordination number: N"
+- "APF: XX%"
+- "Nearest-neighbor distance: X·a"
+- "Semiconductor examples:" with 2–3 materials.</p>
+<p><strong>Behavior:</strong>
+- Selecting a new structure immediately redraws.
+- Hover over an atom: highlight yellow, tooltip shows fractional coordinates.
+- Sliders update projection in real time.</p>
+<p><strong>Implementation:</strong> p5.js, single self-contained HTML file. Manual perspective projection via 3D rotation matrices. Parent canvas to document.querySelector('main').</p>
+</details>
+<h2 id="diamond-cubic-and-zincblende-the-semiconductor-structures">Diamond Cubic and Zincblende: The Semiconductor Structures</h2>
+<p>The <strong>diamond cubic structure</strong> is the crystal structure of silicon, germanium, diamond (carbon), and gray tin. It consists of two interpenetrating FCC sublattices, offset from each other by <span class="arithmatex">\(\frac{a}{4}(1,1,1)\)</span> — a displacement of one-quarter of the body diagonal. The conventional cubic cell (side <span class="arithmatex">\(a\)</span>) contains 8 atoms: 4 from each FCC sublattice. Every atom has exactly 4 nearest neighbors arranged tetrahedrally, with bond length <span class="arithmatex">\(d = a\sqrt{3}/4\)</span>. For silicon (<span class="arithmatex">\(a = 5.431\)</span> Å), the Si-Si bond length is 2.352 Å.</p>
+<p>The <strong>zincblende structure</strong> (also called sphalerite) is geometrically identical to diamond cubic, except the two FCC sublattices are occupied by different atomic species. In gallium arsenide, one sublattice is all Ga and the other is all As. The resulting structure lacks inversion symmetry (unlike diamond, which has it), giving rise to <strong>piezoelectric</strong> and <strong>pyroelectric</strong> behavior exploited in GaN-based RF devices. GaAs, InP, InAs, AlAs, CdTe, and ZnS all adopt zincblende at ambient conditions.</p>
+<p>The <strong>wurtzite structure</strong> is the hexagonal counterpart of zincblende: two interpenetrating hexagonal close-packed (HCP) sublattices offset along the hexagonal c-axis. GaN, AlN, and ZnO prefer wurtzite at ambient conditions. The reduced symmetry of wurtzite produces a large spontaneous polarization along the c-axis and strong piezoelectric constants — critical for the two-dimensional electron gas (2DEG) in AlGaN/GaN HEMT structures used in power electronics and 5G base stations.</p>
+<table>
+<thead>
+<tr>
+<th>Structure</th>
+<th>Parent Lattice</th>
+<th>Atoms/Cell</th>
+<th>Inversion Symmetry</th>
+<th>Key Materials</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diamond cubic</td>
+<td>2× FCC, 1 species</td>
+<td>8</td>
+<td>Yes</td>
+<td>Si, Ge, C</td>
+</tr>
+<tr>
+<td>Zincblende</td>
+<td>2× FCC, 2 species</td>
+<td>8</td>
+<td>No</td>
+<td>GaAs, InP, ZnS, CdTe</td>
+</tr>
+<tr>
+<td>Wurtzite</td>
+<td>2× HCP, 2 species</td>
+<td>4</td>
+<td>No</td>
+<td>GaN, AlN, ZnO</td>
+</tr>
+</tbody>
+</table>
+<h2 id="miller-indices-labeling-planes-and-directions">Miller Indices: Labeling Planes and Directions</h2>
+<p>To communicate unambiguously about crystal planes and directions, crystallographers use <strong>Miller indices</strong> — a three-integer notation derived from the axis intercepts of a plane. The procedure for finding the Miller indices <span class="arithmatex">\((hkl)\)</span> of a plane:</p>
+<ol>
+<li>Find where the plane intersects each crystallographic axis, expressed as multiples of the lattice constants. If the plane is parallel to an axis, the intercept is ∞.</li>
+<li>Take the reciprocals of the intercepts.</li>
+<li>Multiply through by the smallest integer that clears all fractions to reach integers <span class="arithmatex">\(h\)</span>, <span class="arithmatex">\(k\)</span>, <span class="arithmatex">\(l\)</span>.</li>
+</ol>
+<p>For example, a plane intersecting axes at <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(2b\)</span>, ∞ has intercepts 1, 2, ∞; reciprocals <span class="arithmatex">\(1, \frac{1}{2}, 0\)</span>; multiplied by 2: Miller indices <span class="arithmatex">\((210)\)</span>. Negative intercepts use an overbar: <span class="arithmatex">\((\bar{1}00)\)</span>.</p>
+<p>Notation conventions for cubic systems:</p>
+<ul>
+<li><span class="arithmatex">\((hkl)\)</span>: a specific plane (or its parallel family).</li>
+<li><span class="arithmatex">\(\{hkl\}\)</span>: all crystallographically equivalent planes (the family). <span class="arithmatex">\(\{100\}\)</span> in a cube includes all six face planes.</li>
+<li><span class="arithmatex">\([hkl]\)</span>: a specific direction. In cubic systems only, <span class="arithmatex">\([hkl] \perp (hkl)\)</span>.</li>
+<li><span class="arithmatex">\(\langle hkl \rangle\)</span>: all equivalent directions.</li>
+</ul>
+<p>Several planes matter enormously in device processing:</p>
+<table>
+<thead>
+<tr>
+<th>Plane/Direction</th>
+<th>Semiconductor Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(100)</td>
+<td>Standard Si CMOS wafer surface; cleaves poorly</td>
+</tr>
+<tr>
+<td>(110)</td>
+<td>GaAs natural cleavage plane; yields laser facets</td>
+</tr>
+<tr>
+<td>(111)</td>
+<td>Original bipolar transistor surface; III-V epitaxy</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\([111]\)</span></td>
+<td>Direction of diamond sublattice offset: <span class="arithmatex">\(\frac{a}{4}[111]\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\langle 110\rangle\)</span></td>
+<td>Highest hole mobility direction in strained Si</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Miller index trap: parallel planes give index 0, not infinity</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Nova giving a tip">
+When a plane is <em>parallel</em> to an axis, it never intersects that axis — intercept is ∞, reciprocal is 0. So the (100) plane is parallel to y and z (indices 0, 0) and intersects x at one lattice unit (index 1). Where students reliably stumble: they write the intercept as 0 ("it doesn't cross, so zero"), then attempt to take 1/0 and summon mathematical chaos. Remember: take the <em>reciprocal</em> of the intercept first. Parallel → intercept ∞ → reciprocal 0. Once that clicks, Miller indices are just integer arithmetic dressed in fancy notation.</p>
+</div>
+<h4 id="diagram-miller-indices-crystal-plane-explorer">Diagram: Miller Indices Crystal Plane Explorer</h4>
+<iframe src="../../sims/miller-indices-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/miller-indices-explorer/main.html">Run Miller Indices Crystal Plane Explorer Fullscreen</a></p>
+<iframe src="../../sims/miller-indices-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/miller-indices-explorer/main.html">Run Miller Indices Crystal Plane Explorer Fullscreen</a></p>
+<details>
+<summary>Miller Indices Crystal Plane Explorer</summary>
+<p>Type: MicroSim
+<strong>sim-id:</strong> miller-indices-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning objective:</strong> Students will calculate Miller indices from axis intercepts and identify the corresponding crystal plane orientation in a 3D cubic cell (Apply, L3).</p>
+<p><strong>Canvas size:</strong> 850 × 520 px, responsive.</p>
+<p><strong>Controls (p5.js built-in):</strong>
+- Three sliders: h (−3 to 3, default 1), k (−3 to 3, default 0), l (−3 to 3, default 0). Labels: "h:", "k:", "l:".
+- Button: "Render Plane".
+- Select dropdown: Preset planes — "Custom", "(100)", "(110)", "(111)", "(200)", "(210)", "(211)", "(010)", "(001)". Selecting preset snaps sliders.</p>
+<p><strong>Visual layout:</strong></p>
+<p>Left panel (60%): Isometric 3D view of a 2×2×2 simple cubic supercell. Draw atoms as small gray circles at integer coordinate positions. Draw the selected (hkl) plane as a translucent blue polygon (alpha ≈ 0.4) clipping through the supercell. Highlight atoms on or near the plane in orange. Draw crystallographic axes (x, y, z) in red, green, blue with labels. Mark axis intercepts with filled triangle markers.</p>
+<p>Right panel (40%): Step-by-step calculation display:
+- "Intercepts on a, b, c axes: X, Y, Z"
+- "Reciprocals: 1/X, 1/Y, 1/Z"
+- "Miller indices: (h k l)"
+- "Plane family {hkl} has N equivalent planes in cubic symmetry."
+- "Interplanar spacing: d = a / √(h²+k²+l²) = X.XX Å (Si)"</p>
+<p><strong>Behavior:</strong>
+- Any slider change immediately re-renders the plane.
+- If h=k=l=0, display error: "Invalid: (000) is not a Miller index."
+- Hover over an atom shows its (fractional) coordinates.</p>
+<p><strong>Implementation:</strong> p5.js, single HTML file. Compute plane polygon from intercepts analytically. Parent canvas to document.querySelector('main').</p>
+</details>
+<h2 id="the-reciprocal-lattice-and-first-brillouin-zone">The Reciprocal Lattice and First Brillouin Zone</h2>
+<p>The <strong>reciprocal lattice</strong> is a construct in momentum space (k-space) that is as fundamental to solid-state physics as the direct lattice is to crystallography. It is defined by three reciprocal basis vectors derived from the direct lattice basis vectors:</p>
+<div class="arithmatex">\[
+\mathbf{b}_1 = 2\pi \frac{\mathbf{a}_2 \times \mathbf{a}_3}{\mathbf{a}_1 \cdot (\mathbf{a}_2 \times \mathbf{a}_3)}, \quad \mathbf{b}_2 = 2\pi \frac{\mathbf{a}_3 \times \mathbf{a}_1}{\mathbf{a}_1 \cdot (\mathbf{a}_2 \times \mathbf{a}_3)}, \quad \mathbf{b}_3 = 2\pi \frac{\mathbf{a}_1 \times \mathbf{a}_2}{\mathbf{a}_1 \cdot (\mathbf{a}_2 \times \mathbf{a}_3)}
+\]</div>
+<p>By construction, <span class="arithmatex">\(\mathbf{a}_i \cdot \mathbf{b}_j = 2\pi \delta_{ij}\)</span>. For a simple cubic lattice with constant <span class="arithmatex">\(a\)</span>, the reciprocal lattice is also simple cubic with constant <span class="arithmatex">\(2\pi/a\)</span>. For the FCC lattice underlying silicon, the reciprocal lattice is BCC — an elegant duality.</p>
+<p>The <strong>first Brillouin zone</strong> is the Wigner-Seitz cell of the reciprocal lattice — the set of k-space points closer to the origin than to any other reciprocal lattice point. For silicon's FCC lattice, the first Brillouin zone is a <strong>truncated octahedron</strong>: 8 hexagonal faces from <span class="arithmatex">\(\{111\}\)</span> reciprocal lattice planes and 6 square faces from <span class="arithmatex">\(\{200\}\)</span> planes. Its high-symmetry points have standard labels:</p>
+<ul>
+<li><strong>Γ</strong>: zone center, <span class="arithmatex">\(\mathbf{k} = 0\)</span>. Valence band maximum in silicon.</li>
+<li><strong>X</strong>: zone boundary along <span class="arithmatex">\(\langle 100\rangle\)</span>. Near-CBM location in silicon.</li>
+<li><strong>L</strong>: zone boundary along <span class="arithmatex">\(\langle 111\rangle\)</span>. CBM in germanium.</li>
+<li><strong>K, W, U</strong>: additional high-symmetry points on zone boundary edges.</li>
+</ul>
+<p>Every distinct electron wavevector <span class="arithmatex">\(\mathbf{k}\)</span> in a crystal is contained within the first Brillouin zone (or can be folded back into it by adding a reciprocal lattice vector). The E-k band structure diagrams from Chapter 1, and derived rigorously in Chapter 5, are computed along paths connecting these high-symmetry points.</p>
+<h2 id="probing-crystal-structure-diffraction">Probing Crystal Structure: Diffraction</h2>
+<p>The periodic spacing of crystal planes (<span class="arithmatex">\(\sim\)</span>1–5 Å) makes crystals natural diffraction gratings for radiation of comparable wavelength. <strong>Bragg's law</strong> states the condition for constructive interference:</p>
+<div class="arithmatex">\[
+n\lambda = 2d_{hkl}\sin\theta
+\]</div>
+<p>where <span class="arithmatex">\(\lambda\)</span> is the radiation wavelength, <span class="arithmatex">\(d_{hkl}\)</span> is the interplanar spacing for the <span class="arithmatex">\((hkl)\)</span> family, <span class="arithmatex">\(\theta\)</span> is the Bragg angle (measured from the plane surface, not the normal), and <span class="arithmatex">\(n\)</span> is a positive integer. For cubic lattices, the interplanar spacing formula is:</p>
+<div class="arithmatex">\[
+d_{hkl} = \frac{a}{\sqrt{h^2 + k^2 + l^2}}
+\]</div>
+<p>Measuring diffraction peak positions allows reconstruction of <span class="arithmatex">\(a\)</span> to sub-0.001 Å precision. Measuring peak widths reveals crystallite size (Scherrer equation) and lattice strain.</p>
+<p><strong>X-ray diffraction (XRD)</strong> uses photons with wavelengths 0.5–2.5 Å, most commonly Cu Kα radiation (<span class="arithmatex">\(\lambda = 1.5406\)</span> Å). XRD scatters from electron density, making it sensitive to atomic number. In semiconductor manufacturing, high-resolution XRD (HRXRD) rocking curves characterize epitaxial layer composition and strain with sensitivity below 0.01% in lattice mismatch. A narrow rocking curve width (arcseconds) indicates high crystalline perfection; broadening reveals defects.</p>
+<p><strong>Electron diffraction</strong> uses electrons accelerated through voltage <span class="arithmatex">\(V\)</span>, with de Broglie wavelength <span class="arithmatex">\(\lambda = h/\sqrt{2m_e eV}\)</span> — approximately 0.037 Å at 100 kV, far smaller than interplanar spacings and producing very small Bragg angles. Electrons interact far more strongly with matter than X-rays do, so electron diffraction works from films nanometers thick. <strong>RHEED</strong> (reflection high-energy electron diffraction) monitors MBE growth surfaces in real time; oscillations in RHEED intensity count individual monolayers as they deposit, providing direct control over quantum well thicknesses.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Lattice mismatch is the crystal's version of wearing shoes two sizes too small</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Nova cautioning">
+When you grow one semiconductor epitaxially on another with a different lattice constant, the deposited layer can elastically strain to match the substrate — compressing in-plane and expanding out-of-plane (or vice versa). This is <strong>pseudomorphic growth</strong> and is often intentional (strained Si channels, InGaAs quantum wells). But pseudomorphic growth is only stable up to a <strong>critical thickness</strong> beyond which the elastic strain energy exceeds the energy cost of forming a misfit dislocation. Once dislocations nucleate, they propagate and multiply, degrading mobility, recombination lifetime, and LED efficiency. Check the mismatch <em>before</em> designing your heterostructure. The table below has your numbers.</p>
+</div>
+<p><strong>Lattice mismatch</strong> <span class="arithmatex">\(f = (a_{\text{epi}} - a_{\text{sub}}) / a_{\text{sub}} \times 100\%\)</span> between common semiconductor pairs:</p>
+<table>
+<thead>
+<tr>
+<th>Material Pair</th>
+<th>Mismatch (%)</th>
+<th>Practical Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Si / Ge</td>
+<td>+4.2%</td>
+<td>Requires graded SiGe buffer; strained Ge channels</td>
+</tr>
+<tr>
+<td>GaAs / AlAs</td>
+<td>+0.1%</td>
+<td>Near lattice-matched; used freely in heterostructures</td>
+</tr>
+<tr>
+<td>GaAs / InAs</td>
+<td>+7.2%</td>
+<td>Quantum dot self-assembly via Stranski-Krastanov mode</td>
+</tr>
+<tr>
+<td>GaAs / Si</td>
+<td>+4.1%</td>
+<td>Dislocations without buffer; active research topic</td>
+</tr>
+<tr>
+<td>InP / In₀.₅₃Ga₀.₄₇As</td>
+<td>~0%</td>
+<td>Lattice-matched telecom material system</td>
+</tr>
+<tr>
+<td>GaN / AlN</td>
+<td>+2.4%</td>
+<td>Intentional strain for 2DEG formation in HEMTs</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-semiconductor-lattice-constant-and-bandgap-map">Diagram: Semiconductor Lattice Constant and Bandgap Map</h4>
+<iframe src="../../sims/lattice-bandgap-map/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/lattice-bandgap-map/main.html">Run Semiconductor Lattice Constant and Bandgap Map Fullscreen</a></p>
+<iframe src="../../sims/lattice-bandgap-map/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/lattice-bandgap-map/main.html">Run Semiconductor Lattice Constant and Bandgap Map Fullscreen</a></p>
+<details>
+<summary>Semiconductor Lattice Constant and Bandgap Map</summary>
+<p>Type: MicroSim
+<strong>sim-id:</strong> lattice-bandgap-map<br/>
+<strong>Library:</strong> Chart.js<br/>
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning objective:</strong> Students will compare lattice constants and bandgaps of common semiconductors and evaluate (Evaluate, L5) lattice mismatch implications for heterostructure design.</p>
+<p><strong>Canvas size:</strong> 780 × 500 px, responsive.</p>
+<p><strong>Chart type:</strong> Scatter plot (Chart.js Scatter). Each semiconductor is a labeled data point.</p>
+<p><strong>Dataset:</strong> Plot the following (lattice constant in Å on x-axis, bandgap in eV on y-axis):
+- Si: (5.431, 1.12), Ge: (5.658, 0.66), GaAs: (5.653, 1.42), AlAs: (5.661, 2.16), InP: (5.869, 1.35), InAs: (6.058, 0.36), GaP: (5.451, 2.26), AlP: (5.467, 2.45), InSb: (6.479, 0.17), GaSb: (6.096, 0.72).
+- Color direct-gap materials green (#4caf50), indirect-gap red (#f44336).
+- Draw curved interpolation lines between ternary alloy endpoints (e.g., GaAs-AlAs in gray, InAs-GaAs in orange) labeled with the alloy name.</p>
+<p><strong>Interaction:</strong>
+- Clicking or hovering a data point displays an infobox: material name, lattice constant, bandgap, gap type (direct/indirect), and key applications.
+- A vertical reference line at x = 5.431 Å (Si) is toggleable via a "Show Si reference" checkbox.
+- A vertical reference line at x = 5.869 Å (InP) is toggleable via "Show InP reference" checkbox.</p>
+<p><strong>Implementation:</strong> Chart.js v4, single HTML file. Custom tooltip callbacks for rich infoboxes. Parent canvas to document.querySelector('main').</p>
+</details>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<p>This chapter established the geometric and crystallographic language that recurs throughout the course:</p>
+<ul>
+<li>A <strong>crystal lattice</strong> is an infinite, periodic array of points; the physical crystal is the lattice plus a <strong>basis</strong> of atoms. The <strong>lattice constant</strong> <span class="arithmatex">\(a\)</span> is the fundamental atomic-scale length.</li>
+<li>The three cubic Bravais lattices — SC, BCC, FCC — differ in atoms per cell, coordination number, and packing fraction; FCC (APF = 74%) is the parent lattice for semiconductor crystal structures.</li>
+<li><strong>Covalent sp³ bonding</strong> forces tetrahedral coordination and produces the <strong>diamond cubic structure</strong> (Si, Ge) and <strong>zincblende structure</strong> (GaAs, InP), each with 8 atoms per conventional cell. <strong>Wurtzite</strong> (GaN, AlN) is the hexagonal equivalent with important spontaneous polarization properties.</li>
+<li><strong>Miller indices</strong> <span class="arithmatex">\((hkl)\)</span> label crystal planes by the reciprocals of axis intercepts; <span class="arithmatex">\([hkl]\)</span> labels directions; curly and angle brackets denote equivalent families.</li>
+<li>The <strong>reciprocal lattice</strong> lives in k-space; its Wigner-Seitz cell is the <strong>first Brillouin zone</strong>. For FCC silicon, this is a truncated octahedron with labeled high-symmetry points Γ, X, L.</li>
+<li><strong>Bragg's law</strong> (<span class="arithmatex">\(n\lambda = 2d_{hkl}\sin\theta\)</span>) governs diffraction from crystal planes; XRD and RHEED measure lattice constants, strain, and crystal quality.</li>
+<li><strong>Lattice mismatch</strong> must be engineered carefully; mismatches beyond a critical thickness nucleate misfit dislocations that degrade mobility, lifetime, and light-emission efficiency.</li>
+</ul>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">That's a crystal-clear win!</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
+You now speak fluent crystallography. Lattice? Understood. Miller indices? Indexed. Reciprocal lattice? Reciprocated. You know why silicon is diamond cubic, why GaAs is zincblende, why GaN is wurtzite, and why you measure lattice mismatch <em>before</em> designing a heterostructure rather than after discovering your device doesn't work. That is a legitimately impressive crystallographic toolkit. Chapter 3 awaits — and it's all about what happens when perfect crystals develop interesting imperfections.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01-intro-semiconductors/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. Introduction to Semiconductors">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                1. Introduction to Semiconductors
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03-crystal-bonding-defects/" class="md-footer__link md-footer__link--next" aria-label="Next: 3. Crystal Bonding and Defects">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                3. Crystal Bonding and Defects
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

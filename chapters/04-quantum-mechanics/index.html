@@ -1,0 +1,2400 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Provides the quantum mechanical foundations for semiconductor band theory, covering wave-particle duality, the Schrödinger equation, 1D quantum problems, tunneling, the hydrogen atom, and spin.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/04-quantum-mechanics/">
+      
+      
+        <link rel="prev" href="../03-crystal-bonding-defects/">
+      
+      
+        <link rel="next" href="../05-bloch-theorem-band-theory/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Quantum Mechanics: Wave Equations and Atomic Structure - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quantum-mechanics-wave-equations-and-atomic-structure" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quantum Mechanics: Wave Equations and Atomic Structure
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wave-particle-duality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wave-Particle Duality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-heisenberg-uncertainty-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Heisenberg Uncertainty Principle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-schrodinger-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Schrödinger Equation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Schrödinger Equation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-wave-function-and-probability-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Wave Function and Probability Density
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#particle-in-a-box-quantization-made-explicit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Particle in a Box: Quantization Made Explicit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Particle in a Box: Quantization Made Explicit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-particle-in-a-box-energy-level-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Particle in a Box — Energy Level Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finite-potential-well" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finite Potential Well
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-tunneling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantum Tunneling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quantum Tunneling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-quantum-tunneling-probability-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Quantum Tunneling Probability Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-hydrogen-atom-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Hydrogen Atom Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantum Numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pauli-exclusion-principle-and-electron-spin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pauli Exclusion Principle and Electron Spin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perturbation-theory-and-variational-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perturbation Theory and Variational Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wave-particle-duality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wave-Particle Duality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-heisenberg-uncertainty-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Heisenberg Uncertainty Principle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-schrodinger-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Schrödinger Equation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Schrödinger Equation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-wave-function-and-probability-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Wave Function and Probability Density
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#particle-in-a-box-quantization-made-explicit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Particle in a Box: Quantization Made Explicit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Particle in a Box: Quantization Made Explicit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-particle-in-a-box-energy-level-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Particle in a Box — Energy Level Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finite-potential-well" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finite Potential Well
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-tunneling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantum Tunneling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quantum Tunneling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-quantum-tunneling-probability-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Quantum Tunneling Probability Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-hydrogen-atom-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Hydrogen Atom Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantum Numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pauli-exclusion-principle-and-electron-spin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pauli Exclusion Principle and Electron Spin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perturbation-theory-and-variational-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perturbation Theory and Variational Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/04-quantum-mechanics/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="quantum-mechanics-wave-equations-and-atomic-structure">Quantum Mechanics: Wave Equations and Atomic Structure</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter provides the quantum mechanical foundations required to understand why electrons in a periodic solid form energy bands. Starting from wave-particle duality and the de Broglie wavelength, students work through the time-dependent and time-independent Schrödinger equations, the physical meaning of wave functions and probability density, and canonical one-dimensional problems — particle-in-a-box, infinite and finite potential wells, and quantum tunneling (including the WKB approximation). The hydrogen atom model introduces atomic orbitals and all four quantum numbers; the Pauli exclusion principle, electron spin, and spin-orbit coupling complete the atomic picture needed for the tight-binding and band-structure treatments in Chapter 5.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 27 concepts from the learning graph:</p>
+<ol>
+<li>Wave-Particle Duality</li>
+<li>de Broglie Wavelength</li>
+<li>Heisenberg Uncertainty Principle</li>
+<li>Schrodinger Equation</li>
+<li>Time-Dependent Schrodinger Equation</li>
+<li>Time-Independent Schrodinger Equation</li>
+<li>Wave Function</li>
+<li>Probability Density</li>
+<li>Quantum Normalization</li>
+<li>Particle in a Box</li>
+<li>Infinite Potential Well</li>
+<li>Finite Potential Well</li>
+<li>Quantum Tunneling</li>
+<li>Tunnel Probability</li>
+<li>WKB Approximation</li>
+<li>Hydrogen Atom Model</li>
+<li>Atomic Orbitals</li>
+<li>Quantum Numbers</li>
+<li>Principal Quantum Number</li>
+<li>Angular Momentum Quantum Number</li>
+<li>Magnetic Quantum Number</li>
+<li>Spin Quantum Number</li>
+<li>Pauli Exclusion Principle</li>
+<li>Electron Spin</li>
+<li>Spin-Orbit Coupling</li>
+<li>Perturbation Theory</li>
+<li>Variational Method</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-intro-semiconductors/">Chapter 1: Introduction to Semiconductors and Bandgap Fundamentals</a></li>
+<li><a href="../02-crystal-lattice-structure/">Chapter 2: Crystal Lattice Structure and Symmetry</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Abandon classical intuition, all ye who enter here.</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+Welcome to quantum mechanics — the framework where particles are waves, waves are particles, and certainty is a concept for the philosophically naive. Don't panic. Every semiconductor engineer has walked this path and survived. The goal of this chapter is not to make quantum mechanics feel comfortable (it doesn't) but to give you the specific tools you need to understand why silicon has a bandgap of 1.12 eV and GaN has one of 3.4 eV. We'll derive what we need, wave our hands where Dirac already did the hard work, and come out the other side ready for band theory. Let's get excited about the profoundly weird!</p>
+</div>
+<h2 id="wave-particle-duality">Wave-Particle Duality</h2>
+<p>The starting point of quantum mechanics is the experimental observation — accumulated through the early twentieth century — that both light and matter exhibit dual wave-like and particle-like behavior depending on the experimental context. The photoelectric effect (Einstein, 1905) demonstrated that light of frequency <span class="arithmatex">\(\nu\)</span> delivers energy in discrete packets of <span class="arithmatex">\(E = h\nu\)</span>, where <span class="arithmatex">\(h = 6.626 \times 10^{-34}\)</span> J·s is Planck's constant. Compton scattering (1923) showed that photons carry momentum <span class="arithmatex">\(p = h/\lambda\)</span>, establishing light's particle character quantitatively.</p>
+<p>Louis de Broglie extended this duality to matter in 1924: any particle with momentum <span class="arithmatex">\(p\)</span> has an associated <strong>de Broglie wavelength</strong>:</p>
+<div class="arithmatex">\[
+\lambda = \frac{h}{p} = \frac{h}{mv}
+\]</div>
+<p>For a nonrelativistic particle of mass <span class="arithmatex">\(m\)</span> and kinetic energy <span class="arithmatex">\(E_k = p^2/2m\)</span>, the wavelength is:</p>
+<div class="arithmatex">\[
+\lambda = \frac{h}{\sqrt{2mE_k}}
+\]</div>
+<p>For an electron (<span class="arithmatex">\(m_e = 9.109 \times 10^{-31}\)</span> kg) with kinetic energy 1 eV, this gives <span class="arithmatex">\(\lambda \approx 1.23\)</span> nm — comfortably in the range of semiconductor quantum well thicknesses and atomic spacings. An electron at 100 keV (typical TEM beam) has <span class="arithmatex">\(\lambda \approx 0.004\)</span> nm = 0.04 Å — far smaller than a silicon unit cell, which is why electron diffraction works so well for crystal structure analysis.</p>
+<h2 id="the-heisenberg-uncertainty-principle">The Heisenberg Uncertainty Principle</h2>
+<p>Wave-particle duality has an immediate consequence: a particle cannot simultaneously have a precisely defined position <strong>and</strong> precisely defined momentum. The <strong>Heisenberg uncertainty principle</strong> states:</p>
+<div class="arithmatex">\[
+\Delta x \cdot \Delta p_x \geq \frac{\hbar}{2}
+\]</div>
+<p>where <span class="arithmatex">\(\Delta x\)</span> is the standard deviation of position, <span class="arithmatex">\(\Delta p_x\)</span> is the standard deviation of momentum, and <span class="arithmatex">\(\hbar = h/2\pi = 1.055 \times 10^{-34}\)</span> J·s is the reduced Planck constant. Similarly, for energy and time:</p>
+<div class="arithmatex">\[
+\Delta E \cdot \Delta t \geq \frac{\hbar}{2}
+\]</div>
+<p>These are not statements about measurement limitations or engineering imprecision — they are fundamental properties of nature arising from the wave nature of quantum states. A particle confined to a small region (small <span class="arithmatex">\(\Delta x\)</span>) necessarily has a large spread in momentum (<span class="arithmatex">\(\Delta p_x\)</span>), and hence a nonzero minimum kinetic energy — the <strong>zero-point energy</strong>. This zero-point energy is directly responsible for the ground-state energy of the particle-in-a-box and for the stability of atoms (electrons cannot simply collapse into the nucleus because doing so would require infinite momentum spread).</p>
+<h2 id="the-schrodinger-equation">The Schrödinger Equation</h2>
+<p>The wave equation governing quantum particles is the <strong>Schrödinger equation</strong>, proposed by Erwin Schrödinger in 1926. The <strong>time-dependent Schrödinger equation</strong> is:</p>
+<div class="arithmatex">\[
+i\hbar \frac{\partial \Psi(\mathbf{r}, t)}{\partial t} = \hat{H} \Psi(\mathbf{r}, t) = \left[-\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{r}, t)\right] \Psi(\mathbf{r}, t)
+\]</div>
+<p>where <span class="arithmatex">\(\Psi(\mathbf{r}, t)\)</span> is the <strong>wave function</strong> (a complex-valued function of position and time), <span class="arithmatex">\(\hat{H}\)</span> is the Hamiltonian operator (total energy), <span class="arithmatex">\(m\)</span> is the particle mass, <span class="arithmatex">\(\nabla^2\)</span> is the Laplacian, and <span class="arithmatex">\(V(\mathbf{r}, t)\)</span> is the potential energy.</p>
+<p>When the potential <span class="arithmatex">\(V\)</span> is time-independent, we can separate variables: <span class="arithmatex">\(\Psi(\mathbf{r}, t) = \psi(\mathbf{r})\,e^{-iEt/\hbar}\)</span>. Substituting into the time-dependent equation yields the <strong>time-independent Schrödinger equation</strong>:</p>
+<div class="arithmatex">\[
+\hat{H}\psi(\mathbf{r}) = \left[-\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{r})\right]\psi(\mathbf{r}) = E\psi(\mathbf{r})
+\]</div>
+<p>This is an <strong>eigenvalue equation</strong>: the allowed energies <span class="arithmatex">\(E\)</span> are the eigenvalues of the Hamiltonian, and the corresponding wave functions <span class="arithmatex">\(\psi(\mathbf{r})\)</span> are the eigenstates. In semiconductor physics, the time-independent Schrödinger equation is the workhorse: we solve it for an electron in a periodic crystal potential (Chapter 5), in a quantum well (Chapter 19), and at a metal-semiconductor junction (Chapter 13).</p>
+<h3 id="the-wave-function-and-probability-density">The Wave Function and Probability Density</h3>
+<p>The <strong>wave function</strong> <span class="arithmatex">\(\psi(\mathbf{r})\)</span> is the fundamental quantum mechanical description of a particle's state. It is complex-valued and, by itself, has no direct physical meaning. The physical observable is the <strong>probability density</strong> <span class="arithmatex">\(|\psi(\mathbf{r})|^2\)</span>, which gives the probability per unit volume of finding the particle at position <span class="arithmatex">\(\mathbf{r}\)</span>:</p>
+<div class="arithmatex">\[
+P(\mathbf{r}) = |\psi(\mathbf{r})|^2 = \psi^*(\mathbf{r})\,\psi(\mathbf{r})
+\]</div>
+<p>The wave function must be <strong>normalized</strong>: the total probability of finding the particle somewhere in all of space must equal one:</p>
+<div class="arithmatex">\[
+\int_{-\infty}^{\infty} |\psi(\mathbf{r})|^2 \, d^3r = 1
+\]</div>
+<p>Additionally, physically acceptable wave functions must be continuous, have continuous first derivatives (except at infinite potential jumps), and be square-integrable. These <strong>boundary conditions</strong> are what force quantization: not all values of <span class="arithmatex">\(E\)</span> produce well-behaved wave functions, only discrete values do.</p>
+<h2 id="particle-in-a-box-quantization-made-explicit">Particle in a Box: Quantization Made Explicit</h2>
+<p>The <strong>particle-in-a-box</strong> (infinite potential well) is the simplest non-trivial quantum system and the direct ancestor of the quantum well devices used in semiconductor lasers. The problem: a particle of mass <span class="arithmatex">\(m\)</span> is confined to a one-dimensional box of length <span class="arithmatex">\(L\)</span>, with potential <span class="arithmatex">\(V = 0\)</span> inside (<span class="arithmatex">\(0 &lt; x &lt; L\)</span>) and <span class="arithmatex">\(V = \infty\)</span> outside. The boundary conditions require <span class="arithmatex">\(\psi(0) = \psi(L) = 0\)</span> (the wave function vanishes at infinite potential walls).</p>
+<p>Solving the time-independent Schrödinger equation inside the box:</p>
+<div class="arithmatex">\[
+-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2} = E\psi \implies \psi_n(x) = \sqrt{\frac{2}{L}}\sin\!\left(\frac{n\pi x}{L}\right), \quad n = 1, 2, 3, \ldots
+\]</div>
+<p>The corresponding quantized energy levels are:</p>
+<div class="arithmatex">\[
+E_n = \frac{n^2\pi^2\hbar^2}{2mL^2} = \frac{n^2 h^2}{8mL^2}
+\]</div>
+<p>Four results follow immediately:</p>
+<ul>
+<li>The ground state (<span class="arithmatex">\(n = 1\)</span>) has nonzero energy <span class="arithmatex">\(E_1 = \pi^2\hbar^2/2mL^2\)</span> — the <strong>zero-point energy</strong>, a direct consequence of the uncertainty principle (confining the particle to length <span class="arithmatex">\(L\)</span> gives <span class="arithmatex">\(\Delta p \gtrsim \hbar/L\)</span>).</li>
+<li>Energy levels scale as <span class="arithmatex">\(n^2\)</span>, so they are non-uniformly spaced.</li>
+<li>The energy <span class="arithmatex">\(E_n \propto 1/L^2\)</span>: halving the box quadruples the ground-state energy. Quantum well lasers exploit this — narrower wells produce blue-shifted emission.</li>
+<li>Each state has <span class="arithmatex">\(n-1\)</span> nodes (zeros of <span class="arithmatex">\(\psi\)</span>) inside the box.</li>
+</ul>
+<p>The particle-in-a-box is not just a pedagogical toy. It is the zeroth-order model for: (1) electrons in a <strong>quantum well</strong> (GaAs slab sandwiched between AlGaAs barriers), where the finite barrier height makes it a finite well; (2) electrons in a <strong>quantum dot</strong>, where confinement in all three dimensions produces fully discrete energy levels; and (3) the density of states in a 1D conductor (Chapter 19).</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The particle-in-a-box: the only housing crisis with a physics derivation.</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova thinking">
+The zero-point energy is the punchline of quantum confinement: you cannot trap a particle in a box and have it sit still. The more tightly you confine it, the more energetically it squirms. This is Heisenberg uncertainty made tangible: small <span class="arithmatex">\(\Delta x\)</span> → large <span class="arithmatex">\(\Delta p\)</span> → large <span class="arithmatex">\(E_k\)</span>. For a GaAs quantum well of width <span class="arithmatex">\(L = 10\)</span> nm, the ground-state confinement energy for electrons (effective mass <span class="arithmatex">\(0.067\,m_e\)</span>) is about 55 meV — not negligible compared to the bandgap. This is exactly why quantum well lasers emit at different wavelengths depending on well thickness, and why semiconductor laser designers spend so much time on "strain and well width optimization."</p>
+</div>
+<p>The following MicroSim lets you adjust the box width and visualize the quantized energy levels and wave functions interactively.</p>
+<h4 id="diagram-particle-in-a-box-energy-level-explorer">Diagram: Particle in a Box — Energy Level Explorer</h4>
+<iframe src="../../sims/particle-in-a-box-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/particle-in-a-box-explorer/main.html">Run Particle in a Box — Energy Level Explorer Fullscreen</a></p>
+<iframe src="../../sims/particle-in-a-box-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/particle-in-a-box-explorer/main.html">Run Particle in a Box — Energy Level Explorer Fullscreen</a></p>
+<details>
+<summary>Particle in a Box — Energy Level Explorer</summary>
+<p>Type: MicroSim
+<strong>sim-id:</strong> particle-in-a-box-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning objective:</strong> Students will calculate the quantized energy levels of a particle confined in a 1D box and explain (Apply, L3) how confinement energy scales with box width and quantum number, using an interactive visualization.</p>
+<p><strong>Canvas size:</strong> 850 × 520 px, responsive.</p>
+<p><strong>Controls (p5.js built-in):</strong>
+- Slider: Box width <span class="arithmatex">\(L\)</span>, 1–20 nm, default 10 nm, step 0.1 nm. Label: "Well width L (nm):"
+- Slider: Number of levels to show, 1–6, default 4, step 1. Label: "Energy levels shown:"
+- Select dropdown: Particle type — "Electron (m = m_e)", "GaAs electron (m = 0.067 m_e)", "GaAs heavy hole (m = 0.5 m_e)". Default: "GaAs electron".
+- Checkbox: "Show probability density |ψ|²" (default checked) — overlays the wave function probability density on each level.</p>
+<p><strong>Visual layout:</strong></p>
+<p>Left panel (60%): Draw the infinite potential well as two tall vertical walls with the horizontal axis as energy. Inside the well (between the walls), draw horizontal lines for each quantized energy level <span class="arithmatex">\(E_n\)</span> at the correct vertical position proportional to <span class="arithmatex">\(n^2\)</span>. Label each level "n=1, E=X.XX meV", etc.</p>
+<p>For each level, overlay the wave function <span class="arithmatex">\(\psi_n(x) = A\sin(n\pi x/L)\)</span> as a sinusoidal curve centered on the energy level line, with amplitude scaled to 30% of the level spacing. If "Show |ψ|²" is checked, shade the area under <span class="arithmatex">\(|\psi_n|^2\)</span> with a translucent blue fill.</p>
+<p>Right panel (40%): Table of all displayed energy levels:
+- n, <span class="arithmatex">\(E_n\)</span> in meV and eV, <span class="arithmatex">\(\lambda\)</span> (photon wavelength for the <span class="arithmatex">\(n=2 \to n=1\)</span> transition).
+- Ratio <span class="arithmatex">\(E_n/E_1 = n^2\)</span> highlighted.
+- Display: "Zero-point energy E₁ = X.XX meV".
+- Display: "Confinement energy scales as 1/L²: doubling L → 4× lower E₁."</p>
+<p><strong>Behavior:</strong>
+- All sliders update the diagram in real time.
+- Particle type dropdown changes the effective mass and recalculates all energies.
+- Clicking on an energy level highlights it and shows the wave function on the right panel.
+- On window resize: updateCanvasSize() reflows proportionally.</p>
+<p><strong>Implementation:</strong> p5.js, single HTML file. Energies computed analytically. Use createSlider(), createSelect(), createCheckbox(). Parent canvas to document.querySelector('main').</p>
+</details>
+<h2 id="finite-potential-well">Finite Potential Well</h2>
+<p>The <strong>finite potential well</strong> is the physically realistic version of the particle-in-a-box: the potential is zero inside the well (<span class="arithmatex">\(0 &lt; x &lt; L\)</span>) and <span class="arithmatex">\(V_0 &gt; 0\)</span> (finite) outside. This small change has a profound consequence: the wave function can <strong>penetrate into the classically forbidden region</strong> (<span class="arithmatex">\(|x| &gt; L/2\)</span>), decaying exponentially with characteristic length:</p>
+<div class="arithmatex">\[
+\kappa = \frac{\sqrt{2m(V_0 - E)}}{\hbar}
+\]</div>
+<p>Applying continuity of <span class="arithmatex">\(\psi\)</span> and <span class="arithmatex">\(d\psi/dx\)</span> at the well boundaries produces transcendental equations for the allowed energies — equations that cannot be solved in closed form but are easily solved numerically or graphically. The results differ from the infinite well in three important ways:</p>
+<ul>
+<li>All energy levels are <strong>lower</strong> than the corresponding infinite-well values (the wave function extends into the barrier, increasing the effective length).</li>
+<li>The number of bound states is <strong>finite</strong> — if <span class="arithmatex">\(V_0\)</span> is small enough, even the ground state becomes unbound.</li>
+<li>Wave function <strong>evanescent tails</strong> in the barrier region are the quantum mechanical basis for <strong>resonant tunneling</strong> in double-barrier structures (exploited in resonant tunneling diodes, RTDs).</li>
+</ul>
+<p>The finite well is the direct model for a <strong>semiconductor quantum well</strong>: a thin layer of narrow-gap material (e.g., GaAs, <span class="arithmatex">\(E_g = 1.42\)</span> eV) sandwiched between wide-gap barriers (e.g., Al<span class="arithmatex">\(_{0.3}\)</span>Ga<span class="arithmatex">\(_{0.7}\)</span>As, <span class="arithmatex">\(E_g \approx 1.80\)</span> eV). The conduction band offset <span class="arithmatex">\(\Delta E_c \approx 0.23\)</span> eV is the effective <span class="arithmatex">\(V_0\)</span> for electrons; the valence band offset <span class="arithmatex">\(\Delta E_v \approx 0.15\)</span> eV is <span class="arithmatex">\(V_0\)</span> for holes. Quantum well lasers, introduced commercially in the 1980s, achieve threshold current densities 10–50× lower than bulk DH lasers by concentrating the carrier density and optical gain in the thin well region.</p>
+<h2 id="quantum-tunneling">Quantum Tunneling</h2>
+<p><strong>Quantum tunneling</strong> is the penetration of a quantum particle through a potential energy barrier higher than the particle's total energy — a process that is classically forbidden but quantum mechanically allowed. It is the direct consequence of the exponentially decaying (evanescent) wave function in the classically forbidden region. If the barrier is thin enough, the evanescent tail has non-negligible amplitude on the far side, and the particle can emerge beyond the barrier — having "tunneled" through it without ever having had enough energy to surmount it.</p>
+<p>The <strong>tunnel probability</strong> <span class="arithmatex">\(T\)</span> for a particle of energy <span class="arithmatex">\(E\)</span> tunneling through a rectangular barrier of height <span class="arithmatex">\(V_0 &gt; E\)</span> and width <span class="arithmatex">\(d\)</span> is (in the limit <span class="arithmatex">\(\kappa d \gg 1\)</span>):</p>
+<div class="arithmatex">\[
+T \approx 16\frac{E(V_0-E)}{V_0^2}\exp(-2\kappa d), \quad \kappa = \frac{\sqrt{2m(V_0-E)}}{\hbar}
+\]</div>
+<p>The exponential dependence on <span class="arithmatex">\(\kappa d\)</span> makes tunneling exquisitely sensitive to barrier width and height. Changing <span class="arithmatex">\(d\)</span> by 0.1 nm can change <span class="arithmatex">\(T\)</span> by an order of magnitude.</p>
+<p>The <strong>WKB approximation</strong> (Wentzel-Kramers-Brillouin) generalizes the rectangular barrier result to slowly varying potentials <span class="arithmatex">\(V(x)\)</span>:</p>
+<div class="arithmatex">\[
+T \approx \exp\!\left(-2\int_{x_1}^{x_2} \kappa(x)\,dx\right), \quad \kappa(x) = \frac{\sqrt{2m[V(x)-E]}}{\hbar}
+\]</div>
+<p>where <span class="arithmatex">\(x_1\)</span> and <span class="arithmatex">\(x_2\)</span> are the classical turning points where <span class="arithmatex">\(V(x) = E\)</span>. The WKB approximation is valid when the potential varies slowly on the scale of the de Broglie wavelength.</p>
+<p>Tunneling has numerous technological consequences in semiconductor devices:</p>
+<ul>
+<li><strong>Zener breakdown</strong> in heavily doped p-n junctions: electrons tunnel directly from the valence band of the p-side to the conduction band of the n-side through the depletion region (band-to-band tunneling).</li>
+<li><strong>Gate oxide leakage</strong> in scaled MOSFETs: electrons tunnel through the thin SiO₂ gate dielectric (thickness &lt; 2 nm in advanced nodes), limiting further oxide scaling and motivating high-κ dielectric replacement.</li>
+<li><strong>Resonant tunneling diodes (RTDs)</strong>: double-barrier structures with quantum well resonances give negative differential resistance — exploited in terahertz oscillators.</li>
+<li><strong>Scanning tunneling microscopy (STM)</strong>: atomic-resolution imaging via the exponential sensitivity of tunnel current to tip-sample separation.</li>
+</ul>
+<h4 id="diagram-quantum-tunneling-probability-explorer">Diagram: Quantum Tunneling Probability Explorer</h4>
+<iframe src="../../sims/quantum-tunneling-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/quantum-tunneling-explorer/main.html">Run Quantum Tunneling Probability Explorer Fullscreen</a></p>
+<iframe src="../../sims/quantum-tunneling-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/quantum-tunneling-explorer/main.html">Run Quantum Tunneling Probability Explorer Fullscreen</a></p>
+<details>
+<summary>Quantum Tunneling Probability Explorer</summary>
+<p>Type: MicroSim
+<strong>sim-id:</strong> quantum-tunneling-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning objective:</strong> Students will calculate the tunnel probability through a rectangular barrier and evaluate (Evaluate, L5) how barrier width and height affect tunneling in semiconductor devices, using an interactive simulation.</p>
+<p><strong>Canvas size:</strong> 900 × 540 px, responsive.</p>
+<p><strong>Controls (p5.js built-in):</strong>
+- Slider: Barrier height <span class="arithmatex">\(V_0\)</span>, 0.1–5.0 eV, default 1.0 eV, step 0.05 eV. Label: "Barrier height V₀ (eV):"
+- Slider: Barrier width <span class="arithmatex">\(d\)</span>, 0.1–3.0 nm, default 1.0 nm, step 0.05 nm. Label: "Barrier width d (nm):"
+- Slider: Particle energy <span class="arithmatex">\(E\)</span>, 0.05–4.9 eV, default 0.5 eV, step 0.05 eV. Label: "Particle energy E (eV):"
+- Select dropdown: Particle type — "Electron (m = m_e)", "GaAs conduction electron (m = 0.067 m_e)". Default: "Electron".
+- Checkbox: "Show wave function" (default checked).</p>
+<p><strong>Visual layout:</strong></p>
+<p>Left panel (60%): Schematic of the potential energy barrier.
+- Draw horizontal potential energy profile: flat at <span class="arithmatex">\(E = 0\)</span> on both sides (well regions), rectangular step up to <span class="arithmatex">\(V_0\)</span> in the barrier region of width <span class="arithmatex">\(d\)</span>.
+- Draw the incident particle energy <span class="arithmatex">\(E\)</span> as a dashed horizontal line in the color green.
+- If "Show wave function" is checked, draw the wave function qualitatively:
+  - Left of barrier: sinusoidal (incident + reflected), amplitude 1.0.
+  - Inside barrier: exponentially decaying, amplitude <span class="arithmatex">\(e^{-\kappa x}\)</span>.
+  - Right of barrier: sinusoidal with reduced amplitude <span class="arithmatex">\(\sqrt{T}\)</span>.
+- If <span class="arithmatex">\(E &gt; V_0\)</span>: draw a transmitted wave with amplitude ~1.0 (near-unity transmission above barrier). Label "Classical regime: E &gt; V₀".
+- Color the barrier region light red (#ffcdd2).</p>
+<p>Right panel (40%):
+- Display: "Tunnel probability T = X.XX × 10^N" in large bold.
+- Display: "κ = X.XX nm⁻¹ (decay constant in barrier)".
+- Display: "Transmission coefficient: T = X.XX%".
+- Context interpretation:
+  - T &lt; 10⁻¹⁰: "Negligible tunneling."
+  - 10⁻¹⁰ &lt; T &lt; 10⁻³: "Detectable tunneling — relevant for gate oxide leakage."
+  - T &gt; 10⁻³: "Significant tunneling — device function enabled."
+- Show relevant application: e.g., "At d = 1.5 nm, V₀ = 3.1 eV (SiO₂/Si), T ≈ 10⁻⁷ — this is the gate oxide leakage regime that drove the shift to high-κ dielectrics."</p>
+<p><strong>Behavior:</strong> All sliders update T and the wave function visualization in real time. If E &gt; V₀, switch to classical transmission formula (T → 1). On resize: updateCanvasSize() reflows.</p>
+<p><strong>Implementation:</strong> p5.js, single HTML file. T computed analytically from the exact rectangular barrier formula. Parent canvas to document.querySelector('main').</p>
+</details>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Gate oxide leakage is just electrons deciding that 1.5 nm of SiO₂ is a suggestion, not a rule.</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Nova giving a tip">
+When the ITRS roadmap pushed MOSFET gate oxide thickness below ~2 nm in the early 2000s, engineers discovered that the quantum mechanics they had been politely ignoring was suddenly the dominant leakage mechanism. An electron with 0.5 eV energy tunneling through 1.5 nm of SiO₂ (<span class="arithmatex">\(V_0 \approx 3.1\)</span> eV) has a tunnel probability of roughly <span class="arithmatex">\(10^{-7}\)</span> per attempt — but electrons attempt ~<span class="arithmatex">\(10^{15}\)</span> times per second, producing measurable gate current. This single physical mechanism drove the entire industry to replace SiO₂ with high-κ dielectrics (HfO₂, hafnium-based stacks) in the 45 nm node (~2007). One equation, one industry pivot.</p>
+</div>
+<h2 id="the-hydrogen-atom-model">The Hydrogen Atom Model</h2>
+<p>The <strong>hydrogen atom</strong> — a single proton surrounded by one electron — is the only atom with an exact analytical solution to the Schrödinger equation. Despite its apparent simplicity, it captures all the essential quantum mechanical features of atomic structure and serves as the basis for understanding donor and acceptor impurity states in semiconductors.</p>
+<p>The potential energy is the Coulomb attraction: <span class="arithmatex">\(V(r) = -e^2/(4\pi\epsilon_0 r)\)</span>. Solving the three-dimensional Schrödinger equation in spherical coordinates through separation of variables <span class="arithmatex">\(\psi(r,\theta,\phi) = R(r)\,Y_l^m(\theta,\phi)\)</span> yields the <strong>atomic orbitals</strong> — the eigenstate wave functions labeled by three quantum numbers.</p>
+<p>The quantized energy eigenvalues are:</p>
+<div class="arithmatex">\[
+E_n = -\frac{m_e e^4}{2(4\pi\epsilon_0)^2\hbar^2} \frac{1}{n^2} = -\frac{13.6\text{ eV}}{n^2}
+\]</div>
+<p>The ground state (<span class="arithmatex">\(n = 1\)</span>) energy is −13.6 eV — the energy required to ionize hydrogen. The characteristic spatial scale is the <strong>Bohr radius</strong>:</p>
+<div class="arithmatex">\[
+a_0 = \frac{4\pi\epsilon_0\hbar^2}{m_e e^2} = 0.529\text{ Å}
+\]</div>
+<p>In a semiconductor, a donor atom (e.g., phosphorus in silicon) is a hydrogen-like system with the electron orbiting a singly-charged ion core in a medium with relative permittivity <span class="arithmatex">\(\epsilon_r\)</span> and with effective mass <span class="arithmatex">\(m_n^*\)</span> replacing the free electron mass. The donor ionization energy scales as:</p>
+<div class="arithmatex">\[
+E_d = \frac{m_n^*/m_0}{\epsilon_r^2} \times 13.6\text{ eV}
+\]</div>
+<p>For silicon (<span class="arithmatex">\(m_n^* \approx 0.26\,m_0\)</span>, <span class="arithmatex">\(\epsilon_r = 11.7\)</span>): <span class="arithmatex">\(E_d \approx 26\text{ meV}/11.7^2 \times 13.6 \approx 26\text{ meV}\)</span> — confirming that phosphorus donors in silicon are ionized at room temperature (<span class="arithmatex">\(k_BT \approx 26\text{ meV}\)</span>) as assumed in all our Chapter 1 discussions. This is the <strong>effective-mass approximation</strong> for impurity states, derived in Chapter 7.</p>
+<h2 id="quantum-numbers">Quantum Numbers</h2>
+<p>The full specification of an electron state in the hydrogen atom requires <strong>four quantum numbers</strong>, each arising from a different boundary condition or fundamental quantum mechanical property:</p>
+<p>The following table defines all four quantum numbers and their allowed values:</p>
+<table>
+<thead>
+<tr>
+<th>Quantum Number</th>
+<th>Symbol</th>
+<th>Physical Origin</th>
+<th>Allowed Values</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Principal</td>
+<td><span class="arithmatex">\(n\)</span></td>
+<td>Radial boundary condition</td>
+<td>1, 2, 3, …</td>
+<td>Sets energy: <span class="arithmatex">\(E_n = -13.6/n^2\)</span> eV</td>
+</tr>
+<tr>
+<td>Angular momentum</td>
+<td><span class="arithmatex">\(l\)</span></td>
+<td>Angular momentum magnitude</td>
+<td>0 to <span class="arithmatex">\(n-1\)</span></td>
+<td>Sets orbital shape (s, p, d, f)</td>
+</tr>
+<tr>
+<td>Magnetic</td>
+<td><span class="arithmatex">\(m_l\)</span></td>
+<td><span class="arithmatex">\(z\)</span>-component of <span class="arithmatex">\(\mathbf{L}\)</span></td>
+<td><span class="arithmatex">\(-l\)</span> to <span class="arithmatex">\(+l\)</span></td>
+<td>Sets orbital orientation</td>
+</tr>
+<tr>
+<td>Spin</td>
+<td><span class="arithmatex">\(m_s\)</span></td>
+<td>Intrinsic electron spin</td>
+<td><span class="arithmatex">\(+\frac{1}{2}\)</span>, <span class="arithmatex">\(-\frac{1}{2}\)</span></td>
+<td>Sets spin state (↑, ↓)</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>principal quantum number</strong> <span class="arithmatex">\(n\)</span> determines the energy and the size of the orbital (mean radius <span class="arithmatex">\(\langle r \rangle \approx n^2 a_0\)</span>). The <strong>angular momentum quantum number</strong> <span class="arithmatex">\(l\)</span> determines the orbital's shape: <span class="arithmatex">\(l = 0\)</span> gives a spherically symmetric s orbital; <span class="arithmatex">\(l = 1\)</span> gives dumbbell-shaped p orbitals; <span class="arithmatex">\(l = 2\)</span> gives d orbitals. The notation 1s, 2s, 2p, 3s, 3p, 3d corresponds to <span class="arithmatex">\((n, l)\)</span> pairs. The <strong>magnetic quantum number</strong> <span class="arithmatex">\(m_l\)</span> selects among the <span class="arithmatex">\(2l+1\)</span> orientations of each orbital type, which are degenerate in energy in the absence of a magnetic field. The <strong>spin quantum number</strong> <span class="arithmatex">\(m_s\)</span> labels the two spin states of the electron.</p>
+<p>The total degeneracy of the <span class="arithmatex">\(n\)</span>th shell is:</p>
+<div class="arithmatex">\[
+g_n = 2\sum_{l=0}^{n-1}(2l+1) = 2n^2
+\]</div>
+<p>For <span class="arithmatex">\(n = 1\)</span>: <span class="arithmatex">\(g = 2\)</span> (1s↑ and 1s↓). For <span class="arithmatex">\(n = 2\)</span>: <span class="arithmatex">\(g = 8\)</span> (2s and three 2p orbitals, each with two spins).</p>
+<h2 id="pauli-exclusion-principle-and-electron-spin">Pauli Exclusion Principle and Electron Spin</h2>
+<p>The <strong>Pauli exclusion principle</strong> (Wolfgang Pauli, 1925) states that no two electrons in a quantum system can occupy the same quantum state — equivalently, no two electrons can have the same values of all four quantum numbers <span class="arithmatex">\((n, l, m_l, m_s)\)</span>. This is a consequence of the <strong>Fermi-Dirac statistics</strong> that govern half-integer spin particles (fermions), which demands that the many-electron wave function is antisymmetric under exchange of any two electrons.</p>
+<p>The Pauli exclusion principle is the reason the periodic table has the structure it does. Without it, all electrons in every atom would collapse into the 1s ground state. With it, electrons fill shells in order of increasing energy, producing the shell structure that governs chemical bonding and the periodic trends that predict semiconductor properties.</p>
+<p><strong>Electron spin</strong> is an intrinsic angular momentum <span class="arithmatex">\(\mathbf{S}\)</span> with magnitude <span class="arithmatex">\(|\mathbf{S}| = \hbar\sqrt{s(s+1)}\)</span> where <span class="arithmatex">\(s = 1/2\)</span>. The two possible projections of spin along any axis are <span class="arithmatex">\(\hbar/2\)</span> (spin-up, <span class="arithmatex">\(m_s = +1/2\)</span>) and <span class="arithmatex">\(-\hbar/2\)</span> (spin-down, <span class="arithmatex">\(m_s = -1/2\)</span>). Spin has no classical analog; it is a purely quantum mechanical property. Spin is central to semiconductor spintronics, where devices seek to use the spin degree of freedom alongside charge to store and process information.</p>
+<p><strong>Spin-orbit coupling</strong> is the interaction between an electron's spin angular momentum <span class="arithmatex">\(\mathbf{S}\)</span> and its orbital angular momentum <span class="arithmatex">\(\mathbf{L}\)</span>, arising from relativistic effects. The Hamiltonian contribution is:</p>
+<div class="arithmatex">\[
+\hat{H}_{SO} = \frac{1}{2m_e^2 c^2} \frac{1}{r}\frac{dV}{dr} \mathbf{L}\cdot\mathbf{S}
+\]</div>
+<p>In semiconductors, spin-orbit coupling splits the valence band into the <strong>heavy-hole (HH)</strong> and <strong>light-hole (LH)</strong> bands at the zone center (<span class="arithmatex">\(\Gamma\)</span> point) and produces the <strong>split-off (SO)</strong> band at energy <span class="arithmatex">\(\Delta_{SO}\)</span> below. The spin-orbit splitting is material-dependent: <span class="arithmatex">\(\Delta_{SO} = 0.044\)</span> eV in silicon, 0.341 eV in GaAs, and 0.82 eV in InAs. Larger splitting (heavier atoms) more effectively separates the hole bands, which affects the density of states and therefore the properties of p-type devices.</p>
+<h2 id="perturbation-theory-and-variational-methods">Perturbation Theory and Variational Methods</h2>
+<p>The hydrogen atom and the particle-in-a-box are among the very few quantum systems with exact analytical solutions. Real semiconductor problems — donors in a crystal, quantum confinement in an arbitrary potential, Stark shifts from electric fields — require approximate methods. Two frameworks are standard:</p>
+<p><strong>Perturbation theory</strong> applies when the Hamiltonian can be written as <span class="arithmatex">\(\hat{H} = \hat{H}_0 + \hat{H}'\)</span>, where <span class="arithmatex">\(\hat{H}_0\)</span> has known solutions and <span class="arithmatex">\(\hat{H}'\)</span> is a small correction. The first-order energy correction is:</p>
+<div class="arithmatex">\[
+E_n^{(1)} = \langle \psi_n^{(0)} | \hat{H}' | \psi_n^{(0)} \rangle
+\]</div>
+<p>In semiconductor physics, perturbation theory is applied to: the effect of strain on band edges (deformation potential theory), the linear Stark effect on donor states in an electric field, and the <strong>k·p method</strong> for computing effective masses and band dispersion near high-symmetry points.</p>
+<p><strong>The variational method</strong> finds an upper bound on the ground-state energy by choosing a <strong>trial wave function</strong> <span class="arithmatex">\(\phi(\alpha)\)</span> parameterized by variational parameter(s) <span class="arithmatex">\(\alpha\)</span> and minimizing the expectation value of the Hamiltonian:</p>
+<div class="arithmatex">\[
+E_{\text{trial}}(\alpha) = \frac{\langle \phi(\alpha) | \hat{H} | \phi(\alpha) \rangle}{\langle \phi(\alpha) | \phi(\alpha) \rangle} \geq E_{\text{ground state}}
+\]</div>
+<p>The variational principle guarantees that any trial function gives an energy above (or equal to) the true ground state; minimizing over <span class="arithmatex">\(\alpha\)</span> finds the best approximation within the chosen functional form. The variational method is the basis for the <strong>tight-binding</strong> (linear combination of atomic orbitals, LCAO) approach to band structure in Chapter 5.</p>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<p>This chapter built the quantum mechanical toolkit required for semiconductor band theory:</p>
+<ul>
+<li><strong>Wave-particle duality</strong>: particles have de Broglie wavelength <span class="arithmatex">\(\lambda = h/p\)</span>; the electron's wavelength at typical energies is nanometers — the scale of quantum wells and atomic spacings.</li>
+<li>The <strong>uncertainty principle</strong> <span class="arithmatex">\(\Delta x \cdot \Delta p \geq \hbar/2\)</span> is fundamental, not technical: it produces zero-point energy and prevents atomic collapse.</li>
+<li>The <strong>Schrödinger equation</strong> — time-dependent and time-independent — governs quantum particle behavior. The time-independent form is an eigenvalue equation whose eigenvalues are the quantized allowed energies.</li>
+<li>The <strong>wave function</strong> <span class="arithmatex">\(\psi\)</span> is complex; <span class="arithmatex">\(|\psi|^2\)</span> is the probability density. Normalization, continuity, and square-integrability impose boundary conditions that select quantized energies.</li>
+<li>The <strong>infinite and finite potential wells</strong> model quantum confinement. Energy levels scale as <span class="arithmatex">\(n^2/L^2\)</span>; finite barriers allow evanescent penetration, enabling tunneling.</li>
+<li><strong>Quantum tunneling</strong> probability scales as <span class="arithmatex">\(\exp(-2\kappa d)\)</span> — exponentially sensitive to barrier width. It governs Zener breakdown, gate oxide leakage, and STM resolution.</li>
+<li>The <strong>hydrogen atom</strong> provides exact energy levels <span class="arithmatex">\(E_n = -13.6/n^2\)</span> eV and the four quantum numbers <span class="arithmatex">\((n, l, m_l, m_s)\)</span>. Adapted with effective mass and permittivity, it models donor/acceptor ionization energies in semiconductors.</li>
+<li>The <strong>Pauli exclusion principle</strong> determines shell filling and the periodic table's structure. <strong>Spin-orbit coupling</strong> splits the valence band into HH, LH, and SO subbands.</li>
+<li><strong>Perturbation theory</strong> and <strong>variational methods</strong> handle real problems. Perturbation theory underlies the k·p method for effective masses; the variational method underlies tight-binding band structure.</li>
+</ul>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You just survived quantum mechanics. The Nobel Committee is watching.</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
+Twenty-seven quantum mechanical concepts, one chapter, zero paradoxes (we agreed not to discuss measurement). You now have the Schrödinger equation, wave functions, quantization, tunneling, the hydrogen atom, spin, and perturbation theory in your toolkit. That is genuinely the foundation of modern physics. Next chapter: we unleash all of this on a periodic crystal and watch energy bands emerge from the mathematics like rabbits from a very well-behaved hat. Bloch's theorem awaits. Time to jump bands!</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../03-crystal-bonding-defects/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3. Crystal Bonding and Defects">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                3. Crystal Bonding and Defects
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../05-bloch-theorem-band-theory/" class="md-footer__link md-footer__link--next" aria-label="Next: 5. Bloch Theorem and Band Theory">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                5. Bloch Theorem and Band Theory
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

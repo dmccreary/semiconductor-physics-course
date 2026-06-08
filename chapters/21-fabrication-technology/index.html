@@ -1,0 +1,2563 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Crystal growth, epitaxy, thermal oxidation, diffusion, ion implantation, photolithography, etching, thin-film deposition, metallization, and yield engineering">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/21-fabrication-technology/">
+      
+      
+        <link rel="prev" href="../20-strained-si-2d-power/">
+      
+      
+        <link rel="next" href="../22-characterization-modeling/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Semiconductor Fabrication Technology - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#semiconductor-fabrication-technology" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Semiconductor Fabrication Technology
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#211-crystal-growth-from-sand-to-single-crystal-ingot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.1 Crystal Growth: From Sand to Single-Crystal Ingot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.1 Crystal Growth: From Sand to Single-Crystal Ingot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2111-czochralski-crystal-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.1.1 Czochralski Crystal Growth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2112-float-zone-crystal-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.1.2 Float-Zone Crystal Growth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2113-gan-crystal-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.1.3 GaN Crystal Growth
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#212-epitaxial-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.2 Epitaxial Growth
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.2 Epitaxial Growth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2121-molecular-beam-epitaxy-mbe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.2.1 Molecular Beam Epitaxy (MBE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2122-metal-organic-cvd-mocvd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.2.2 Metal-Organic CVD (MOCVD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2123-chemical-vapor-deposition-cvd-for-silicon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.2.3 Chemical Vapor Deposition (CVD) for Silicon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#213-thermal-oxidation-and-the-deal-grove-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.3 Thermal Oxidation and the Deal-Grove Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.3 Thermal Oxidation and the Deal-Grove Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2131-the-deal-grove-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.3.1 The Deal-Grove Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#214-diffusion-and-ion-implantation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.4 Diffusion and Ion Implantation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.4 Diffusion and Ion Implantation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2141-diffusion-in-solids-ficks-laws" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.4.1 Diffusion in Solids: Fick's Laws
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2142-ion-implantation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.4.2 Ion Implantation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2143-post-implant-annealing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.4.3 Post-Implant Annealing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#215-photolithography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.5 Photolithography
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#216-etching-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.6 Etching Processes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#217-thin-film-deposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.7 Thin-Film Deposition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#218-metallization-and-interconnects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.8 Metallization and Interconnects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#219-process-induced-defects-contamination-and-yield" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.9 Process-Induced Defects, Contamination, and Yield
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#211-crystal-growth-from-sand-to-single-crystal-ingot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.1 Crystal Growth: From Sand to Single-Crystal Ingot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.1 Crystal Growth: From Sand to Single-Crystal Ingot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2111-czochralski-crystal-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.1.1 Czochralski Crystal Growth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2112-float-zone-crystal-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.1.2 Float-Zone Crystal Growth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2113-gan-crystal-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.1.3 GaN Crystal Growth
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#212-epitaxial-growth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.2 Epitaxial Growth
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.2 Epitaxial Growth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2121-molecular-beam-epitaxy-mbe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.2.1 Molecular Beam Epitaxy (MBE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2122-metal-organic-cvd-mocvd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.2.2 Metal-Organic CVD (MOCVD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2123-chemical-vapor-deposition-cvd-for-silicon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.2.3 Chemical Vapor Deposition (CVD) for Silicon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#213-thermal-oxidation-and-the-deal-grove-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.3 Thermal Oxidation and the Deal-Grove Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.3 Thermal Oxidation and the Deal-Grove Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2131-the-deal-grove-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.3.1 The Deal-Grove Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#214-diffusion-and-ion-implantation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.4 Diffusion and Ion Implantation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.4 Diffusion and Ion Implantation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2141-diffusion-in-solids-ficks-laws" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.4.1 Diffusion in Solids: Fick's Laws
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2142-ion-implantation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.4.2 Ion Implantation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2143-post-implant-annealing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.4.3 Post-Implant Annealing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#215-photolithography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.5 Photolithography
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#216-etching-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.6 Etching Processes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#217-thin-film-deposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.7 Thin-Film Deposition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#218-metallization-and-interconnects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.8 Metallization and Interconnects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#219-process-induced-defects-contamination-and-yield" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.9 Process-Induced Defects, Contamination, and Yield
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/21-fabrication-technology/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="semiconductor-fabrication-technology">Semiconductor Fabrication Technology</h1>
+<h2 id="summary">Summary</h2>
+<p>Device physics does not exist in isolation from the processes that create devices. This chapter surveys semiconductor fabrication at the level needed to understand how process choices affect device behavior. Crystal growth by the Czochralski and float-zone methods produces the starting silicon ingots; GaN growth presents unique challenges requiring specialized reactors. Epitaxial growth by MBE, MOCVD, and CVD deposits thin, precisely doped layers. Thermal oxidation (dry and wet, modeled by Deal-Grove kinetics) forms gate and field oxides. Solid-state diffusion (Fick's laws) and ion implantation introduce dopants with controllable profiles; post-implant annealing restores crystal quality. Photolithography, etching (wet, RIE, plasma), and thin-film deposition (PVD, sputtering, CVD) pattern and build up the device layers. Metallization with aluminum or copper interconnects and silicide contacts links device regions. Process-induced defects, contamination control, and a yield overview close the chapter.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 40 concepts from the learning graph:</p>
+<ol>
+<li>GaN Crystal Growth</li>
+<li>Czochralski Crystal Growth</li>
+<li>Float-Zone Crystal Growth</li>
+<li>Crystal Ingot Processing</li>
+<li>Wafer Preparation</li>
+<li>Epitaxial Growth</li>
+<li>Molecular Beam Epitaxy</li>
+<li>Metal-Organic CVD</li>
+<li>Chemical Vapor Deposition</li>
+<li>Thermal Oxidation of Silicon</li>
+<li>Deal-Grove Model</li>
+<li>Dry Oxidation</li>
+<li>Wet Oxidation</li>
+<li>Diffusion in Solids</li>
+<li>Fick First Law</li>
+<li>Fick Second Law</li>
+<li>Diffusion Coefficient Thermal</li>
+<li>Ion Implantation</li>
+<li>Ion Range Distribution</li>
+<li>Channeling Effect</li>
+<li>Annealing Post-Implant</li>
+<li>Photolithography Process</li>
+<li>Photoresist</li>
+<li>Exposure and Development</li>
+<li>Mask Alignment</li>
+<li>Etching Processes</li>
+<li>Wet Chemical Etching</li>
+<li>Dry Etching RIE</li>
+<li>Plasma Etching</li>
+<li>Thin Film Deposition</li>
+<li>Physical Vapor Deposition</li>
+<li>Sputtering</li>
+<li>Metallization</li>
+<li>Aluminum Interconnects</li>
+<li>Copper Interconnects</li>
+<li>Silicide Formation</li>
+<li>Contact Resistance Fabrication</li>
+<li>Process-Induced Defects</li>
+<li>Contamination Control</li>
+<li>Yield Engineering Overview</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../02-crystal-lattice-structure/">Chapter 2: Crystal Lattice Structure and Symmetry</a></li>
+<li><a href="../03-crystal-bonding-defects/">Chapter 3: Crystal Bonding, Defects, and Surfaces</a></li>
+<li><a href="../01-intro-semiconductors/">Chapter 5: Silicon Material Properties</a></li>
+<li><a href="../12-pn-junction-dynamics/">Chapter 12: P-N Junction: Dynamics, Breakdown, and Heterojunctions</a></li>
+<li><a href="../13-metal-semiconductor-mos/">Chapter 13: Metal-Semiconductor Contacts and MOS Physics</a></li>
+<li><a href="../19-compound-semiconductors-quantum/">Chapter 19: III-V/II-VI Semiconductors, Quantum Nanostructures, and HEMTs</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Nova on Semiconductor Fabrication: Making Theory Real (in the World's Cleanest Rooms)</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+All semester we've been working with idealized junctions, perfect crystals, and equations that assume the silicon comes pre-made. It doesn't. Someone — or rather, thousands of very precise robots and chemicals — had to grow the crystal, slice it to a wafer, oxidize it, implant it, pattern it, etch it, deposit metals on it, and verify every single step didn't go wrong. Today we follow a silicon atom from molten rock to finished transistor. It takes three months and involves about 1000 individual process steps. No pressure.</p>
+</div>
+<h2 id="211-crystal-growth-from-sand-to-single-crystal-ingot">21.1 Crystal Growth: From Sand to Single-Crystal Ingot</h2>
+<p>The starting material for silicon devices is polycrystalline silicon (polysilicon or "polysi") purified from quartzite sand through a series of chemical reactions. Metallurgical-grade silicon (98–99% pure) is insufficient — devices require electronic-grade silicon with impurity levels below <span class="arithmatex">\(10^{10}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> (parts-per-trillion).</p>
+<h3 id="2111-czochralski-crystal-growth">21.1.1 Czochralski Crystal Growth</h3>
+<p>The dominant commercial method is the <strong>Czochralski (CZ) process</strong>:</p>
+<ol>
+<li>Polysilicon is melted in a quartz crucible at 1414°C under inert gas (argon)</li>
+<li>A precisely oriented seed crystal (~5 mm diameter) is lowered until it contacts the melt</li>
+<li>The seed is slowly pulled upward (1–10 mm/hr) while rotating; silicon solidifies on the seed</li>
+<li>The boule (ingot) is grown to 300 mm diameter (current standard) and 1–2 m length</li>
+<li>The ingot is sliced into wafers (0.7–0.9 mm thick), lapped, polished, and cleaned</li>
+</ol>
+<p>CZ silicon contains:
+- Interstitial oxygen (from quartz crucible): ~10¹⁸ cm⁻³, which can form oxide precipitates that getter metallic impurities
+- Carbon: &lt; 10¹⁶ cm⁻³
+- Residual dopants: controlled by adding B, P, or As to the melt</p>
+<p><strong>Crystal ingot processing</strong> involves the ingot being ground to a precise cylinder, flat or notch ground for orientation reference, sliced by multi-wire saws into wafers, and then polished to atomic smoothness (~0.1 nm RMS roughness for the polished surface).</p>
+<p>Modern 300 mm CZ wafers cost ~$100–200 each and are the substrate for all leading-edge CMOS production.</p>
+<h3 id="2112-float-zone-crystal-growth">21.1.2 Float-Zone Crystal Growth</h3>
+<p><strong>Float-zone (FZ)</strong> silicon avoids the quartz crucible (hence, much lower oxygen content). A polysilicon rod is melted locally by an RF induction coil; the molten zone is slowly traversed along the rod while impurities segregate preferentially into the melt (zone refining).</p>
+<p>FZ silicon has:
+- Oxygen concentration &lt; 10¹⁵ cm⁻³ (100× lower than CZ)
+- Higher resistivity achievable (up to 10⁵ Ω·cm)
+- No oxygen-related defects</p>
+<p>FZ silicon is preferred for: power devices (high voltage, long minority carrier lifetime), silicon solar cells (highest efficiency because low oxygen → fewer recombination centers), and precision radiation detectors.</p>
+<p>Limitation: FZ is limited to ~200 mm diameter because the molten zone becomes unstable at larger diameters. All 300 mm and 450 mm production uses CZ.</p>
+<h3 id="2113-gan-crystal-growth">21.1.3 GaN Crystal Growth</h3>
+<p>Growing bulk GaN crystals is significantly harder than silicon because GaN has:
+- Very high melting point (&gt; 2000°C with nitrogen overpressure)
+- High nitrogen vapor pressure at the melting point</p>
+<p><strong>Hydride vapor phase epitaxy (HVPE)</strong> produces thick GaN layers (100–500 μm) on foreign substrates (sapphire, SiC), which can then be separated to make quasi-bulk GaN substrates. <strong>Ammonothermal growth</strong> (GaN dissolved in supercritical ammonia) and <strong>sodium flux</strong> methods are emerging for larger boules. Most GaN power devices today use GaN-on-SiC or GaN-on-Si, not bulk GaN, because substrate availability and cost.</p>
+<hr />
+<h2 id="212-epitaxial-growth">21.2 Epitaxial Growth</h2>
+<p><strong>Epitaxy</strong> (from Greek: "epi" = upon, "taxis" = arrangement) is the growth of a crystalline layer whose orientation is determined by the substrate beneath it. Epitaxial layers allow precise control of doping, composition, and thickness beyond what's achievable by bulk crystal growth.</p>
+<p>Two cases: <strong>homoepitaxy</strong> (same material, e.g., Si on Si) and <strong>heteroepitaxy</strong> (different material, e.g., GaAs on InP, or InGaN on GaN).</p>
+<h3 id="2121-molecular-beam-epitaxy-mbe">21.2.1 Molecular Beam Epitaxy (MBE)</h3>
+<p><strong>MBE</strong> deposits atoms from thermal beams in ultra-high vacuum (<span class="arithmatex">\(10^{-10}\)</span> torr). Effusion cells heat elemental sources (Ga, As, Al, In, etc.) until atoms evaporate. Shutters control the beam flux with millisecond precision. The substrate is heated and slowly rotated for uniformity.</p>
+<p>MBE advantages:
+- Atomic-layer precision and abrupt interfaces
+- In-situ monitoring (RHEED — reflection high-energy electron diffraction)
+- No chemical precursors → ultra-pure
+- Can grow single-monolayer structures</p>
+<p>MBE disadvantages:
+- Extremely slow (&lt; 1 μm/hr for most materials)
+- Very expensive capital equipment and maintenance
+- Limited to research and specialty compound semiconductor production (not silicon CMOS)</p>
+<h3 id="2122-metal-organic-cvd-mocvd">21.2.2 Metal-Organic CVD (MOCVD)</h3>
+<p><strong>MOCVD</strong> (also called MOVPE — metal-organic vapor phase epitaxy) uses organometallic precursors (e.g., trimethylgallium Ga(CH₃)₃, trimethylaluminum Al(CH₃)₃, arsine AsH₃) carried in hydrogen or nitrogen. Precursors decompose on a heated substrate (500–1100°C), depositing the semiconductor.</p>
+<p>MOCVD advantages:
+- Production-scale (multi-wafer planetary reactors)
+- Essential for GaN/AlGaN (no other method scales)
+- 5–10× faster than MBE for III-V compounds
+- Standard for LED epitaxy</p>
+<p>MOCVD disadvantages:
+- Hazardous precursors (arsine, phosphine are highly toxic)
+- Less abrupt interfaces than MBE
+- Complex gas-phase reactions to control</p>
+<h3 id="2123-chemical-vapor-deposition-cvd-for-silicon">21.2.3 Chemical Vapor Deposition (CVD) for Silicon</h3>
+<p>Silicon epitaxy uses <strong>CVD</strong> with silane (SiH₄) or dichlorosilane (SiH₂Cl₂) at atmospheric or reduced pressure:</p>
+<div class="arithmatex">\[
+\text{SiH}_4 \xrightarrow{900\text{-}1150°C} \text{Si} + 2\text{H}_2
+\]</div>
+<p>Silicon CVD is used for:
+- Blanket n⁺ or p⁺ epitaxial layers (bipolar, power devices)
+- Selective epitaxial silicon (SiGe in MOSFET source/drain regions)
+- Polysilicon deposition (gate electrode, resistors)</p>
+<hr />
+<h2 id="213-thermal-oxidation-and-the-deal-grove-model">21.3 Thermal Oxidation and the Deal-Grove Model</h2>
+<p>Silicon's unique advantage is its ability to form a high-quality SiO₂ gate dielectric by direct oxidation:</p>
+<p>[
+\text{Si} + \text{O}<em>2 \to \text{SiO}</em>� \quad \text{(dry oxidation)}
+]
+[
+\text{Si} + 2\text{H}_2\text{O} \to \text{SiO}_2 + 2\text{H}_2 \quad \text{(wet oxidation)}
+]</p>
+<p><strong>Dry oxidation</strong> produces denser oxide with fewer defects and better Si/SiO₂ interface quality — used for gate oxides.</p>
+<p><strong>Wet oxidation</strong> (water vapor or pyrogenic steam) is 5–10× faster and produces thicker but lower-quality oxides — used for isolation (field oxide, LOCOS, STI).</p>
+<p><strong>Consuming silicon:</strong> The oxide consumes silicon from the surface. Growing 100 nm of SiO₂ consumes 44 nm of silicon (oxide is ~2.27× denser in volume than equivalent silicon).</p>
+<h3 id="2131-the-deal-grove-model">21.3.1 The Deal-Grove Model</h3>
+<p>The kinetics of thermal oxidation are described by the <strong>Deal-Grove model</strong> (1965), which considers three sequential steps: gas-phase transport (fast), oxide surface reaction, and diffusion through the growing oxide (rate-limiting for thick oxides).</p>
+<p>The oxide thickness <span class="arithmatex">\(x_o(t)\)</span> satisfies:</p>
+<div class="arithmatex">\[
+x_o^2 + A x_o = B(t + \tau)
+\]</div>
+<p>where <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are temperature-dependent parameters and <span class="arithmatex">\(\tau\)</span> accounts for any initial oxide. Two limiting cases:</p>
+<ul>
+<li><strong>Short times (thin oxides):</strong> <span class="arithmatex">\(x_o \approx (B/A)(t + \tau)\)</span> — linear in time; surface reaction limited</li>
+<li><strong>Long times (thick oxides):</strong> <span class="arithmatex">\(x_o \approx \sqrt{B(t + \tau)}\)</span> — parabolic in time; diffusion limited</li>
+</ul>
+<p>The <strong>parabolic rate constant</strong> <span class="arithmatex">\(B \propto D_{\text{ox}} C^*\)</span> where <span class="arithmatex">\(D_{\text{ox}}\)</span> is the oxidant diffusivity through SiO₂ and <span class="arithmatex">\(C^*\)</span> is the oxidant solubility. Wet oxidation has larger <span class="arithmatex">\(B\)</span> (higher water solubility in SiO₂).</p>
+<p>Typical values at 1000°C for silicon:</p>
+<table>
+<thead>
+<tr>
+<th>Oxidation type</th>
+<th>B/A (μm/hr)</th>
+<th>B (μm²/hr)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dry O₂</td>
+<td>0.068</td>
+<td>0.0117</td>
+</tr>
+<tr>
+<td>Wet H₂O</td>
+<td>0.75</td>
+<td>0.324</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Nova Thinks: The 0.3 nm Thermal Oxide Is a Miracle</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova in thinking pose">
+At 5 nm node CMOS, the EOT gate oxide is ~0.6–0.7 nm — roughly 2–3 atomic layers. A thermally grown SiO₂ film this thin is essentially a monolayer of oxide on top of the silicon, barely distinguishable from the Si/SiO₂ interface itself. The interface trap density of a good thermal oxide is <span class="arithmatex">\(D_{it} \approx 10^{10}\)</span> cm<span class="arithmatex">\(^{-2}\)</span>eV<span class="arithmatex">\(^{-1}\)</span> — out of 6.8 × 10¹⁴ Si surface atoms per cm², this means roughly 1 in 68,000 atoms has a dangling bond. That's the quality that makes silicon unique. No compound semiconductor has ever achieved anything close to this — it's the interface that built the information age.</p>
+</div>
+<hr />
+<h2 id="214-diffusion-and-ion-implantation">21.4 Diffusion and Ion Implantation</h2>
+<p>Two methods introduce controlled dopant atoms into silicon: <strong>solid-state diffusion</strong> and <strong>ion implantation</strong>. Modern CMOS uses almost exclusively ion implantation, but diffusion physics remains important for understanding dopant redistribution during annealing.</p>
+<h3 id="2141-diffusion-in-solids-ficks-laws">21.4.1 Diffusion in Solids: Fick's Laws</h3>
+<p><strong>Fick's first law:</strong> The flux of dopant atoms is proportional to the concentration gradient:</p>
+<div class="arithmatex">\[
+J = -D \frac{\partial C}{\partial x}
+\]</div>
+<p><strong>Fick's second law:</strong> The time evolution of the concentration profile:</p>
+<div class="arithmatex">\[
+\frac{\partial C}{\partial t} = D \frac{\partial^2 C}{\partial x^2}
+\]</div>
+<p>(valid when D is concentration-independent — a useful approximation for low concentrations)</p>
+<p><strong>Gaussian diffusion</strong> (from an implanted surface layer): <span class="arithmatex">\(C(x,t) = \frac{Q}{\sqrt{\pi D t}} e^{-x^2/(4Dt)}\)</span></p>
+<p><strong>Erfc diffusion</strong> (from a constant surface source): <span class="arithmatex">\(C(x,t) = C_s \text{erfc}(x/2\sqrt{Dt})\)</span></p>
+<p>The thermal <strong>diffusion coefficient</strong> follows an Arrhenius law:</p>
+<div class="arithmatex">\[
+D = D_0 \exp\!\left(-\frac{E_a}{k_BT}\right)
+\]</div>
+<p>For boron in silicon: <span class="arithmatex">\(D_0 = 10.5\)</span> cm²/s, <span class="arithmatex">\(E_a = 3.69\)</span> eV. At 1000°C: <span class="arithmatex">\(D_B \approx 2 \times 10^{-14}\)</span> cm²/s. Diffusing for 1 hour gives characteristic length <span class="arithmatex">\(\sqrt{Dt} \approx 8.5\)</span> nm — consistent with junction depths of 10–50 nm in modern transistors.</p>
+<h3 id="2142-ion-implantation">21.4.2 Ion Implantation</h3>
+<p><strong>Ion implantation</strong> fires dopant ions (P⁺, As⁺, B⁺) accelerated to 1–500 keV into the silicon wafer. Ions slow down through nuclear (elastic collisions with Si nuclei) and electronic (inelastic collisions with electrons) stopping mechanisms, coming to rest at a depth called the <strong>projected range</strong> <span class="arithmatex">\(R_p\)</span>:</p>
+<p>The implanted dopant distribution is approximately Gaussian:</p>
+<div class="arithmatex">\[
+C(x) = \frac{Q}{\sqrt{2\pi}\Delta R_p} \exp\!\left(-\frac{(x - R_p)^2}{2\Delta R_p^2}\right)
+\]</div>
+<p>where <span class="arithmatex">\(Q\)</span> is the dose (ions/cm²) and <span class="arithmatex">\(\Delta R_p\)</span> is the straggle (standard deviation of the range).</p>
+<p>Advantages of ion implantation:
+- Precise, reproducible dose (monitor with Faraday cups)
+- Room-temperature process (no dopant redistribution during implant)
+- Tilted implants can dope under gate edges (halo, pocket implants)
+- Masks (photoresist, oxide, nitride) block implants</p>
+<p>The <strong>channeling effect</strong> occurs when ions travel along crystal symmetry axes or planes — channeled ions travel much deeper than predicted. To prevent channeling, wafers are typically tilted 7° during implant and/or a thin amorphous screen oxide is used.</p>
+<h3 id="2143-post-implant-annealing">21.4.3 Post-Implant Annealing</h3>
+<p>Ion implantation creates crystal damage — the silicon lattice is disordered by nuclear collisions. To activate the dopants (move them to substitutional sites) and repair the damage, <strong>annealing</strong> at 800–1100°C is required.</p>
+<p><strong>Rapid thermal annealing (RTA)</strong> heats the wafer for seconds using tungsten-halogen lamps, activating dopants while minimizing diffusion (which would spread the sharp implant profile).</p>
+<p><strong>Spike anneal</strong> and <strong>laser annealing</strong> further reduce the thermal budget (milliseconds to nanoseconds) for the most aggressive short-channel devices where even RTA allows too much dopant movement.</p>
+<hr />
+<h2 id="215-photolithography">21.5 Photolithography</h2>
+<p><strong>Photolithography</strong> (or simply "lithography") transfers geometric patterns from a mask to the silicon wafer. It is the most expensive and technologically demanding step in semiconductor fabrication.</p>
+<p>The process sequence:</p>
+<ol>
+<li><strong>Surface preparation:</strong> Clean wafer, bake to desorb moisture, apply adhesion promoter (HMDS)</li>
+<li><strong>Photoresist coating:</strong> Spin-coat liquid photoresist at 2000–6000 RPM → 50–500 nm uniform film</li>
+<li><strong>Soft bake:</strong> Drive out solvent (90°C, 60 seconds)</li>
+<li><strong>Exposure:</strong> UV or extreme UV (EUV) light through mask selectively exposes resist</li>
+<li><strong>Post-exposure bake (PEB):</strong> Necessary for chemically amplified resists</li>
+<li><strong>Development:</strong> Immerse in developer; exposed (positive resist) or unexposed (negative resist) areas dissolve</li>
+<li><strong>Inspection and hard bake</strong></li>
+<li><strong>Etch or implant:</strong> Pattern transferred to underlying film</li>
+<li><strong>Resist strip:</strong> Remove remaining resist (oxygen plasma or wet chemicals)</li>
+</ol>
+<p>The minimum feature size achievable is given by the <strong>Rayleigh criterion</strong>:</p>
+<div class="arithmatex">\[
+\text{CD}_{\min} = k_1 \frac{\lambda}{\text{NA}}
+\]</div>
+<p>where <span class="arithmatex">\(\lambda\)</span> is the exposure wavelength, NA is the numerical aperture of the lens, and <span class="arithmatex">\(k_1\)</span> is a process-dependent factor (historically ~0.5–0.8, now pushed to ~0.25 with multiple patterning).</p>
+<p><strong>Technology evolution:</strong>
+- 436 nm (g-line mercury): Used through 500 nm nodes
+- 365 nm (i-line): Used through 250 nm
+- 248 nm (KrF excimer): 250–130 nm nodes
+- 193 nm (ArF excimer): 90–7 nm nodes (with immersion and multiple patterning)
+- <strong>13.5 nm EUV:</strong> 7 nm and below; requires reflective optics, plasma-driven light source</p>
+<p>EUV lithography represents one of the most complex machines ever built: ASML's NXE:3400 EUV scanner weighs 180 tons, costs ~$150 million, contains 100,000 parts, and must be positioned to nanometer accuracy.</p>
+<hr />
+<h2 id="216-etching-processes">21.6 Etching Processes</h2>
+<p>After lithography, exposed areas must be etched away. Two classes:</p>
+<p><strong>Wet chemical etching:</strong> Liquid chemicals dissolve the exposed material. For silicon: <span class="arithmatex">\(\text{KOH}\)</span> etches anisotropically (preferring the (100) plane over (111)); <span class="arithmatex">\(\text{HF}\)</span> removes SiO₂ selectively. Wet etching is isotropic (etches in all directions equally) for most materials — the undercut equals the etch depth.</p>
+<p><strong>Dry etching (RIE and plasma etching):</strong> Ion bombardment and reactive radicals remove material anisotropically (primarily in the vertical direction). This enables the sub-10 nm features required in modern CMOS.</p>
+<p><strong>Reactive ion etching (RIE):</strong> Low-pressure plasma of fluorine-based gases (CF₄, SF₆, C₄F₈) bombards the wafer with ions. Ion bombardment combined with chemical reactions etches directionally. The ratio of physical sputtering to chemical etching controls the anisotropy.</p>
+<p><strong>Deep reactive ion etching (DRIE):</strong> Alternates between etching and passivation cycles (Bosch process) to achieve aspect ratios &gt; 50:1 for MEMS structures.</p>
+<hr />
+<h2 id="217-thin-film-deposition">21.7 Thin-Film Deposition</h2>
+<p>After etching, new layers are deposited. Three main methods:</p>
+<p><strong>Physical vapor deposition (PVD):</strong> Target material is vaporized by sputtering (ion bombardment) or evaporation, and deposits on the wafer. Used for: aluminum, titanium, tungsten, and barrier metals. Low substrate temperatures (~25–300°C). Poor conformality for deep features.</p>
+<p><strong>Sputtering:</strong> Inert gas (Ar) ions accelerated into a target material — atoms are physically knocked off and deposit on the wafer. Used for metals, alloys, and refractory materials.</p>
+<p><strong>CVD (Chemical Vapor Deposition):</strong> Gaseous precursors react at the wafer surface to deposit a solid film. Better conformality than PVD. Used for: SiO₂, Si₃N₄, polysilicon, tungsten, low-k dielectrics.</p>
+<p><strong>Atomic Layer Deposition (ALD):</strong> Sequential, self-limiting half-reactions deposit films one atomic monolayer at a time. Used for: high-k gate dielectrics (HfO₂, Al₂O₃), conformal coatings in high-aspect-ratio features. Enables angstrom-precision film thickness control.</p>
+<hr />
+<h2 id="218-metallization-and-interconnects">21.8 Metallization and Interconnects</h2>
+<p><strong>Metallization</strong> provides electrical connections between device regions (contacts) and between devices (interconnects).</p>
+<p><strong>Silicide formation:</strong> Directly contacting silicon with aluminum or tungsten is problematic — the metal/silicon reaction can cause spiking (aluminum dissolves into silicon at contact). The modern approach deposits a refractory metal (Ti, Co, Ni) on silicon and anneals — the metal reacts with silicon to form a metal silicide (TiSi₂, CoSi₂, NiSi) with low resistivity (~10–20 μΩ·cm) and good junction integrity. Unreacted metal on SiO₂ is selectively removed. This self-aligned silicide ("salicide") process works without a mask.</p>
+<p><strong>Aluminum interconnects:</strong> Used from 1970 through early 2000s. Aluminum sputtered into contact holes and trenches, patterned by RIE. Aluminum has resistivity ~2.7 μΩ·cm. Problems: electromigration failure (Al atoms move under high current density), and limited scalability below 180 nm.</p>
+<p><strong>Copper interconnects:</strong> Introduced at 180 nm node (IBM/Motorola 1997). Copper has 40% lower resistivity (~1.7 μΩ·cm) and better electromigration resistance. Copper cannot be etched easily (no volatile Cu fluorides), so it uses <strong>damascene</strong> processing: etch trenches and vias in the dielectric, deposit copper (electroplating), then chemical-mechanical polish (CMP) to remove excess copper. A diffusion barrier (TaN, TiN) prevents copper from diffusing into silicon.</p>
+<p><strong>Contact resistance</strong> is the resistance between metal and the silicon or silicide surface. For advanced nodes, contact resistance is a leading limiter — the very small contact area (&lt; 20 nm × 20 nm) means even 10<span class="arithmatex">\(^{-9}\)</span> Ω·cm² specific contact resistance contributes hundreds of Ω to the source/drain resistance. Minimizing contact resistance through materials selection, surface preparation, and heavy doping is critical.</p>
+<hr />
+<h2 id="219-process-induced-defects-contamination-and-yield">21.9 Process-Induced Defects, Contamination, and Yield</h2>
+<p><strong>Process-induced defects</strong> include:</p>
+<ul>
+<li><strong>Crystalline defects:</strong> Dislocations from thermal stress, stacking faults from oxidation, ESD damage</li>
+<li><strong>Oxide defects:</strong> Pinhole shorts, trapped charge from plasma damage, interface state creation</li>
+<li><strong>Lithography defects:</strong> Pattern bridging, open circuits, resist residue</li>
+<li><strong>Metal defects:</strong> Voids in copper lines, incomplete fill in contact holes</li>
+</ul>
+<p><strong>Contamination control:</strong> Semiconductor fabs operate as Class 1–10 cleanrooms (1–10 particles &gt; 0.5 μm per cubic foot of air, vs. 350,000 in normal air). Workers wear full bunny suits. Particle counts are monitored continuously. Metallic contamination (Na⁺, Fe, Cu) is controlled at parts-per-trillion in all process chemicals (DI water: 18.2 MΩ·cm, &lt; 1 ppb metal). Even a single metal atom in a completed gate oxide can create a leakage path.</p>
+<p><strong>Yield engineering:</strong> Chip yield (fraction of die on a wafer that function correctly) is modeled by the Poisson or negative-binomial distribution:</p>
+<div class="arithmatex">\[
+Y = e^{-AD_0} \quad \text{(Poisson model)}
+\]</div>
+<p>where <span class="arithmatex">\(A\)</span> is the die area and <span class="arithmatex">\(D_0\)</span> is the defect density (defects/cm²). A die with <span class="arithmatex">\(A = 100\)</span> mm² at <span class="arithmatex">\(D_0 = 0.1\)</span> cm<span class="arithmatex">\(^{-2}\)</span>: <span class="arithmatex">\(Y = e^{-0.1 \times 1} \approx 90\%\)</span>. At <span class="arithmatex">\(D_0 = 1\)</span> cm<span class="arithmatex">\(^{-2}\)</span>: <span class="arithmatex">\(Y \approx 37\%\)</span>. Reducing defect density and die area are the two levers for improving yield — which directly determines revenue and profitability.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Nova Celebrates: 1000 Steps to a Transistor</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
+A modern leading-edge chip requires 3–4 months and approximately 1000 individual process steps. The wafer visits 200+ pieces of equipment. Each step must be controlled to nanometer precision, parts-per-trillion chemical purity, and angstrom-scale film uniformity across the entire 300 mm wafer. The fact that it works consistently — that TSMC ships 13 million wafers per year at 3–5 nm — is arguably the most extraordinary manufacturing achievement in human history. And you now understand enough physics to know why each step matters. That's not a small thing.</p>
+</div>
+<details>
+<summary>#### MicroSim: CMOS Process Flow Visualizer</summary>
+<p><strong>sim-id:</strong> <code>cmos-process-flow</code><br />
+<strong>Library:</strong> p5.js<br />
+<strong>Status:</strong> specification  </p>
+<p><strong>Description:</strong> Step-by-step cross-sectional visualization of a simplified CMOS process flow. Shows the silicon wafer cross-section updating after each major step: wafer start → field oxide → well implants → gate oxidation → gate poly → LDD implants → spacer formation → source/drain implants → silicide → dielectric → contacts → metal. User can step forward/backward through the process.</p>
+<p><strong>Controls:</strong>
+- Button: Step forward / Step backward
+- Slider: Jump to step N (1 to 20)
+- Checkbox: Label all materials
+- Dropdown: Show NMOS / PMOS / Both</p>
+<p><strong>Key Learning Objectives:</strong>
+- L2 (Understand): Identify the purpose of each major fabrication step
+- L3 (Apply): Trace how a single transistor's structure builds up through the process flow
+- L4 (Analyze): Explain why step ordering matters (e.g., why implants come before activation anneal)</p>
+</details>
+<hr />
+<h2 id="summary_1">Summary</h2>
+<p>This chapter covered semiconductor fabrication from crystal to chip:</p>
+<ul>
+<li><strong>Crystal growth:</strong> Czochralski (300 mm, oxygen-doped) and float-zone (ultra-pure, power/solar) for silicon; HVPE/ammonothermal for GaN</li>
+<li><strong>Epitaxy:</strong> MBE (atomic precision, compound semiconductors), MOCVD (production-scale III-V/GaN), CVD (silicon epi, polysilicon)</li>
+<li><strong>Thermal oxidation:</strong> Deal-Grove model — linear (reaction-limited) then parabolic (diffusion-limited) kinetics; dry oxide for gate, wet for isolation</li>
+<li><strong>Diffusion:</strong> Fick's laws → Gaussian or erfc profiles; <span class="arithmatex">\(D \propto e^{-E_a/k_BT}\)</span>; modern devices use ion implantation + RTA</li>
+<li><strong>Ion implantation:</strong> Precise dose control, Gaussian <span class="arithmatex">\(C(x)\)</span> profile centered at range <span class="arithmatex">\(R_p\)</span>; channeling prevented by wafer tilt</li>
+<li><strong>Photolithography:</strong> Spin → expose → develop → etch cycle; minimum CD = <span class="arithmatex">\(k_1\lambda/\text{NA}\)</span>; EUV at 13.5 nm enables &lt; 7 nm nodes</li>
+<li><strong>Etching:</strong> Wet (isotropic, selective) vs. RIE (anisotropic, plasma-ion bombardment)</li>
+<li><strong>Metallization:</strong> Salicide (self-aligned silicide) for contacts; aluminum → copper (lower resistivity, damascene process)</li>
+<li><strong>Yield:</strong> <span class="arithmatex">\(Y = e^{-AD_0}\)</span> — die area and defect density determine chip economics</li>
+</ul>
+<h2 id="key-equations">Key Equations</h2>
+<div class="arithmatex">\[
+x_o^2 + A x_o = B(t + \tau) \quad \text{(Deal-Grove)} \implies x_o \approx \sqrt{Bt} \text{ (parabolic limit)}
+\]</div>
+<div class="arithmatex">\[
+C(x,t) = \frac{Q}{\sqrt{2\pi}\Delta R_p}\exp\!\left(-\frac{(x-R_p)^2}{2\Delta R_p^2}\right) \quad \text{(implant profile)}
+\]</div>
+<div class="arithmatex">\[
+\text{CD}_{\min} = k_1 \frac{\lambda}{\text{NA}}, \quad Y = e^{-AD_0}
+\]</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../20-strained-si-2d-power/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 20. Strained Si, 2D Materials, Power">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                20. Strained Si, 2D Materials, Power
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../22-characterization-modeling/" class="md-footer__link md-footer__link--next" aria-label="Next: 22. Characterization and Modeling">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                22. Characterization and Modeling
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

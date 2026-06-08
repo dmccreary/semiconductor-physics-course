@@ -2,54 +2,254 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dmccreary.github.io/semiconductor-physics-course/</loc>
-         <lastmod>2025-07-10</lastmod>
+         <lastmod>2026-06-08</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/semiconductor-physics-course/about/</loc>
-         <lastmod>2025-07-10</lastmod>
+         <lastmod>2026-06-08</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/semiconductor-physics-course/contact/</loc>
-         <lastmod>2025-07-10</lastmod>
+         <lastmod>2026-06-08</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/semiconductor-physics-course/course-description/</loc>
-         <lastmod>2025-07-10</lastmod>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/faq/</loc>
+         <lastmod>2026-06-08</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/semiconductor-physics-course/glossary/</loc>
-         <lastmod>2025-07-10</lastmod>
+         <lastmod>2026-06-08</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/semiconductor-physics-course/how-we-built-this-site/</loc>
-         <lastmod>2025-07-10</lastmod>
+         <lastmod>2026-06-08</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/semiconductor-physics-course/license/</loc>
-         <lastmod>2025-07-10</lastmod>
+         <lastmod>2026-06-08</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/semiconductor-physics-course/references/</loc>
-         <lastmod>2025-07-10</lastmod>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/01-intro-semiconductors/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/02-crystal-lattice-structure/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/03-crystal-bonding-defects/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/04-quantum-mechanics/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/05-bloch-theorem-band-theory/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/06-fermi-dirac-statistics/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/07-doping-extrinsic-carriers/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/08-carrier-drift-mobility/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/09-carrier-diffusion-transport/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/10-generation-recombination/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/11-pn-junction-equilibrium/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/12-pn-junction-dynamics/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/13-metal-semiconductor-mos/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/14-bipolar-transistors/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/15-jfet-mesfet-mosfet/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/16-short-channel-cmos/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/17-leds-laser-diodes/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/18-photodetectors-solar-cells/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/19-compound-semiconductors-quantum/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/20-strained-si-2d-power/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/21-fabrication-technology/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/chapters/22-characterization-modeling/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/learning-graph/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/learning-graph/book-metrics/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/learning-graph/chapter-metrics/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/learning-graph/concept-list/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/learning-graph/concept-taxonomy/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/learning-graph/course-description-assessment/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/learning-graph/index-template/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/learning-graph/mascot-test/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/learning-graph/quality-metrics/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/learning-graph/taxonomy-distribution/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/learning-graph/logs/faq/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/learning-graph/logs/learning-graph-generator-0.05-2026-06-02/</loc>
+         <lastmod>2026-06-08</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/semiconductor-physics-course/prompts/</loc>
-         <lastmod>2025-07-10</lastmod>
+         <lastmod>2026-06-08</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/semiconductor-physics-course/prompts/course-description/</loc>
-         <lastmod>2025-07-10</lastmod>
+         <lastmod>2026-06-08</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/semiconductor-physics-course/prompts/suggested-simulations/</loc>
-         <lastmod>2025-07-10</lastmod>
+         <lastmod>2026-06-08</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/semiconductor-physics-course/sims/</loc>
-         <lastmod>2025-07-10</lastmod>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/sims/cubic-crystal-structure-explorer/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/sims/defect-hierarchy-network/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/sims/density-of-states-explorer/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/sims/direct-indirect-bandgap-explorer/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/sims/ek-band-structure-explorer/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/sims/energy-band-diagram-explorer/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/sims/fermi-dirac-explorer/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/sims/graph-viewer/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/sims/intrinsic-concentration-temperature/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/sims/lattice-bandgap-map/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/sims/miller-indices-explorer/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/sims/particle-in-a-box-explorer/</loc>
+         <lastmod>2026-06-08</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/semiconductor-physics-course/sims/pn-junction/</loc>
-         <lastmod>2025-07-10</lastmod>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/sims/point-defect-visualizer/</loc>
+         <lastmod>2026-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/semiconductor-physics-course/sims/quantum-tunneling-explorer/</loc>
+         <lastmod>2026-06-08</lastmod>
     </url>
 </urlset>

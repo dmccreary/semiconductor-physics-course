@@ -1,0 +1,2752 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Electrical and optical characterization methods, structural analysis, SPICE compact models, semiconductor noise, tunneling devices, and ballistic transport">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/22-characterization-modeling/">
+      
+      
+        <link rel="prev" href="../21-fabrication-technology/">
+      
+      
+        <link rel="next" href="../../learning-graph/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Device Characterization and Compact Modeling - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#device-characterization-and-compact-modeling" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Device Characterization and Compact Modeling
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#221-electrical-characterization-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.1 Electrical Characterization Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.1 Electrical Characterization Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2211-i-v-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.1.1 I-V Measurement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2212-c-v-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.1.2 C-V Measurement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2213-dlts-deep-level-transient-spectroscopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.1.3 DLTS: Deep Level Transient Spectroscopy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#222-optical-characterization-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2 Optical Characterization Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.2 Optical Characterization Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2221-photoluminescence-spectroscopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2.1 Photoluminescence Spectroscopy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2222-electroluminescence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2.2 Electroluminescence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2223-raman-spectroscopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2.3 Raman Spectroscopy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#223-structural-analysis-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.3 Structural Analysis Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.3 Structural Analysis Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2231-transmission-electron-microscopy-tem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.3.1 Transmission Electron Microscopy (TEM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2232-scanning-electron-microscopy-sem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.3.2 Scanning Electron Microscopy (SEM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2233-secondary-ion-mass-spectrometry-sims" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.3.3 Secondary Ion Mass Spectrometry (SIMS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2234-auger-electron-spectroscopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.3.4 Auger Electron Spectroscopy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#224-compact-models-from-physics-to-spice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4 Compact Models: From Physics to SPICE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.4 Compact Models: From Physics to SPICE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2241-spice-level-1-mosfet-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.1 SPICE Level-1 MOSFET Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2242-bsim-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.2 BSIM Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2243-small-signal-equivalent-circuit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.3 Small-Signal Equivalent Circuit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#225-noise-in-semiconductor-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5 Noise in Semiconductor Devices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.5 Noise in Semiconductor Devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2251-thermal-johnson-nyquist-noise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.1 Thermal (Johnson-Nyquist) Noise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2252-shot-noise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.2 Shot Noise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2253-flicker-1f-noise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.3 Flicker (1/f) Noise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2254-noise-figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.4 Noise Figure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#226-tunneling-devices-and-ballistic-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6 Tunneling Devices and Ballistic Transport
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.6 Tunneling Devices and Ballistic Transport">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2261-band-to-band-tunneling-and-the-esaki-tunnel-diode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6.1 Band-to-Band Tunneling and the Esaki Tunnel Diode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2262-resonant-tunneling-diode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6.2 Resonant Tunneling Diode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2263-ballistic-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6.3 Ballistic Transport
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#221-electrical-characterization-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.1 Electrical Characterization Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.1 Electrical Characterization Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2211-i-v-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.1.1 I-V Measurement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2212-c-v-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.1.2 C-V Measurement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2213-dlts-deep-level-transient-spectroscopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.1.3 DLTS: Deep Level Transient Spectroscopy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#222-optical-characterization-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2 Optical Characterization Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.2 Optical Characterization Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2221-photoluminescence-spectroscopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2.1 Photoluminescence Spectroscopy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2222-electroluminescence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2.2 Electroluminescence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2223-raman-spectroscopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2.3 Raman Spectroscopy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#223-structural-analysis-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.3 Structural Analysis Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.3 Structural Analysis Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2231-transmission-electron-microscopy-tem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.3.1 Transmission Electron Microscopy (TEM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2232-scanning-electron-microscopy-sem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.3.2 Scanning Electron Microscopy (SEM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2233-secondary-ion-mass-spectrometry-sims" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.3.3 Secondary Ion Mass Spectrometry (SIMS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2234-auger-electron-spectroscopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.3.4 Auger Electron Spectroscopy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#224-compact-models-from-physics-to-spice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4 Compact Models: From Physics to SPICE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.4 Compact Models: From Physics to SPICE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2241-spice-level-1-mosfet-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.1 SPICE Level-1 MOSFET Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2242-bsim-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.2 BSIM Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2243-small-signal-equivalent-circuit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.3 Small-Signal Equivalent Circuit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#225-noise-in-semiconductor-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5 Noise in Semiconductor Devices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.5 Noise in Semiconductor Devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2251-thermal-johnson-nyquist-noise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.1 Thermal (Johnson-Nyquist) Noise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2252-shot-noise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.2 Shot Noise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2253-flicker-1f-noise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.3 Flicker (1/f) Noise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2254-noise-figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.4 Noise Figure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#226-tunneling-devices-and-ballistic-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6 Tunneling Devices and Ballistic Transport
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.6 Tunneling Devices and Ballistic Transport">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2261-band-to-band-tunneling-and-the-esaki-tunnel-diode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6.1 Band-to-Band Tunneling and the Esaki Tunnel Diode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2262-resonant-tunneling-diode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6.2 Resonant Tunneling Diode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2263-ballistic-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6.3 Ballistic Transport
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/22-characterization-modeling/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="device-characterization-and-compact-modeling">Device Characterization and Compact Modeling</h1>
+<h2 id="summary">Summary</h2>
+<p>This final chapter connects the physics developed throughout the course to the experimental and computational tools used in research and industry. Electrical characterization begins with I-V and C-V measurements for extracting device parameters, Hall measurements for bulk transport properties, four-point probe for sheet resistance, and DLTS for trap characterization. Optical techniques — photoluminescence, electroluminescence, and Raman spectroscopy — probe recombination and crystal quality. Structural analysis by TEM, SEM, SIMS, and Auger electron spectroscopy maps defects, interfaces, and dopant profiles at atomic resolution. Compact models (SPICE Level-1 MOSFET, BSIM, Ebers-Moll) translate physical device behavior into circuit-simulator parameters; small-signal and large-signal equivalent circuits enable AC and transient analysis. Noise in semiconductor devices — thermal, shot, and flicker noise, combined into a noise figure — is analyzed for circuit-level impact. The chapter closes with quantum transport phenomena: band-to-band tunneling, the Esaki tunnel diode, resonant tunneling diodes with negative differential resistance, and ballistic transport in ultra-short devices.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 31 concepts from the learning graph:</p>
+<ol>
+<li>Read Noise</li>
+<li>Device Characterization Methods</li>
+<li>I-V Measurement</li>
+<li>C-V Measurement</li>
+<li>Hall Measurement</li>
+<li>Four-Point Probe</li>
+<li>DLTS Technique</li>
+<li>Optical Characterization</li>
+<li>Photoluminescence Spectroscopy</li>
+<li>Electroluminescence</li>
+<li>Raman Spectroscopy</li>
+<li>Transmission Electron Microscopy</li>
+<li>Scanning Electron Microscopy</li>
+<li>Secondary Ion Mass Spectrometry</li>
+<li>Auger Electron Spectroscopy</li>
+<li>SPICE Compact Models</li>
+<li>Level-1 MOSFET Model</li>
+<li>BSIM Model</li>
+<li>Small-Signal Equivalent Circuit</li>
+<li>Large-Signal Device Model</li>
+<li>Noise in Semiconductor Devices</li>
+<li>Thermal Noise</li>
+<li>Shot Noise</li>
+<li>Flicker Noise</li>
+<li>Noise Figure</li>
+<li>Band-to-Band Tunneling</li>
+<li>Esaki Tunnel Diode</li>
+<li>Resonant Tunneling Diode</li>
+<li>Double Barrier Structure</li>
+<li>Negative Differential Resistance</li>
+<li>Ballistic Transport</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../04-quantum-mechanics/">Chapter 4: Quantum Mechanics: Wave Equations and Atomic Structure</a></li>
+<li><a href="../09-carrier-diffusion-transport/">Chapter 9: Carrier Diffusion, Transport Theory, and Electrical Measurements</a></li>
+<li><a href="../13-metal-semiconductor-mos/">Chapter 13: Metal-Semiconductor Contacts and MOS Physics</a></li>
+<li><a href="../14-bipolar-transistors/">Chapter 14: Bipolar Junction Transistors</a></li>
+<li><a href="../15-jfet-mesfet-mosfet/">Chapter 15: JFET, MESFET, and Long-Channel MOSFET Fundamentals</a></li>
+<li><a href="../17-leds-laser-diodes/">Chapter 17: Optoelectronic Sources: LEDs and Laser Diodes</a></li>
+<li><a href="../20-strained-si-2d-power/">Chapter 20: Strained Silicon, 2D Materials, and Power/Microwave Devices</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Nova on the Final Chapter: Measuring What We've Built, Modeling What We Can't See</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+Twenty-one chapters of semiconductor physics, and it all comes down to this: How do we know if the theory is right? How do we measure a quantum well that's 5 nm thick, or a junction buried 10 nm below the surface? How do we put the physics we've derived into a computer circuit simulator? And what's happening inside a transistor that's smaller than a virus? Welcome to the last chapter: measurement, modeling, and the quantum frontier where classical device physics finally gives way to wave mechanics. Nova is very, very excited to send you off equipped to do actual science.</p>
+</div>
+<h2 id="221-electrical-characterization-methods">22.1 Electrical Characterization Methods</h2>
+<p>The most direct window into semiconductor device behavior is the electrical measurement. Before choosing an appropriate measurement, define what parameter you're extracting and which combination of terminal voltages provides the most direct measurement.</p>
+<h3 id="2211-i-v-measurement">22.1.1 I-V Measurement</h3>
+<p>The <strong>current-voltage (I-V) characteristic</strong> is the foundational measurement for every two-terminal and multi-terminal device. For a MOSFET:</p>
+<ul>
+<li><strong>Transfer characteristic</strong> (<span class="arithmatex">\(I_D\)</span> vs. <span class="arithmatex">\(V_{GS}\)</span> at fixed <span class="arithmatex">\(V_{DS}\)</span>): Extracts threshold voltage (linear extrapolation at peak <span class="arithmatex">\(g_m\)</span>), subthreshold slope, and ON/OFF ratio</li>
+<li><strong>Output characteristic</strong> (<span class="arithmatex">\(I_D\)</span> vs. <span class="arithmatex">\(V_{DS}\)</span> at multiple <span class="arithmatex">\(V_{GS}\)</span>): Extracts saturation current, channel-length modulation <span class="arithmatex">\(\lambda\)</span> (from slope in saturation), and Early voltage</li>
+</ul>
+<p>Semiconductor parameter analyzers (e.g., Keysight B1500A, Tektronix 4200-SCS) simultaneously source voltage, measure current, and sweep parameters. Modern precision: sub-fA current measurement, 1 μV voltage resolution.</p>
+<p><strong>MOSFET parameter extraction from I-V:</strong></p>
+<ul>
+<li><strong><span class="arithmatex">\(V_T\)</span></strong>: Linear extrapolation of <span class="arithmatex">\(\sqrt{I_D}\)</span> vs. <span class="arithmatex">\(V_{GS}\)</span> (at constant <span class="arithmatex">\(V_{DS}\)</span> in saturation); x-intercept gives <span class="arithmatex">\(V_T\)</span></li>
+<li><strong><span class="arithmatex">\(\mu_{\text{eff}}(V_{GS})\)</span></strong>: Extracted from gm/(C_ox W/L) in the triode region</li>
+<li><strong><span class="arithmatex">\(\lambda\)</span></strong>: Slope of <span class="arithmatex">\(I_D\)</span> vs. <span class="arithmatex">\(V_{DS}\)</span> in saturation divided by <span class="arithmatex">\(I_D\)</span></li>
+<li><strong>Subthreshold slope S</strong>: Slope of <span class="arithmatex">\(\log(I_D)\)</span> vs. <span class="arithmatex">\(V_{GS}\)</span> below threshold</li>
+</ul>
+<p><strong>Diode I-V</strong> reveals: ideality factor n from slope (<span class="arithmatex">\(\partial V/\partial(\log I) = n \times 60\)</span> mV/decade), saturation current <span class="arithmatex">\(I_s\)</span> from extrapolation, and series resistance <span class="arithmatex">\(R_s\)</span> from high-current deviation from exponential.</p>
+<h3 id="2212-c-v-measurement">22.1.2 C-V Measurement</h3>
+<p>Already detailed in Chapter 13. Key extractions from MOS C-V:</p>
+<ul>
+<li><span class="arithmatex">\(C_{\text{ox}} = C_{\text{max}}\)</span> in accumulation → <span class="arithmatex">\(t_{\text{ox}} = \varepsilon_{\text{ox}}/C_{\text{ox}}\)</span></li>
+<li><span class="arithmatex">\(C_{\text{min}}\)</span> → maximum depletion depth → substrate doping</li>
+<li><span class="arithmatex">\(V_{FB}\)</span> → flatband voltage → oxide charge and work function difference</li>
+<li><strong>Stretch-out</strong> in the depletion region → interface trap density <span class="arithmatex">\(D_{it}\)</span></li>
+</ul>
+<p><strong>Four-point probe:</strong> A linear array of four equally spaced metal probes measures sheet resistance of a doped layer without knowing contact resistance. Two outer probes source current <span class="arithmatex">\(I\)</span>; two inner probes measure voltage <span class="arithmatex">\(V\)</span>:</p>
+<div class="arithmatex">\[
+R_\square = \frac{\pi}{\ln 2} \cdot \frac{V}{I} \approx 4.532 \frac{V}{I}
+\]</div>
+<p>Four-point probe is used daily in every fab to monitor implant and diffusion uniformity.</p>
+<h3 id="2213-dlts-deep-level-transient-spectroscopy">22.1.3 DLTS: Deep Level Transient Spectroscopy</h3>
+<p><strong>DLTS</strong> (Deep Level Transient Spectroscopy) maps energy levels of traps and deep defects in the bandgap. The technique applies a voltage pulse to a reverse-biased junction to fill traps, then monitors the capacitance transient as traps emit carriers at thermal rates.</p>
+<p>The emission rate:</p>
+<div class="arithmatex">\[
+e_n = \sigma_n v_{\text{th}} N_C \exp\!\left(-\frac{E_C - E_t}{k_BT}\right)
+\]</div>
+<p>By measuring the transient time constant vs. temperature (Arrhenius plot), both the trap energy <span class="arithmatex">\(E_t\)</span> and capture cross-section <span class="arithmatex">\(\sigma\)</span> are extracted. DLTS identifies specific point defects (e.g., the E-center in silicon: phosphorus-vacancy pair at <span class="arithmatex">\(E_t = E_C - 0.44\)</span> eV) and characterizes radiation damage in space electronics.</p>
+<hr />
+<h2 id="222-optical-characterization-methods">22.2 Optical Characterization Methods</h2>
+<h3 id="2221-photoluminescence-spectroscopy">22.2.1 Photoluminescence Spectroscopy</h3>
+<p><strong>Photoluminescence (PL)</strong> illuminates the semiconductor with above-bandgap laser light, exciting carriers that then recombine and emit photons. The emission spectrum reveals:</p>
+<ul>
+<li><strong>Bandgap energy</strong> (from peak emission wavelength)</li>
+<li><strong>Exciton energies</strong> (bound states of electrons and holes, important in quantum wells and 2D materials)</li>
+<li><strong>Defect/impurity levels</strong> (sub-bandgap emission from trap states)</li>
+<li><strong>Carrier lifetime</strong> (time-resolved PL measures decay rate → <span class="arithmatex">\(\tau\)</span>)</li>
+</ul>
+<p>Low-temperature PL (4–77 K) resolves fine structure obscured by thermal broadening at room temperature. A liquid nitrogen-cooled InGaAs detector and a spectrometer are the core equipment.</p>
+<p>PL is non-destructive and extremely sensitive — detecting impurity concentrations of <span class="arithmatex">\(10^{12}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> or less. It is the first characterization step for every III-V epitaxial wafer.</p>
+<h3 id="2222-electroluminescence">22.2.2 Electroluminescence</h3>
+<p><strong>Electroluminescence (EL)</strong> maps the spatial distribution of light emission from a forward-biased LED or laser diode under electrical injection. Unlike PL (which probes material quality uniformly), EL images reveal:</p>
+<ul>
+<li>Non-uniform current injection (contact problems)</li>
+<li>Regions of high recombination (active layer quality variation)</li>
+<li>Dark spots and dark lines (propagating dislocations)</li>
+</ul>
+<p>EL combined with lock-in detection provides sub-mV sensitivity to threshold voltage uniformity in laser arrays.</p>
+<h3 id="2223-raman-spectroscopy">22.2.3 Raman Spectroscopy</h3>
+<p><strong>Raman spectroscopy</strong> measures the inelastic scattering of photons from phonons, giving:</p>
+<ul>
+<li><strong>Strain</strong>: Raman peak position shifts linearly with uniaxial or biaxial strain (~1 cm⁻¹ per 200 MPa in silicon)</li>
+<li><strong>Crystal quality</strong>: Amorphous vs. crystalline silicon (broad vs. sharp 520 cm⁻¹ peak)</li>
+<li><strong>Temperature</strong>: Stokes/anti-Stokes ratio gives local temperature (useful for thermal resistance mapping)</li>
+<li><strong>Composition</strong>: In SiGe alloys, Ge-Ge and Si-Ge phonon frequencies indicate alloy composition</li>
+</ul>
+<p>Micro-Raman systems focus to ~1 μm spot size and can map stress fields around contacts, vias, and gate edges in packaged devices.</p>
+<hr />
+<h2 id="223-structural-analysis-methods">22.3 Structural Analysis Methods</h2>
+<h3 id="2231-transmission-electron-microscopy-tem">22.3.1 Transmission Electron Microscopy (TEM)</h3>
+<p><strong>TEM</strong> transmits a high-energy electron beam (100–300 kV) through a thin sample (~50 nm) and forms an image from transmitted and diffracted electrons. Resolution: 0.05–0.2 nm — easily resolves atomic columns.</p>
+<p>Applications:
+- Gate oxide thickness measurement (3–4 nm oxides measured to ±0.1 nm)
+- Interface quality at heterostructures (abruptness &lt; 1 monolayer)
+- Dislocation imaging in strained layers
+- HAADF-STEM (high-angle annular dark field) images heavy atoms brighter — composition mapping</p>
+<p>TEM requires destructive sample preparation: focused ion beam (FIB) milling thins a cross-section from the device. Each TEM sample takes 2–4 hours to prepare.</p>
+<h3 id="2232-scanning-electron-microscopy-sem">22.3.2 Scanning Electron Microscopy (SEM)</h3>
+<p><strong>SEM</strong> scans a focused electron beam across the sample surface and detects secondary electrons emitted. SEM provides high-resolution surface imaging (&lt; 5 nm resolution) without thinning:</p>
+<ul>
+<li><strong>Critical dimension (CD) SEM</strong>: Measures line widths and feature sizes after lithography and etch (automated in-fab monitoring)</li>
+<li><strong>Failure analysis</strong>: Locates opens, shorts, voids in metal interconnects</li>
+<li><strong>Voltage contrast</strong>: Secondary electron yield varies with local surface potential (can detect leaking junctions without probing)</li>
+</ul>
+<h3 id="2233-secondary-ion-mass-spectrometry-sims">22.3.3 Secondary Ion Mass Spectrometry (SIMS)</h3>
+<p><strong>SIMS</strong> bombards the surface with primary ions (Cs⁺ or O₂⁺), sputtering atoms from the surface. The sputtered ions are mass-analyzed in a spectrometer, giving element-specific signals vs. depth:</p>
+<ul>
+<li><strong>Dopant depth profiles</strong>: B, P, As, Ge concentrations vs. depth with sub-nm depth resolution and sub-10¹⁴ cm⁻³ detection limit</li>
+<li><strong>Interface sharpness</strong>: Oxygen at Si/SiO₂ interfaces, Al at AlGaN/GaN</li>
+<li><strong>Contamination analysis</strong>: Na, Fe, Cu at ppt levels</li>
+</ul>
+<p>SIMS is the definitive dopant profiling technique. Its depth resolution is limited by ion mixing (surface atoms knocked deeper by primary ions): typically 1–2 nm for best-case conditions.</p>
+<h3 id="2234-auger-electron-spectroscopy">22.3.4 Auger Electron Spectroscopy</h3>
+<p><strong>Auger electron spectroscopy (AES)</strong> uses a focused electron beam to excite core-level electrons; subsequent Auger transitions emit characteristic electrons used for elemental analysis. Lateral resolution ~5 nm makes AES useful for:</p>
+<ul>
+<li><strong>Silicide phase identification</strong> (TiSi₂ vs. C49/C54 phase transition)</li>
+<li><strong>Contact analysis</strong> (composition at metal-semiconductor interfaces)</li>
+<li><strong>Thin film composition profiling</strong> (combined with sputter etching)</li>
+</ul>
+<hr />
+<h2 id="224-compact-models-from-physics-to-spice">22.4 Compact Models: From Physics to SPICE</h2>
+<p><strong>Compact models</strong> are mathematical descriptions of device behavior that run in circuit simulators (SPICE, Cadence Spectre, Synopsys HSPICE). They must:</p>
+<ol>
+<li>Accurately capture device physics across all operating regions</li>
+<li>Be computationally efficient (millions of evaluations per simulation)</li>
+<li>Include process variation and temperature dependence</li>
+</ol>
+<h3 id="2241-spice-level-1-mosfet-model">22.4.1 SPICE Level-1 MOSFET Model</h3>
+<p>The <strong>Level-1 SPICE MOSFET model</strong> implements the long-channel gradual-channel approximation directly:</p>
+<ul>
+<li>Triode: <span class="arithmatex">\(I_D = \mu_n C_{\text{ox}} (W/L)[(V_{GS}-V_T)V_{DS} - V_{DS}^2/2]\)</span></li>
+<li>Saturation: <span class="arithmatex">\(I_D = (\mu_n C_{\text{ox}}/2)(W/L)(V_{GS}-V_T)^2(1+\lambda V_{DS})\)</span></li>
+<li>Subthreshold: exponential <span class="arithmatex">\(I_D \propto e^{V_{GS}/nV_T}\)</span></li>
+</ul>
+<p>Level-1 has ~17 parameters (VTO, KP, LAMBDA, PHI, GAMMA, etc.) extracted from measured I-V data. It's adequate for first-order analog design but inaccurate for short-channel devices.</p>
+<h3 id="2242-bsim-model">22.4.2 BSIM Model</h3>
+<p>The <strong>BSIM (Berkeley Short-channel IGFET Model)</strong> model family (now BSIM4, BSIM-CMG for FinFETs) captures short-channel physics through dozens to hundreds of parameters:</p>
+<ul>
+<li>Velocity saturation, carrier heating</li>
+<li>DIBL, short-channel <span class="arithmatex">\(V_T\)</span> roll-off</li>
+<li>Gate current (tunneling at ultra-thin oxides)</li>
+<li>Quantum mechanical confinement in the channel</li>
+<li>Process variation (local and global <span class="arithmatex">\(V_T\)</span> mismatch)</li>
+<li>Self-heating</li>
+</ul>
+<p>BSIM parameters are extracted by fitting simultaneously to thousands of I-V and C-V curves for multiple channel lengths and widths at multiple temperatures. A complete BSIM4 parameter set for a production technology node has ~200 model parameters per transistor type.</p>
+<h3 id="2243-small-signal-equivalent-circuit">22.4.3 Small-Signal Equivalent Circuit</h3>
+<p>For RF and analog design, devices are characterized by a <strong>small-signal equivalent circuit</strong> that linearizes around an operating point. The MOSFET small-signal model includes:</p>
+<ul>
+<li><span class="arithmatex">\(g_m\)</span>: Transconductance</li>
+<li><span class="arithmatex">\(r_o = 1/\lambda I_D\)</span>: Output resistance</li>
+<li><span class="arithmatex">\(C_{gs}\)</span>, <span class="arithmatex">\(C_{gd}\)</span>: Gate-to-source, gate-to-drain capacitances</li>
+<li><span class="arithmatex">\(C_{ds}\)</span>: Drain-to-source capacitance</li>
+<li><span class="arithmatex">\(R_g\)</span>, <span class="arithmatex">\(R_s\)</span>, <span class="arithmatex">\(R_d\)</span>: Gate, source, drain resistances</li>
+</ul>
+<p>From these, key RF figures of merit:</p>
+<div class="arithmatex">\[
+f_T = \frac{g_m}{2\pi(C_{gs}+C_{gd})} \quad \text{(transition frequency)}
+\]</div>
+<div class="arithmatex">\[
+f_{\max} = \frac{f_T}{2\sqrt{g_{ds}(R_g + R_s) + g_m R_g C_{gd}/(C_{gs}+C_{gd})}}
+\]</div>
+<hr />
+<h2 id="225-noise-in-semiconductor-devices">22.5 Noise in Semiconductor Devices</h2>
+<p>All semiconductor devices generate electrical noise — random fluctuations in current and voltage that limit signal detectability. Before examining individual noise types, we define the <strong>noise spectral density</strong> <span class="arithmatex">\(S(f)\)</span> (V²/Hz or A²/Hz) — the mean-square noise per unit bandwidth.</p>
+<h3 id="2251-thermal-johnson-nyquist-noise">22.5.1 Thermal (Johnson-Nyquist) Noise</h3>
+<p>Any resistor R at temperature T generates voltage noise with spectral density:</p>
+<div class="arithmatex">\[
+S_V = 4k_BT R \quad \text{or} \quad S_I = \frac{4k_BT}{R}
+\]</div>
+<p>This noise is <strong>white</strong> (flat spectrum), fundamental (cannot be reduced without cooling), and present in all resistive elements — including the channel resistance of a MOSFET. The thermal noise of the MOSFET channel:</p>
+<div class="arithmatex">\[
+\overline{i_{nd}^2} = 4k_BT \gamma g_{m0} \Delta f
+\]</div>
+<p>where <span class="arithmatex">\(\gamma\)</span> is a process-dependent factor (~2/3 for long-channel, larger for short-channel due to hot electrons).</p>
+<h3 id="2252-shot-noise">22.5.2 Shot Noise</h3>
+<p><strong>Shot noise</strong> arises from the discrete nature of current — current is not a continuous flow but a stream of individual electrons arriving at random times. A DC current <span class="arithmatex">\(I\)</span> has shot noise:</p>
+<div class="arithmatex">\[
+S_I^{\text{shot}} = 2qI
+\]</div>
+<p>Shot noise is present in: p-n junction diodes, photodetectors (limiting sensitivity), and any device where carriers are injected across a barrier. In a reverse-biased photodiode, the shot noise of the photocurrent <span class="arithmatex">\(I_{\text{ph}}\)</span> sets the quantum limit of detection.</p>
+<p><strong>Read noise</strong> in image sensors is dominated by shot noise at high illumination and by flicker noise plus reset noise (kTC noise) at low illumination.</p>
+<h3 id="2253-flicker-1f-noise">22.5.3 Flicker (1/f) Noise</h3>
+<p><strong>Flicker noise</strong> (also called 1/f noise or pink noise) has a spectral density that decreases inversely with frequency:</p>
+<div class="arithmatex">\[
+S_V(f) = \frac{K_f V_{GS}^a I_D^b}{f C_{\text{ox}} L^2}
+\]</div>
+<p>(empirical form; many variants exist). The physical origin: traps at or near the gate oxide interface randomly capture and release channel electrons, modulating the local threshold voltage. The trap emission time constants span many decades → <span class="arithmatex">\(1/f\)</span> power law.</p>
+<p>Flicker noise is critical in:
+- Low-frequency analog circuits (audio, baseband sensors, accelerometers)
+- Phase noise in oscillators (flicker noise upconverts to close-in phase noise)
+- CMOS image sensors (flicker noise in source follower amplifiers)</p>
+<p>PMOS transistors typically have lower flicker noise than NMOS (buried channel in PMOS reduces interface trap interaction). This is why precision analog circuits often use PMOS input stages.</p>
+<h3 id="2254-noise-figure">22.5.4 Noise Figure</h3>
+<p>The <strong>noise figure</strong> NF (units: dB) of an amplifier or device characterizes how much noise it adds relative to the signal:</p>
+<div class="arithmatex">\[
+\text{NF} = 10\log_{10}\!\left(\frac{S_{\text{in}}/N_{\text{in}}}{S_{\text{out}}/N_{\text{out}}}\right) = 10\log_{10}(F)
+\]</div>
+<p>For cascaded stages (Friis formula):</p>
+<div class="arithmatex">\[
+F_{\text{total}} = F_1 + \frac{F_2 - 1}{G_1} + \frac{F_3 - 1}{G_1 G_2} + \cdots
+\]</div>
+<p>The first stage dominates total noise figure — hence the obsession with low-noise amplifiers (LNAs) at the front of RF receivers. Modern GaAs and InP HEMTs achieve NF &lt; 0.5 dB at 10 GHz — within a factor of 5 of the quantum limit.</p>
+<hr />
+<h2 id="226-tunneling-devices-and-ballistic-transport">22.6 Tunneling Devices and Ballistic Transport</h2>
+<h3 id="2261-band-to-band-tunneling-and-the-esaki-tunnel-diode">22.6.1 Band-to-Band Tunneling and the Esaki Tunnel Diode</h3>
+<p><strong>Band-to-band tunneling</strong> was discussed briefly in Chapter 12 as Zener breakdown. Leo Esaki's 1957 discovery of the <strong>tunnel diode</strong> exploited this quantum-mechanical process to create a device with <strong>negative differential resistance</strong> — current decreasing as voltage increases.</p>
+<p>In a heavily doped p<span class="arithmatex">\(^+\)</span>-n<span class="arithmatex">\(^+\)</span> junction (both sides &gt; <span class="arithmatex">\(10^{19}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>):
+- The depletion region is only 2–5 nm wide — thin enough for significant tunneling
+- At equilibrium: filled electron states on the n-side are across from empty states (holes) on the p-side at the same energy — high tunneling probability
+- At small forward bias: bands align → maximum tunneling current (the "peak current")
+- At moderate forward bias: bands misalign (conduction band n-side vs. bandgap p-side) → minimum tunneling → <strong>valley current</strong> (region of NDR)
+- At large forward bias: normal injection current dominates → current rises again</p>
+<p>The I-V curve has a characteristic <strong>peak-valley-rise</strong> shape. The <strong>peak-to-valley current ratio (PVCR)</strong> is the key quality metric: PVCR &gt; 10 for GaAs tunnel diodes, &gt; 20 for InAs/AlSb, but &lt; 2 for silicon (weak tunneling due to indirect gap).</p>
+<p>Applications: microwave oscillators (NDR used in oscillator circuits), ultra-low-power switching logic (tunnel FETs), and non-volatile memory (TFET-based).</p>
+<h3 id="2262-resonant-tunneling-diode">22.6.2 Resonant Tunneling Diode</h3>
+<p>The <strong>resonant tunneling diode (RTD)</strong> uses a quantum well sandwiched between two tunnel barriers. The current through the device peaks sharply when the injected electron energy matches one of the quantum well eigenstates — <strong>resonant tunneling</strong>.</p>
+<p>The <strong>double-barrier structure</strong> (barrier-well-barrier) transmits electrons at near-100% efficiency when the incident energy matches a quasi-bound state of the quantum well. The transmission resonance is:</p>
+<div class="arithmatex">\[
+T(E) = \frac{T_1 T_2}{(T_1/2 + T_2/2)^2 + (k L + \phi)^2} \approx 1 \text{ at resonance (for } T_1 = T_2\text{)}
+\]</div>
+<p>At voltages that shift the resonant level out of alignment, transmission drops — producing <strong>negative differential resistance</strong> (NDR):</p>
+<div class="arithmatex">\[
+\frac{dI}{dV} &lt; 0 \quad \text{(NDR region)}
+\]</div>
+<p>RTDs have demonstrated oscillation frequencies up to ~1 THz and PVCRs of 2–3 at room temperature in InAs/AlSb material systems. They are used in millimeter-wave oscillators and as non-linear elements in frequency multipliers.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Nova Thinks: Quantum Transport Is the Future of Electronics</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova in thinking pose">
+The tunnel diode, the RTD, and quantum transport in general represent the limit where the semi-classical drift-diffusion model breaks down completely. When the device is smaller than the carrier mean free path, electrons don't scatter before reaching the other side — this is <strong>ballistic transport</strong>, and the device is more like a quantum waveguide than a resistor. The conductance of a ballistic 1D conductor (a carbon nanotube, a quantum wire) is quantized: <span class="arithmatex">\(G = 2e^2/h \approx 77\)</span> μS per mode. These phenomena were once exotic physics demonstrations. As transistors approach 1 nm, they become engineering reality. The same Schrödinger equation you met in Chapter 4 governs the 1 nm transistor being designed today.</p>
+</div>
+<h3 id="2263-ballistic-transport">22.6.3 Ballistic Transport</h3>
+<p>In devices shorter than the mean free path (<span class="arithmatex">\(L &lt; \lambda_{\text{mfp}} \approx 10\)</span>–50 nm for electrons in silicon at 300 K), carriers travel ballistically — with no scattering. The conventional Ohm's law and drift-diffusion model fail.</p>
+<p>Ballistic transport modifies the drain current:</p>
+<div class="arithmatex">\[
+I_D^{\text{ballistic}} = q W C_{\text{ox}}(V_{GS} - V_T) v_{\text{inj}}
+\]</div>
+<p>where <span class="arithmatex">\(v_{\text{inj}}\)</span> is the <strong>injection velocity</strong> at the virtual source (top of the source-channel barrier) — determined by the carrier thermal velocity rather than the saturation velocity. For electrons in silicon: <span class="arithmatex">\(v_{\text{inj}} \approx 1.1 \times 10^7\)</span> cm/s. For InAs with <span class="arithmatex">\(m^* = 0.023 m_0\)</span>: <span class="arithmatex">\(v_{\text{inj}} \approx 6 \times 10^7\)</span> cm/s — explaining why InAs is attractive for ultra-short channel devices.</p>
+<p>At the ultimate quantum limit (fully ballistic, 1D conductors), the Landauer-Büttiker formalism applies:</p>
+<div class="arithmatex">\[
+G = \frac{2e^2}{h} \sum_n T_n
+\]</div>
+<p>where <span class="arithmatex">\(T_n\)</span> is the transmission probability of the nth conduction channel. Conductance is quantized in units of <span class="arithmatex">\(2e^2/h \approx 77.5\)</span> μS (observed in semiconductor quantum point contacts cooled to millikelvin temperatures).</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Nova's Grand Finale: From a Crystal to a Quantum</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
+We started Chapter 1 with a crystal of silicon and the concept of a bandgap. Twenty-two chapters later, you have: statistical mechanics of electrons (Fermi-Dirac), transport theory (drift-diffusion), junction physics (p-n, MOS, Schottky), transistor operation (MOSFET, BJT, HEMT), optoelectronics (LED, laser, photodetector), power devices, fabrication technology, and now quantum transport. The physics of a semiconductor device spans 10 orders of magnitude in length — from the 0.1 nm bond length to the 100 mm wafer — and connects quantum mechanics to circuit design. Nova's parting advice: when you're confused by a circuit, go back to the physics. When the physics doesn't apply, remember this chapter. And always — always — let's get excited.</p>
+</div>
+<details>
+<summary>#### MicroSim: Resonant Tunneling Diode I-V Simulator</summary>
+<p><strong>sim-id:</strong> <code>resonant-tunneling-diode</code><br />
+<strong>Library:</strong> p5.js<br />
+<strong>Status:</strong> specification  </p>
+<p><strong>Description:</strong> Interactive simulation of a resonant tunneling diode. Left panel: double-barrier quantum well band diagram showing conduction band profile, quasi-bound state energy levels, and electron wave functions. The bias voltage shifts the band alignment. Right panel: I-V characteristic showing peak current, valley, NDR region, and rising current at high bias. Quantum mechanical tunneling calculation updates in real-time as voltage is adjusted.</p>
+<p><strong>Controls:</strong>
+- Slider: Applied voltage (0 to 0.5 V)
+- Slider: Barrier width (1–5 nm)
+- Slider: Well width (2–10 nm)
+- Slider: Barrier height <span class="arithmatex">\(\Delta E_C\)</span> (0.1–1.0 eV)
+- Dropdown: Material system (GaAs/AlAs, InGaAs/AlAs, InAs/AlSb)
+- Checkbox: Show transmission coefficient T(E)</p>
+<p><strong>Key Learning Objectives:</strong>
+- L2 (Understand): Explain why current peaks when the resonant level aligns with the Fermi level
+- L3 (Apply): Predict peak voltage from quantum well energy levels and barrier heights
+- L4 (Analyze): Explain the origin of negative differential resistance in terms of transmission probability
+- L5 (Evaluate): Compare RTD performance metrics (PVCR, peak current density) for different material systems</p>
+</details>
+<hr />
+<h2 id="summary_1">Summary</h2>
+<p>This final chapter connected semiconductor physics to measurement, simulation, and the quantum frontier:</p>
+<p><strong>Electrical characterization:</strong>
+- I-V: Extracts <span class="arithmatex">\(V_T\)</span>, <span class="arithmatex">\(\mu_{\text{eff}}\)</span>, subthreshold slope, channel-length modulation
+- C-V: Extracts <span class="arithmatex">\(t_{\text{ox}}\)</span>, <span class="arithmatex">\(N_A\)</span>, <span class="arithmatex">\(V_{FB}\)</span>, <span class="arithmatex">\(D_{it}\)</span>
+- DLTS: Maps trap energy levels and capture cross-sections</p>
+<p><strong>Optical characterization:</strong>
+- PL: Bandgap, excitons, defects, carrier lifetime
+- EL: Spatial emission uniformity, dark spot detection
+- Raman: Strain, crystal quality, local temperature</p>
+<p><strong>Structural characterization:</strong>
+- TEM: Atomic-resolution cross-sections, oxide thickness
+- SEM: Surface imaging, CD measurement, failure analysis
+- SIMS: Dopant depth profiles (sub-nm, sub-10¹⁴ cm⁻³)
+- AES: Elemental analysis at interfaces</p>
+<p><strong>Compact models:</strong>
+- Level-1 SPICE: Simple, long-channel equations (~17 parameters)
+- BSIM4/BSIM-CMG: Short-channel physics, 200+ parameters</p>
+<p><strong>Noise:</strong> Thermal (<span class="arithmatex">\(4k_BT R\)</span>), shot (<span class="arithmatex">\(2qI\)</span>), and flicker (<span class="arithmatex">\(\propto 1/f\)</span>) noise; noise figure from Friis formula</p>
+<p><strong>Quantum transport:</strong>
+- Esaki tunnel diode: NDR from band-to-band tunneling; PVCR indicates material quality
+- RTD: Resonant tunneling through QW states; NDR at de-tuned voltages; THz oscillation potential
+- Ballistic transport: Sub-mean-free-path devices; conductance quantization <span class="arithmatex">\(G = 2e^2/h\)</span> per channel</p>
+<h2 id="key-equations">Key Equations</h2>
+<div class="arithmatex">\[
+S_V = 4k_BT R \quad \text{(thermal noise)}, \quad S_I = 2qI \quad \text{(shot noise)}
+\]</div>
+<div class="arithmatex">\[
+f_T = \frac{g_m}{2\pi(C_{gs}+C_{gd})}, \quad F_{\text{total}} = F_1 + \frac{F_2-1}{G_1} + \cdots \quad \text{(Friis)}
+\]</div>
+<div class="arithmatex">\[
+G = \frac{2e^2}{h} \sum_n T_n \quad \text{(Landauer-Büttiker, ballistic transport)}
+\]</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../21-fabrication-technology/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 21. Fabrication Technology">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                21. Fabrication Technology
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../learning-graph/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Introduction
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

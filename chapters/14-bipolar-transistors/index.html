@@ -1,0 +1,2291 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="NPN/PNP device physics, current gain derivation, Ebers-Moll and Gummel-Poon models, Early effect, Kirk effect, and heterojunction bipolar transistors">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/14-bipolar-transistors/">
+      
+      
+        <link rel="prev" href="../13-metal-semiconductor-mos/">
+      
+      
+        <link rel="next" href="../15-jfet-mesfet-mosfet/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Bipolar Junction Transistors - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bipolar-junction-transistors" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bipolar Junction Transistors
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#141-bjt-structure-and-operating-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 BJT Structure and Operating Regions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#142-minority-carrier-physics-in-the-bjt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 Minority Carrier Physics in the BJT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#143-current-gain-and" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3 Current Gain: α and β
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#144-the-ebers-moll-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4 The Ebers-Moll Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#145-the-gummel-poon-model-second-order-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5 The Gummel-Poon Model: Second-Order Effects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14.5 The Gummel-Poon Model: Second-Order Effects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1451-early-effect-base-width-modulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5.1 Early Effect (Base-Width Modulation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1452-kirk-effect-base-push-out-at-high-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5.2 Kirk Effect (Base Push-Out at High Current)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1453-series-resistances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5.3 Series Resistances
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#146-high-frequency-performance-f_t-and-f_max" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6 High-Frequency Performance: f_T and f_max
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#147-heterojunction-bipolar-transistors-hbts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.7 Heterojunction Bipolar Transistors (HBTs)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#141-bjt-structure-and-operating-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 BJT Structure and Operating Regions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#142-minority-carrier-physics-in-the-bjt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 Minority Carrier Physics in the BJT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#143-current-gain-and" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3 Current Gain: α and β
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#144-the-ebers-moll-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4 The Ebers-Moll Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#145-the-gummel-poon-model-second-order-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5 The Gummel-Poon Model: Second-Order Effects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14.5 The Gummel-Poon Model: Second-Order Effects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1451-early-effect-base-width-modulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5.1 Early Effect (Base-Width Modulation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1452-kirk-effect-base-push-out-at-high-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5.2 Kirk Effect (Base Push-Out at High Current)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1453-series-resistances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5.3 Series Resistances
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#146-high-frequency-performance-f_t-and-f_max" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.6 High-Frequency Performance: f_T and f_max
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#147-heterojunction-bipolar-transistors-hbts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.7 Heterojunction Bipolar Transistors (HBTs)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/14-bipolar-transistors/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="bipolar-junction-transistors">Bipolar Junction Transistors</h1>
+<h2 id="summary">Summary</h2>
+<p>The bipolar junction transistor was the first transistor and remains essential in high-speed analog and mixed-signal circuits. This chapter covers NPN and PNP device structures, the three operating regions (active, saturation, cutoff), and the three circuit configurations (common-emitter, common-base, common-collector). The current-gain components — emitter injection efficiency and base transport factor — are derived from minority-carrier physics, yielding α and β. The Ebers-Moll model provides a unified large-signal description; the Gummel-Poon model adds base-width modulation (Early effect), high-current degradation (Kirk effect), and series resistances needed for circuit simulation. High-frequency behavior is characterized by the transition frequency ft and maximum oscillation frequency fmax. The chapter closes with heterojunction bipolar transistors, which exploit band-gap engineering to achieve both high β and high speed.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 32 concepts from the learning graph:</p>
+<ol>
+<li>Bipolar Junction Transistor</li>
+<li>NPN Transistor</li>
+<li>PNP Transistor</li>
+<li>BJT Regions of Operation</li>
+<li>Active Region BJT</li>
+<li>Saturation Region BJT</li>
+<li>Cutoff Region BJT</li>
+<li>Common-Emitter Configuration</li>
+<li>Common-Base Configuration</li>
+<li>Common-Collector Configuration</li>
+<li>Emitter Injection Efficiency</li>
+<li>Base Transport Factor</li>
+<li>Current Gain Beta</li>
+<li>Current Gain Alpha</li>
+<li>Collector Current</li>
+<li>Base Current</li>
+<li>Emitter Current</li>
+<li>Ebers-Moll Model</li>
+<li>Gummel-Poon Model</li>
+<li>Early Effect</li>
+<li>Base-Width Modulation</li>
+<li>Early Voltage</li>
+<li>Kirk Effect</li>
+<li>High-Current Effects BJT</li>
+<li>Base Resistance</li>
+<li>Collector Resistance</li>
+<li>Emitter Resistance</li>
+<li>Transition Frequency ft</li>
+<li>Maximum Oscillation Frequency fmax</li>
+<li>Heterojunction Bipolar Transistor</li>
+<li>HBT Band Diagram</li>
+<li>Emitter-Base Heterojunction</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../10-generation-recombination/">Chapter 10: Generation, Recombination, Continuity, and Optical Processes</a></li>
+<li><a href="../11-pn-junction-equilibrium/">Chapter 11: P-N Junction: Equilibrium, Bias, and the Ideal Diode</a></li>
+<li><a href="../12-pn-junction-dynamics/">Chapter 12: P-N Junction: Dynamics, Breakdown, and Heterojunctions</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Nova on BJTs: Minority Carriers Finally Get Their Moment in the Spotlight</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+The bipolar junction transistor has one job: take a tiny base current and amplify it into a large collector current. To understand <em>why</em> that works requires everything from minority carrier lifetime to double p-n junction physics — all the minority-carrier machinery we've been building for six chapters. The payoff: gain, speed, and a transistor that still outperforms MOSFETs for radio-frequency and ultra-low-noise applications. Let's get bipolar.</p>
+</div>
+<h2 id="141-bjt-structure-and-operating-regions">14.1 BJT Structure and Operating Regions</h2>
+<p>An <strong>NPN bipolar junction transistor</strong> consists of three alternately doped regions: a heavily doped n-type <strong>emitter</strong> (E), a thin lightly doped p-type <strong>base</strong> (B), and a moderately doped n-type <strong>collector</strong> (C). The structural convention and notation for PNP transistors is identical with n and p swapped.</p>
+<p>The key dimensional parameter is the <strong>base width</strong> <span class="arithmatex">\(W_B\)</span>: the physical distance between the emitter-base and base-collector depletion edges. In a modern silicon NPN: <span class="arithmatex">\(W_B \approx 0.05\)</span>–0.5 μm.</p>
+<p>The three terminals' biasing conditions define three operating regions:</p>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>E-B Junction</th>
+<th>B-C Junction</th>
+<th>Application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Active (forward-active)</td>
+<td>Forward biased</td>
+<td>Reverse biased</td>
+<td>Amplification</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>Forward biased</td>
+<td>Forward biased</td>
+<td>Logic switch (on)</td>
+</tr>
+<tr>
+<td>Cutoff</td>
+<td>Reverse biased</td>
+<td>Reverse biased</td>
+<td>Logic switch (off)</td>
+</tr>
+<tr>
+<td>Reverse-active</td>
+<td>Reverse biased</td>
+<td>Forward biased</td>
+<td>Rarely used</td>
+</tr>
+</tbody>
+</table>
+<p>In the <strong>active region</strong>, the NPN transistor acts as a current-controlled current source: a small base current <span class="arithmatex">\(I_B\)</span> controls a much larger collector current <span class="arithmatex">\(I_C = \beta I_B\)</span>. This is the amplification regime.</p>
+<p>In <strong>saturation</strong>, both junctions are forward biased — the transistor is "fully on" and current flow is limited by the circuit, not the device. <span class="arithmatex">\(V_{CE,\text{sat}} \approx 0.1\)</span>–0.2 V.</p>
+<p>In <strong>cutoff</strong>, both junctions are reverse biased — the transistor is "off" and only tiny leakage currents flow.</p>
+<p>The three standard circuit configurations — <strong>common-emitter, common-base, and common-collector</strong> — connect the three terminals differently to input and output, resulting in different impedance levels and voltage/current gains. Common-emitter is the most widely used: it provides both voltage and current gain (power gain) and has moderate input/output impedances.</p>
+<hr />
+<h2 id="142-minority-carrier-physics-in-the-bjt">14.2 Minority Carrier Physics in the BJT</h2>
+<p>The mechanism behind BJT current flow is the injection and transport of minority carriers through the base. Here's the physics step by step for an NPN in active mode:</p>
+<ol>
+<li><strong>Emitter injection:</strong> The forward-biased E-B junction injects minority electrons into the p-type base from the n-type emitter (just like a forward-biased p-n junction). The electron concentration at the emitter edge of the base is:</li>
+</ol>
+<div class="arithmatex">\[
+n_B(0) = n_{B0} e^{qV_{BE}/k_BT}, \quad n_{B0} = \frac{n_i^2}{N_{AB}}
+\]</div>
+<ol>
+<li>
+<p><strong>Base transport:</strong> Injected electrons diffuse across the thin base toward the reverse-biased B-C junction. With base width <span class="arithmatex">\(W_B \ll L_n\)</span> (the minority carrier diffusion length), the minority carrier profile is approximately linear — most electrons cross without recombining. A small fraction recombine with majority holes in the base.</p>
+</li>
+<li>
+<p><strong>Collector collection:</strong> At the B-C junction, the reverse-biased electric field sweeps the electrons from the base into the collector — they are "collected" and flow as collector current <span class="arithmatex">\(I_C\)</span>.</p>
+</li>
+</ol>
+<p>The minority electron profile across the base (assuming <span class="arithmatex">\(W_B \ll L_n\)</span>):</p>
+<div class="arithmatex">\[
+\delta n_B(x) \approx n_{B0}\!\left(e^{qV_{BE}/k_BT} - 1\right)\!\left(1 - \frac{x}{W_B}\right)
+\]</div>
+<p>The diffusion current at <span class="arithmatex">\(x = 0\)</span> (injected from emitter into base):</p>
+<div class="arithmatex">\[
+J_C = qD_n \frac{\delta n_B(0)}{W_B} = \frac{qD_n n_{B0}}{W_B}\!\left(e^{qV_{BE}/k_BT} - 1\right)
+\]</div>
+<p>This exponential dependence on <span class="arithmatex">\(V_{BE}\)</span> — the "diode equation for collector current" — is the fundamental BJT characteristic.</p>
+<hr />
+<h2 id="143-current-gain-and">14.3 Current Gain: α and β</h2>
+<p>Not all the emitter current becomes useful collector current. Two efficiency factors reduce the gain:</p>
+<p><strong>Emitter injection efficiency</strong> <span class="arithmatex">\(\gamma\)</span> is the fraction of emitter current carried by the desired minority carrier (electrons, for NPN):</p>
+<div class="arithmatex">\[
+\gamma = \frac{I_{nE}}{I_E} = \frac{I_{nE}}{I_{nE} + I_{pE}}
+\]</div>
+<p>where <span class="arithmatex">\(I_{nE}\)</span> is the electron current (minority in base, wanted) and <span class="arithmatex">\(I_{pE}\)</span> is the hole current (minority in emitter, wasted — holes injected from base into emitter don't contribute to <span class="arithmatex">\(I_C\)</span>). To maximize <span class="arithmatex">\(\gamma \to 1\)</span>, the emitter is doped much more heavily than the base: <span class="arithmatex">\(N_{DE} \gg N_{AB}\)</span>. This makes hole injection into the emitter negligible.</p>
+<div class="arithmatex">\[
+\gamma \approx 1 - \frac{D_p N_{AB} W_B}{D_n N_{DE} L_{pE}} \approx 1 - \frac{N_{AB} W_B}{N_{DE} L_{pE}}
+\]</div>
+<p><strong>Base transport factor</strong> <span class="arithmatex">\(\alpha_T\)</span> is the fraction of minority carriers injected by the emitter that actually reach the collector (without recombining in the base):</p>
+<div class="arithmatex">\[
+\alpha_T = \frac{I_C}{I_{nE}} \approx 1 - \frac{W_B^2}{2L_n^2} = 1 - \frac{W_B^2}{2D_n\tau_n}
+\]</div>
+<p>For <span class="arithmatex">\(W_B \ll L_n\)</span>: <span class="arithmatex">\(\alpha_T \approx 1\)</span>. Thin base → nearly all injected carriers are collected.</p>
+<p>The <strong>common-base current gain</strong> is:</p>
+<div class="arithmatex">\[
+\alpha = \gamma \cdot \alpha_T \lesssim 1
+\]</div>
+<p>The <strong>common-emitter current gain</strong> is the critical figure of merit:</p>
+<div class="arithmatex">\[
+\beta = \frac{\alpha}{1 - \alpha} = \frac{I_C}{I_B}
+\]</div>
+<p>For <span class="arithmatex">\(\alpha = 0.99\)</span>: <span class="arithmatex">\(\beta = 99\)</span>. For <span class="arithmatex">\(\alpha = 0.995\)</span>: <span class="arithmatex">\(\beta = 199\)</span>. Since <span class="arithmatex">\(\beta = \alpha/(1-\alpha)\)</span>, small changes in <span class="arithmatex">\(\alpha\)</span> near unity cause dramatic changes in <span class="arithmatex">\(\beta\)</span> — which is why BJT gain is notoriously variable between devices.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Nova Thinks: The Base Width Is Everything in a BJT</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova in thinking pose">
+The base transport factor <span class="arithmatex">\(\alpha_T \approx 1 - W_B^2/(2L_n^2)\)</span> reveals the central design tension in all BJT engineering. Thin base: high <span class="arithmatex">\(\alpha_T\)</span> (good for gain) and short transit time (good for speed). But a thin base also has high base resistance (bad for high-frequency noise) and is harder to fabricate uniformly. Modern SiGe HBTs solve this by grading the Ge content across the base, creating a quasi-electric field that accelerates electrons without requiring an ultra-thin physical base. The HBT design is essentially "let the band structure do the work instead of the geometry" — which is a beautiful example of materials-physics co-design.</p>
+</div>
+<hr />
+<h2 id="144-the-ebers-moll-model">14.4 The Ebers-Moll Model</h2>
+<p>The <strong>Ebers-Moll (EM) model</strong> is the fundamental large-signal BJT model. It describes all four operating regions using superposition of two diode-like current sources:</p>
+<div class="arithmatex">\[
+I_E = I_{ES}\!\left(e^{qV_{BE}/k_BT} - 1\right) - \alpha_R I_{CS}\!\left(e^{qV_{BC}/k_BT} - 1\right)
+\]</div>
+<div class="arithmatex">\[
+I_C = \alpha_F I_{ES}\!\left(e^{qV_{BE}/k_BT} - 1\right) - I_{CS}\!\left(e^{qV_{BC}/k_BT} - 1\right)
+\]</div>
+<p>where:
+- <span class="arithmatex">\(I_{ES}\)</span>, <span class="arithmatex">\(I_{CS}\)</span>: emitter and collector saturation currents
+- <span class="arithmatex">\(\alpha_F\)</span>: forward current gain (active mode, typical 0.99–0.9999)
+- <span class="arithmatex">\(\alpha_R\)</span>: reverse current gain (reverse-active mode, much smaller, 0.01–0.5)
+- <span class="arithmatex">\(\beta_F = \alpha_F/(1-\alpha_F)\)</span>: forward common-emitter gain</p>
+<p>The Ebers-Moll model predicts:
+- <strong>Active mode</strong> (<span class="arithmatex">\(V_{BE} &gt; 0\)</span>, <span class="arithmatex">\(V_{BC} &lt; 0\)</span>): <span class="arithmatex">\(I_C \approx \alpha_F I_{ES} e^{qV_{BE}/k_BT} = I_S e^{qV_{BE}/k_BT}\)</span>
+- <strong>Saturation</strong>: Both exponentials contribute; <span class="arithmatex">\(V_{CE,\text{sat}} = V_T \ln((\beta_F+1)/\beta_R)\)</span>
+- <strong>Cutoff</strong>: Both exponential terms → −1; only leakage currents</p>
+<p>The reciprocity condition <span class="arithmatex">\(\alpha_F I_{ES} = \alpha_R I_{CS} = I_S\)</span> (the transport saturation current) reduces the four EM parameters to three independent ones.</p>
+<hr />
+<h2 id="145-the-gummel-poon-model-second-order-effects">14.5 The Gummel-Poon Model: Second-Order Effects</h2>
+<p>The Ebers-Moll model assumes a fixed base width and ignores several physical effects that become important at circuit operating points. The <strong>Gummel-Poon (GP) model</strong> adds these corrections and forms the basis for SPICE BJT simulation.</p>
+<h3 id="1451-early-effect-base-width-modulation">14.5.1 Early Effect (Base-Width Modulation)</h3>
+<p>As the reverse bias on the B-C junction increases (<span class="arithmatex">\(V_{CE}\)</span> increases), the B-C depletion region widens, eating into the neutral base region. This reduces the effective base width <span class="arithmatex">\(W_B\)</span>, which increases <span class="arithmatex">\(\beta\)</span> and shifts <span class="arithmatex">\(I_C\)</span> upward. On an <span class="arithmatex">\(I_C\)</span> vs. <span class="arithmatex">\(V_{CE}\)</span> characteristic, the lines are not horizontal but have a positive slope, all extrapolating back to a common point on the negative voltage axis: the <strong>Early voltage</strong> <span class="arithmatex">\(V_A\)</span>.</p>
+<div class="arithmatex">\[
+I_C(V_{CE}) = I_S e^{qV_{BE}/k_BT} \cdot \left(1 + \frac{V_{CE}}{V_A}\right)
+\]</div>
+<p>The output resistance in the active region is:</p>
+<div class="arithmatex">\[
+r_o = \frac{V_A}{I_C}
+\]</div>
+<p>For silicon NPN: <span class="arithmatex">\(V_A \approx 50\)</span>–200 V. For HBTs with graded base: <span class="arithmatex">\(V_A\)</span> can be negative (Early voltage "goes the wrong way") but this is an artifact of the model — the device is still well-behaved.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Nova Warns: Early Voltage Matters in Analog Circuits (and Often Gets Ignored)</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Nova with warning pose">
+In digital logic, the Early effect is a footnote — transistors switch quickly and never linger in linear mode. But in analog circuits, output resistance <span class="arithmatex">\(r_o = V_A/I_C\)</span> is the key specification. A current mirror (used in every analog IC) has output resistance <span class="arithmatex">\(r_o\)</span>. A differential pair's gain is <span class="arithmatex">\(g_m r_o = V_A/V_T\)</span> — entirely determined by the Early voltage and temperature. If your textbook problem gives you <span class="arithmatex">\(V_A = \infty\)</span> to simplify, understand you're ignoring a first-order effect in any real analog design.</p>
+</div>
+<h3 id="1452-kirk-effect-base-push-out-at-high-current">14.5.2 Kirk Effect (Base Push-Out at High Current)</h3>
+<p>At very high collector current densities, the concentration of electrons crossing the base becomes comparable to or exceeds the collector doping concentration. The space-charge neutrality of the collector region is disrupted: the "base" effectively extends into the collector. This is the <strong>Kirk effect</strong> (or base push-out). The effective base width increases dramatically, degrading <span class="arithmatex">\(\beta\)</span> and <span class="arithmatex">\(f_T\)</span>.</p>
+<p>The Kirk threshold current density:</p>
+<div class="arithmatex">\[
+J_C^{\text{Kirk}} = q v_{\text{sat}} N_C + \frac{2\varepsilon_s v_{\text{sat}} V_{CB}}{W_C^2}
+\]</div>
+<p>where <span class="arithmatex">\(N_C\)</span> is the collector doping and <span class="arithmatex">\(W_C\)</span> is the collector width. The Kirk effect sets the <strong>maximum useful operating current</strong> for a given BJT. Exceeding it causes the device to slow down and lose gain even as the current continues to increase.</p>
+<h3 id="1453-series-resistances">14.5.3 Series Resistances</h3>
+<p>Real BJTs have three parasitic resistances:</p>
+<ul>
+<li><strong>Base resistance</strong> <span class="arithmatex">\(r_b\)</span>: Resistance of the base region between the base contact and the active base under the emitter. Most significant — limits high-frequency gain and causes voltage drops that reduce effective <span class="arithmatex">\(V_{BE}\)</span>.</li>
+<li><strong>Collector resistance</strong> <span class="arithmatex">\(r_c\)</span>: Resistance of the lightly doped collector drift region. Causes ohmic <span class="arithmatex">\(V_{CE,\text{sat}}\)</span> increase at high current.</li>
+<li><strong>Emitter resistance</strong> <span class="arithmatex">\(r_e\)</span>: Resistance of the emitter contact and emitter bulk. Small but increases the effective transconductance denominator.</li>
+</ul>
+<hr />
+<h2 id="146-high-frequency-performance-f_t-and-f_max">14.6 High-Frequency Performance: f_T and f_max</h2>
+<p>The speed of a BJT is characterized by two frequencies:</p>
+<p><strong>Transition frequency <span class="arithmatex">\(f_T\)</span></strong> is the frequency at which the common-emitter short-circuit current gain equals unity:</p>
+<div class="arithmatex">\[
+f_T = \frac{g_m}{2\pi(C_{BE} + C_{BC})} \approx \frac{1}{2\pi \tau_F}
+\]</div>
+<p>where <span class="arithmatex">\(\tau_F\)</span> is the forward transit time — the time for minority carriers to traverse the device. It has contributions from:</p>
+<div class="arithmatex">\[
+\tau_F = \tau_{BE} + \tau_B + \tau_{BC} + \tau_C
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\tau_{BE} = C_{BE}/g_m\)</span>: E-B depletion charging time</li>
+<li><span class="arithmatex">\(\tau_B = W_B^2/(2D_n)\)</span>: base transit time (dominant in wide-base BJTs)</li>
+<li><span class="arithmatex">\(\tau_{BC}\)</span>: B-C junction charging time</li>
+<li><span class="arithmatex">\(\tau_C\)</span>: collector depletion traversal time (<span class="arithmatex">\(W_C/2v_{\text{sat}}\)</span>)</li>
+</ul>
+<p>For a modern SiGe HBT, <span class="arithmatex">\(f_T\)</span> can exceed 500 GHz.</p>
+<p><strong>Maximum oscillation frequency <span class="arithmatex">\(f_{\max}\)</span></strong> is the frequency at which the unilateral power gain equals unity — a more practical metric for RF circuit designers:</p>
+<div class="arithmatex">\[
+f_{\max} = \sqrt{\frac{f_T}{8\pi r_b C_{BC}}}
+\]</div>
+<p>High <span class="arithmatex">\(f_{\max}\)</span> requires both high <span class="arithmatex">\(f_T\)</span> (thin base, fast transit) and low <span class="arithmatex">\(r_b C_{BC}\)</span> (low base resistance and collector capacitance). These are competing requirements — thin base means higher base resistance — requiring careful layout and epitaxial design.</p>
+<hr />
+<h2 id="147-heterojunction-bipolar-transistors-hbts">14.7 Heterojunction Bipolar Transistors (HBTs)</h2>
+<p>The standard silicon BJT faces a fundamental tradeoff: high <span class="arithmatex">\(\beta\)</span> requires heavy emitter doping relative to base (<span class="arithmatex">\(N_{DE} \gg N_{AB}\)</span>), but heavily doped emitters have high resistivity and high capacitance. The base must be lightly doped, which means high base resistance and slow devices.</p>
+<p>The <strong>heterojunction bipolar transistor (HBT)</strong> breaks this tradeoff using a wider-bandgap emitter material. In a SiGe HBT, the emitter is silicon and the base is Si<span class="arithmatex">\(_{1-x}\)</span>Ge<span class="arithmatex">\(_x\)</span> (typically <span class="arithmatex">\(x = 0.15\)</span>–0.25). The Ge in the base lowers the bandgap slightly, creating a valence band offset <span class="arithmatex">\(\Delta E_V\)</span> at the E-B junction.</p>
+<p>The <strong>HBT band diagram</strong> shows that the valence band offset suppresses hole injection from base to emitter — even without heavy emitter doping. The emitter injection efficiency:</p>
+<div class="arithmatex">\[
+\gamma_{\text{HBT}} \approx \gamma_{\text{homojunction}} \times \exp\!\left(\frac{\Delta E_g}{k_BT}\right)
+\]</div>
+<p>With <span class="arithmatex">\(\Delta E_g \approx 100\)</span> meV for <span class="arithmatex">\(x = 0.15\)</span>: <span class="arithmatex">\(\exp(0.1/0.026) \approx 46\times\)</span> improvement in injection efficiency. This allows the base to be doped 10–100× more heavily than in a standard BJT — dramatically reducing base resistance — while maintaining or improving <span class="arithmatex">\(\beta\)</span>.</p>
+<p>The Ge grading across the base creates an additional quasi-electric field:</p>
+<div class="arithmatex">\[
+\mathcal{E}_{\text{quasi}} = -\frac{1}{q}\frac{dE_C}{dx} = \frac{\Delta E_g}{q W_B} \quad \text{(linearly graded Ge)}
+\]</div>
+<p>This aids electron transport across the base, reducing <span class="arithmatex">\(\tau_B\)</span> without requiring a thinner physical base. SiGe HBTs with <span class="arithmatex">\(f_T &gt; 300\)</span> GHz and <span class="arithmatex">\(f_{\max} &gt; 500\)</span> GHz are commercially available and enable millimeter-wave communications (5G, automotive radar) that were impossible with silicon BJTs.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Nova Celebrates: From Diffusion to 300 GHz</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
+The bipolar transistor was invented in 1947 using point-contact metal on germanium. Modern SiGe HBTs operate at 300+ GHz using atomic-precision epitaxial Ge grading in a base thinner than 10 nm. The physics connecting these two devices is the <em>same</em> minority carrier diffusion theory you derived from the continuity equation. The engineering has become extraordinarily precise, but the physics underneath — minority carriers, quasi-Fermi levels, diffusion lengths — is exactly what you've been learning. That's the power of fundamental physics: it scales from 1947 germanium to 2024 sub-terahertz silicon.</p>
+</div>
+<details>
+<summary>#### MicroSim: BJT Operating Regions Explorer</summary>
+<p><strong>sim-id:</strong> <code>bjt-operating-regions</code><br />
+<strong>Library:</strong> p5.js<br />
+<strong>Status:</strong> specification  </p>
+<p><strong>Description:</strong> Interactive BJT characteristic curves viewer. Shows I-C vs. V-CE curves for multiple I-B values (output characteristics), with operating regions shaded (active, saturation, cutoff). A load line overlay shows the DC operating point for a user-adjustable collector resistor and supply voltage. The band diagram updates to show minority carrier profiles in the base at the selected operating point.</p>
+<p><strong>Controls:</strong>
+- Sliders: <span class="arithmatex">\(\beta\)</span>, <span class="arithmatex">\(I_{B}\)</span> step, <span class="arithmatex">\(V_{CC}\)</span>, <span class="arithmatex">\(R_C\)</span>
+- Slider: Early voltage <span class="arithmatex">\(V_A\)</span> (50–500 V) to show output conductance effect
+- Checkbox: Show load line
+- Dropdown: NPN / PNP</p>
+<p><strong>Key Learning Objectives:</strong>
+- L2 (Understand): Identify active, saturation, and cutoff regions on I-V characteristics
+- L3 (Apply): Determine DC operating point from load line intersection
+- L4 (Analyze): Explain how Early voltage affects current mirror accuracy</p>
+</details>
+<hr />
+<h2 id="summary_1">Summary</h2>
+<p>This chapter covered bipolar junction transistor physics and models:</p>
+<ul>
+<li><strong>BJT operation</strong> relies on minority carrier injection, base transport, and collector collection; thin base (<span class="arithmatex">\(W_B \ll L_n\)</span>) gives high transport factor</li>
+<li><strong>Current gain</strong> <span class="arithmatex">\(\beta = \gamma \cdot \alpha_T / (1 - \gamma \cdot \alpha_T)\)</span> is determined by emitter injection efficiency and base transport factor</li>
+<li><strong>Ebers-Moll model</strong> provides a unified four-region large-signal description using two coupled diode equations</li>
+<li><strong>Early effect</strong> (base-width modulation) causes finite output resistance <span class="arithmatex">\(r_o = V_A/I_C\)</span></li>
+<li><strong>Kirk effect</strong> (base push-out) degrades gain at high collector current densities</li>
+<li><strong>Transition frequency</strong> <span class="arithmatex">\(f_T = 1/(2\pi\tau_F)\)</span> and <strong>maximum oscillation frequency</strong> <span class="arithmatex">\(f_{\max} = \sqrt{f_T/(8\pi r_b C_{BC})}\)</span> characterize RF performance</li>
+<li><strong>HBTs</strong> use wider-bandgap emitters to achieve high <span class="arithmatex">\(\beta\)</span> with heavy base doping and Ge grading to accelerate base transit; SiGe HBTs reach 300–500 GHz</li>
+</ul>
+<h2 id="key-equations">Key Equations</h2>
+<div class="arithmatex">\[
+\beta = \frac{I_C}{I_B}, \quad \alpha = \frac{I_C}{I_E} = \frac{\beta}{\beta+1}, \quad I_C = I_S e^{qV_{BE}/k_BT}
+\]</div>
+<div class="arithmatex">\[
+\alpha_T \approx 1 - \frac{W_B^2}{2D_n\tau_n}, \quad \gamma \approx 1 - \frac{D_p N_{AB} W_B}{D_n N_{DE} L_{pE}}
+\]</div>
+<div class="arithmatex">\[
+f_T = \frac{g_m}{2\pi(C_{BE}+C_{BC})}, \quad f_{\max} = \sqrt{\frac{f_T}{8\pi r_b C_{BC}}}
+\]</div>
+<div class="arithmatex">\[
+I_C(V_{CE}) = I_S e^{qV_{BE}/k_BT}\!\left(1 + \frac{V_{CE}}{V_A}\right)
+\]</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../13-metal-semiconductor-mos/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 13. Metal-Semiconductor and MOS">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                13. Metal-Semiconductor and MOS
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../15-jfet-mesfet-mosfet/" class="md-footer__link md-footer__link--next" aria-label="Next: 15. JFET, MESFET, and MOSFET">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                15. JFET, MESFET, and MOSFET
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

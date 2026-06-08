@@ -1,0 +1,2197 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Derives energy band formation in periodic crystals using the Kronig-Penney model, Bloch's theorem, free-electron, nearly-free-electron, and tight-binding models, leading to effective mass, holes, and density of states.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/05-bloch-theorem-band-theory/">
+      
+      
+        <link rel="prev" href="../04-quantum-mechanics/">
+      
+      
+        <link rel="next" href="../06-fermi-dirac-statistics/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Bloch's Theorem, Band Formation, and E-k Diagrams - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#blochs-theorem-band-formation-and-e-k-diagrams" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bloch's Theorem, Band Formation, and E-k Diagrams
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-periodic-potential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Periodic Potential
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-kronig-penney-model-bands-from-a-toy-potential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Kronig-Penney Model: Bands from a Toy Potential
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blochs-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bloch's Theorem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#three-models-of-band-formation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three Models of Band Formation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Three Models of Band Formation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interactive-e-k-band-structure-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Interactive E-k Band Structure Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-effective-mass-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Effective Mass Approximation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-hole-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Hole Concept
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#density-of-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density of States
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Density of States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-dimensionality-and-density-of-states-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Dimensionality and Density of States Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-doping-extrinsic-carriers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-periodic-potential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Periodic Potential
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-kronig-penney-model-bands-from-a-toy-potential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Kronig-Penney Model: Bands from a Toy Potential
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blochs-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bloch's Theorem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#three-models-of-band-formation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three Models of Band Formation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Three Models of Band Formation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interactive-e-k-band-structure-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Interactive E-k Band Structure Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-effective-mass-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Effective Mass Approximation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-hole-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Hole Concept
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#density-of-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density of States
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Density of States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-dimensionality-and-density-of-states-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Dimensionality and Density of States Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/05-bloch-theorem-band-theory/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="blochs-theorem-band-formation-and-e-k-diagrams">Bloch's Theorem, Band Formation, and E-k Diagrams</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter bridges quantum mechanics and the macroscopic electrical behavior of solids by showing how electron states in a periodic crystal organize into energy bands. The Kronig-Penney model demonstrates analytically how allowed and forbidden energy ranges emerge from a periodic potential. Bloch's theorem establishes that solutions in a periodic lattice are plane waves modulated by the lattice periodicity, introducing crystal momentum. The free-electron, nearly-free-electron, and tight-binding models each illuminate different aspects of band formation. The E-k dispersion relation leads directly to the effective mass approximation, the hole concept, and the density of states in systems of reduced dimensionality — all quantities central to carrier statistics and device analysis.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 26 concepts from the learning graph:</p>
+<ol>
+<li>Kronig-Penney Model</li>
+<li>Bloch Theorem</li>
+<li>Bloch Wave Functions</li>
+<li>Crystal Momentum</li>
+<li>Periodic Potential</li>
+<li>Band Gap Origin</li>
+<li>Free Electron Model</li>
+<li>Nearly-Free Electron Model</li>
+<li>Tight-Binding Model</li>
+<li>Linear Combination of Atomic Orbitals</li>
+<li>E-k Dispersion Relation</li>
+<li>Effective Mass Approximation</li>
+<li>Longitudinal Effective Mass</li>
+<li>Transverse Effective Mass</li>
+<li>Density-of-States Effective Mass</li>
+<li>Conductivity Effective Mass</li>
+<li>Hole Concept</li>
+<li>Hole Effective Mass</li>
+<li>Heavy Holes</li>
+<li>Light Holes</li>
+<li>Split-Off Band</li>
+<li>Spin-Orbit Splitting</li>
+<li>Density of States 3D</li>
+<li>Density of States 2D</li>
+<li>Density of States 1D</li>
+<li>Density of States 0D</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../02-crystal-lattice-structure/">Chapter 2: Crystal Lattice Structure and Symmetry</a></li>
+<li><a href="../04-quantum-mechanics/">Chapter 4: Quantum Mechanics: Wave Equations and Atomic Structure</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Why do electrons travel in bands? Because they're in a solid band together!</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+Chapter 5 — the payoff chapter. Everything we've built since Chapter 1 — crystal structure, quantum mechanics, wave functions — culminates here, where we ask the most important question in semiconductor physics: <em>why does a periodic solid have energy bands at all?</em> Spoiler: it's Bloch's theorem. We'll derive the bandgap from first principles, meet the effective mass approximation (the useful fiction that makes semiconductor engineering tractable), discover that holes are real things, and learn what density of states means in 3D, 2D, 1D, and 0D. This is the most mathematically dense chapter in the course. It's also the most satisfying. Let's get excited!</p>
+</div>
+<h2 id="the-periodic-potential">The Periodic Potential</h2>
+<p>An electron moving through a crystal lattice experiences the electrostatic potential from every ion core. Because the lattice is periodic with translation vectors <span class="arithmatex">\(\mathbf{R}\)</span>, the potential is also periodic:</p>
+<div class="arithmatex">\[
+V(\mathbf{r} + \mathbf{R}) = V(\mathbf{r}) \quad \text{for all lattice vectors } \mathbf{R}
+\]</div>
+<p>This is the key distinction between a crystal electron and a free electron. A free electron has plane-wave states and a parabolic dispersion <span class="arithmatex">\(E = \hbar^2k^2/2m_e\)</span>. The periodic potential breaks this — but in a structured, beautiful way.</p>
+<h2 id="the-kronig-penney-model-bands-from-a-toy-potential">The Kronig-Penney Model: Bands from a Toy Potential</h2>
+<p>The <strong>Kronig-Penney model</strong> (1931) replaces the real crystal potential with a periodic array of rectangular barriers (height <span class="arithmatex">\(V_0\)</span>, width <span class="arithmatex">\(b\)</span>) separated by wells (width <span class="arithmatex">\(a\)</span>, depth zero), period <span class="arithmatex">\(d = a+b\)</span>. The Bloch condition requires that energy <span class="arithmatex">\(E\)</span> satisfies:</p>
+<div class="arithmatex">\[
+\cos(kd) = \cos(\alpha a)\cos(\beta b) - \frac{\alpha^2 + \beta^2}{2\alpha\beta}\sin(\alpha a)\sin(\beta b)
+\]</div>
+<p>where <span class="arithmatex">\(\alpha = \sqrt{2mE}/\hbar\)</span> and <span class="arithmatex">\(\beta = \sqrt{2m(V_0-E)}/\hbar\)</span>. The left side is bounded in [−1, +1]; the right side is not. Energy ranges where the right side lies outside [−1, +1] have no real solution for <span class="arithmatex">\(k\)</span> — these are the <strong>forbidden energy gaps</strong>. Energy ranges where it lies inside are <strong>allowed bands</strong>.</p>
+<p>The key insight: bandgaps open at Brillouin zone boundaries (<span class="arithmatex">\(k = \pm n\pi/d\)</span>) because the wave is Bragg-diffracted by the periodic potential, producing standing waves with different energies depending on whether the electron probability peaks at ion cores or between them.</p>
+<h2 id="blochs-theorem">Bloch's Theorem</h2>
+<p><strong>Bloch's theorem</strong> (Felix Bloch, 1928) states that eigenstates of a Hamiltonian with a periodic potential take the form:</p>
+<div class="arithmatex">\[
+\psi_{n\mathbf{k}}(\mathbf{r}) = e^{i\mathbf{k}\cdot\mathbf{r}}\, u_{n\mathbf{k}}(\mathbf{r})
+\]</div>
+<p>where <span class="arithmatex">\(u_{n\mathbf{k}}(\mathbf{r}+\mathbf{R}) = u_{n\mathbf{k}}(\mathbf{r})\)</span> is a cell-periodic function and <span class="arithmatex">\(e^{i\mathbf{k}\cdot\mathbf{r}}\)</span> is a plane-wave envelope. These are the <strong>Bloch wave functions</strong>. The band index <span class="arithmatex">\(n\)</span> labels which band; <span class="arithmatex">\(\mathbf{k}\)</span> is the <strong>crystal momentum</strong>, defined only modulo a reciprocal lattice vector — hence restricted to the first Brillouin zone.</p>
+<p>Two consequences:
+- Electrons are delocalized throughout the entire crystal, yet the probability density <span class="arithmatex">\(|u_{n\mathbf{k}}|^2\)</span> reflects local crystal symmetry.
+- The energy <span class="arithmatex">\(E_n(\mathbf{k})\)</span> is periodic in k-space: <span class="arithmatex">\(E_n(\mathbf{k}+\mathbf{G}) = E_n(\mathbf{k})\)</span>.</p>
+<h2 id="three-models-of-band-formation">Three Models of Band Formation</h2>
+<p>Three analytical models illuminate complementary aspects of band formation:</p>
+<p><strong>The free electron model</strong> sets <span class="arithmatex">\(V = 0\)</span>. Bands are purely parabolic, no gaps exist. Useful as a baseline; correctly predicts metallic conduction but cannot explain semiconductors.</p>
+<p><strong>The nearly-free electron (NFE) model</strong> treats <span class="arithmatex">\(V(\mathbf{r})\)</span> as a weak perturbation. Away from zone boundaries, bands remain nearly parabolic. <em>At</em> zone boundaries, two degenerate free-electron states mix strongly, splitting in energy by <span class="arithmatex">\(2|V_G|\)</span> — the <strong>Fourier component of the potential</strong> at reciprocal lattice vector <span class="arithmatex">\(\mathbf{G}\)</span>. This is the bandgap origin: gap width = <span class="arithmatex">\(2|V_G|\)</span>.</p>
+<p><strong>The tight-binding (LCAO) model</strong> starts from localized atomic orbitals and assembles the crystal by introducing nearest-neighbor hopping integral <span class="arithmatex">\(t\)</span>. For a 1D chain:</p>
+<div class="arithmatex">\[
+E(k) = E_0 - 2t\cos(ka)
+\]</div>
+<p>This cosine band has width <span class="arithmatex">\(4t\)</span>. Larger <span class="arithmatex">\(t\)</span> (stronger overlap) → broader band. Isolated atomic levels → zero-width bands. The tight-binding model directly connects band energies to atomic orbital energies — foundational for heterostructure design.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Three models, one truth — and they all agree on what matters.</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova thinking">
+Free electron model: gaps come from Bragg scattering of delocalized waves. Tight-binding model: bands come from tunneling between localized atomic states. These sound like opposite views of the same reality — and they are. For most semiconductors the truth is in the middle: electrons live in covalent bonding states, neither perfectly delocalized nor tightly confined. Both models give the same qualitative result (bands and gaps exist), and both are useful in different contexts (NFE near zone boundaries, TB for understanding orbital contributions to bands).</p>
+</div>
+<h4 id="diagram-interactive-e-k-band-structure-explorer">Diagram: Interactive E-k Band Structure Explorer</h4>
+<iframe src="../../sims/ek-band-structure-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/ek-band-structure-explorer/main.html">Run Interactive E-k Band Structure Explorer Fullscreen</a></p>
+<iframe src="../../sims/ek-band-structure-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/ek-band-structure-explorer/main.html">Run Interactive E-k Band Structure Explorer Fullscreen</a></p>
+<details>
+<summary>Interactive E-k Band Structure Explorer</summary>
+<p>Type: MicroSim
+<strong>sim-id:</strong> ek-band-structure-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning objective:</strong> Students will read and interpret E-k diagrams for real semiconductors and identify (Analyze, L4) conduction band minima, valence band maxima, and bandgap values at high-symmetry k-points.</p>
+<p><strong>Canvas size:</strong> 950 × 560 px, responsive.</p>
+<p><strong>Controls:</strong>
+- Select dropdown: Material — "Si (indirect, 1.12 eV)", "Ge (indirect, 0.66 eV)", "GaAs (direct, 1.42 eV)", "GaN (direct, 3.40 eV)", "Free Electron". Default: "Si".
+- Checkbox: "Show effective mass parabolas" (default checked) — overlays fitted parabolas near CBM and VBM.
+- Select: "Brillouin zone path" — "L–Γ–X" (default, for cubic), "K–Γ–M" (hexagonal, for GaN).</p>
+<p><strong>Visual layout:</strong></p>
+<p>Main panel (70%): Schematic E-k diagram drawn along the selected path. Horizontal axis labeled with high-symmetry k-points. Vertical axis: Energy (eV), origin at VBM.</p>
+<p>Draw 4–6 bands (valence and conduction) as smooth schematic curves for each material:
+- Si: CBM near X at ~0.85 of Γ→X distance, 6-fold degenerate; VBM at Γ, split into HH, LH, SO.
+- GaAs: CBM and VBM both at Γ; gap 1.42 eV; show L and X valleys as higher CB minima.
+- Ge: CBM at L; VBM at Γ; gap 0.66 eV.
+- GaN: CBM and VBM at Γ; gap 3.40 eV; hexagonal path.
+- Free Electron: single parabola crossing zone boundary (Bragg reflection visible as slight gap).</p>
+<p>Mark VBM and CBM with labeled dots. Shade the bandgap in yellow. Label E_g.</p>
+<p>If "Show effective mass parabolas" checked: overlay red dashed parabola at CBM (width ∝ 1/m_n*), blue dashed parabolas at VBM for HH and LH.</p>
+<p>Right panel (30%): material name, E_g, gap type, CBM location, effective masses m_n*, m_HH, m_LH.</p>
+<p><strong>Behavior:</strong> Dropdown updates immediately. Hover on band shows (k, E) coordinates and band label.</p>
+<p><strong>Implementation:</strong> p5.js, single HTML file. Bands as Bezier curve approximations. Parent canvas to document.querySelector('main').</p>
+</details>
+<h2 id="the-effective-mass-approximation">The Effective Mass Approximation</h2>
+<p>Near a band extremum at <span class="arithmatex">\(\mathbf{k}_0\)</span>, the E-k relation is approximately parabolic. The curvature of the band defines the <strong>effective mass tensor</strong>:</p>
+<div class="arithmatex">\[
+\frac{1}{m^*_{ij}} = \frac{1}{\hbar^2}\frac{\partial^2 E}{\partial k_i \partial k_j}
+\]</div>
+<p>In the effective mass approximation, an electron near a band edge behaves like a free particle with mass <span class="arithmatex">\(m^*\)</span>, absorbing all crystal potential effects into this single parameter. This allows the entire classical and statistical mechanics toolkit to be applied to semiconductor electrons.</p>
+<p>For silicon's conduction band (CBM near X), the equi-energy surfaces are <strong>ellipsoids</strong> with:
+- <strong>Longitudinal effective mass</strong> <span class="arithmatex">\(m_l^* = 0.92\,m_0\)</span>: low curvature along the valley axis.
+- <strong>Transverse effective mass</strong> <span class="arithmatex">\(m_t^* = 0.19\,m_0\)</span>: high curvature perpendicular to the axis.</p>
+<p>Two scalar effective masses are derived for practical calculations:
+- <strong>Density-of-states mass</strong> <span class="arithmatex">\(m_{dos}^*\)</span>: gives the correct 3D DOS. For 6-valley Si: <span class="arithmatex">\(m_{dos}^* = 6^{2/3}(m_l^* m_t^{*2})^{1/3} \approx 1.08\,m_0\)</span>.
+- <strong>Conductivity mass</strong> <span class="arithmatex">\(m_c^*\)</span>: gives the correct mobility. For Si: <span class="arithmatex">\(1/m_c^* = \frac{1}{3}(1/m_l^* + 2/m_t^*) \Rightarrow m_c^* \approx 0.26\,m_0\)</span>.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">m* &lt; m_e doesn't mean the electron is lighter. It means the band curves more steeply.</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Nova giving a tip">
+GaAs has <span class="arithmatex">\(m^* = 0.067\,m_0\)</span> — 15× lighter than a free electron. This does not mean GaAs electrons are physically lighter. It means the GaAs conduction band is very sharply curved at Γ, so electrons accelerate 15× more readily under an applied field. A negative effective mass — which occurs near the <em>top</em> of a filled band — means the electron accelerates <em>opposite</em> to the force. This sounds alarming until you realize it's exactly what gives rise to the hole.</p>
+</div>
+<h2 id="the-hole-concept">The Hole Concept</h2>
+<p>A completely filled band carries no current — every <span class="arithmatex">\(\mathbf{k}\)</span> is occupied and paired with <span class="arithmatex">\(-\mathbf{k}\)</span>. When one electron is excited from the valence band, leaving an empty state at <span class="arithmatex">\(\mathbf{k}_0\)</span>, the residual current is that of a single positive charge with momentum <span class="arithmatex">\(-\mathbf{k}_0\)</span>. This is a <strong>hole</strong>.</p>
+<p>Hole properties:
+- Charge <span class="arithmatex">\(+e\)</span>.
+- Crystal momentum <span class="arithmatex">\(\mathbf{k}_h = -\mathbf{k}_e\)</span> (negative of missing electron).
+- Energy measured downward from VBM.
+- Positive effective mass <span class="arithmatex">\(m_h^* &gt; 0\)</span> (from negative band curvature).</p>
+<p>Spin-orbit coupling splits the valence band near <span class="arithmatex">\(\Gamma\)</span> into three subbands:</p>
+<table>
+<thead>
+<tr>
+<th>Subband</th>
+<th>Symbol</th>
+<th><span class="arithmatex">\(m^*/m_0\)</span> (Si)</th>
+<th><span class="arithmatex">\(m^*/m_0\)</span> (GaAs)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Heavy hole</td>
+<td>HH</td>
+<td>0.49</td>
+<td>0.51</td>
+</tr>
+<tr>
+<td>Light hole</td>
+<td>LH</td>
+<td>0.16</td>
+<td>0.082</td>
+</tr>
+<tr>
+<td>Split-off</td>
+<td>SO</td>
+<td>~0.24</td>
+<td>~0.15</td>
+</tr>
+</tbody>
+</table>
+<p>The HH and LH bands are degenerate at <span class="arithmatex">\(\mathbf{k}=0\)</span> in unstrained material but split under biaxial or uniaxial strain — the basis of strained silicon's enhanced hole mobility (Chapter 20).</p>
+<h2 id="density-of-states">Density of States</h2>
+<p>The <strong>density of states (DOS)</strong> <span class="arithmatex">\(g(E)\)</span> counts allowed quantum states per unit energy per unit volume. It enters every calculation of carrier concentration, optical absorption, and recombination rate.</p>
+<p>In <strong>3D (bulk)</strong> with a parabolic band:</p>
+<div class="arithmatex">\[
+g_{3D}(E) = \frac{1}{2\pi^2}\left(\frac{2m^*}{\hbar^2}\right)^{3/2}\!\sqrt{E - E_c}
+\]</div>
+<p>The square-root energy dependence is the signature of 3D confinement. In lower-dimensional systems, each confinement dimension converts a continuous k-continuum into discrete subbands, changing the DOS shape:</p>
+<ul>
+<li><strong>2D (quantum well)</strong>: step function at each subband energy <span class="arithmatex">\(E_n\)</span>: <span class="arithmatex">\(g_{2D} = m^*/\pi\hbar^2\)</span> per step.</li>
+<li><strong>1D (quantum wire)</strong>: inverse-square-root divergences (van Hove singularities) at subband edges.</li>
+<li><strong>0D (quantum dot)</strong>: delta functions — fully discrete spectrum.</li>
+</ul>
+<p>The delta-function DOS of quantum dots produces extremely narrow optical gain spectra and ultra-low threshold currents — the reason quantum dot lasers are commercially attractive. Quantum well lasers (step-function DOS) already outperform bulk lasers by 10–50× in threshold current; quantum dot lasers push this further.</p>
+<h4 id="diagram-dimensionality-and-density-of-states-explorer">Diagram: Dimensionality and Density of States Explorer</h4>
+<iframe src="../../sims/density-of-states-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/density-of-states-explorer/main.html">Run Dimensionality and Density of States Explorer Fullscreen</a></p>
+<iframe src="../../sims/density-of-states-explorer/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<p><a href="../../sims/density-of-states-explorer/main.html">Run Dimensionality and Density of States Explorer Fullscreen</a></p>
+<details>
+<summary>Dimensionality and Density of States Explorer</summary>
+<p>Type: MicroSim
+<strong>sim-id:</strong> density-of-states-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified</p>
+<p><strong>Learning objective:</strong> Students will predict and compare g(E) in 3D, 2D, 1D, and 0D and explain (Understand, L2) how dimensionality reduction improves semiconductor laser performance.</p>
+<p><strong>Canvas size:</strong> 900 × 540 px, responsive.</p>
+<p><strong>Controls:</strong>
+- Select dropdown: Dimensionality — "3D (Bulk)", "2D (Quantum Well)", "1D (Quantum Wire)", "0D (Quantum Dot)". Default: "3D".
+- Slider: Effective mass <span class="arithmatex">\(m^*/m_0\)</span>, 0.05–1.0, default 0.067. Label: "m*/m₀:"
+- Slider: Confinement dimension L, 1–20 nm, default 10 nm (active when not 3D). Label: "L (nm):"
+- Checkbox: "Show gain bandwidth" — overlays schematic optical gain curve width relative to DOS shape.</p>
+<p><strong>Visual layout:</strong></p>
+<p>Left panel (65%): Plot of g(E) vs. E from E_c to E_c + 0.4 eV.
+- 3D: smooth √(E-E_c) curve.
+- 2D: staircase with equal-height steps at E_n = n²·ħ²π²/(2m*L²).
+- 1D: spiky curve with 1/√(E-E_n) peaks at subband edges.
+- 0D: vertical arrows at discrete energies E_n.
+All normalized to same peak height. Color: 3D=blue, 2D=green, 1D=orange, 0D=red.</p>
+<p>Right panel (35%): Card showing dimensionality, g(E) formula, device application, laser threshold comparison (bulk &gt; QW &gt; QD).</p>
+<p><strong>Behavior:</strong> All controls update the plot in real time. On resize: updateCanvasSize() reflows.</p>
+<p><strong>Implementation:</strong> p5.js, single HTML file. Parent canvas to document.querySelector('main').</p>
+</details>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>The <strong>periodic potential</strong> opens energy gaps at Brillouin zone boundaries via Bragg scattering. Gap width = <span class="arithmatex">\(2|V_G|\)</span> (NFE model).</li>
+<li><strong>Bloch's theorem</strong>: <span class="arithmatex">\(\psi_{n\mathbf{k}} = e^{i\mathbf{k}\cdot\mathbf{r}}u_{n\mathbf{k}}\)</span>. Crystal momentum <span class="arithmatex">\(\mathbf{k}\)</span> is restricted to the first Brillouin zone; band index <span class="arithmatex">\(n\)</span> labels which band.</li>
+<li><strong>Kronig-Penney</strong> analytically shows alternating barriers and wells → allowed/forbidden energy alternation.</li>
+<li><strong>Effective mass</strong> <span class="arithmatex">\(m^* = \hbar^2(\partial^2 E/\partial k^2)^{-1}\)</span>: absorbs the crystal potential; enables classical mechanics of carriers. Key values: Si <span class="arithmatex">\(m_c^* = 0.26\,m_0\)</span>, GaAs <span class="arithmatex">\(m_n^* = 0.067\,m_0\)</span>.</li>
+<li><strong>Holes</strong> are positively charged quasiparticles with positive effective mass, momentum opposite to missing electron. Valence band splits into HH, LH, SO subbands via spin-orbit coupling.</li>
+<li><strong>DOS</strong>: 3D <span class="arithmatex">\(\propto \sqrt{E}\)</span>; 2D step function; 1D van Hove divergences; 0D discrete delta functions. Lower dimensionality → sharper optical gain → lower laser threshold.</li>
+</ul>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Bloch would be proud. So would Kronig and Penney.</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
+You derived the energy band structure of crystals from quantum mechanics, understood Bloch wave functions, grasped the effective mass trick that makes all of semiconductor engineering tractable, and saw how dimensionality changes the density of states from smooth to spiky to discrete. That is the theoretical core of this entire field. Everything from here — carrier statistics, transport, junctions, transistors, lasers — is applying this framework to specific device geometries. Chapter 6: we put electrons into these bands and count them statistically.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../04-quantum-mechanics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4. Quantum Mechanics">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                4. Quantum Mechanics
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../06-fermi-dirac-statistics/" class="md-footer__link md-footer__link--next" aria-label="Next: 6. Fermi-Dirac Statistics">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                6. Fermi-Dirac Statistics
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

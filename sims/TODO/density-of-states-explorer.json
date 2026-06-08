@@ -1,0 +1,14 @@
+{
+  "sim_id": "density-of-states-explorer",
+  "diagram_name": "Dimensionality and Density of States Explorer",
+  "chapter_number": 5,
+  "chapter_title": "\"Bloch's Theorem, Band Formation, and E-k Diagrams\"",
+  "chapter_dir": "05-bloch-theorem-band-theory",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": "Students will predict and compare g(E) in 3D, 2D, 1D, and 0D and explain (Understand, L2) how dimensionality reduction improves semiconductor laser performance.",
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: MicroSim\n**sim-id:** density-of-states-explorer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\n**Learning objective:** Students will predict and compare g(E) in 3D, 2D, 1D, and 0D and explain (Understand, L2) how dimensionality reduction improves semiconductor laser performance.\n\n**Canvas size:** 900 × 540 px, responsive.\n\n**Controls:**\n- Select dropdown: Dimensionality — \"3D (Bulk)\", \"2D (Quantum Well)\", \"1D (Quantum Wire)\", \"0D (Quantum Dot)\". Default: \"3D\".\n- Slider: Effective mass \\(m^*/m_0\\), 0.05–1.0, default 0.067. Label: \"m*/m₀:\"\n- Slider: Confinement dimension L, 1–20 nm, default 10 nm (active when not 3D). Label: \"L (nm):\"\n- Checkbox: \"Show gain bandwidth\" — overlays schematic optical gain curve width relative to DOS shape.\n\n**Visual layout:**\n\nLeft panel (65%): Plot of g(E) vs. E from E_c to E_c + 0.4 eV.\n- 3D: smooth √(E-E_c) curve.\n- 2D: staircase with equal-height steps at E_n = n²·ħ²π²/(2m*L²).\n- 1D: spiky curve with 1/√(E-E_n) peaks at subband edges.\n- 0D: vertical arrows at discrete energies E_n.\nAll normalized to same peak height. Color: 3D=blue, 2D=green, 1D=orange, 0D=red.\n\nRight panel (35%): Card showing dimensionality, g(E) formula, device application, laser threshold comparison (bulk > QW > QD).\n\n**Behavior:** All controls update the plot in real time. On resize: updateCanvasSize() reflows.\n\n**Implementation:** p5.js, single HTML file. Parent canvas to document.querySelector('main')."
+}

@@ -1,0 +1,2434 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="How substitutional impurities transform intrinsic semiconductors into controllable conductors through donor/acceptor doping, three temperature regimes, and Fermi level engineering">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/semiconductor-physics-course/chapters/07-doping-extrinsic-carriers/">
+      
+      
+        <link rel="prev" href="../06-fermi-dirac-statistics/">
+      
+      
+        <link rel="next" href="../08-carrier-drift-mobility/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Doping, Extrinsic Carriers, and the Fermi Level - Semiconductor Physics Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7SNVRJ60X3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7SNVRJ60X3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7SNVRJ60X3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#doping-extrinsic-carriers-and-the-fermi-level" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Semiconductor Physics Course" class="md-header__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Semiconductor Physics Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Doping, Extrinsic Carriers, and the Fermi Level
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Semiconductor Physics Course" class="md-nav__button md-logo" aria-label="Semiconductor Physics Course" data-md-component="logo">
+      
+  <img src="../../img/mascot/welcome.png" alt="logo">
+
+    </a>
+    Semiconductor Physics Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/semiconductor-physics-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-intro-semiconductors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction to Semiconductors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-crystal-lattice-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Crystal Lattice Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-crystal-bonding-defects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Crystal Bonding and Defects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-quantum-mechanics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-bloch-theorem-band-theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Bloch Theorem and Band Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fermi-dirac-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Fermi-Dirac Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Doping and Extrinsic Carriers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#71-why-pure-silicon-fails-as-a-device-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Why Pure Silicon Fails as a Device Material
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-donor-atoms-and-n-type-doping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Donor Atoms and N-Type Doping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-acceptor-atoms-and-p-type-doping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Acceptor Atoms and P-Type Doping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-ionization-energy-and-complete-ionization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Ionization Energy and Complete Ionization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75-the-three-temperature-regimes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 The Three Temperature Regimes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#76-majority-and-minority-carriers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6 Majority and Minority Carriers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#77-compensation-doping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7 Compensation Doping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#78-degenerate-and-non-degenerate-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.8 Degenerate and Non-Degenerate Semiconductors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#79-the-fermi-level-in-doped-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.9 The Fermi Level in Doped Semiconductors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#710-temperature-dependence-of-the-fermi-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.10 Temperature Dependence of the Fermi Level
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-carrier-drift-mobility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Carrier Drift and Mobility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-carrier-diffusion-transport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Carrier Diffusion and Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-generation-recombination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Generation and Recombination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-pn-junction-equilibrium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. P-N Junction Equilibrium
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pn-junction-dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. P-N Junction Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-metal-semiconductor-mos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Metal-Semiconductor and MOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-bipolar-transistors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Bipolar Transistors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-jfet-mesfet-mosfet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. JFET, MESFET, and MOSFET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-short-channel-cmos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Short-Channel and CMOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-leds-laser-diodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. LEDs and Laser Diodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-photodetectors-solar-cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Photodetectors and Solar Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-compound-semiconductors-quantum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Compound Semiconductors and Quantum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-strained-si-2d-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Strained Si, 2D Materials, Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-fabrication-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fabrication Technology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-characterization-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Characterization and Modeling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#71-why-pure-silicon-fails-as-a-device-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Why Pure Silicon Fails as a Device Material
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-donor-atoms-and-n-type-doping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Donor Atoms and N-Type Doping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-acceptor-atoms-and-p-type-doping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Acceptor Atoms and P-Type Doping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-ionization-energy-and-complete-ionization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Ionization Energy and Complete Ionization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75-the-three-temperature-regimes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 The Three Temperature Regimes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#76-majority-and-minority-carriers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6 Majority and Minority Carriers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#77-compensation-doping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7 Compensation Doping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#78-degenerate-and-non-degenerate-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.8 Degenerate and Non-Degenerate Semiconductors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#79-the-fermi-level-in-doped-semiconductors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.9 The Fermi Level in Doped Semiconductors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#710-temperature-dependence-of-the-fermi-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.10 Temperature Dependence of the Fermi Level
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/semiconductor-physics-course/blob/master/docs/chapters/07-doping-extrinsic-carriers/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="doping-extrinsic-carriers-and-the-fermi-level">Doping, Extrinsic Carriers, and the Fermi Level</h1>
+<h2 id="summary">Summary</h2>
+<p>Doping is the primary engineering lever in semiconductor devices. This chapter covers how substitutional impurities — donors (group V) and acceptors (group III) — introduce shallow energy levels that ionize at room temperature, dramatically shifting the carrier concentrations from the intrinsic values. The three operating regimes (freeze-out, extrinsic, and intrinsic) are analyzed as functions of temperature. Students learn to calculate majority and minority carrier concentrations using the charge-neutrality condition, to handle compensation doping and net doping, and to track how the Fermi level moves with doping density and temperature — including the distinction between degenerate and non-degenerate semiconductors.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 28 concepts from the learning graph:</p>
+<ol>
+<li>N-Type Doping</li>
+<li>P-Type Doping</li>
+<li>Donor Atoms</li>
+<li>Acceptor Atoms</li>
+<li>Group V Dopants in Silicon</li>
+<li>Group III Dopants in Silicon</li>
+<li>Phosphorus as Donor</li>
+<li>Arsenic as Donor</li>
+<li>Antimony as Donor</li>
+<li>Boron as Acceptor</li>
+<li>Gallium as Acceptor</li>
+<li>Aluminum as Acceptor</li>
+<li>Indium as Acceptor</li>
+<li>Ionization Energy</li>
+<li>Complete Ionization</li>
+<li>Freeze-Out Regime</li>
+<li>Extrinsic Regime</li>
+<li>Intrinsic Regime Temperature</li>
+<li>Majority Carriers</li>
+<li>Minority Carriers</li>
+<li>Extrinsic Carrier Concentration</li>
+<li>Degenerate Semiconductor</li>
+<li>Non-Degenerate Semiconductor</li>
+<li>Compensation Doping</li>
+<li>Net Doping Concentration</li>
+<li>Fermi Level in N-Type</li>
+<li>Fermi Level in P-Type</li>
+<li>Temperature Dependence of Fermi Level</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../02-crystal-lattice-structure/">Chapter 2: Crystal Lattice Structure and Symmetry</a></li>
+<li><a href="../03-crystal-bonding-defects/">Chapter 3: Crystal Bonding, Defects, and Surfaces</a></li>
+<li><a href="../06-fermi-dirac-statistics/">Chapter 6: Fermi-Dirac Statistics and Intrinsic Carrier Concentrations</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome, Fellow Particles — We're Going Impure Today!</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Nova waving welcome">
+Nova here! You've spent six chapters learning about pure, pristine, intrinsic silicon. Perfect crystal. Perfect symmetry. Perfectly useless for making transistors. Today we deliberately ruin everything by cramming in foreign atoms — and <em>that's</em> where the magic happens. Welcome to doping: semiconductor physics' proudest act of intentional contamination.</p>
+</div>
+<h2 id="71-why-pure-silicon-fails-as-a-device-material">7.1 Why Pure Silicon Fails as a Device Material</h2>
+<p>Intrinsic silicon at room temperature has a carrier concentration of roughly <span class="arithmatex">\(n_i \approx 9.65 \times 10^{9}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>. That sounds like a lot until you compare it to the <span class="arithmatex">\(5 \times 10^{22}\)</span> silicon atoms per cubic centimeter in the lattice — meaning only about 1 in every 5 trillion atoms contributes a free electron. The result is a resistivity around 2,300 Ω·cm, far too high (and too fixed) for any practical transistor or diode.</p>
+<p>The genius of semiconductor engineering is that we can raise (or lower) the carrier concentration by <strong>13 orders of magnitude</strong> — from <span class="arithmatex">\(10^{9}\)</span> to <span class="arithmatex">\(10^{22}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> — simply by substituting a tiny fraction of silicon atoms with atoms from neighboring groups in the periodic table. This substitutional impurity process is called <strong>doping</strong>, and the impurity atoms are called <strong>dopants</strong>.</p>
+<p>Two broad categories define the game:</p>
+<ul>
+<li><strong>N-type doping:</strong> Adding dopants that donate extra electrons, shifting the semiconductor toward electron-rich (negative charge carriers dominant)</li>
+<li><strong>P-type doping:</strong> Adding dopants that accept electrons (i.e., donate holes), shifting the semiconductor toward hole-rich (positive charge carriers dominant)</li>
+</ul>
+<p>Before we detail the chemistry, let's appreciate why doping is so phenomenally effective. Silicon sits in Group IV of the periodic table, forming four covalent bonds with its neighbors. Swap one silicon atom for a Group V atom (five valence electrons) and suddenly there's a leftover electron with no bond to join. That electron is weakly held and easily freed at room temperature. Conversely, a Group III atom (three valence electrons) creates a "missing bond" that acts as a mobile positive charge.</p>
+<hr />
+<h2 id="72-donor-atoms-and-n-type-doping">7.2 Donor Atoms and N-Type Doping</h2>
+<p>A <strong>donor atom</strong> is a substitutional impurity from Group V of the periodic table. When incorporated into the silicon lattice, it contributes one extra electron beyond what the four covalent bonds require. The commonly used Group V dopants in silicon are:</p>
+<table>
+<thead>
+<tr>
+<th>Dopant</th>
+<th>Symbol</th>
+<th>Typical Use</th>
+<th>Ionization Energy <span class="arithmatex">\(E_d\)</span> (meV)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phosphorus</td>
+<td>P</td>
+<td>Standard n-type, implantation</td>
+<td>~45</td>
+</tr>
+<tr>
+<td>Arsenic</td>
+<td>As</td>
+<td>CMOS source/drain, low diffusivity</td>
+<td>~54</td>
+</tr>
+<tr>
+<td>Antimony</td>
+<td>Sb</td>
+<td>Epitaxial layers, slow diffuser</td>
+<td>~43</td>
+</tr>
+</tbody>
+</table>
+<p>The ionization energies are all remarkably small — around 40–55 meV — compared to silicon's bandgap of 1.12 eV. At room temperature, <span class="arithmatex">\(k_BT \approx 26\)</span> meV, so <span class="arithmatex">\(E_d / k_BT \approx 2\)</span>, and the Fermi-Dirac distribution ensures the vast majority of donor levels are ionized (empty of electrons, having donated to the conduction band).</p>
+<p><strong>Phosphorus</strong> (<span class="arithmatex">\(E_d = 45\)</span> meV) is the workhorse of n-type silicon. It diffuses readily at processing temperatures, integrates cleanly into modern CMOS flows, and has been the default n-type dopant for decades. <strong>Arsenic</strong> has a lower diffusivity — it stays put when annealed, making it ideal for shallow source/drain junctions in modern transistors. <strong>Antimony</strong> diffuses extremely slowly and sees niche use in epitaxial structures where you want a sharp doping profile.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Nova Thinks: The Hydrogen Atom Analogy</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Nova in thinking pose">
+Here's a beautiful piece of physics hiding in those tiny ionization energies. The donor electron orbiting its parent nucleus looks exactly like a hydrogen atom — except it's embedded in a dielectric medium (silicon, <span class="arithmatex">\(\varepsilon_r \approx 11.7\)</span>) and the effective mass is reduced (<span class="arithmatex">\(m^* \approx 0.33\, m_0\)</span>). Scaling the hydrogen ground-state energy by these factors gives <span class="arithmatex">\(E_d \approx E_H \times m^*/m_0 / \varepsilon_r^2 \approx 13.6\)</span> eV <span class="arithmatex">\(\times 0.33 / 137 \approx 33\)</span> meV. Not bad for a back-of-envelope estimate! The Bohr radius also balloons to ~3 nm, spanning about 10 lattice constants — explaining why the model works despite the crystal environment.</p>
+</div>
+<p>The donor creates a discrete energy level <span class="arithmatex">\(E_d\)</span> just below the conduction band edge <span class="arithmatex">\(E_C\)</span>. When this level gives up its electron to the conduction band (ionization), the donor becomes a fixed, positively charged ion <span class="arithmatex">\(N_D^+\)</span>. At room temperature in lightly to moderately doped silicon, essentially <strong>all donors are ionized</strong> — a condition called <strong>complete ionization</strong> that we'll use as our standard approximation.</p>
+<p>With complete ionization, the electron concentration in an n-type semiconductor equals the donor concentration (plus any intrinsic contribution):</p>
+<div class="arithmatex">\[
+n \approx N_D \quad \text{(when } N_D \gg n_i \text{)}
+\]</div>
+<p>And using the law of mass action <span class="arithmatex">\(n \cdot p = n_i^2\)</span>, the hole concentration becomes:</p>
+<div class="arithmatex">\[
+p = \frac{n_i^2}{N_D}
+\]</div>
+<p>In n-type material, electrons are the <strong>majority carriers</strong> (dominant) and holes are the <strong>minority carriers</strong> (rare). The ratio <span class="arithmatex">\(n/p = N_D^2/n_i^2\)</span> can exceed <span class="arithmatex">\(10^{12}\)</span> for typical doping levels — minority carriers are genuinely scarce.</p>
+<hr />
+<h2 id="73-acceptor-atoms-and-p-type-doping">7.3 Acceptor Atoms and P-Type Doping</h2>
+<p>An <strong>acceptor atom</strong> is a substitutional impurity from Group III — one valence electron short of completing four covalent bonds. This missing bond is effectively a hole. The acceptor accepts an electron from the valence band, ionizing negatively and releasing a hole into the valence band. The standard Group III acceptors in silicon are:</p>
+<table>
+<thead>
+<tr>
+<th>Dopant</th>
+<th>Symbol</th>
+<th>Typical Use</th>
+<th>Ionization Energy <span class="arithmatex">\(E_a\)</span> (meV)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boron</td>
+<td>B</td>
+<td>Standard p-type (universal)</td>
+<td>~45</td>
+</tr>
+<tr>
+<td>Gallium</td>
+<td>Ga</td>
+<td>Solar cells, specialty doping</td>
+<td>~72</td>
+</tr>
+<tr>
+<td>Aluminum</td>
+<td>Al</td>
+<td>Power devices, historical</td>
+<td>~69</td>
+</tr>
+<tr>
+<td>Indium</td>
+<td>In</td>
+<td>Deep acceptor, specialty</td>
+<td>~160</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Boron</strong> is the uncontested champion of p-type silicon. Its ionization energy (~45 meV) is the smallest among common acceptors, it diffuses readily, and it's the default choice for virtually all CMOS p-type regions. Boron's low atomic mass also makes it particularly suitable for ion implantation at shallow energies.</p>
+<p><strong>Gallium</strong> has a slightly deeper level and slower diffusivity. It sees use in solar cell applications where controlled p-type doping with minimal performance loss is desired. <strong>Aluminum</strong> was an early favorite but fell out of favor because it forms <span class="arithmatex">\(\text{Al}_2\text{O}_3\)</span> during high-temperature oxidation, complicating processing. <strong>Indium</strong> is a curiosity — its 160 meV ionization energy means it's <em>not</em> fully ionized at room temperature, which introduces interesting physics (and practical headaches) for power device applications.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Nova Warns: Boron is NOT from Group III on Modern Periodic Tables!</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Nova with warning pose">
+Fun exam trap: "group III" in semiconductor contexts means Group 13 in IUPAC notation (the modern periodic table column numbering). Boron is element 5, in the column now called Group 13 (or IIIA in the old American labeling). Silicon is Group 14 (IVA). Phosphorus is Group 15 (VA). Don't confuse the old "main-group" letter system with the IUPAC 1–18 column numbers. On exams, say "one column to the left (p-type) or right (n-type) of silicon in the periodic table" and you'll be unambiguous.</p>
+</div>
+<p>The acceptor energy level <span class="arithmatex">\(E_a\)</span> sits just above the valence band edge <span class="arithmatex">\(E_V\)</span>. When an electron from the valence band fills this level, the acceptor ionizes to <span class="arithmatex">\(A^-\)</span> and the vacated valence-band state propagates as a hole. With complete ionization:</p>
+<div class="arithmatex">\[
+p \approx N_A \quad \text{(when } N_A \gg n_i \text{)}
+\]</div>
+<div class="arithmatex">\[
+n = \frac{n_i^2}{N_A}
+\]</div>
+<p>In p-type material, holes are the majority carriers. For <span class="arithmatex">\(N_A = 10^{17}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> and <span class="arithmatex">\(n_i = 9.65 \times 10^9\)</span> cm<span class="arithmatex">\(^{-3}\)</span>, we get <span class="arithmatex">\(n \approx 9.3 \times 10^2\)</span> cm<span class="arithmatex">\(^{-3}\)</span> — barely a thousand electrons per cubic centimeter. Minority carriers barely exist.</p>
+<hr />
+<h2 id="74-ionization-energy-and-complete-ionization">7.4 Ionization Energy and Complete Ionization</h2>
+<p>The <strong>ionization energy</strong> <span class="arithmatex">\(E_d\)</span> (or <span class="arithmatex">\(E_a\)</span>) is the energy required to promote a donor electron to the conduction band (or to transfer a valence-band electron to an acceptor level). For shallow donors and acceptors in silicon, these energies are 30–160 meV.</p>
+<p><strong>Complete ionization</strong> — the assumption that every dopant atom has been ionized — is valid when:</p>
+<ol>
+<li>Temperature is high enough that <span class="arithmatex">\(k_BT\)</span> is comparable to <span class="arithmatex">\(E_d\)</span> or <span class="arithmatex">\(E_a\)</span></li>
+<li>The Fermi level is not too close to the impurity level</li>
+</ol>
+<p>The fraction of ionized donors is given by the Fermi-Dirac occupancy of the donor level:</p>
+<div class="arithmatex">\[
+\frac{N_D^+}{N_D} = 1 - f(E_d) = 1 - \frac{1}{1 + \frac{1}{g_D}\exp\!\left(\frac{E_F - E_d}{k_BT}\right)}
+\]</div>
+<p>where <span class="arithmatex">\(g_D = 2\)</span> is the spin degeneracy factor for donors (an electron can occupy the level with spin up or spin down). For most practical cases at room temperature with shallow dopants, <span class="arithmatex">\(N_D^+ \approx N_D\)</span> — complete ionization is an excellent approximation.</p>
+<p>The complete ionization approximation simplifies all our subsequent calculations enormously. We'll flag when it breaks down (deep impurities, very low temperatures, degenerate doping).</p>
+<details>
+<summary>#### MicroSim: Dopant Ionization Fraction vs. Temperature</summary>
+<p><strong>sim-id:</strong> <code>dopant-ionization-explorer</code><br />
+<strong>Library:</strong> p5.js<br />
+<strong>Status:</strong> specification  </p>
+<p><strong>Description:</strong> Interactive visualization showing the fraction of ionized donors/acceptors as a function of temperature (50K–600K) for different dopant types (Phosphorus, Arsenic, Boron, Indium). Two panels: (top) ionization fraction <span class="arithmatex">\(N_D^+/N_D\)</span> vs. T; (bottom) energy band diagram showing <span class="arithmatex">\(E_C\)</span>, <span class="arithmatex">\(E_V\)</span>, <span class="arithmatex">\(E_F\)</span>, and dopant level <span class="arithmatex">\(E_d\)</span> or <span class="arithmatex">\(E_a\)</span> as function of T.</p>
+<p><strong>Controls:</strong>
+- Dropdown: Dopant type (P, As, Sb, B, Ga, Al, In)
+- Slider: Doping concentration <span class="arithmatex">\(10^{14}\)</span> to <span class="arithmatex">\(10^{19}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>
+- Checkbox: Show Fermi-Dirac tail overlay</p>
+<p><strong>Key Learning Objectives:</strong>
+- L2 (Understand): Explain why shallow dopants are nearly fully ionized at 300 K
+- L3 (Apply): Predict ionization fraction for a given temperature and dopant
+- L4 (Analyze): Identify when complete ionization approximation breaks down</p>
+<p><strong>Suggested Implementation Notes:</strong>
+- Use <code>createDropdown()</code> for dopant type selection
+- Animate temperature sweep with play/pause button
+- Highlight 300 K operating point with a vertical dashed line
+- Color-code donor (blue) vs. acceptor (red) curves</p>
+</details>
+<hr />
+<h2 id="75-the-three-temperature-regimes">7.5 The Three Temperature Regimes</h2>
+<p>Carrier concentration in a doped semiconductor is not constant — it varies dramatically with temperature. Before examining the math, let's understand the three regimes qualitatively:</p>
+<ol>
+<li>
+<p><strong>Freeze-out regime</strong> (low T, typically below ~100 K for silicon): <span class="arithmatex">\(k_BT\)</span> is so small that dopants cannot ionize. Carriers "freeze" onto their parent atoms. Carrier concentration drops exponentially with decreasing temperature. This regime kills the performance of bipolar transistors operated at cryogenic temperatures — a real concern for quantum computing applications.</p>
+</li>
+<li>
+<p><strong>Extrinsic regime</strong> (intermediate T, roughly 100–600 K for silicon at <span class="arithmatex">\(N_D = 10^{15}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>): All dopants are ionized, intrinsic carriers are negligible. This is the "designed operating range" for nearly all room-temperature devices. Carrier concentration is essentially constant at <span class="arithmatex">\(n \approx N_D\)</span> (or <span class="arithmatex">\(p \approx N_A\)</span>) regardless of temperature changes.</p>
+</li>
+<li>
+<p><strong>Intrinsic regime</strong> (high T, above ~500–700 K for typical doping): Thermally generated intrinsic carriers overwhelm the dopant contribution. The semiconductor "forgets" its doping and behaves intrinsically. For silicon, this occurs at lower temperatures when doping is light; heavily doped silicon can maintain extrinsic behavior to higher temperatures.</p>
+</li>
+</ol>
+<p>The transition temperatures depend strongly on doping concentration. For <span class="arithmatex">\(N_D = 10^{14}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>, the extrinsic regime ends around 450 K. For <span class="arithmatex">\(N_D = 10^{17}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>, it extends beyond 650 K. This is why power devices operated at high temperatures require heavier doping.</p>
+<p>The complete expression for electron concentration spanning all three regimes uses the charge-neutrality condition:</p>
+<div class="arithmatex">\[
+n + N_A^- = p + N_D^+
+\]</div>
+<p>Combined with <span class="arithmatex">\(np = n_i^2(T)\)</span> and the Fermi-Dirac ionization fractions, this gives an implicit equation for <span class="arithmatex">\(n\)</span> that must be solved numerically in general. However, the simplifications available in each regime make analytical solutions tractable.</p>
+<p>In the <strong>extrinsic regime</strong> with only donors (no compensating acceptors):</p>
+<div class="arithmatex">\[
+n \approx N_D, \quad p \approx \frac{n_i^2(T)}{N_D}
+\]</div>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Nova Encourages: Temperature Regimes Are Just Three Acts of a Play</p>
+<p><img src="../../img/mascot/encouraging.png" class="mascot-admonition-img" alt="Nova in encouraging pose">
+The three-regime picture can feel overwhelming when you first see the full carrier-concentration vs. temperature curve, but think of it like a three-act drama. Act I (freeze-out): the cast is asleep, nobody on stage. Act II (extrinsic): the dopants have full control, running the show smoothly. Act III (intrinsic): the thermally generated crowd storms the stage and chaos rules. Your device engineers want their audience firmly in Act II. Everything else is physics for the textbook and the exam.</p>
+</div>
+<details>
+<summary>#### MicroSim: Carrier Concentration vs. Temperature</summary>
+<p><strong>sim-id:</strong> <code>carrier-vs-temperature-explorer</code><br />
+<strong>Library:</strong> p5.js<br />
+<strong>Status:</strong> specification  </p>
+<p><strong>Description:</strong> Log-scale plot of electron concentration <span class="arithmatex">\(n(T)\)</span> and hole concentration <span class="arithmatex">\(p(T)\)</span> vs. temperature (50K–1000K) for doped silicon. Clearly demarcated freeze-out, extrinsic, and intrinsic regimes with shading. User can adjust doping type and concentration to see how regime boundaries shift.</p>
+<p><strong>Controls:</strong>
+- Radio buttons: N-type / P-type
+- Slider: Doping concentration <span class="arithmatex">\(\log(N_D)\)</span> from 14 to 19 cm<span class="arithmatex">\(^{-3}\)</span>
+- Checkbox: Show <span class="arithmatex">\(n_i(T)\)</span> reference curve
+- Checkbox: Show regime labels</p>
+<p><strong>Key Learning Objectives:</strong>
+- L2 (Understand): Identify the three temperature regimes from a <span class="arithmatex">\(n(T)\)</span> plot
+- L3 (Apply): Predict operating regime for a given doping level and temperature
+- L4 (Analyze): Explain why high doping extends the extrinsic regime</p>
+</details>
+<hr />
+<h2 id="76-majority-and-minority-carriers">7.6 Majority and Minority Carriers</h2>
+<p>The terms <strong>majority carriers</strong> and <strong>minority carriers</strong> refer to the dominant and rare carrier type in a doped semiconductor:</p>
+<ul>
+<li><strong>N-type silicon</strong>: Electrons are majority carriers (<span class="arithmatex">\(n \approx N_D\)</span>), holes are minority carriers (<span class="arithmatex">\(p = n_i^2/N_D \ll N_D\)</span>)</li>
+<li><strong>P-type silicon</strong>: Holes are majority carriers (<span class="arithmatex">\(p \approx N_A\)</span>), electrons are minority carriers (<span class="arithmatex">\(n = n_i^2/N_A \ll N_A\)</span>)</li>
+</ul>
+<p>These designations matter enormously for device operation. In a p-n junction, current flow is dominated by majority carrier motion in the bulk and minority carrier injection across the junction. In bipolar transistors, minority carrier diffusion in the base is the entire operating principle.</p>
+<p>The ratio of majority to minority carriers gives a sense of scale:</p>
+<div class="arithmatex">\[
+\frac{n}{p}\bigg|_{\text{n-type}} = \frac{N_D^2}{n_i^2}
+\]</div>
+<p>For <span class="arithmatex">\(N_D = 10^{15}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>: ratio <span class="arithmatex">\(= (10^{15})^2 / (9.65 \times 10^9)^2 \approx 1.07 \times 10^{10}\)</span>. Ten billion to one. Minority carriers are so rare that in many first-order calculations you can simply pretend they don't exist — until you need them, at which point they control everything (junctions, recombination, transistor gain).</p>
+<p><strong>Extrinsic carrier concentration</strong> refers to the carrier density set by doping rather than thermal generation. In the extrinsic regime, <span class="arithmatex">\(n \approx N_D\)</span> regardless of temperature (within the regime), which is precisely why we dope semiconductors: to get a predictable, controlled, thermally stable carrier concentration.</p>
+<hr />
+<h2 id="77-compensation-doping">7.7 Compensation Doping</h2>
+<p>Real silicon almost always contains both donors and acceptors simultaneously — either from intentional co-doping or from unavoidable background impurities. <strong>Compensation doping</strong> occurs when both donor and acceptor species are present. The net effect depends on which dominates.</p>
+<p>The charge-neutrality condition in the presence of both donors and acceptors (with complete ionization) is:</p>
+<div class="arithmatex">\[
+n + N_A = p + N_D
+\]</div>
+<p>Combined with <span class="arithmatex">\(np = n_i^2\)</span>, this gives:</p>
+<div class="arithmatex">\[
+n = \frac{(N_D - N_A)}{2} + \sqrt{\left(\frac{N_D - N_A}{2}\right)^2 + n_i^2}
+\]</div>
+<p>For <span class="arithmatex">\(N_D &gt; N_A\)</span> and <span class="arithmatex">\(N_D - N_A \gg n_i\)</span>:</p>
+<div class="arithmatex">\[
+n \approx N_D - N_A \equiv N_{\text{net}}
+\]</div>
+<p>The <strong>net doping concentration</strong> <span class="arithmatex">\(N_{\text{net}} = |N_D - N_A|\)</span> determines the carrier concentration. This has a critical implication: you can tune doping from the outside post-fabrication by implanting compensating dopants. Modern device fabrication uses precisely controlled compensation to create doping profiles that vary across micrometer distances.</p>
+<table>
+<thead>
+<tr>
+<th>Case</th>
+<th>Net Type</th>
+<th>Majority Carrier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(N_D &gt; N_A\)</span></td>
+<td>N-type</td>
+<td>Electrons</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(N_A &gt; N_D\)</span></td>
+<td>P-type</td>
+<td>Holes</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(N_D = N_A\)</span></td>
+<td>Compensated</td>
+<td><span class="arithmatex">\(n = p = n_i\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(N_D \approx N_A\)</span></td>
+<td>Lightly doped</td>
+<td>Near-intrinsic</td>
+</tr>
+</tbody>
+</table>
+<p>The case <span class="arithmatex">\(N_D = N_A\)</span> is called <strong>full compensation</strong> — the semiconductor behaves as if it were intrinsic, even with large amounts of impurities present. Full compensation increases scattering (more impurity centers) while paradoxically reducing carrier concentration.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Nova Tips: Net Doping is the Number That Matters</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Nova with tip pose">
+When reading SIMS (Secondary Ion Mass Spectrometry) profiles of real wafers, you'll always see both donor and acceptor profiles. What matters for electrical behavior is the <em>net</em> difference — and the net doping can be much smaller than either individual concentration. A wafer with <span class="arithmatex">\(N_D = 5 \times 10^{15}\)</span> and <span class="arithmatex">\(N_A = 4.9 \times 10^{15}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> has <span class="arithmatex">\(N_{\text{net}} = 10^{14}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> — lightly n-type despite having dense impurity populations. Electrical measurements (Hall effect, four-point probe) measure net doping; chemical measurements (SIMS) measure total impurity content. Both matter.</p>
+</div>
+<hr />
+<h2 id="78-degenerate-and-non-degenerate-semiconductors">7.8 Degenerate and Non-Degenerate Semiconductors</h2>
+<p>Our standard semiconductor equations assume the Fermi level lies well inside the bandgap, at least a few <span class="arithmatex">\(k_BT\)</span> away from either band edge. When this holds, the Fermi-Dirac distribution can be approximated by the Boltzmann distribution, giving simple exponential expressions for carrier concentrations. A semiconductor satisfying this condition is called <strong>non-degenerate</strong>.</p>
+<p>When doping is very heavy (<span class="arithmatex">\(N_D \gtrsim 10^{18}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> for silicon), the Fermi level approaches or enters the conduction band. This is the <strong>degenerate</strong> condition. Several important things change:</p>
+<ol>
+<li>The Boltzmann approximation fails — the full Fermi-Dirac integral must be used</li>
+<li>The donor levels broaden into a band and merge with the conduction band</li>
+<li>Bandgap narrowing occurs: heavy doping (and the associated impurity potential fluctuations) reduces the effective bandgap by tens of meV, increasing <span class="arithmatex">\(n_i\)</span> significantly</li>
+<li>Ohmic contacts form readily because the Fermi level is inside the band</li>
+</ol>
+<p>The boundary between non-degenerate and degenerate is fuzzy but often taken as:</p>
+<div class="arithmatex">\[
+E_F \leq E_C - 2k_BT \quad \text{(non-degenerate n-type)}
+\]</div>
+<p>or equivalently <span class="arithmatex">\(N_D \leq N_C/2 \approx 10^{18}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> for silicon at 300 K.</p>
+<p>Degenerate silicon is the material of transistor source and drain regions, heavily doped polysilicon gates, and ohmic contact regions. Understanding when you've crossed into degeneracy is essential for avoiding errors in junction calculations.</p>
+<hr />
+<h2 id="79-the-fermi-level-in-doped-semiconductors">7.9 The Fermi Level in Doped Semiconductors</h2>
+<p>The most powerful conceptual tool in semiconductor physics is tracking the Fermi level <span class="arithmatex">\(E_F\)</span>. In equilibrium, <span class="arithmatex">\(E_F\)</span> is uniform throughout any connected material — but its position relative to the band edges encodes the local carrier concentrations.</p>
+<p>We derived in Chapter 6 that:</p>
+<div class="arithmatex">\[
+n = N_C \exp\!\left(-\frac{E_C - E_F}{k_BT}\right)
+\]</div>
+<div class="arithmatex">\[
+p = N_V \exp\!\left(-\frac{E_F - E_V}{k_BT}\right)
+\]</div>
+<p>For <strong>n-type material</strong> with <span class="arithmatex">\(n \approx N_D\)</span>:</p>
+<div class="arithmatex">\[
+E_F = E_C - k_BT \ln\!\left(\frac{N_C}{N_D}\right)
+\]</div>
+<p>For <span class="arithmatex">\(N_D = 10^{16}\)</span> cm<span class="arithmatex">\(^{-3}\)</span> in silicon at 300 K (<span class="arithmatex">\(N_C = 2.82 \times 10^{19}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>):</p>
+<div class="arithmatex">\[
+E_F = E_C - 0.0259 \times \ln\!\left(\frac{2.82 \times 10^{19}}{10^{16}}\right) = E_C - 0.0259 \times 7.95 \approx E_C - 0.206 \text{ eV}
+\]</div>
+<p>The Fermi level sits 0.206 eV below <span class="arithmatex">\(E_C\)</span>, well inside the bandgap but much closer to the conduction band than to the valence band. The system is decidedly n-type.</p>
+<p>For <strong>p-type material</strong> with <span class="arithmatex">\(p \approx N_A\)</span>:</p>
+<div class="arithmatex">\[
+E_F = E_V + k_BT \ln\!\left(\frac{N_V}{N_A}\right)
+\]</div>
+<p>Here <span class="arithmatex">\(E_F\)</span> lies above <span class="arithmatex">\(E_V\)</span> (closer to the valence band than to the conduction band).</p>
+<p>The displacement of <span class="arithmatex">\(E_F\)</span> from the intrinsic Fermi level <span class="arithmatex">\(E_i\)</span> (midgap) is a useful measure of doping:</p>
+<div class="arithmatex">\[
+E_F - E_i = k_BT \ln\!\left(\frac{N_D}{n_i}\right) \quad \text{(n-type)}
+\]</div>
+<div class="arithmatex">\[
+E_i - E_F = k_BT \ln\!\left(\frac{N_A}{n_i}\right) \quad \text{(p-type)}
+\]</div>
+<p>This is one of the most useful expressions in device physics. It connects the Fermi level position (observable through contact potential measurements) to the doping concentration. It also shows that each decade of doping above <span class="arithmatex">\(n_i\)</span> shifts <span class="arithmatex">\(E_F\)</span> by <span class="arithmatex">\(k_BT \ln(10) \approx 60\)</span> meV at room temperature.</p>
+<hr />
+<h2 id="710-temperature-dependence-of-the-fermi-level">7.10 Temperature Dependence of the Fermi Level</h2>
+<p>The Fermi level position is not fixed — it varies with temperature, and understanding this dependence is crucial for high-temperature device operation and for interpreting measurements.</p>
+<p>As temperature increases:</p>
+<ol>
+<li><span class="arithmatex">\(N_C(T) \propto T^{3/2}\)</span> and <span class="arithmatex">\(N_V(T) \propto T^{3/2}\)</span> both increase</li>
+<li><span class="arithmatex">\(n_i(T)\)</span> increases exponentially</li>
+<li>In the extrinsic regime: <span class="arithmatex">\(E_F(T) = E_C - k_BT \ln(N_C(T)/N_D)\)</span> shifts downward (toward midgap) because <span class="arithmatex">\(k_BT\)</span> grows and <span class="arithmatex">\(N_C(T)\)</span> grows</li>
+</ol>
+<p>At sufficiently high temperature, the intrinsic carrier generation dominates and <span class="arithmatex">\(E_F \to E_i\)</span> (midgap). The Fermi level of any semiconductor converges to near midgap at high temperature, erasing the memory of doping.</p>
+<p>The Fermi level shift with temperature in n-type silicon follows approximately:</p>
+<div class="arithmatex">\[
+\frac{dE_F}{dT} \approx -k_B \left[\ln\!\left(\frac{N_C}{N_D}\right) + \frac{3}{2}\right]
+\]</div>
+<p>For <span class="arithmatex">\(N_D = 10^{16}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>: <span class="arithmatex">\(dE_F/dT \approx -0.204\)</span> meV/K. The Fermi level drops toward midgap at about 0.2 meV per kelvin — or about 20 meV per 100 K temperature rise. Over the automotive temperature range (−40°C to +125°C), <span class="arithmatex">\(E_F\)</span> shifts by about 33 meV, enough to appreciably change threshold voltages in MOSFETs. This is why automotive-grade chips require careful temperature compensation.</p>
+<table>
+<thead>
+<tr>
+<th>Temperature (K)</th>
+<th><span class="arithmatex">\(n_i\)</span> (cm<span class="arithmatex">\(^{-3}\)</span>)</th>
+<th><span class="arithmatex">\(E_F - E_i\)</span> for <span class="arithmatex">\(N_D=10^{16}\)</span> (meV)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><span class="arithmatex">\(\sim 10^4\)</span></td>
+<td>+553</td>
+</tr>
+<tr>
+<td>300</td>
+<td><span class="arithmatex">\(9.65 \times 10^9\)</span></td>
+<td>+357</td>
+</tr>
+<tr>
+<td>400</td>
+<td><span class="arithmatex">\(\sim 10^{13}\)</span></td>
+<td>+147</td>
+</tr>
+<tr>
+<td>500</td>
+<td><span class="arithmatex">\(\sim 10^{15}\)</span></td>
+<td>+6</td>
+</tr>
+<tr>
+<td>600</td>
+<td><span class="arithmatex">\(\sim 5\times10^{16}\)</span></td>
+<td>−8 (now intrinsic!)</td>
+</tr>
+</tbody>
+</table>
+<p>Notice how <span class="arithmatex">\(E_F\)</span> plummets toward midgap between 300 K and 500 K, and the semiconductor crosses into intrinsic behavior around 500–600 K for this doping level.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Nova Celebrates: You Now Control the Fermi Level!</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
+Pause and appreciate what you've just learned. By choosing a dopant type and concentration, you can place the Fermi level anywhere in the bandgap. N-type pushes it toward the conduction band; p-type pushes it toward the valence band; heavy doping can drive it into a band entirely (degenerate). This Fermi-level engineering is literally how every transistor, diode, LED, and solar cell in the world works. All those devices are, at their core, spatial variations in <span class="arithmatex">\(E_F\)</span> — junctions are just two regions where you've positioned <span class="arithmatex">\(E_F\)</span> differently. You now understand the foundational control knob of all semiconductor technology. Let's get excited — the devices are coming!</p>
+</div>
+<hr />
+<h2 id="summary_1">Summary</h2>
+<p>This chapter covered how substitutional impurities transform silicon from a mediocre conductor into a precision-engineered material:</p>
+<ul>
+<li><strong>Group V donors</strong> (P, As, Sb) contribute electrons and create n-type material with <span class="arithmatex">\(n \approx N_D\)</span></li>
+<li><strong>Group III acceptors</strong> (B, Ga, Al, In) contribute holes and create p-type material with <span class="arithmatex">\(p \approx N_A\)</span></li>
+<li><strong>Shallow dopants</strong> (ionization energies 40–160 meV) are nearly completely ionized at room temperature</li>
+<li><strong>Three temperature regimes</strong> — freeze-out, extrinsic, intrinsic — determine carrier concentration vs. temperature behavior</li>
+<li><strong>Majority carriers</strong> dominate; <strong>minority carriers</strong> control device switching and junction behavior</li>
+<li><strong>Compensation doping</strong> makes net doping <span class="arithmatex">\(N_{\text{net}} = |N_D - N_A|\)</span> the electrically relevant quantity</li>
+<li><strong>Degenerate semiconductors</strong> (<span class="arithmatex">\(N_D \gtrsim 10^{18}\)</span> cm<span class="arithmatex">\(^{-3}\)</span>) require Fermi-Dirac integrals and exhibit bandgap narrowing</li>
+<li><strong>Fermi level position</strong> is calculable from doping and encodes all carrier information; it shifts toward midgap at elevated temperatures</li>
+</ul>
+<h2 id="key-equations">Key Equations</h2>
+<div class="arithmatex">\[
+n \approx N_D, \quad p \approx \frac{n_i^2}{N_D} \quad \text{(n-type, extrinsic regime)}
+\]</div>
+<div class="arithmatex">\[
+p \approx N_A, \quad n \approx \frac{n_i^2}{N_A} \quad \text{(p-type, extrinsic regime)}
+\]</div>
+<div class="arithmatex">\[
+n = \frac{N_D - N_A}{2} + \sqrt{\left(\frac{N_D - N_A}{2}\right)^2 + n_i^2} \quad \text{(general n-type with compensation)}
+\]</div>
+<div class="arithmatex">\[
+E_F = E_C - k_BT \ln\!\left(\frac{N_C}{N_D}\right) \quad \text{(n-type, non-degenerate)}
+\]</div>
+<div class="arithmatex">\[
+E_F - E_i = k_BT \ln\!\left(\frac{N_D}{n_i}\right) \quad \text{(n-type displacement from midgap)}
+\]</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../06-fermi-dirac-statistics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 6. Fermi-Dirac Statistics">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                6. Fermi-Dirac Statistics
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../08-carrier-drift-mobility/" class="md-footer__link md-footer__link--next" aria-label="Next: 8. Carrier Drift and Mobility">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                8. Carrier Drift and Mobility
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
