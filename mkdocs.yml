@@ -128,13 +128,11 @@ extra_javascript:
 extra_css:
    - css/extra.css
    - css/mascot.css
-#extra:
-#  analytics:
-#    provider: google
-    # https://analytics.google.com/analytics/web/#/a1420179p349994530/admin/streams/table/4433129821
-#    property: G-XXXX
 copyright: Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
 extra:
+  analytics:
+    provider: google
+    property: G-7SNVRJ60X3
   schema: https://dmccreary.github.io/intelligent-textbooks/ns/textbook/v1
   textbook_name: Semiconductor Physics Course
   textbook_version: "1.0"
