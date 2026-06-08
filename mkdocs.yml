@@ -132,6 +132,7 @@ copyright: Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/"
 extra:
   analytics:
     provider: google
+    # this is the Google property id: G-7SNVRJ60X3
     property: G-7SNVRJ60X3
   schema: https://dmccreary.github.io/intelligent-textbooks/ns/textbook/v1
   textbook_name: Semiconductor Physics Course
