@@ -49,9 +49,10 @@ Drag the voltage slider to bias the junction:
 
 Live readouts show the depletion width in micrometers and the diode current
 from the Shockley equation — watch the current span more than twelve decades,
-from picoamperes in reverse bias to amperes at +0.75 V. The animation runs
-while your mouse is over the canvas; the Pause and Reset buttons control the
-simulation.
+from picoamperes in reverse bias to amperes at +0.75 V. The simulation loads
+paused: the depletion region, electric field, and readouts respond instantly
+as you drag the voltage slider, and pressing **Start** animates the carrier
+motion.
 
 ## Things to Try
 

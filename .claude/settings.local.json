@@ -14,7 +14,8 @@
       "Bash(git push *)",
       "Bash(mkdocs gh-deploy *)",
       "Bash(git pull *)",
-      "Bash(git rebase *)"
+      "Bash(git rebase *)",
+      "Bash(lsof -nP -iTCP:8000 -sTCP:LISTEN)"
     ],
     "deny": []
   }
