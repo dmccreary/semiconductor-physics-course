@@ -1,0 +1,92 @@
+{
+  "title": "P-N Junction Voltage Explorer",
+  "description": "Interactive simulation of a silicon p-n junction under bias. A voltage slider sweeps from -5 V reverse bias to +0.75 V forward bias while the depletion region, fixed space charge, electric field, mobile carriers, and diode current respond in real time using the depletion approximation and the Shockley diode equation.",
+  "creator": "Dan McCreary",
+  "date": "2026-07-07",
+  "subject": [
+    "semiconductor physics",
+    "p-n junction",
+    "diode",
+    "depletion region",
+    "forward bias",
+    "reverse bias"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "pn-junction",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2), Apply (L3)",
+  "bloomVerb": "explain, apply",
+  "completion_status": "implemented",
+  "chapter_number": 11,
+  "chapter_title": "P-N Junction Equilibrium",
+  "chapter_dir": "11-pn-junction-equilibrium",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Semiconductor Physics",
+    "topic": "P-N junction under forward and reverse bias",
+    "learningObjectives": [
+      "Explain how forward and reverse bias change the depletion region width",
+      "Identify the space charge and electric field direction inside the depletion region",
+      "Apply the depletion-width equation W = W0 sqrt((Vbi - V)/Vbi) to predict readout values",
+      "Relate the exponential turn-on of carrier flow to the Shockley diode equation"
+    ],
+    "bloomLevels": ["Understand", "Apply"],
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Doping and majority/minority carriers",
+      "Carrier drift and diffusion",
+      "P-N junction electrostatics"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Parameter slider with real-time animated feedback",
+    "instructionalStrategy": "Predict-test-observe: students predict depletion width and current before moving the voltage slider, then verify against live readouts",
+    "assessmentOpportunities": [
+      "Predict depletion width at a given bias and compare with the readout",
+      "Record current vs. voltage in 0.1 V steps and plot on a log scale",
+      "Explain the field direction from the exposed ion pattern"
+    ]
+  },
+  "controls": [
+    {
+      "type": "slider",
+      "label": "Voltage",
+      "min": -5,
+      "max": 0.75,
+      "default": 0,
+      "step": 0.05,
+      "units": "V",
+      "purpose": "Applied bias voltage across the junction"
+    },
+    {
+      "type": "button",
+      "label": "Pause/Start",
+      "purpose": "Toggle the carrier animation"
+    },
+    {
+      "type": "button",
+      "label": "Reset",
+      "purpose": "Return to zero bias and re-initialize carriers"
+    }
+  ],
+  "simulationModel": {
+    "modelType": "physics-based, qualitative agent animation",
+    "equations": [
+      "Vbi = (kT/q) ln(Na*Nd/ni^2) = 0.695 V",
+      "W(V) = W0 sqrt((Vbi - V)/Vbi), W0 = 0.425 um",
+      "I(V) = Is (exp(qV/kT) - 1), Is = 1 pA"
+    ],
+    "assumptions": [
+      "Silicon step junction at 300 K with Na = Nd = 1e16 cm^-3",
+      "Depletion approximation with abrupt edges",
+      "Ideal diode: no G-R current, series resistance, or breakdown"
+    ],
+    "limitations": [
+      "Carrier dots and crossing rates are qualitative, not to scale",
+      "Recombination is drawn a short fixed distance past the junction"
+    ]
+  }
+}
