@@ -188,10 +188,12 @@ function draw() {
   text('Point Defect Visualizer', canvasWidth / 2, 8);
   textStyle(NORMAL);
 
+  drawLegend(margin + 4, 40);
+
   const leftPanelW = canvasWidth * 0.65;
   const rightPanelX = leftPanelW + 10;
   const rightPanelW = canvasWidth - rightPanelX - margin;
-  const panelTop = 45;
+  const panelTop = 54;
   const panelH = drawHeight - panelTop - 15;
 
   // Lattice panel background
@@ -336,6 +338,49 @@ function draw() {
   textAlign(LEFT, CENTER);
   textSize(defaultTextSize);
   text("Highlight defect type:", 10, drawHeight + 30);
+}
+
+// Compact key for the defect glyphs, drawn in the strip below the title
+function drawLegend(x, y) {
+  push();
+  textSize(11);
+  textAlign(LEFT, CENTER);
+  let cx = x;
+
+  // Vacancy — dashed red circle
+  stroke('#c62828'); strokeWeight(1.5); noFill();
+  drawDashedCircle(cx + 7, y, 13);
+  noStroke(); fill('#c62828');
+  cx += 17;
+  text("Vacancy", cx, y); cx += textWidth("Vacancy") + 16;
+
+  // Self-interstitial — small orange dot
+  noStroke(); fill('#ef6c00');
+  circle(cx + 5, y, 10);
+  cx += 13;
+  text("Self-interstitial", cx, y); cx += textWidth("Self-interstitial") + 16;
+
+  // P donor — green dot with P⁺
+  fill('#2e7d32'); circle(cx + 7, y, 13);
+  fill('white'); textAlign(CENTER, CENTER); textSize(8); text("P⁺", cx + 7, y);
+  textSize(11); textAlign(LEFT, CENTER); fill('#2e7d32');
+  cx += 17;
+  text("P donor", cx, y); cx += textWidth("P donor") + 16;
+
+  // Au deep trap — purple dot with Au
+  fill('#6a1b9a'); circle(cx + 7, y, 13);
+  fill('white'); textAlign(CENTER, CENTER); textSize(7); text("Au", cx + 7, y);
+  textSize(11); textAlign(LEFT, CENTER); fill('#6a1b9a');
+  cx += 17;
+  text("Au deep trap", cx, y); cx += textWidth("Au deep trap") + 16;
+
+  // Frenkel pair — short dashed blue arc
+  stroke('#0277bd'); strokeWeight(1.5);
+  for (let d = 0; d < 14; d += 5) line(cx + d, y, cx + d + 3, y);
+  noStroke(); fill('#0277bd');
+  cx += 18;
+  text("Frenkel pair (V + I)", cx, y);
+  pop();
 }
 
 function siteOccupied(i, j) {

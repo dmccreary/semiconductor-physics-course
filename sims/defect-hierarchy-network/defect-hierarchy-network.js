@@ -96,12 +96,12 @@ document.addEventListener('DOMContentLoaded', function () {
   // Root
   nodes.push({
     id: 'root',
-    label: 'Crystal Defects',
+    label: 'Crystal\nDefects',
     level: 0,
     shape: 'box',
     color: { background: '#cfd8dc', border: '#455a64' },
-    font: { size: 18, multi: true, bold: true },
-    margin: 14
+    font: { size: 15, multi: true, bold: true },
+    margin: 10
   });
 
   // Level 1 — categories
@@ -109,12 +109,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const id = 'cat-' + info.dim;
     nodes.push({
       id: id,
-      label: name,
+      label: name.replace(' Defects', '\nDefects'),
       level: 1,
       shape: 'box',
       color: { background: info.color, border: '#333' },
-      font: { size: 14, bold: true },
-      margin: 10
+      font: { size: 13, bold: true, multi: true },
+      margin: 8
     });
     edges.push({ from: 'root', to: id });
   }
@@ -128,8 +128,8 @@ document.addEventListener('DOMContentLoaded', function () {
       level: 2,
       shape: 'box',
       color: { background: lighten(parentInfo.color), border: '#444' },
-      font: { size: 13 },
-      margin: 8
+      font: { size: 12 },
+      margin: 6
     });
     edges.push({ from: 'cat-' + parentInfo.dim, to: name });
   }
@@ -140,11 +140,11 @@ document.addEventListener('DOMContentLoaded', function () {
     layout: {
       hierarchical: {
         enabled: true,
-        direction: 'UD',
+        direction: 'LR',
         sortMethod: 'directed',
-        levelSeparation: 110,
-        nodeSpacing: 95,
-        treeSpacing: 90
+        levelSeparation: 150,
+        nodeSpacing: 34,
+        treeSpacing: 34
       }
     },
     physics: { enabled: false },
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
     edges: {
       arrows: { to: { enabled: true, scaleFactor: 0.6 } },
       color: { color: '#90a4ae' },
-      smooth: { type: 'cubicBezier', forceDirection: 'vertical', roundness: 0.4 },
+      smooth: { type: 'cubicBezier', forceDirection: 'horizontal', roundness: 0.4 },
       font: { size: 10, color: '#607d8b', strokeWidth: 0 }
     }
   };

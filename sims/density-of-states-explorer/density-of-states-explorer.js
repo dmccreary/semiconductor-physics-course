@@ -83,6 +83,11 @@ function draw() {
   const mFactor = mSlider.value();
   const L = lSlider.value();
 
+  // L (confinement size) has no effect on bulk 3D DOS — grey it out
+  const lActive = (dim !== "3D (Bulk)");
+  if (lActive) lSlider.removeAttribute('disabled');
+  else lSlider.attribute('disabled', '');
+
   const leftPanelW = canvasWidth * 0.65;
   const rightPanelX = leftPanelW + 10;
   const rightPanelW = canvasWidth - rightPanelX - margin;
@@ -106,7 +111,7 @@ function draw() {
   fill('black');
   textAlign(CENTER, TOP);
   textSize(12);
-  text("E − E_c (eV)", plotX + plotW / 2, plotBottom + 22);
+  text("E − Ec (eV)", plotX + plotW / 2, plotBottom + 22);
   for (let e = 0; e <= eMax + 0.001; e += 0.1) {
     const xp = xFromE(e);
     stroke(80);
@@ -133,7 +138,7 @@ function draw() {
 
   if (dim === "3D (Bulk)") {
     chosenColor = color3D;
-    formula = "g₃D(E) ∝ √(E − E_c) · (m*)^(3/2)";
+    formula = "g₃D(E) ∝ √(E − Ec) · (m*)³ᐟ²";
     noFill();
     stroke(chosenColor);
     strokeWeight(2.5);
@@ -148,7 +153,7 @@ function draw() {
     noStroke();
   } else if (dim === "2D (Quantum Well)") {
     chosenColor = color2D;
-    formula = "g₂D(E) = (m*/πħ²) · Σ Θ(E − E_n)  (staircase)";
+    formula = "g₂D(E) = (m*/πħ²) · Σ Θ(E − Eₙ)  (staircase)";
     const subs = subbandEnergies(L, mFactor, eMax);
     // step height ∝ 1; cumulative steps; normalize so max ≤ 1
     // total steps below eMax
@@ -191,7 +196,7 @@ function draw() {
     }
   } else if (dim === "1D (Quantum Wire)") {
     chosenColor = color1D;
-    formula = "g₁D(E) ∝ Σ (E − E_n)^(−1/2)";
+    formula = "g₁D(E) ∝ Σ (E − Eₙ)⁻¹ᐟ²";
     const subs = subbandEnergies(L, mFactor, eMax);
     stroke(chosenColor);
     strokeWeight(2.5);
@@ -219,7 +224,7 @@ function draw() {
     }
   } else if (dim === "0D (Quantum Dot)") {
     chosenColor = color0D;
-    formula = "g₀D(E) = Σ δ(E − E_n)  (discrete)";
+    formula = "g₀D(E) = Σ δ(E − Eₙ)  (discrete)";
     const subs = subbandEnergies(L, mFactor, eMax);
     stroke(chosenColor);
     strokeWeight(3);
@@ -271,7 +276,8 @@ function draw() {
   textSize(defaultTextSize);
   text("Dimensionality:", 10, drawHeight + 18);
   text("m*/m₀: " + mFactor.toFixed(3), 10, drawHeight + 48);
-  text("L (nm): " + L.toFixed(1), 10, drawHeight + 78);
+  fill(lActive ? 'black' : 'gray');
+  text("L (nm): " + L.toFixed(1) + (lActive ? "" : "  (no effect in 3D)"), 10, drawHeight + 78);
 }
 
 function drawInfoPanel(x, y, w, dim, formula, mFactor, L) {

@@ -44,21 +44,16 @@ let depletionPx = W0_PX;           // current depletion width on screen (px)
 let carriers = [];                 // mobile electrons and holes
 let flashes = [];                  // recombination flash effects
 const CARRIERS_PER_SIDE = 22;
-let isRunning = true;
-let mouseOverCanvas = false;
+let isRunning = false;             // loads paused; press Start to animate
 
 function setup() {
   updateCanvasSize();
   const canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent(document.querySelector('main'));
 
-  // Animate only while the mouse is over the canvas (saves CPU in iframes)
-  canvas.mouseOver(() => mouseOverCanvas = true);
-  canvas.mouseOut(() => mouseOverCanvas = false);
-
   computeGeometry();
 
-  startButton = createButton('Pause');
+  startButton = createButton('Start');
   startButton.position(10, drawHeight + 12);
   startButton.mousePressed(toggleSimulation);
 
@@ -82,7 +77,10 @@ function setup() {
     'and holes. Forward bias narrows the depletion region and carriers ' +
     'stream across the junction; reverse bias widens the depletion region ' +
     'and blocks current. Readouts show the depletion width in micrometers ' +
-    'and the diode current from the Shockley equation.', LABEL);
+    'and the diode current from the Shockley equation. The simulation ' +
+    'loads paused; press the Start button to animate the carriers. The ' +
+    'depletion region, field, and readouts follow the slider even while ' +
+    'paused.', LABEL);
 }
 
 function draw() {
@@ -104,9 +102,13 @@ function draw() {
   drawFieldArrow();
   drawCircuit();
 
-  if (isRunning && mouseOverCanvas) {
+  if (isRunning) {
     updateCarriers();
     updateFlashes();
+  } else {
+    // Even while paused, keep carriers out of the depletion region so the
+    // display stays consistent as the slider moves
+    constrainCarriersToRegions();
   }
   drawCarriers();
   drawFlashes();
@@ -116,7 +118,7 @@ function draw() {
   drawBiasStatus();
   drawLegend();
   drawReadouts();
-  drawHoverHint();
+  drawPausedHint();
   drawControlLabels();
 }
 
@@ -251,6 +253,30 @@ function updateCarriers() {
       c.targetX = (c.type === 'electron') ? Math.max(junctionX - depth, barLeft + 12)
                                           : Math.min(junctionX + depth, barRight - 12);
     }
+  }
+}
+
+// Position-only pass used while paused: as the slider moves the depletion
+// edges, carriers are pushed out of the depletion region without any
+// thermal motion or injection.
+function constrainCarriersToRegions() {
+  const forward = appliedVoltage > 0.05;
+  const hw = depletionPx / 2;
+  const leftEdge = junctionX - hw;
+  const rightEdge = junctionX + hw;
+  for (const c of carriers) {
+    if (c.state === 'crossing') {
+      // A frozen mid-flight carrier is fine under forward bias, but if the
+      // bias is gone the injected carrier no longer belongs there
+      if (!forward) respawnAtContact(c);
+      continue;
+    }
+    if (c.type === 'electron') {
+      c.x = constrain(c.x, rightEdge + 6, barRight - 8);
+    } else {
+      c.x = constrain(c.x, barLeft + 8, leftEdge - 6);
+    }
+    c.y = constrain(c.y, barTop + 18, barBottom - 12);
   }
 }
 
@@ -532,13 +558,13 @@ function drawReadouts() {
        canvasWidth - margin, 336);
 }
 
-function drawHoverHint() {
-  if (isRunning && !mouseOverCanvas) {
+function drawPausedHint() {
+  if (!isRunning) {
     noStroke();
     fill('gray');
     textSize(14);
     textAlign(CENTER, CENTER);
-    text('Move the mouse over the canvas to animate', canvasWidth / 2, 372);
+    text('Press Start to animate the carriers', canvasWidth / 2, 372);
   }
 }
 

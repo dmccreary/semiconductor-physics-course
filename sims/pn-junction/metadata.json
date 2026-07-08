@@ -63,8 +63,8 @@
     },
     {
       "type": "button",
-      "label": "Pause/Start",
-      "purpose": "Toggle the carrier animation"
+      "label": "Start/Pause",
+      "purpose": "Start and pause the carrier animation; the simulation loads paused"
     },
     {
       "type": "button",

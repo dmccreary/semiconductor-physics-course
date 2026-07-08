@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
         y: {
           min: 0,
           max: 2.7,
-          title: { display: true, text: 'Bandgap E_g (eV)' },
+          title: { display: true, text: 'Bandgap Eg (eV)' },
           grid: { color: '#e0e0e0' }
         }
       },
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
           callbacks: {
             label: function (ctx) {
               const d = ctx.raw;
-              if (d.label) return d.label + ': a = ' + d.x.toFixed(3) + ' Å, E_g = ' + d.y.toFixed(2) + ' eV';
+              if (d.label) return d.label + ': a = ' + d.x.toFixed(3) + ' Å, Eg = ' + d.y.toFixed(2) + ' eV';
               return ctx.dataset.label + ': (' + ctx.parsed.x.toFixed(3) + ', ' + ctx.parsed.y.toFixed(2) + ')';
             }
           }

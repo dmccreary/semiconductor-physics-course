@@ -1,10 +1,11 @@
 {
   "title": "Interactive E-k Band Structure Explorer",
   "description": "Students will read and interpret E-k diagrams for real semiconductors and identify (Analyze, L4) conduction band minima, valence band maxima, and bandgap values at high-symmetry k-points.",
-  "creator": "Dementia Education Project",
+  "creator": "Dan McCreary",
   "date": "2026-06-03",
   "subject": [
-    "dementia"
+    "semiconductor physics",
+    "interactive e-k band structure"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -12,9 +13,9 @@
   "rights": "CC BY 4.0",
   "identifier": "ek-band-structure-explorer",
   "library": "p5.js",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
+  "bloomLevel": "L4 (Analyze)",
+  "bloomVerb": "analyze",
+  "completion_status": "implemented",
   "chapter_number": 5,
   "chapter_title": "\"Bloch's Theorem, Band Formation, and E-k Diagrams\"",
   "chapter_dir": "05-bloch-theorem-band-theory"

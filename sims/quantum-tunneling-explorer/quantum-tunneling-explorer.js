@@ -19,8 +19,8 @@ const ME   = 9.1094e-31;
 const EV   = 1.602e-19;
 
 const particles = {
-  "Electron (m = m_e)": 1.0,
-  "GaAs e (m = 0.067 m_e)": 0.067
+  "Electron (m = mₑ)": 1.0,
+  "GaAs electron (m = 0.067 mₑ)": 0.067
 };
 
 function setup() {
@@ -43,11 +43,11 @@ function setup() {
 
   particleSelect = createSelect();
   for (const k of Object.keys(particles)) particleSelect.option(k);
-  particleSelect.selected("Electron (m = m_e)");
+  particleSelect.selected("Electron (m = mₑ)");
   particleSelect.position(sliderLeftMargin, drawHeight + 100);
 
   waveCheckbox = createCheckbox('Show wave function', true);
-  waveCheckbox.position(20, drawHeight + 110);
+  waveCheckbox.position(sliderLeftMargin + 260, drawHeight + 102);
 
   describe('Rectangular potential barrier with adjustable height V0, width d, and incident particle energy E. Shows transmission probability and wave function shape.', LABEL);
 }
@@ -184,7 +184,14 @@ function draw() {
   text("V₀ = " + V0.toFixed(2) + " eV", (barrierStartX + barrierEndX) / 2, V0_y - 4);
   textAlign(CENTER, TOP);
   textSize(11);
-  text("d = " + d.toFixed(2) + " nm", (barrierStartX + barrierEndX) / 2, V0_y + (plotBottom - V0_y) / 2);
+  // opaque chip so the energy line cannot strike through the label
+  const dLabel = "d = " + d.toFixed(2) + " nm";
+  const dLabelX = (barrierStartX + barrierEndX) / 2;
+  const dLabelY = V0_y + (plotBottom - V0_y) / 2;
+  fill('#ffebee');
+  rect(dLabelX - textWidth(dLabel) / 2 - 3, dLabelY - 2, textWidth(dLabel) + 6, 15);
+  fill('#b71c1c');
+  text(dLabel, dLabelX, dLabelY);
 
   // Energy line for E
   const E_y = yFromE(E);
@@ -322,7 +329,7 @@ function drawInfoPanel(x, y, w, T, kappa, V0, d, E, mFactor) {
   } else if (T > 1e-50) {
     const expVal = Math.floor(Math.log10(T));
     const mantissa = T / Math.pow(10, expVal);
-    Tstr = mantissa.toFixed(2) + " × 10^" + expVal;
+    Tstr = mantissa.toFixed(2) + " × 10" + toSuperscript(expVal);
   } else {
     Tstr = "≈ 0";
   }
@@ -417,4 +424,9 @@ function updateCanvasSize() {
   const container = document.querySelector('main').getBoundingClientRect();
   containerWidth = Math.floor(container.width);
   canvasWidth = containerWidth;
+}
+
+function toSuperscript(n) {
+  const sup = { '-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
+  return String(n).split('').map(c => sup[c] || c).join('');
 }

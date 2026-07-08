@@ -1,10 +1,11 @@
 {
   "title": "Temperature Dependence of ni Explorer",
   "description": "Students will calculate intrinsic carrier concentration as a function of temperature for multiple materials and evaluate (Evaluate, L5) which materials are suitable for high-temperature operation.",
-  "creator": "Dementia Education Project",
+  "creator": "Dan McCreary",
   "date": "2026-06-03",
   "subject": [
-    "dementia"
+    "semiconductor physics",
+    "temperature dependence of ni"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -12,9 +13,9 @@
   "rights": "CC BY 4.0",
   "identifier": "intrinsic-concentration-temperature",
   "library": "Chart.js",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
+  "bloomLevel": "L5 (Evaluate)",
+  "bloomVerb": "evaluate",
+  "completion_status": "implemented",
   "chapter_number": 6,
   "chapter_title": "Fermi-Dirac Statistics and Intrinsic Carrier Concentrations",
   "chapter_dir": "06-fermi-dirac-statistics"
