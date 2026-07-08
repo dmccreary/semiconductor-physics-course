@@ -305,7 +305,7 @@ function drawInfoPanel(x, y, w, name, s) {
   text("NN distance: " + s.nn, x + pad, cy);
   cy += 28;
   textStyle(BOLD);
-  text("Semiconductor examples:", x + pad, cy);
+  text("Example materials:", x + pad, cy);
   cy += 18;
   textStyle(NORMAL);
   fill(60);

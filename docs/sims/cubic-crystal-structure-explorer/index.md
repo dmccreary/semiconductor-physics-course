@@ -1,9 +1,9 @@
 ---
 title: Cubic Crystal Structure Explorer
 description: Students will identify atomic positions in SC, BCC, FCC, and diamond cubic structures and calculate atoms per unit cell (Remember/Apply, L1/L3) by manipulating an interactive 3D-perspective model.
-status: scaffold
+status: implemented
 library: p5.js
-bloom_level: TBD
+bloom_level: L1/L3 (Remember/Apply)
 ---
 
 # Cubic Crystal Structure Explorer

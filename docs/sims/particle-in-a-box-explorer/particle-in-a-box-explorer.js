@@ -21,9 +21,9 @@ const EV   = 1.602e-19;    // J/eV
 const HC_EV_NM = 1240;     // eV*nm
 
 const particles = {
-  "Electron (m = m_e)":         1.0,
-  "GaAs electron (m = 0.067 m_e)": 0.067,
-  "GaAs heavy hole (m = 0.5 m_e)": 0.5
+  "Electron (m = mₑ)":         1.0,
+  "GaAs electron (m = 0.067 mₑ)": 0.067,
+  "GaAs heavy hole (m = 0.5 mₑ)": 0.5
 };
 
 function setup() {
@@ -42,7 +42,7 @@ function setup() {
 
   particleSelect = createSelect();
   for (const k of Object.keys(particles)) particleSelect.option(k);
-  particleSelect.selected("GaAs electron (m = 0.067 m_e)");
+  particleSelect.selected("GaAs electron (m = 0.067 mₑ)");
   particleSelect.position(sliderLeftMargin, drawHeight + 68);
 
   psiSquaredCheckbox = createCheckbox('Show probability density |ψ|²', true);
@@ -87,10 +87,11 @@ function draw() {
   const rightPanelX = leftPanelW + 10;
   const rightPanelW = canvasWidth - rightPanelX - margin;
 
-  // Well drawing area
+  // Well drawing area — wide right gutter reserves room for the
+  // per-level "n=…: E" labels between the wall and the info panel
   const wellPad = 40;
   const wellLeft = margin + wellPad;
-  const wellRight = leftPanelW - wellPad;
+  const wellRight = leftPanelW - 115;
   const wellTop = 50;
   const wellBottom = drawHeight - 40;
   const wellW = wellRight - wellLeft;
@@ -151,8 +152,8 @@ function draw() {
     fill('black');
     textAlign(LEFT, CENTER);
     textSize(11);
-    const Estr = (E >= 1) ? E.toFixed(2) + ' eV' : (E * 1000).toFixed(2) + ' meV';
-    text("n=" + n + ",  E=" + Estr, wellRight + 6, ly);
+    const Estr = (E >= 1) ? E.toFixed(2) + ' eV' : (E * 1000).toFixed(1) + ' meV';
+    text("n=" + n + ": " + Estr, wellRight + 24, ly);
 
     // Wave function (and |ψ|²) centered on the level line
     const ampPixels = Math.max(14, Math.min(38, wellH / (nMax + 1) * 0.35));
@@ -221,8 +222,8 @@ function drawInfoPanel(x, y, w, energies, nMax, L, mFactor) {
   // Header
   textStyle(BOLD);
   text("n", x + pad, cy);
-  text("E_n", x + pad + 22, cy);
-  text("E_n/E₁", x + pad + 100, cy);
+  text("Eₙ", x + pad + 22, cy);
+  text("Eₙ/E₁", x + pad + 100, cy);
   text("λ (n→1)", x + pad + 150, cy);
   textStyle(NORMAL);
   cy += 16;
@@ -261,9 +262,9 @@ function drawInfoPanel(x, y, w, energies, nMax, L, mFactor) {
   cy += 22;
   textStyle(NORMAL);
   textSize(11);
-  text("E_n = n² × ħ²π² / (2 m* L²)", x + pad, cy);
+  text("Eₙ = n² × ħ²π² / (2 m* L²)", x + pad, cy);
   cy += 16;
-  text("E_n / E₁ = n²", x + pad, cy);
+  text("Eₙ / E₁ = n²", x + pad, cy);
   cy += 18;
   fill(80);
   text("Confinement scales as 1/L²:", x + pad, cy);
@@ -271,7 +272,7 @@ function drawInfoPanel(x, y, w, energies, nMax, L, mFactor) {
   text("doubling L → 4× lower E₁.", x + pad, cy);
   cy += 22;
   fill('black');
-  text("m* / m_e = " + mFactor.toFixed(3), x + pad, cy);
+  text("m* / mₑ = " + mFactor.toFixed(3), x + pad, cy);
 }
 
 function mousePressed() {
@@ -282,7 +283,7 @@ function mousePressed() {
 
   const wellPad = 40;
   const wellLeft = margin + wellPad;
-  const wellRight = canvasWidth * 0.6 - wellPad;
+  const wellRight = canvasWidth * 0.6 - 115;
   const wellTop = 50;
   const wellBottom = drawHeight - 40;
   if (mouseX < wellLeft || mouseX > wellRight) return;

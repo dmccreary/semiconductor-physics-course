@@ -1,9 +1,9 @@
 ---
 title: Miller Indices Crystal Plane Explorer
 description: Students will calculate Miller indices from axis intercepts and identify the corresponding crystal plane orientation in a 3D cubic cell (Apply, L3).
-status: scaffold
+status: implemented
 library: p5.js
-bloom_level: TBD
+bloom_level: L3 (Apply)
 ---
 
 # Miller Indices Crystal Plane Explorer

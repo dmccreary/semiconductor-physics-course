@@ -1,9 +1,9 @@
 ---
 title: Point Defect Visualizer
 description: Students will identify the five point defect types in a crystal lattice cross-section and explain (Understand, L2) their effect on carrier behavior by clicking defect sites to reveal detailed descriptions.
-status: scaffold
+status: implemented
 library: p5.js
-bloom_level: TBD
+bloom_level: L2 (Understand)
 ---
 
 # Point Defect Visualizer

@@ -1,9 +1,9 @@
 ---
 title: Interactive Energy Band Diagram Explorer
 description: Students will identify E_C, E_V, and E_g on an energy band diagram and explain (Understand, L2) how varying the bandgap energy determines whether a material behaves as a conductor, semiconductor, or insulator.
-status: scaffold
+status: implemented
 library: p5.js
-bloom_level: TBD
+bloom_level: L2 (Understand)
 ---
 
 # Interactive Energy Band Diagram Explorer

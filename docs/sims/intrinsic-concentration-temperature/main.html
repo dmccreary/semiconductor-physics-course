@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
-    <title>Temperature Dependence of n_i</title>
+    <title>Temperature Dependence of nᵢ</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
         body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background: #fff; }
@@ -30,10 +30,10 @@
         <div id="wrap">
             <h2>Intrinsic Carrier Concentration vs Temperature</h2>
             <div class="controls">
-                <label>Doping reference: <select id="nd">
-                    <option value="1e15" selected>N_D = 10¹⁵ cm⁻³</option>
-                    <option value="1e16">N_D = 10¹⁶ cm⁻³</option>
-                    <option value="1e17">N_D = 10¹⁷ cm⁻³</option>
+                <label>Donor doping N<sub>D</sub>: <select id="nd">
+                    <option value="1e15" selected>10¹⁵ cm⁻³ (light)</option>
+                    <option value="1e16">10¹⁶ cm⁻³ (moderate)</option>
+                    <option value="1e17">10¹⁷ cm⁻³ (heavy)</option>
                 </select></label>
             </div>
             <div id="chartwrap"><canvas id="chart"></canvas></div>

@@ -79,7 +79,7 @@ function draw() {
   const plotX = margin + 40;
   const plotY = 50;
   const plotW = leftPanelW - plotX - 10;
-  const plotH = drawHeight - plotY - 30;
+  const plotH = drawHeight - plotY - 55;
   const plotBottom = plotY + plotH;
 
   // Energy range: from -0.5 eV to E_g + 0.8 eV
@@ -132,10 +132,18 @@ function draw() {
   drawDashedLine(plotX, yFromE(mat.eg), plotX + plotW, yFromE(mat.eg));
   noStroke();
   fill(70);
-  textAlign(LEFT, CENTER);
+  textAlign(RIGHT, BOTTOM);
   textSize(12);
-  text("E_V", plotX + plotW + 4, yFromE(0));
-  text("E_C", plotX + plotW + 4, yFromE(mat.eg));
+  drawSubscriptLabel("E", "V", plotX + plotW - 6, yFromE(0) - 3);
+  drawSubscriptLabel("E", "C", plotX + plotW - 6, yFromE(mat.eg) - 3);
+
+  // Clip all band curves to the plot rectangle so parabolas computed
+  // outside the visible energy range cannot paint over the title,
+  // axis labels, or control region.
+  drawingContext.save();
+  drawingContext.beginPath();
+  drawingContext.rect(plotX, plotY, plotW, plotH);
+  drawingContext.clip();
 
   // Valence band (downward parabola at Γ)
   // E(k) = -alpha_v * k^2, with vertex E=0 at k=0
@@ -207,7 +215,10 @@ function draw() {
     fill('black');
     textAlign(CENTER, TOP);
     textSize(11);
-    text("CBM (" + mat.label + ")", xFromK(mat.cbmK), yFromE(mat.eg) + 6);
+    // clamp so the label is not cut off by the plot-area clip
+    const cbmLabel = "CBM (" + mat.label + ")";
+    const cbmLx = Math.min(xFromK(mat.cbmK), plotX + plotW - textWidth(cbmLabel) / 2 - 4);
+    text(cbmLabel, cbmLx, yFromE(mat.eg) + 6);
   }
 
   // Conduction band label
@@ -235,6 +246,8 @@ function draw() {
     textSize(11);
     text("(No phonon needed for direct transitions)", plotX + 10, plotBottom - 4);
   }
+
+  drawingContext.restore();
 
   // RIGHT INFO PANEL
   drawInfoPanel(rightPanelX, plotY, rightPanelW, mat);
@@ -355,7 +368,7 @@ function drawInfoPanel(x, y, w, mat) {
 
   textStyle(NORMAL);
   textSize(14);
-  text("E_g = " + mat.eg.toFixed(2) + " eV", x + pad, cy);
+  text("Bandgap: " + mat.eg.toFixed(2) + " eV", x + pad, cy);
   cy += 22;
 
   textStyle(BOLD);
@@ -414,6 +427,24 @@ function drawInfoPanel(x, y, w, mat) {
   noFill();
   rect(x + pad, cy, w - 2 * pad, 14);
   noStroke();
+}
+
+// Draw "E" with a true subscript (e.g. E with small V below the baseline),
+// anchored at the right-bottom corner (xRight, yBottom).
+function drawSubscriptLabel(main, sub, xRight, yBottom) {
+  push();
+  const ms = textSize();
+  const ss = ms * 0.75;
+  textAlign(LEFT, BOTTOM);
+  const mainW = textWidth(main);
+  textSize(ss);
+  const subW = textWidth(sub);
+  textSize(ms);
+  const startX = xRight - mainW - subW;
+  text(main, startX, yBottom);
+  textSize(ss);
+  text(sub, startX + mainW, yBottom + 2);
+  pop();
 }
 
 function drawDashedLine(x1, y1, x2, y2) {

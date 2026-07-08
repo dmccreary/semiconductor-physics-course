@@ -1,9 +1,9 @@
 ---
 title: Fermi-Dirac Distribution and Carrier Concentration Explorer
 description: Students will apply the Fermi-Dirac distribution to calculate electron and hole concentrations in a semiconductor and explain (Apply, L3) how temperature and Fermi level position determine n and p.
-status: scaffold
+status: implemented
 library: p5.js
-bloom_level: TBD
+bloom_level: L3 (Apply)
 ---
 
 # Fermi-Dirac Distribution and Carrier Concentration Explorer

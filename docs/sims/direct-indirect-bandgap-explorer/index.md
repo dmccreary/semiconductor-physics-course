@@ -1,9 +1,9 @@
 ---
 title: Direct vs. Indirect Bandgap — E-k Diagram Explorer
 description: Students will distinguish (Analyze, L4) direct and indirect bandgap materials by identifying whether the conduction band minimum and valence band maximum occur at the same k-value, and will predict the consequence for optical emission efficiency.
-status: scaffold
+status: implemented
 library: p5.js
-bloom_level: TBD
+bloom_level: L4 (Analyze)
 ---
 
 # Direct vs. Indirect Bandgap — E-k Diagram Explorer

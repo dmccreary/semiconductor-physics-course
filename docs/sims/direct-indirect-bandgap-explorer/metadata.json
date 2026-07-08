@@ -1,10 +1,11 @@
 {
   "title": "Direct vs. Indirect Bandgap — E-k Diagram Explorer",
   "description": "Students will distinguish (Analyze, L4) direct and indirect bandgap materials by identifying whether the conduction band minimum and valence band maximum occur at the same k-value, and will predict the consequence for optical emission efficiency.",
-  "creator": "Dementia Education Project",
+  "creator": "Dan McCreary",
   "date": "2026-06-03",
   "subject": [
-    "dementia"
+    "semiconductor physics",
+    "direct vs. indirect bandgap — e-k diagram"
   ],
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -12,9 +13,9 @@
   "rights": "CC BY 4.0",
   "identifier": "direct-indirect-bandgap-explorer",
   "library": "p5.js",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
+  "bloomLevel": "L4 (Analyze)",
+  "bloomVerb": "analyze",
+  "completion_status": "implemented",
   "chapter_number": 1,
   "chapter_title": "Introduction to Semiconductors and Bandgap Fundamentals",
   "chapter_dir": "01-intro-semiconductors"

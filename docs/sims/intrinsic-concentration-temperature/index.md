@@ -1,9 +1,9 @@
 ---
 title: Temperature Dependence of ni Explorer
 description: Students will calculate intrinsic carrier concentration as a function of temperature for multiple materials and evaluate (Evaluate, L5) which materials are suitable for high-temperature operation.
-status: scaffold
+status: implemented
 library: Chart.js
-bloom_level: TBD
+bloom_level: L5 (Evaluate)
 ---
 
 # Temperature Dependence of ni Explorer

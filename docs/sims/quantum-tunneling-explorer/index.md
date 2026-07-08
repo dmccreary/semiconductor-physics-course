@@ -1,9 +1,9 @@
 ---
 title: Quantum Tunneling Probability Explorer
 description: Students will calculate the tunnel probability through a rectangular barrier and evaluate (Evaluate, L5) how barrier width and height affect tunneling in semiconductor devices, using an interactive simulation.
-status: scaffold
+status: implemented
 library: p5.js
-bloom_level: TBD
+bloom_level: L5 (Evaluate)
 ---
 
 # Quantum Tunneling Probability Explorer

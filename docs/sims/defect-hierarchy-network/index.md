@@ -1,9 +1,9 @@
 ---
 title: Crystal Defect Hierarchy Network
 description: Students will classify crystal defects by dimensionality and identify (Analyze, L4) which device parameters each defect type degrades, via a clickable hierarchical network diagram.
-status: scaffold
+status: implemented
 library: vis-network
-bloom_level: TBD
+bloom_level: L4 (Analyze)
 ---
 
 # Crystal Defect Hierarchy Network

@@ -166,30 +166,29 @@ function draw() {
     fill(80);
     textSize(13);
     text("Forbidden Gap", diagramX + diagramW / 2, gapY + gapPx / 2 - 8);
-    text("E_g = " + eg.toFixed(2) + " eV", diagramX + diagramW / 2, gapY + gapPx / 2 + 10);
+    text("Eg = " + eg.toFixed(2) + " eV", diagramX + diagramW / 2, gapY + gapPx / 2 + 10);
   } else if (gapPx > 12) {
     fill(80);
     textSize(11);
-    text("E_g = " + eg.toFixed(2) + " eV", diagramX + diagramW / 2, gapY + gapPx / 2);
+    text("Eg = " + eg.toFixed(2) + " eV", diagramX + diagramW / 2, gapY + gapPx / 2);
   }
 
+  // short stub so the dashed line stops before the label text
   stroke('red');
   strokeWeight(1.5);
-  drawDashedLine(diagramX - 30, cbBottom, diagramX + diagramW, cbBottom);
+  drawDashedLine(diagramX - 8, cbBottom, diagramX + diagramW, cbBottom);
   noStroke();
   fill('red');
-  textAlign(RIGHT, CENTER);
   textSize(13);
   textStyle(BOLD);
-  text("E_C", diagramX - 5, cbBottom);
+  drawSubscriptLabel("E", "C", diagramX - 12, cbBottom + 6);
 
   stroke('blue');
   strokeWeight(1.5);
-  drawDashedLine(diagramX - 30, vbY, diagramX + diagramW, vbY);
+  drawDashedLine(diagramX - 8, vbY, diagramX + diagramW, vbY);
   noStroke();
   fill('blue');
-  textAlign(RIGHT, CENTER);
-  text("E_V", diagramX - 5, vbY);
+  drawSubscriptLabel("E", "V", diagramX - 12, vbY + 6);
   textStyle(NORMAL);
 
   // Conduction electron count from simplified Boltzmann factor
@@ -265,7 +264,7 @@ function drawInfoPanel(x, y, w, nCB, matClass) {
   textAlign(LEFT, TOP);
   textStyle(BOLD);
   textSize(18);
-  text("E_g = " + eg.toFixed(2) + " eV", x + pad, cy);
+  text("Bandgap = " + eg.toFixed(2) + " eV", x + pad, cy);
   cy += 30;
 
   textStyle(NORMAL);
@@ -281,9 +280,9 @@ function drawInfoPanel(x, y, w, nCB, matClass) {
 
   const lambda = (eg > 0) ? (1240 / eg) : Infinity;
   const lambdaStr = (eg > 0) ? lambda.toFixed(0) + " nm" : "∞";
-  text("Photon energy = E_g", x + pad, cy);
+  text("Photon energy = Eg", x + pad, cy);
   cy += 20;
-  text("λ = 1240 / E_g = " + lambdaStr, x + pad, cy);
+  text("λ = 1240 / Eg = " + lambdaStr, x + pad, cy);
   cy += 24;
 
   let region;
@@ -326,7 +325,7 @@ function drawControlLabels() {
   noStroke();
   textAlign(LEFT, CENTER);
   textSize(defaultTextSize);
-  text("Bandgap E_g (eV): " + eg.toFixed(2), 10, drawHeight + 18);
+  text("Bandgap Eg (eV): " + eg.toFixed(2), 10, drawHeight + 18);
   text("Temperature (K): " + temperature, 10, drawHeight + 48);
   text("Material:", 10, drawHeight + 80);
 }
@@ -362,4 +361,21 @@ function updateCanvasSize() {
   const container = document.querySelector('main').getBoundingClientRect();
   containerWidth = Math.floor(container.width);
   canvasWidth = containerWidth;
+}
+
+// Draw "E" with a true subscript, anchored at the right-bottom corner.
+function drawSubscriptLabel(main, sub, xRight, yBottom) {
+  push();
+  const ms = textSize();
+  const ss = ms * 0.75;
+  textAlign(LEFT, BOTTOM);
+  const mainW = textWidth(main);
+  textSize(ss);
+  const subW = textWidth(sub);
+  textSize(ms);
+  const startX = xRight - mainW - subW;
+  text(main, startX, yBottom);
+  textSize(ss);
+  text(sub, startX + mainW, yBottom + 2);
+  pop();
 }

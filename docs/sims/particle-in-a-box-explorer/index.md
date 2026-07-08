@@ -1,9 +1,9 @@
 ---
 title: Particle in a Box — Energy Level Explorer
 description: Students will calculate the quantized energy levels of a particle confined in a 1D box and explain (Apply, L3) how confinement energy scales with box width and quantum number, using an interactive visualization.
-status: scaffold
+status: implemented
 library: p5.js
-bloom_level: TBD
+bloom_level: L3 (Apply)
 ---
 
 # Particle in a Box — Energy Level Explorer

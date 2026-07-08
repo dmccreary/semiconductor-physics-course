@@ -1,9 +1,9 @@
 ---
 title: Semiconductor Lattice Constant and Bandgap Map
 description: Students will compare lattice constants and bandgaps of common semiconductors and evaluate (Evaluate, L5) lattice mismatch implications for heterostructure design.
-status: scaffold
+status: implemented
 library: Chart.js
-bloom_level: TBD
+bloom_level: L5 (Evaluate)
 ---
 
 # Semiconductor Lattice Constant and Bandgap Map

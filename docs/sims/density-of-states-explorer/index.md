@@ -1,9 +1,9 @@
 ---
 title: Dimensionality and Density of States Explorer
 description: Students will predict and compare g(E) in 3D, 2D, 1D, and 0D and explain (Understand, L2) how dimensionality reduction improves semiconductor laser performance.
-status: scaffold
+status: implemented
 library: p5.js
-bloom_level: TBD
+bloom_level: L2 (Understand)
 ---
 
 # Dimensionality and Density of States Explorer

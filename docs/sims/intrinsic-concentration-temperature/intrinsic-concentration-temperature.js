@@ -42,6 +42,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Draw a reference-line label on an opaque chip so dashed lines and
+  // data curves cannot strike through the text.
+  function drawRefLabel(ctx, txt, xPos, yPos, color) {
+    ctx.font = '11px Arial';
+    ctx.textBaseline = 'bottom';
+    const w = ctx.measureText(txt).width;
+    ctx.fillStyle = 'rgba(255,255,255,0.85)';
+    ctx.fillRect(xPos - 2, yPos - 14, w + 4, 14);
+    ctx.fillStyle = color;
+    ctx.fillText(txt, xPos, yPos);
+  }
+
   const refLinesPlugin = {
     id: 'refLines',
     afterDraw(chart) {
@@ -57,9 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ctx.moveTo(x.left, y15);
       ctx.lineTo(x.right, y15);
       ctx.stroke();
-      ctx.fillStyle = '#9c27b0';
-      ctx.font = '11px Arial';
-      ctx.fillText('n_i = 10¹⁵ (typical light doping)', x.left + 6, y15 - 2);
+      drawRefLabel(ctx, 'nᵢ = 10¹⁵ (typical light doping)', x.left + 6, y15 - 3, '#9c27b0');
 
       // horizontal dashed line at 1e10
       const y10 = y.getPixelForValue(1e10);
@@ -68,8 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ctx.moveTo(x.left, y10);
       ctx.lineTo(x.right, y10);
       ctx.stroke();
-      ctx.fillStyle = '#607d8b';
-      ctx.fillText('n_i = 10¹⁰ (Si at 300 K)', x.left + 6, y10 - 2);
+      drawRefLabel(ctx, 'nᵢ = 10¹⁰ (Si at 300 K)', x.left + 6, y10 - 3, '#607d8b');
 
       // vertical dashed at T=300 K
       const x300 = x.getPixelForValue(300);
@@ -78,8 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ctx.moveTo(x300, y.top);
       ctx.lineTo(x300, y.bottom);
       ctx.stroke();
-      ctx.fillStyle = '#607d8b';
-      ctx.fillText('T = 300 K', x300 + 4, y.top + 12);
+      drawRefLabel(ctx, 'T = 300 K', x300 + 4, y.top + 24, '#607d8b');
 
       ctx.restore();
     }
@@ -102,7 +110,17 @@ document.addEventListener('DOMContentLoaded', function () {
         y: {
           type: 'logarithmic',
           min: 1e-10, max: 1e20,
-          title: { display: true, text: 'n_i (cm⁻³)' }
+          title: { display: true, text: 'nᵢ (cm⁻³)' },
+          ticks: {
+            // label only even decades as 10ⁿ; hide Chart.js's
+            // default "1.0000000000E20"-style labels
+            callback: function (value) {
+              const exp = Math.round(Math.log10(value));
+              if (Math.abs(value - Math.pow(10, exp)) > value * 1e-6) return null;
+              if (exp % 2 !== 0) return null;
+              return '10' + toSuperscript(exp);
+            }
+          }
         }
       },
       plugins: {
@@ -115,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
               const matName = ctx.dataset.label;
               const ndVal = parseFloat(document.getElementById('nd').value);
               const intrinsic = (v > ndVal / 10);
-              return matName + ' @ ' + T + ' K: n_i = ' + formatSci(v) +
+              return matName + ' @ ' + T + ' K: nᵢ = ' + formatSci(v) +
                 ' cm⁻³ ' + (intrinsic ? '(intrinsic regime!)' : '(extrinsic)');
             }
           }
@@ -135,20 +153,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         const info = document.getElementById('info');
         info.innerHTML =
-          '<b>' + matName + '</b> &mdash; E_g = ' + m.eg.toFixed(2) + ' eV<br/>' +
-          'Maximum safe operating T (for N_D = ' + formatSci(ndVal) + ' cm⁻³): ' +
+          '<b>' + matName + '</b> &mdash; E<sub>g</sub> = ' + m.eg.toFixed(2) + ' eV<br/>' +
+          'Maximum safe operating T (for N<sub>D</sub> = ' + formatSci(ndVal) + ' cm⁻³): ' +
           (Tcrit ? '<b>~ ' + Tcrit + ' K</b>' : '> 1500 K (no intrinsic crossover in range)') +
-          '<br/><small>Crossover defined as n_i &ge; N_D / 10.</small>';
+          '<br/><small>Crossover defined as n<sub>i</sub> &ge; N<sub>D</sub> / 10.</small>';
       }
     },
     plugins: [refLinesPlugin]
   };
 
+  function toSuperscript(n) {
+    const sup = { '-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
+    return String(n).split('').map(c => sup[c] || c).join('');
+  }
+
   function formatSci(x) {
     if (x < 1e-20) return '0';
     const exp = Math.floor(Math.log10(x));
     const m = x / Math.pow(10, exp);
-    return m.toFixed(2) + '×10^' + exp;
+    return m.toFixed(2) + '×10' + toSuperscript(exp);
   }
 
   const chart = new Chart(document.getElementById('chart'), cfg);

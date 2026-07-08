@@ -1,9 +1,9 @@
 ---
 title: Interactive E-k Band Structure Explorer
 description: Students will read and interpret E-k diagrams for real semiconductors and identify (Analyze, L4) conduction band minima, valence band maxima, and bandgap values at high-symmetry k-points.
-status: scaffold
+status: implemented
 library: p5.js
-bloom_level: TBD
+bloom_level: L4 (Analyze)
 ---
 
 # Interactive E-k Band Structure Explorer

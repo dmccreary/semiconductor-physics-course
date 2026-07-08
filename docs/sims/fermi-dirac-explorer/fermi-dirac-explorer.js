@@ -17,9 +17,9 @@ let tSlider, efSlider, materialSelect;
 const KB_EV = 8.617e-5; // eV/K
 
 const materials = {
-  "Silicon (E_g=1.12 eV)":  { eg: 1.12, NC300: 2.8e19, NV300: 1.04e19 },
-  "GaAs (E_g=1.42 eV)":     { eg: 1.42, NC300: 4.7e17, NV300: 9.0e18 },
-  "Ge (E_g=0.66 eV)":       { eg: 0.66, NC300: 1.04e19, NV300: 6.0e18 }
+  "Silicon (Eg = 1.12 eV)":  { eg: 1.12, NC300: 2.8e19, NV300: 1.04e19 },
+  "GaAs (Eg = 1.42 eV)":     { eg: 1.42, NC300: 4.7e17, NV300: 9.0e18 },
+  "Ge (Eg = 0.66 eV)":       { eg: 0.66, NC300: 1.04e19, NV300: 6.0e18 }
 };
 
 function setup() {
@@ -38,7 +38,7 @@ function setup() {
 
   materialSelect = createSelect();
   for (const k of Object.keys(materials)) materialSelect.option(k);
-  materialSelect.selected("Silicon (E_g=1.12 eV)");
+  materialSelect.selected("Silicon (Eg = 1.12 eV)");
   materialSelect.position(sliderLeftMargin, drawHeight + 68);
 
   describe('Fermi-Dirac probability function plotted alongside an energy band diagram showing how Fermi level position and temperature set electron and hole concentrations.', LABEL);
@@ -59,14 +59,55 @@ function compute(T, EfMinusEi, matKey) {
   return { NC, NV, ni, n, p, fAtEC, eg: mat.eg, kT };
 }
 
+function toSuperscript(n) {
+  const sup = { '-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
+  return String(n).split('').map(c => sup[c] || c).join('');
+}
+
 function fmt(x) {
   if (x < 1e-20) return "≈ 0";
-  if (x > 1e6) {
+  if (x > 1e6 || x < 1e-3) {
     const exp = Math.floor(Math.log10(x));
     const m = x / Math.pow(10, exp);
-    return m.toFixed(2) + " × 10^" + exp;
+    return m.toFixed(2) + " × 10" + toSuperscript(exp);
   }
   return x.toFixed(2);
+}
+
+// Draw pre + subscript + post starting at (x, yTop); returns the x
+// where the text ended so calls can be chained.
+function subText(pre, sub, post, x, yTop) {
+  push();
+  textAlign(LEFT, TOP);
+  const ms = textSize();
+  let cx = x;
+  if (pre) { text(pre, cx, yTop); cx += textWidth(pre); }
+  if (sub) {
+    textSize(ms * 0.72);
+    text(sub, cx, yTop + ms * 0.38);
+    cx += textWidth(sub);
+    textSize(ms);
+  }
+  if (post) { text(post, cx, yTop); cx += textWidth(post); }
+  pop();
+  return cx;
+}
+
+// Draw "E" with a true subscript, anchored at the right-bottom corner.
+function drawSubscriptLabel(main, sub, xRight, yBottom) {
+  push();
+  const ms = textSize();
+  const ss = ms * 0.75;
+  textAlign(LEFT, BOTTOM);
+  const mainW = textWidth(main);
+  textSize(ss);
+  const subW = textWidth(sub);
+  textSize(ms);
+  const startX = xRight - mainW - subW;
+  text(main, startX, yBottom);
+  textSize(ss);
+  text(sub, startX + mainW, yBottom + 2);
+  pop();
 }
 
 function draw() {
@@ -192,20 +233,20 @@ function draw() {
 
   // Labels
   fill('red');
-  textAlign(RIGHT, CENTER);
   textSize(12);
-  text("E_C", bandX - 5, yFromE(ec));
+  drawSubscriptLabel("E", "C", bandX - 5, yFromE(ec) + 5);
   fill('blue');
-  text("E_V", bandX - 5, yFromE(ev));
+  drawSubscriptLabel("E", "V", bandX - 5, yFromE(ev) + 5);
   fill('#6a1b9a');
-  text("E_F", bandX - 5, yFromE(Ef));
+  drawSubscriptLabel("E", "F", bandX - 5, yFromE(Ef) + 5);
   fill(120);
   textSize(10);
-  text("E_i", bandX - 5, yFromE(ei) + 12);
+  drawSubscriptLabel("E", "i", bandX - 5, yFromE(ei) + 16);
 
-  // Energy axis title
+  // Energy axis title — far enough left that it cannot collide with
+  // the E-labels beside the band strip
   push();
-  translate(bandX - 28, (plotY + plotBottom) / 2);
+  translate(bandX - 48, (plotY + plotBottom) / 2);
   rotate(-HALF_PI);
   textAlign(CENTER, CENTER);
   textSize(12);
@@ -222,7 +263,8 @@ function draw() {
   textAlign(LEFT, CENTER);
   textSize(defaultTextSize);
   text("Temperature (K): " + T, 10, drawHeight + 18);
-  text("E_F − E_i (eV): " + Ef.toFixed(3), 10, drawHeight + 48);
+  let cx = subText("E", "F", " − E", 10, drawHeight + 41);
+  subText("", "i", " (eV): " + Ef.toFixed(3), cx, drawHeight + 41);
   text("Material:", 10, drawHeight + 78);
 }
 
@@ -245,10 +287,10 @@ function drawInfoPanel(x, y, w, r, T, Ef) {
   textStyle(NORMAL);
   textSize(13);
 
-  text("f(E_C) = " + r.fAtEC.toExponential(2), x + pad, cy);
+  subText("f(E", "C", ") = " + fmt(r.fAtEC), x + pad, cy);
   cy += 22;
 
-  text("n_i = " + fmt(r.ni) + " cm⁻³", x + pad, cy);
+  subText("n", "i", " = " + fmt(r.ni) + " cm⁻³", x + pad, cy);
   cy += 22;
 
   text("n = " + fmt(r.n) + " cm⁻³", x + pad, cy);
@@ -261,14 +303,14 @@ function drawInfoPanel(x, y, w, r, T, Ef) {
   cy += 20;
   textSize(11);
   fill(80);
-  text("(should equal n_i² = " + fmt(r.ni * r.ni) + ")", x + pad, cy);
+  subText("(should equal n", "i", "² = " + fmt(r.ni * r.ni) + ")", x + pad, cy);
   fill('black');
   cy += 26;
 
   textSize(13);
-  text("N_C = " + fmt(r.NC) + " cm⁻³", x + pad, cy);
+  subText("N", "C", " = " + fmt(r.NC) + " cm⁻³", x + pad, cy);
   cy += 20;
-  text("N_V = " + fmt(r.NV) + " cm⁻³", x + pad, cy);
+  subText("N", "V", " = " + fmt(r.NV) + " cm⁻³", x + pad, cy);
   cy += 28;
 
   // Material class

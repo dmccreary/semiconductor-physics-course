@@ -23,9 +23,9 @@ const materials = {
     path: "L–Γ–X",
     bands: [
       // valence: HH and LH at Γ
-      { k0: 0, vE: 0,    curv: 'down', alpha: 0.6,  color: '#2e7d32', label: 'HH', dashed: false },
-      { k0: 0, vE: 0,    curv: 'down', alpha: 1.6,  color: '#66bb6a', label: 'LH', dashed: false },
-      { k0: 0, vE: -0.04,curv: 'down', alpha: 0.7,  color: '#a5d6a7', label: 'SO', dashed: false },
+      { k0: 0, vE: 0,    curv: 'down', alpha: 0.6,  color: '#2e7d32', label: 'HH', labelK: -0.75, dashed: false },
+      { k0: 0, vE: 0,    curv: 'down', alpha: 1.6,  color: '#66bb6a', label: 'LH', labelK: -0.35, dashed: false },
+      { k0: 0, vE: -0.04,curv: 'down', alpha: 0.7,  color: '#a5d6a7', label: 'SO', labelK: 0.6,  dashed: false },
       // conduction: X valleys at ±0.85
       { k0:  0.85, vE: 1.12, curv: 'up', alpha: 2.5, color: '#1565c0', label: 'CBM (X)' , dashed: false },
       { k0: -0.85, vE: 1.12, curv: 'up', alpha: 2.5, color: '#1565c0', label: '',           dashed: false },
@@ -40,8 +40,8 @@ const materials = {
     mn: 0.55, mhh: 0.33, mlh: 0.043,
     path: "L–Γ–X",
     bands: [
-      { k0: 0, vE: 0,    curv: 'down', alpha: 0.45, color: '#2e7d32', label: 'HH', dashed: false },
-      { k0: 0, vE: 0,    curv: 'down', alpha: 2.5,  color: '#66bb6a', label: 'LH', dashed: false },
+      { k0: 0, vE: 0,    curv: 'down', alpha: 0.45, color: '#2e7d32', label: 'HH', labelK: -0.75, dashed: false },
+      { k0: 0, vE: 0,    curv: 'down', alpha: 2.5,  color: '#66bb6a', label: 'LH', labelK: -0.3,  dashed: false },
       // CBM at L (k=±1)
       { k0:  1.0, vE: 0.66, curv: 'up', alpha: 1.8, color: '#1565c0', label: 'CBM (L)', dashed: false },
       { k0: -1.0, vE: 0.66, curv: 'up', alpha: 1.8, color: '#1565c0', label: '',         dashed: false },
@@ -58,8 +58,8 @@ const materials = {
     mn: 0.067, mhh: 0.51, mlh: 0.082,
     path: "L–Γ–X",
     bands: [
-      { k0: 0, vE: 0,    curv: 'down', alpha: 0.55, color: '#2e7d32', label: 'HH', dashed: false },
-      { k0: 0, vE: 0,    curv: 'down', alpha: 2.8,  color: '#66bb6a', label: 'LH', dashed: false },
+      { k0: 0, vE: 0,    curv: 'down', alpha: 0.55, color: '#2e7d32', label: 'HH', labelK: -0.75, dashed: false },
+      { k0: 0, vE: 0,    curv: 'down', alpha: 2.8,  color: '#66bb6a', label: 'LH', labelK: -0.3,  dashed: false },
       { k0: 0, vE: 1.42, curv: 'up', alpha: 4.0, color: '#1565c0', label: 'CBM (Γ)', dashed: false },
       { k0: 1.0, vE: 1.90, curv: 'up', alpha: 1.6, color: '#90caf9', label: 'X', dashed: true },
       { k0: -1.0, vE: 1.71, curv: 'up', alpha: 1.6, color: '#90caf9', label: 'L', dashed: true }
@@ -72,8 +72,8 @@ const materials = {
     mn: 0.2, mhh: 1.4, mlh: 0.3,
     path: "K–Γ–M",
     bands: [
-      { k0: 0, vE: 0,    curv: 'down', alpha: 0.30, color: '#2e7d32', label: 'HH', dashed: false },
-      { k0: 0, vE: 0,    curv: 'down', alpha: 1.0,  color: '#66bb6a', label: 'LH', dashed: false },
+      { k0: 0, vE: 0,    curv: 'down', alpha: 0.30, color: '#2e7d32', label: 'HH', labelK: -0.8,  dashed: false },
+      { k0: 0, vE: 0,    curv: 'down', alpha: 1.0,  color: '#66bb6a', label: 'LH', labelK: -0.45, dashed: false },
       { k0: 0, vE: 3.40, curv: 'up', alpha: 2.0, color: '#1565c0', label: 'CBM (Γ)', dashed: false }
     ]
   },
@@ -199,10 +199,11 @@ function draw() {
   }
   noStroke();
   fill(80);
-  textAlign(LEFT, CENTER);
   textSize(11);
-  text("E_V", plotX + plotW + 4, yFromE(0));
-  if (matName !== "Free Electron") text("E_C", plotX + plotW + 4, yFromE(mat.eg));
+  // both labels sit inside the gap region at the left edge, where no
+  // band curve can pass (keeps them clear of CBM markers and curves)
+  drawSubscriptLabel("E", "V", plotX + 24, yFromE(0) - 3);
+  if (matName !== "Free Electron") drawSubscriptLabel("E", "C", plotX + 24, yFromE(mat.eg) + 14);
 
   // Shade gap region
   if (matName !== "Free Electron") {
@@ -212,7 +213,7 @@ function draw() {
     fill(80);
     textAlign(CENTER, CENTER);
     textSize(11);
-    text("E_g = " + mat.eg.toFixed(2) + " eV", plotX + plotW / 2, (yFromE(0) + yFromE(mat.eg)) / 2);
+    text("Eg = " + mat.eg.toFixed(2) + " eV", plotX + plotW / 2, (yFromE(0) + yFromE(mat.eg)) / 2);
   }
 
   // Draw each band
@@ -297,14 +298,19 @@ function drawBand(b, xFromK, yFromE, kMin, kMax, eMin, eMax, mat) {
   if (b.dashed) drawingContext.setLineDash([]);
   noStroke();
 
-  // Label
+  // Label — anchored at labelK (if given) so bands sharing the same
+  // vertex (HH/LH/SO at Γ) don't stack their labels on one point.
   if (b.label && b.label.length > 0) {
     fill(b.color);
     noStroke();
     textAlign(CENTER, CENTER);
     textSize(11);
-    const lx = xFromK(b.k0);
-    const ly = (b.curv === 'down') ? yFromE(b.vE) + 14 : yFromE(b.vE) - 14;
+    const lk = (b.labelK !== undefined) ? b.labelK : b.k0;
+    const lE = (b.curv === 'down')
+      ? (b.vE - b.alpha * (lk - b.k0) * (lk - b.k0))
+      : (b.vE + b.alpha * (lk - b.k0) * (lk - b.k0));
+    const lx = xFromK(lk);
+    const ly = (b.curv === 'down') ? yFromE(lE) + 12 : yFromE(lE) - 12;
     text(b.label, lx, ly);
   }
 }
@@ -328,7 +334,7 @@ function drawEffectiveMassParabolas(mat, xFromK, yFromE) {
     noStroke();
     fill('#d32f2f');
     textSize(10);
-    text("m_n*=" + mat.mn.toFixed(2) + "m₀", xFromK(cbm.k0), yFromE(cbm.vE) - 28);
+    text("m* = " + mat.mn.toFixed(2) + " m₀", xFromK(cbm.k0), yFromE(cbm.vE) - 28);
   }
   // Blue dashed parabolas at VBM for HH and LH
   drawingContext.setLineDash([4, 3]);
@@ -374,7 +380,7 @@ function drawInfoPanel(x, y, w, name, mat) {
   textStyle(NORMAL);
   textSize(13);
   if (mat.eg > 0) {
-    text("E_g = " + mat.eg.toFixed(2) + " eV", x + pad, cy);
+    text("Bandgap: " + mat.eg.toFixed(2) + " eV", x + pad, cy);
     cy += 20;
   }
 
@@ -406,15 +412,15 @@ function drawInfoPanel(x, y, w, name, mat) {
   cy += 26;
 
   if (mat.mn) {
-    text("m_n* / m₀ = " + mat.mn.toFixed(3), x + pad, cy);
+    text("Electron m*: " + mat.mn.toFixed(3) + " m₀", x + pad, cy);
     cy += 18;
   }
   if (mat.mhh) {
-    text("m_HH / m₀ = " + mat.mhh.toFixed(3), x + pad, cy);
+    text("Heavy hole m*: " + mat.mhh.toFixed(3) + " m₀", x + pad, cy);
     cy += 18;
   }
   if (mat.mlh) {
-    text("m_LH / m₀ = " + mat.mlh.toFixed(3), x + pad, cy);
+    text("Light hole m*: " + mat.mlh.toFixed(3) + " m₀", x + pad, cy);
     cy += 22;
   }
 
@@ -452,4 +458,21 @@ function updateCanvasSize() {
   const container = document.querySelector('main').getBoundingClientRect();
   containerWidth = Math.floor(container.width);
   canvasWidth = containerWidth;
+}
+
+// Draw "E" with a true subscript, anchored at the right-bottom corner.
+function drawSubscriptLabel(main, sub, xRight, yBottom) {
+  push();
+  const ms = textSize();
+  const ss = ms * 0.75;
+  textAlign(LEFT, BOTTOM);
+  const mainW = textWidth(main);
+  textSize(ss);
+  const subW = textWidth(sub);
+  textSize(ms);
+  const startX = xRight - mainW - subW;
+  text(main, startX, yBottom);
+  textSize(ss);
+  text(sub, startX + mainW, yBottom + 2);
+  pop();
 }
