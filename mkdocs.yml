@@ -10,7 +10,6 @@ exclude_docs: |
   img/cover-image-prompt.md
   img/mascot/character-sheet.md
   img/mascot/image-prompts.md
-  sims/pn-junction/TODO.md
 
 nav:
   - Home: index.md
@@ -66,12 +65,14 @@ nav:
     - Interactive Energy Band Diagram Explorer: sims/energy-band-diagram-explorer/index.md
     - Learning Graph Viewer: sims/graph-viewer/index.md
     - Miller Indices Crystal Plane Explorer: sims/miller-indices-explorer/index.md
+    - P-N Junction Voltage Explorer: sims/pn-junction/index.md
     - Particle in a Box — Energy Level Explorer: sims/particle-in-a-box-explorer/index.md
-    - PN Junction: sims/pn-junction/index.md
     - Point Defect Visualizer: sims/point-defect-visualizer/index.md
     - Quantum Tunneling Probability Explorer: sims/quantum-tunneling-explorer/index.md
     - Semiconductor Lattice Constant and Bandgap Map: sims/lattice-bandgap-map/index.md
     - Temperature Dependence of ni Explorer: sims/intrinsic-concentration-temperature/index.md
+
+
 
   - Sample Prompts:
     - Intro: prompts/index.md

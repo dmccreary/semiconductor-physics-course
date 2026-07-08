@@ -91,6 +91,16 @@ self-contained interactive that runs in the browser.
     reciprocals, the family count, and the interplanar spacing in
     silicon.
 
+-   **[P-N Junction Voltage Explorer](./pn-junction/index.md)**
+
+    ![P-N Junction Voltage Explorer](./pn-junction/pn-junction.png)
+
+    Cross-section of a silicon p-n junction under bias. A voltage
+    slider sweeps from −5 V to +0.75 V while the depletion region,
+    exposed dopant ions, electric field, and animated carriers
+    respond. Readouts show depletion width and Shockley diode
+    current.
+
 -   **[Particle in a Box Energy Level Explorer](./particle-in-a-box-explorer/index.md)**
 
     ![Particle in a Box Explorer](./particle-in-a-box-explorer/particle-in-a-box-explorer.png)
