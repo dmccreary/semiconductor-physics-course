@@ -1,0 +1,82 @@
+{
+  "title": "Recombination Lifetime Explorer",
+  "description": "Three linked panels for radiative, Shockley-Read-Hall, and Auger recombination in an n-type semiconductor at 300 K: a band diagram showing each path's share of the recombination rate, the decay of the excess carrier density with time, and carrier lifetime against doping for each mechanism and in total.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-01",
+  "subject": [
+    "semiconductor physics",
+    "carrier recombination",
+    "minority carrier lifetime",
+    "Shockley-Read-Hall recombination",
+    "Auger recombination",
+    "radiative recombination"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "recombination-lifetime-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2), Apply (L3), Analyze (L4)",
+  "bloomVerb": "identify, calculate, explain",
+  "completion_status": "implemented",
+  "chapter_number": 10,
+  "chapter_title": "Generation and Recombination",
+  "chapter_dir": "10-generation-recombination",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Semiconductor Physics",
+    "topic": "Recombination mechanisms and minority carrier lifetime",
+    "learningObjectives": [
+      "Identify which recombination mechanism dominates at a given doping and injection level",
+      "Calculate the minority carrier lifetime from the trap density and capture cross section",
+      "Explain why the position of the trap level affects SRH recombination"
+    ],
+    "bloomLevels": ["Understand", "Apply", "Analyze"],
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Equilibrium carrier concentrations and the law of mass action",
+      "Excess carriers and injection level",
+      "Radiative, SRH, and Auger recombination"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Parameter sliders with three linked real-time views and a readout strip; optional animation of transitions",
+    "instructionalStrategy": "Predict-test-observe: students calculate the SRH lifetime, then explore how doping, injection, and trap position change the dominant mechanism",
+    "assessmentOpportunities": [
+      "Calculate the lifetime for a given trap density and compare with the readout",
+      "Map the doping ranges over which each mechanism dominates in Si and GaAs",
+      "Explain the lifetime increase when the trap moves away from midgap"
+    ]
+  },
+  "controls": [
+    { "type": "select", "label": "Material", "options": ["Si (indirect gap)", "GaAs (direct gap)"], "default": "Si (indirect gap)", "purpose": "Semiconductor material" },
+    { "type": "button", "label": "Start / Pause", "purpose": "Animate transitions on the band diagram; the simulation loads paused" },
+    { "type": "slider", "label": "Trap density Nt", "min": 1e10, "max": 1e14, "default": 1e12, "scale": "log", "units": "cm^-3", "purpose": "Density of SRH traps" },
+    { "type": "slider", "label": "Trap level Et - Ei", "min": -0.5, "max": 0.5, "default": 0, "step": 0.01, "units": "eV", "purpose": "Trap energy relative to the intrinsic level" },
+    { "type": "slider", "label": "Doping ND", "min": 1e14, "max": 1e19, "default": 1e16, "scale": "log", "units": "cm^-3", "purpose": "Donor concentration" },
+    { "type": "slider", "label": "Injection level dn/n0", "min": 1e-4, "max": 100, "default": 0.01, "scale": "log", "purpose": "Excess carrier density relative to the equilibrium majority density" }
+  ],
+  "simulationModel": {
+    "modelType": "physics-based rate equations",
+    "equations": [
+      "U_rad = B (np - ni^2)",
+      "U_SRH = (np - ni^2)/(tau_p0 (n + n1) + tau_n0 (p + p1)), tau_0 = 1/(sigma v_th Nt)",
+      "n1 = ni exp((Et - Ei)/kT), p1 = ni exp((Ei - Et)/kT)",
+      "U_Auger = (Cn n + Cp p)(np - ni^2)",
+      "tau = dn/U; 1/tau_eff = sum of 1/tau",
+      "d(dp)/dt = -U(dp), integrated numerically"
+    ],
+    "assumptions": [
+      "n-type sample at 300 K",
+      "Si: ni = 9.65e9 cm^-3, B = 1e-15 cm^3/s, Cn = 2.8e-31, Cp = 0.99e-31 cm^6/s",
+      "GaAs: ni = 2.1e6 cm^-3, B = 1e-10 cm^3/s, Cn = Cp about 1e-30 cm^6/s",
+      "sigma_n = sigma_p = 1e-15 cm^2, v_th = 1e7 cm/s, one trap level"
+    ],
+    "limitations": [
+      "GaN omitted because its radiative and Auger coefficients are not well established",
+      "Excess density capped at 1e19 cm^-3",
+      "Constant coefficients; no surface recombination or bandgap narrowing"
+    ]
+  }
+}

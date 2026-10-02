@@ -1,0 +1,76 @@
+{
+  "title": "Carrier Concentration vs. Temperature",
+  "description": "Log-scale plot of the electron and hole concentrations in doped silicon from 50 K to 1000 K with the freeze-out, extrinsic, and intrinsic regimes shaded. The charge-neutrality equation is solved at every temperature for a chosen doping type and concentration, and a probe temperature gives numerical readouts.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-01",
+  "subject": [
+    "semiconductor physics",
+    "carrier concentration",
+    "freeze-out regime",
+    "extrinsic regime",
+    "intrinsic regime"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "carrier-vs-temperature-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2), Apply (L3), Analyze (L4)",
+  "bloomVerb": "identify, predict, explain",
+  "completion_status": "implemented",
+  "chapter_number": 7,
+  "chapter_title": "Doping, Extrinsic Carriers, and the Fermi Level",
+  "chapter_dir": "07-doping-extrinsic-carriers",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Semiconductor Physics",
+    "topic": "Temperature regimes of carrier concentration in doped silicon",
+    "learningObjectives": [
+      "Identify the freeze-out, extrinsic, and intrinsic regimes on a plot of n(T)",
+      "Predict the operating regime for a given doping level and temperature",
+      "Explain why heavier doping extends the extrinsic regime to higher temperature"
+    ],
+    "bloomLevels": ["Understand", "Apply", "Analyze"],
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Intrinsic carrier concentration and the law of mass action",
+      "Donors, acceptors, and complete ionization"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Parameter sliders with a real-time log-scale plot and a probe-temperature readout",
+    "instructionalStrategy": "Predict-test-observe: students predict the regime at a given temperature and doping, then check it with the probe",
+    "assessmentOpportunities": [
+      "Predict the regime at 77 K, 300 K, and 600 K for a given doping",
+      "Tabulate the boundary temperatures against doping",
+      "Verify n times p equals ni squared at the probe temperature"
+    ]
+  },
+  "controls": [
+    { "type": "radio", "label": "N-type / P-type", "default": "N-type", "purpose": "Phosphorus donors or boron acceptors" },
+    { "type": "slider", "label": "Doping", "min": 1e14, "max": 1e18, "default": 1e15, "scale": "log", "units": "cm^-3", "purpose": "Dopant concentration" },
+    { "type": "slider", "label": "Temperature", "min": 50, "max": 1000, "default": 300, "scale": "log", "units": "K", "purpose": "Probe temperature for the readouts" },
+    { "type": "checkbox", "label": "Show ni(T) curve", "default": true, "purpose": "Toggle the intrinsic concentration reference curve" },
+    { "type": "checkbox", "label": "Show regime labels", "default": true, "purpose": "Toggle the regime names above the plot" }
+  ],
+  "simulationModel": {
+    "modelType": "physics-based, numerical solution of charge neutrality",
+    "equations": [
+      "n + Na- = p + Nd+",
+      "n = Nc exp(-(Ec - Ef)/kT), p = Nv exp(-(Ef - Ev)/kT)",
+      "Nd+/Nd = 1/(1 + 2 exp((Ef - Ed)/kT)), Na-/Na = 1/(1 + 4 exp((Ea - Ef)/kT))",
+      "ni(T) = sqrt(Nc Nv) exp(-Eg(T)/2kT), Eg(T) Varshni"
+    ],
+    "assumptions": [
+      "Silicon with a single dopant species (phosphorus or boron, 45 meV)",
+      "Nc = 2.86e19 and Nv = 3.10e19 cm^-3 at 300 K, scaled as T^1.5",
+      "Eg(0) set to 1.175 eV so that ni(300 K) = 9.65e9 cm^-3",
+      "Freeze-out boundary at 90 percent ionization; intrinsic boundary where ni(T) equals the doping"
+    ],
+    "limitations": [
+      "Isolated dopant levels and Boltzmann statistics: not valid for degenerate doping, so the slider stops at 1e18 cm^-3",
+      "No compensation"
+    ]
+  }
+}

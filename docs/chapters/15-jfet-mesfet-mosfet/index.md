@@ -285,6 +285,9 @@ Real MOSFETs have \(S = 65\)–80 mV/decade due to interface traps (\(D_{it}\)) 
     <img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Nova with warning pose">
     Every MOSFET in your phone — all 15 billion of them — draws some subthreshold leakage current even when "off." For a chip with billions of transistors, this adds up to tens of milliamps of static current just from leakage. Managing subthreshold slope, \(V_T\), and leakage is the central challenge of low-power design. High-threshold-voltage devices leak less but switch slower; low-threshold devices switch faster but leak more. Modern SoCs use multi-\(V_T\) design: high-\(V_T\) cells in non-critical paths for leakage reduction, low-\(V_T\) cells in the critical path for speed. This is the subthreshold slope limit, manifesting in every $500 smartphone.
 
+<iframe src="../../sims/mosfet-iv-long-channel/main.html" width="100%" height="634px" scrolling="no"></iframe>
+[Run Long-Channel MOSFET I-V Explorer Fullscreen](../../sims/mosfet-iv-long-channel/main.html)
+
 <details markdown="1">
 <summary>#### MicroSim: Long-Channel MOSFET I-V Explorer</summary>
 

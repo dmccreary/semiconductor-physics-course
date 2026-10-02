@@ -1,0 +1,80 @@
+{
+  "title": "MOSFET Scaling Simulator",
+  "description": "A trend model of MOSFET scaling from a 1 micrometer, 5 V reference transistor down to a 5 nm gate. A cross section and a gate-control gauge show the chosen architecture (planar bulk, FDSOI, FinFET, or gate-all-around nanowire). One plot shows DIBL, threshold voltage roll-off, and subthreshold slope against gate length. A second plot shows switching speed, dynamic power density, and leakage power density, with the constant-field (Dennard) and constant-voltage regions shaded.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-02",
+  "subject": [
+    "semiconductor physics",
+    "MOSFET scaling",
+    "short-channel effects",
+    "drain-induced barrier lowering",
+    "Dennard scaling",
+    "FinFET",
+    "gate-all-around transistor"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "mosfet-scaling-simulator",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2), Apply (L3), Analyze (L4), Evaluate (L5)",
+  "bloomVerb": "identify, calculate, explain, compare",
+  "completion_status": "implemented",
+  "chapter_number": 16,
+  "chapter_title": "Short-Channel Effects, CMOS, and Advanced FET Structures",
+  "chapter_dir": "16-short-channel-cmos",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Semiconductor Physics",
+    "topic": "MOSFET scaling, short-channel effects, and advanced transistor architectures",
+    "learningObjectives": [
+      "Identify which short-channel effects appear as the gate length is reduced",
+      "Calculate the dynamic power dissipation for a given frequency and activity factor",
+      "Explain why a FinFET gives better electrostatic control than a planar MOSFET",
+      "Compare the trade-offs between the advanced FET architectures"
+    ],
+    "bloomLevels": ["Understand", "Apply", "Analyze", "Evaluate"],
+    "duration": "20 minutes",
+    "prerequisites": [
+      "The long-channel MOSFET, threshold voltage, and subthreshold slope",
+      "Short-channel effects, CMOS power, and Dennard scaling"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Gate length and supply sliders with an architecture menu, two linked log-log plots, a cross section with a gate-control gauge, and a readout",
+    "instructionalStrategy": "Predict-test-observe, followed by a comparison table that students fill in across the four architectures",
+    "assessmentOpportunities": [
+      "Find the shortest gate length that keeps DIBL under 50 mV/V for each architecture",
+      "Explain the slope of the dynamic power curve in the two scaling regions",
+      "Compute dynamic power from the activity factor, capacitance, supply voltage, and frequency"
+    ]
+  },
+  "controls": [
+    { "type": "select", "label": "Architecture", "options": ["Planar bulk", "FDSOI", "FinFET", "GAA nanowire"], "default": "Planar bulk", "purpose": "Transistor architecture" },
+    { "type": "checkbox", "label": "Dennard reference", "default": true, "purpose": "Show the constant power density of ideal constant-field scaling" },
+    { "type": "slider", "label": "Gate length L", "min": 5, "max": 1000, "default": 45, "scale": "log", "units": "nm", "purpose": "Gate length; moving right shrinks the transistor" },
+    { "type": "slider", "label": "Lowest supply V_DD", "min": 0.5, "max": 1.5, "default": 1.0, "step": 0.05, "units": "V", "purpose": "Floor below which the supply voltage cannot scale" },
+    { "type": "button", "label": "Reset", "purpose": "Restore the default settings" }
+  ],
+  "simulationModel": {
+    "modelType": "analytical trend model",
+    "equations": [
+      "Natural length: planar sqrt(3 t_ox t_dep); FDSOI sqrt(3 t_ox t_si); FinFET sqrt(3 t_ox t_fin / 2); GAA (R/2) sqrt(3)",
+      "theta = exp(-L / (2 lambda)); DIBL = theta; Delta V_T = -(V_DS + 0.4 V) theta",
+      "S = 59.5 mV/decade (1 + C_dep/C_ox + 2 theta)",
+      "Reference scaling: t_ox = L/50, t_dep = L/7, V_DD = 5 V L / 1 um, V_T = V_DD/4, with floors",
+      "P_dyn = alpha C V_DD^2 f; P_leak = I_off V_DD; I_off = 100 nA (W/L) 10^(-V_T,eff/S)"
+    ],
+    "assumptions": [
+      "Floors: t_ox >= 1 nm, t_dep >= 12 nm, V_DD >= slider value",
+      "FDSOI film 6 nm, fin width 6 nm, nanowire diameter 5 nm at every gate length",
+      "Velocity-saturated on-current with v_sat = 1e7 cm/s; clock period of 20 gate delays; activity factor 0.1"
+    ],
+    "limitations": [
+      "Illustrative trend model; not calibrated to any commercial process and not labeled with node names",
+      "Uniform channel doping for planar bulk; no halo implants or shallow-junction effects",
+      "Subthreshold leakage only; no gate tunneling or junction leakage"
+    ]
+  }
+}

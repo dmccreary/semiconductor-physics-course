@@ -56,21 +56,35 @@ nav:
   
   - MicroSims:
     - List of MicroSims: sims/index.md
+    - BJT Operating Regions Explorer: sims/bjt-operating-regions/index.md
+    - Carrier Concentration vs. Temperature: sims/carrier-vs-temperature-explorer/index.md
+    - Carrier Mobility Explorer: sims/carrier-mobility-explorer/index.md
     - Crystal Defect Hierarchy Network: sims/defect-hierarchy-network/index.md
     - Cubic Crystal Structure Explorer: sims/cubic-crystal-structure-explorer/index.md
     - Dimensionality and Density of States Explorer: sims/density-of-states-explorer/index.md
     - Direct vs. Indirect Bandgap — E-k Diagram Explorer: sims/direct-indirect-bandgap-explorer/index.md
+    - Dopant Ionization Fraction vs. Temperature: sims/dopant-ionization-explorer/index.md
     - Fermi-Dirac Distribution and Carrier Concentration Explorer: sims/fermi-dirac-explorer/index.md
+    - Hall Effect Measurement Simulator: sims/hall-effect-simulator/index.md
+    - Heterojunction Band Alignment Visualizer: sims/heterojunction-band-alignment/index.md
     - Interactive E-k Band Structure Explorer: sims/ek-band-structure-explorer/index.md
     - Interactive Energy Band Diagram Explorer: sims/energy-band-diagram-explorer/index.md
+    - LED Efficiency and Laser Threshold Explorer: sims/led-laser-efficiency-explorer/index.md
     - Learning Graph Viewer: sims/graph-viewer/index.md
+    - Long-Channel MOSFET I-V Explorer: sims/mosfet-iv-long-channel/index.md
     - Miller Indices Crystal Plane Explorer: sims/miller-indices-explorer/index.md
+    - Minority Carrier Diffusion Length Visualizer: sims/minority-carrier-diffusion/index.md
+    - MOS Capacitor C-V Explorer: sims/mos-cv-explorer/index.md
+    - MOSFET Scaling Simulator: sims/mosfet-scaling-simulator/index.md
+    - P-N Junction Explorer: sims/pn-junction-explorer/index.md
     - P-N Junction Voltage Explorer: sims/pn-junction/index.md
     - Particle in a Box — Energy Level Explorer: sims/particle-in-a-box-explorer/index.md
     - Point Defect Visualizer: sims/point-defect-visualizer/index.md
     - Quantum Tunneling Probability Explorer: sims/quantum-tunneling-explorer/index.md
+    - Recombination Lifetime Explorer: sims/recombination-lifetime-explorer/index.md
     - Semiconductor Lattice Constant and Bandgap Map: sims/lattice-bandgap-map/index.md
     - Temperature Dependence of ni Explorer: sims/intrinsic-concentration-temperature/index.md
+    - Velocity-Field Relationship Explorer: sims/velocity-field-explorer/index.md
 
 
 

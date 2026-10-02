@@ -1,0 +1,79 @@
+{
+  "title": "Minority Carrier Diffusion Length Visualizer",
+  "description": "Minority holes random-walk into an n-type semiconductor and recombine. A histogram of the walkers is compared with the analytical solution of the minority carrier diffusion equation, and sliders for lifetime and diffusion coefficient show how the diffusion length L = sqrt(D tau) changes. Includes pulse injection and uniform illumination with a recombining surface.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-01",
+  "subject": [
+    "semiconductor physics",
+    "minority carrier diffusion length",
+    "minority carrier lifetime",
+    "diffusion",
+    "surface recombination"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "minority-carrier-diffusion",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2), Apply (L3), Analyze (L4)",
+  "bloomVerb": "explain, calculate, predict",
+  "completion_status": "implemented",
+  "chapter_number": 10,
+  "chapter_title": "Generation and Recombination",
+  "chapter_dir": "10-generation-recombination",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Semiconductor Physics",
+    "topic": "Minority carrier diffusion length and surface recombination",
+    "learningObjectives": [
+      "Explain how minority carrier lifetime and diffusivity determine the diffusion length",
+      "Calculate the diffusion length for given material parameters",
+      "Predict how surface recombination changes the minority carrier profile"
+    ],
+    "bloomLevels": ["Understand", "Apply", "Analyze"],
+    "duration": "15 minutes",
+    "prerequisites": [
+      "Diffusion current and the Einstein relation",
+      "Minority carrier lifetime",
+      "Continuity equation"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Parameter sliders with a random-walk animation, a live histogram, and an analytical overlay",
+    "instructionalStrategy": "Predict-test-observe: students calculate the diffusion length or the surface-to-bulk ratio, then compare with the readout and the random-walk histogram",
+    "assessmentOpportunities": [
+      "Calculate the diffusion length before reading it from the panel",
+      "Compare the pulse walker count with exp(-t/tau)",
+      "Predict the surface-to-bulk density ratio for several surface recombination velocities"
+    ]
+  },
+  "controls": [
+    { "type": "button", "label": "Start / Pause", "purpose": "Run the random walk; the simulation loads paused" },
+    { "type": "button", "label": "Pulse injection", "purpose": "Inject one burst of holes at x = 0 and watch it spread and decay" },
+    { "type": "checkbox", "label": "Show analytical solution", "default": true, "purpose": "Overlay the analytical profile" },
+    { "type": "checkbox", "label": "Uniform illumination", "default": false, "purpose": "Generate holes everywhere and make x = 0 a recombining surface" },
+    { "type": "slider", "label": "Minority carrier lifetime", "min": 1e-9, "max": 1e-3, "default": 1e-4, "scale": "log", "units": "s", "purpose": "Hole lifetime tau_p" },
+    { "type": "slider", "label": "Diffusion coefficient", "min": 1, "max": 25, "default": 12, "step": 0.5, "units": "cm^2/s", "purpose": "Hole diffusion coefficient D_p" },
+    { "type": "slider", "label": "Surface recombination", "min": 1, "max": 1e6, "default": 1e3, "scale": "log", "units": "cm/s", "purpose": "Surface recombination velocity S (illumination mode)" }
+  ],
+  "simulationModel": {
+    "modelType": "Monte Carlo random walk compared with analytical solutions",
+    "equations": [
+      "D_p d2(dp)/dx2 - dp/tau_p + G = 0, L_p = sqrt(D_p tau_p)",
+      "Steady injection: dp(x) = dp(0) exp(-x/L_p)",
+      "Pulse: dp(x,t) = N/sqrt(pi D_p t) exp(-x^2/(4 D_p t)) exp(-t/tau_p)",
+      "Illumination with surface: dp(x) = G tau_p [1 - (S L_p/(D_p + S L_p)) exp(-x/L_p)]"
+    ],
+    "assumptions": [
+      "One dimension, low-level injection, no electric field",
+      "Semi-infinite n-type sample",
+      "Walkers step sqrt(2 D dt) per time step and recombine with probability dt/tau"
+    ],
+    "limitations": [
+      "Histogram noise from a finite number of walkers",
+      "First-order surface absorption rule; saturates to a fully absorbing surface at large S",
+      "Animation time is normalized to the lifetime"
+    ]
+  }
+}

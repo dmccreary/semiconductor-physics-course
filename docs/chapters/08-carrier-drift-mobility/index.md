@@ -247,6 +247,9 @@ For silicon electrons: \(\mu_{n,\min} = 65\) cm\(^2\)/V·s, \(\mu_{n,0} = 1330\)
 | \(10^{18}\) | 400 | 150 |
 | \(10^{19}\) | 130 | 70 |
 
+<iframe src="../../sims/carrier-mobility-explorer/main.html" width="100%" height="670px" scrolling="no"></iframe>
+[Run Carrier Mobility Explorer Fullscreen](../../sims/carrier-mobility-explorer/main.html)
+
 <details markdown="1">
 <summary>#### MicroSim: Carrier Mobility Explorer</summary>
 
@@ -312,6 +315,9 @@ Hot carriers cause several important effects:
 !!! mascot-tip "Nova Tips: The Modern MOSFET Lives in Velocity Saturation"
     <img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Nova with tip pose">
     When you're analyzing a 5 nm node MOSFET and you see \(V_{DS} = 0.6\) V across an 8 nm channel, the average field is ~7.5 MV/m = 75 kV/cm. Compare that to silicon's critical field of ~7 kV/cm: you're 10× into saturation. The drive current in these devices is essentially \(I_D \approx q \cdot n_{\text{inv}} \cdot v_{\text{sat}} \cdot W\), not \(\mu_0 \cdot C_{\text{ox}} \cdot (V_{GS} - V_T)^2/2L\). The long-channel MOSFET equations you'll learn in Chapter 15 are a historical curiosity for modern devices — but they are the foundation you need before understanding why they fail.
+
+<iframe src="../../sims/velocity-field-explorer/main.html" width="100%" height="634px" scrolling="no"></iframe>
+[Run Velocity-Field Relationship Explorer Fullscreen](../../sims/velocity-field-explorer/main.html)
 
 <details markdown="1">
 <summary>#### MicroSim: Velocity-Field Relationship Explorer</summary>

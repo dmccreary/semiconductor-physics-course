@@ -307,6 +307,9 @@ Two measurement frequencies give qualitatively different results:
     <img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Nova with tip pose">
     Each oxide charge type leaves a different fingerprint on the C-V curve. A **parallel shift** of the entire C-V curve along the voltage axis (without shape change) indicates fixed charge \(Q_f\) or mobile charge \(Q_m\). A **stretch-out** (the curve spreads over a wider voltage range without shifting its midpoint) indicates interface trap charge \(Q_{it}\). Temperature-dependent shifts during bias-temperature stress (BTS) measurement reveal mobile ionic charges. Knowing these signatures lets you diagnose oxide quality from a single C-V measurement — which is why MOS C-V is one of the most frequently performed measurements in any semiconductor fab.
 
+<iframe src="../../sims/mos-cv-explorer/main.html" width="100%" height="707px" scrolling="no"></iframe>
+[Run MOS Capacitor C-V Explorer Fullscreen](../../sims/mos-cv-explorer/main.html)
+
 <details markdown="1">
 <summary>#### MicroSim: MOS Capacitor C-V Explorer</summary>
 

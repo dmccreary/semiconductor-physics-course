@@ -1,0 +1,81 @@
+{
+  "title": "Carrier Mobility Explorer",
+  "description": "Two log-log plots of electron or hole mobility in silicon, against temperature (50-600 K) and against ionized impurity concentration (1e14-1e19 cm^-3), with a partial mobility curve for each scattering mechanism and the Matthiessen total. Checkboxes switch mechanisms on and off, and a readout strip shows each mechanism's share of the total scattering.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-01",
+  "subject": [
+    "semiconductor physics",
+    "carrier mobility",
+    "scattering mechanisms",
+    "Matthiessen's rule",
+    "ionized impurity scattering",
+    "phonon scattering"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "carrier-mobility-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2), Apply (L3), Analyze (L4)",
+  "bloomVerb": "identify, use, predict",
+  "completion_status": "implemented",
+  "chapter_number": 8,
+  "chapter_title": "Carrier Drift and Mobility",
+  "chapter_dir": "08-carrier-drift-mobility",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Semiconductor Physics",
+    "topic": "Temperature and doping dependence of carrier mobility in silicon",
+    "learningObjectives": [
+      "Identify which scattering mechanism dominates at a given temperature and doping",
+      "Use Matthiessen's rule to combine partial mobilities",
+      "Predict how a change in temperature or doping changes the net mobility"
+    ],
+    "bloomLevels": ["Understand", "Apply", "Analyze"],
+    "duration": "15 minutes",
+    "prerequisites": [
+      "Drift velocity and the definition of mobility",
+      "Phonon and ionized impurity scattering"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Parameter sliders and mechanism toggles with real-time log-log plots and a probe readout",
+    "instructionalStrategy": "Predict-test-observe: students predict the dominant mechanism at a probe point, then check the scattering shares",
+    "assessmentOpportunities": [
+      "Add reciprocal partial mobilities by hand and compare with the displayed total",
+      "Predict the dominant mechanism at three temperature and doping combinations",
+      "Explain the mobility peak on the temperature plot"
+    ]
+  },
+  "controls": [
+    { "type": "select", "label": "Carrier", "options": ["Electrons", "Holes"], "default": "Electrons", "purpose": "Carrier type" },
+    { "type": "checkbox", "label": "Acoustic phonon", "default": true, "purpose": "Toggle acoustic phonon scattering" },
+    { "type": "checkbox", "label": "Optical phonon", "default": true, "purpose": "Toggle optical phonon scattering (holes only)" },
+    { "type": "checkbox", "label": "Intervalley", "default": true, "purpose": "Toggle intervalley phonon scattering (electrons only)" },
+    { "type": "checkbox", "label": "Ionized impurity", "default": true, "purpose": "Toggle ionized impurity scattering" },
+    { "type": "slider", "label": "Doping", "min": 1e14, "max": 1e19, "default": 1e16, "scale": "log", "units": "cm^-3", "purpose": "Ionized impurity concentration" },
+    { "type": "slider", "label": "Temperature", "min": 50, "max": 600, "default": 300, "step": 1, "units": "K", "purpose": "Probe temperature" },
+    { "type": "button", "label": "Reset", "purpose": "Restore the default settings" }
+  ],
+  "simulationModel": {
+    "modelType": "semi-empirical",
+    "equations": [
+      "1/mu = 1/mu_ac + 1/mu_op_or_iv + 1/mu_ii (Matthiessen's rule)",
+      "mu_ac ~ T^-1.5",
+      "mu_op, mu_iv ~ T^-0.5 (exp(theta/T) - 1), theta = 731 K (holes), 630 K (electrons)",
+      "mu_ii(T, N) = mu_ii(300 K, N) (T/300)^1.5",
+      "mu(300 K, N) = mu_min + (mu_0 - mu_min)/(1 + (N/N_ref)^alpha)"
+    ],
+    "assumptions": [
+      "Electrons: mu_min = 65, mu_0 = 1330 cm^2/V.s, N_ref = 1.26e17 cm^-3, alpha = 0.85 (Chapter 8)",
+      "Holes: mu_min = 54.3, mu_0 = 461.2 cm^2/V.s, N_ref = 2.35e17 cm^-3, alpha = 0.88 (Arora et al. 1982, 300 K)",
+      "Phonon terms scaled so the lattice mobility at 300 K has slope -2.42 (electrons) or -2.20 (holes)"
+    ],
+    "limitations": [
+      "The split between phonon mechanisms is a model; only the total is measured",
+      "Extrapolation away from 300 K; underestimates mobility for degenerate doping at low temperature",
+      "No freeze-out, screening, neutral impurity, or carrier-carrier scattering"
+    ]
+  }
+}

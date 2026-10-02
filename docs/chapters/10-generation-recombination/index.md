@@ -217,6 +217,9 @@ G_{\text{opt}}(x) = \frac{\alpha I(x)}{h\nu} = \frac{\alpha I_0 e^{-\alpha x}}{h
 
 Time-resolved photoconductivity decay after a light pulse is a standard technique (TRMC, microwave photoconductance) for measuring minority carrier lifetime in silicon wafers.
 
+<iframe src="../../sims/recombination-lifetime-explorer/main.html" width="100%" height="629px" scrolling="no"></iframe>
+[Run Recombination Lifetime Explorer Fullscreen](../../sims/recombination-lifetime-explorer/main.html)
+
 <details markdown="1">
 <summary>#### MicroSim: Recombination Lifetime Explorer</summary>
 
@@ -335,6 +338,9 @@ D_a \approx D_p, \quad \mu_a \approx 0
 \]
 
 The minority carrier (holes) controls the ambipolar motion — electrons are so abundant that the minority hole population is the bottleneck. This is why "minority carrier physics" is the dominant framework for p-n junction and BJT analysis: the minority carriers are doing the heavy lifting, even though they're outnumbered by millions to one.
+
+<iframe src="../../sims/minority-carrier-diffusion/main.html" width="100%" height="574px" scrolling="no"></iframe>
+[Run Minority Carrier Diffusion Length Visualizer Fullscreen](../../sims/minority-carrier-diffusion/main.html)
 
 <details markdown="1">
 <summary>#### MicroSim: Minority Carrier Diffusion Length Visualizer</summary>

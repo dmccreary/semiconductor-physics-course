@@ -1,0 +1,83 @@
+{
+  "title": "P-N Junction Explorer",
+  "description": "Four linked plots for an abrupt silicon p-n junction: the band diagram with Fermi or quasi-Fermi levels, the charge density and electric field of the depletion approximation, the current density against voltage split into diffusion and recombination-generation parts, and the carrier concentrations on each side. Sliders set the applied voltage and the doping on each side, and a menu sets the temperature.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-02",
+  "subject": [
+    "semiconductor physics",
+    "p-n junction",
+    "built-in potential",
+    "depletion width",
+    "Shockley diode equation",
+    "ideality factor",
+    "quasi-Fermi levels"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "pn-junction-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2), Apply (L3), Analyze (L4), Evaluate (L5)",
+  "bloomVerb": "explain, calculate, identify, predict",
+  "completion_status": "implemented",
+  "chapter_number": 11,
+  "chapter_title": "P-N Junction: Equilibrium, Bias, and the Ideal Diode",
+  "chapter_dir": "11-pn-junction-equilibrium",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Semiconductor Physics",
+    "topic": "Electrostatics and current-voltage characteristic of the p-n junction",
+    "learningObjectives": [
+      "Explain how forward and reverse bias change the depletion width",
+      "Calculate the built-in potential and depletion width for given doping values",
+      "Identify which current component dominates at a given forward voltage",
+      "Predict how the current-voltage curve changes with doping and temperature"
+    ],
+    "bloomLevels": ["Understand", "Apply", "Analyze", "Evaluate"],
+    "duration": "20 minutes",
+    "prerequisites": [
+      "Carrier statistics and doping",
+      "Drift, diffusion, and the Einstein relation",
+      "Recombination and minority carrier lifetime"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Parameter sliders with four linked real-time plots, a readout strip, and a worked-calculation panel",
+    "instructionalStrategy": "Predict-test-observe: students predict the change in depletion width, field, and current, then check against the linked plots",
+    "assessmentOpportunities": [
+      "Compute the built-in potential and depletion width by hand and compare with the readout",
+      "Find the voltage at which diffusion current overtakes recombination current",
+      "Explain why the reverse current rises slowly with reverse voltage"
+    ]
+  },
+  "controls": [
+    { "type": "select", "label": "Temperature", "options": ["200 K", "250 K", "300 K", "350 K", "400 K"], "default": "300 K", "purpose": "Lattice temperature" },
+    { "type": "checkbox", "label": "Carrier profiles", "default": true, "purpose": "Switch the fourth panel between carrier concentrations and the worked calculation" },
+    { "type": "checkbox", "label": "Quasi-Fermi levels", "default": true, "purpose": "Draw both quasi-Fermi levels across the band diagram" },
+    { "type": "slider", "label": "Applied voltage V", "min": -5, "max": 0.9, "default": 0, "step": 0.01, "units": "V", "purpose": "Bias across the junction, positive on the p side" },
+    { "type": "slider", "label": "p-side doping N_A", "min": 1e14, "max": 1e18, "default": 1e17, "scale": "log", "units": "cm^-3", "purpose": "Acceptor concentration" },
+    { "type": "slider", "label": "n-side doping N_D", "min": 1e14, "max": 1e18, "default": 1e16, "scale": "log", "units": "cm^-3", "purpose": "Donor concentration" },
+    { "type": "button", "label": "Reset", "purpose": "Restore the default settings" }
+  ],
+  "simulationModel": {
+    "modelType": "analytical",
+    "equations": [
+      "V_bi = (kT/q) ln(N_A N_D / n_i^2)",
+      "W = sqrt(2 eps_s (V_bi - V)/q * (N_A + N_D)/(N_A N_D)), N_A x_p = N_D x_n",
+      "E_max = q N_D x_n / eps_s",
+      "J = J_s (exp(qV/kT) - 1) + (q n_i W / 2 tau_0)(exp(qV/2kT) - 1)",
+      "J_s = q n_i^2 (D_p/(L_p N_D) + D_n/(L_n N_A))"
+    ],
+    "assumptions": [
+      "eps_s = 11.7 eps_0; n_i(300 K) = 9.65e9 cm^-3; N_C, N_V = 2.86e19, 3.10e19 cm^-3 scaled as T^1.5; Varshni E_g(T)",
+      "Mobility from 300 K doping fits (Chapter 8 for electrons, Arora et al. 1982 for holes); D = mu kT/q",
+      "Minority carrier and generation lifetimes fixed at 1 microsecond"
+    ],
+    "limitations": [
+      "Depletion approximation and low-level injection; plots stop at V_bi - 0.05 V",
+      "No series resistance, breakdown, or tunneling",
+      "Mobility temperature dependence and dopant freeze-out are neglected"
+    ]
+  }
+}

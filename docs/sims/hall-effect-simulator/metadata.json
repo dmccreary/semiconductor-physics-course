@@ -1,0 +1,78 @@
+{
+  "title": "Hall Effect Measurement Simulator",
+  "description": "Top view of a silicon Hall bar carrying a current in a perpendicular magnetic field. Carriers are pushed toward one face, charge builds up, and a voltmeter shows the Hall voltage. A panel extracts the Hall coefficient, carrier type, carrier concentration, resistivity, and Hall mobility. Switching between n-type and p-type or flipping the field reverses the sign of the Hall voltage.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-01",
+  "subject": [
+    "semiconductor physics",
+    "Hall effect",
+    "Hall coefficient",
+    "carrier concentration",
+    "Hall mobility"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "hall-effect-simulator",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2), Apply (L3), Analyze (L4)",
+  "bloomVerb": "explain, calculate, distinguish",
+  "completion_status": "implemented",
+  "chapter_number": 9,
+  "chapter_title": "Carrier Diffusion and Transport",
+  "chapter_dir": "09-carrier-diffusion-transport",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Semiconductor Physics",
+    "topic": "Hall effect measurement of carrier type, concentration, and mobility",
+    "learningObjectives": [
+      "Explain why the sign of the Hall voltage depends on the carrier type",
+      "Calculate the carrier concentration from Hall measurement data",
+      "Distinguish n-type from p-type material from the sign of the Hall coefficient"
+    ],
+    "bloomLevels": ["Understand", "Apply", "Analyze"],
+    "duration": "15 minutes",
+    "prerequisites": [
+      "Drift current and mobility",
+      "Resistivity",
+      "Lorentz force"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Parameter sliders with a real-time device view, measurement readouts, and an optional carrier animation",
+    "instructionalStrategy": "Predict-test-observe: students predict the deflection direction and the sign of the Hall voltage, then check; partners extract the parameters of an unknown sample",
+    "assessmentOpportunities": [
+      "Predict the face toward which carriers are pushed",
+      "Calculate carrier concentration from the Hall voltage",
+      "Identify the carrier type of an unknown sample from the sign of the Hall coefficient"
+    ]
+  },
+  "controls": [
+    { "type": "radio", "label": "N-type / P-type", "default": "N-type", "purpose": "Carrier type" },
+    { "type": "button", "label": "Flip B direction", "purpose": "Reverse the magnetic field" },
+    { "type": "button", "label": "Start / Pause", "purpose": "Run the carrier animation; the simulation loads paused" },
+    { "type": "slider", "label": "Carrier concentration", "min": 1e14, "max": 1e17, "default": 1e15, "scale": "log", "units": "cm^-3", "purpose": "Majority carrier concentration" },
+    { "type": "slider", "label": "Magnetic field B", "min": 0, "max": 1, "default": 0.5, "step": 0.01, "units": "T", "purpose": "Magnetic field magnitude" },
+    { "type": "slider", "label": "Applied current I", "min": 1, "max": 10, "default": 5, "step": 0.1, "units": "mA", "purpose": "Current along the bar" }
+  ],
+  "simulationModel": {
+    "modelType": "physics-based, steady state; qualitative carrier animation",
+    "equations": [
+      "F = q (v x B); q E_H = q v_d B",
+      "V_H = I B / (q n t) in magnitude",
+      "R_H = V_H t / (I B) = -1/(q n) or +1/(q p)",
+      "rho = V_x W t / (I L); mu_H = |R_H| / rho"
+    ],
+    "assumptions": [
+      "Silicon bar 6 mm x 2 mm x 0.5 mm at 300 K",
+      "Single carrier type, full ionization, no compensation",
+      "Hall factor of one",
+      "V_H measured as the -y face minus the +y face"
+    ],
+    "limitations": [
+      "No two-carrier conduction, magnetoresistance, or contact misalignment voltage",
+      "Dot speed and surface-charge counts are on logarithmic, not linear, scales"
+    ]
+  }
+}

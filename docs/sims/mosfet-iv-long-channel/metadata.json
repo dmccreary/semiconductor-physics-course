@@ -1,0 +1,82 @@
+{
+  "title": "Long-Channel MOSFET I-V Explorer",
+  "description": "Output characteristics (drain current against drain voltage for a family of gate voltages) and the logarithmic transfer curve of a long-channel MOSFET from the square-law model with channel-length modulation and subthreshold conduction. The triode, saturation, and cutoff regions are marked, a sketch shows the channel charge and pinch-off, and a readout gives the transconductance, output conductance, intrinsic gain, and subthreshold slope at the operating point.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-02",
+  "subject": [
+    "semiconductor physics",
+    "MOSFET",
+    "square-law model",
+    "transconductance",
+    "channel-length modulation",
+    "subthreshold slope"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "mosfet-iv-long-channel",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2), Apply (L3), Analyze (L4), Evaluate (L5)",
+  "bloomVerb": "identify, calculate, explain, compare",
+  "completion_status": "implemented",
+  "chapter_number": 15,
+  "chapter_title": "JFET, MESFET, and Long-Channel MOSFET Fundamentals",
+  "chapter_dir": "15-jfet-mesfet-mosfet",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Semiconductor Physics",
+    "topic": "Current-voltage characteristics of the long-channel MOSFET",
+    "learningObjectives": [
+      "Identify the triode, saturation, and cutoff regions on the output characteristics",
+      "Calculate the transconductance and output conductance from the current-voltage data",
+      "Explain what the subthreshold slope means and why about 60 mV per decade is its lower limit at room temperature",
+      "Compare the predictions of the long-channel model with the behavior expected of a short-channel transistor"
+    ],
+    "bloomLevels": ["Understand", "Apply", "Analyze", "Evaluate"],
+    "duration": "20 minutes",
+    "prerequisites": [
+      "The MOS capacitor and threshold voltage",
+      "MOSFET structure and the gradual channel approximation"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Parameter sliders with two linked real-time plots, a channel sketch, and a small-signal readout at the operating point",
+    "instructionalStrategy": "Predict-test-observe, followed by hand calculation of small-signal parameters checked against the readout",
+    "assessmentOpportunities": [
+      "Find the drain voltage at which the transistor leaves saturation",
+      "Compute the transconductance and output conductance by hand",
+      "Measure the subthreshold slope from two points on the logarithmic plot"
+    ]
+  },
+  "controls": [
+    { "type": "slider", "label": "Gate voltage V_GS", "min": 0, "max": 3, "default": 1.5, "step": 0.01, "units": "V", "purpose": "Gate voltage of the operating point" },
+    { "type": "slider", "label": "Drain voltage V_DS", "min": 0, "max": 3, "default": 2.0, "step": 0.01, "units": "V", "purpose": "Drain voltage of the operating point" },
+    { "type": "slider", "label": "Threshold V_T", "min": 0.2, "max": 1.0, "default": 0.5, "step": 0.01, "units": "V", "purpose": "Threshold voltage" },
+    { "type": "slider", "label": "Width/length W/L", "min": 1, "max": 100, "default": 10, "step": 1, "purpose": "Aspect ratio of the channel" },
+    { "type": "slider", "label": "mu C_ox", "min": 100, "max": 500, "default": 200, "step": 10, "units": "microamperes per volt squared", "purpose": "Process transconductance parameter" },
+    { "type": "slider", "label": "Modulation lambda", "min": 0, "max": 0.1, "default": 0.05, "step": 0.005, "units": "1/V", "purpose": "Channel-length modulation coefficient" },
+    { "type": "slider", "label": "Slope factor n_sub", "min": 1, "max": 2, "default": 1.3, "step": 0.05, "purpose": "Subthreshold slope factor" },
+    { "type": "select", "label": "Device", "options": ["NMOS", "PMOS"], "default": "NMOS", "purpose": "Transistor polarity" },
+    { "type": "button", "label": "Reset", "purpose": "Restore the default settings" }
+  ],
+  "simulationModel": {
+    "modelType": "analytical",
+    "equations": [
+      "Triode: I_D = (k/2)[2(V_GS - V_T)V_DS - V_DS^2](1 + lambda V_DS), k = mu C_ox W/L",
+      "Saturation: I_D = (k/2)(V_GS - V_T)^2 (1 + lambda V_DS), V_DS,sat = V_GS - V_T",
+      "Subthreshold: I_D proportional to exp((V_GS - V_T)/(n V_th)), S = n V_th ln(10)",
+      "Smooth interpolation: I_D = (k/2)(v_f^2 - v_r^2)(1 + lambda V_DS), v = 2 n V_th ln(1 + exp(x / 2 n V_th))"
+    ],
+    "assumptions": [
+      "300 K, V_th = 25.85 mV",
+      "Gradual channel approximation, source and body at the same potential",
+      "Channel-length modulation factor applied in triode and saturation for continuity"
+    ],
+    "limitations": [
+      "No velocity saturation, drain-induced barrier lowering, mobility degradation, or body effect",
+      "Slightly above the square law within about 0.2 V of threshold",
+      "The channel sketch is not to scale"
+    ]
+  }
+}

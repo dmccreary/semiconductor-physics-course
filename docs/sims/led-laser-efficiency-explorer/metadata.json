@@ -1,0 +1,85 @@
+{
+  "title": "LED Efficiency and Laser Threshold Explorer",
+  "description": "A two-mode simulation of a GaAs light source. LED mode plots internal quantum efficiency against current density from the ABC recombination model, showing the efficiency droop, and the light output against current. Laser mode plots modal gain against carrier density with the cavity loss line, marks the threshold, and draws the light-current curve with its threshold kink. Sliders set the drive current, mirror reflectivity, cavity length, and the SRH, radiative, and Auger coefficients; a checkbox compares a single quantum well with a bulk active layer.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-02",
+  "subject": [
+    "semiconductor physics",
+    "light-emitting diode",
+    "laser diode",
+    "internal quantum efficiency",
+    "efficiency droop",
+    "threshold current",
+    "optical gain"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "led-laser-efficiency-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2), Apply (L3), Analyze (L4), Evaluate (L5)",
+  "bloomVerb": "explain, calculate, compare, choose",
+  "completion_status": "implemented",
+  "chapter_number": 17,
+  "chapter_title": "Optoelectronic Sources: LEDs and Laser Diodes",
+  "chapter_dir": "17-leds-laser-diodes",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Semiconductor Physics",
+    "topic": "LED efficiency droop and the laser threshold condition",
+    "learningObjectives": [
+      "Explain the efficiency droop of an LED with the ABC model",
+      "Calculate the threshold current density of a laser from the gain-loss threshold condition",
+      "Compare the light-current curves of an LED and a laser",
+      "Choose a suitable light source for a given application"
+    ],
+    "bloomLevels": ["Understand", "Apply", "Analyze", "Evaluate"],
+    "duration": "20 minutes",
+    "prerequisites": [
+      "Radiative, SRH, and Auger recombination",
+      "The LED efficiency chain, optical gain, and the threshold condition"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Mode switch with parameter sliders, two linked real-time plots per mode, and a worked readout at the drive current",
+    "instructionalStrategy": "Predict-test-observe for the droop, followed by a hand calculation of the laser threshold checked against the readout",
+    "assessmentOpportunities": [
+      "Predict how the IQE peak moves when A or C changes",
+      "Compute mirror loss, threshold gain, threshold carrier density, and threshold current density by hand",
+      "Explain the trade-off between threshold current and slope efficiency as the mirror reflectivity rises"
+    ]
+  },
+  "controls": [
+    { "type": "radio", "label": "Mode", "options": ["LED mode", "Laser mode"], "default": "LED mode", "purpose": "Switch between the LED and laser views" },
+    { "type": "checkbox", "label": "Compare quantum well with bulk", "default": false, "purpose": "Add a device with a single 8 nm quantum well active layer" },
+    { "type": "slider", "label": "Drive current I", "min": 0, "max": 1, "default": 0.5, "step": 0.005, "units": "fraction of the current axis (1000 mA in LED mode, 100 mA in laser mode)", "purpose": "Operating current" },
+    { "type": "slider", "label": "Mirror reflectivity R", "min": 0.3, "max": 0.99, "default": 0.3, "step": 0.01, "purpose": "Power reflectivity of both cavity mirrors (laser mode)" },
+    { "type": "slider", "label": "Cavity length L", "min": 50, "max": 500, "default": 300, "step": 10, "units": "micrometers", "purpose": "Length of the Fabry-Perot cavity (laser mode)" },
+    { "type": "slider", "label": "A (SRH)", "min": 1e6, "max": 1e9, "default": 1e7, "scale": "log", "units": "1/s", "purpose": "Shockley-Read-Hall recombination coefficient" },
+    { "type": "slider", "label": "B (radiative)", "min": 1e-12, "max": 1e-9, "default": 1e-10, "scale": "log", "units": "cm^3/s", "purpose": "Radiative recombination coefficient" },
+    { "type": "slider", "label": "C (Auger)", "min": 1e-32, "max": 1e-28, "default": 2e-30, "scale": "log", "units": "cm^6/s", "purpose": "Auger recombination coefficient" },
+    { "type": "button", "label": "Reset", "purpose": "Restore the default settings" }
+  ],
+  "simulationModel": {
+    "modelType": "analytical",
+    "equations": [
+      "IQE = B n^2 / (A n + B n^2 + C n^3); J = q d (A n + B n^2 + C n^3) / eta_inj",
+      "EQE = eta_inj IQE LEE; P_out = EQE (h nu / q) I",
+      "Gamma g_th = alpha_i + alpha_m; alpha_m = (1/L) ln(1/R)",
+      "J_th = q d (A n_th + B n_th^2 + C n_th^3) / eta_i",
+      "P_out = eta_d (h nu / q)(I - I_th); eta_d = eta_i alpha_m / (alpha_i + alpha_m)"
+    ],
+    "assumptions": [
+      "GaAs, photon energy 1.42 eV; eta_inj = eta_i = 0.95; LEE = 1/(4 n^2) = 2.0 % for a flat surface; alpha_i = 10 cm^-1",
+      "Bulk layer: d = 0.1 um, Gamma = 0.3, g = 3e-16 (n - 1e18) cm^-1",
+      "Quantum well: d = 8 nm, Gamma = 0.03, g = 2400 ln(n / 2.6e18) cm^-1 (representative values)",
+      "LED area 100 um x 100 um; laser stripe 5 um wide"
+    ],
+    "limitations": [
+      "No heating, no thermal rollover, no spontaneous emission from the laser below threshold",
+      "VCSEL cavities are outside the range of the model and are not plotted",
+      "Wall-plug efficiency is not computed because the diode voltage is not modeled"
+    ]
+  }
+}

@@ -267,6 +267,9 @@ The combined I-V characteristic of a real silicon diode spans roughly 20 decades
     <img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Nova with warning pose">
     The ubiquitous "0.7 V diode drop" is a useful circuit approximation but physically misleading. The actual forward voltage depends on current level — a silicon diode at 1 μA drops ~0.45 V; at 1 mA it's ~0.6 V; at 10 A it's ~0.85 V. The 0.7 V comes from historical convention for small-signal operation at milliamp currents. For power electronics, LED drivers, or low-power IoT devices, always calculate the actual operating point from the diode equation. Using 0.7 V blindly in a solar cell or a nanowatt sensor circuit will cost you the design.
 
+<iframe src="../../sims/pn-junction-explorer/main.html" width="100%" height="702px" scrolling="no"></iframe>
+[Run P-N Junction Explorer Fullscreen](../../sims/pn-junction-explorer/main.html)
+
 <details markdown="1">
 <summary>#### MicroSim: P-N Junction Explorer</summary>
 

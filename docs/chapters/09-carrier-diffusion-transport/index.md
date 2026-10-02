@@ -335,6 +335,9 @@ Piezoresistance is the operating principle of **silicon pressure sensors and acc
     <img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
     Look how far we've come in three chapters! Chapter 7 gave us the carrier concentrations. Chapter 8 gave us drift and scattering. Chapter 9 gives us diffusion, the complete current equations, and the measurement tools to verify all of it. The drift-diffusion model is now in your hands — and it's the same set of equations that runs inside every semiconductor process simulator in the world. From here, we move to generation and recombination, then to the p-n junction, where this transport machinery produces transistors, LEDs, and solar cells. Time to jump bands!
 
+<iframe src="../../sims/hall-effect-simulator/main.html" width="100%" height="572px" scrolling="no"></iframe>
+[Run Hall Effect Measurement Simulator Fullscreen](../../sims/hall-effect-simulator/main.html)
+
 <details markdown="1">
 <summary>#### MicroSim: Hall Effect Measurement Simulator</summary>
 

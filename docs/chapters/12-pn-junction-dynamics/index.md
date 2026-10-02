@@ -283,6 +283,9 @@ In a compositionally graded AlGaAs/GaAs heterojunction, the grading creates a bu
     <img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
     With heterojunctions in your toolkit, you can now think about confining specific carrier types in specific layers, bending bands with composition gradients, and engineering optical transitions at designed energies. Everything you've learned — band structure, effective mass, quasi-Fermi levels, minority carrier transport, generation-recombination — applies to these structures, but now with spatial composition as an additional design variable. The result: HBTs that operate at hundreds of GHz, quantum-cascade lasers that emit at terahertz frequencies, and solar cells that capture the entire solar spectrum. Heterojunctions are where semiconductor physics meets materials science, and the view is spectacular.
 
+<iframe src="../../sims/heterojunction-band-alignment/main.html" width="100%" height="634px" scrolling="no"></iframe>
+[Run Heterojunction Band Alignment Visualizer Fullscreen](../../sims/heterojunction-band-alignment/main.html)
+
 <details markdown="1">
 <summary>#### MicroSim: Heterojunction Band Alignment Visualizer</summary>
 

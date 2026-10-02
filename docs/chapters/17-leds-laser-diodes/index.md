@@ -268,6 +268,9 @@ A **semiconductor optical amplifier (SOA)** is a laser diode operated below thre
     <img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
     Everything in this chapter — from the photon emission rate to VCSEL mode spacing to the Stokes shift in phosphors — is direct applications of the physics we've built over 17 chapters. Fermi-Dirac statistics determines population inversion. Band structure determines emission wavelength. Minority carrier lifetime determines IQE. Heterojunction band offsets enable the DH laser. The physics wasn't invented for optoelectronics — it was just *applied* there, with spectacular results. LEDs and lasers together represent probably $500 billion per year of economic activity. Let's get excited about that.
 
+<iframe src="../../sims/led-laser-efficiency-explorer/main.html" width="100%" height="624px" scrolling="no"></iframe>
+[Run LED Efficiency and Laser Threshold Explorer Fullscreen](../../sims/led-laser-efficiency-explorer/main.html)
+
 <details markdown="1">
 <summary>#### MicroSim: LED Efficiency and Laser Threshold Explorer</summary>
 

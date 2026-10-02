@@ -1,0 +1,78 @@
+{
+  "title": "Heterojunction Band Alignment Visualizer",
+  "description": "Two semiconductors chosen from menus are drawn on a common vacuum level with their electron affinities, bandgaps, and Fermi levels. The sim computes the conduction and valence band offsets with Anderson's rule, classifies the junction as Type I, Type II, or Type III, states where electrons and holes collect, and sketches the junction in equilibrium. A slider sets the aluminum fraction of AlGaAs.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-02",
+  "subject": [
+    "semiconductor physics",
+    "heterojunction",
+    "band alignment",
+    "Anderson's rule",
+    "electron affinity",
+    "band offset"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "heterojunction-band-alignment",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2), Apply (L3), Analyze (L4)",
+  "bloomVerb": "identify, calculate, predict",
+  "completion_status": "implemented",
+  "chapter_number": 12,
+  "chapter_title": "P-N Junction: Dynamics, Breakdown, and Heterojunctions",
+  "chapter_dir": "12-pn-junction-dynamics",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Semiconductor Physics",
+    "topic": "Band alignment and band offsets at semiconductor heterojunctions",
+    "learningObjectives": [
+      "Identify Type I, Type II, and Type III alignment from a band diagram",
+      "Calculate the band offsets of a heterojunction with Anderson's rule",
+      "Predict where electrons and holes are confined for a given pair of materials"
+    ],
+    "bloomLevels": ["Understand", "Apply", "Analyze"],
+    "duration": "15 minutes",
+    "prerequisites": [
+      "Energy band diagrams and the Fermi level",
+      "The p-n junction in equilibrium",
+      "Electron affinity and work function"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Material menus and an alloy slider with two linked band diagrams and a worked-calculation panel",
+    "instructionalStrategy": "Predict-test-observe: students predict the alignment type and the carrier locations, then check the classification and the arithmetic",
+    "assessmentOpportunities": [
+      "Compute both band offsets by hand from the displayed electron affinities and bandgaps",
+      "Find one material pair of each alignment type",
+      "Explain why the doping type does not change the offsets"
+    ]
+  },
+  "controls": [
+    { "type": "select", "label": "Material A", "options": ["Si", "Ge", "GaAs", "AlGaAs", "InAs", "InP", "GaSb", "GaN", "CdTe"], "default": "GaAs", "purpose": "Left-hand semiconductor" },
+    { "type": "select", "label": "Doping type of A", "options": ["n-type", "p-type"], "default": "p-type", "purpose": "Places the Fermi level of material A" },
+    { "type": "select", "label": "Material B", "options": ["Si", "Ge", "GaAs", "AlGaAs", "InAs", "InP", "GaSb", "GaN", "CdTe"], "default": "AlGaAs", "purpose": "Right-hand semiconductor" },
+    { "type": "select", "label": "Doping type of B", "options": ["n-type", "p-type"], "default": "n-type", "purpose": "Places the Fermi level of material B" },
+    { "type": "slider", "label": "AlGaAs aluminum fraction x", "min": 0, "max": 1, "default": 0.3, "step": 0.01, "purpose": "Alloy composition of Al(x)Ga(1-x)As" },
+    { "type": "checkbox", "label": "Show vacuum level reference", "default": true, "purpose": "Show the vacuum level and electron affinity arrows, or zoom in on the band edges" }
+  ],
+  "simulationModel": {
+    "modelType": "analytical",
+    "equations": [
+      "Delta E_C = chi_A - chi_B (Anderson's rule)",
+      "Delta E_V = (E_gB - E_gA) - Delta E_C",
+      "AlGaAs: E_g = 1.424 + 1.247 x (x < 0.45), 1.900 + 0.125 x + 0.143 x^2 (x >= 0.45); valence band offset to GaAs = 0.33 * 1.247 x"
+    ],
+    "assumptions": [
+      "300 K bandgaps and commonly tabulated electron affinities",
+      "AlGaAs uses the measured 67:33 offset split of Section 12.6.1 through an effective electron affinity",
+      "Fermi level placed 0.10 eV from the majority band edge; equilibrium band bending split equally between the two sides"
+    ],
+    "limitations": [
+      "Anderson's rule ignores interface dipoles and strain; measured offsets can differ by a few tenths of an eV",
+      "Lattice mismatch between the chosen materials is ignored",
+      "AlN and ZnO from the chapter specification are left out because their published electron affinities disagree too much"
+    ]
+  }
+}

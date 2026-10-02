@@ -294,6 +294,9 @@ This aids electron transport across the base, reducing \(\tau_B\) without requir
     <img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
     The bipolar transistor was invented in 1947 using point-contact metal on germanium. Modern SiGe HBTs operate at 300+ GHz using atomic-precision epitaxial Ge grading in a base thinner than 10 nm. The physics connecting these two devices is the *same* minority carrier diffusion theory you derived from the continuity equation. The engineering has become extraordinarily precise, but the physics underneath — minority carriers, quasi-Fermi levels, diffusion lengths — is exactly what you've been learning. That's the power of fundamental physics: it scales from 1947 germanium to 2024 sub-terahertz silicon.
 
+<iframe src="../../sims/bjt-operating-regions/main.html" width="100%" height="614px" scrolling="no"></iframe>
+[Run BJT Operating Regions Explorer Fullscreen](../../sims/bjt-operating-regions/main.html)
+
 <details markdown="1">
 <summary>#### MicroSim: BJT Operating Regions Explorer</summary>
 

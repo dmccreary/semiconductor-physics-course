@@ -162,6 +162,9 @@ where \(g_D = 2\) is the spin degeneracy factor for donors (an electron can occu
 
 The complete ionization approximation simplifies all our subsequent calculations enormously. We'll flag when it breaks down (deep impurities, very low temperatures, degenerate doping).
 
+<iframe src="../../sims/dopant-ionization-explorer/main.html" width="100%" height="629px" scrolling="no"></iframe>
+[Run Dopant Ionization Fraction vs. Temperature Fullscreen](../../sims/dopant-ionization-explorer/main.html)
+
 <details markdown="1">
 <summary>#### MicroSim: Dopant Ionization Fraction vs. Temperature</summary>
 
@@ -220,6 +223,9 @@ n \approx N_D, \quad p \approx \frac{n_i^2(T)}{N_D}
 !!! mascot-encourage "Nova Encourages: Temperature Regimes Are Just Three Acts of a Play"
     <img src="../../img/mascot/encouraging.png" class="mascot-admonition-img" alt="Nova in encouraging pose">
     The three-regime picture can feel overwhelming when you first see the full carrier-concentration vs. temperature curve, but think of it like a three-act drama. Act I (freeze-out): the cast is asleep, nobody on stage. Act II (extrinsic): the dopants have full control, running the show smoothly. Act III (intrinsic): the thermally generated crowd storms the stage and chaos rules. Your device engineers want their audience firmly in Act II. Everything else is physics for the textbook and the exam.
+
+<iframe src="../../sims/carrier-vs-temperature-explorer/main.html" width="100%" height="607px" scrolling="no"></iframe>
+[Run Carrier Concentration vs. Temperature Fullscreen](../../sims/carrier-vs-temperature-explorer/main.html)
 
 <details markdown="1">
 <summary>#### MicroSim: Carrier Concentration vs. Temperature</summary>

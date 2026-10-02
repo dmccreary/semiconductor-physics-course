@@ -14,6 +14,33 @@ self-contained interactive that runs in the browser.
 
 <div class="grid cards" markdown>
 
+-   **[BJT Operating Regions Explorer](./bjt-operating-regions/index.md)**
+
+    ![BJT Operating Regions Explorer](./bjt-operating-regions/bjt-operating-regions.png)
+
+    Output characteristics of a bipolar transistor with a load line
+    and the DC operating point. See saturation, forward active, and
+    cutoff, how they follow from the two junction biases, and how
+    the Early voltage tilts the curves.
+
+-   **[Carrier Concentration vs. Temperature](./carrier-vs-temperature-explorer/index.md)**
+
+    ![Carrier Concentration vs. Temperature](./carrier-vs-temperature-explorer/carrier-vs-temperature-explorer.png)
+
+    Log-scale plot of n(T) and p(T) in doped silicon from 50 K to
+    1000 K with the freeze-out, extrinsic, and intrinsic regimes
+    shaded. Change the doping type and concentration to see the
+    regime boundaries move.
+
+-   **[Carrier Mobility Explorer](./carrier-mobility-explorer/index.md)**
+
+    ![Carrier Mobility Explorer](./carrier-mobility-explorer/carrier-mobility-explorer.png)
+
+    Log-log plots of electron or hole mobility in silicon against
+    temperature and doping, with one curve per scattering mechanism.
+    Switch mechanisms on and off to see Matthiessen's rule set the
+    total.
+
 -   **[Crystal Defect Hierarchy Network](./defect-hierarchy-network/index.md)**
 
     ![Crystal Defect Hierarchy Network](./defect-hierarchy-network/defect-hierarchy-network.png)
@@ -48,6 +75,15 @@ self-contained interactive that runs in the browser.
     whether the CBM and VBM coincide in k-space. Animates the optical
     transition and the phonon assist required for indirect gaps.
 
+-   **[Dopant Ionization Fraction vs. Temperature](./dopant-ionization-explorer/index.md)**
+
+    ![Dopant Ionization Fraction vs. Temperature](./dopant-ionization-explorer/dopant-ionization-explorer.png)
+
+    Fraction of ionized donors or acceptors in silicon from 50 K to
+    600 K, with a band diagram tracking the Fermi level against the
+    dopant level. Choose the dopant (P, As, Sb, B, Ga, Al, In), the
+    doping concentration, and a probe temperature.
+
 -   **[Energy Band Diagram Explorer](./energy-band-diagram-explorer/index.md)**
 
     ![Energy Band Diagram Explorer](./energy-band-diagram-explorer/energy-band-diagram-explorer.png)
@@ -74,6 +110,33 @@ self-contained interactive that runs in the browser.
     concentrations, the n·p product, and the n/p/intrinsic
     classification update in real time.
 
+-   **[Hall Effect Measurement Simulator](./hall-effect-simulator/index.md)**
+
+    ![Hall Effect Measurement Simulator](./hall-effect-simulator/hall-effect-simulator.png)
+
+    Top view of a silicon Hall bar in a magnetic field. Carriers are
+    pushed toward one face and a voltmeter reads the Hall voltage.
+    Extract carrier type, concentration, and Hall mobility, and flip
+    the field or the doping type to see the sign change.
+
+-   **[Heterojunction Band Alignment Visualizer](./heterojunction-band-alignment/index.md)**
+
+    ![Heterojunction Band Alignment Visualizer](./heterojunction-band-alignment/heterojunction-band-alignment.png)
+
+    Pick two semiconductors and see their bands lined up on a common
+    vacuum level. The sim applies Anderson's rule, shows both band
+    offsets, and classifies the junction as Type I, II, or III.
+    Includes an AlGaAs composition slider.
+
+-   **[LED Efficiency and Laser Threshold Explorer](./led-laser-efficiency-explorer/index.md)**
+
+    ![LED Efficiency and Laser Threshold Explorer](./led-laser-efficiency-explorer/led-laser-efficiency-explorer.png)
+
+    LED mode shows the efficiency droop of the ABC recombination
+    model. Laser mode finds the threshold where modal gain equals
+    cavity loss and draws the light-current curve. Adjust the
+    recombination coefficients, mirror reflectivity, and cavity length.
+
 -   **[Learning Graph Viewer](./graph-viewer/index.md)**
 
     ![Learning Graph Viewer](./graph-viewer/graph-viewer.png)
@@ -81,6 +144,15 @@ self-contained interactive that runs in the browser.
     Interactive viewer for the course learning graph. Search for
     concepts, filter by taxonomy category, and pan/zoom to explore
     dependency relationships across the 200 concepts in the course.
+
+-   **[Long-Channel MOSFET I-V Explorer](./mosfet-iv-long-channel/index.md)**
+
+    ![Long-Channel MOSFET I-V Explorer](./mosfet-iv-long-channel/mosfet-iv-long-channel.png)
+
+    Square-law output curves and the logarithmic transfer curve of a
+    long-channel MOSFET. Shows triode, saturation, and subthreshold
+    operation, channel pinch-off, and the transconductance and output
+    conductance at any operating point.
 
 -   **[Miller Indices Crystal Plane Explorer](./miller-indices-explorer/index.md)**
 
@@ -90,6 +162,42 @@ self-contained interactive that runs in the browser.
     Sliders for h, k, l plus a preset menu. Shows intercepts,
     reciprocals, the family count, and the interplanar spacing in
     silicon.
+
+-   **[Minority Carrier Diffusion Length Visualizer](./minority-carrier-diffusion/index.md)**
+
+    ![Minority Carrier Diffusion Length Visualizer](./minority-carrier-diffusion/minority-carrier-diffusion.png)
+
+    Holes random-walk into n-type material and recombine. A histogram
+    of the walkers is compared with the analytical profile while
+    sliders for lifetime and diffusivity set the diffusion length.
+    Includes pulse injection and a recombining surface.
+
+-   **[MOS Capacitor C-V Explorer](./mos-cv-explorer/index.md)**
+
+    ![MOS Capacitor C-V Explorer](./mos-cv-explorer/mos-cv-explorer.png)
+
+    High- and low-frequency C-V curves of a MOS capacitor with the
+    band diagram at a chosen gate voltage. Change the oxide
+    thickness, doping, oxide charge, interface traps, and gate work
+    function to see the curve shift and stretch.
+
+-   **[MOSFET Scaling Simulator](./mosfet-scaling-simulator/index.md)**
+
+    ![MOSFET Scaling Simulator](./mosfet-scaling-simulator/mosfet-scaling-simulator.png)
+
+    Shrink a transistor from 1 µm to 5 nm. A trend model shows DIBL,
+    threshold roll-off, subthreshold slope, speed, and power density
+    for planar, FDSOI, FinFET, and gate-all-around devices, and where
+    Dennard scaling stops.
+
+-   **[P-N Junction Explorer](./pn-junction-explorer/index.md)**
+
+    ![P-N Junction Explorer](./pn-junction-explorer/pn-junction-explorer.png)
+
+    Four linked plots for a silicon p-n junction: band diagram,
+    charge and field, current against voltage, and carrier profiles.
+    Set the bias, the doping on each side, and the temperature, and
+    see which current component dominates.
 
 -   **[P-N Junction Voltage Explorer](./pn-junction/index.md)**
 
@@ -128,6 +236,15 @@ self-contained interactive that runs in the browser.
     exact transmission probability T, including the gate-oxide
     leakage regime that drove high-κ dielectrics.
 
+-   **[Recombination Lifetime Explorer](./recombination-lifetime-explorer/index.md)**
+
+    ![Recombination Lifetime Explorer](./recombination-lifetime-explorer/recombination-lifetime-explorer.png)
+
+    Radiative, Shockley-Read-Hall, and Auger recombination side by
+    side: a band diagram with each path's share of the rate, the
+    decay of the excess carriers, and lifetime against doping for
+    silicon and GaAs.
+
 -   **[Semiconductor Lattice Constant and Bandgap Map](./lattice-bandgap-map/index.md)**
 
     ![Lattice Constant and Bandgap Map](./lattice-bandgap-map/lattice-bandgap-map.png)
@@ -144,5 +261,14 @@ self-contained interactive that runs in the browser.
     Intrinsic carrier concentration n_i(T) on a log scale for Si,
     Ge, GaAs, and GaN from 200–700 K. Click a line to see the
     maximum safe operating temperature for a chosen doping level.
+
+-   **[Velocity-Field Relationship Explorer](./velocity-field-explorer/index.md)**
+
+    ![Velocity-Field Relationship Explorer](./velocity-field-explorer/velocity-field-explorer.png)
+
+    Drift velocity against electric field for electrons and holes in
+    Si, GaAs, and Ge on log-log axes. Shows the linear regime,
+    velocity saturation, the critical field, and how the carrier
+    energy distribution heats up at high field.
 
 </div>

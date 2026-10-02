@@ -257,6 +257,9 @@ The IRDS increasingly acknowledges that performance scaling is slowing but densi
     <img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
     From Fermi-Dirac statistics to FinFET short-channel effects to the IRDS roadmap — you've now traversed the full span of modern semiconductor device physics. The same equations for electron transport in a crystal that Bloch wrote in 1928 govern the behavior of 2 nm GAA transistors being manufactured in 2025. The physics is timeless; the engineering is breathtaking. Chapters 17–22 cover optoelectronics, compound semiconductors, fabrication, and characterization — the broader world that the MOSFET enabled. Time to jump bands (one last time)!
 
+<iframe src="../../sims/mosfet-scaling-simulator/main.html" width="100%" height="654px" scrolling="no"></iframe>
+[Run MOSFET Scaling Simulator Fullscreen](../../sims/mosfet-scaling-simulator/main.html)
+
 <details markdown="1">
 <summary>#### MicroSim: MOSFET Scaling Simulator</summary>
 

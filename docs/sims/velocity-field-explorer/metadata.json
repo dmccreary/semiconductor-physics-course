@@ -1,0 +1,78 @@
+{
+  "title": "Velocity-Field Relationship Explorer",
+  "description": "Log-log plot of drift velocity against electric field for electrons and holes in silicon, GaAs, and germanium, showing the linear regime, the transition, and velocity saturation. Overlays show the low-field tangent and the critical field, and an inset sketches the heating of the carrier energy distribution.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-01",
+  "subject": [
+    "semiconductor physics",
+    "drift velocity",
+    "velocity saturation",
+    "high-field transport",
+    "hot carriers"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "velocity-field-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2), Apply (L3), Analyze (L4)",
+  "bloomVerb": "identify, calculate, explain",
+  "completion_status": "implemented",
+  "chapter_number": 8,
+  "chapter_title": "Carrier Drift and Mobility",
+  "chapter_dir": "08-carrier-drift-mobility",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Semiconductor Physics",
+    "topic": "Drift velocity versus electric field and velocity saturation",
+    "learningObjectives": [
+      "Identify the linear, transition, and saturated regimes of a velocity-field curve",
+      "Calculate drift velocity at a given field with the two-piece linear model",
+      "Explain why short-channel MOSFETs operate in velocity saturation"
+    ],
+    "bloomLevels": ["Understand", "Apply", "Analyze"],
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Drift velocity and low-field mobility",
+      "Optical phonon scattering"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Parameter sliders and selects with a real-time log-log plot and a probe readout",
+    "instructionalStrategy": "Predict-test-observe: students calculate with the two-piece model, then compare with the smooth model at the probe field",
+    "assessmentOpportunities": [
+      "Estimate the critical field from the saturation velocity and mobility",
+      "Tabulate the error of the two-piece model at several fields",
+      "Place a MOSFET channel field on the curve and name the regime"
+    ]
+  },
+  "controls": [
+    { "type": "select", "label": "Material", "options": ["Si", "GaAs", "Ge"], "default": "Si", "purpose": "Semiconductor material" },
+    { "type": "select", "label": "Carrier", "options": ["Electrons", "Holes"], "default": "Electrons", "purpose": "Carrier type" },
+    { "type": "checkbox", "label": "Show critical field marker", "default": true, "purpose": "Mark the saturation velocity and the critical (or peak) field" },
+    { "type": "checkbox", "label": "Show low-field tangent line", "default": true, "purpose": "Draw v = mu0 E" },
+    { "type": "slider", "label": "Temperature", "min": 200, "max": 400, "default": 300, "step": 1, "units": "K", "purpose": "Lattice temperature (silicon only)" },
+    { "type": "slider", "label": "Electric field", "min": 100, "max": 316000, "default": 10000, "scale": "log", "units": "V/cm", "purpose": "Probe field for the readouts and the inset" }
+  ],
+  "simulationModel": {
+    "modelType": "empirical",
+    "equations": [
+      "v = mu0 E / (1 + (E/Ec)^beta)^(1/beta), Ec = vsat/mu0, beta = 2 (electrons), 1 (holes)",
+      "GaAs electrons: v = (mu0 E + vsat (E/E0)^4)/(1 + (E/E0)^4), E0 = 4 kV/cm",
+      "Si: mu0 ~ T^-2.42 (n), T^-2.20 (p); vsat ~ T^-0.87 (n), T^-0.52 (p)",
+      "Te = T + (2/3) q v E tauE / kB, tauE = 0.3 ps (inset only)"
+    ],
+    "assumptions": [
+      "Si: mu0 = 1400 and 450 cm^2/V.s, vsat = 1.07e7 and 8.4e6 cm/s at 300 K",
+      "GaAs: mu0 = 8500 and 400 cm^2/V.s, vsat about 8e6 and 1e7 cm/s",
+      "Ge: mu0 = 3900 and 1900 cm^2/V.s, vsat = 6e6 cm/s",
+      "Ge and GaAs holes use the same beta exponents as silicon"
+    ],
+    "limitations": [
+      "Temperature dependence is modeled for silicon only",
+      "The energy-distribution inset is a schematic heated Maxwellian",
+      "No velocity overshoot or impact ionization"
+    ]
+  }
+}

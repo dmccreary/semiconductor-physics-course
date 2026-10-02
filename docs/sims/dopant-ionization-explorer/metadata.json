@@ -1,0 +1,77 @@
+{
+  "title": "Dopant Ionization Fraction vs. Temperature",
+  "description": "Interactive plot of the fraction of ionized donors or acceptors in silicon from 50 K to 600 K, with a band diagram showing how the Fermi level moves relative to the dopant level. The charge-neutrality equation is solved for the Fermi level at every temperature for a chosen dopant and doping concentration.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-01",
+  "subject": [
+    "semiconductor physics",
+    "doping",
+    "dopant ionization",
+    "freeze-out",
+    "Fermi level"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "dopant-ionization-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2), Apply (L3), Analyze (L4)",
+  "bloomVerb": "explain, predict, identify",
+  "completion_status": "implemented",
+  "chapter_number": 7,
+  "chapter_title": "Doping, Extrinsic Carriers, and the Fermi Level",
+  "chapter_dir": "07-doping-extrinsic-carriers",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Semiconductor Physics",
+    "topic": "Ionization of donors and acceptors in silicon versus temperature",
+    "learningObjectives": [
+      "Explain why shallow dopants are nearly fully ionized at 300 K",
+      "Predict the ionized fraction for a given dopant, doping concentration, and temperature",
+      "Identify when the complete-ionization approximation breaks down"
+    ],
+    "bloomLevels": ["Understand", "Apply", "Analyze"],
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Fermi-Dirac statistics and effective density of states",
+      "Donor and acceptor energy levels"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Parameter sliders with real-time plots and a probe-temperature readout",
+    "instructionalStrategy": "Predict-test-observe: students predict the ionized fraction before moving the temperature or doping slider, then check the readout",
+    "assessmentOpportunities": [
+      "Predict the ionized fraction of indium at 300 K",
+      "Explain why heavier doping lowers the ionized fraction",
+      "Find the temperature at which 90 percent of the dopants are ionized"
+    ]
+  },
+  "controls": [
+    { "type": "select", "label": "Dopant", "options": ["P", "As", "Sb", "B", "Ga", "Al", "In"], "default": "P", "purpose": "Dopant species and its ionization energy" },
+    { "type": "slider", "label": "Doping", "min": 1e14, "max": 1e18, "default": 1e16, "scale": "log", "units": "cm^-3", "purpose": "Dopant concentration" },
+    { "type": "slider", "label": "Temperature", "min": 50, "max": 600, "default": 300, "step": 1, "units": "K", "purpose": "Probe temperature for the readouts and zoom panel" },
+    { "type": "button", "label": "Sweep T / Pause", "purpose": "Animate the probe temperature up to 600 K" },
+    { "type": "checkbox", "label": "Show Fermi-Dirac tail", "default": true, "purpose": "Overlay f(E) in the zoom panel" }
+  ],
+  "simulationModel": {
+    "modelType": "physics-based, numerical solution of charge neutrality",
+    "equations": [
+      "n + Na- = p + Nd+",
+      "n = Nc exp(-(Ec - Ef)/kT), p = Nv exp(-(Ef - Ev)/kT)",
+      "Nd+/Nd = 1/(1 + gD exp((Ef - Ed)/kT)), gD = 2",
+      "Na-/Na = 1/(1 + gA exp((Ea - Ef)/kT)), gA = 4",
+      "Eg(T) = Eg(0) - 4.73e-4 T^2/(T + 636) eV (Varshni)"
+    ],
+    "assumptions": [
+      "Silicon with a single dopant species and no compensation",
+      "Nc = 2.86e19 and Nv = 3.10e19 cm^-3 at 300 K, scaled as T^1.5",
+      "Eg(0) set to 1.175 eV so that ni(300 K) = 9.65e9 cm^-3",
+      "Boltzmann statistics for the bands"
+    ],
+    "limitations": [
+      "Isolated dopant levels: the model underestimates ionization above about 1e18 cm^-3, so the doping slider stops there",
+      "Excited dopant states and temperature-dependent ionization energies are ignored"
+    ]
+  }
+}

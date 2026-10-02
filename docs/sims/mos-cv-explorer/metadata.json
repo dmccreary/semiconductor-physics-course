@@ -1,0 +1,83 @@
+{
+  "title": "MOS Capacitor C-V Explorer",
+  "description": "High-frequency, low-frequency, and deep-depletion capacitance-voltage curves of a metal/SiO2/p-type silicon capacitor at 300 K, with accumulation, depletion, and inversion shaded and the flat-band voltage, threshold voltage, oxide capacitance, and minimum capacitance marked. A band diagram follows a probe voltage. Sliders set the oxide thickness, substrate doping, fixed oxide charge, interface trap density, and gate work function.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-02",
+  "subject": [
+    "semiconductor physics",
+    "MOS capacitor",
+    "capacitance-voltage characteristics",
+    "flat-band voltage",
+    "threshold voltage",
+    "oxide charge",
+    "interface traps"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "mos-cv-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2), Apply (L3), Analyze (L4)",
+  "bloomVerb": "identify, extract, diagnose",
+  "completion_status": "implemented",
+  "chapter_number": 13,
+  "chapter_title": "Metal-Semiconductor Contacts and MOS Physics",
+  "chapter_dir": "13-metal-semiconductor-mos",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Semiconductor Physics",
+    "topic": "Capacitance-voltage characteristics of the MOS capacitor",
+    "learningObjectives": [
+      "Identify the accumulation, depletion, and inversion regions from the shape of a C-V curve",
+      "Extract the flat-band voltage, threshold voltage, oxide thickness, and substrate doping from a C-V curve",
+      "Diagnose fixed charge and interface traps from a parallel shift or a stretch-out of the curve"
+    ],
+    "bloomLevels": ["Understand", "Apply", "Analyze"],
+    "duration": "20 minutes",
+    "prerequisites": [
+      "Band bending and the depletion approximation",
+      "MOS bias regimes, flat-band voltage, and threshold voltage"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Parameter sliders with a real-time C-V plot, a linked band diagram at a probe voltage, and a readout strip",
+    "instructionalStrategy": "Predict-test-observe, followed by parameter extraction from a curve whose settings are hidden",
+    "assessmentOpportunities": [
+      "Extract the oxide thickness from C_ox and the doping from C_min/C_ox",
+      "Tell fixed charge from interface traps using the reference curve",
+      "Explain why the high- and low-frequency curves differ only in inversion"
+    ]
+  },
+  "controls": [
+    { "type": "radio", "label": "Curves", "options": ["High frequency", "Low frequency", "Both"], "default": "Both", "purpose": "Choose which C-V curves are drawn" },
+    { "type": "checkbox", "label": "Deep depletion", "default": false, "purpose": "Add the curve for a fast sweep with no inversion layer" },
+    { "type": "slider", "label": "Gate voltage V_G (probe)", "min": 0, "max": 1, "default": 0.62, "step": 0.002, "units": "fraction of the voltage axis", "purpose": "Gate voltage for the band diagram and the probe readout" },
+    { "type": "slider", "label": "Oxide thickness t_ox", "min": 1, "max": 20, "default": 10, "step": 0.5, "units": "nm", "purpose": "Gate oxide thickness" },
+    { "type": "slider", "label": "Substrate doping N_A", "min": 1e15, "max": 1e18, "default": 1e17, "scale": "log", "units": "cm^-3", "purpose": "Acceptor concentration of the substrate" },
+    { "type": "slider", "label": "Fixed oxide charge Q_f/q", "min": -1e12, "max": 1e12, "default": 0, "step": 2e10, "units": "cm^-2", "purpose": "Fixed charge at the oxide-silicon interface" },
+    { "type": "slider", "label": "Interface traps D_it", "min": 0, "max": 1e12, "default": 0, "step": 2e10, "units": "cm^-2 eV^-1", "purpose": "Interface trap density" },
+    { "type": "slider", "label": "Gate work function", "min": 4.0, "max": 5.2, "default": 4.1, "step": 0.05, "units": "eV", "purpose": "Work function of the gate metal" },
+    { "type": "button", "label": "Reset", "purpose": "Restore the default settings" }
+  ],
+  "simulationModel": {
+    "modelType": "analytical",
+    "equations": [
+      "C_ox = eps_ox / t_ox, eps_ox = 3.9 eps_0",
+      "V_FB = phi_ms - Q_f/C_ox",
+      "V_T = V_FB + 2 phi_F + q N_A W_dep,max / C_ox, W_dep,max = sqrt(4 eps_s phi_F / q N_A)",
+      "|Q_s| = sqrt(2 eps_s kT N_A) sqrt[(e^-u + u - 1) + (n_i/N_A)^2 (e^u - u - 1)], u = q psi_s / kT",
+      "1/C = 1/C_ox + 1/C_s"
+    ],
+    "assumptions": [
+      "p-type silicon at 300 K, n_i = 9.65e9 cm^-3, E_g = 1.130 eV, chi = 4.05 eV, eps_s = 11.7 eps_0",
+      "Uniform interface trap density, neutral when the Fermi level is at midgap at the surface",
+      "Fixed charge located at the oxide-silicon interface"
+    ],
+    "limitations": [
+      "No quantum confinement, polysilicon depletion, or gate tunneling for thin oxides",
+      "High-frequency curve uses the fixed-inversion-charge approximation",
+      "Interface traps respond fully at low frequency and not at all at high frequency"
+    ]
+  }
+}
