@@ -236,6 +236,15 @@ self-contained interactive that runs in the browser.
     exact transmission probability T, including the gate-oxide
     leakage regime that drove high-κ dielectrics.
 
+-   **[Quantum Well Energy Level Explorer](./quantum-well-explorer/index.md)**
+
+    ![Quantum Well Energy Level Explorer](./quantum-well-explorer/quantum-well-explorer.png)
+
+    Bound levels and wavefunctions of a finite quantum well for
+    GaAs/AlGaAs, InGaAs/InP, and GaN/AlGaN, compared with the
+    infinite-well formula. A second plot sets the staircase density
+    of states of the well beside the bulk square-root curve.
+
 -   **[Recombination Lifetime Explorer](./recombination-lifetime-explorer/index.md)**
 
     ![Recombination Lifetime Explorer](./recombination-lifetime-explorer/recombination-lifetime-explorer.png)
@@ -253,6 +262,16 @@ self-contained interactive that runs in the browser.
     lattice constant and bandgap. Direct-gap (green) vs indirect-gap
     (red) color coding with alloy interpolation lines for
     heterostructure design.
+
+-   **[Solar Cell I-V Curve Explorer](./solar-cell-iv-explorer/index.md)**
+
+    ![Solar Cell I-V Curve Explorer](./solar-cell-iv-explorer/solar-cell-iv-explorer.png)
+
+    Current and power against voltage for an illuminated solar cell,
+    with the short-circuit current, open-circuit voltage, maximum
+    power point, fill factor, and efficiency. Change irradiance,
+    temperature, and the series and shunt resistances for silicon,
+    GaAs, and a perovskite-silicon tandem.
 
 -   **[Temperature Dependence of n_i Explorer](./intrinsic-concentration-temperature/index.md)**
 

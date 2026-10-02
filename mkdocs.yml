@@ -81,8 +81,10 @@ nav:
     - Particle in a Box — Energy Level Explorer: sims/particle-in-a-box-explorer/index.md
     - Point Defect Visualizer: sims/point-defect-visualizer/index.md
     - Quantum Tunneling Probability Explorer: sims/quantum-tunneling-explorer/index.md
+    - Quantum Well Energy Level Explorer: sims/quantum-well-explorer/index.md
     - Recombination Lifetime Explorer: sims/recombination-lifetime-explorer/index.md
     - Semiconductor Lattice Constant and Bandgap Map: sims/lattice-bandgap-map/index.md
+    - Solar Cell I-V Curve Explorer: sims/solar-cell-iv-explorer/index.md
     - Temperature Dependence of ni Explorer: sims/intrinsic-concentration-temperature/index.md
     - Velocity-Field Relationship Explorer: sims/velocity-field-explorer/index.md
 

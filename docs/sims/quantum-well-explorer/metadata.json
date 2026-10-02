@@ -1,0 +1,80 @@
+{
+  "title": "Quantum Well Energy Level Explorer",
+  "description": "Bound states of a finite square quantum well with different effective masses in the well and the barriers. The left plot shows the conduction band edge, the energy levels, and their wavefunctions or probability densities, with the infinite-well levels for comparison. The right plot shows the staircase density of states of the well and the square-root density of states of the bulk material on the same energy axis. A table lists each level, the infinite-well value, and the probability in the barriers. Sliders set the well width and the conduction band offset; a menu selects GaAs/AlGaAs, InGaAs/InP, or GaN/AlGaN.",
+  "creator": "Dan McCreary",
+  "date": "2026-10-02",
+  "subject": [
+    "semiconductor physics",
+    "quantum well",
+    "quantum confinement",
+    "finite potential well",
+    "subbands",
+    "two-dimensional density of states",
+    "heterostructures"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "quantum-well-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2), Apply (L3), Analyze (L4)",
+  "bloomVerb": "explain, calculate, compare",
+  "completion_status": "implemented",
+  "chapter_number": 19,
+  "chapter_title": "III-V/II-VI Semiconductors, Quantum Nanostructures, and HEMTs",
+  "chapter_dir": "19-compound-semiconductors-quantum",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Semiconductor Physics",
+    "topic": "Quantum well energy levels and the two-dimensional density of states",
+    "learningObjectives": [
+      "Explain why confinement raises the lowest allowed energy above the bulk band edge",
+      "Calculate the ground-state energy of a quantum well of given width and material",
+      "Compare the density of states of a quantum well with that of the bulk material and relate the difference to the threshold of a quantum well laser"
+    ],
+    "bloomLevels": ["Understand", "Apply", "Analyze"],
+    "duration": "20 minutes",
+    "prerequisites": [
+      "The particle in a box",
+      "Effective mass and the density of states",
+      "Heterojunction band offsets"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Parameter sliders with two linked real-time plots on a shared energy axis and a table of levels",
+    "instructionalStrategy": "Hand calculation with the infinite-well formula, followed by comparison with the numerical finite-well result",
+    "assessmentOpportunities": [
+      "Compute the infinite-well ground-state energy and compare with the finite-well value",
+      "Explain why the finite-well levels lie below the infinite-well levels",
+      "Relate the effective mass to the confinement energy across material systems",
+      "Explain the laser threshold advantage from the step in the density of states"
+    ]
+  },
+  "controls": [
+    { "type": "select", "label": "Material", "options": ["GaAs / AlGaAs", "InGaAs / InP", "GaN / AlGaN"], "default": "GaAs / AlGaAs", "purpose": "Set the effective masses of the well and the barriers" },
+    { "type": "checkbox", "label": "Show wavefunctions", "default": true, "purpose": "Draw the wavefunction on each of the first four levels" },
+    { "type": "checkbox", "label": "as |psi|^2", "default": false, "purpose": "Draw the probability density instead of the wavefunction" },
+    { "type": "slider", "label": "Well width L_z", "min": 1, "max": 20, "default": 10, "step": 0.5, "units": "nm", "purpose": "Thickness of the well layer" },
+    { "type": "slider", "label": "Band offset dE_C", "min": 0.1, "max": 0.5, "default": 0.25, "step": 0.01, "units": "eV", "purpose": "Depth of the well in the conduction band" },
+    { "type": "button", "label": "Reset", "purpose": "Restore the default settings" }
+  ],
+  "simulationModel": {
+    "modelType": "analytical with numerical root finding",
+    "equations": [
+      "even states: (k/m_w) tan(k L_z/2) = kappa/m_b; odd states: -(k/m_w) cot(k L_z/2) = kappa/m_b",
+      "k = sqrt(2 m_w E)/hbar; kappa = sqrt(2 m_b (dE_C - E))/hbar",
+      "infinite well: E_n = n^2 pi^2 hbar^2 / (2 m_w L_z^2)",
+      "g_QW = m_w/(pi hbar^2 L_z) per subband; g_bulk = (1/2 pi^2)(2 m_w/hbar^2)^(3/2) sqrt(E)"
+    ],
+    "assumptions": [
+      "Electron effective masses (well, barrier) in units of m_0: GaAs 0.067, Al0.3Ga0.7As 0.092; In0.53Ga0.47As 0.041, InP 0.080; GaN 0.20, Al0.25Ga0.75N 0.23",
+      "Square well with flat bands; energies measured from the conduction band edge of the well"
+    ],
+    "limitations": [
+      "No polarization field: the GaN/AlGaN option shows the effect of the effective mass only",
+      "Parabolic bands; the barrier mass does not follow the band offset slider",
+      "Conduction band only; hole levels are not shown"
+    ]
+  }
+}

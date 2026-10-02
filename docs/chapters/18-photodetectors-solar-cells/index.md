@@ -273,6 +273,9 @@ Before closing, we note that the same photodetector physics enables imaging arra
     <img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Nova celebrating">
     The same minority carrier physics that produces a p-n junction diode curve also determines whether your phone captures a usable image in a dark restaurant, whether a solar farm generates enough power to charge a city, and whether a detector aboard a space telescope spots a photon from a galaxy 13 billion light-years away. Semiconductor devices don't just compute — they sense the entire electromagnetic universe. From single photons to terawatt-scale energy harvesting, the p-n junction has done it all. Nova is officially very excited about that.
 
+<iframe src="../../sims/solar-cell-iv-explorer/main.html" width="100%" height="591px" scrolling="no"></iframe>
+[Run Solar Cell I-V Curve Explorer Fullscreen](../../sims/solar-cell-iv-explorer/main.html)
+
 <details markdown="1">
 <summary>#### MicroSim: Solar Cell I-V Curve Explorer</summary>
 

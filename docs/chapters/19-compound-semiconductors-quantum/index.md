@@ -248,6 +248,9 @@ where \(d_b\) is the barrier thickness and \(\Delta d\) is the centroid distance
     <img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Nova with warning pose">
     Most HEMTs are **depletion-mode** (normally on) — the 2DEG exists at zero gate bias and must be depleted by negative gate voltage to turn off. This complicates digital circuits (need negative power supplies or special logic). Enhancement-mode (normally off) HEMTs require careful control of AlGaAs barrier thickness and doping — the 2DEG must be depleted at \(V_{GS} = 0\) and appear only at positive bias. GaN e-mode HEMTs are actively commercialized for power switching (can operate with standard 0–3.3 V logic, no negative supply needed). The battle between d-mode and e-mode GaN is one of the major applications debates in power electronics today.
 
+<iframe src="../../sims/quantum-well-explorer/main.html" width="100%" height="568px" scrolling="no"></iframe>
+[Run Quantum Well Energy Level Explorer Fullscreen](../../sims/quantum-well-explorer/main.html)
+
 <details markdown="1">
 <summary>#### MicroSim: Quantum Well Energy Level Explorer</summary>
 
