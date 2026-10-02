@@ -18,5 +18,8 @@
   "completion_status": "implemented",
   "chapter_number": 4,
   "chapter_title": "\"Quantum Mechanics: Wave Equations and Atomic Structure\"",
-  "chapter_dir": "04-quantum-mechanics"
+  "chapter_dir": "04-quantum-mechanics",
+  "search": {
+    "showcase": true
+  }
 }
